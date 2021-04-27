@@ -12,7 +12,7 @@ class BMSClass {
     public function show_404()
     {
         http_response_code(404);
-        echo "Page is currently unavailable";
+        echo "Page you are visiting is currently unavailable";
         die;
     }
 
