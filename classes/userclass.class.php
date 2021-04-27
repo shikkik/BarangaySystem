@@ -27,11 +27,6 @@
                 }
             }
         }
-
-
-        public function test() {
-            echo "gumagana";
-        }
     }
 
     $userbms = new ResidentClass();
