@@ -8,6 +8,13 @@ class BMSClass {
     protected $options = array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION, PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC);
     protected $con;
 
+    //displays an error 404
+    public function show_404()
+    {
+        http_response_code(404);
+        echo "Page is currently unavailable";
+        die;
+    }
 
     //eto yung nag o open ng connection ng db
     public function openConn() {
@@ -102,7 +109,7 @@ class BMSClass {
         if (isset($userdetails)) {
             
             if($userdetails['role'] != "administrator") {
-                header('Location: index.php');
+                $this->show_404();
             }
 
             else {
