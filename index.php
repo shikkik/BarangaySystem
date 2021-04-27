@@ -4,8 +4,8 @@
     }
 
     //include('autoloader.php');
-    require('classes/mainclass.class.php');
-    $bms->login();
+    require('classes/userclass.class.php');
+    $userbms->userlogin();
 
 ?>
 
@@ -24,12 +24,16 @@
     <body>
         <div class="container-fluid"> 
             <form method="post"> 
-                <input type="text" class="form-control" name="username" placeholder="Username">
-                <br>  
+                <label> Email </label>
+                <br>
+                <input type="email" class="form-control" name="email" placeholder="E-mail">
+                <br> 
+                <label> Password </label>
+                <br> 
                 <input type="password" class="form-control" name="password" placeholder="Username">
                 <br>
                 <br>
-                <button class="btn btn-primary" type="submit" name="adminlogin"> Submit </button>
+                <button class="btn btn-primary" type="submit" name="userlogin"> Submit </button>
             </form>
         </div>
     </body> 
