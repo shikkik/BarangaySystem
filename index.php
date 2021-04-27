@@ -22,7 +22,7 @@
     </head>
 
     <body>
-        <div> 
+        <div class="container-fluid"> 
             <form method="post"> 
                 <input type="text" class="form-control" name="username" placeholder="Username">
                 <br>  
