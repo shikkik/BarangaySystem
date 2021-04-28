@@ -22,6 +22,19 @@
     </head>
 
     <body>
+        <!-- eto yung navbar -->
+        <nav class="navbar sticky-top navbar-dark bg-primary">
+            <a class="navbar-brand" href="index.php"> Barangay E-Services </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"></button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+              <ul class="navbar-nav ml-auto">
+                <li class="nav-item"> <a href=""> </a> </li>
+              </ul>
+            </div>
+        </nav>
+
+
+    
         <div class="container-fluid"> 
             <form method="post"> 
                 <label> Email </label>

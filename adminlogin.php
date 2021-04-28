@@ -18,7 +18,7 @@
         <!-- custom css --> 
         <link href="../Capstone/customcss/homestyle.css" rel="stylesheet" type="text/css"> 
         <!-- bootstrap css --> 
-        <link href="../Capstone/bootstrap/css/bootstrap.css" rel="stylesheet" type="text/css"> 
+        <link href="../Capstone/bootstrap/css/bootstrap.min.js" rel="stylesheet" type="text/css"> 
     </head>
 
     <body>
@@ -30,7 +30,7 @@
                 <br> 
                 <label> Password </label>
                 <br> 
-                <input type="password" class="form-control" name="password" placeholder="Username">
+                <input type="password" class="form-control" name="password" placeholder="Password">
                 <br>
                 <br>
                 <button class="btn btn-primary" type="submit" name="adminlogin"> Submit </button>
