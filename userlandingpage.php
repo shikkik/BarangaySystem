@@ -14,9 +14,9 @@
         <!-- responsive tags for screen compatibility -->
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <!-- custom css --> 
-        <link href="../Capstone/customcss/userpagestyle.css" rel="stylesheet" type="text/css"> 
+        <link href="../BarangaySystem/customcss/userpagestyle.css" rel="stylesheet" type="text/css"> 
         <!-- bootstrap css --> 
-        <link href="../Capstone/bootstrap/css/bootstrap.css" rel="stylesheet" type="text/css">
+        <link href="../BarangaySystem/bootstrap/css/bootstrap.css" rel="stylesheet" type="text/css">
         <!-- fontawesome icons --> 
         <script src="https://kit.fontawesome.com/67a9b7069e.js" crossorigin="anonymous"></script>
 
