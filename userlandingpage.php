@@ -14,7 +14,7 @@
         <!-- responsive tags for screen compatibility -->
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <!-- custom css --> 
-        <link href="../BarangaySystem/customcss/userpagestyle.css" rel="stylesheet" type="text/css"> 
+        <link href="../BarangaySystem/customcss/pagestyle.css" rel="stylesheet" type="text/css"> 
         <!-- bootstrap css --> 
         <link href="../BarangaySystem/bootstrap/css/bootstrap.css" rel="stylesheet" type="text/css">
         <!-- fontawesome icons --> 
@@ -27,20 +27,6 @@
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-
-            <ul class="nav-dropdown"> 
-                <li>  </li>
-            </ul>
-            <div class="dropdown">
-                <button class="dropbtn">Dropdown
-                <i class="fa fa-caret-down"></i>
-                </button>
-                <div class="dropdown-content">
-                <a href="#">Profile</a>
-                <a href="#">Logout</a>
-                </div>
-            </div>
-
 
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav ml-auto">
@@ -58,7 +44,24 @@
         </nav>
 
 
-        <h1> This is the user page </h1>
+        <section class="heading-section"> 
+
+            <div class="container-fluid header"> 
+                <div class="row"> 
+                    <div class="col"> 
+                            <h1> Welcome to Barangay Services Management System </h1>
+                            <h3> You may select the following services offered below </h3>
+                    </div>
+                </div>
+                
+            </div>
+
+
+            <div class="container"> 
+
+
+            </div>
+        </section>
 
         <script src="../BarangaySystem/bootstrap/js/bootstrap.bundle.min.js" type="text/javascript"> </script>
     </body>
