@@ -15,7 +15,7 @@
             $stmt->Execute([$username, $password]);
             $user = $stmt->fetch();
             $total = $stmt->rowCount();  
-        
+            
                 //calls the set_userdata function 
                 if($total > 0) {
                     $this->set_userdata($user);
@@ -23,7 +23,7 @@
                 }
                 
                 else {
-                    echo "Login Failed";
+                    echo '<script>alert("Email or Password is Invalid")</script>';
                 }
             }
         }

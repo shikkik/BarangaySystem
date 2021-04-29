@@ -59,5 +59,7 @@
 
 
         <h1> This is the user page </h1>
+
+        <script src="../BarangaySystem/bootstrap/js/bootstrap.bundle.min.js" type="text/javascript"> </script>
     </body>
 </html>
