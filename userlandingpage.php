@@ -46,11 +46,13 @@
 
         <section class="heading-section"> 
 
-            <div class="container-fluid header"> 
+            <div class="container-fluid"> 
                 <div class="row"> 
                     <div class="col"> 
+                        <div class="header"> 
                             <h1> Welcome to Barangay Services Management System </h1>
                             <h3> You may select the following services offered below </h3>
+                        </div>
                     </div>
                 </div>
                 
@@ -58,7 +60,40 @@
 
 
             <div class="container"> 
+                <div class="row"> 
+                    <div class="col"> 
+                        <div class="card"> 
+                            <div class="card-body text-center"> 
+                            <img src="../BarangaySystem/icons/resident.png">
+                                <a href=""> <h4> Residential ID Application</h4> </a>
+                            </div>
+                        </div>
+                    </div>
 
+                    <div class="col"> 
+                    <div class="card"> 
+                            <div class="card-body text-center">
+                            <img src="../BarangaySystem/icons/resident.png"> 
+                                <a href=""> <h4> Certificate of Residency</h4> </a>
+                            </div>
+                        </div>
+                        
+                    </div>
+
+
+                    <div class="col"> 
+                    <div class="card"> 
+                            <div class="card-body text-center"> 
+                                <img src="../BarangaySystem/icons/resident.png">
+                                <a href=""> <h4> Certificate of Indigency </h4> </a>
+                            </div>
+                        </div>
+                        
+                    </div>
+
+
+
+                </div>
 
             </div>
         </section>
