@@ -87,20 +87,11 @@
                     <div class="col"> 
                     <div class="card"> 
                             <div class="card-body text-center">
-                            <img src="../BarangaySystem/icons/resident.png"> 
+                            <img src="../BarangaySystem/icons/blotter.png"> 
                                 <a href=""> <h4> Complaint/Blotter</h4> </a>
                             </div>
                         </div>
                         
-                    </div>
-
-                    <div class="col"> 
-                    <div class="card"> 
-                            <div class="card-body text-center"> 
-                                <img src="../BarangaySystem/icons/resident.png">
-                                <a href=""> <h4> Certificate of Residency </h4> </a>
-                            </div>
-                        </div>
                     </div>
                 </div>
 
