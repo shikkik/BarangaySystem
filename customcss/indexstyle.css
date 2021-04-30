@@ -21,6 +21,7 @@ body {
     width: 50%;
 }
 
+
  /* Extra small devices (phones, 600px and down) */
  @media only screen and (max-width: 600px) {
     .main-section {
@@ -32,6 +33,7 @@ body {
         margin-right: 1em;
         margin-bottom: 2em;
     }
+
     
 }
 
