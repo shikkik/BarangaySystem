@@ -106,7 +106,7 @@
                     <div class="col"> 
                         <div class="card"> 
                             <div class="card-body text-center"> 
-                            <img src="../BarangaySystem/icons/resident.png">
+                            <img src="../BarangaySystem/icons/residency.png">
                                 <a href=""> <h4> Certificate of Residency </h4> </a>
                             </div>
                         </div>
@@ -115,7 +115,7 @@
                     <div class="col"> 
                     <div class="card"> 
                             <div class="card-body text-center">
-                            <img src="../BarangaySystem/icons/resident.png"> 
+                            <img src="../BarangaySystem/icons/clearance.png"> 
                                 <a href=""> <h4> Barangay Clearance </h4> </a>
                             </div>
                         </div>
@@ -126,7 +126,7 @@
                     <div class="col"> 
                     <div class="card"> 
                             <div class="card-body text-center"> 
-                                <img src="../BarangaySystem/icons/resident.png">
+                                <img src="../BarangaySystem/icons/indigency.png">
                                 <a href=""> <h4> Certificate of Indigency </h4> </a>
                             </div>
                         </div>
