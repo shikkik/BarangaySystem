@@ -87,7 +87,7 @@
                     <div class="col"> 
                     <div class="card"> 
                             <div class="card-body text-center">
-                            <img src="../BarangaySystem/icons/blotters.png"> 
+                            <img src="../BarangaySystem/icons/blotter.png"> 
                                 <a href=""> <h4> Complaint/Blotter</h4> </a>
                             </div>
                         </div>

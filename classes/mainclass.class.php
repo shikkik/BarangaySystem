@@ -12,7 +12,7 @@ class BMSClass {
     public function show_404()
     {
         http_response_code(404);
-        echo "Page you are visiting is currently unavailable";
+        echo "Hindi ka admin bawal dito";
         die;
     }
 
