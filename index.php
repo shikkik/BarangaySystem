@@ -65,7 +65,7 @@
                             <br>
                             <p1> Hindi ka pa rehistrado? </p1> 
                             <br>
-                            <!-- <button class="btn btn-success create-button"> Create Account </button> -->
+                            <button class="btn btn-success create-button"> Create Account </button> 
                             </div>
                         </div>
                     </div>
