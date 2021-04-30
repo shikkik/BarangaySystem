@@ -42,6 +42,20 @@
                 <div class="col-sm-6 main-heading"> 
                     <h1> Barangay Services Management System</h1>
                     <p1> Designed for accessibility, now available in your barangay. </p1>
+
+                    <div class="row" style="margin-top: 2em;"> 
+                        <div class="col-sm-3"> 
+                            <img src="../BarangaySystem/icons/residents.png">
+                        </div>
+
+                        <div class="col-sm-3"> 
+                            <img src="../BarangaySystem/icons/blotter.png">
+                        </div>
+
+                        <div class="col-sm-3"> 
+                            <img src="../BarangaySystem/icons/clearance.png">
+                        </div>
+                    </div>
                 </div>
 
                 <div class="col-md-5"> 
@@ -74,7 +88,7 @@
         </div>
 
         <div class="container-fluid"> 
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora qui, provident consequatur veritatis alias quidem voluptatem impedit nesciunt quibusdam deleniti dolore, iste delectus obcaecati maxime, consequuntur velit officiis cumque illo.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora qui, provident consequatur veritatis alias quidem voluptatem impedit nesciunt quibusdam deleniti dolore, iste delectus obcaecati maxime, consequuntur velit officiis cumque illo.
         </div>
         </section>
     </body>
