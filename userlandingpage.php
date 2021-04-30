@@ -14,7 +14,7 @@
         <!-- responsive tags for screen compatibility -->
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <!-- custom css --> 
-        <link href="../BarangaySystem/customcss/pagestyle.css" rel="stylesheet" type="text/css"> 
+        <link href="../BarangaySystem/customcss/pagestyle.css" rel="stylesheet" type="text/css">
         <!-- bootstrap css --> 
         <link href="../BarangaySystem/bootstrap/css/bootstrap.css" rel="stylesheet" type="text/css">
         <!-- fontawesome icons --> 
@@ -23,16 +23,22 @@
     <body> 
         <!-- eto yung navbar -->
         <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top">
-            <a class="navbar-brand" href="#">Barangay E-Services</a>
+            <a class="navbar-brand" href="#">Barangay Sorsogon</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
+            <div class="navbar-nav ml-auto">
+      <a class="nav-item nav-link active" href="#"> <?= $userdetails['fullname'];?>  <span class="sr-only">(current)</span></a>
+      <a class="nav-item nav-link" href="logout.php"><i class="fas fa-sign-out-alt"></i></a>
+
+            </div>
+            <!-- 
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav ml-auto">
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <?= $userdetails['fullname'];?>
+                        
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" href="#">Profile</a>
@@ -40,18 +46,12 @@
                     </div>
                 </li>
                 </div>
-            </div>
+            </div> -->
         </nav>
 
 
         <section class="heading-section"> 
-
             <div class="container-fluid"> 
-
-                <div class=""> 
-
-                    <h5> Resident Applications</h5>
-                </div>
                 <div class="row"> 
                     <div class="col"> 
                         <div class="header"> 
@@ -65,6 +65,13 @@
 
 
             <div class="container"> 
+                <div class="row title-spacing">
+                    <div class="col"> 
+                        <h3 class="text-center"> Resident Applications</h3>
+                        <hr>
+                    </div> 
+                </div>
+
                 <div class="row"> 
                     <div class="col"> 
                         <div class="card"> 
@@ -81,7 +88,7 @@
                     <div class="card"> 
                             <div class="card-body text-center">
                             <img src="../BarangaySystem/icons/resident.png"> 
-                                <a href=""> <h4> Certificate of Residency</h4> </a>
+                                <a href=""> <h4> Complaint/Blotter</h4> </a>
                             </div>
                         </div>
                         
@@ -91,10 +98,17 @@
                     <div class="card"> 
                             <div class="card-body text-center"> 
                                 <img src="../BarangaySystem/icons/resident.png">
-                                <a href=""> <h4> Certificate of Indigency </h4> </a>
+                                <a href=""> <h4> Certificate of Residency </h4> </a>
                             </div>
                         </div>
                     </div>
+                </div>
+
+                <div class="row title-spacing">
+                    <div class="col"> 
+                        <h3 class="text-center"> Documents Processing </h3>
+                        <hr>
+                    </div> 
                 </div>
 
                 <div class="row card-spacing"> 
@@ -102,7 +116,7 @@
                         <div class="card"> 
                             <div class="card-body text-center"> 
                             <img src="../BarangaySystem/icons/resident.png">
-                                <a href=""> <h4> Residential ID Application</h4> </a>
+                                <a href=""> <h4> Certificate of Residency </h4> </a>
                             </div>
                         </div>
                     </div>
@@ -111,7 +125,7 @@
                     <div class="card"> 
                             <div class="card-body text-center">
                             <img src="../BarangaySystem/icons/resident.png"> 
-                                <a href=""> <h4> Certificate of Residency</h4> </a>
+                                <a href=""> <h4> Barangay Clearance </h4> </a>
                             </div>
                         </div>
                         

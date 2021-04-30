@@ -8,3 +8,16 @@
     margin-top: 2em;
     margin-bottom: 10em;
 }
+
+hr {
+    border: 0;
+    height: 1em;
+    background: #333;
+    background-image: linear-gradient(to right, #72B8AA, #56889A, #72B8AA);
+    width: 90%;
+}
+
+.title-spacing {
+    margin-top: 3em ;
+    margin-bottom: 3em ;
+}
