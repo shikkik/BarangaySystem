@@ -17,7 +17,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1 shrink-to-fit=no">
         <!-- custom css --> 
         <link href="../BarangaySystem/customcss/indexstyle.css" rel="stylesheet" type="text/css">
-        <!-- bootstrap css --> 
+        <!-- bootstrap css -->
         <link href="../BarangaySystem/bootstrap/css/bootstrap.css" rel="stylesheet" type="text/css"> 
         <!-- fontawesome icons --> 
         <script src="https://kit.fontawesome.com/67a9b7069e.js" crossorigin="anonymous"></script>
@@ -39,21 +39,24 @@
         <section class="main-section"> 
         <div class="container-fluid"> 
             <div class="row"> 
-                <div class="col-sm-6 main-heading"> 
+                <div class="col-sm-6 main-heading text-center"> 
                     <h1> Barangay Services Management System</h1>
                     <p1> Designed for accessibility, now available in your barangay. </p1>
 
-                    <div class="row" style="margin-top: 2em;"> 
+                    <div class="row justify-content-center"> 
                         <div class="col-sm-3"> 
                             <img src="../BarangaySystem/icons/residents.png">
+                                Resident Application
                         </div>
 
                         <div class="col-sm-3"> 
                             <img src="../BarangaySystem/icons/blotter.png">
+                                Blotter Request
                         </div>
 
                         <div class="col-sm-3"> 
                             <img src="../BarangaySystem/icons/clearance.png">
+                                Barangay Clearance
                         </div>
                     </div>
                 </div>
