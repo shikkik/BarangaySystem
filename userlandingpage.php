@@ -77,7 +77,7 @@
                         <div class="card"> 
                             <div class="card-body text-center"> 
                             <a href="https://github.com/shikkik">
-                                <img src="../BarangaySystem/icons/resident.png">
+                                <img src="../BarangaySystem/icons/residents.png">
                                 <h4> Residential ID Application</h4> 
                             </a>
                             </div>
@@ -87,7 +87,7 @@
                     <div class="col"> 
                     <div class="card"> 
                             <div class="card-body text-center">
-                            <img src="../BarangaySystem/icons/blotter.png"> 
+                            <img src="../BarangaySystem/icons/blotters.png"> 
                                 <a href=""> <h4> Complaint/Blotter</h4> </a>
                             </div>
                         </div>
