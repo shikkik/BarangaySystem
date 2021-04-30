@@ -26,7 +26,8 @@
     <body>
         <!-- eto yung navbar -->
         <nav class="navbar sticky-top navbar-dark bg-primary">
-            <a class="navbar-brand" href="index.php"> <img src="../BarangaySystem/icons/logo.png" width="30px" height="30px">Barangay Sorsogon </a>
+            <a class="navbar-brand" href="index.php"> <img src="../BarangaySystem/icons/logo.png" width="70px" height="70px">&nbsp; 
+            <span style="font-size: 1em;"> Barangay Sorsogon </span> </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"></button>
             <div class="collapse navbar-collapse" id="navbarNav">
               <ul class="navbar-nav ml-auto">
@@ -39,7 +40,7 @@
         <section class="main-section"> 
         <div class="container-fluid"> 
             <div class="row"> 
-                <div class="col-sm-6 main-heading"> 
+                <div class="col-sm-6 main-heading text-center" > 
                     <h1> Barangay Services Management System</h1>
                     <p1> Designed for accessibility, now available in your barangay. </p1>
 
