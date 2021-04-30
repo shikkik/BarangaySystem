@@ -72,6 +72,10 @@
                 </div>
             </div>
         </div>
+
+        <div class="container-fluid"> 
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora qui, provident consequatur veritatis alias quidem voluptatem impedit nesciunt quibusdam deleniti dolore, iste delectus obcaecati maxime, consequuntur velit officiis cumque illo.
+        </div>
         </section>
     </body>
 </html>
