@@ -12,7 +12,7 @@
         <script src="https://kit.fontawesome.com/67a9b7069e.js" crossorigin="anonymous"></script>
     </head>
 
-    <body>
+    <body >
         <!-- eto yung navbar -->
         <nav class="navbar sticky-top navbar-dark bg-primary">
             <a class="navbar-brand" href="index.php"> <img src="../BarangaySystem/icons/logo.png" width="70px" height="70px">&nbsp; 
@@ -28,9 +28,68 @@
         <div class="container">
             <div class="row">
                 <div class="col-12">
-                    <h1 class="text-center">Registration Form</h1>
-                        <div class="card">
+                <h1 class="text-center topm">Registration Form</h1>
+
+                <div class="row margin"> 
+                    <div class="col-sm-3">
+                    </div>
+                    <div class="col-6">   
+                    <div class="card">
                             <div class="card-body">
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+                                <div class="row">
+                                        <div class="col">
+                                            <label for="Email">Email </label>
+                                            <input type="email" class="form-control" id="email"  placeholder="Enter email">
+                                            <label for="FirstName " class="mtop">First Name </label>
+                                            <input type="text" class="form-control" id="fname"  placeholder="Enter First Name">
+                                            <label for="Birthday"class="mtop">Birth Day </label>
+                                            <input type="date" class="form-control" id="birthday"  placeholder="Enter Birth Day">
+                                            <label for="phone"class="mtop">Contact Number</label>
+                                            <input type="tel" class="form-control" id="phone" name="phone" placeholder="Enter Contact Number">
+                                        </div>
+
+
+
+                                        <div class="col">
+                                            <label for="password">Password</label>
+                                            <input type="password" class="form-control" id="pass" placeholder="Password">
+                                            <label for="lastname"class="mtop"> Last Name</label>
+                                            <input type="email" class="form-control" id="lname"  placeholder="Enter Last Name">
+                                            <label for="birthplace"class="mtop">Birth Place </label>
+                                            <input type="text" class="form-control" id="birthplace"  placeholder="Enter Birth Place">
+                                            <label for="nationality"class="mtop">Nationality </label>
+                                            <input type="text" class="form-control" id="nationality"  placeholder="Enter Nationality">
+                                        </div>
+
+                                </div>
+
+                                <div class="row">
+                                    <div class="col">
+                                    <label for="Address"class="mtop">Address </label>
+                                    <input type="text" class="form-control" id="address"  placeholder="Enter Address">
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                        <div class="col">
+                                            <label for="Age" class="mtop">Age </label>
+                                            <input type="number" class="form-control" id="age" placeholder="Age">
+                                            
+         
+                                        </div>
+                                        <div class="col">
+                                        <label for="exampleFormControlSelect1"class="mtop">Gender</label>
+                                            <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="flexRadioDefault" >
+                                            <label class="form-check-label" for="flexRadioDefault1">
+                                                Male
+                                            </label>
+=======
+<<<<<<< HEAD
+>>>>>>> 6666ab97e4cc8f678cfa28f9b13dd61fc337b524
                                 <form method="post">
                                     <!-- eto email tsaka password -->
                                     <div class="row">
@@ -133,8 +192,35 @@
                                                     <option>Makati</option><option>Caloocan</option>
                                                     <option>Novaliches</option><option>Mandaluyong</option>
                                                 </select>
+>>>>>>> f6304910bfab8edb1e784f662244322c8f767568
                                             </div>
+                                            <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="flexRadioDefault"  checked>
+                                            <label class="form-check-label" for="flexRadioDefault2">
+                                                Female
+                                            </label>
+                                            </div>
+                                            
                                         </div>
+<<<<<<< HEAD
+                                        <div class="col">
+                                            <label for="status"class="mtop">Status </label>
+                                            <input type="text" class="form-control" id="exampleInputEmail1"  placeholder="Enter Status">
+                                            
+                                            
+                                        </div>
+                                </div>
+                            </div>
+                        </div>
+                                </div>
+                            <div class="col-sm-3">   
+                         </div>
+                    </div>    
+                </div>
+            </div> 
+        </div>
+    </body>
+=======
                                     </div>
                                     <button class="btn btn-primary" type="submit" name="Submit"> Submit </button>
                                 </form>
@@ -146,3 +232,4 @@
         </div>
     </body>
 </html>
+>>>>>>> f6304910bfab8edb1e784f662244322c8f767568

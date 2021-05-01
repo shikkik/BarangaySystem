@@ -42,7 +42,17 @@
         <section class="main-section"> 
         <div class="container-fluid"> 
             <div class="row"> 
+<<<<<<< HEAD
+<<<<<<< HEAD
+                <div class="col-sm-6 main-heading text-center"> 
+=======
+
+<div class="container">
+                <div class="col-sm-6 main-heading text-center" > 
+>>>>>>> fe8ae08adcd9e0fd976611768775a79d2af29b5a
+=======
                 <div class="col-sm-6  text-center icon-spacing"> 
+>>>>>>> f6304910bfab8edb1e784f662244322c8f767568
                     <h1> Barangay Services Management System</h1>
                     <p1> Designed for accessibility, now available in your barangay. </p1>
                 
