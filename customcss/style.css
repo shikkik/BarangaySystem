@@ -1,10 +1,9 @@
-
 .main-section {
     margin-top: 3em;
 }
 
 .icon-spacing {
-    padding-bottom: 3em;
+    margin-top: 3em;
 }
 
 .registration-section {
@@ -14,7 +13,7 @@
 
 .create-button {
     margin-top: 2em;
-    width: 50%;
+    width: 100%;
 }
 
 
@@ -29,6 +28,12 @@
         margin-right: 1em;
         margin-bottom: 2em;
     }
+
+    .hide-icons {
+        visibility: hidden;
+        display: none;
+    }
+
 
     
 }

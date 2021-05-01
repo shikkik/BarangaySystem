@@ -16,17 +16,19 @@
         <!-- responsive tags for screen compatibility -->
         <meta name="viewport" content="width=device-width, initial-scale=1 shrink-to-fit=no">
         <!-- custom css --> 
-        <link href="../BarangaySystem/customcss/indexstyle.css" rel="stylesheet" type="text/css">
+        <link href="../BarangaySystem/customcss/style.css" rel="stylesheet" type="text/css">
         <!-- bootstrap css -->
         <link href="../BarangaySystem/bootstrap/css/bootstrap.css" rel="stylesheet" type="text/css"> 
         <!-- fontawesome icons --> 
         <script src="https://kit.fontawesome.com/67a9b7069e.js" crossorigin="anonymous"></script>
+        <!-- fontawesome icons --> 
+        <script src="../BarangaySystem/customjs/main.js" type="text/javascript"></script>
     </head>
 
     <body>
         <!-- eto yung navbar -->
         <nav class="navbar sticky-top navbar-dark bg-primary">
-            <a class="navbar-brand" href="index.php"> <img src="../BarangaySystem/icons/logo.png" width="70px" height="70px">&nbsp; 
+            <a class="navbar-brand" href="index.php"> <img src="../BarangaySystem/icons/logo.png" width="40px" height="40px">&nbsp; 
             <span style="font-size: 1em;"> Barangay Sorsogon </span> </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"></button>
             <div class="collapse navbar-collapse" id="navbarNav">
@@ -44,8 +46,8 @@
                     <h1> Barangay Services Management System</h1>
                     <p1> Designed for accessibility, now available in your barangay. </p1>
                 
-                    <div class="row justify-content-center"> 
-                        <div class="col-sm-4 icon-spacing"> 
+                    <div class="row justify-content-center icon-spacing hide-icons wrapper"> 
+                        <div class="col-sm-4"> 
                             <img src="../BarangaySystem/icons/residents.png">
                                 Resident Application
                         </div>
@@ -63,7 +65,7 @@
                 </div>
 
                 <div class="col-md-5"> 
-                    <div class="card main-card"> 
+                    <div class="card main-card wrapper"> 
                         <div class="card-body"> 
                             <form method="post"> 
                                 <label> Email </label>
@@ -83,7 +85,7 @@
                             <br>
                             <p1> Hindi ka pa rehistrado? </p1> 
                             <br>
-                            <button class="btn btn-success create-button"> Create Account </button> 
+                            <button class="btn btn-success create-button" onclick="redirectuserregi();"> Create Account </button> 
                             </div>
                         </div>
                     </div>
