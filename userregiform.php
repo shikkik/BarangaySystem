@@ -25,12 +25,13 @@
             </div>
         </nav>
 
-        <div class="container-fluid">
+        <div class="container">
             <div class="row">
                 <div class="col-12">
                     <h1 class="text-center">Registration Form</h1>
                         <div class="card">
                             <div class="card-body">
+<<<<<<< HEAD
                                 <form method="post">
                                     <div class="form-group">
                                         <label for="FormControlEmail">Email</label>
@@ -45,9 +46,31 @@
                                     <div class="form-group">
                                         <label for="FormControlName">Name</label>
                                         <input type="text" class="form-control" id="FormControlName">
+=======
+                                <form>
+                                    <div class="row">
+                                        <div class="col">
+                                            <div class="form-group">
+                                                <label for="FormControlEmail">Email</label>
+                                                <input type="email" class="form-control" id="FormControlEmail" placeholder="name@example.com">
+                                            </div>
+                                        </div>
+                                        <div class="col">
+                                            <div class="form-group">
+                                                <label for="FormControlPassword">Password</label>
+                                                <input type="password" class="form-control" id="FormControlPassword" placeholder="Password">
+                                            </div>
+                                        </div>
+>>>>>>> 6ea17c581b7da180ed89b0b72c50941ef5414f95
                                     </div>
 
                                     <div class="row">
+                                        <div class="col">
+                                            <div class="form-group">
+                                                <label for="FormControlName">Name</label>
+                                                <input type="text" class="form-control" id="FormControlName" placeholder="Enter your name">
+                                            </div>
+                                        </div>
                                         <div class="col">
                                             <div class="form-group">
                                                 <label for="FormControlSelectAge">Age</label>
@@ -69,6 +92,14 @@
                                                     <label class="form-check-label" for="exampleRadios1">Female</label>
                                                 </div>
                                             </div>
+                                        </div>     
+                                    </div>
+                                    <div class="row">
+                                        <div class="col">
+                                            <div class="form-group">
+                                                <label for="FormControlAddress">Address</label>
+                                                <input type="text" class="form-control" id="FormControlAddress" placeholder="Enter your address">
+                                            </div>
                                         </div>
 
                                         <div class="col">
@@ -76,9 +107,11 @@
                                                 <label for="FormControlSelectStatus">Status</label>
                                                 <select class="form-control" id="FormControlSelectStatus">
                                                     <option>Single</option><option>In a relationship</option><option>Engaged</option><option>Married</option><option>Windowed</option><option>Divorced</option>
+                                                </select>
                                             </div>
                                         </div>
                                     </div>
+<<<<<<< HEAD
 
 
 
@@ -105,6 +138,33 @@
 
 
 
+=======
+                                    <div class="row">
+                                        <div class="col">
+                                            <div class="form-group">
+                                                <label for="FormControlContactNo">Contact No.</label>
+                                                <input type="text" class="form-control" id="FormControlContactNo">
+                                            </div>
+                                        </div>
+                                        <div class="col">
+                                            <div class="form-group">
+                                                <label for="FormControlBirthDate">BirthDate</label>
+                                                <input type="date" class="form-control" id="FormControlBirthDate">
+                                            </div>
+                                        </div>
+                                        <div class="col">
+                                            <div class="form-group">
+                                                <label for="FormControlBirthPlace">BirthPlace</label>
+                                                <select class="form-control" id="FormControlSelectStatus">
+                                                    <option>Manila</option><option>Quezon City</option>
+                                                    <option>Makati</option><option>Caloocan</option>
+                                                    <option>Novaliches</option><option>Mandaluyong</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <button class="btn btn-primary" type="submit" name="Submit"> Submit </button>
+>>>>>>> 6ea17c581b7da180ed89b0b72c50941ef5414f95
                                 </form>
                             </div>
                         </div>
