@@ -1,14 +1,9 @@
-body {
-    background-color: #fff !important;
-}
-
 .main-section {
-    margin-top: 4em;
+    margin-top: 3em;
 }
 
-.main-heading {
-    margin-top: 5em;
-    padding: 2em;
+.icon-spacing {
+    margin-top: 3em;
 }
 
 .registration-section {
@@ -18,7 +13,7 @@ body {
 
 .create-button {
     margin-top: 2em;
-    width: 50%;
+    width: 100%;
 }
 
 
@@ -33,6 +28,12 @@ body {
         margin-right: 1em;
         margin-bottom: 2em;
     }
+
+    .hide-icons {
+        visibility: hidden;
+        display: none;
+    }
+
 
     
 }

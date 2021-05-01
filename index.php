@@ -44,7 +44,7 @@
                 <div class="col-sm-6 main-heading text-center"> 
 =======
 
-<div class="container" >
+<div class="container">
                 <div class="col-sm-6 main-heading text-center" > 
 >>>>>>> fe8ae08adcd9e0fd976611768775a79d2af29b5a
                     <h1> Barangay Services Management System</h1>
@@ -97,7 +97,7 @@
             </div>
         </div>
 
-        </div>      
+        
         </section>
     </body>
 </html>
