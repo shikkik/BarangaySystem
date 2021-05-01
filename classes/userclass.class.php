@@ -11,7 +11,7 @@
             $password = $_POST['password']; 
         
             $connection = $this->openConn();
-            $stmt = $connection->prepare("SELECT * FROM dummyresident WHERE email = ? AND password = ?");
+            $stmt = $connection->prepare("SELECT * FROM tbl_residents WHERE email = ? AND password = ?");
             $stmt->Execute([$username, $password]);
             $user = $stmt->fetch();
             $total = $stmt->rowCount();  
