@@ -1,11 +1,12 @@
 <?php 
-    require_once('mainclass.class.php');
+
+    require_once('main.class.php');
 
     class ResidentClass extends BMSClass {
 
         //authentication method for residents to enter
-        public function userlogin() {
-        if(isset($_POST['userlogin'])) {
+        public function residentlogin() {
+        if(isset($_POST['residentlogin'])) {
 
             $username = $_POST['email'];
             $password = $_POST['password']; 
@@ -19,7 +20,7 @@
                 //calls the set_userdata function 
                 if($total > 0) {
                     $this->set_userdata($user);
-                    header('Location: userlandingpage.php');
+                    header('Location: resident_homepage.php');
                 }
                 
                 else {
@@ -27,7 +28,11 @@
                 }
             }
         }
+
+        public function create_resident() {
+
+        }
     }
 
-    $userbms = new ResidentClass();
+    $residentbms = new ResidentClass();
 ?>

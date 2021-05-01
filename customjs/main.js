@@ -1,3 +1,3 @@
-function redirectuserregi() {
-    window.location.href = "userregiform.php";
+function trying() {
+    window.location.href = "resident_registration.php";
 }

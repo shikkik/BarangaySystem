@@ -1,4 +1,5 @@
 <?php 
+
 class BMSClass {
 
     //access modifiers para sa connection ng mysql database
@@ -49,7 +50,7 @@ class BMSClass {
             //calls the set_userdata function 
             if($total > 0) {
                 $this->set_userdata($user);
-                header('Location: admindashboard.php');
+                header('Location: admin_dashboard.php');
             }
             
             else {
@@ -78,7 +79,9 @@ class BMSClass {
         //eto si userdata yung mag s set ng name mo tsaka role/access habang ikaw ay nag b browse at gumagamit ng store management
         $_SESSION['userdata'] = array(
             "fullname" => $array['fname']. " ".$array['lname'],
-            "role" => $array['role']
+            "role" => $array['role'],
+            "currentage" => $array['age']
+
         );
         return $_SESSION['userdata'];
     }

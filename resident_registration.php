@@ -1,3 +1,10 @@
+<?php 
+     require('classes/resident.class.php');
+     
+     $residentbms->create_resident();
+
+?>
+
 <!DOCTYPE html> 
 <html> 
     <head> 
@@ -8,7 +15,7 @@
         <link href="../BarangaySystem/customcss/regformstyle.css" rel="stylesheet" type="text/css">
         <!-- bootstrap css --> 
         <link href="../BarangaySystem/bootstrap/css/bootstrap.css" rel="stylesheet" type="text/css"> 
-        <!-- fontawesome icons --> 
+        <!-- fontawesome icons -->
         <script src="https://kit.fontawesome.com/67a9b7069e.js" crossorigin="anonymous"></script>
     </head>
 

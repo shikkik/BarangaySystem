@@ -4,7 +4,7 @@
     }
 
     //include('autoloader.php');
-    require('classes/mainclass.class.php');
+    require('classes/main.class.php');
     $bms->login();
 
 ?>

@@ -4,8 +4,8 @@
     }
 
     //include('autoloader.php');
-    require('classes/userclass.class.php');
-    $userbms->userlogin();
+    require('classes/resident.class.php');
+    $residentbms->residentlogin();
 
 ?>
 
@@ -77,7 +77,7 @@
                                 <input type="password" class="form-control" name="password" placeholder="Username" required>
                                 <br>
                                 <br>
-                                <button class="btn btn-primary" type="submit" name="userlogin"> Log-in </button>
+                                <button class="btn btn-primary" type="submit" name="residentlogin"> Log-in </button>
                             </form>
                             <hr>
                             <div class="registration-section"> 
@@ -85,14 +85,13 @@
                             <br>
                             <p1> Hindi ka pa rehistrado? </p1> 
                             <br>
-                            <button class="btn btn-success create-button" onclick="redirectuserregi();"> Create Account </button> 
+                            <button class="btn btn-success create-button" onclick="trying();"> Create Account </button> 
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-
         
         </section>
     </body>

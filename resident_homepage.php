@@ -1,9 +1,8 @@
 <?php 
-    require('classes/mainclass.class.php');
-    require('classes/userclass.class.php');
+    require('classes/main.class.php');
+    require('classes/resident.class.php');
     
     $userdetails = $bms->get_userdata();
-    //print_r($userdetails);
 ?>
 
 <!DOCTYPE html> 
@@ -136,6 +135,10 @@
             </div>
         </section>
 
-        <script src="../BarangaySystem/bootstrap/js/bootstrap.bundle.min.js" type="text/javascript"> </script>
+        <?php 
+            print_r($userdetails);
+        ?>
+
+        <script src="../BarangaySystem/bootstrap/js/bootstrap.bundle.js" type="text/javascript"> </script>
     </body>
 </html>
