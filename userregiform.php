@@ -31,19 +31,22 @@
                     <h1 class="text-center">Registration Form</h1>
                         <div class="card">
                             <div class="card-body">
-                                <form>
+                                <form method="post">
                                     <div class="form-group">
                                         <label for="FormControlEmail">Email</label>
                                         <input type="email" class="form-control" id="FormControlEmail" placeholder="name@example.com">
                                     </div>
+
                                     <div class="form-group">
                                         <label for="FormControlPassword">Password</label>
                                         <input type="password" class="form-control" id="FormControlPassword" placeholder="Password">
                                     </div>
+
                                     <div class="form-group">
                                         <label for="FormControlName">Name</label>
-                                        <input type="name" class="form-control" id="FormControlName">
+                                        <input type="text" class="form-control" id="FormControlName">
                                     </div>
+
                                     <div class="row">
                                         <div class="col">
                                             <div class="form-group">
@@ -53,6 +56,7 @@
                                                 </select>
                                             </div>
                                         </div>
+
                                         <div class="col">
                                             <div class="form-group">
                                                 <label for="FormControlSex">Sex</label>
@@ -66,6 +70,7 @@
                                                 </div>
                                             </div>
                                         </div>
+
                                         <div class="col">
                                             <div class="form-group">
                                                 <label for="FormControlSelectStatus">Status</label>
@@ -74,17 +79,38 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="row">
-                                        <div class="col">
-                                            <div class="form-group">
-                                                <label for="FormControlAddress">Address</label>
-                                                <input type="name" class="form-control" id="FormControlAddress">
-                                            </div>
+
+
+
+                                    <div class="row"> 
+                                        <div class="col"> 
+
+                                        </div>
+
+                                        <div class="col"> 
+
                                         </div>
                                     </div>
+
+                                    <div class="row"> 
+                                        <div class="col"> 
+
+                                        </div>
+
+                                        <div class="col"> 
+
+                                        </div>
+                                    </div>
+
+
+
+
                                 </form>
                             </div>
                         </div>
-                </div>
-            </div> 
+                    </div>
+                </div> 
+            </div>
         </div>
+    </body>
+</html>

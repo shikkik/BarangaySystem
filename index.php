@@ -40,26 +40,22 @@
         <section class="main-section"> 
         <div class="container-fluid"> 
             <div class="row"> 
-<<<<<<< HEAD
-                <div class="col-sm-6 main-heading text-center"> 
-=======
-                <div class="col-sm-6 main-heading text-center" > 
->>>>>>> fe8ae08adcd9e0fd976611768775a79d2af29b5a
+                <div class="col-sm-6  text-center icon-spacing"> 
                     <h1> Barangay Services Management System</h1>
                     <p1> Designed for accessibility, now available in your barangay. </p1>
-
+                
                     <div class="row justify-content-center"> 
-                        <div class="col-sm-3"> 
+                        <div class="col-sm-4 icon-spacing"> 
                             <img src="../BarangaySystem/icons/residents.png">
                                 Resident Application
                         </div>
 
-                        <div class="col-sm-3"> 
+                        <div class="col-sm-4"> 
                             <img src="../BarangaySystem/icons/blotter.png">
                                 Blotter Request
                         </div>
 
-                        <div class="col-sm-3"> 
+                        <div class="col-sm-4"> 
                             <img src="../BarangaySystem/icons/clearance.png">
                                 Barangay Clearance
                         </div>

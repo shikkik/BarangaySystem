@@ -1,14 +1,10 @@
-body {
-    background-color: #fff !important;
-}
 
 .main-section {
-    margin-top: 4em;
+    margin-top: 3em;
 }
 
-.main-heading {
-    margin-top: 5em;
-    padding: 2em;
+.icon-spacing {
+    padding-bottom: 3em;
 }
 
 .registration-section {
