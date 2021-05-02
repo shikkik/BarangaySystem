@@ -2,7 +2,7 @@
 
 class BMSClass {
 
-    //access modifiers para sa connection ng mysql database
+    //pag s set ng database connection na inherited sa child classes
     protected $server = "mysql:host=localhost;dbname=bms";
     protected $user = "root";
     protected $pass = "";
@@ -13,7 +13,7 @@ class BMSClass {
     public function show_404()
     {
         http_response_code(404);
-        echo "Hindi ka admin bawal dito";
+        echo "Page is currently unavailable";
         die;
     }
 
@@ -34,22 +34,22 @@ class BMSClass {
         $this->con = null;
     }
 
-    //authentication method for administrator to enter
+    //authentication function para sa administrator
     public function login() {
         if(isset($_POST['adminlogin'])) {
 
             $username = $_POST['username'];
-            $password = $_POST['password']; 
+            $password = $_POST['password'];
         
             $connection = $this->openConn();
             $stmt = $connection->prepare("SELECT * FROM testadmin WHERE username = ? AND pass = ?");
             $stmt->Execute([$username, $password]);
-            $user = $stmt->fetch();
+            $user = $stmt->fetch(); //i f fetch niya yung data na gagamitin para sa session handling
             $total = $stmt->rowCount();  
         
-            //calls the set_userdata function 
+            
             if($total > 0) {
-                $this->set_userdata($user);
+                $this->set_userdata($user); //i start niya yung session tas gagamitin yung naka store na name at role
                 header('Location: admin_dashboard.php');
             }
             
@@ -60,35 +60,18 @@ class BMSClass {
         }
     }
 
+    //eto yung function na mag e end ng session tas i l logout ka 
     public function logout(){
         if(!isset($_SESSION)) {
             session_start();
         }
         $_SESSION['userdata'] = null;
-        unset($_SESSION['userdata']);
-    }
-
-     //eto yung condition na mag s set userdata na gagamiting pagkakakilala sayo sa buong session kapag nag login in ka
-     public function set_userdata($array) {
-
-        //i ch check nito kung naka set naba yung session, kapag hindi pa naka set i r run niya yung session_start();
-        if(!isset($_SESSION)) {
-            session_start();
-        }
-
-        //eto si userdata yung mag s set ng name mo tsaka role/access habang ikaw ay nag b browse at gumagamit ng store management
-        $_SESSION['userdata'] = array(
-            "fullname" => $array['fname']. " ".$array['lname'],
-            "role" => $array['role'],
-            "currentage" => $array['age']
-
-        );
-        return $_SESSION['userdata'];
+        unset($_SESSION['userdata']); 
     }
 
     // etong method na get_userdata() kukuha ng session mo na 'userdata' mo na i identify sino yung naka login sa site 
     public function get_userdata(){
-        
+    
         //i ch check niya ulit kung naka start na ba session o hindi, kapag hindi pa ay i s start niya para surebol
         if(!isset($_SESSION)) {
             session_start();
@@ -106,6 +89,23 @@ class BMSClass {
         }
     }
 
+    //eto yung condition na mag s set userdata na gagamiting pagkakakilala sayo sa buong session kapag nag login in ka
+    public function set_userdata($array) {
+
+        //i ch check nito kung naka set naba yung session, kapag hindi pa naka set i r run niya yung session_start();
+        if(!isset($_SESSION)) {
+            session_start();
+        }
+
+        //eto si userdata yung mag s set ng name mo tsaka role/access habang ikaw ay nag b browse at gumagamit ng store management
+        $_SESSION['userdata'] = array(
+            "fullname" => $array['fname']. " ".$array['lname'],
+            "role" => $array['role']
+        );
+        return $_SESSION['userdata'];
+    }
+
+    //eto yung function na mag bibigay restriction sa mga admin pages
     public function validate_admin(){
         $userdetails = $this->get_userdata();
 
@@ -122,6 +122,6 @@ class BMSClass {
     }
 }
 
-$bms = new BMSClass(); //access modifier to call outside of its class
+$bms = new BMSClass(); //variable to call outside of its class
 
 ?>
