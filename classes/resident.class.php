@@ -30,7 +30,6 @@
         }
 
         public function create_resident() {
-
         }
     }
 

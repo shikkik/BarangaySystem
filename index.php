@@ -16,7 +16,7 @@
         <!-- responsive tags for screen compatibility -->
         <meta name="viewport" content="width=device-width, initial-scale=1 shrink-to-fit=no">
         <!-- custom css --> 
-        <link href="../BarangaySystem/customcss/style.css" rel="stylesheet" type="text/css">
+        <link href="../BarangaySystem/customcss/indexstyle.css" rel="stylesheet" type="text/css">
         <!-- bootstrap css -->
         <link href="../BarangaySystem/bootstrap/css/bootstrap.css" rel="stylesheet" type="text/css"> 
         <!-- fontawesome icons --> 
@@ -41,31 +41,18 @@
         <!-- This is the heading and card section --> 
         <section class="main-section"> 
         <div class="container-fluid"> 
-            <div class="row"> 
-                <div class="col-sm-6 main-heading text-center" > 
-                    <h1> Barangay Services Management System</h1>
-                    <p1> Designed for accessibility, now available in your barangay. </p1>
-                
-                    <div class="row justify-content-center icon-spacing hide-icons wrapper"> 
-                        <div class="col-sm-4"> 
-                            <img src="../BarangaySystem/icons/residents.png">
-                                Resident Application
-                        </div>
-
-                        <div class="col-sm-4"> 
-                            <img src="../BarangaySystem/icons/blotter.png">
-                                Blotter Request
-                        </div>
-
-                        <div class="col-sm-4"> 
-                            <img src="../BarangaySystem/icons/clearance.png">
-                                Barangay Clearance
-                        </div>
+            <div class="row">
+                <div class="col-sm"></div>
+                    <div class="col-sm main-heading text-center" > 
+                        <h1> Barangay Information Management System</h1>
+                        <p1> Designed for accessibility, now available in your barangay. </p1>
                     </div>
-                </div>
-
-                <div class="col-md-5"> 
-                    <div class="card main-card wrapper"> 
+                <div class="col-sm"></div>
+            </div>
+                <div class="row">
+                <div class="col-sm"></div>
+                <div class="col-sm"> 
+                    <div class="card main-card wrapper mtop"> 
                         <div class="card-body"> 
                             <form method="post"> 
                                 <label> Email </label>
@@ -74,7 +61,7 @@
                                 <br> 
                                 <label> Password </label>
                                 <br> 
-                                <input type="password" class="form-control" name="password" placeholder="Username" required>
+                                <input type="password" class="form-control" name="password" placeholder="Password" required>
                                 <br>
                                 <br>
                                 <button class="btn btn-primary" type="submit" name="residentlogin"> Log-in </button>
@@ -90,8 +77,11 @@
                         </div>
                     </div>
                 </div>
-            </div>
+                <div class="col-sm"></div>
+                </div>
+                          
         </div>
+
         
         </section>
     </body>
