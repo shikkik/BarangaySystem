@@ -4,8 +4,9 @@
     }
 
     //include('autoloader.php');
-    require('classes/resident.class.php');
-    $residentbms->residentlogin();
+    require('classes/main.class.php');
+    $bms->login();
+    
 
 ?>
 
@@ -64,7 +65,7 @@
                                 <input type="password" class="form-control" name="password" placeholder="Password" required>
                                 <br>
                                 <br>
-                                <button class="btn btn-primary" type="submit" name="residentlogin"> Log-in </button>
+                                <button class="btn btn-primary" type="submit" name="login"> Log-in </button>
                             </form>
                             <hr>
                             <div class="registration-section"> 
