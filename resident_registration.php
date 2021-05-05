@@ -1,8 +1,8 @@
 <?php 
-     require('classes/resident.class.php');
-     
-     $residentbms->create_resident();
+     require('classes/main.class.php');
+     $data = $bms->get_userdata();
 
+     
 ?>
 
 <!DOCTYPE html> 
@@ -35,9 +35,9 @@
         <div class="container"  style="margin-top: 4em;">
             <div class="row">
                 <div class="col-12">
-                <h1 class="text-center">Registration Form</h1>
+                    <h1 class="text-center">Registration Form</h1>
 
-                <div class="row margin mtop"> 
+                    <div class="row margin mtop"> 
                     <div class="col-sm-2"> </div>
                     <div class="col-8">   
                         <div class="card mbottom">
@@ -88,28 +88,20 @@
                                             Male
                                             </label>
                                         </div>
-
                                         <div class="form-check">
                                             <input class="form-check-input" type="radio" name="flexRadioDefault"  checked>
                                             <label class="form-check-label" for="flexRadioDefault2">
-                                            Female
+                                                Female
                                             </label>
                                         </div>  
-
-                                        div class="col">
+                                    </div>      
+                                    
+                                    <div class="col">
                                         <label for="status"class="mtop">Status </label>
                                         <input type="text" class="form-control" id="exampleInputEmail1"  placeholder="Enter Status">
                                     </div>
-                                    </div>        
                                 </div>
 
-                                <
-                                    <
-                                </div>
-
-                                <br>
-                                <br>
-                                
                                 <div class="row mtop"> 
                                     <div class="col">   
                                         <button class="btn btn-primary" type="submit" name="Submit"> Submit </button>
@@ -118,7 +110,6 @@
                             </div>
                         </div>
                     </div> 
-
                     <div class="col-sm-2"> </div>
                 </div>
             </div>

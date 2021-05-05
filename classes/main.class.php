@@ -52,7 +52,7 @@ class BMSClass {
                 if($user['role'] == 'administrator') {
                     $this->set_userdata($user);
                     header('Location: admin_dashboard.php');
-                    
+                    return (0);
                 }
 
                 elseif($user['role'] != 'administrator') {
@@ -60,26 +60,31 @@ class BMSClass {
                     $stmt->Execute([$email, $password]);
                     $user = $stmt->fetch();
                    
-                    if($user['role'] != 'user') {
+                    if($user['role'] == 'user') {
+                        $this->set_userdata($user);
+                        header('Location: resident_registration.php');
+                        return(0);
+                    }
+
+                    elseif($user['role'] != 'user') {
                         $stmt = $connection->prepare("SELECT * FROM tbl_resident WHERE email = ? AND password = ?");
                         $stmt->Execute([$email, $password]);
                         $user = $stmt->fetch();
 
-                        $this->set_userdata($user);
-                        header('Location: resident_homepage.php');
-
-                        return(0);
-                        
+                        if($user['role'] == 'resident') {
+                            $this->set_userdata($user);
+                            header('Location: resident_homepage.php');
+                            return(0);
+                        }
                     }
 
-                    $this->set_userdata($user);
-                    header('Location: resident_homepage.php');
-                   
-
+                   else {
+                       echo "Invalid Email or Password";
+                   }
                 }
 
                 else {
-                    echo "Login failed";
+                    echo "Invalid Email or Password";
                 }
             
             }

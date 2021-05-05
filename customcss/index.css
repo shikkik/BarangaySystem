@@ -1,11 +1,7 @@
 .main-section {
     margin-top: 3em;
-    text-align: center;
-    
    
 }
-
-
 
 .mtop {
     margin-top: 2em;
@@ -13,7 +9,7 @@
 }
 .icon-spacing {
     margin-top: 3em;
-}
+}   
 
 .registration-section {
     text-align: center;
@@ -21,8 +17,14 @@
 }
 
 .create-button {
-    margin-top: 2em;
+    margin-top: 1em;
     width: 100%;
+}
+
+.login-button {
+    width: 70% !important;
+    border-radius: 20px !important;
+    margin-left: 15% !important;
 }
 
 
