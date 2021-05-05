@@ -1,0 +1,59 @@
+.main-section {
+    margin-top: 3em;
+    text-align: center;
+    
+   
+}
+
+
+
+.mtop {
+    margin-top: 2em;
+    margin-bottom: 5em;
+}
+.icon-spacing {
+    margin-top: 3em;
+}
+
+.registration-section {
+    text-align: center;
+    justify-items: center;
+}
+
+.create-button {
+    margin-top: 2em;
+    width: 100%;
+}
+
+
+ /* Extra small devices (phones, 600px and down) */
+ @media only screen and (max-width: 600px) {
+    .main-section {
+        margin-top: 0;
+    }
+    .main-heading {
+        justify-content: center;
+        margin-left: 1em;
+        margin-right: 1em;
+        margin-bottom: 2em;
+    }
+
+    .hide-icons {
+        visibility: hidden;
+        display: none;
+    }
+
+
+    
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) and (max-width: 800px){
+  
+    
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px){
+
+}

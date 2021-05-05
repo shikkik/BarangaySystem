@@ -95,14 +95,16 @@
                                             Female
                                             </label>
                                         </div>  
-                                    </div>        
-                                </div>
 
-                                <div class="row"> 
-                                    <div class="col">
+                                        div class="col">
                                         <label for="status"class="mtop">Status </label>
                                         <input type="text" class="form-control" id="exampleInputEmail1"  placeholder="Enter Status">
                                     </div>
+                                    </div>        
+                                </div>
+
+                                <
+                                    <
                                 </div>
 
                                 <br>
