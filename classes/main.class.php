@@ -62,7 +62,7 @@ class BMSClass {
                    
                     if($user['role'] == 'user') {
                         $this->set_userdata($user);
-                        header('Location: resident_registration.php');
+                        header('Location: testingcrud.php');
                         return(0);
                     }
 
@@ -125,6 +125,7 @@ class BMSClass {
 
         //eto si userdata yung mag s set ng name mo tsaka role/access habang ikaw ay nag b browse at gumagamit ng store management
         $_SESSION['userdata'] = array(
+            "emailadd" => $array['email'],
             "fullname" => $array['lname']. " ".$array['fname']. " ".$array['mi'],
             "role" => $array['role']
         );

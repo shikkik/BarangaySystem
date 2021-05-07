@@ -9,12 +9,12 @@
             
             if (isset($userdetails)) {
     
-                if($userdetails['role'] != 'user' && $userdetails['role'] != 'administrator') {
-                    $this->show_404();
+                if($userdetails['role'] == 'user' || $userdetails['role'] == 'administrator') {
+                    return $userdetails;
                 }
     
                 else {
-                    return $userdetails;
+                    $this->show_404();
                 }
             }
         }
@@ -53,17 +53,34 @@
                     
                     $stmt->Execute([$email, $password, $lname, $fname, $mi, $age, $sex, $address, $contact, $position, $role, $addedby]);
     
-                    echo "Resident Account Added";
+                    echo "User Account Added";
                 }
     
                 else {
-                    echo "Email Account already exists";
+                    echo "User Account already exists";
                 }
             }
         }
 
+        public function view_staff() {
+            $connection = $this->openConn();
+            $stmt = $connection->prepare("SELECT * FROM tbl_user") ;
+            $stmt->execute();
+            $view = $stmt->fetchAll();
+            $total = $stmt->rowCount();
+
+            //eto yung condition na i ch check kung may laman si products at i re return niya kapag meron
+            if($total > 0 )  {
+                return $view;
+            }
+            else{
+                return false;
+            }
+        }
+
         public function update_staff() {
-            if(isset($_POST['add_user'])) {
+            if(isset($_POST['update_user'])) {
+
 
                 $email = $_POST['email']; 
                 $password = $_POST['password'];
@@ -76,23 +93,31 @@
                 $contact = $_POST['contact'];
                 $position = $_POST['position'];
                 $role = $_POST['role'];
-                $addedby = $_POST['addedby'];
-    
-                if ($this->check_staff($email) != 1) {
-                    $connection = $this->openConn();
-                    $stmt = $connection->prepare("UPDATE tbl_user SET (`email`,`password`,`lname`,`fname`,
-                    `mi`, `age`, `sex`, `address`, `contact`, `position`, `role`, `addedby`) 
-                    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
-                    
-                    $stmt->Execute([$email, $password, $lname, $fname, $mi, $age, $sex, $address, $contact, $position, $role, $addedby]);
-    
-                    echo "Resident Account Added";
+                $addedby = $_POST['addedby']; 
+
+                
+                if ($this->check_staff($email) == 1) {
+                
+                $connection = $this->openConn();
+                $stmt = $connection->prepare("UPDATE tbl_user SET email =?, password =?, lname =?,
+                fname =?, mi =?, age =?, sex =?, address =?, contact =?, position =?, role =? WHERE email = ?");
+                $stmt->Execute([$password, $lname, $fname, $mi, $age, $sex, $address, $contact, $position, $role, $addedby, $email]);
+
+                echo "User Account Updated";
                 }
-    
+
                 else {
-                    echo "Email Account already exists";
+                    echo "hindi gumana badi";
                 }
             }
+        }
+
+        public function delete_staff() {
+            $connection = $this->openConn();
+            $stmt = $connection->prepare("DELETE * FROM tbl_user WHERE email = ?") ;
+            $stmt->execute();
+
+            echo "User Account Deleted";
         }
         /*
         //authentication method for residents to enter
