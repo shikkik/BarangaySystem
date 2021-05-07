@@ -53,21 +53,16 @@ class BMSClass {
                     $this->set_userdata($user);
                     header('Location: admin_dashboard.php');
                     return (0);
-
-
                 }
 
                 elseif($user['role'] != 'administrator') {
                     $stmt = $connection->prepare("SELECT * FROM tbl_user WHERE email = ? AND password = ?");
                     $stmt->Execute([$email, $password]);
                     $user = $stmt->fetch();
-
-                    $message = "Invalid Email or Password";
-                    echo "<script type='text/javascript'>alert('$message');</script>";
                    
                     if($user['role'] == 'user') {
                         $this->set_userdata($user);
-                        header('Location: resident_registration.php');
+                        header('Location: testingcrud.php');
                         return(0);
                     }
 
@@ -76,21 +71,18 @@ class BMSClass {
                         $stmt->Execute([$email, $password]);
                         $user = $stmt->fetch();
 
-                        $message = "Invalid Email or Password";
-                        echo "<script type='text/javascript'>alert('$message');</script>";
-
                         if($user['role'] == 'resident') {
                             $this->set_userdata($user);
                             header('Location: resident_homepage.php');
                             return(0);
                         }
-                    }
-                }
 
-                else {
-                    echo "Invalid Email or Password";
-                }
-            
+                        else {
+                            $message = "Invalid Email or Password";
+                            echo "<script type='text/javascript'>alert('$message');</script>";
+                        }
+                    }
+                }        
             }
         }
 
@@ -133,6 +125,7 @@ class BMSClass {
 
         //eto si userdata yung mag s set ng name mo tsaka role/access habang ikaw ay nag b browse at gumagamit ng store management
         $_SESSION['userdata'] = array(
+            "emailadd" => $array['email'],
             "fullname" => $array['lname']. " ".$array['fname']. " ".$array['mi'],
             "role" => $array['role']
         );
