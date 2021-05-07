@@ -1,9 +1,100 @@
 <?php 
 
-    require_once('main.class.php');
+    require_once('classes/main.class.php');
 
     class StaffClass extends BMSClass {
 
+        public function validate_user(){
+            $userdetails = $this->get_userdata();
+            
+            if (isset($userdetails)) {
+    
+                if($userdetails['role'] != 'user' && $userdetails['role'] != 'administrator') {
+                    $this->show_404();
+                }
+    
+                else {
+                    return $userdetails;
+                }
+            }
+        }
+
+        public function check_staff($email) {
+            $connection = $this->openConn();
+            $stmt = $connection->prepare("SELECT * FROM tbl_user WHERE email = ?");
+            $stmt->Execute([$email]);
+            $total = $stmt->rowCount(); 
+    
+            return $total;
+        }
+
+        public function create_staff(){
+            
+            if(isset($_POST['add_user'])) {
+
+                $email = $_POST['email']; 
+                $password = $_POST['password'];
+                $lname = $_POST['lname'];
+                $fname = $_POST['fname'];
+                $mi = $_POST['mi'];
+                $age = $_POST['age'];
+                $sex = $_POST['sex'];
+                $address = $_POST['address'];
+                $contact = $_POST['contact'];
+                $position = $_POST['position'];
+                $role = $_POST['role'];
+                $addedby = $_POST['addedby'];
+    
+                if ($this->check_staff($email) != 1) {
+                    $connection = $this->openConn();
+                    $stmt = $connection->prepare("INSERT INTO tbl_user (`email`,`password`,`lname`,`fname`,
+                    `mi`, `age`, `sex`, `address`, `contact`, `position`, `role`, `addedby`) 
+                    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+                    
+                    $stmt->Execute([$email, $password, $lname, $fname, $mi, $age, $sex, $address, $contact, $position, $role, $addedby]);
+    
+                    echo "Resident Account Added";
+                }
+    
+                else {
+                    echo "Email Account already exists";
+                }
+            }
+        }
+
+        public function update_staff() {
+            if(isset($_POST['add_user'])) {
+
+                $email = $_POST['email']; 
+                $password = $_POST['password'];
+                $lname = $_POST['lname'];
+                $fname = $_POST['fname'];
+                $mi = $_POST['mi'];
+                $age = $_POST['age'];
+                $sex = $_POST['sex'];
+                $address = $_POST['address'];
+                $contact = $_POST['contact'];
+                $position = $_POST['position'];
+                $role = $_POST['role'];
+                $addedby = $_POST['addedby'];
+    
+                if ($this->check_staff($email) != 1) {
+                    $connection = $this->openConn();
+                    $stmt = $connection->prepare("UPDATE tbl_user SET (`email`,`password`,`lname`,`fname`,
+                    `mi`, `age`, `sex`, `address`, `contact`, `position`, `role`, `addedby`) 
+                    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+                    
+                    $stmt->Execute([$email, $password, $lname, $fname, $mi, $age, $sex, $address, $contact, $position, $role, $addedby]);
+    
+                    echo "Resident Account Added";
+                }
+    
+                else {
+                    echo "Email Account already exists";
+                }
+            }
+        }
+        /*
         //authentication method for residents to enter
         public function stafflogin() {
         if(isset($_POST['stafflogin'])) {
@@ -30,10 +121,10 @@
         }
 
 
-
+        */
 
 
     }
 
-    $stafftbms = new StaffClass();
+    $staffbms = new StaffClass();
 ?>
