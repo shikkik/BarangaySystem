@@ -1,9 +1,8 @@
 <?php 
     require('classes/resident.class.php');
+
     $view = $residentbms->view_single_resident($email);
     $userdetails = $residentbms->get_userdata();
-    print_r($userdetails);
-    $email = $_GET['email'];
 ?>
 
 <!DOCTYPE html> 
@@ -23,13 +22,13 @@
     <body> 
         <!-- eto yung navbar -->
         <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top">
-            <a class="navbar-brand" href="#">Barangay Sorsogon</a>
+            <a class="navbar-brand" href="resident_homepage.php">Barangay Sorsogon</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
             <div class="navbar-nav ml-auto">
-                <a class="nav-item nav-link active" href="#"> <?= $userdetails['fullname'];?>  <span class="sr-only">(current)</span></a>
+                <a class="nav-item nav-link" href="resident_profile.php?EMAIL=<?php echo $view['email'];?>"> view </a>
                 <a class="nav-item nav-link" href="logout.php"><i class="fas fa-sign-out-alt"></i></a>
             </div>
         </nav>
@@ -47,20 +46,15 @@
                                 <div class="row">
                                     <div class="col">
                                     <h5> Name: <?= $userdetails['fullname'];?></h5>
-                                    <h5> Age: <?= $view['age'];?></h5>
-                                    <h5> Age: <?= $view['sex'];?></h5>
-                                    <h5> Email: <?= $view['email'];?></h5>
+                                   
+                                    <h5> <?php print_r($view);?> </h5>
                                     </div>
 
                                     <div class="col">
                                     
                                     </div>
                                 </div>
-                                <div class="row mtop"> 
-                                    <div class="col">   
-                                        <button class="btn btn-primary" type="submit" name="Submit"> Save </button>
-                                    </div>
-                                </div>
+                                
                             </div>
                         </div>
                     </div> 

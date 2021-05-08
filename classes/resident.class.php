@@ -71,11 +71,11 @@
             
         }
 
-        public function check_resident($email) {
+        public function check_resident($id) {
 
             $connection = $this->openConn();
-            $stmt = $connection->prepare("SELECT * FROM tbl_resident WHERE email = ?");
-            $stmt->Execute([$email]);
+            $stmt = $connection->prepare("SELECT * FROM tbl_resident WHERE id_user = ?");
+            $stmt->Execute([$id]);
             $total = $stmt->rowCount(); 
     
             return $total;
@@ -102,18 +102,16 @@
             }
         }
 
-        public function view_single_resident($email){
+        public function view_single_resident(){
+
+            $email = $_GET['EMAIL'];
             
-            $age = $_POST['age'];
-            $sex = $_POST['sex'];
-            $email = $_POST['email'];
-
             $connection = $this->openConn();
-            $stmt = $connection->prepare("SELECT age, sex, email FROM tbl_resident where email = ?");
-            $stmt->execute([$email]);
-            $view = $stmt->fetch($age, $sex, $email);
+            $stmt = $connection->prepare("SELECT * FROM tbl_resident where email = '$email'");
+            $stmt->execute();
+            $view = $stmt->fetch(); 
             $total = $stmt->rowCount();
-
+ 
             //eto yung condition na i ch check kung may laman si products at i re return niya kapag meron
             if($total > 0 )  {
                 return $view;

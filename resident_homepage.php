@@ -28,7 +28,7 @@
             </button>
 
             <div class="navbar-nav ml-auto">
-                <a class="nav-item nav-link active" href="resident_profile.php"> <?= $userdetails['fullname'];?>  <span class="sr-only">(current)</span></a>
+                <a class="nav-item nav-link active" href="resident_profile.php>?id=<?= $userdetails['email'];?>"> <?= $userdetails['fullname'];?>  <span class="sr-only">(current)</span></a>
                 <a class="nav-item nav-link" href="logout.php"><i class="fas fa-sign-out-alt"></i></a>
             </div>
         </nav>
