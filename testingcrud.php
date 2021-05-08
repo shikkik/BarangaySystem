@@ -4,7 +4,7 @@
     $staffbms->validate_user();
     $staffbms->create_staff();
     $staffbms->update_staff();
-    $staffbms->delete_staff();
+    /*$staffbms->delete_staff(); */
     $view = $staffbms->view_staff();
     $userdetails = $staffbms->get_userdata();
 

@@ -71,6 +71,22 @@
     
             return $total;
         }
+
+        public function view_resident() {
+            $connection = $this->openConn();
+            $stmt = $connection->prepare("SELECT * FROM tbl_resident") ;
+            $stmt->execute();
+            $view = $stmt->fetchAll();
+            $total = $stmt->rowCount();
+
+            //eto yung condition na i ch check kung may laman si products at i re return niya kapag meron
+            if($total > 0 )  {
+                return $view;
+            }
+            else{
+                return false;
+            }
+        }
     }
 
     $residentbms = new ResidentClass();

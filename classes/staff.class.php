@@ -112,13 +112,14 @@
             }
         }
 
-        public function delete_staff() {
+       /* public function delete_staff() {
             $connection = $this->openConn();
             $stmt = $connection->prepare("DELETE * FROM tbl_user WHERE email = ?") ;
             $stmt->execute();
 
             echo "User Account Deleted";
         }
+        /*
         /*
         //authentication method for residents to enter
         public function stafflogin() {
