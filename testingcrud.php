@@ -57,11 +57,11 @@
                                 <td> <?= $view['address'];?> </td>
                                 <td> <?= $view['contact'];?> </td>
                                 <td> <?= $view['position'];?> </td>
-                                <td> <?= $userdetails['role'];?> </td>
+                                <td> <?= $view['role'];?> </td>
                                 <td> <?= $userdetails['fullname'];?> </td>
-                                <td> 
-                                <a href="../BarangaySystem/classes/staff.class.php?id=delete_user=<?php echo $view['email']?>"
-                                    class="btn btn-danger" name="delete_user"> Remove </a> 
+                                <td>   
+                                    <button class="btn btn-danger" name="delete_user" value="<?php echo $view['email']?>">  Remove </button>
+                              
                                 </td>
                             </tr>
                             <?php }?>
@@ -124,9 +124,9 @@
                     <br> 
                     <label> role </label>
                     <br>
-                    <input type="text" placeholder="" name="role" value="<?= $userdetails['role'];?>"> 
+                    <input type="text" placeholder="" name="role" value="<?= $view['role'];?>"> 
                     <br> 
-                    <label> role </label>
+                    <label> added by </label>
                     <br>
                     <input type="text" placeholder="" name="addedby" value="<?= $userdetails['fullname'];?>"> 
                     <br>
@@ -189,9 +189,9 @@
                     <br> 
                     <label> role </label>
                     <br>
-                    <input type="text" placeholder="" name="role" value="<?= $userdetails['role'];?>"> 
+                    <input type="text" placeholder="" name="role" value="<?= $view['role'];?>"> 
                     <br> 
-                    <label> role </label>
+                    <label> added by </label>
                     <br>
                     <input type="text" placeholder="" name="addedby" value="<?= $userdetails['fullname'];?>"> 
                     <br>

@@ -82,10 +82,36 @@
         }
 
         public function view_resident(){
+            
+            $age = $_POST['age'];
+            $sex = $_POST['sex'];
+            $email = $_POST['email'];
+
             $connection = $this->openConn();
-            $stmt = $connection->prepare("SELECT * FROM tbl_resident");
+            $stmt = $connection->prepare("SELECT age, sex, email FROM tbl_resident");
             $stmt->execute();
-            $view = $stmt->fetchAll();
+            $view = $stmt->fetch($age, $sex, $email);
+            $total = $stmt->rowCount();
+
+            //eto yung condition na i ch check kung may laman si products at i re return niya kapag meron
+            if($total > 0 )  {
+                return $view;
+            }
+            else{
+                return false;
+            }
+        }
+
+        public function view_single_resident($email){
+            
+            $age = $_POST['age'];
+            $sex = $_POST['sex'];
+            $email = $_POST['email'];
+
+            $connection = $this->openConn();
+            $stmt = $connection->prepare("SELECT age, sex, email FROM tbl_resident where email = ?");
+            $stmt->execute([$email]);
+            $view = $stmt->fetch($age, $sex, $email);
             $total = $stmt->rowCount();
 
             //eto yung condition na i ch check kung may laman si products at i re return niya kapag meron
