@@ -60,7 +60,7 @@
                     <div class="col"> 
                         <div class="card"> 
                             <div class="card-body text-center"> 
-                            <a href="https://github.com/shikkik">
+                            <a href="animal.php">
                                 <img src="../BarangaySystem/icons/animalreg.png">
                                 <h4> Animal Registry & Welfare </h4> 
                             </a>
