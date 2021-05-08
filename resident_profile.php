@@ -1,8 +1,8 @@
 <?php 
-    require('classes/main.class.php');
+    require('classes/resident.class.php');
     $view = $residentbms->view_resident();
     $userdetails = $residentbms->get_userdata();
-
+    print_r($userdetails);
 ?>
 
 <!DOCTYPE html> 
@@ -43,28 +43,15 @@
                     <div class="col-12">   
                         <div class="card mbottom">
                             <div class="card-body">
-                            <?php if(is_array($view)) {?>
-                            <?php foreach($view as $view) {?>
-                            
-
                                 <div class="row">
                                     <div class="col">
-                                    <h5> Name</h5>
-                                    <h5><?= $view['lname'];?></h5>
-                                    
-                                    
-                                    
+                                    <h5> Name: <?= $userdetails['fullname'];?></h5>
                                     </div>
 
                                     <div class="col">
                                     
                                     </div>
                                 </div>
-                                <?php }?>
-                        <?php } ?>
-
-                            
-
                                 <div class="row mtop"> 
                                     <div class="col">   
                                         <button class="btn btn-primary" type="submit" name="Submit"> Save </button>
@@ -84,7 +71,7 @@
         </section>
 
         <?php 
-            print_r($userdetails);
+           
         ?>
 
         <script src="../BarangaySystem/bootstrap/js/bootstrap.bundle.js" type="text/javascript"> </script>
