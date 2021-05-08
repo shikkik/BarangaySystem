@@ -12,7 +12,7 @@
         <!-- responsive tags for screen compatibility -->
         <meta name="viewport" content="width=device-width, initial-scale=1 shrink-to-fit=no">
         <!-- custom css --> 
-        <link href="../BarangaySystem/customcss/regformstyle.css" rel="stylesheet" type="text/css">
+        <link href="../BarangaySystem/customcss/regiformstyle.css" rel="stylesheet" type="text/css">
         <!-- bootstrap css --> 
         <link href="../BarangaySystem/bootstrap/css/bootstrap.css" rel="stylesheet" type="text/css"> 
         <!-- fontawesome icons -->
@@ -38,17 +38,32 @@
                 <h1 class="text-center">Registration Form</h1>
 
                 <div class="row margin mtop"> 
-                    <div class="col-sm-2"> </div>
-                    <div class="col-8">   
+                    <div class="col-sm"> </div>
+                    <div class="col-10">   
                         <div class="card mbottom">
                             <div class="card-body">
 
+                            <div class="row">
+                                    <div class="col">
+                                    <label for="FirstName " >First Name </label>
+                                    <input type="text" class="form-control" id="fname"  placeholder="Enter First Name">
+                                    </div>
+
+                                    <div class="col">
+                                    <label for="middleinitial " >Middle Initial </label>
+                                        <input type="text" class="form-control width" id="mi"  placeholder="Enter Middle Initial">
+                                    </div>
+
+                                    <div class="col">
+                                    <label for="lastname"> Last Name</label>
+                                        <input type="email" class="form-control" id="lname"  placeholder="Enter Last Name">
+                                    </div>
+                                </div>
+
                                 <div class="row">
                                     <div class="col">
-                                        <label for="Email">Email </label>
+                                        <label for="Email" class="mtop">Email </label>
                                         <input type="email" class="form-control" id="email"  placeholder="Enter email">
-                                        <label for="FirstName " class="mtop">First Name </label>
-                                        <input type="text" class="form-control" id="fname"  placeholder="Enter First Name">
                                         <label for="Birthday"class="mtop">Birth Day </label>
                                         <input type="date" class="form-control" id="birthday"  placeholder="Enter Birth Day">
                                         <label for="phone"class="mtop">Contact Number</label>
@@ -56,16 +71,16 @@
                                     </div>
 
                                     <div class="col">
-                                        <label for="password">Password</label>
+                                        <label for="password" class="mtop">Password</label>
                                         <input type="password" class="form-control" id="pass" placeholder="Password">
-                                        <label for="lastname"class="mtop"> Last Name</label>
-                                        <input type="email" class="form-control" id="lname"  placeholder="Enter Last Name">
                                         <label for="birthplace"class="mtop">Birth Place </label>
                                         <input type="text" class="form-control" id="birthplace"  placeholder="Enter Birth Place">
                                         <label for="nationality"class="mtop">Nationality </label>
                                         <input type="text" class="form-control" id="nationality"  placeholder="Enter Nationality">
                                     </div>
                                 </div>
+
+                                
 
                                 <div class="row">
                                     <div class="col">
@@ -80,7 +95,7 @@
                                         <input type="number" class="form-control" id="age" placeholder="Age">
                                     </div>
 
-                                    <div class="col">
+                                    <div class="col rb">
                                         <label for="exampleFormControlSelect1"class="mtop">Gender</label>
                                         <div class="form-check">
                                             <input class="form-check-input" type="radio" name="flexRadioDefault" >
@@ -88,24 +103,21 @@
                                             Male
                                             </label>
                                         </div>
-
-                                        <div class="form-check">
+                                        <div class="form-check ">
                                             <input class="form-check-input" type="radio" name="flexRadioDefault"  checked>
                                             <label class="form-check-label" for="flexRadioDefault2">
                                             Female
                                             </label>
-                                        </div>  
-
-                                        div class="col">
-                                        <label for="status"class="mtop">Status </label>
-                                        <input type="text" class="form-control" id="exampleInputEmail1"  placeholder="Enter Status">
+                                        </div>
                                     </div>
+
+                                    <div class="col">
+                                        <label for="status"class="mtop">Status </label>
+                                        <input type="text" class="form-control" id="exampleInputEmail1"  placeholder="Enter Status">       
                                     </div>        
                                 </div>
 
-                                <
-                                    <
-                                </div>
+                               
 
                                 <br>
                                 <br>
@@ -119,7 +131,7 @@
                         </div>
                     </div> 
 
-                    <div class="col-sm-2"> </div>
+                    <div class="col-sm"> </div>
                 </div>
             </div>
         </div>
