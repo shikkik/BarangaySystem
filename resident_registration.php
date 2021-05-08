@@ -37,34 +37,35 @@
                 <div class="col-12">
                     <h1 class="text-center">Registration Form</h1>
 
-<<<<<<< HEAD
                 <div class="row margin mtop"> 
                     <div class="col-sm"> </div>
                     <div class="col-10">   
-=======
-                    <div class="row margin mtop"> 
-                    <div class="col-sm-2"> </div>
-                    <div class="col-8">   
->>>>>>> 84420764b1f641b0b9ed17446386e269daa97ae7
                         <div class="card mbottom">
                             <div class="card-body">
 
                             <div class="row">
                                     <div class="col">
-                                    <label for="FirstName " >First Name </label>
-                                    <input type="text" class="form-control" id="fname"  placeholder="Enter First Name">
+                                    <label for="lastname"> Last Name</label>
+                                    <input type="email" class="form-control" id="lname"  placeholder="Enter Last Name">
                                     </div>
 
                                     <div class="col">
                                     <label for="middleinitial " >Middle Initial </label>
-                                        <input type="text" class="form-control width" id="mi"  placeholder="Enter Middle Initial">
+                                    <input type="text" class="form-control width" id="mi"  placeholder="Enter Middle Initial">
                                     </div>
+                            </div>
+                                   
+                            <div class="row">
+                                    <div class="col">
+                                    <label for="FirstName "class="mtop" >First Name </label>
+                                    <input type="text" class="form-control" id="fname"  placeholder="Enter First Name">
+                                    </div> 
 
                                     <div class="col">
-                                    <label for="lastname"> Last Name</label>
-                                        <input type="email" class="form-control" id="lname"  placeholder="Enter Last Name">
-                                    </div>
-                                </div>
+                                    <label for="status"class="mtop">Status </label>
+                                    <input type="text" class="form-control" id="exampleInputEmail1"  placeholder="Enter Status">       
+                                    </div>       
+                            </div>
 
                                 <div class="row">
                                     <div class="col">
@@ -109,36 +110,16 @@
                                             Male
                                             </label>
                                         </div>
-<<<<<<< HEAD
                                         <div class="form-check ">
-=======
-                                        <div class="form-check">
->>>>>>> 84420764b1f641b0b9ed17446386e269daa97ae7
                                             <input class="form-check-input" type="radio" name="flexRadioDefault"  checked>
                                             <label class="form-check-label" for="flexRadioDefault2">
                                                 Female
                                             </label>
-<<<<<<< HEAD
                                         </div>
-                                    </div>
-
-                                    <div class="col">
-                                        <label for="status"class="mtop">Status </label>
-                                        <input type="text" class="form-control" id="exampleInputEmail1"  placeholder="Enter Status">       
-                                    </div>        
+                                    </div>       
                                 </div>
 
                                
-=======
-                                        </div>  
-                                    </div>      
-                                    
-                                    <div class="col">
-                                        <label for="status"class="mtop">Status </label>
-                                        <input type="text" class="form-control" id="exampleInputEmail1"  placeholder="Enter Status">
-                                    </div>
-                                </div>
->>>>>>> 84420764b1f641b0b9ed17446386e269daa97ae7
 
                                 <div class="row mtop"> 
                                     <div class="col">   
@@ -148,12 +129,8 @@
                             </div>
                         </div>
                     </div> 
-<<<<<<< HEAD
 
                     <div class="col-sm"> </div>
-=======
-                    <div class="col-sm-2"> </div>
->>>>>>> 84420764b1f641b0b9ed17446386e269daa97ae7
                 </div>
             </div>
         </div>
