@@ -3,6 +3,7 @@
     $view = $residentbms->view_resident();
     $userdetails = $residentbms->get_userdata();
     print_r($userdetails);
+    print_r($view);
 ?>
 
 <!DOCTYPE html> 
@@ -46,6 +47,8 @@
                                 <div class="row">
                                     <div class="col">
                                     <h5> Name: <?= $userdetails['fullname'];?></h5>
+                                    <h5> Gender: <?= $view['sex'];?></h5>
+                                    <h5> Birthday: <?= $userdetails['fullname'];?></h5>
                                     </div>
 
                                     <div class="col">
