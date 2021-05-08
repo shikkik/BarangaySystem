@@ -28,24 +28,9 @@
             </button>
 
             <div class="navbar-nav ml-auto">
-      <a class="nav-item nav-link active" href="#"> <?= $userdetails['fullname'];?>  <span class="sr-only">(current)</span></a>
-      <a class="nav-item nav-link" href="logout.php"><i class="fas fa-sign-out-alt"></i></a>
-
+                <a class="nav-item nav-link active" href="#"> <?= $userdetails['fullname'];?>  <span class="sr-only">(current)</span></a>
+                <a class="nav-item nav-link" href="logout.php"><i class="fas fa-sign-out-alt"></i></a>
             </div>
-            <!-- 
-            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                <div class="navbar-nav ml-auto">
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="#">Profile</a>
-                        <a class="dropdown-item" href="#">Logout</a>
-                    </div>
-                </li>
-                </div>
-            </div> -->
         </nav>
 
 
@@ -76,21 +61,65 @@
                         <div class="card"> 
                             <div class="card-body text-center"> 
                             <a href="https://github.com/shikkik">
-                                <img src="../BarangaySystem/icons/residents.png">
-                                <h4> Residential ID Application</h4> 
+                                <img src="../BarangaySystem/icons/animalreg.png">
+                                <h4> Animal Registry & Welfare </h4> 
                             </a>
                             </div>
                         </div>
                     </div>
 
                     <div class="col"> 
-                    <div class="card"> 
+                        <div class="card"> 
                             <div class="card-body text-center">
-                            <img src="../BarangaySystem/icons/blotter.png"> 
-                                <a href=""> <h4> Complaint/Blotter</h4> </a>
+                                <img src="../BarangaySystem/icons/tbdots.png"> 
+                                <a href=""> <h4> TB DOTS Consultation</h4> 
+                            </a>
                             </div>
                         </div>
-                        
+                    </div>
+
+                    <div class="col"> 
+                        <div class="card"> 
+                            <div class="card-body text-center">
+                                <img src="../BarangaySystem/icons/vaccine.png"> 
+                                <a href=""> <h4> Vaccination Programs </h4> 
+                            </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="row card-spacing"> 
+                    <div class="col"> 
+                        <div class="card"> 
+                            <div class="card-body text-center"> 
+                            <a href="https://github.com/shikkik">
+                                <img src="../BarangaySystem/icons/motherchild.png">
+                                <h4> Mother & Child Check-Up</h4> 
+                            </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col"> 
+                        <div class="card"> 
+                            <div class="card-body text-center">
+                                <img src="../BarangaySystem/icons/familyplan.png"> 
+                                <a href=""> <h4> Family Planning </h4> 
+                            </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col"> 
+                        <div class="card"> 
+                            <div class="card-body text-center">
+                                <img src="../BarangaySystem/icons/complain.png"> 
+                                <a href=""> <h4> Complain/Blotter Report</h4> 
+                            </a>
+                            </div>
+                        </div>
                     </div>
                 </div>
 

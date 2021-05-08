@@ -1,11 +1,14 @@
 <?php 
+    error_reporting(E_ALL ^ E_WARNING);
     if(!isset($_SESSION)) {
         session_start();
     }
 
     //include('autoloader.php');
-    require('classes/resident.class.php');
-    $residentbms->residentlogin();
+    require('classes/main.class.php');
+    $bms->login();
+    
+    
 
 ?>
 
@@ -16,7 +19,7 @@
         <!-- responsive tags for screen compatibility -->
         <meta name="viewport" content="width=device-width, initial-scale=1 shrink-to-fit=no">
         <!-- custom css --> 
-        <link href="../BarangaySystem/customcss/indexstyle.css" rel="stylesheet" type="text/css">
+        <link href="../BarangaySystem/customcss/index.css" rel="stylesheet" type="text/css">
         <!-- bootstrap css -->
         <link href="../BarangaySystem/bootstrap/css/bootstrap.css" rel="stylesheet" type="text/css"> 
         <!-- fontawesome icons --> 
@@ -26,17 +29,7 @@
     </head>
 
     <body>
-        <!-- eto yung navbar -->
-        <nav class="navbar sticky-top navbar-dark bg-primary">
-            <a class="navbar-brand" href="index.php"> <img src="../BarangaySystem/icons/logo.png" width="40px" height="40px">&nbsp; 
-            <span style="font-size: 1em;"> Barangay Sorsogon </span> </a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"></button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-              <ul class="navbar-nav ml-auto">
-                <li class="nav-item"> <a href=""> </a> </li>
-              </ul>
-            </div>
-        </nav>
+
 
         <!-- This is the heading and card section --> 
         <section class="main-section"> 
@@ -44,7 +37,7 @@
             <div class="row">
                 <div class="col-sm"></div>
                     <div class="col-sm main-heading text-center" > 
-                        <h1> Barangay Information Management System</h1>
+                        <h3> Barangay Information Management System</h3>
                         <p1> Designed for accessibility, now available in your barangay. </p1>
                     </div>
                 <div class="col-sm"></div>
@@ -52,19 +45,19 @@
                 <div class="row">
                 <div class="col-sm"></div>
                 <div class="col-sm"> 
-                    <div class="card main-card wrapper mtop"> 
+                    <div class="card main-card mtop"> 
                         <div class="card-body"> 
                             <form method="post"> 
                                 <label> Email </label>
                                 <br>
                                 <input type="email" class="form-control" name="email" placeholder="E-mail" required> 
-                                <br> 
+                                <br>
                                 <label> Password </label>
-                                <br> 
+                                <br>
                                 <input type="password" class="form-control" name="password" placeholder="Password" required>
                                 <br>
-                                <br>
-                                <button class="btn btn-primary" type="submit" name="residentlogin"> Log-in </button>
+                                
+                                <button class="btn btn-primary login-button" type="submit" name="login"> Log-in </button>
                             </form>
                             <hr>
                             <div class="registration-section"> 
@@ -82,7 +75,6 @@
                           
         </div>
 
-        
         </section>
     </body>
 </html>

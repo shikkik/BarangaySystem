@@ -3,7 +3,7 @@
 class BMSClass {
 
     //pag s set ng database connection na inherited sa child classes
-    protected $server = "mysql:host=localhost;dbname=bms";
+    protected $server = "mysql:host=localhost;dbname=bmis";
     protected $user = "root";
     protected $pass = "";
     protected $options = array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION, PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC);
@@ -34,31 +34,57 @@ class BMSClass {
         $this->con = null;
     }
 
-    //authentication function para sa administrator
-    public function login() {
-        if(isset($_POST['adminlogin'])) {
+        //authentication function para sa administrator
+        public function login() {
+            if(isset($_POST['login'])) {
 
-            $username = $_POST['username'];
-            $password = $_POST['password'];
-        
-            $connection = $this->openConn();
-            $stmt = $connection->prepare("SELECT * FROM testadmin WHERE username = ? AND pass = ?");
-            $stmt->Execute([$username, $password]);
-            $user = $stmt->fetch(); //i f fetch niya yung data na gagamitin para sa session handling
-            $total = $stmt->rowCount();  
-        
+                $email = $_POST['email'];
+                $password = $_POST['password'];
             
-            if($total > 0) {
-                $this->set_userdata($user); //i start niya yung session tas gagamitin yung naka store na name at role
-                header('Location: admin_dashboard.php');
+                $connection = $this->openConn();
+
+                
+                $stmt = $connection->prepare("SELECT * FROM tbl_admin WHERE email = ? AND password = ?");
+                $stmt->Execute([$email, $password]);
+                $user = $stmt->fetch();
+                //$total = $stmt->rowCount();
+
+                if($user['role'] == 'administrator') {
+                    $this->set_userdata($user);
+                    header('Location: admin_dashboard.php');
+                    return (0);
+                }
+
+                elseif($user['role'] != 'administrator') {
+                    $stmt = $connection->prepare("SELECT * FROM tbl_user WHERE email = ? AND password = ?");
+                    $stmt->Execute([$email, $password]);
+                    $user = $stmt->fetch();
+                   
+                    if($user['role'] == 'user') {
+                        $this->set_userdata($user);
+                        header('Location: testingcrud.php');
+                        return(0);
+                    }
+
+                    elseif($user['role'] != 'user') {
+                        $stmt = $connection->prepare("SELECT * FROM tbl_resident WHERE email = ? AND password = ?");
+                        $stmt->Execute([$email, $password]);
+                        $user = $stmt->fetch();
+
+                        if($user['role'] == 'resident') {
+                            $this->set_userdata($user);
+                            header('Location: resident_homepage.php');
+                            return(0);
+                        }
+
+                        else {
+                            $message = "Invalid Email or Password";
+                            echo "<script type='text/javascript'>alert('$message');</script>";
+                        }
+                    }
+                }        
             }
-            
-            else {
-                echo "Login Failed";
-            }
-        
         }
-    }
 
     //eto yung function na mag e end ng session tas i l logout ka 
     public function logout(){
@@ -99,7 +125,8 @@ class BMSClass {
 
         //eto si userdata yung mag s set ng name mo tsaka role/access habang ikaw ay nag b browse at gumagamit ng store management
         $_SESSION['userdata'] = array(
-            "fullname" => $array['fname']. " ".$array['lname'],
+            "emailadd" => $array['email'],
+            "fullname" => $array['lname']. " ".$array['fname']. " ".$array['mi'],
             "role" => $array['role']
         );
         return $_SESSION['userdata'];
