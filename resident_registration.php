@@ -45,25 +45,25 @@
 
                             <div class="row">
                                     <div class="col">
-                                    <label for="lastname"> Last Name</label>
-                                    <input type="email" class="form-control" id="lname"  placeholder="Enter Last Name">
+                                        <label for="lastname"> Last Name</label>
+                                        <input type="email" class="form-control" id="lname"  placeholder="Enter Last Name">
                                     </div>
 
                                     <div class="col">
-                                    <label for="middleinitial " >Middle Initial </label>
-                                    <input type="text" class="form-control width" id="mi"  placeholder="Enter Middle Initial">
+                                        <label for="middleinitial " >Middle Initial </label>
+                                        <input type="text" class="form-control width" id="mi"  placeholder="Enter Middle Initial">
                                     </div>
                             </div>
                                    
                             <div class="row">
                                     <div class="col">
-                                    <label for="FirstName "class="mtop" >First Name </label>
-                                    <input type="text" class="form-control" id="fname"  placeholder="Enter First Name">
+                                        <label for="FirstName "class="mtop" >First Name </label>
+                                        <input type="text" class="form-control" id="fname"  placeholder="Enter First Name">
                                     </div> 
 
                                     <div class="col">
-                                    <label for="status"class="mtop">Status </label>
-                                    <input type="text" class="form-control" id="exampleInputEmail1"  placeholder="Enter Status">       
+                                        <label for="status"class="mtop">Status </label>
+                                        <input type="text" class="form-control" id="exampleInputEmail1"  placeholder="Enter Status">       
                                     </div>       
                             </div>
 
@@ -98,8 +98,8 @@
 
                                 <div class="row">
                                     <div class="col">
-                                        <label for="Age" class="mtop">Age </label>
-                                        <input type="number" class="form-control" id="age" placeholder="Age">
+                                    <label for="Age" class="mtop">Age </label>
+                                    <input type="number" class="form-control" id="age" placeholder="Age">
                                     </div>
 
                                     <div class="col rb">
@@ -118,8 +118,6 @@
                                         </div>
                                     </div>       
                                 </div>
-
-                               
 
                                 <div class="row mtop"> 
                                     <div class="col">   
