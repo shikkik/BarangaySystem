@@ -22,7 +22,7 @@
     <body> 
         <!-- eto yung navbar -->
         <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top">
-            <a class="navbar-brand" href="#">Barangay Sorsogon</a>
+            <a class="navbar-brand" href="resident_homepage.php">Barangay Sorsogon</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -60,7 +60,7 @@
                     <div class="col"> 
                         <div class="card"> 
                             <div class="card-body text-center"> 
-                            <a href="https://github.com/shikkik">
+                            <a href="animal.php">
                                 <img src="../BarangaySystem/icons/animalreg.png">
                                 <h4> Animal Registry & Welfare </h4> 
                             </a>

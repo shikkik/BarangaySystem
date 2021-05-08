@@ -65,7 +65,7 @@ body {
     <body> 
         <!-- eto yung navbar -->
         <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top">
-            <a class="navbar-brand" href="#">Barangay Sorsogon</a>
+            <a class="navbar-brand" href="resident_homepage.php">Barangay Sorsogon</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>

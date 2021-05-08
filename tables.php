@@ -48,6 +48,7 @@ Accounts Tables
     PRIMARY KEY (id_resident)) ENGINE = InnoDB;
 
     ALTER TABLE tbl_resident ADD addedby VARCHAR(255) NOT NULL AFTER role;
+    ALTER TABLE `tbl_resident` CHANGE `addedby` `addedby` VARCHAR(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL;
 
 
 Resident Application Tables

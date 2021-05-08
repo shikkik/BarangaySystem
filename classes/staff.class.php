@@ -1,6 +1,6 @@
 <?php 
 
-    require_once('classes/main.class.php');
+    require('main.class.php');
 
     class StaffClass extends BMSClass {
 
@@ -45,7 +45,7 @@
                 $role = $_POST['role'];
                 $addedby = $_POST['addedby'];
     
-                if ($this->check_staff($email) != 1) {
+                if ($this->check_staff($email) == 0) {
                     $connection = $this->openConn();
                     $stmt = $connection->prepare("INSERT INTO tbl_user (`email`,`password`,`lname`,`fname`,
                     `mi`, `age`, `sex`, `address`, `contact`, `position`, `role`, `addedby`) 
@@ -64,7 +64,7 @@
 
         public function view_staff() {
             $connection = $this->openConn();
-            $stmt = $connection->prepare("SELECT * FROM tbl_user") ;
+            $stmt = $connection->prepare("SELECT * FROM tbl_user");
             $stmt->execute();
             $view = $stmt->fetchAll();
             $total = $stmt->rowCount();
@@ -112,12 +112,31 @@
             }
         }
 
-       /* public function delete_staff() {
-            $connection = $this->openConn();
-            $stmt = $connection->prepare("DELETE * FROM tbl_user WHERE email = ?") ;
-            $stmt->execute();
+        public function delete_staff() {
+            if(isset($_POST['delete_user'])) {
 
-            echo "User Account Deleted";
+                $email = $_POST['email'];
+
+                $connection = $this->openConn();
+                $stmt = $connection->prepare("DELETE FROM tbl_user WHERE email = :email");
+                //$stmt = $connection->prepare("DELETE FROM tbl_user WHERE email = '" .$_GET['email'] ."'");
+                $stmt->execute(array(": email"=>$email));
+                $result = $stmt->rowCount();
+    
+                if ($result == 0) {
+                    
+                    echo "User Account Deleted";
+                }
+                
+                else {
+                    echo "hindi gumana badi";
+                }
+    
+            }
+
+           
+            
+            
         }
         /*
         /*
