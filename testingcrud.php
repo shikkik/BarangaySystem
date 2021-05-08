@@ -1,5 +1,6 @@
 <?php 
     require('classes/staff.class.php');
+    //$email = $_GET['email'];
 
     $staffbms->validate_user();
     $staffbms->create_staff();
@@ -7,7 +8,7 @@
     $staffbms->delete_staff();
     $view = $staffbms->view_staff();
     $userdetails = $staffbms->get_userdata();
-
+    
 ?>
 
 
@@ -24,6 +25,7 @@
             <div class="row"> 
                 <div class="col-xl-12"> 
                     <table class="table table-dark">
+                    <form method="post">
                         <thead> 
                             <tr>
                                 <th> Email </th>
@@ -38,6 +40,7 @@
                                 <th> Position </th>
                                 <th> Role </th>
                                 <th> Added By </th>
+                                <th> Actions </th>
                             </tr>
                         </thead>
                         <tbody> 
@@ -56,11 +59,12 @@
                                 <td> <?= $view['position'];?> </td>
                                 <td> <?= $userdetails['role'];?> </td>
                                 <td> <?= $userdetails['fullname'];?> </td>
+                                <td> <button class="btn btn-danger" name="delete_user" <?php echo $view['email']?>> Remove </button></td>
                             </tr>
-                        
                             <?php }?>
                         <?php } ?>
                         </tbody>
+                    </form>
                     </table>
                 </div>
             </div>

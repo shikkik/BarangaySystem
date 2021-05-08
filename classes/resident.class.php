@@ -4,6 +4,7 @@
 
     class ResidentClass extends BMSClass {
 
+        /*
         //authentication method for residents to enter
         public function residentlogin() {
         if(isset($_POST['residentlogin'])) {
@@ -28,6 +29,7 @@
                 }
             }
         }
+        */
 
         public function create_resident() {
             $email = $_POST['email'];
@@ -54,11 +56,11 @@
                 $stmt->Execute([$email, $password, $lname, $fname, $mi, $age, $sex, $status, 
                 $address, $contact, $bdate, $bplace, $nationality, $role, $addedby]);
 
-                echo "Resident Account Added";
+                echo "<script type='text/javascript'>alert('New account added');</script>";
             }
 
             else {
-                echo "Email Account already exists";
+                echo "<script type='text/javascript'>alert('Email Account already exists');</script>";
             }
         }
 
@@ -70,6 +72,10 @@
             $total = $stmt->rowCount(); 
     
             return $total;
+        }
+
+        public function view_resident(){
+            
         }
     }
 
