@@ -1,6 +1,6 @@
 <?php 
 
-    require_once('classes/main.class.php');
+    require('main.class.php');
 
     class StaffClass extends BMSClass {
 
@@ -45,7 +45,7 @@
                 $role = $_POST['role'];
                 $addedby = $_POST['addedby'];
     
-                if ($this->check_staff($email) != 1) {
+                if ($this->check_staff($email) == 0) {
                     $connection = $this->openConn();
                     $stmt = $connection->prepare("INSERT INTO tbl_user (`email`,`password`,`lname`,`fname`,
                     `mi`, `age`, `sex`, `address`, `contact`, `position`, `role`, `addedby`) 
@@ -64,25 +64,16 @@
 
         public function view_staff() {
             $connection = $this->openConn();
-            $stmt = $connection->prepare("SELECT * FROM tbl_user") ;
+            $stmt = $connection->prepare("SELECT * FROM tbl_user");
             $stmt->execute();
             $view = $stmt->fetchAll();
-            $total = $stmt->rowCount();
-
-            //eto yung condition na i ch check kung may laman si products at i re return niya kapag meron
-            if($total > 0 )  {
-                return $view;
-            }
-            else{
-                return false;
-            }
+            return $view;
+          
         }
 
         public function update_staff() {
-            if(isset($_POST['update_user'])) {
-
-
-                $email = $_POST['email']; 
+            if(isset($_POST['update_staff'])) {  
+                $email = $_GET['email']; 
                 $password = $_POST['password'];
                 $lname = $_POST['lname'];
                 $fname = $_POST['fname'];
@@ -95,30 +86,44 @@
                 $role = $_POST['role'];
                 $addedby = $_POST['addedby']; 
 
-                
-                if ($this->check_staff($email) == 1) {
-                
-                $connection = $this->openConn();
-                $stmt = $connection->prepare("UPDATE tbl_user SET email =?, password =?, lname =?,
-                fname =?, mi =?, age =?, sex =?, address =?, contact =?, position =?, role =? WHERE email = ?");
-                $stmt->Execute([$password, $lname, $fname, $mi, $age, $sex, $address, $contact, $position, $role, $addedby, $email]);
+                    $connection = $this->openConn();
+                    $stmt = $connection->prepare("UPDATE tbl_user SET password =?, lname =?,
+                    fname =?, mi =?, age =?, sex =?, address =?, contact =?, position =?, role =?, addedby =? WHERE email = ?");
+                    $stmt->execute([$email, $password, $lname, $fname, $mi, $age, $sex, $address, $contact, $position, $role, $addedby]);
 
-                echo "User Account Updated";
-                }
-
-                else {
-                    echo "hindi gumana badi";
-                }
+                    echo "User Account Updated";
+                    //header("location: testingcrud.php");
             }
         }
 
         public function delete_staff() {
-            $connection = $this->openConn();
-            $stmt = $connection->prepare("DELETE * FROM tbl_user WHERE email = ?") ;
-            $stmt->execute();
+            if(isset($_POST['delete_user'])) {
 
-            echo "User Account Deleted";
+                $email = $_POST['email'];
+
+                $connection = $this->openConn();
+                $stmt = $connection->prepare("DELETE FROM tbl_user WHERE email = :email");
+                //$stmt = $connection->prepare("DELETE FROM tbl_user WHERE email = '" .$_GET['email'] ."'");
+                $stmt->bindparam(':email', $email);
+                $stmt->execute();
+                $result = $stmt->rowCount();
+                
+                if ($result == 0) {
+                    
+                    echo "User Account Deleted";
+                }
+                
+                else {
+                    echo "hindi gumana badi";
+                }
+    
+            }
+
+           
+            
+            
         }
+        /*
         /*
         //authentication method for residents to enter
         public function stafflogin() {
