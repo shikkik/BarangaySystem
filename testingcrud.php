@@ -25,7 +25,7 @@
             <div class="row"> 
                 <div class="col-xl-12"> 
                     <table class="table table-dark">
-                    <form method="post">
+                    <form action="" method="post">
                         <thead> 
                             <tr>
                                 <th> Email </th>
@@ -59,7 +59,10 @@
                                 <td> <?= $view['position'];?> </td>
                                 <td> <?= $userdetails['role'];?> </td>
                                 <td> <?= $userdetails['fullname'];?> </td>
-                                <td> <button class="btn btn-danger" name="delete_user" <?php echo $view['email']?>> Remove </button></td>
+                                <td> 
+                                <a href="../BarangaySystem/classes/staff.class.php?id=delete_user=<?php echo $view['email']?>"
+                                    class="btn btn-danger" name="delete_user"> Remove </a> 
+                                </td>
                             </tr>
                             <?php }?>
                         <?php } ?>
@@ -194,66 +197,6 @@
                     <br>
                     <br>
                     <button class="btn btn-primary" type="submit" name="update_user"> Update </button>
-                    </form>
-                    </div>
-                </div>
-                </div>
-
-                <div class="col"> 
-                <div class="card bg-dark text-white"> 
-                    <div class="card-header"> Delete User </div>
-                    <div class="card-body"> 
-                    <form method="post">
-                    <label> Email </label>
-                    <br>
-                    <input type="email" placeholder="email" name="email">
-                    <br> 
-                    <label> Password </label>
-                    <br>
-                    <input type="password" placeholder="password" name="password">
-                    <br> 
-                    <label> Last Name </label>
-                    <br>
-                    <input type="text" placeholder="surname" name="lname"> 
-                    <br> 
-                    <label> First Name </label>
-                    <br>
-                    <input type="text" placeholder="firstname" name="fname"> 
-                    <br> 
-                    <label> middle initial </label>
-                    <br>
-                    <input type="text" placeholder="mi" name="mi"> 
-                    <br> 
-                    <label> age </label>
-                    <br>
-                    <input type="text" placeholder="age" name="age"> 
-                    <br> 
-                    <label> sex </label>
-                    <br>
-                    <input type="text" placeholder="sex" name="sex"> 
-                    <br> 
-                    <label> address </label>
-                    <br>
-                    <input type="text" placeholder="address" name="address"> 
-                    <br> 
-                    <label> contact </label>
-                    <br>
-                    <input type="text" placeholder="contact" name="contact"> 
-                    <br> 
-                    <label> position </label>
-                    <br>
-                    <input type="text" placeholder="position" name="position">
-                    <br> 
-                    <label> role </label>
-                    <br>
-                    <input type="text" placeholder="" name="role" value="<?= $userdetails['role'];?>"> 
-                    <br> 
-                    <label> role </label>
-                    <br>
-                    <input type="text" placeholder="" name="addedby" value="<?= $userdetails['fullname'];?>"> 
-                    <br>
-                    <br>
-                    <button class="btn btn-danger" type="submit" name="delete_user"> Delete </button>
                     </form>
                     </div>
                 </div>

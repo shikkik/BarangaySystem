@@ -110,7 +110,7 @@
                                         <input class="form-check-input" type="radio" name="sex">
                                         <label class="form-check-label">Male</label>
                                     </div>
-                                    <div class="form-check ">
+                                    <div class="form-check">
                                         <input class="form-check-input" type="radio" name="sex">
                                         <label class="form-check-label" for="flexRadioDefault2">Female</label>
                                     </div>

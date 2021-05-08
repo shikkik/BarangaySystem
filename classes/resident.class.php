@@ -59,7 +59,7 @@
                     $stmt->Execute([$email, $password, $lname, $fname, $mi, $age, $sex, $status, 
                     $address, $contact, $bdate, $bplace, $nationality, $role, $addedby]);
 
-                    echo "<script type='text/javascript'>alert('Account added');</script>";
+                    echo "<script type='text/javascript'>alert('Account added, you can now continue logging in');</script>";
 
                    
                 }

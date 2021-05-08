@@ -1,6 +1,6 @@
 <?php 
 
-    require_once('classes/main.class.php');
+    require('main.class.php');
 
     class StaffClass extends BMSClass {
 
@@ -118,12 +118,12 @@
                 $email = $_POST['email'];
 
                 $connection = $this->openConn();
-                $stmt = $connection->prepare("DELETE FROM tbl_user WHERE email = $email");
+                $stmt = $connection->prepare("DELETE FROM tbl_user WHERE email = :email");
                 //$stmt = $connection->prepare("DELETE FROM tbl_user WHERE email = '" .$_GET['email'] ."'");
-                $stmt->execute();
+                $stmt->execute(array(": email"=>$email));
                 $result = $stmt->rowCount();
     
-                if ($result > 0) {
+                if ($result == 0) {
                     
                     echo "User Account Deleted";
                 }
