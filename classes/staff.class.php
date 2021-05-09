@@ -67,22 +67,13 @@
             $stmt = $connection->prepare("SELECT * FROM tbl_user");
             $stmt->execute();
             $view = $stmt->fetchAll();
-            $total = $stmt->rowCount();
-
-            //eto yung condition na i ch check kung may laman si products at i re return niya kapag meron
-            if($total > 0 )  {
-                return $view;
-            }
-            else{
-                return false;
-            }
+            return $view;
+          
         }
 
         public function update_staff() {
-            if(isset($_POST['update_user'])) {
-
-
-                $email = $_POST['email']; 
+            if(isset($_POST['update_staff'])) {  
+                $email = $_GET['email']; 
                 $password = $_POST['password'];
                 $lname = $_POST['lname'];
                 $fname = $_POST['fname'];
@@ -95,20 +86,13 @@
                 $role = $_POST['role'];
                 $addedby = $_POST['addedby']; 
 
-                
-                if ($this->check_staff($email) == 1) {
-                
-                $connection = $this->openConn();
-                $stmt = $connection->prepare("UPDATE tbl_user SET email =?, password =?, lname =?,
-                fname =?, mi =?, age =?, sex =?, address =?, contact =?, position =?, role =? WHERE email = ?");
-                $stmt->Execute([$email, $password, $lname, $fname, $mi, $age, $sex, $address, $contact, $position, $role, $addedby]);
+                    $connection = $this->openConn();
+                    $stmt = $connection->prepare("UPDATE tbl_user SET password =?, lname =?,
+                    fname =?, mi =?, age =?, sex =?, address =?, contact =?, position =?, role =?, addedby =? WHERE email = ?");
+                    $stmt->execute([$email, $password, $lname, $fname, $mi, $age, $sex, $address, $contact, $position, $role, $addedby]);
 
-                echo "User Account Updated";
-                }
-
-                else {
-                    echo "hindi gumana badi";
-                }
+                    echo "User Account Updated";
+                    //header("location: testingcrud.php");
             }
         }
 

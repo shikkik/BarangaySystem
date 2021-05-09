@@ -1,8 +1,8 @@
 <?php 
-    require('classes/main.class.php');
     require('classes/resident.class.php');
-    
     $userdetails = $bms->get_userdata();
+    $view = $residentbms->view_single_resident();
+
 ?>
 
 <!DOCTYPE html> 
@@ -27,9 +27,11 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
 
+         
+
             <div class="navbar-nav ml-auto">
-                <a class="nav-item nav-link active" href="resident_profile.php>?id=<?= $userdetails['email'];?>"> <?= $userdetails['fullname'];?>  <span class="sr-only">(current)</span></a>
-                <a class="nav-item nav-link" href="logout.php"><i class="fas fa-sign-out-alt"></i></a>
+                <a class="nav-item nav-link active" href="resident_profile.php?email=<?= $view['email'];?>"> <?= $userdetails['fullname'];?> </a>
+                <a class="nav-item nav-link" href="logout.php" data-toggle="tooltip" data-placement="bottom" title="Logout"><i class="fas fa-sign-out-alt"></i></a>
             </div>
         </nav>
 
