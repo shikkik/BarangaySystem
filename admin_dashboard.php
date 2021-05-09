@@ -3,7 +3,7 @@
     $userdetails = $bms->get_userdata();
     $bms->validate_admin();
 
-    print_r($userdetails);
+    //print_r($userdetails);
 ?>
 
 <!DOCTYPE html>
@@ -33,18 +33,16 @@
 
           <!-- MAIN CARDS STARTS HERE -->
           <div class="main__cards">
-            <div class="card">
-              <i
-                class="fa fa-users fa-2x text-lightblue"
-                aria-hidden="true"
-              ></i>
+            <div class="card" style="width: 440px;">
+              <i class="fa fa-users fa-2x text-lightblue"aria-hidden="true">
+              </i>
               <div class="card_inner">
                 <p class="text-primary-p">Number of Residents</p>
                 <span class="font-bold text-title">578</span>
               </div>
             </div>
 
-            <div class="card">
+            <div class="card" style="width: 175px;">
               <i class="fa fa-male fa-2x text-red" aria-hidden="true"></i>
               <div class="card_inner">
                 <p class="text-primary-p">Male</p>
@@ -52,11 +50,8 @@
               </div>
             </div>
 
-            <div class="card">
-              <i
-                class="fa fa-female fa-2x text-yellow"
-                aria-hidden="true"
-              ></i>
+            <div class="card" style="width: 175px;">
+              <i class="fa fa-female fa-2x text-yellow"aria-hidden="true"></i>
               <div class="card_inner">
                 <p class="text-primary-p">Female</p>
                 <span class="font-bold text-title">340</span>
