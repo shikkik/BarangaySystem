@@ -1,7 +1,7 @@
 <?php 
      require('classes/resident.class.php');
     $residentbmis->create_resident();
-     //$data = $bmis->get_userdata();
+     //$data = $bms->get_userdata();
 
      
 ?>

@@ -1,7 +1,7 @@
 <?php 
     require('classes/resident.class.php');
     $userdetails = $bmis->get_userdata();
-    $view = $residentbmis->view_single_resident();
+    $view = $residentbmis->check_resident($email);
 
 ?>
 
@@ -26,6 +26,14 @@
         <nav class="navbar navbar-dark bg-primary sticky-top">
             <a class="navbar-brand" href="resident_homepage.php">Barangay Sorsogon</a>
 
+            <div class="dropdown ml-auto">
+                <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown"><?= $userdetails['fullname'];?>
+                <span class="caret"></span></button>
+                <ul class="dropdown-menu">
+                    <li><a href="resident_profile.php"> Personal Profile </a></li>
+                    <li><a href="logout.php">Logout</a></li>
+                </ul>
+            </div>
         </nav>
 
 
@@ -136,7 +144,7 @@
                     </div>
 
                     <div class="col"> 
-                    <div class="card"> 
+                        <div class="card"> 
                             <div class="card-body text-center">
                             <img src="../BarangaySystem/icons/clearance.png"> 
                                 <a href=""> <h4> Barangay Clearance </h4> </a>
