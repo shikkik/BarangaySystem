@@ -23,28 +23,8 @@
 
     <body> 
         <!-- eto yung navbar -->
-        <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top">
+        <nav class="navbar navbar-dark bg-primary sticky-top">
             <a class="navbar-brand" href="resident_homepage.php">Barangay Sorsogon</a>
-
-            <div class="dropdown" style="margin-left: 77%;">
-                <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">
-                <span class="caret"></span></button>
-                <ul class="dropdown-menu">
-                    <li><a href="#">See your Profile</a></li>
-                    <li><a href="#">Edit Profile</a></li>
-                    <li><a href="logout.php">Logout</a></li>
-                </ul>
-            </div>
-
-            <div class="navbar-nav ml-auto">
-                <a class="nav-item nav-link active" href="resident_profile.php?email=<?= $view['email'];?>"> <?= $userdetails['fullname'];?> </a>
-            </div>
-
-            <!--
-                <div class="navbar-nav ml-auto">
-                    <a class="nav-item nav-link active" href="resident_profile.php?email= </a>
-                </div>
-            -->
 
         </nav>
 

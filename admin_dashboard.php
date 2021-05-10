@@ -1,11 +1,9 @@
-
-
 <?php 
-   // require('classes/main.class.php');
-   // $userdetails = $bms->get_userdata();
-   // $bms->validate_admin();
+    require('classes/main.class.php');
+    $userdetails = $bmis->get_userdata();
+    $bmis->validate_admin();
 
-    //print_r($userdetails);
+    print_r($userdetails);
 ?>
 
 <!DOCTYPE html>
@@ -447,14 +445,14 @@
 
           <div class="sidebar__logout">
             <i class="fa fa-power-off"></i>
-            <a href="#">Log out</a>
+            <a href="logout.php">Log out</a>
           </div>
         </div>
       </div>
     </div>
     
     <?php 
-     // print_r($userdetails);
+      print_r($userdetails);
     ?>
 
     <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
