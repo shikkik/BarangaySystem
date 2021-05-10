@@ -1,10 +1,10 @@
 <?php 
     require('classes/resident.class.php');
 
-    $view = $residentbms->view_resident();
-    $residentbms->create_resident();
-    $residentbms->update_resident();
-    $residentbms->delete_resident();
+    $view = $residentbmis->view_resident();
+    $residentbmis->create_resident();
+    $residentbmis->update_resident();
+    $residentbmis->delete_resident();
    
 ?>
 

@@ -1,8 +1,8 @@
 <?php 
     require('classes/resident.class.php');
 
-    $view = $residentbms->view_single_resident($email);
-    $userdetails = $residentbms->get_userdata();
+    $view = $residentbmis->view_single_resident($email);
+    $userdetails = $residentbmis->get_userdata();
 ?>
 
 <!DOCTYPE html> 

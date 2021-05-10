@@ -1,7 +1,7 @@
 <?php 
     require('classes/resident.class.php');
-    $userdetails = $bms->get_userdata();
-    $view = $residentbms->view_single_resident();
+    $userdetails = $bmis->get_userdata();
+    $view = $residentbmis->view_single_resident();
 
 ?>
 
@@ -27,7 +27,7 @@
             <a class="navbar-brand" href="resident_homepage.php">Barangay Sorsogon</a>
 
             <div class="dropdown" style="margin-left: 77%;">
-                <button <?= $view['email'];?> <?= $userdetails['fullname'];?> class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Vincent Vilfamat
+                <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">
                 <span class="caret"></span></button>
                 <ul class="dropdown-menu">
                     <li><a href="#">See your Profile</a></li>
@@ -36,9 +36,13 @@
                 </ul>
             </div>
 
+            <div class="navbar-nav ml-auto">
+                <a class="nav-item nav-link active" href="resident_profile.php?email=<?= $view['email'];?>"> <?= $userdetails['fullname'];?> </a>
+            </div>
+
             <!--
                 <div class="navbar-nav ml-auto">
-                    <a class="nav-item nav-link active" href="resident_profile.php?email=<?= $view['email'];?>"> <?= $userdetails['fullname'];?> </a>
+                    <a class="nav-item nav-link active" href="resident_profile.php?email= </a>
                 </div>
             -->
 

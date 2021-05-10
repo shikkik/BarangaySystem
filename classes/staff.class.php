@@ -2,7 +2,7 @@
 
     require('main.class.php');
 
-    class StaffClass extends BMSClass {
+    class StaffClass extends BMISClass {
 
         public function validate_user(){
             $userdetails = $this->get_userdata();
@@ -156,5 +156,5 @@
 
     }
 
-    $staffbms = new StaffClass();
+    $staffbmis = new StaffClass();
 ?>
