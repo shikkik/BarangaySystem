@@ -2,7 +2,7 @@
 
     require_once('main.class.php');
 
-    class ResidentClass extends BMSClass {
+    class ResidentClass extends BMISClass {
 
         /*
         //authentication method for residents to enter
@@ -160,5 +160,5 @@
 
     }
 
-    $residentbms = new ResidentClass();
+    $residentbmis = new ResidentClass();
 ?>

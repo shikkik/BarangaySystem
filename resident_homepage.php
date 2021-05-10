@@ -10,6 +10,8 @@
 
     <head> 
     <title> Barangay Management System </title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
         <!-- responsive tags for screen compatibility -->
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <!-- custom css --> 
@@ -23,21 +25,28 @@
         <!-- eto yung navbar -->
         <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top">
             <a class="navbar-brand" href="resident_homepage.php">Barangay Sorsogon</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
 
-         
-
-            <div class="navbar-nav ml-auto">
-                <a class="nav-item nav-link active" href="resident_profile.php?email=<?= $view['email'];?>"> <?= $userdetails['fullname'];?> </a>
-                <a class="nav-item nav-link" href="logout.php" data-toggle="tooltip" data-placement="bottom" title="Logout"><i class="fas fa-sign-out-alt"></i></a>
+            <div class="dropdown" style="margin-left: 77%;">
+                <button <?= $view['email'];?> <?= $userdetails['fullname'];?> class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Vincent Vilfamat
+                <span class="caret"></span></button>
+                <ul class="dropdown-menu">
+                    <li><a href="#">See your Profile</a></li>
+                    <li><a href="#">Edit Profile</a></li>
+                    <li><a href="logout.php">Logout</a></li>
+                </ul>
             </div>
+
+            <!--
+                <div class="navbar-nav ml-auto">
+                    <a class="nav-item nav-link active" href="resident_profile.php?email=<?= $view['email'];?>"> <?= $userdetails['fullname'];?> </a>
+                </div>
+            -->
+
         </nav>
 
 
         <section class="heading-section"> 
-            <div class="container-fluid"> 
+            <div class="container"> 
                 <div class="row"> 
                     <div class="col"> 
                         <div class="header"> 
