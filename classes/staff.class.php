@@ -19,6 +19,32 @@
             }
         }
 
+        public function create_staff(){
+
+        }
+
+        public function view_staff(){
+
+        }
+
+        public function check_staff(){
+
+        }
+
+        public function update_staff(){
+
+        }
+        
+
+
+
+
+
+
+
+
+
+        /*
         public function check_staff($email) {
             $connection = $this->openConn();
             $stmt = $connection->prepare("SELECT * FROM tbl_user WHERE email = ?");
@@ -123,6 +149,11 @@
             
             
         }
+
+        */
+
+
+
         /*
         /*
         //authentication method for residents to enter
