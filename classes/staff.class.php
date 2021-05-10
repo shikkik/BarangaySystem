@@ -101,7 +101,7 @@
                 $connection = $this->openConn();
                 $stmt = $connection->prepare("UPDATE tbl_user SET email =?, password =?, lname =?,
                 fname =?, mi =?, age =?, sex =?, address =?, contact =?, position =?, role =? WHERE email = ?");
-                $stmt->Execute([$password, $lname, $fname, $mi, $age, $sex, $address, $contact, $position, $role, $addedby, $email]);
+                $stmt->Execute([$email, $password, $lname, $fname, $mi, $age, $sex, $address, $contact, $position, $role, $addedby]);
 
                 echo "User Account Updated";
                 }
@@ -120,9 +120,10 @@
                 $connection = $this->openConn();
                 $stmt = $connection->prepare("DELETE FROM tbl_user WHERE email = :email");
                 //$stmt = $connection->prepare("DELETE FROM tbl_user WHERE email = '" .$_GET['email'] ."'");
-                $stmt->execute(array(": email"=>$email));
+                $stmt->bindparam(':email', $email);
+                $stmt->execute();
                 $result = $stmt->rowCount();
-    
+                
                 if ($result == 0) {
                     
                     echo "User Account Deleted";

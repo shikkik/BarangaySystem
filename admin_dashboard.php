@@ -26,7 +26,7 @@
     <body> 
     <div class="wrapper">
         <!-- Sidebar -->
-        <nav class="bg-dark bg-primary"id="sidebar">
+        <nav class="bg-primary"id="sidebar">
             <div class="sidebar-header">
                 <h3>Bootstrap Sidebar</h3>
             </div>

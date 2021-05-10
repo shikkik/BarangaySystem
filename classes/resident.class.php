@@ -81,11 +81,12 @@
             return $total;
         }
 
-        public function view_resident(){
+        public function view_resident($email){
+
             $connection = $this->openConn();
-            $stmt = $connection->prepare("SELECT * FROM tbl_resident");
-            $stmt->execute();
-            $view = $stmt->fetchAll();
+            $stmt = $connection->prepare("SELECT * FROM tbl_resident WHERE email = ?");
+            $stmt->execute($email);
+            $view = $stmt->fetch();
             $total = $stmt->rowCount();
 
             //eto yung condition na i ch check kung may laman si products at i re return niya kapag meron
@@ -96,6 +97,23 @@
                 return false;
             }
         }
+
+        public function view_single_resident($emailadd){
+            $connection = $this->openConn();
+            $stmt = $connection->prepare("SELECT age, sex, status FROM (SELECT * FROM products WHERE email = ?)");
+            $stmt->execute([$emailadd]);
+            $view = $stmt->fetch();
+            $total = $stmt->rowCount();
+
+            //eto yung condition na i ch check kung may laman si products at i re return niya kapag meron
+            if($total > 0 )  {
+                return $view;
+            }
+            else{
+                return false;
+            }
+        }
+       
     }
 
     $residentbms = new ResidentClass();

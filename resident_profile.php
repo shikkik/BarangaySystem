@@ -1,9 +1,11 @@
 <?php 
     require('classes/resident.class.php');
-    $view = $residentbms->view_resident();
+    $emailadd = $_GET['email    '];
+    $view = $residentbms->view_resident($emailadd);
     $userdetails = $residentbms->get_userdata();
     print_r($userdetails);
     print_r($view);
+    
 ?>
 
 <!DOCTYPE html> 
@@ -46,9 +48,10 @@
                             <div class="card-body">
                                 <div class="row">
                                     <div class="col">
-                                    <h5> Name: <?= $userdetails['fullname'];?></h5>
-                                    <h5> Gender: <?= $view['sex'];?></h5>
-                                    <h5> Birthday: <?= $userdetails['fullname'];?></h5>
+                                    <h5> Name: <?php echo $userdetails['fullname'];?></h5>
+                                    <h5> Age: <?php echo $view['age'];?></h5>
+                                    <h5> Age: <?= $view['sex'];?></h5>
+                                    <h5> Email: <?= $view['status'];?></h5>
                                     </div>
 
                                     <div class="col">
@@ -74,9 +77,9 @@
         </section>
 
         <?php 
-           
+           print_r($userdetails);
         ?>
 
-        <script src="../BarangaySystem/bootstrap/js/bootstrap.bundle.js" type="text/javascript"> </script>
+         
     </body>
 </html>
