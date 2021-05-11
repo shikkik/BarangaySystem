@@ -50,18 +50,29 @@
                 $role = $_POST['role'];
                 $addedby = $_POST['addedby'];
 
-                if ($this->check_resident($email) == 0) {
-                    $connection = $this->openConn();
-                    $stmt = $connection->prepare("INSERT INTO tbl_resident (`email`,`password`,`lname`,`fname`,
-                    `mi`, `age`, `sex`, `status`, `address`, `contact`, `bdate`, `bplace`, `nationality`,
-                    `role`, `addedby`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+                $min_age = 18;
+                $max_age = 150;
 
-                    $stmt->Execute([$email, $password, $lname, $fname, $mi, $age, $sex, $status, 
-                    $address, $contact, $bdate, $bplace, $nationality, $role, $addedby]);
+                if ($this->check_resident($email) == 0 ) {
 
-                    echo "<script type='text/javascript'>alert('Account added, you can now continue logging in');</script>";
-
-                   
+                    if( !in_array( $age, range( $min_age, $max_age) ) ){
+                        $message1 = "Sorry, you are still underaged to register an account";
+                        echo "<script type='text/javascript'>alert('$message1');</script>";
+                        return(0);
+                    }
+    
+                    else {
+                        $connection = $this->openConn();
+                        $stmt = $connection->prepare("INSERT INTO tbl_resident (`email`,`password`,`lname`,`fname`,
+                        `mi`, `age`, `sex`, `status`, `address`, `contact`, `bdate`, `bplace`, `nationality`,
+                        `role`, `addedby`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+    
+                        $stmt->Execute([$email, $password, $lname, $fname, $mi, $age, $sex, $status, 
+                        $address, $contact, $bdate, $bplace, $nationality, $role, $addedby]);
+                        $message2 = "Account added, you can now continue logging in";
+    
+                        echo "<script type='text/javascript'>alert('$message2');</script>";
+                    }
                 }
 
                 else {

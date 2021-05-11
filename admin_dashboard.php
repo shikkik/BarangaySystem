@@ -31,6 +31,7 @@
       <main>
         <div class="main__container">
 
+          <h3> Resident Information</h3>
           <!-- MAIN CARDS STARTS HERE -->
           <div class="main__cards">
             <div class="card" style="width: 440px;">
@@ -60,6 +61,8 @@
           </div>
 
           <!-- MAIN CARDS ENDS HERE -->
+
+          <h3> Vaccination Program Chart</h3>
 
           <!-- CHARTS STARTS HERE -->
           
