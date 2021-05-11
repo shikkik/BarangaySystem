@@ -401,7 +401,7 @@
           </div>
           <div class="sidebar__link">
             <i class="fa fa-paw"></i>
-            <a href="#">Animal Registry and Welfare</a>
+            <a href="animal.php">Animal Registry and Welfare</a>
           </div>
           <div class="sidebar__link">
             <i class="fa fa-user-shield"></i>

@@ -1,10 +1,10 @@
 <?php
 
-    //yung function na to yung mag a autoload ng function natin na bmsloader na nasa baba niya 
-    spl_autoload_register('bmsautoloader');
+    //yung function na to yung mag a autoload ng function natin na bmisloader na nasa baba niya 
+    spl_autoload_register('bmisautoloader');
 
     //etong function naman na to yung kukuha nung mga main at sub classes natin sa classes folder
-    function bmsautoloader($classnames) {
+    function bmisautoloader($classnames) {
         $path = "classes";
         $extenstion = ".class.php";
         $fullpath = $path . $classnames . $extenstion;

@@ -187,5 +187,5 @@
 
     }
 
-    $staffbms = new StaffClass();
+    $staffbmis = new StaffClass();
 ?>

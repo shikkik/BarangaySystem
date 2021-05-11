@@ -2,7 +2,7 @@
     require('classes/main.class.php');
     require('classes/resident.class.php');
     
-    $userdetails = $bms->get_userdata();
+    $userdetails = $bmis->get_userdata();
 ?>
 
 <!DOCTYPE html>
