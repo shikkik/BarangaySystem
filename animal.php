@@ -76,14 +76,19 @@
       <a class="navbar-brand" href="#">Barangay Sorsogon</a>
 
       <div class="dropdown ml-auto">
-          <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown"><?= $userdetails['fullname'];?>
-            <span class="caret"></span>
+          <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown"><?= $userdetails['surname'];?>, <?= $userdetails['firstname'];?>
+              <span class="caret"></span>
           </button>
           <ul class="dropdown-menu">
-              <li><a href="resident_profile.php"> Personal Profile </a></li>
-              <li><a href="logout.php">Logout</a></li>
+            <form method="post">
+                <input type="hidden" value="<?= $userdetails['surname'];?>">  
+                <input type="hidden" value="<?= $userdetails['mname'];?>">
+                <li><button class="btn" href="resident_profile.php"> <i class="fas fa-user"></i> Personal Profile </button></li>
+            </form>
+                <button class="btn" onclick="logout();"> <i class="fas fa-sign-out-alt"> </i> Logout </button>
           </ul>
       </div>
+      
     </nav>
 
     <!-- Under Navbar -->
