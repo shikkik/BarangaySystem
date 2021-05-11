@@ -1,9 +1,15 @@
 <?php 
     require('classes/resident.class.php');
+<<<<<<< HEAD
     $email = $_GET['email'];
     $view = $residentbms->view_single_resident($email);
     $userdetails = $residentbms->get_userdata();
     print_r($view);
+=======
+
+    $view = $residentbmis->view_single_resident($email);
+    $userdetails = $residentbmis->get_userdata();
+>>>>>>> 4035f6ea0a6d76dfed73f4b4352f0f03187dcff1
 ?>
 
 <!DOCTYPE html> 

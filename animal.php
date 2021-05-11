@@ -2,7 +2,7 @@
     require('classes/main.class.php');
     require('classes/resident.class.php');
     
-    $userdetails = $bms->get_userdata();
+    $userdetails = $bmis->get_userdata();
 ?>
 
 <!DOCTYPE html>
@@ -13,10 +13,7 @@
       <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-modal/2.2.6/js/bootstrap-modalmanager.min.js" integrity="sha512-/HL24m2nmyI2+ccX+dSHphAHqLw60Oj5sK8jf59VWtFWZi9vx7jzoxbZmcBeeTeCUc7z1mTs3LfyXGuBU32t+w==" crossorigin="anonymous"></script>
       <!-- responsive tags for screen compatibility -->
-      <meta name="viewport" content="width=device-width, initial-scale=1">
-      <!-- custom css --> 
-      <link href="../BarangaySystem/customcss/services.css" rel="stylesheet" type="text/css">
-      <!-- bootstrap css --> 
+      <meta name="viewport" content="width=device-width, initial-scale=1"><!-- bootstrap css --> 
       <link href="../BarangaySystem/bootstrap/css/bootstrap.css" rel="stylesheet" type="text/css">
       <!-- fontawesome icons --> 
       <script src="https://kit.fontawesome.com/67a9b7069e.js" crossorigin="anonymous"></script>
@@ -63,7 +60,7 @@
       .text1 
       {
         text-align: justify;
-        margin-top: 10%;
+        margin-top: 6.5%;
         letter-spacing: 1px;
         font-family: Arial, Helvetica, sans-serif;
       }
@@ -77,9 +74,6 @@
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top">
       <a class="navbar-brand" href="#">Barangay Sorsogon</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
 
       <div class="navbar-nav ml-auto">
         <a class="nav-item nav-link active" href="#"> <?= $userdetails['fullname'];?>  <span class="sr-only">(current)</span></a>

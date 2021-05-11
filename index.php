@@ -1,5 +1,6 @@
 <?php 
     error_reporting(E_ALL ^ E_WARNING);
+    
     if(!isset($_SESSION)) {
         session_start();
     }
@@ -7,6 +8,8 @@
     //include('autoloader.php');
     require('classes/main.class.php');
     $bmis->login();
+    
+
     
     
 
