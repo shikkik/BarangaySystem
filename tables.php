@@ -36,7 +36,7 @@ Accounts Tables
     lname VARCHAR(255) NOT NULL , 
     fname VARCHAR(255) NOT NULL , 
     mi VARCHAR(255) NOT NULL , 
-    age INT NOT NULL , 
+    age INT NOT NULL,
     sex VARCHAR(255) NOT NULL , 
     status VARCHAR(255) NOT NULL , 
     address VARCHAR(255) NOT NULL , 

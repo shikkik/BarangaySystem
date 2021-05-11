@@ -5,7 +5,7 @@
 
     //include('autoloader.php');
     require('classes/main.class.php');
-    $bms->login();
+    $bmis->login();
 
 ?>
 
