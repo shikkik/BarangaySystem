@@ -103,7 +103,7 @@
 
                 $connection = $this->openConn();
                 $stmt = $connection->prepare("DELETE FROM tbl_user WHERE email = :email");
-                //$stmt = $connection->prepare("DELETE FROM tbl_user WHERE email = '" .$_GET['email'] ."'");
+                $stmt = $connection->prepare("DELETE FROM tbl_user WHERE email = '" .$_GET['email'] ."'");
                 $stmt->bindparam(':email', $email);
                 $stmt->execute();
                 $result = $stmt->rowCount();

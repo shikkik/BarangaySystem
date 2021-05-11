@@ -1,8 +1,9 @@
 <?php 
     require('classes/resident.class.php');
-
+    $email = $_GET['email'];
     $view = $residentbms->view_single_resident($email);
     $userdetails = $residentbms->get_userdata();
+    print_r($view);
 ?>
 
 <!DOCTYPE html> 
@@ -47,7 +48,9 @@
                                     <div class="col">
                                     <h5> Name: <?= $userdetails['fullname'];?></h5>
                                    
-                                    <h5> <?php print_r($view);?> </h5>
+                                    <h5> Gender: <?= $view ['sex'];?> </h5>
+
+                                    
                                     </div>
 
                                     <div class="col">
