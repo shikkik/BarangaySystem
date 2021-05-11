@@ -1,8 +1,15 @@
 <?php 
     require('classes/resident.class.php');
+<<<<<<< HEAD
+    $email = $_GET['email'];
+    $view = $residentbms->view_single_resident($email);
+    $userdetails = $residentbms->get_userdata();
+    print_r($view);
+=======
 
     $view = $residentbmis->view_single_resident($email);
     $userdetails = $residentbmis->get_userdata();
+>>>>>>> 4035f6ea0a6d76dfed73f4b4352f0f03187dcff1
 ?>
 
 <!DOCTYPE html> 
@@ -47,7 +54,9 @@
                                     <div class="col">
                                     <h5> Name: <?= $userdetails['fullname'];?></h5>
                                    
-                                    <h5> <?php print_r($view);?> </h5>
+                                    <h5> Gender: <?= $view ['sex'];?> </h5>
+
+                                    
                                     </div>
 
                                     <div class="col">
@@ -69,9 +78,9 @@
         </section>
 
         <?php 
-           
+           print_r($userdetails);
         ?>
 
-        <script src="../BarangaySystem/bootstrap/js/bootstrap.bundle.js" type="text/javascript"> </script>
+         
     </body>
 </html>
