@@ -1,6 +1,6 @@
 <?php 
 
-class BMSClass {
+class BMISClass {
 
     //pag s set ng database connection na inherited sa child classes
     protected $server = "mysql:host=localhost;dbname=bmis";
@@ -149,6 +149,6 @@ class BMSClass {
     }
 }
 
-$bms = new BMSClass(); //variable to call outside of its class
+$bmis = new BMISClass(); //variable to call outside of its class
 
 ?>
