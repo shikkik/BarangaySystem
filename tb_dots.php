@@ -80,23 +80,38 @@ body{
     </div>
 
     <div class="container">
-        <div class="row">
-
-                <div class="card" style="width: 400px; height: 400px;">
-                        <img src="../BarangaySystem/icons/TB Dots/tbdots2.png">
+        <div class="row justify-content-center">
+            <div class="col-sm-3"> 
+                <div class="card" style="width: 250px; height: 250px;">
+                    <img src="../BarangaySystem/icons/TB Dots/tbdots2.png">
                 </div>
+            </div>
 
-                <div class="card" style="width: 400px; height: 400px;">
-                        <img src="../BarangaySystem/icons/TB Dots/tbdots3.png">
+            <div class="col-sm-3"> 
+                <div class="card" style="width: 250px; height: 250px;">
+                    <img src="../BarangaySystem/icons/TB Dots/tbdots3.png">
                 </div>
+            </div>
 
-                <div class="card" style="width: 400px; height: 400px;">
-                        <img src="../BarangaySystem/icons/TB Dots/tbdots4.png">
+            <div class="col-sm-3"> 
+                <div class="card" style="width: 250px; height: 250px;">
+                    <img src="../BarangaySystem/icons/TB Dots/tbdots4.png">
                 </div>
+            </div>
 
-                <div class="card" style="width: 400px; height: 400px;">
-                        <img src="../BarangaySystem/icons/TB Dots/tbdots5.png">
+            <div class="col-sm-3"> 
+                <div class="card" style="width: 250px; height: 250px;">
+                    <img src="../BarangaySystem/icons/TB Dots/tbdots5.png">
                 </div>
+            </div>
+
+               
+
+               
+
+                
+
+                
 
         </div>
     </div>

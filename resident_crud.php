@@ -228,12 +228,13 @@
                                 <div class="col rb">
                                     <label class="mtop">Gender</label>
                                     <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="sex">
+                                        <input class="form-check-input" type="radio" name="sex" value="Male">
                                         <label class="form-check-label">Male</label>
                                     </div>
+
                                     <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="sex">
-                                        <label class="form-check-label" for="flexRadioDefault2">Female</label>
+                                        <input class="form-check-input" type="radio" name="sex" value="Female">
+                                        <label class="form-check-label">Female</label>
                                     </div>
                                 </div>       
                             </div>
@@ -249,5 +250,5 @@
                 </div>
             </div>
         </div>
-</body>
+    </body>
 </html>
