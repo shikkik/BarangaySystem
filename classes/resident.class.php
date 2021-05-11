@@ -47,6 +47,7 @@
                 $bdate = $_POST['bdate'];
                 $bplace = $_POST['bplace'];
                 $nationality = $_POST['nationality'];
+                $familyrole = $_POST['family_role'];
                 $role = $_POST['role'];
                 $addedby = $_POST['addedby'];
 
@@ -64,11 +65,11 @@
                     else {
                         $connection = $this->openConn();
                         $stmt = $connection->prepare("INSERT INTO tbl_resident (`email`,`password`,`lname`,`fname`,
-                        `mi`, `age`, `sex`, `status`, `address`, `contact`, `bdate`, `bplace`, `nationality`,
-                        `role`, `addedby`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+                        `mi`, `age`, `sex`, `status`, `address`, `contact`, `bdate`, `bplace`, `nationality`,`family_role`,
+                        `role`, `addedby`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,?)");
     
                         $stmt->Execute([$email, $password, $lname, $fname, $mi, $age, $sex, $status, 
-                        $address, $contact, $bdate, $bplace, $nationality, $role, $addedby]);
+                        $address, $contact, $bdate, $bplace, $nationality, $familyrole, $role, $addedby]);
                         $message2 = "Account added, you can now continue logging in";
     
                         echo "<script type='text/javascript'>alert('$message2');</script>";
@@ -138,6 +139,7 @@
                 $bdate = $_POST['bdate'];
                 $bplace = $_POST['bplace'];
                 $nationality = $_POST['nationality'];
+                $familyrole = $_POST['family_role'];
                 $role = $_POST['role'];
                 $addedby = $_POST['addedby'];
 
@@ -146,9 +148,9 @@
                     $connection = $this->openConn();
                     $stmt = $connection->prepare("UPDATE tbl_resident SET password =?, lname =?, 
                     fname = ?, mi =?, age =?, sex =?, status =?, address =?, contact =?,
-                    bdate =?, bplace =?, nationality =?, role =?, addedby =? WHERE email = ?");
+                    bdate =?, bplace =?, nationality =?,family_role =?, role =?, addedby =? WHERE email = ?");
                     $stmt->execute([ $password, $lname, $fname, $mi, $age, $sex, $status, $address,
-                    $contact, $bdate, $bplace, $nationality, $role, $addedby, $email]);
+                    $contact, $bdate, $bplace, $nationality, $familyrole, $role, $addedby, $email]);
                    
                     echo "naka udpate na";
                     header("location: resident_crud.php");

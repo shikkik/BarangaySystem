@@ -1,10 +1,10 @@
 <?php 
-    require('classes/resident.class.php');
+    require('classes/staff.class.php');
 
-    $view = $residentbmis->view_resident();
-    $residentbmis->create_resident();
-    $residentbmis->update_resident();
-    $residentbmis->delete_resident();
+    $view = $staffbmis->view_staff();
+    $staffbmis->create_staff();
+    $staffbmis->update_staff();
+    $staffbmis->delete_staff();
    
 ?>
 
@@ -32,13 +32,9 @@
                                 <th> MI </th>
                                 <th> Age </th>
                                 <th> Sex </th>
-                                <th> Status </th>
                                 <th> Address </th>
                                 <th> Contact </th>
-                                <th> Bdate </th>
-                                <th> Bplace </th>
-                                <th> Nationality </th>
-                                <th> Family Role </th>
+                                <th> Position </th>
                                 <th> Role </th>
                                 <th> AddedBy </th>
                             </tr>
@@ -54,20 +50,16 @@
                                 <th> <?= $view['mi'];?> </th>
                                 <th> <?= $view['age'];?> </th>
                                 <th> <?= $view['sex'];?> </th>
-                                <th> <?= $view['status'];?> </th>
                                 <th> <?= $view['address'];?> </th>
                                 <th> <?= $view['contact'];?> </th>
-                                <th> <?= $view['bdate'];?> </th>
-                                <th> <?= $view['bplace'];?> </th>
-                                <th> <?= $view['nationality'];?> </th>
-                                <th> <?= $view['family_role'];?> </th>
+                                <th> <?= $view['position'];?> </th>
                                 <th> <?= $view['role'];?> </th>
                                 <th> <?= $view['addedby'];?> </th>
                                 <td>    
                                 <form action="" method="post">
-                                    <a href="resident_crud.php?email=<?= $view['email'];?>" class="btn btn-primary">  Update </a>
+                                    <a href="staff_crud.php?email=<?= $view['email'];?>" class="btn btn-primary">  Update </a>
                                     <input type="hidden" name="email" value="<?= $view['email'];?>">
-                                    <button class="btn btn-danger" type="submit" name="delete_resident"> Remove </button>
+                                    <button class="btn btn-danger" type="submit" name="delete_staff"> Remove </button>
                                     </form>
                                 </td>
                             </tr>
@@ -99,25 +91,12 @@
                                     <label class="mtop"> Middle Initial </label>
                                     <input type="text" class="form-control" name="mi" placeholder="Enter middle initial">
                                 </div>
-
-                                <div class="col"> 
-                                <label class="mtop">Status</label>
-                                    <select class="form-control" name="status" id="status">
-                                    <option value="">---</option>
-                                    <option value="Male">Single</option>
-                                    <option value="Married">Married</option>
-                                    <option value="Widowed">Widowed</option>
-                                    <option value="Divorced">Divorced</option>
-                                    </select>  
-                                </div>
                             </div>
                          
                             <div class="row">
                                 <div class="col">
                                     <label class="mtop">Email </label>
                                     <input type="email" class="form-control" name="email"  placeholder="Enter email">
-                                    <label class="mtop">Birth Date </label>
-                                    <input type="date" class="form-control" name="bdate">
                                     <label class="mtop">Contact Number</label>
                                     <input type="tel" class="form-control" name="contact" placeholder="Enter contact number">
                                 </div>
@@ -125,10 +104,8 @@
                                 <div class="col">
                                     <label class="mtop">Password</label>
                                     <input type="password" class="form-control" name="password" placeholder="Enter password">
-                                    <label class="mtop">Birth Place </label>
-                                    <input type="text" class="form-control" name="bplace"  placeholder="Enter birth place">
-                                    <label class="mtop">Nationality </label>
-                                    <input type="text" class="form-control" name="nationality"  placeholder="Enter nationality">
+                                    <label class="mtop">Position </label>
+                                    <input type="text" class="form-control" name="position"  placeholder="Enter position">
                                 </div>
                             </div>
 
@@ -136,14 +113,6 @@
                                 <div class="col">
                                     <label class="mtop"> Address </label>
                                     <input type="text" class="form-control" name="address"  placeholder="Enter Address">
-                                </div>
-                                <div class="col">
-                                <label class="mtop">Family Role</label>
-                                    <select class="form-control" name="family_role" id="family_role">
-                                    <option value="">---</option>
-                                    <option value="Family Head">Family Head</opt ion>
-                                    <option value="Family Member">Family Member</option>
-                                    </select>
                                 </div>
                             </div>
 
@@ -154,25 +123,23 @@
                                 </div>
 
                                 <div class="col rb">
-                                <div class="col rb">
                                     <label class="mtop">Gender</label>
                                     <select class="form-control" name="sex" id="sex">
                                     <option value="">---</option>
                                     <option value="Male">Male</opt ion>
                                     <option value="Female">Female</option>
                                     </select>
-                                </div>    
                                 </div>       
                             </div>
 
                             <div class="row mtop"> 
                                 <div class="col"> 
                                    
-                                    <input type="hidden" class="form-control" name="role" value="resident">
+                                    <input type="hidden" class="form-control" name="role" value="user">
                                 
                                 </div>
                             </div>
-                        <button class="btn btn-primary" type="submit" name="add_resident"> Add </button>
+                        <button class="btn btn-primary" type="submit" name="add_staff"> Add </button>
                     </form>
                 </div>
 
@@ -201,24 +168,12 @@
                                     <input type="text" class="form-control" name="mi" placeholder="Enter middle initial">
                                 </div>
 
-                                <div class="col"> 
-                                <label class="mtop">Status</label>
-                                    <select class="form-control" name="status" id="status">
-                                    <option value="">---</option>
-                                    <option value="Male">Single</option>
-                                    <option value="Married">Married</option>
-                                    <option value="Widowed">Widowed</option>
-                                    <option value="Divorced">Divorced</option>
-                                    </select>  
-                                </div>
                             </div>
                          
                             <div class="row">
                                 <div class="col">
                                     <label class="mtop">Email </label>
                                     <input type="email" class="form-control" name="email"  placeholder="Enter email">
-                                    <label class="mtop">Birth Date </label>
-                                    <input type="date" class="form-control" name="bdate">
                                     <label class="mtop">Contact Number</label>
                                     <input type="tel" class="form-control" name="contact" placeholder="Enter contact number">
                                 </div>
@@ -226,10 +181,8 @@
                                 <div class="col">
                                     <label class="mtop">Password</label>
                                     <input type="password" class="form-control" name="password" placeholder="Enter password">
-                                    <label class="mtop">Birth Place </label>
-                                    <input type="text" class="form-control" name="bplace"  placeholder="Enter birth place">
-                                    <label class="mtop">Nationality </label>
-                                    <input type="text" class="form-control" name="nationality"  placeholder="Enter nationality">
+                                    <label class="mtop">Position </label>
+                                    <input type="text" class="form-control" name="position"  placeholder="Enter position">
                                 </div>
                             </div>
 
@@ -237,14 +190,6 @@
                                 <div class="col">
                                     <label class="mtop"> Address </label>
                                     <input type="text" class="form-control" name="address"  placeholder="Enter Address">
-                                </div>
-                                <div class="col">
-                                <label class="mtop">Family Role</label>
-                                    <select class="form-control" name="family_role" id="family_role">
-                                    <option value="">---</option>
-                                    <option value="Family Head">Family Head</opt ion>
-                                    <option value="Family Member">Family Member</option>
-                                    </select>
                                 </div>
                             </div>
 
@@ -255,13 +200,15 @@
                                 </div>
 
                                 <div class="col rb">
-                                    <label class="mtop">Gender</label>
-                                    <select class="form-control" name="sex" id="sex">
-                                    <option value="">---</option>
-                                    <option value="Male">Male</opt ion>
-                                    <option value="Female">Female</option>
-                                    </select>
-                                </div>           
+                                    <div class="col rb">
+                                        <label class="mtop">Gender</label>
+                                        <select class="form-control" name="sex" id="sex">
+                                        <option value="">---</option>
+                                        <option value="Male">Male</opt ion>
+                                        <option value="Female">Female</option>
+                                        </select>
+                                    </div>    
+                                </div>       
                             </div>
                             <div class="row mtop"> 
                                 <div class="col"> 
@@ -270,7 +217,7 @@
                                     <input type="text" class="form-control" name="role">
                                 </div>
                             </div>
-                        <button class="btn btn-primary" type="submit" name="update_resident"> Update </button>
+                        <button class="btn btn-primary" type="submit" name="update_staff"> Update </button>
                     </form>
                 </div>
             </div>

@@ -1,64 +1,40 @@
 <?php 
 
-    require('main.class.php');
+    require_once('main.class.php');
 
     class StaffClass extends BMISClass {
 
-        public function validate_user(){
-            $userdetails = $this->get_userdata();
+        /*
+        //authentication method for residents to enter
+        public function residentlogin() {
+        if(isset($_POST['residentlogin'])) {
+
+            $username = $_POST['email'];
+            $password = $_POST['password']; 
+        
+            $connection = $this->openConn();
+            $stmt = $connection->prepare("SELECT * FROM tbl_residents WHERE email = ? AND password = ?");
+            $stmt->Execute([$username, $password]);
+            $user = $stmt->fetch();
+            $total = $stmt->rowCount();
             
-            if (isset($userdetails)) {
-    
-                if($userdetails['role'] == 'user' || $userdetails['role'] == 'administrator') {
-                    return $userdetails;
+                //calls the set_userdata function 
+                if($total > 0) {
+                    $this->set_userdata($user);
+                    header('Location: resident_homepage.php');
                 }
-    
+                
                 else {
-                    $this->show_404();
+                    echo '<script>alert("Email or Password is Invalid")</script>';
                 }
             }
         }
+        */
 
-        public function create_staff(){
+        public function create_staff() {
 
-        }
-
-        public function view_staff(){
-
-        }
-
-        public function check_staff(){
-
-        }
-
-        public function update_staff(){
-
-        }
-        
-
-
-
-
-
-
-
-
-
-        /*
-        public function check_staff($email) {
-            $connection = $this->openConn();
-            $stmt = $connection->prepare("SELECT * FROM tbl_user WHERE email = ?");
-            $stmt->Execute([$email]);
-            $total = $stmt->rowCount(); 
-    
-            return $total;
-        }
-
-        public function create_staff(){
-            
-            if(isset($_POST['add_user'])) {
-
-                $email = $_POST['email']; 
+            if(isset($_POST['add_staff'])) {
+                $email = $_POST['email'];
                 $password = $_POST['password'];
                 $lname = $_POST['lname'];
                 $fname = $_POST['fname'];
@@ -70,36 +46,72 @@
                 $position = $_POST['position'];
                 $role = $_POST['role'];
                 $addedby = $_POST['addedby'];
+
+                if ($this->check_staff($email) == 0 ) {
+
+                        $connection = $this->openConn();
+                        $stmt = $connection->prepare("INSERT INTO tbl_user (`email`,`password`,`lname`,`fname`,
+                        `mi`, `age`, `sex`, `address`, `contact`, `position` , `role`, `addedby`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
     
-                if ($this->check_staff($email) == 0) {
-                    $connection = $this->openConn();
-                    $stmt = $connection->prepare("INSERT INTO tbl_user (`email`,`password`,`lname`,`fname`,
-                    `mi`, `age`, `sex`, `address`, `contact`, `position`, `role`, `addedby`) 
-                    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
-                    
-                    $stmt->Execute([$email, $password, $lname, $fname, $mi, $age, $sex, $address, $contact, $position, $role, $addedby]);
+                        $stmt->Execute([$email, $password, $lname, $fname, $mi, $age, $sex, 
+                        $address, $contact, $position, $role, $addedby]);
+                        $message2 = "Account added, you can now continue logging in";
     
-                    echo "User Account Added";
+                        echo "<script type='text/javascript'>alert('$message2');</script>";
+    
                 }
-    
+
                 else {
-                    echo "User Account already exists";
+                    echo "<script type='text/javascript'>alert('Email Account already exists');</script>";
                 }
+            }
+            
+        }
+
+        public function check_staff($email) {
+
+            $connection = $this->openConn();
+            $stmt = $connection->prepare("SELECT * FROM tbl_user WHERE email = ?");
+            $stmt->Execute([$email]);
+            $total = $stmt->rowCount(); 
+    
+            return $total;
+        }
+
+        public function view_staff(){
+
+            $connection = $this->openConn();
+
+            $stmt = $connection->prepare("SELECT * from tbl_user");
+            $stmt->execute();
+            $view = $stmt->fetchAll();
+            //$rows = $stmt->
+            return $view;
+           
+        }
+
+        public function view_single_staff(){
+
+            $email = $_GET['email'];
+            
+            $connection = $this->openConn();
+            $stmt = $connection->prepare("SELECT * FROM tbl_user where email = '$email'");
+            $stmt->execute();
+            $view = $stmt->fetch(); 
+            $total = $stmt->rowCount();
+ 
+            //eto yung condition na i ch check kung may laman si products at i re return niya kapag meron
+            if($total > 0 )  {
+                return $view;
+            }
+            else{
+                return false;
             }
         }
 
-        public function view_staff() {
-            $connection = $this->openConn();
-            $stmt = $connection->prepare("SELECT * FROM tbl_user");
-            $stmt->execute();
-            $view = $stmt->fetchAll();
-            return $view;
-          
-        }
-
         public function update_staff() {
-            if(isset($_POST['update_staff'])) {  
-                $email = $_GET['email']; 
+            if (isset($_POST['update_staff'])) {
+                $email = $_GET['email'];
                 $password = $_POST['password'];
                 $lname = $_POST['lname'];
                 $fname = $_POST['fname'];
@@ -110,82 +122,36 @@
                 $contact = $_POST['contact'];
                 $position = $_POST['position'];
                 $role = $_POST['role'];
-                $addedby = $_POST['addedby']; 
+                $addedby = $_POST['addedby'];
 
+
+                
                     $connection = $this->openConn();
-                    $stmt = $connection->prepare("UPDATE tbl_user SET password =?, lname =?,
-                    fname =?, mi =?, age =?, sex =?, address =?, contact =?, position =?, role =?, addedby =? WHERE email = ?");
-                    $stmt->execute([$email, $password, $lname, $fname, $mi, $age, $sex, $address, $contact, $position, $role, $addedby]);
+                    $stmt = $connection->prepare("UPDATE tbl_user SET password =?, lname =?, 
+                    fname = ?, mi =?, age =?, sex =?, address =?, contact =?, position =?, 
+                    role =?, addedby =? WHERE email = ?");
+                    $stmt->execute([ $password, $lname, $fname, $mi, $age, $sex, $address,
+                    $contact, $position,$role, $addedby, $email]);
+                   
+                    echo "naka udpate na";
+                    header("location: staff_crud.php");
 
-                    echo "User Account Updated";
-                    //header("location: testingcrud.php");
             }
         }
 
-        public function delete_staff() {
-            if(isset($_POST['delete_user'])) {
-
-                $email = $_POST['email'];
-
-                $connection = $this->openConn();
-                $stmt = $connection->prepare("DELETE FROM tbl_user WHERE email = :email");
-                $stmt = $connection->prepare("DELETE FROM tbl_user WHERE email = '" .$_GET['email'] ."'");
-                $stmt->bindparam(':email', $email);
-                $stmt->execute();
-                $result = $stmt->rowCount();
-                
-                if ($result == 0) {
-                    
-                    echo "User Account Deleted";
-                }
-                
-                else {
-                    echo "hindi gumana badi";
-                }
-    
-            }
-
-           
-            
-            
-        }
-
-        */
-
-
-
-        /*
-        /*
-        //authentication method for residents to enter
-        public function stafflogin() {
-        if(isset($_POST['stafflogin'])) {
+        public function delete_staff(){
 
             $email = $_POST['email'];
-            $password = $_POST['password']; 
-        
-            $connection = $this->openConn();
-            $stmt = $connection->prepare("SELECT * FROM tbl_staff WHERE email = ? AND password = ?");
-            $stmt->Execute([$email, $password]);
-            $user = $stmt->fetch(); //i f fetch niya yung data na gagamitin para sa session handling
-            $total = $stmt->rowCount(); //para malaman tsaka i return yung affected rows or records sa command or query 
-            
-                //i ch check kung meron siyang nakuha sa rowcount
-                if($total > 0) {
-                    $this->set_userdata($user);
-                    header('Location: resident_homepage.php');
-                }
-                
-                else {
-                    echo '<script>alert("Email or Password is Invalid")</script>';
-                }
+
+            if(isset($_POST['delete_staff'])) {
+                $connection = $this->openConn();
+                $stmt = $connection->prepare("DELETE FROM tbl_user where email = ?");
+                $stmt->execute([$email]);
+
+                header("location: staff_crud.php");
             }
         }
-
-
-        */
-
-
     }
 
-    $staffbms = new StaffClass();
+    $staffbmis = new StaffClass();
 ?>
