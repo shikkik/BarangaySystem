@@ -3,8 +3,19 @@
     require('classes/resident.class.php');
     $userdetails = $bmis->get_userdata();
     //$view = $residentbmis->check_resident($email);
+    //$residentbmis->view_household_list();
 
 ?>
+
+<script> 
+    function logout() {
+    window.location.href = "logout.php";
+    }
+    function profile() {
+    window.location.href = "resident_profile.php";
+    }
+</script>
+
 
 <!DOCTYPE html> 
 <html>
@@ -13,7 +24,6 @@
     <title> Barangay Management System </title>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-        <script src="../BarangaySystem/customjs/main.js" type="text/javascript"> </script>
         <!-- responsive tags for screen compatibility -->
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <!-- custom css --> 
@@ -33,13 +43,8 @@
                     <span class="caret"></span>
                 </button>
                 <ul class="dropdown-menu">
-                <form method="post">
-                    <input type="hidden" value="<?= $userdetails['surname'];?>">  
-                    <input type="hidden" value="<?= $userdetails['mname'];?>">
-                    <li><button class="btn" href="resident_profile.php"> <i class="fas fa-user"></i> Personal Profile </button></li>
-                </form>
-                    <button class="btn" onclick="logout();"> <i class="fas fa-sign-out-alt"> </i> Logout </button>
-                
+                    <button class="btn" onclick="profile();"> <i class="fas fa-user" style="padding: 0.5em;"></i>Personal Profile  </button>
+                    <button class="btn" onclick="logout();"> <i class="fas fa-sign-out-alt" style="padding: 0.5em;"></i> Logout  </button>
                 </ul>
             </div>
         </nav>
