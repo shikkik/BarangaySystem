@@ -49,20 +49,25 @@
             </div>
         </nav>
 
-
         <section class="heading-section"> 
-            <div class="container"> 
+            <div class="container text-center"> 
                 <div class="row"> 
                     <div class="col"> 
+                        
+                        <br>
+                        <br>
+
                         <div class="header"> 
                             <h1> Welcome to Barangay Services Management System </h1>
                             <h3> You may select the following services offered below </h3>
                         </div>
                     </div>
                 </div>
-                
             </div>
 
+            <br>
+            <br>
+            <br>
 
             <div class="container"> 
                 <div class="row title-spacing">
@@ -138,6 +143,10 @@
                         </div>
                     </div>
                 </div>
+
+                <br>
+                <br>
+                <br>
 
                 <div class="row title-spacing">
                     <div class="col"> 

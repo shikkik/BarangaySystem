@@ -128,7 +128,144 @@
                     </h2>
                 </div> 
             </div>
+
+            <br>
+            <br>
+            <div class="row">
+                <div class="col-sm-10">
+                    <table class="table table-hover" style="width: 100%; height: 100%;">
+
+                        <thead class="text-center" style="color: black">
+                            <tr style="margin-bottom: 10px;">
+                                <th rowspan="3">
+                                    BAKUNA
+                                </th>
+                                <th rowspan="3">
+                                    SAKIT NA MAIIWASAN
+                                </th>
+                            </tr>
+                                <tr>
+                                    <th colspan="6">
+                                        NIREREKOMENDANG EDAD NG BATA
+                                    </th>
+                                    <tr>
+                                        <th>
+                                            PAGKA-PANGANAK
+                                        </th>
+                                        <th> 1 &half; <br>
+                                            BUWAN
+                                        </th>
+                                        <th> 2 &half; <br>
+                                            BUWAN
+                                        </th>
+                                        <th>3 &half; <br>
+                                            BUWAN
+                                        </th>
+                                        <th> 9 <br>
+                                            BUWAN
+                                        </th>
+                                        <th>1 <br>
+                                            TAON
+                                        </th>
+                                    </tr>
+                                </tr>
+                        </thead>
+
+                        <tbody class="text-center">
+                        <tr>
+                            <td>BCG</td>
+                            <td>Tuberkulosis</td>
+                            <td><i class="fas fa-check"></i></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>HEPATITIS B</td>
+                            <td>Hepatitis B</td>
+                            <td><i class="fas fa-check"></i></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>PENTAVALENT VACCINE</td>
+                            <td style="font-size: 12px;">Dipterya, Tetano, Hepa B, Pertussis, Pulmonya, Meningitis</td>
+                            <td></td>
+                            <td><i class="fas fa-check"></i></td>
+                            <td><i class="fas fa-check"></i></td>
+                            <td><i class="fas fa-check"></i></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>ORAL POLIO VACCINE</td>
+                            <td>Polio</td>
+                            <td></td>
+                            <td><i class="fas fa-check"></i></td>
+                            <td><i class="fas fa-check"></i></td>
+                            <td><i class="fas fa-check"></i></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>INACTIVATED POLIO VACCINE</td>
+                            <td>Polio</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td><i class="fas fa-check"></i></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>PNEUMOCOCCAL CONJUGATE VACCINE</td>
+                            <td>Pulmonya, Meningitis</td>
+                            <td></td>
+                            <td><i class="fas fa-check"></i></td>
+                            <td><i class="fas fa-check"></i></td>
+                            <td><i class="fas fa-check"></i></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>MEASLES, MUMPS, RUBELLA</td>
+                            <td>Tigdas, Beke, German Measles</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td><i class="fas fa-check"></i></td>
+                            <td><i class="fas fa-check"></i></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="col-sm-2 text-center" style="height:100%; width:100%;">
+                    <h2>MGA PAALALA</h2>
+
+                    <hr style="background-color: red;">
+
+                    <p style="font-size: 15px;">Nagsisimula ang pagbabakuna ng bata sa kapanganakan.</p>
+
+                    <hr style="background-color: red;">
+
+                    <p style="font-size: 15px;">Sundin ang schedule ng bakuna at siguruhing makumpleto 
+                       ang mga ito hanggang sumapit ang kanyang unang kaarawan.</p>
+
+                    <hr style="background-color: red;">
+
+                    <p style="font-size: 15px;">Ang mga bakunang hindi nakalista ay maaring makuha 
+                       sa pribadong ospital o doktor.</p>
+                </div>
+            </div>
         </div>
+
             <!-- Button trigger modal -->
 
         <div class="container">
