@@ -1,7 +1,9 @@
+
+
 <?php 
-    require('classes/main.class.php');
-    $userdetails = $bms->get_userdata();
-    $bms->validate_admin();
+   // require('classes/main.class.php');
+   // $userdetails = $bms->get_userdata();
+   // $bms->validate_admin();
 
     //print_r($userdetails);
 ?>
@@ -11,13 +13,14 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
-      integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
-      crossorigin="anonymous"
-    />
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous"/>
+    <script src="https://kit.fontawesome.com/e4c20ed0dd.js" crossorigin="anonymous"></script>
+
+    <!-- CSS -->
     <link rel="stylesheet" href="dashboard.css"/>
+
     <title>Admin Dashboard</title>
   </head>
   <body id="body">
@@ -31,91 +34,335 @@
       <main>
         <div class="main__container">
 
-          <!-- MAIN CARDS STARTS HERE -->
+          <h2>Residents</h2>
+
+          <br>
+
           <div class="main__cards">
-            <div class="card" style="width: 440px;">
+
+            <div class="card" style="width: 507px;">
               <i class="fa fa-users fa-2x text-lightblue"aria-hidden="true">
               </i>
               <div class="card_inner">
                 <p class="text-primary-p">Number of Residents</p>
-                <span class="font-bold text-title">578</span>
+                <span class="font-bold text-title">680</span>
               </div>
             </div>
 
-            <div class="card" style="width: 175px;">
+            <div class="card" style="width: 210px;">
               <i class="fa fa-male fa-2x text-red" aria-hidden="true"></i>
               <div class="card_inner">
                 <p class="text-primary-p">Male</p>
-                <span class="font-bold text-title">2467</span>
+                <span class="font-bold text-title">430</span>
               </div>
             </div>
 
-            <div class="card" style="width: 175px;">
+            <div class="card" style="width: 210px;">
+              <i class="fa fa-female fa-2x text-yellow" aria-hidden="true"></i>
+              <div class="card_inner">
+                <p class="text-primary-p">Female</p>
+                <span class="font-bold text-title">250</span>
+              </div>
+            </div>
+
+          </div>
+
+          <br> 
+
+          <h2>Barangay Officials</h2>
+
+          <br>
+
+          <div class="main__cards">
+
+            <div class="card" style="width: 507px;">
+              <i class="fa fa-user-friends fa-2x text-lightblue"aria-hidden="true">
+              </i>
+              <div class="card_inner">
+                <p class="text-primary-p">Number of Barangay Officials</p>
+                <span class="font-bold text-title">10</span>
+              </div>
+            </div>
+
+            <div class="card" style="width: 210px;">
+              <i class="fa fa-male fa-2x text-red" aria-hidden="true"></i>
+              <div class="card_inner">
+                <p class="text-primary-p">Male</p>
+                <span class="font-bold text-title">7</span>
+              </div>
+            </div>
+
+            <div class="card" style="width: 210px;">
               <i class="fa fa-female fa-2x text-yellow"aria-hidden="true"></i>
               <div class="card_inner">
                 <p class="text-primary-p">Female</p>
-                <span class="font-bold text-title">340</span>
+                <span class="font-bold text-title">3</span>
               </div>
             </div>
+
           </div>
 
-          <!-- MAIN CARDS ENDS HERE -->
+          <br>
 
-          <!-- CHARTS STARTS HERE -->
-          
-          <div class="charts">
-            <div class="charts__left">
-              <div class="charts__left__title">
-                <div>
-                  <h1>Daily Reports</h1>
-                  <p>Cupertino, California, USA</p>
-                </div>
-                <i class="fa fa-usd" aria-hidden="true"></i>
-              </div>
-              <div id="apex1"></div>
-            </div>
+          <h2>Blotter</h2>
 
-            <div class="charts__right">
-              <div class="charts__right__title">
-                <div>
-                  <h1>Stats Reports</h1>
-                  <p>Cupertino, California, USA</p>
-                </div>
-                <i class="fa fa-usd" aria-hidden="true"></i>
-              </div>
+          <br>
 
-              <div class="charts__right__cards">
-                <div class="card1">
-                  <h1>Income</h1>
-                  <p>$75,300</p>
-                </div>
+          <div class="main__cards">
 
-                <div class="card2">
-                  <h1>Sales</h1>
-                  <p>$124,200</p>
-                </div>
-
-                <div class="card3">
-                  <h1>Users</h1>
-                  <p>3900</p>
-                </div>
-
-                <div class="card4">
-                  <h1>Orders</h1>
-                  <p>1881</p>
-                </div>
+            <div class="card" style="width: 507px;">
+              <i class="fa fa-file-signature fa-2x text-lightblue"aria-hidden="true">
+              </i>
+              <div class="card_inner">
+                <p class="text-primary-p">Number of Blotter Reports</p>
+                <span class="font-bold text-title">130</span>
               </div>
             </div>
+
+            <div class="card" style="width: 210px;">
+              <i class="fa fa-male fa-2x text-red" aria-hidden="true"></i>
+              <div class="card_inner">
+                <p class="text-primary-p">Male</p>
+                <span class="font-bold text-title">74</span>
+              </div>
+            </div>
+
+            <div class="card" style="width: 210px;">
+              <i class="fa fa-female fa-2x text-yellow"aria-hidden="true"></i>
+              <div class="card_inner">
+                <p class="text-primary-p">Female</p>
+                <span class="font-bold text-title">53</span>
+              </div>
+            </div>
+
           </div>
-          <!-- CHARTS ENDS HERE -->
+
+          <br>
+
+          <h2>TB Dots</h2>
+
+          <br>
+
+          <div class="main__cards">
+
+            <div class="card" style="width: 507px;">
+              <i class="fa fa-tablets fa-2x text-lightblue"aria-hidden="true">
+              </i>
+              <div class="card_inner">
+                <p class="text-primary-p">Number of Tuberculosis</p>
+                <span class="font-bold text-title">1080</span>
+              </div>
+            </div>
+
+            <div class="card" style="width: 210px;">
+              <i class="fa fa-male fa-2x text-red" aria-hidden="true"></i>
+              <div class="card_inner">
+                <p class="text-primary-p">Male</p>
+                <span class="font-bold text-title">89</span>
+              </div>
+            </div>
+
+            <div class="card" style="width: 210px;">
+              <i class="fa fa-female fa-2x text-yellow"aria-hidden="true"></i>
+              <div class="card_inner">
+                <p class="text-primary-p">Female</p>
+                <span class="font-bold text-title">38</span>
+              </div>
+            </div>
+            
+          </div>
+
+          <br>
+
+          <h2>Family Planning</h2>
+
+          <br>
+
+          <div class="main__cards">
+
+            <div class="card" style="width: 507px;">
+              <i class="fa fa-users fa-2x text-lightblue"aria-hidden="true">
+              </i>
+              <div class="card_inner">
+                <p class="text-primary-p">Number of Family</p>
+                <span class="font-bold text-title">160</span>
+              </div>
+            </div>
+            
+          </div>
+
+          <br>
+
+          <h2>Mother and Child Check-Up</h2>
+
+          <br>
+
+          <div class="main__cards">
+
+            <div class="card" style="width: 507px;">
+              <i class="fa fa-medkit fa-2x text-lightblue"aria-hidden="true">
+              </i>
+              <div class="card_inner">
+                <p class="text-primary-p">Number of Mother and Child Check-Up</p>
+                <span class="font-bold text-title">130</span>
+              </div>
+            </div>
+
+            <div class="card" style="width: 210px;">
+              <i class="fa fa-female fa-2x text-red" aria-hidden="true"></i>
+              <div class="card_inner">
+                <p class="text-primary-p">Mother</p>
+                <span class="font-bold text-title">75</span>
+              </div>
+            </div>
+
+            <div class="card" style="width: 210px;">
+              <i class="fa fa-child fa-2x text-yellow"aria-hidden="true"></i>
+              <div class="card_inner">
+                <p class="text-primary-p">Child</p>
+                <span class="font-bold text-title">93</span>
+              </div>
+            </div>
+            
+          </div>
+
+          <br>
+
+          <h2>Vaccination Program</h2>
+
+          <br>
+
+          <div class="main__cards">
+
+            <div class="card" style="width: 507px;">
+              <i class="fa fa-syringe fa-2x text-lightblue"aria-hidden="true">
+              </i>
+              <div class="card_inner">
+                <p class="text-primary-p">Number of Vaccination</p>
+                <span class="font-bold text-title">170</span>
+              </div>
+            </div>
+
+            <div class="card" style="width: 210px;">
+              <i class="fa fa-baby fa-2x text-red" aria-hidden="true"></i>
+              <div class="card_inner">
+                <p class="text-primary-p">Male</p>
+                <span class="font-bold text-title">97</span>
+              </div>
+            </div>
+
+            <div class="card" style="width: 210px;">
+              <i class="fa fa-baby fa-2x text-yellow"aria-hidden="true"></i>
+              <div class="card_inner">
+                <p class="text-primary-p">Female</p>
+                <span class="font-bold text-title">73</span>
+              </div>
+            </div>
+            
+          </div>
+
+          <br>
+
+          <h2>Animal Registry and Welfare</h2>
+
+          <br>
+
+          <div class="main__cards">
+
+            <div class="card" style="width: 507px;">
+              <i class="fa fa-paw fa-2x text-lightblue"aria-hidden="true">
+              </i>
+              <div class="card_inner">
+                <p class="text-primary-p">Number of Animals</p>
+                <span class="font-bold text-title">1015</span>
+              </div>
+            </div>
+
+            <div class="card" style="width: 210px;">
+              <i class="fa fa-dog fa-2x text-red" aria-hidden="true"></i>
+              <div class="card_inner">
+                <p class="text-primary-p">Dogs</p>
+                <span class="font-bold text-title">670</span>
+              </div>
+            </div>
+
+            <div class="card" style="width: 210px;">
+              <i class="fa fa-cat fa-2x text-yellow"aria-hidden="true"></i>
+              <div class="card_inner">
+                <p class="text-primary-p">Cats</p>
+                <span class="font-bold text-title">345</span>
+              </div>
+            </div>
+
+          </div>
+
+          <br>
+
+          <h2>Certificate of Residency</h2>
+
+          <br>
+
+          <div class="main__cards">
+
+            <div class="card" style="width: 507px;">
+              <i class="fa fa-file fa-2x text-lightblue"aria-hidden="true">
+              </i>
+              <div class="card_inner">
+                <p class="text-primary-p">Number of Certificate of Residency</p>
+                <span class="font-bold text-title">97</span>
+              </div>
+            </div>
+            
+          </div>
+
+          <br>
+
+          <h2>Indigency</h2>
+
+          <br>
+
+          <div class="main__cards">
+
+            <div class="card" style="width: 507px;">
+              <i class="fa fa-file fa-2x text-lightblue"aria-hidden="true">
+              </i>
+              <div class="card_inner">
+                <p class="text-primary-p">Number of Indigency</p>
+                <span class="font-bold text-title">34</span>
+              </div>
+            </div>
+            
+          </div>
+
+          <br>
+
+          <h2>Barangay Clearance</h2>
+
+          <br>
+
+          <div class="main__cards">
+
+            <div class="card" style="width: 507px;">
+              <i class="fa fa-file fa-2x text-lightblue"aria-hidden="true">
+              </i>
+              <div class="card_inner">
+                <p class="text-primary-p">Number of Barangay Clearance</p>
+                <span class="font-bold text-title">86</span>
+              </div>
+            </div>
+            
+          </div>
         </div>
       </main>
 
       <div id="sidebar">
         <div class="sidebar__title">
           <div class="sidebar__img">
-            <img src="assets/logo.png" alt="logo" />
-            <h1>Vincent Vilfamat</h1>
+            <img src="assets/logo.jpg" alt="logo" 
+              style="border-radius: 50px; 
+                     width: 50px; 
+                     height: 50px;"/>
+            &nbsp;&nbsp;<h1>Vincent Vilfamat</h1>
           </div>
           <i
             onclick="closeSidebar()"
@@ -157,7 +404,7 @@
             <a href="#">Animal Registry and Welfare</a>
           </div>
           <div class="sidebar__link">
-            <i class="fa fa-calendar-check-o"></i>
+            <i class="fa fa-user-shield"></i>
             <a href="#">Blotter</a>
           </div>
           <div class="sidebar__link">
@@ -165,7 +412,7 @@
             <a href="#">TB Dots</a>
           </div>
           <div class="sidebar__link">
-            <i class="fa fa-exclamation"></i>
+            <i class="fas fa-ambulance"></i>
             <a href="#">Emergency Cases</a>
           </div>
           <div class="sidebar__link">
@@ -173,11 +420,11 @@
             <a href="#">Family Planning</a>
           </div>
           <div class="sidebar__link">
-            <i class="fa fa-user-md"></i>
+            <i class="fas fa-first-aid"></i>
             <a href="#">Mother and Child Check-Up</a>
           </div>
           <div class="sidebar__link">
-            <i class="fa fa-child"></i>
+            <i class="fas fa-baby"></i>
             <a href="#">Vaccination Program</a>
           </div>
 
@@ -207,10 +454,9 @@
     </div>
     
     <?php 
-      print_r($userdetails);
+     // print_r($userdetails);
     ?>
 
-    <script src="../BarangaySystem/bootstrap/js/bootstrap.bundle.js" type="text/javascript"> </script>
     <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
     <script src="script.js"></script>
 
