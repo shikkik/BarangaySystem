@@ -83,15 +83,7 @@
             
         }
 
-        public function check_resident($email) {
-
-            $connection = $this->openConn();
-            $stmt = $connection->prepare("SELECT * FROM tbl_resident WHERE email = ?");
-            $stmt->Execute([$email]);
-            $total = $stmt->rowCount(); 
-    
-            return $total;
-        }
+        
 
         public function view_resident(){
 
@@ -168,6 +160,48 @@
                 $stmt->execute([$email]);
 
                 header("location: resident_crud.php");
+            }
+        }
+
+
+
+        //Other functions for the resident datas and pages 
+
+        public function check_resident($email) {
+
+            $connection = $this->openConn();
+            $stmt = $connection->prepare("SELECT * FROM tbl_resident WHERE email = ?");
+            $stmt->Execute([$email]);
+            $total = $stmt->rowCount(); 
+    
+            return $total;
+        }
+
+        public function check_household($lname, $mi) {
+            $connection = $this->openConn();
+            $stmt = $connection->prepare("SELECT * FROM tbl_resident WHERE lname = ? AND mi = ?");
+            $stmt->Execute([$lname, $mi]);
+            $total = $stmt->rowCount(); 
+    
+            return $total;
+        }
+
+        public function view_household_list() {
+
+            if (isset($_POST['view_household'])) {
+                $email = $_POST['email'];
+                $lname = $_POST['lname'];
+                $mi = $_POST['mi'];
+                
+
+                if($this->check_household($email, $mi) >= 1 ) {
+                    $connection = $this->openConn();
+                    $stmt = $connection->prepare("SELECT * FROM tbl_resident WHERE lname = ? AND mi = ?");
+                    $stmt->Execute([$lname, $mi]);
+                    $total = $stmt->rowCount(); 
+    
+                    return $total;
+                }  
             }
         }
     }

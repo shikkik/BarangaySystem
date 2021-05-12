@@ -2,10 +2,7 @@
     //error_reporting(E_ALL ^ E_WARNING);
     require('classes/resident.class.php');
     $userdetails = $bmis->get_userdata();
-    $view = $residentbmis->check_resident($email);
-
-    print_r($userdetails);
-    
+    //$view = $residentbmis->check_resident($email);
 
 ?>
 
@@ -16,6 +13,7 @@
     <title> Barangay Management System </title>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+        <script src="../BarangaySystem/customjs/main.js" type="text/javascript"> </script>
         <!-- responsive tags for screen compatibility -->
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <!-- custom css --> 
@@ -35,8 +33,13 @@
                     <span class="caret"></span>
                 </button>
                 <ul class="dropdown-menu">
-                    <li><a href="resident_profile.php"> Personal Profile </a></li>
-                    <li><a href="logout.php">Logout</a></li>
+                <form method="post">
+                    <input type="hidden" value="<?= $userdetails['surname'];?>">  
+                    <input type="hidden" value="<?= $userdetails['mname'];?>">
+                    <li><button class="btn" href="resident_profile.php"> Personal Profile &nbsp; <i class="fas fa-user"></i> </button></li>
+                </form>
+                    <button class="btn" onclick="logout();"> Logout &nbsp; <i class="fas fa-sign-out-alt"></i> </button>
+                
                 </ul>
             </div>
         </nav>
