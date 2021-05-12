@@ -1,7 +1,7 @@
 <?php 
     require('classes/resident.class.php');
 
-    $view = $residentbmis->view_single_resident($email);
+    //$view = $residentbmis->view_single_resident($email);
     $userdetails = $residentbmis->get_userdata();
 ?>
 
@@ -10,6 +10,8 @@
 
     <head> 
     <title> Barangay Management System </title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
         <!-- responsive tags for screen compatibility -->
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <!-- custom css --> 
@@ -27,9 +29,14 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
 
-            <div class="navbar-nav ml-auto">
-                <a class="nav-item nav-link" href="resident_profile.php?ID=<?php echo $profile['id_resident'];?>"> view </a>
-                <a class="nav-item nav-link" href="logout.php"><i class="fas fa-sign-out-alt"></i></a>
+            <div class="dropdown ml-auto">
+                <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown"><?= $userdetails['surname'];?>, <?= $userdetails['firstname'];?>
+                    <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu">
+                    <li><a href="resident_profile.php"> Personal Profile </a></li>
+                    <li><a href="logout.php">Logout</a></li>
+                </ul>
             </div>
         </nav>
 
@@ -50,8 +57,16 @@
                         <div class="card-body">
                             <div class="row">
                                 <div class="col">
-                                    <h5> Name: <?= $userdetails['fullname'];?></h5> 
-                                    <h5> Gender: <?= $view ['sex'];?> </h5>
+                                    <h5> Name    <?= $userdetails['surname'];?>, <?= $userdetails['firstname'];?> <?= $userdetails['mname'];?>.</h5> 
+                                    <h5> Email   <?= $userdetails['emailadd'];?> </h5>
+                                    <h5> Sex <?= $userdetails['sex'];?> </h5>
+                                    <h5> Status <?= $userdetails['status'];?> </h5>
+                                    <h5> Address <?= $userdetails['address'];?> </h5>
+                                    <h5> Contact <?= $userdetails['contact'];?> </h5>
+                                    <h5> Birth Date <?= $userdetails['bdate'];?> </h5>
+                                    <h5> Birth Place <?= $userdetails['bplace'];?> </h5>
+                                    <h5> Nationality <?= $userdetails['nationality'];?> </h5>
+                                    <h5> Family Role <?= $userdetails['family_role'];?> </h5>
                                 </div>
 
                                 <div class="col"></div>
@@ -65,7 +80,7 @@
 
             <div class="row">
                 <div class="col-12">
-                    <h1 class="text-center">Household List</h1>
+                    <button class="btn btn-primary" name="view_household"> View Household List</button>
                     <hr>
                 </div>
             </div>
@@ -78,6 +93,6 @@
            print_r($userdetails);
         ?>
 
-         
+        <script src="../BarangaySystem/bootstrap/js/bootstrap.bundle.js" type="text/javascript"> </script>
     </body>
 </html>

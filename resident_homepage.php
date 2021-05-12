@@ -3,6 +3,8 @@
     require('classes/resident.class.php');
     $userdetails = $bmis->get_userdata();
     $view = $residentbmis->check_resident($email);
+
+    print_r($userdetails);
     
 
 ?>
@@ -29,7 +31,7 @@
             <a class="navbar-brand" href="resident_homepage.php">Barangay Sorsogon</a>
 
             <div class="dropdown ml-auto">
-                <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown"><?= $userdetails['fullname'];?>
+                <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown"><?= $userdetails['surname'];?>, <?= $userdetails['firstname'];?>
                     <span class="caret"></span>
                 </button>
                 <ul class="dropdown-menu">

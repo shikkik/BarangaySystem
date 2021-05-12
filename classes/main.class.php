@@ -125,8 +125,21 @@ class BMISClass {
 
         //eto si userdata yung mag s set ng name mo tsaka role/access habang ikaw ay nag b browse at gumagamit ng store management
         $_SESSION['userdata'] = array(
+            "id_resident" => $array['id_resident'], 
             "emailadd" => $array['email'],
-            "fullname" => $array['lname']. " ".$array['fname']. " ".$array['mi'],
+            //"fullname" => $array['lname']. " ".$array['fname']. " ".$array['mi'],
+            "surname" => $array['lname'],
+            "firstname" => $array['fname'],
+            "mname" => $array['mi'],
+            "age" => $array['age'],
+            "sex" => $array['sex'],
+            "status" => $array['status'],
+            "address" => $array['address'],
+            "contact" => $array['contact'],
+            "bdate" => $array['bdate'],
+            "bplace" => $array['bplace'],
+            "nationality" => $array['nationality'],
+            "family_role" => $array['family_role'],
             "role" => $array['role']
         );
         return $_SESSION['userdata'];
