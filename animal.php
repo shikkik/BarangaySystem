@@ -75,9 +75,14 @@
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top">
       <a class="navbar-brand" href="#">Barangay Sorsogon</a>
 
-      <div class="navbar-nav ml-auto">
-        <a class="nav-item nav-link active" href="#"> <?= $userdetails['fullname'];?>  <span class="sr-only">(current)</span></a>
-        <a class="nav-item nav-link" href="logout.php"><i class="fas fa-sign-out-alt"></i></a>
+      <div class="dropdown ml-auto">
+          <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown"><?= $userdetails['fullname'];?>
+            <span class="caret"></span>
+          </button>
+          <ul class="dropdown-menu">
+              <li><a href="resident_profile.php"> Personal Profile </a></li>
+              <li><a href="logout.php">Logout</a></li>
+          </ul>
       </div>
     </nav>
 
@@ -263,9 +268,9 @@
       </div>    
     </section>
 
-      <?php 
-          print_r($userdetails);
-      ?>
+    <?php 
+        print_r($userdetails);
+    ?>
 
     <script src="../BarangaySystem/bootstrap/js/bootstrap.bundle.js" type="text/javascript"> </script>
   

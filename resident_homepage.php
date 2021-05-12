@@ -30,7 +30,8 @@
 
             <div class="dropdown ml-auto">
                 <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown"><?= $userdetails['fullname'];?>
-                <span class="caret"></span></button>
+                    <span class="caret"></span>
+                </button>
                 <ul class="dropdown-menu">
                     <li><a href="resident_profile.php"> Personal Profile </a></li>
                     <li><a href="logout.php">Logout</a></li>
@@ -77,7 +78,7 @@
                         <div class="card"> 
                             <div class="card-body text-center">
                                 <img src="../BarangaySystem/icons/tbdots.png"> 
-                                <a href=""> <h4> TB DOTS Consultation</h4> 
+                                <a href="tb_dots.php"> <h4> TB DOTS Consultation</h4> 
                             </a>
                             </div>
                         </div>
