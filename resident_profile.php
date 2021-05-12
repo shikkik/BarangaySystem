@@ -80,8 +80,12 @@
 
             <div class="row">
                 <div class="col-12">
+                <form method="post"> 
+                    <input type="hidden" name="lname" value="<?= $userdetails['surname'];?>">
+                    <input type="hidden" name="mi" value="<?= $userdetails['mname'];?>">
                     <button class="btn btn-primary" name="view_household"> View Household List</button>
                     <hr>
+                </form>
                 </div>
             </div>
         </div>
