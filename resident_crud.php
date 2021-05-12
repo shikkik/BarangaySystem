@@ -256,25 +256,12 @@
 
                                 <div class="col rb">
                                     <label class="mtop">Gender</label>
-<<<<<<< HEAD
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="sex" value="Male">
-                                        <label class="form-check-label">Male</label>
-                                    </div>
-
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="sex" value="Female">
-                                        <label class="form-check-label">Female</label>
-                                    </div>
-                                </div>       
-=======
                                     <select class="form-control" name="sex" id="sex">
                                     <option value="">---</option>
                                     <option value="Male">Male</opt ion>
                                     <option value="Female">Female</option>
                                     </select>
                                 </div>           
->>>>>>> 5f39b6eb43a6900ce2a5af6fdd906262dbeb622d
                             </div>
                             <div class="row mtop"> 
                                 <div class="col"> 
