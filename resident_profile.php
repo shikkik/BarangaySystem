@@ -3,6 +3,8 @@
 
     //$view = $residentbmis->view_single_resident($email);
     $userdetails = $residentbmis->get_userdata();
+    $household_members = $residentbmis->view_household_list();
+    
 ?>
 
 <!DOCTYPE html> 
@@ -57,8 +59,8 @@
                         <div class="card-body">
                             <div class="row">
                                 <div class="col">
-                                    <h5> Name    <?= $userdetails['surname'];?>, <?= $userdetails['firstname'];?> <?= $userdetails['mname'];?>.</h5> 
-                                    <h5> Email   <?= $userdetails['emailadd'];?> </h5>
+                                    <h5> Name <?= $userdetails['surname'];?>, <?= $userdetails['firstname'];?> <?= $userdetails['mname'];?>.</h5> 
+                                    <h5> Email <?= $userdetails['emailadd'];?> </h5>
                                     <h5> Sex <?= $userdetails['sex'];?> </h5>
                                     <h5> Status <?= $userdetails['status'];?> </h5>
                                     <h5> Address <?= $userdetails['address'];?> </h5>
@@ -78,28 +80,68 @@
                 <div class="col-sm"> </div>
             </div>
 
+            <br>
+
+
             <div class="row">
-                <div class="col-12">
-                <form method="post"> 
-                    <input type="hidden" name="lname" value="<?= $userdetails['surname'];?>">
-                    <input type="hidden" name="mi" value="<?= $userdetails['mname'];?>">
-                    <button class="btn btn-primary" name="view_household"> View Household List</button>
-                    <hr>
-                </form>
+                <div class="col-sm-12">
+                    <form method="post"> 
+                        <input type="text" name="lname" value="<?= $userdetails['surname'];?>">
+                        <input type="text" name="mi" value="<?= $userdetails['mname'];?>">
+                        <button class="btn btn-primary" name="view_household"> View Household List </button>
+                        <hr>
+                    </form>
                 </div>
             </div>
+  
+            <table class="table table-dark">
+            <form method="post">
+                <thead> 
+                    <tr>
+                        <th> Surname </th>
+                        <th> First name </th>
+                        <th> Middle Name </th>
+                        <th> Age </th>
+                        <th> Sex </th>
+                        <th> Status </th>
+                        <th> Address </th>
+                        <th> Contact </th>
+                        <th> Bdate </th>
+                        <th> Bplace </th>
+                        <th> Nationality </th>
+                        <th> Family Role </th>
+                        <th> Actions </th>
+                    </tr>
+                    </thead>
+                    <tbody> 
+                    <?php if(is_array($household_members)) {?>
+                        <?php foreach($household_members as $household_members) {?>
+                    <tr>
+                        <td> <?= $household_members['lname'];?> </td>
+                        <td> <?= $household_members['fname'];?> </td>
+                        <td> <?= $household_members['mi'];?> </td>
+                        <td> <?= $household_members['age'];?> </td>
+                        <td> <?= $household_members['sex'];?> </td>
+                        <td> <?= $household_members['status'];?> </td>
+                        <td> <?= $household_members['address'];?> </td>
+                        <td> <?= $household_members['contact'];?> </td>
+                        <td> <?= $household_members['bdate'];?> </td>
+                        <td> <?= $household_members['bplace'];?> </td>
+                        <td> <?= $household_members['nationality'];?> </td>
+                        <td> <?= $household_members['family_role'];?> </td>
+                        <td>    
+                        <form method="post">
+                            <a href="" class="btn btn-primary">  Update </a>
+                            <button class="btn btn-danger" type="submit" name="delete_resident"> Remove </button>
+                        </form>
+                        </td>
+                    </tr>
+                        <?php }?>
+                    <?php } ?>
+                </tbody>
+            </form>
+            </table>
         </div>
-
-        <br>
-        <br>
-        <br>
-        <br>
-
-        <table>
-
-        
-    
-
         <?php 
            print_r($userdetails);
         ?>

@@ -97,6 +97,36 @@
            
         }
 
+        public function view_household_list() {
+            
+            if(isset($_POST['view_household'])) {
+
+                $lname = $_POST['lname'];
+                $mi = $_POST['mi'];
+    
+                $connection = $this->openConn();
+    
+                $stmt = $connection->prepare("SELECT * FROM tbl_resident WHERE lname ='$lname' AND mi ='$mi'");
+                $stmt->execute();
+                $household = $stmt->fetch();
+                $total = $stmt->rowCount();
+    
+                if($total >= 1 ) {
+                    return $household;
+                }
+                
+                else {
+                    echo "no family members";
+                }
+
+            }
+        }
+
+
+
+
+
+
         public function view_single_resident(){
 
             $email = $_GET['email'];
@@ -186,24 +216,9 @@
             return $total;
         }
 
-        public function view_household_list() {
 
-            if (isset($_POST['view_household'])) {
-                $email = $_POST['email'];
-                $lname = $_POST['lname'];
-                $mi = $_POST['mi'];
-                
 
-                if($this->check_household($email, $mi) >= 1 ) {
-                    $connection = $this->openConn();
-                    $stmt = $connection->prepare("SELECT * FROM tbl_resident WHERE lname = ? AND mi = ?");
-                    $stmt->Execute([$lname, $mi]);
-                    $total = $stmt->rowCount(); 
-    
-                    return $total;
-                }  
-            }
-        }
+
     }
 
     $residentbmis = new ResidentClass();
