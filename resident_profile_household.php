@@ -3,6 +3,16 @@
 
     //$view = $residentbmis->view_single_resident($email);
     $userdetails = $residentbmis->get_userdata();
+    $view = $residentbmis->view_household_list();
+
+    //$lname = $_GET['lname'];
+    //$lname = $_GET['mi'];
+
+    //$connection = $residentbmis->openConn();
+    //$stmt = $connection->prepare("SELECT * FROM tbl_resident WHERE lname ='$lname'");
+    //$stmt->execute();  
+   // $view = $stmt->fetch();
+    
 ?>
 
 <!DOCTYPE html> 
@@ -10,6 +20,7 @@
 
     <head> 
     <title> Barangay Management System </title>
+        <script src="../BarangaySystem/customjs/main.js" type="text/javascript"> </script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
         <!-- responsive tags for screen compatibility -->
@@ -34,8 +45,8 @@
                     <span class="caret"></span>
                 </button>
                 <ul class="dropdown-menu">
-                    <li><a href="resident_profile.php"> Personal Profile </a></li>
-                    <li><a href="logout.php">Logout</a></li>
+                    <button class="btn" onclick="profile();"> <i class="fas fa-user" style="padding: 0.5em;"></i>Personal Profile  </button>
+                    <button class="btn" onclick="logout();"> <i class="fas fa-sign-out-alt" style="padding: 0.5em;"></i> Logout  </button>
                 </ul>
             </div>
         </nav>
@@ -57,8 +68,8 @@
                         <div class="card-body">
                             <div class="row">
                                 <div class="col">
-                                    <h5> Name    <?= $userdetails['surname'];?>, <?= $userdetails['firstname'];?> <?= $userdetails['mname'];?>.</h5> 
-                                    <h5> Email   <?= $userdetails['emailadd'];?> </h5>
+                                    <h5> Name <?= $userdetails['surname'];?>, <?= $userdetails['firstname'];?> <?= $userdetails['mname'];?>.</h5> 
+                                    <h5> Email <?= $userdetails['emailadd'];?> </h5>
                                     <h5> Sex <?= $userdetails['sex'];?> </h5>
                                     <h5> Status <?= $userdetails['status'];?> </h5>
                                     <h5> Address <?= $userdetails['address'];?> </h5>
@@ -78,78 +89,59 @@
                 <div class="col-sm"> </div>
             </div>
 
-            <div class="row">
-                <div class="col-12">
-                <form method="post"> 
-                    <input type="hidden" name="lname" value="<?= $userdetails['surname'];?>">
-                    <input type="hidden" name="mi" value="<?= $userdetails['mname'];?>">
-                    <button class="btn btn-primary" name="view_household"> View Household List</button>
-                    <hr>
-                </form>
-                </div>
-            </div>
+            <br>
+
+
+            <table class="table table-dark">
+            <form method="post">
+                <thead> 
+                    <tr>
+                        <th> Surname </th>
+                        <th> First name </th>
+                        <th> Middle Name </th>
+                        <th> Age </th>
+                        <th> Sex </th>
+                        <th> Status </th>
+                        <th> Address </th>
+                        <th> Contact </th>
+                        <th> Bdate </th>
+                        <th> Bplace </th>
+                        <th> Nationality </th>
+                        <th> Family Role </th>
+                        <th> Actions </th>
+                    </tr>
+                    </thead>
+                    <tbody> 
+                    <?php if(is_array($view)) {?>
+                        <?php foreach($view as $view) {?>
+                    <tr>
+                        <td> <?= $view['lname'];?> </td>
+                        <td> <?= $view['fname'];?> </td>
+                        <td> <?= $view['mi'];?> </td>
+                        <td> <?= $view['age'];?> </td>
+                        <td> <?= $view['sex'];?> </td>
+                        <td> <?= $view['status'];?> </td>
+                        <td> <?= $view['address'];?> </td>
+                        <td> <?= $view['contact'];?> </td>
+                        <td> <?= $view['bdate'];?> </td>
+                        <td> <?= $view['bplace'];?> </td>
+                        <td> <?= $view['nationality'];?> </td>
+                        <td> <?= $view['family_role'];?> </td>
+                        <td>    
+                        <form method="post">
+                            <a href="" class="btn btn-primary">  Update </a>
+                            <button class="btn btn-danger" type="submit" name="delete_resident"> Remove </button>
+                        </form>
+                        </td>
+                    </tr>
+                        <?php }?>
+                    <?php } ?>
+                </tbody>
+            </form>
+            </table>
         </div>
 
-        <br>
-        <br>
-        <br>
-        <br>
-
-        <table class="table table-dark">
-                    <form action="" method="post">
-                        <thead> 
-                            <tr>
-                                <th> Surname </th>
-                                <th> First name </th>
-                                <th> Middle Name </th>
-                                <th> Age </th>
-                                <th> Sex </th>
-                                <th> Status </th>
-                                <th> Address </th>
-                                <th> Contact </th>
-                                <th> Bdate </th>
-                                <th> Bplace </th>
-                                <th> Nationality </th>
-                                <th> Family Role </th>
-                            </tr>
-                        </thead>
-                        <tbody> 
-                        <?php if(is_array($view)) {?>
-                            <?php foreach($view as $view) {?>
-                            <tr>
-                                <th> <?= $view['lname'];?> </th>
-                                <th> <?= $view['fname'];?> </th>
-                                <th> <?= $view['mi'];?> </th>
-                                <th> <?= $view['age'];?> </th>
-                                <th> <?= $view['sex'];?> </th>
-                                <th> <?= $view['status'];?> </th>
-                                <th> <?= $view['address'];?> </th>
-                                <th> <?= $view['contact'];?> </th>
-                                <th> <?= $view['bdate'];?> </th>
-                                <th> <?= $view['bplace'];?> </th>
-                                <th> <?= $view['nationality'];?> </th>
-                                <th> <?= $view['family_role'];?> </th>
-                            </tr>
-                            <tr>
-                                <td>    
-                                <form action="" method="post">
-                                    <a href="resident_crud.php?email=<?= $view['email'];?>" class="btn btn-primary">  Update </a>
-                                    <input type="hidden" name="email" value="<?= $view['email'];?>">
-                                    <button class="btn btn-danger" type="submit" name="delete_resident"> Remove </button>
-                                    </form>
-                                </td>
-                            </tr>
-                            <?php }?>
-                        <?php } ?>
-                        </tbody>
-                    </form>
-                    </table>
-    
-
-        <?php 
-           print_r($userdetails);
-        ?>
-
         <script src="../BarangaySystem/bootstrap/js/bootstrap.bundle.js" type="text/javascript"> </script>
+        
     </body>
 </html>

@@ -3,8 +3,8 @@
 
     //$view = $residentbmis->view_single_resident($email);
     $userdetails = $residentbmis->get_userdata();
-    $household = $residentbmis->view_household_list();
-    
+
+
 ?>
 
 <!DOCTYPE html> 
@@ -36,8 +36,8 @@
                     <span class="caret"></span>
                 </button>
                 <ul class="dropdown-menu">
-                    <li><a href="resident_profile.php"> Personal Profile </a></li>
-                    <li><a href="logout.php">Logout</a></li>
+                    <button class="btn" onclick="profile();"> <i class="fas fa-user" style="padding: 0.5em;"></i>Personal Profile  </button>
+                    <button class="btn" onclick="logout();"> <i class="fas fa-sign-out-alt" style="padding: 0.5em;"></i> Logout  </button>
                 </ul>
             </div>
         </nav>
@@ -85,66 +85,21 @@
 
             <div class="row">
                 <div class="col-sm-12">
-                    <form method="post"> 
+                    <form action="resident_profile_household.php" method="get"> 
                         <input type="text" name="lname" value="<?= $userdetails['surname'];?>">
                         <input type="text" name="mi" value="<?= $userdetails['mname'];?>">
-                        <button class="btn btn-primary" name="view_household"> View Household List </button>
+                        
+                        <button class="btn btn-primary"> View Household List </button>
                         <hr>
                     </form>
                 </div>
             </div>
-  
-            <table class="table table-dark">
-            <form method="post">
-                <thead> 
-                    <tr>
-                        <th> Surname </th>
-                        <th> First name </th>
-                        <th> Middle Name </th>
-                        <th> Age </th>
-                        <th> Sex </th>
-                        <th> Status </th>
-                        <th> Address </th>
-                        <th> Contact </th>
-                        <th> Bdate </th>
-                        <th> Bplace </th>
-                        <th> Nationality </th>
-                        <th> Family Role </th>
-                        <th> Actions </th>
-                    </tr>
-                    </thead>
-                    <tbody> 
-                    <?php if(is_array($household)) {?>
-                        <?php foreach($household as $household) {?>
-                    <tr>
-                        <td> <?= $household['lname'];?> </td>
-                        <td> <?= $household['fname'];?> </td>
-                        <td> <?= $household['mi'];?> </td>
-                        <td> <?= $household['age'];?> </td>
-                        <td> <?= $household['sex'];?> </td>
-                        <td> <?= $household['status'];?> </td>
-                        <td> <?= $household['address'];?> </td>
-                        <td> <?= $household['contact'];?> </td>
-                        <td> <?= $household['bdate'];?> </td>
-                        <td> <?= $household['bplace'];?> </td>
-                        <td> <?= $household['nationality'];?> </td>
-                        <td> <?= $household['family_role'];?> </td>
-                        <td>    
-                        <form method="post">
-                            <a href="" class="btn btn-primary">  Update </a>
-                            <button class="btn btn-danger" type="submit" name="delete_resident"> Remove </button>
-                        </form>
-                        </td>
-                    </tr>
-                        <?php }?>
-                    <?php } ?>
-                </tbody>
-            </form>
-            </table>
-        </div>
-        <?php 
-           print_r($userdetails);
-        ?>
+        </div> 
+
+        <br>
+        <br>
+        <br>
+
 
         <script src="../BarangaySystem/bootstrap/js/bootstrap.bundle.js" type="text/javascript"> </script>
     </body>

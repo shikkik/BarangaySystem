@@ -92,34 +92,28 @@
             $stmt = $connection->prepare("SELECT * from tbl_resident");
             $stmt->execute();
             $view = $stmt->fetchAll();
-            //$rows = $stmt->
+
             return $view;
            
         }
 
         public function view_household_list() {
             
-            if(isset($_POST['view_household'])) {   
+            //$lname = $_GET['lname'];
+            //$mi = $_GET['mi'];
 
-                $lname = $_POST['lname'];
-                $mi = $_POST['mi'];
-    
-                $connection = $this->openConn();
-    
-                //if($this->view_resident($lname, $mi) == 1)   
-                $stmt = $connection->prepare("SELECT * FROM tbl_resident WHERE lname ='$lname' AND mi ='$mi'");
-                $stmt->execute();
-                $household = $stmt->fetch();
-                $total = $stmt->rowCount();
-    
-                if($total >= 1 ) {
-                    return $household;
-                }
+            $connection = $this->openConn();
+
+            //$stmt = $connection->prepare("SELECT * from tbl_resident 
+            //WHERE lname LIKE '%$lname%'");
+            //$stmt->execute();
+            //$view = $stmt->fetch();
+            
+           
+            //return $view;
+
+            if(isset($_POST[''])) {
                 
-               // else {
-               //     echo "no family members";
-               // }
-
             }
         }
 

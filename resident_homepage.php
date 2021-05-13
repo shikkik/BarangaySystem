@@ -103,7 +103,7 @@
                         <div class="card"> 
                             <div class="card-body text-center">
                                 <img src="../BarangaySystem/icons/vaccine.png"> 
-                                <a href=""> <h4> Vaccination Programs </h4> 
+                                <a href="vaccination.php"> <h4> Vaccination Programs </h4> 
                             </a>
                             </div>
                         </div>
@@ -188,10 +188,6 @@
 
             </div>
         </section>
-
-        <?php 
-            print_r($userdetails);
-        ?>
 
         <script src="../BarangaySystem/bootstrap/js/bootstrap.bundle.js" type="text/javascript"> </script>
     </body>

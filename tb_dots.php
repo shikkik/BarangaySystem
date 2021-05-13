@@ -283,10 +283,6 @@
                 </div>
             </div>  
         </div>
-        
-        <?php 
-          print_r($userdetails);
-        ?>
 
         <script src="../BarangaySystem/bootstrap/js/bootstrap.bundle.js" type="text/javascript"> </script>
   

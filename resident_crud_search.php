@@ -1,10 +1,19 @@
 <?php 
     require('classes/resident.class.php');
 
-    $view = $residentbmis->view_resident();
+    $view = $residentbmis->view_household_list();
     $residentbmis->create_resident();
     $residentbmis->update_resident();
     $residentbmis->delete_resident();
+
+    //$lname = $_GET['lname'];
+
+    $connection = $residentbmis->openConn();
+
+    //$stmt = $connection->prepare("SELECT * from tbl_resident 
+    //WHERE lname LIKE '%$lname%'");
+    //$stmt->execute();
+    //$view = $stmt->fetch();
    
 ?>
 
@@ -19,10 +28,13 @@
 
     <body>
         <div class="container-fluid"> 
+
             <div class="row"> 
                 <div class="col">
                 <form action="resident_crud_search.php" method="get"> 
                         <input type="text" name="lname">
+                        <input type="text" name="mi">
+                        
                         <button class="btn btn-primary"> View Household List </button>
                         <hr>
                     </form>
