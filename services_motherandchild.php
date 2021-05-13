@@ -20,6 +20,22 @@
     
         <style>
 
+
+            /* Slideshow */
+
+            .carousel-inner img 
+            {
+                width: 100%;
+                height: 100%;
+                border-radius: 10px;
+            }
+
+            .container2{
+                margin-top: 30px;
+            }
+
+            /* Modal */
+
             .applybutton
             {
                 width: 100% !important;
@@ -28,6 +44,27 @@
                 bottom: -30px;
                 border-radius: 20px;
                 margin-top: 30px;
+            }
+
+            /* Under Navbar */
+
+            .container1{
+                background-color: #AED6F1;
+                height: 400px;
+            }
+            
+            .picture1{
+                height: 400px;
+                width: 100%;
+            }
+
+            .picture2{
+                height: 400px;
+                width: 100%;
+            }
+
+            .text1{
+                margin-top: 60px;
             }
 
         </style>
@@ -59,8 +96,110 @@
 
         <!-- Under Navbar -->
 
-        <div class="container-fluid">
-            <img class="picture1" src="../BarangaySystem/icons/MotherandChild/motherandchild1.png">
+        <div class="container-fluid container1">
+            <div class="row text-center row1">
+                <div class="col">
+                    <img class="picture1" src="../BarangaySystem/icons/MotherandChild/motherandchild1.png">
+                </div>
+
+                <div class="col text1">
+                    <h2>Mother and Child Check-Up</h2>
+                    <hr style="background-color:black;">
+                    <h6>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                        Iste possimus veniam deleniti, aut nesciunt inventore 
+                        doloremque, itaque eaque, id culpa nemo quis doloribus 
+                        blanditiis excepturi laudantium porro quod aspernatur 
+                        pariatur.
+                    </h6>
+                </div>
+
+                <div class="col">
+                    <img class="picture2" src="../BarangaySystem/icons/MotherandChild/motherandchild2.png">
+                </div>
+            </div>
+        </div>
+
+      <!-- Picture Slideshow-->
+
+            <br>
+            <bR>
+
+        <div class="container container2 text-center">
+            <h2>Barangay Medical Mission</h2>
+
+            <h6> &nbsp; <i class="fas fa-user-md"></i> &nbsp; Free Check-Up &nbsp; | 
+                 &nbsp; <i class="fas fa-comment-medical"></i> &nbsp; Free Health Seminar &nbsp; | 
+                 &nbsp; <i class="fas fa-first-aid"></i> &nbsp; Free Consultation &nbsp; | 
+                 &nbsp; <i class="fas fa-prescription-bottle"></i> &nbsp; Free Product Orientation </h6>
+            
+            <hr style="background-color:black;">
+
+            <br>
+            <br>
+
+            <div class="row">
+                <div class="col">
+                    <div id="demo" class="carousel slide" data-ride="carousel" style="width: 500px; height: 400px;">
+                        <ul class="carousel-indicators">
+                            <li data-target="#demo" data-slide-to="0" class="active"></li>
+                            <li data-target="#demo" data-slide-to="1"></li>
+                            <li data-target="#demo" data-slide-to="2"></li>
+                        </ul>
+
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                            <img src="../BarangaySystem/icons/MotherandChild/mandc1.jpg">
+                            </div>
+                            <div class="carousel-item">
+                            <img src="../BarangaySystem/icons/MotherandChild/mandc2.jpg">
+                            </div>
+                            <div class="carousel-item">
+                            <img src="../BarangaySystem/icons/MotherandChild/mandc3.jpg">
+                            </div>
+                        </div>
+
+                        <a class="carousel-control-prev" href="#demo" data-slide="prev">
+                            <span class="carousel-control-prev-icon"></span>
+                        </a>
+                        <a class="carousel-control-next" href="#demo" data-slide="next">
+                            <span class="carousel-control-next-icon"></span>
+                        </a>
+                    </div> 
+                </div>
+
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+                <div class="col">
+                    <div id="demo" class="carousel slide" data-ride="carousel" style="width: 500px; height: 400px;">
+                        <ul class="carousel-indicators">
+                            <li data-target="#demo" data-slide-to="0" class="active"></li>
+                            <li data-target="#demo" data-slide-to="1"></li>
+                            <li data-target="#demo" data-slide-to="2"></li>
+                        </ul>
+
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                            <img src="../BarangaySystem/icons/MotherandChild/mandc4.jpg">
+                            </div>
+                            <div class="carousel-item">
+                            <img src="../BarangaySystem/icons/MotherandChild/mandc5.jpg">
+                            </div>
+                            <div class="carousel-item">
+                            <img src="../BarangaySystem/icons/MotherandChild/mandc6.jpg">
+                            </div>
+                        </div>
+
+                        <a class="carousel-control-prev" href="#demo" data-slide="prev">
+                            <span class="carousel-control-prev-icon"></span>
+                        </a>
+                        <a class="carousel-control-next" href="#demo" data-slide="next">
+                            <span class="carousel-control-next-icon"></span>
+                        </a>
+                    </div> 
+                </div>
+
+            </div>
         </div>
 
         <!-- Button trigger modal -->
