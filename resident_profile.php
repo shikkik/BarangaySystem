@@ -3,7 +3,7 @@
 
     //$view = $residentbmis->view_single_resident($email);
     $userdetails = $residentbmis->get_userdata();
-    $household_members = $residentbmis->view_household_list();
+    $household = $residentbmis->view_household_list();
     
 ?>
 
@@ -114,21 +114,21 @@
                     </tr>
                     </thead>
                     <tbody> 
-                    <?php if(is_array($household_members)) {?>
-                        <?php foreach($household_members as $household_members) {?>
+                    <?php if(is_array($household)) {?>
+                        <?php foreach($household as $household) {?>
                     <tr>
-                        <td> <?= $household_members['lname'];?> </td>
-                        <td> <?= $household_members['fname'];?> </td>
-                        <td> <?= $household_members['mi'];?> </td>
-                        <td> <?= $household_members['age'];?> </td>
-                        <td> <?= $household_members['sex'];?> </td>
-                        <td> <?= $household_members['status'];?> </td>
-                        <td> <?= $household_members['address'];?> </td>
-                        <td> <?= $household_members['contact'];?> </td>
-                        <td> <?= $household_members['bdate'];?> </td>
-                        <td> <?= $household_members['bplace'];?> </td>
-                        <td> <?= $household_members['nationality'];?> </td>
-                        <td> <?= $household_members['family_role'];?> </td>
+                        <td> <?= $household['lname'];?> </td>
+                        <td> <?= $household['fname'];?> </td>
+                        <td> <?= $household['mi'];?> </td>
+                        <td> <?= $household['age'];?> </td>
+                        <td> <?= $household['sex'];?> </td>
+                        <td> <?= $household['status'];?> </td>
+                        <td> <?= $household['address'];?> </td>
+                        <td> <?= $household['contact'];?> </td>
+                        <td> <?= $household['bdate'];?> </td>
+                        <td> <?= $household['bplace'];?> </td>
+                        <td> <?= $household['nationality'];?> </td>
+                        <td> <?= $household['family_role'];?> </td>
                         <td>    
                         <form method="post">
                             <a href="" class="btn btn-primary">  Update </a>

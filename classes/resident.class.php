@@ -99,13 +99,14 @@
 
         public function view_household_list() {
             
-            if(isset($_POST['view_household'])) {
+            if(isset($_POST['view_household'])) {   
 
                 $lname = $_POST['lname'];
                 $mi = $_POST['mi'];
     
                 $connection = $this->openConn();
     
+                //if($this->view_resident($lname, $mi) == 1)   
                 $stmt = $connection->prepare("SELECT * FROM tbl_resident WHERE lname ='$lname' AND mi ='$mi'");
                 $stmt->execute();
                 $household = $stmt->fetch();
@@ -115,9 +116,9 @@
                     return $household;
                 }
                 
-                else {
-                    echo "no family members";
-                }
+               // else {
+               //     echo "no family members";
+               // }
 
             }
         }
