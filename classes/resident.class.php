@@ -1,6 +1,7 @@
 <?php 
 
     require_once('main.class.php');
+    
 
     class ResidentClass extends BMISClass {
 
@@ -92,33 +93,79 @@
             $stmt = $connection->prepare("SELECT * from tbl_resident");
             $stmt->execute();
             $view = $stmt->fetchAll();
-            //$rows = $stmt->
+
             return $view;
            
         }
 
+        public function count_resident() {
+            $connection = $this->openConn();
+
+            $stmt = $connection->prepare("SELECT COUNT(*) from tbl_resident");
+            $stmt->execute();
+            $rescount = $stmt->fetchColumn();
+
+            return $rescount;
+        }
+
+        public function count_male_resident() {
+            $connection = $this->openConn();
+
+            $stmt = $connection->prepare("SELECT COUNT(*) from tbl_resident where sex = 'male' ");
+            $stmt->execute();
+            $rescount = $stmt->fetchColumn();
+
+            return $rescount;
+        }
+
+        public function count_female_resident() {
+            $connection = $this->openConn();
+
+            $stmt = $connection->prepare("SELECT COUNT(*) from tbl_resident where sex = 'female'");
+            $stmt->execute();
+            $rescount = $stmt->fetchColumn();
+
+            return $rescount;
+        }
+
+        public function count_head_resident() {
+            $connection = $this->openConn();
+
+            $stmt = $connection->prepare("SELECT COUNT(*) from tbl_resident where family_role = 'Family Head'");
+            $stmt->execute();
+            $rescount = $stmt->fetchColumn();
+
+            return $rescount;
+        }
+
+        public function count_member_resident() {
+            $connection = $this->openConn();
+
+            $stmt = $connection->prepare("SELECT COUNT(*) from tbl_resident where family_role = 'Family Member'");
+            $stmt->execute();
+            $rescount = $stmt->fetchColumn();
+
+            return $rescount;
+        }
+
+
         public function view_household_list() {
             
-            if(isset($_POST['view_household'])) {
+            //$lname = $_GET['lname'];
+            //$mi = $_GET['mi'];
 
-                $lname = $_POST['lname'];
-                $mi = $_POST['mi'];
-    
-                $connection = $this->openConn();
-    
-                $stmt = $connection->prepare("SELECT * FROM tbl_resident WHERE lname ='$lname' AND mi ='$mi'");
-                $stmt->execute();
-                $household = $stmt->fetch();
-                $total = $stmt->rowCount();
-    
-                if($total >= 1 ) {
-                    return $household;
-                }
+            $connection = $this->openConn();
+
+            //$stmt = $connection->prepare("SELECT * from tbl_resident 
+            //WHERE lname LIKE '%$lname%'");
+            //$stmt->execute();
+            //$view = $stmt->fetch();
+            
+           
+            //return $view;
+            
+            if(isset($_POST[''])) {
                 
-                else {
-                    echo "no family members";
-                }
-
             }
         }
 
@@ -189,7 +236,7 @@
                 $stmt = $connection->prepare("DELETE FROM tbl_resident where email = ?");
                 $stmt->execute([$email]);
 
-                header("location: resident_crud.php");
+                header("Refresh:0");
             }
         }
 

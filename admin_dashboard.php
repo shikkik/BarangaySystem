@@ -3,7 +3,7 @@
     $userdetails = $bmis->get_userdata();
     $bmis->validate_admin();
 
-    print_r($userdetails);
+    //print_r($userdetails);
 ?>
 
 <!DOCTYPE html>
@@ -22,8 +22,9 @@
     <title>Admin Dashboard</title>
   </head>
   <body id="body">
-    <div class="container">
-      <nav class="navbar">
+  
+  <div class="container">
+  <nav class="navbar">
         <div class="nav_icon" onclick="toggleSidebar()">
           <i class="fa fa-bars" aria-hidden="true"></i>
         </div>
@@ -360,7 +361,7 @@
               style="border-radius: 50px; 
                      width: 50px; 
                      height: 50px;"/>
-            &nbsp;&nbsp;<h1>Vincent Vilfamat</h1>
+            &nbsp;&nbsp;<h1><?= $userdetails['surname']?>, <?= $userdetails['firstname']?></h1>
           </div>
           <i
             onclick="closeSidebar()"
@@ -373,7 +374,7 @@
         <div class="sidebar__menu">
           <div class="sidebar__link active_menu_link">
             <i class="fa fa-home"></i>
-            <a href="#">Dashboard</a>
+            <a href="admin_dashboard.php">Dashboard</a>
           </div>
 
           <br>
@@ -382,11 +383,11 @@
 
           <div class="sidebar__link">
             <i class="fa fa-user-circle" aria-hidden="true"></i>
-            <a href="#">Barangay Officials</a>
+            <a href="admin_staff_crud.php">Barangay Staff</a>
           </div>
           <div class="sidebar__link">
             <i class="fa fa-users"></i>
-            <a href="#">Residents</a>
+            <a href="admin_resident_crud.php">Residents</a>
           </div>
 
           <br>
@@ -449,12 +450,11 @@
           </div>
         </div>
       </div>
+
+
+      
     </div>
     
-    <?php 
-      print_r($userdetails);
-    ?>
-
     <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
     <script src="script.js"></script>
 

@@ -19,21 +19,23 @@
         <script src="https://kit.fontawesome.com/67a9b7069e.js" crossorigin="anonymous"></script>
     
         <style>
-
             body{
-                background-color: #EBF5FB;
+                background-color: #FBFCFC;
             }
 
             .picture1{
                 height: 550px;
-                width: 880px;
+                width: 900px;
                 margin-top: 10px;
-                margin-left: 50px;
-                border-radius: 20px;
+                margin-left: 40px;
             }
 
             .container1{
                 margin-top: 30px;
+            }
+
+            .container2{
+                margin-top: 5%;
             }
 
             .text1{
@@ -44,37 +46,24 @@
 
             h1{
                 font-size: 65px;
-                color: black;
-                margin-top: 8%;
-                font-family: Arial, Helvetica, sans-serif;
-                text-align: left;
-                line-height: 23px;
-                margin-left: 10px;
+                color: #3498DB;
             }
 
             p{
-                color: black;
-                line-height: 22px;
-                margin-left: 10px;
+                color: #3498DB;
+                line-height: 25px;
+                letter-spacing: .5px;
+                margin-left: 15px;
             }
 
-            .applybutton{
+            .applybutton
+            {
                 width: 100% !important;
                 height: 50px !important;
                 position: relative;
                 bottom: -30px;
                 border-radius: 20px;
                 margin-top: 30px;
-            }
-
-            .besidetable{
-                background-color: lightblue;
-                margin-top: 23px;
-
-            }
-
-            .righttable{
-                border: 1px solid black;
             }
 
         </style>
@@ -92,25 +81,22 @@
                     <span class="caret"></span>
                 </button>
                 <ul class="dropdown-menu">
-                    <form method="post">
-                        <input type="hidden" value="<?= $userdetails['surname'];?>">  
-                        <input type="hidden" value="<?= $userdetails['mname'];?>">
-                        <li><button class="btn" href="resident_profile.php"> <i class="fas fa-user"></i> Personal Profile </button></li>
-                    </form>
-                        <button class="btn" onclick="logout();"> <i class="fas fa-sign-out-alt"> </i> Logout </button>
+                <form method="post">
+                    <input type="hidden" value="<?= $userdetails['surname'];?>">  
+                    <input type="hidden" value="<?= $userdetails['mname'];?>">
+                    <li><button class="btn" href="resident_profile.php"> <i class="fas fa-user"></i> Personal Profile </button></li>
+                </form>
+                    <button class="btn" onclick="logout();"> <i class="fas fa-sign-out-alt"> </i> Logout </button>
                 
                 </ul>
             </div>
 
         </nav>
 
-        <!-- Under Navbar -->
-
         <div class="container-fluid container1">
             <div class="row">
                 <div class="col-sm-4 text1">
-                    <h1>VACCINATION</h1>
-                    <h1>PROGRAM</h1>
+                    <h1>TUBERCULOSIS</h1>
 
                     <br>
 
@@ -118,164 +104,67 @@
                     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam, earum nemo, error excepturi praesentium vel ipsa neque suscipit, minima saepe voluptas libero. Deserunt eos doloremque, vitae illo quae in voluptatem.</p>
                 </div>
                 <div class="col-sm-8">
-                    <img class="picture1" src="../BarangaySystem/icons/Vaccination/vaccination1.jpg">
+                    <img class="picture1" src="../BarangaySystem/icons/TB Dots/tbdots1.jpg">
                 </div>
             </div>
         </div>
 
-        <br>
-        <br>
 
-        <div class="container">
+        <div class="container container2">
+
             <div class="row title-spacing">
                 <div class="col"> 
-                    <h2 class="text-center"> 
-                        Schedule ng Pagbibigay ng Bakuna
-                    </h2>
-                    <h2 class="text-center"> 
-                        para sa mga Batang Isang Taon Pababa
+                    <h2 class="text-center"> Mga 
+                        <span style="color: red;"> sintomas </span> sakit na 
+                        <span style="color: red;"> Tuberculosis </span>
                     </h2>
                 </div> 
             </div>
 
             <br>
-            <br>
-            <div class="row">
-                <div class="col-sm-10 righttable">
-                    <table class="table table-hover maintable" style="width: 100%; height: 100%;">
 
-                        <thead class="text-center" style="color: black">
-                            <tr style="margin-bottom: 10px;">
-                                <th rowspan="3">
-                                    BAKUNA
-                                </th>
-                                <th rowspan="3">
-                                    SAKIT NA MAIIWASAN
-                                </th>
-                            </tr>
-                                <tr>
-                                    <th colspan="6">
-                                        NIREREKOMENDANG EDAD NG BATA
-                                    </th>
-                                    <tr>
-                                        <th>
-                                            PAGKA-PANGANAK
-                                        </th>
-                                        <th> 1 &half; <br>
-                                            BUWAN
-                                        </th>
-                                        <th> 2 &half; <br>
-                                            BUWAN
-                                        </th>
-                                        <th>3 &half; <br>
-                                            BUWAN
-                                        </th>
-                                        <th> 9 <br>
-                                            BUWAN
-                                        </th>
-                                        <th>1 <br>
-                                            TAON
-                                        </th>
-                                    </tr>
-                                </tr>
-                        </thead>
+            <div class="card">
+                <div class="card-body">
+                    <div class="row justify-content-center text-center">
 
-                        <tbody class="text-center">
-                        <tr>
-                            <td>BCG</td>
-                            <td>Tuberkulosis</td>
-                            <td><i class="fas fa-check"></i></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <td>HEPATITIS B</td>
-                            <td>Hepatitis B</td>
-                            <td><i class="fas fa-check"></i></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <td>PENTAVALENT VACCINE</td>
-                            <td style="font-size: 12px;">Dipterya, Tetano, Hepa B, Pertussis, Pulmonya, Meningitis</td>
-                            <td></td>
-                            <td><i class="fas fa-check"></i></td>
-                            <td><i class="fas fa-check"></i></td>
-                            <td><i class="fas fa-check"></i></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <td>ORAL POLIO VACCINE</td>
-                            <td>Polio</td>
-                            <td></td>
-                            <td><i class="fas fa-check"></i></td>
-                            <td><i class="fas fa-check"></i></td>
-                            <td><i class="fas fa-check"></i></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <td>INACTIVATED POLIO VACCINE</td>
-                            <td>Polio</td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td><i class="fas fa-check"></i></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <td>PNEUMOCOCCAL CONJUGATE VACCINE</td>
-                            <td>Pulmonya, Meningitis</td>
-                            <td></td>
-                            <td><i class="fas fa-check"></i></td>
-                            <td><i class="fas fa-check"></i></td>
-                            <td><i class="fas fa-check"></i></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <td>MEASLES, MUMPS, RUBELLA</td>
-                            <td>Tigdas, Beke, German Measles</td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td><i class="fas fa-check"></i></td>
-                            <td><i class="fas fa-check"></i></td>
-                        </tr>
-                        </tbody>
-                    </table>
-                </div>
+                        <div class="col-sm-3"> 
+                                <img style="width: 250px; height: 250px;" src="../BarangaySystem/icons/TB Dots/tbdots2.png">
+                                <h3>Ubo</h3>
+                        </div>
 
-                <div class="col-sm-2 text-center besidetable" style="height:100%; width:100%;">
-                    <h2>MGA PAALALA</h2>
+                        <div class="col-sm-3"> 
+                                <img style="width: 250px; height: 250px;" src="../BarangaySystem/icons/TB Dots/tbdots3.png">
+                                <h3>Pagbaba ng Timbang</h3>
+                        </div>
 
-                    <hr style="background-color: red;">
+                        <div class="col-sm-3"> 
+                                <img style="width: 250px; height: 250px;" src="../BarangaySystem/icons/TB Dots/tbdots4.png">
+                                <h3>Lagnat</h3>
+                        </div>
 
-                    <p style="font-size: 15px;">Nagsisimula ang pagbabakuna ng bata sa kapanganakan.</p>
-
-                    <hr style="background-color: red;">
-
-                    <p style="font-size: 15px;">Sundin ang schedule ng bakuna at siguruhing makumpleto 
-                       ang mga ito hanggang sumapit ang kanyang unang kaarawan.</p>
-
-                    <hr style="background-color: red;">
-
-                    <p style="font-size: 15px;">Ang mga bakunang hindi nakalista ay maaring makuha 
-                       sa pribadong ospital o doktor.</p>
+                        <div class="col-sm-3"> 
+                                <img style="width: 250px; height: 250px;" src="../BarangaySystem/icons/TB Dots/tbdots5.png">
+                                <h3>Labis na Pagpapawis</h3>
+                        </div>  
+                        
+                    </div>
                 </div>
             </div>
+
+            <br>
+
+            <div class="row text-center">
+                <div class="col">
+                    <h4> <span style="color: red;"> Alinman </span> sa mga sintomas na tumagal ng 
+                         <span style="color: red;"> 2 linggo o higit pa </span> 
+                    </h4>
+                    <h4>Makipag ugnayan na at kumonsulta!</h4>
+                </div>
+            </div>
+
         </div>
 
-        <!-- Button trigger modal -->
+            <!-- Button trigger modal -->
 
         <div class="container">
             <div class="col">   
@@ -394,13 +283,9 @@
                 </div>
             </div>  
         </div>
-        
-        <?php 
-          print_r($userdetails);
-        ?>
 
         <script src="../BarangaySystem/bootstrap/js/bootstrap.bundle.js" type="text/javascript"> </script>
-
-
+  
+        
     </body>
 </html>
