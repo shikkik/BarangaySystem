@@ -34,7 +34,7 @@ class BMISClass {
         $this->con = null;
     }
 
-        //authentication function para sa administrator
+        //authentication function para sa sa tatlong type ng accounts
         public function login() {
             if(isset($_POST['login'])) {
 
@@ -43,23 +43,26 @@ class BMISClass {
             
                 $connection = $this->openConn();
 
-                
+                //unang i c capture admin
                 $stmt = $connection->prepare("SELECT * FROM tbl_admin WHERE email = ? AND password = ?");
                 $stmt->Execute([$email, $password]);
                 $user = $stmt->fetch();
-                //$total = $stmt->rowCount();
+               
 
+                //statement na mag ch check kung admin yung role
                 if($user['role'] == 'administrator') {
                     $this->set_userdata($user);
                     header('Location: admin_dashboard.php');
                     return (0);
                 }
 
+                //kapag hindi admin ang role ng nag enter next na i c capture user login
                 elseif($user['role'] != 'administrator') {
                     $stmt = $connection->prepare("SELECT * FROM tbl_user WHERE email = ? AND password = ?");
                     $stmt->Execute([$email, $password]);
                     $user = $stmt->fetch();
                    
+                    //statement na mag ch check kung user yung role
                     if($user['role'] == 'user') {
                         $this->set_userdata($user);
                         header('Location: testingcrud.php');
@@ -162,6 +165,8 @@ class BMISClass {
     }
 
 
+
+
     public function create_announcement() {
         if(isset($_POST['create_announce'])) {
             $id_announcement = $_POST['id_announcement'];
@@ -227,6 +232,48 @@ class BMISClass {
             $stmt->execute([$id_announcement]);
 
             header("Refresh:0");
+        }
+    }
+
+    public function count_announcement() {
+        $connection = $this->openConn();
+
+        $stmt = $connection->prepare("SELECT COUNT(*) from tbl_announcement");
+        $stmt->execute();
+        $ancount = $stmt->fetchColumn();
+
+        return $ancount;
+    }
+
+
+    //  -------------------------------------- MEDICINE CRUD --------------------------------------------=
+
+
+    public function create_medicine() {
+        if(isset($_POST['create_medicine'])) {
+
+            $id_medicine = $_POST['id_medicine'];
+            $item = $_POST['item'];
+            $dateman = $_POST['dateman'];
+            $origin = $_POST['origin'];
+            $datein = $_POST['datein'];
+            $dateout = $_POST['dateout'];
+            $stocks = $_POST['stocks'];
+            $remarks = $_POST['remarks'];
+            $addedby = $_POST['addedby'];
+
+
+
+            $connection = $this->openConn();
+            $stmt = $connection->prepare("INSERT INTO tbl_announcement (`id_medicine`, 
+            `event`, `start_date`, `end_date`, `addedby`) VALUES (?, ?, ?, ?, ?)");
+
+            $stmt->execute([$id_medicine, $item, $dateman, $origin, $datein, $dateout, $stocks, $remarks, $addedby]);
+
+            $message2 = "Announcement Added";
+            echo "<script type='text/javascript'>alert('$message2');</script>";
+            
+            header('refresh:0');
         }
     }
 

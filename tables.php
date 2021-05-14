@@ -207,6 +207,8 @@ Non user tables
     remarks VARCHAR(255) NOT NULL , 
     PRIMARY KEY (id_medicine)) ENGINE = InnoDB;
 
+    "ALTER TABLE `tbl_medicine` DROP `dosage`;"
+
     ALTER TABLE tbl_medicine ADD addedby VARCHAR(255) NOT NULL AFTER remarks;
     ALTER TABLE tbl_medicine CHANGE date_in datein DATE NOT NULL;
     ALTER TABLE tbl_medicine CHANGE out dateout DATE NOT NULL;

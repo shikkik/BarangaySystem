@@ -7,6 +7,7 @@
     $view = $bmis->view_announcement();
     $bmis->update_announcement();
     $bmis->delete_announcement();
+    $announcementcount = $bmis->count_announcement();
 
 ?>
 
@@ -38,7 +39,7 @@
         <h2>Announcement Management </h2>
         <div class="main__cards">
             <div class="card" style="width: 670px; height: 340px;">
-                <h3> Create Announcement </h3> 
+                <h3> Create/Update Announcement </h3> 
                 <div class="card_inner">
                 <form method="post">
                 <br>
@@ -61,8 +62,8 @@
               <i class="fa fa-users fa-2x text-lightblue"aria-hidden="true">
               </i>
               <div class="card_inner">
-                <p class="text-primary-p">Number of Staff</p>
-                <span class="font-bold text-title"><?= $staffcount?></span>
+                <p class="text-primary-p">Announcements Released </p>
+                <span class="font-bold text-title"><?= $announcementcount?></span>
               </div>
             </div>
 
