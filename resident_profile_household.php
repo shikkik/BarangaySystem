@@ -89,56 +89,20 @@
                 <div class="col-sm"> </div>
             </div>
 
-            <br>
-
-
-            <table class="table table-dark">
-            <form method="post">
-                <thead> 
-                    <tr>
-                        <th> Surname </th>
-                        <th> First name </th>
-                        <th> Middle Name </th>
-                        <th> Age </th>
-                        <th> Sex </th>
-                        <th> Status </th>
-                        <th> Address </th>
-                        <th> Contact </th>
-                        <th> Bdate </th>
-                        <th> Bplace </th>
-                        <th> Nationality </th>
-                        <th> Family Role </th>
-                        <th> Actions </th>
-                    </tr>
-                    </thead>
-                    <tbody> 
-                    <?php if(is_array($view)) {?>
-                        <?php foreach($view as $view) {?>
-                    <tr>
-                        <td> <?= $view['lname'];?> </td>
-                        <td> <?= $view['fname'];?> </td>
-                        <td> <?= $view['mi'];?> </td>
-                        <td> <?= $view['age'];?> </td>
-                        <td> <?= $view['sex'];?> </td>
-                        <td> <?= $view['status'];?> </td>
-                        <td> <?= $view['address'];?> </td>
-                        <td> <?= $view['contact'];?> </td>
-                        <td> <?= $view['bdate'];?> </td>
-                        <td> <?= $view['bplace'];?> </td>
-                        <td> <?= $view['nationality'];?> </td>
-                        <td> <?= $view['family_role'];?> </td>
-                        <td>    
-                        <form method="post">
-                            <a href="" class="btn btn-primary">  Update </a>
-                            <button class="btn btn-danger" type="submit" name="delete_resident"> Remove </button>
-                        </form>
-                        </td>
-                    </tr>
-                        <?php }?>
-                    <?php } ?>
-                </tbody>
+            <form method="POST" action="">
+                <div class="form-inline">
+                        <input  class="form-control" name="mname" type="hidden" value="<?= $userdetails['mname'];?>" placeholder="Search here..." required=""/>
+                        <input  class="form-control" name="surname" type="hidden" value="<?= $userdetails['surname'];?>" placeholder="Search here..." required=""/>
+                        <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#demo" name="search">View Household</button>
+                    <div id="demo" class="collapse">
+                    <br /><br />
+                        <?php include'testingsearch.php'?>
+                    
+                    </div>
+                </div>                                   
             </form>
-            </table>
+            
+  
         </div>
 
         <script src="../BarangaySystem/bootstrap/js/bootstrap.bundle.js" type="text/javascript"> </script>
