@@ -3,7 +3,7 @@
 	require 'classes/conn.php';
 	if(ISSET($_POST['search'])){
 ?>
-	<table class="table table-bordered">
+	<table class="table table-bordered" >
 		<thead class="alert-info">
             
 			<tr>
@@ -24,8 +24,9 @@
 		</thead>
 		<tbody>
 			<?php
-				$mi = $_POST['mi'];
-				$query = $conn->prepare("SELECT * FROM `tbl_resident` WHERE `fname` LIKE '%$mi%' or `lname` LIKE '%$mi%' or `address` LIKE '%$mi%'");
+				$surname = $_POST['surname'];
+                $mname = $_POST['mname'];
+				$query = $conn->prepare("SELECT * FROM `tbl_resident` WHERE `lname` LIKE '%$surname%' and  `mi` LIKE '%$mname%'");
 				$query->execute();
 				while($row = $query->fetch()){
 			?>

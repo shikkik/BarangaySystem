@@ -3,6 +3,8 @@
 
     $view = $residentbmis->view_single_resident($email);
     $userdetails = $residentbmis->get_userdata();
+    
+    
 ?>
 
 <!DOCTYPE html> 
@@ -42,21 +44,24 @@
                     <div class="col-sm"> </div>
                     <div class="col-12">   
                         <div class="card mbottom">
-                            <div class="card-body">
+                            <div class="card-body" name>
                                 <div class="row">
                                     <div class="col">
-                                            <form method="POST" action="">
-                                            <div class="form-inline">
-                                                <input type="search" class="form-control" name="lname">
-                                                <input type="search" class="form-control" name="mi" value="<?php echo isset($_POST['keyword']) ? $_POST['keyword'] : '' ?>" placeholder="Search here..." required=""/>
-                                                <button class="btn btn-success" name="search">Search</button>
-                                                <a href="resident_profile.php" class="btn btn-info">Reload</a>
-                                                </div>
-                                                </form>
-                                                <br /><br />
-                                                <?php include'testingsearch.php'?>
-                                            </div>
-                                         </div>
+
+                                    <h5> Name: <?= $userdetails['surname'];?>, <?= $userdetails['firstname'];?> <?= $userdetails['mname'];?>.</h5> 
+                                    <h5> Email: <?= $userdetails['emailadd'];?> </h5>
+                                    <h5> Sex: <?= $userdetails['sex'];?> </h5>
+                                    <h5> Status: <?= $userdetails['status'];?> </h5>
+                                    <h5> Address: <?= $userdetails['address'];?> </h5>
+                                    <h5> Contact: <?= $userdetails['contact'];?> </h5>
+                                    <h5> Birth Date: <?= $userdetails['bdate'];?> </h5>
+                                    <h5> Birth Place: <?= $userdetails['bplace'];?> </h5>
+                                    <h5> Nationality: <?= $userdetails['nationality'];?> </h5>
+                                    <h5> Family Role: <?= $userdetails['family_role'];?> </h5>
+                                    
+                                    
+
+                                
                             
                                 
 
@@ -69,6 +74,18 @@
                     </div> 
 
                     <div class="col-sm"> </div>
+                    <form method="POST" action="">
+                                        <div class="form-inline">
+                                                <input  class="form-control" name="mname" type="hidden" value="<?= $userdetails['mname'];?>" placeholder="Search here..." required=""/>
+                                                <input  class="form-control" name="surname" type="hidden" value="<?= $userdetails['surname'];?>" placeholder="Search here..." required=""/>
+                                                <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#demo" name="search">View Household</button>
+                                            <div id="demo" class="collapse">
+                                            <br /><br />
+                                                <?php include'testingsearch.php'?>
+                                            
+                                            </div>
+                                        </div>                                   
+                                    </form>
                 </div>
             </div>
         </div>
@@ -77,6 +94,7 @@
         
         </section>
 
+        <script src="../BarangaySystem/bootstrap/js/bootstrap.bundle.js" type="text/javascript"> </script>
          
     </body>
 </html>
