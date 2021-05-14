@@ -160,6 +160,76 @@ class BMISClass {
             }
         }
     }
+
+
+    public function create_announcement() {
+        if(isset($_POST['create_announce'])) {
+            $id_announcement = $_POST['id_announcement'];
+            $event = $_POST['event'];
+            $start_date = $_POST['start_date'];
+            $end_date = $_POST['end_date'];
+            $addedby = $_POST['addedby'];
+
+            $connection = $this->openConn();
+            $stmt = $connection->prepare("INSERT INTO tbl_announcement (`id_announcement`, 
+            `event`, `start_date`, `end_date`, `addedby`) VALUES (?, ?, ?, ?, ?)");
+
+            $stmt->execute([$id_announcement, $event, $start_date, $end_date, $addedby]);
+
+            $message2 = "Announcement Added";
+            echo "<script type='text/javascript'>alert('$message2');</script>";
+            
+            header('refresh:0');
+        }
+    }
+
+    public function view_announcement(){
+
+        $connection = $this->openConn();
+
+        $stmt = $connection->prepare("SELECT * from tbl_announcement");
+        $stmt->execute();
+        $view = $stmt->fetchAll();
+
+        return $view;
+       
+    }
+
+    public function update_announcement() {
+        if (isset($_POST['update_announce'])) {
+            $id_announcement = $_GET['id_announcement'];
+            $event = $_POST['event'];
+            $start_date = $_POST['start_date'];
+            $end_date = $_POST['end_date'];
+            $addedby = $_POST['addedby'];
+
+
+            
+                $connection = $this->openConn();
+                $stmt = $connection->prepare("UPDATE tbl_announcement SET event =?, start_date =?, 
+                end_date = ?, addedby =? WHERE id_announcement = ?");
+                $stmt->execute([ $event, $start_date, $end_date, $addedby, $id_announcement]);
+               
+                $message2 = "Announcement Updated";
+                echo "<script type='text/javascript'>alert('$message2');</script>";
+                header("refresh: 0");
+
+        }
+    }
+
+    public function delete_announcement(){
+
+        $id_announcement = $_POST['id_announcement'];
+
+        if(isset($_POST['delete_announcement'])) {
+            $connection = $this->openConn();
+            $stmt = $connection->prepare("DELETE FROM tbl_announcement where id_announcement = ?");
+            $stmt->execute([$id_announcement]);
+
+            header("Refresh:0");
+        }
+    }
+
 }
 
 $bmis = new BMISClass(); //variable to call outside of its class

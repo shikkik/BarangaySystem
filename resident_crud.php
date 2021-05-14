@@ -77,7 +77,7 @@
                                     <a href="resident_crud.php?email=<?= $view['email'];?>" class="btn btn-primary">  Update </a>
                                     <input type="hidden" name="email" value="<?= $view['email'];?>">
                                     <button class="btn btn-danger" type="submit" name="delete_resident"> Remove </button>
-                                    </form>
+                                </form>
                                 </td>
                             </tr>
                             <?php }?>
