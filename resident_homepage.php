@@ -81,7 +81,7 @@
                     <div class="col"> 
                         <div class="card"> 
                             <div class="card-body text-center"> 
-                            <a href="animal.php">
+                            <a href="services_animal.php">
                                 <img src="../BarangaySystem/icons/animalreg.png">
                                 <h4> Animal Registry & Welfare </h4> 
                             </a>
@@ -93,7 +93,7 @@
                         <div class="card"> 
                             <div class="card-body text-center">
                                 <img src="../BarangaySystem/icons/tbdots.png"> 
-                                <a href="tb_dots.php"> <h4> TB DOTS Consultation</h4> 
+                                <a href="services_tb_dots.php"> <h4> TB DOTS Consultation</h4> 
                             </a>
                             </div>
                         </div>
@@ -103,7 +103,7 @@
                         <div class="card"> 
                             <div class="card-body text-center">
                                 <img src="../BarangaySystem/icons/vaccine.png"> 
-                                <a href="vaccination.php"> <h4> Vaccination Programs </h4> 
+                                <a href="services_vaccination.php"> <h4> Vaccination Programs </h4> 
                             </a>
                             </div>
                         </div>

@@ -97,6 +97,57 @@
            
         }
 
+        public function count_resident() {
+            $connection = $this->openConn();
+
+            $stmt = $connection->prepare("SELECT COUNT(*) from tbl_resident");
+            $stmt->execute();
+            $rescount = $stmt->fetchColumn();
+
+            return $rescount;
+        }
+
+        public function count_male_resident() {
+            $connection = $this->openConn();
+
+            $stmt = $connection->prepare("SELECT COUNT(*) from tbl_resident where sex = 'male' ");
+            $stmt->execute();
+            $rescount = $stmt->fetchColumn();
+
+            return $rescount;
+        }
+
+        public function count_female_resident() {
+            $connection = $this->openConn();
+
+            $stmt = $connection->prepare("SELECT COUNT(*) from tbl_resident where sex = 'female'");
+            $stmt->execute();
+            $rescount = $stmt->fetchColumn();
+
+            return $rescount;
+        }
+
+        public function count_head_resident() {
+            $connection = $this->openConn();
+
+            $stmt = $connection->prepare("SELECT COUNT(*) from tbl_resident where family_role = 'Family Head'");
+            $stmt->execute();
+            $rescount = $stmt->fetchColumn();
+
+            return $rescount;
+        }
+
+        public function count_member_resident() {
+            $connection = $this->openConn();
+
+            $stmt = $connection->prepare("SELECT COUNT(*) from tbl_resident where family_role = 'Family Member'");
+            $stmt->execute();
+            $rescount = $stmt->fetchColumn();
+
+            return $rescount;
+        }
+
+
         public function view_household_list() {
             
             //$lname = $_GET['lname'];
@@ -184,7 +235,7 @@
                 $stmt = $connection->prepare("DELETE FROM tbl_resident where email = ?");
                 $stmt->execute([$email]);
 
-                header("location: resident_crud.php");
+                header("Refresh:0");
             }
         }
 

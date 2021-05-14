@@ -1,7 +1,17 @@
 <?php 
-    require('classes/main.class.php');
+    error_reporting(E_ALL ^ E_WARNING);
+    require('classes/resident.class.php');
     $userdetails = $bmis->get_userdata();
     $bmis->validate_admin();
+    $view = $residentbmis->view_resident();
+    $residentbmis->create_resident();
+    $residentbmis->update_resident();
+    $residentbmis->delete_resident();
+    $rescount = $residentbmis->count_resident();
+    $rescountm = $residentbmis->count_male_resident();
+    $rescountf = $residentbmis->count_female_resident();
+    $rescountfh = $residentbmis->count_head_resident();
+    $rescountfm = $residentbmis->count_member_resident();
 
     //print_r($userdetails);
 ?>
@@ -43,7 +53,7 @@
               </i>
               <div class="card_inner">
                 <p class="text-primary-p">Number of Residents</p>
-                <span class="font-bold text-title">680</span>
+                <span class="font-bold text-title"><?= $rescount?></span>
               </div>
             </div>
 
@@ -51,7 +61,7 @@
               <i class="fa fa-male fa-2x text-red" aria-hidden="true"></i>
               <div class="card_inner">
                 <p class="text-primary-p">Male</p>
-                <span class="font-bold text-title">430</span>
+                <span class="font-bold text-title"><?= $rescountm?></span>
               </div>
             </div>
 
@@ -59,10 +69,32 @@
               <i class="fa fa-female fa-2x text-yellow" aria-hidden="true"></i>
               <div class="card_inner">
                 <p class="text-primary-p">Female</p>
-                <span class="font-bold text-title">250</span>
+                <span class="font-bold text-title"><?= $rescountf?></span>
               </div>
             </div>
 
+          </div>
+
+          <br>
+
+          <div class="main__cards"> 
+          <div class="card" style="width: 400px;">
+              <i class="fa fa-users fa-2x text-lightblue"aria-hidden="true">
+              </i>
+              <div class="card_inner">
+                <p class="text-primary-p">Number of Household Heads</p>
+                <span class="font-bold text-title"><?= $rescountfh?></span>
+              </div>
+            </div>
+
+            <div class="card" style="width: 400px;">
+              <i class="fa fa-users fa-2x text-lightblue"aria-hidden="true">
+              </i>
+              <div class="card_inner">
+                <p class="text-primary-p">Number of Household Family Members</p>
+                <span class="font-bold text-title"><?= $rescountfm?></span>
+              </div>
+            </div>
           </div>
 
 
@@ -71,6 +103,61 @@
           <br>
           <br>
 
+          <table class="table table-dark">
+                    <form action="" method="post">
+                        <thead> 
+                            <tr>
+                                <th> Email </th>
+                                <th> Password </th>
+                                <th> Surname </th>
+                                <th> First name </th>
+                                <th> MI </th>
+                                <th> Age </th>
+                                <th> Sex </th>
+                                <th> Status </th>
+                                <th> Address </th>
+                                <th> Contact </th>
+                                <th> Bdate </th>
+                                <th> Bplace </th>
+                                <th> Nationality </th>
+                                <th> Family Role </th>
+                                <th> Role </th>
+                                <th> AddedBy </th>
+                            </tr>
+                        </thead>
+                        <tbody> 
+                        <?php if(is_array($view)) {?>
+                            <?php foreach($view as $view) {?>
+                            <tr>
+                                <th> <?= $view['email'];?> </th>
+                                <th> <?= $view['password'];?> </th>
+                                <th> <?= $view['lname'];?> </th>
+                                <th> <?= $view['fname'];?> </th>
+                                <th> <?= $view['mi'];?> </th>
+                                <th> <?= $view['age'];?> </th>
+                                <th> <?= $view['sex'];?> </th>
+                                <th> <?= $view['status'];?> </th>
+                                <th> <?= $view['address'];?> </th>
+                                <th> <?= $view['contact'];?> </th>
+                                <th> <?= $view['bdate'];?> </th>
+                                <th> <?= $view['bplace'];?> </th>
+                                <th> <?= $view['nationality'];?> </th>
+                                <th> <?= $view['family_role'];?> </th>
+                                <th> <?= $view['role'];?> </th>
+                                <th> <?= $view['addedby'];?> </th>
+                                <td>    
+                                <form action="" method="post">
+                                    <a href="resident_crud.php?email=<?= $view['email'];?>" class="btn btn-primary">  Update </a>
+                                    <input type="hidden" name="email" value="<?= $view['email'];?>">
+                                    <button class="btn btn-danger" type="submit" name="delete_resident"> Delete </button>
+                                    </form>
+                                </td>
+                            </tr>
+                            <?php }?>
+                        <?php } ?>
+                        </tbody>
+                    </form>
+                    </table>
          
       </main>
 

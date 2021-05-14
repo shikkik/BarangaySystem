@@ -29,7 +29,7 @@
                                 <th> Password </th>
                                 <th> Surname </th>
                                 <th> First name </th>
-                                <th> MI </th>
+                                <th> Middle Name </th>
                                 <th> Age </th>
                                 <th> Sex </th>
                                 <th> Address </th>
