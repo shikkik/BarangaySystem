@@ -16,7 +16,7 @@ class BMISClass {
         echo "Page is currently unavailable";
         die;
     }
-
+    
     //eto yung nag o open ng connection ng db
     public function openConn() {
         try {

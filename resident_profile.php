@@ -1,15 +1,8 @@
 <?php 
     require('classes/resident.class.php');
-<<<<<<< HEAD
-    $email = $_GET['email'];
-    $view = $residentbms->view_single_resident($email);
-    $userdetails = $residentbms->get_userdata();
-    print_r($view);
-=======
 
     $view = $residentbmis->view_single_resident($email);
     $userdetails = $residentbmis->get_userdata();
->>>>>>> 4035f6ea0a6d76dfed73f4b4352f0f03187dcff1
 ?>
 
 <!DOCTYPE html> 
@@ -43,7 +36,7 @@
             <div class="row">
                 <div class="col-12">
                     <h1 class="text-center">Resident Profile</h1>
-                    <hr>
+                    
 
                 <div class="row margin mtop"> 
                     <div class="col-sm"> </div>
@@ -52,23 +45,29 @@
                             <div class="card-body">
                                 <div class="row">
                                     <div class="col">
-                                    <h5> Name: <?= $userdetails['fullname'];?></h5>
-                                   
-                                    <h5> Gender: <?= $view ['sex'];?> </h5>
-
-                                    
-                                    </div>
+                                            <form method="POST" action="">
+                                            <div class="form-inline">
+                                                <input type="search" class="form-control" name="keyword" value="<?php echo isset($_POST['keyword']) ? $_POST['keyword'] : '' ?>" placeholder="Search here..." required=""/>
+                                                <button class="btn btn-success" name="search">Search</button>
+                                                <a href="resident_profile.php" class="btn btn-info">Reload</a>
+                                                </div>
+                                                </form>
+                                                <br /><br />
+                                                <?php include'testingsearch.php'?>
+                                            </div>
+                                         </div>
+                            
+                                
 
                                     <div class="col">
                                     
                                     </div>
-                                </div>
-                                
+                                </div>   
                             </div>
                         </div>
                     </div> 
 
-                    <div class="col-sm> </div>
+                    <div class="col-sm"> </div>
                 </div>
             </div>
         </div>
@@ -76,10 +75,6 @@
         
         
         </section>
-
-        <?php 
-           print_r($userdetails);
-        ?>
 
          
     </body>

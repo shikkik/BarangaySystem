@@ -1,6 +1,7 @@
 <?php 
 
     require_once('main.class.php');
+    
 
     class ResidentClass extends BMISClass {
 
