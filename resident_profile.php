@@ -47,7 +47,8 @@
                                     <div class="col">
                                             <form method="POST" action="">
                                             <div class="form-inline">
-                                                <input type="search" class="form-control" name="keyword" value="<?php echo isset($_POST['keyword']) ? $_POST['keyword'] : '' ?>" placeholder="Search here..." required=""/>
+                                                <input type="search" class="form-control" name="lname">
+                                                <input type="search" class="form-control" name="mi" value="<?php echo isset($_POST['keyword']) ? $_POST['keyword'] : '' ?>" placeholder="Search here..." required=""/>
                                                 <button class="btn btn-success" name="search">Search</button>
                                                 <a href="resident_profile.php" class="btn btn-info">Reload</a>
                                                 </div>

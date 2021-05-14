@@ -84,15 +84,7 @@
             
         }
 
-        public function check_resident($email) {
-
-            $connection = $this->openConn();
-            $stmt = $connection->prepare("SELECT * FROM tbl_resident WHERE email = ?");
-            $stmt->Execute([$email]);
-            $total = $stmt->rowCount(); 
-    
-            return $total;
-        }
+        
 
         public function view_resident(){
 
@@ -101,10 +93,86 @@
             $stmt = $connection->prepare("SELECT * from tbl_resident");
             $stmt->execute();
             $view = $stmt->fetchAll();
-            //$rows = $stmt->
+
             return $view;
            
         }
+
+        public function count_resident() {
+            $connection = $this->openConn();
+
+            $stmt = $connection->prepare("SELECT COUNT(*) from tbl_resident");
+            $stmt->execute();
+            $rescount = $stmt->fetchColumn();
+
+            return $rescount;
+        }
+
+        public function count_male_resident() {
+            $connection = $this->openConn();
+
+            $stmt = $connection->prepare("SELECT COUNT(*) from tbl_resident where sex = 'male' ");
+            $stmt->execute();
+            $rescount = $stmt->fetchColumn();
+
+            return $rescount;
+        }
+
+        public function count_female_resident() {
+            $connection = $this->openConn();
+
+            $stmt = $connection->prepare("SELECT COUNT(*) from tbl_resident where sex = 'female'");
+            $stmt->execute();
+            $rescount = $stmt->fetchColumn();
+
+            return $rescount;
+        }
+
+        public function count_head_resident() {
+            $connection = $this->openConn();
+
+            $stmt = $connection->prepare("SELECT COUNT(*) from tbl_resident where family_role = 'Family Head'");
+            $stmt->execute();
+            $rescount = $stmt->fetchColumn();
+
+            return $rescount;
+        }
+
+        public function count_member_resident() {
+            $connection = $this->openConn();
+
+            $stmt = $connection->prepare("SELECT COUNT(*) from tbl_resident where family_role = 'Family Member'");
+            $stmt->execute();
+            $rescount = $stmt->fetchColumn();
+
+            return $rescount;
+        }
+
+
+        public function view_household_list() {
+            
+            //$lname = $_GET['lname'];
+            //$mi = $_GET['mi'];
+
+            $connection = $this->openConn();
+
+            //$stmt = $connection->prepare("SELECT * from tbl_resident 
+            //WHERE lname LIKE '%$lname%'");
+            //$stmt->execute();
+            //$view = $stmt->fetch();
+            
+           
+            //return $view;
+
+            if(isset($_POST[''])) {
+                
+            }
+        }
+
+
+
+
+
 
         public function view_single_resident(){
 
@@ -168,9 +236,36 @@
                 $stmt = $connection->prepare("DELETE FROM tbl_resident where email = ?");
                 $stmt->execute([$email]);
 
-                header("location: resident_crud.php");
+                header("Refresh:0");
             }
         }
+
+
+
+        //Other functions for the resident datas and pages 
+
+        public function check_resident($email) {
+
+            $connection = $this->openConn();
+            $stmt = $connection->prepare("SELECT * FROM tbl_resident WHERE email = ?");
+            $stmt->Execute([$email]);
+            $total = $stmt->rowCount(); 
+    
+            return $total;
+        }
+
+        public function check_household($lname, $mi) {
+            $connection = $this->openConn();
+            $stmt = $connection->prepare("SELECT * FROM tbl_resident WHERE lname = ? AND mi = ?");
+            $stmt->Execute([$lname, $mi]);
+            $total = $stmt->rowCount(); 
+    
+            return $total;
+        }
+
+
+
+
     }
 
     $residentbmis = new ResidentClass();

@@ -55,9 +55,10 @@
     
                         $stmt->Execute([$email, $password, $lname, $fname, $mi, $age, $sex, 
                         $address, $contact, $position, $role, $addedby]);
-                        $message2 = "Account added, you can now continue logging in";
+                        $message2 = "New Staff Adedd";
     
                         echo "<script type='text/javascript'>alert('$message2');</script>";
+                        header('refresh:0');
     
                 }
 
@@ -88,6 +89,16 @@
             //$rows = $stmt->
             return $view;
            
+        }
+
+        public function count_staff() {
+            $connection = $this->openConn();
+
+            $stmt = $connection->prepare("SELECT COUNT(*) from tbl_user");
+            $stmt->execute();
+            $staffcount = $stmt->fetchColumn();
+
+            return $staffcount;
         }
 
         public function view_single_staff(){
@@ -133,8 +144,10 @@
                     $stmt->execute([ $password, $lname, $fname, $mi, $age, $sex, $address,
                     $contact, $position,$role, $addedby, $email]);
                    
-                    echo "naka udpate na";
-                    header("location: staff_crud.php");
+                    $message2 = "Staff Account Updated";
+    
+                    echo "<script type='text/javascript'>alert('$message2');</script>";
+                    header('refresh:0');
 
             }
         }
@@ -148,7 +161,10 @@
                 $stmt = $connection->prepare("DELETE FROM tbl_user where email = ?");
                 $stmt->execute([$email]);
 
-                header("location: staff_crud.php");
+                $message2 = "Staff Account Deleted";
+    
+                echo "<script type='text/javascript'>alert('$message2');</script>";
+                 header('refresh:0');
             }
         }
     }

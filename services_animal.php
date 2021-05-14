@@ -75,10 +75,20 @@
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top">
       <a class="navbar-brand" href="#">Barangay Sorsogon</a>
 
-      <div class="navbar-nav ml-auto">
-        <a class="nav-item nav-link active" href="#"> <?= $userdetails['fullname'];?>  <span class="sr-only">(current)</span></a>
-        <a class="nav-item nav-link" href="logout.php"><i class="fas fa-sign-out-alt"></i></a>
+      <div class="dropdown ml-auto">
+          <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown"><?= $userdetails['surname'];?>, <?= $userdetails['firstname'];?>
+              <span class="caret"></span>
+          </button>
+          <ul class="dropdown-menu">
+            <form method="post">
+                <input type="hidden" value="<?= $userdetails['surname'];?>">  
+                <input type="hidden" value="<?= $userdetails['mname'];?>">
+                <li><button class="btn" href="resident_profile.php"> <i class="fas fa-user"></i> Personal Profile </button></li>
+            </form>
+                <button class="btn" onclick="logout();"> <i class="fas fa-sign-out-alt"> </i> Logout </button>
+          </ul>
       </div>
+      
     </nav>
 
     <!-- Under Navbar -->
@@ -262,10 +272,6 @@
         </div>  
       </div>    
     </section>
-
-      <?php 
-          print_r($userdetails);
-      ?>
 
     <script src="../BarangaySystem/bootstrap/js/bootstrap.bundle.js" type="text/javascript"> </script>
   

@@ -19,7 +19,7 @@
         <!-- fontawesome icons -->
         <script src="https://kit.fontawesome.com/67a9b7069e.js" crossorigin="anonymous"></script>
     </head>
-
+    
     <body >
         <!-- eto yung navbar -->
         <nav class="navbar sticky-top navbar-dark bg-primary">

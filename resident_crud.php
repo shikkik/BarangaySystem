@@ -20,6 +20,15 @@
     <body>
         <div class="container-fluid"> 
             <div class="row"> 
+                <div class="col">
+                <form action="resident_crud_search.php" method="get"> 
+                        <input type="text" name="lname">
+                        <button class="btn btn-primary"> View Household List </button>
+                        <hr>
+                    </form>
+                </div>
+            </div>
+            <div class="row"> 
                 <div class="col-sm-12"> 
                     <table class="table table-dark">
                     <form action="" method="post">
@@ -205,7 +214,7 @@
                                 <label class="mtop">Status</label>
                                     <select class="form-control" name="status" id="status">
                                     <option value="">---</option>
-                                    <option value="Male">Single</option>
+                                    <option value="Single">Single</option>
                                     <option value="Married">Married</option>
                                     <option value="Widowed">Widowed</option>
                                     <option value="Divorced">Divorced</option>
@@ -275,5 +284,5 @@
                 </div>
             </div>
         </div>
-</body>
+    </body>
 </html>

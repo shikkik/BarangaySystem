@@ -1,9 +1,21 @@
 <?php 
+    //error_reporting(E_ALL ^ E_WARNING);
     require('classes/resident.class.php');
     $userdetails = $bmis->get_userdata();
-    $view = $residentbmis->check_resident($email);
+    //$view = $residentbmis->check_resident($email);
+    //$residentbmis->view_household_list();
 
 ?>
+
+<script> 
+    function logout() {
+    window.location.href = "logout.php";
+    }
+    function profile() {
+    window.location.href = "resident_profile.php";
+    }
+</script>
+
 
 <!DOCTYPE html> 
 <html>
@@ -27,29 +39,35 @@
             <a class="navbar-brand" href="resident_homepage.php">Barangay Sorsogon</a>
 
             <div class="dropdown ml-auto">
-                <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown"><?= $userdetails['fullname'];?>
-                <span class="caret"></span></button>
+                <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown"><?= $userdetails['surname'];?>, <?= $userdetails['firstname'];?>
+                    <span class="caret"></span>
+                </button>
                 <ul class="dropdown-menu">
-                    <li><a href="resident_profile.php"> Personal Profile </a></li>
-                    <li><a href="logout.php">Logout</a></li>
+                    <button class="btn" onclick="profile();"> <i class="fas fa-user" style="padding: 0.5em;"></i>Personal Profile  </button>
+                    <button class="btn" onclick="logout();"> <i class="fas fa-sign-out-alt" style="padding: 0.5em;"></i> Logout  </button>
                 </ul>
             </div>
         </nav>
 
-
         <section class="heading-section"> 
-            <div class="container"> 
+            <div class="container text-center"> 
                 <div class="row"> 
                     <div class="col"> 
+                        
+                        <br>
+                        <br>
+
                         <div class="header"> 
                             <h1> Welcome to Barangay Services Management System </h1>
                             <h3> You may select the following services offered below </h3>
                         </div>
                     </div>
                 </div>
-                
             </div>
 
+            <br>
+            <br>
+            <br>
 
             <div class="container"> 
                 <div class="row title-spacing">
@@ -63,7 +81,7 @@
                     <div class="col"> 
                         <div class="card"> 
                             <div class="card-body text-center"> 
-                            <a href="animal.php">
+                            <a href="services_animal.php">
                                 <img src="../BarangaySystem/icons/animalreg.png">
                                 <h4> Animal Registry & Welfare </h4> 
                             </a>
@@ -75,7 +93,7 @@
                         <div class="card"> 
                             <div class="card-body text-center">
                                 <img src="../BarangaySystem/icons/tbdots.png"> 
-                                <a href=""> <h4> TB DOTS Consultation</h4> 
+                                <a href="services_tb_dots.php"> <h4> TB DOTS Consultation</h4> 
                             </a>
                             </div>
                         </div>
@@ -85,7 +103,7 @@
                         <div class="card"> 
                             <div class="card-body text-center">
                                 <img src="../BarangaySystem/icons/vaccine.png"> 
-                                <a href=""> <h4> Vaccination Programs </h4> 
+                                <a href="services_vaccination.php"> <h4> Vaccination Programs </h4> 
                             </a>
                             </div>
                         </div>
@@ -125,6 +143,10 @@
                         </div>
                     </div>
                 </div>
+
+                <br>
+                <br>
+                <br>
 
                 <div class="row title-spacing">
                     <div class="col"> 
@@ -166,10 +188,6 @@
 
             </div>
         </section>
-
-        <?php 
-            print_r($userdetails);
-        ?>
 
         <script src="../BarangaySystem/bootstrap/js/bootstrap.bundle.js" type="text/javascript"> </script>
     </body>
