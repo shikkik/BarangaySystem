@@ -10,56 +10,34 @@
 <html>
     <head> 
         <title> Barangay Management System </title>
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-modal/2.2.6/js/bootstrap-modalmanager.min.js" integrity="sha512-/HL24m2nmyI2+ccX+dSHphAHqLw60Oj5sK8jf59VWtFWZi9vx7jzoxbZmcBeeTeCUc7z1mTs3LfyXGuBU32t+w==" crossorigin="anonymous"></script>
         <!-- responsive tags for screen compatibility -->
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <!-- bootstrap css --> 
+        <meta name="viewport" content="width=device-width, initial-scale=1"><!-- bootstrap css --> 
         <link href="../BarangaySystem/bootstrap/css/bootstrap.css" rel="stylesheet" type="text/css">
         <!-- fontawesome icons --> 
         <script src="https://kit.fontawesome.com/67a9b7069e.js" crossorigin="anonymous"></script>
     
         <style>
 
-            body{
-                background-color: #EBF5FB;
+
+            /* Slideshow */
+
+            .carousel-inner img 
+            {
+                width: 100%;
+                height: 100%;
+                border-radius: 10px;
             }
 
-            .picture1{
-                height: 550px;
-                width: 880px;
-                margin-top: 10px;
-                margin-left: 50px;
-                border-radius: 20px;
-            }
-
-            .container1{
+            .container2{
                 margin-top: 30px;
             }
 
-            .text1{
-                margin-top: 8%;
-                font-family: Arial, Helvetica, sans-serif;
-                text-align: left;
-            }
+            /* Modal */
 
-            h1{
-                font-size: 65px;
-                color: black;
-                margin-top: 8%;
-                font-family: Arial, Helvetica, sans-serif;
-                text-align: left;
-                line-height: 23px;
-                margin-left: 10px;
-            }
-
-            p{
-                color: black;
-                line-height: 22px;
-                margin-left: 10px;
-            }
-
-            .applybutton{
+            .applybutton
+            {
                 width: 100% !important;
                 height: 50px !important;
                 position: relative;
@@ -68,14 +46,25 @@
                 margin-top: 30px;
             }
 
-            .besidetable{
-                background-color: lightblue;
-                margin-top: 23px;
+            /* Under Navbar */
 
+            .container1{
+                background-color: #AED6F1;
+                height: 400px;
+            }
+            
+            .picture1{
+                height: 400px;
+                width: 100%;
             }
 
-            .righttable{
-                border: 1px solid black;
+            .picture2{
+                height: 400px;
+                width: 100%;
+            }
+
+            .text1{
+                margin-top: 60px;
             }
 
         </style>
@@ -83,10 +72,10 @@
 
     <body>
 
-        <!-- eto yung navbar -->
+        <!-- Eto yung navbar -->
 
         <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top">
-            <a class="navbar-brand" href="resident_homepage.php">Barangay Sorsogon</a>
+            <a class="navbar-brand" href="#">Barangay Sorsogon</a>
 
             <div class="dropdown ml-auto">
                 <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown"><?= $userdetails['surname'];?>, <?= $userdetails['firstname'];?>
@@ -108,173 +97,108 @@
         <!-- Under Navbar -->
 
         <div class="container-fluid container1">
-            <div class="row">
-                <div class="col-sm-4 text1">
-                    <h1>VACCINATION</h1>
-                    <h1>PROGRAM</h1>
-
-                    <br>
-
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum sunt quam consequuntur qui debitis nesciunt a odio. Debitis mollitia quia labore eius ut. A, nihil officiis doloremque id assumenda amet! 
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam, earum nemo, error excepturi praesentium vel ipsa neque suscipit, minima saepe voluptas libero. Deserunt eos doloremque, vitae illo quae in voluptatem.</p>
+            <div class="row text-center row1">
+                <div class="col">
+                    <img class="picture1" src="../BarangaySystem/icons/MotherandChild/motherandchild1.png">
                 </div>
-                <div class="col-sm-8">
-                    <img class="picture1" src="../BarangaySystem/icons/Vaccination/vaccination1.jpg">
+
+                <div class="col text1">
+                    <h2>Mother and Child Check-Up</h2>
+                    <hr style="background-color:black;">
+                    <h6>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                        Iste possimus veniam deleniti, aut nesciunt inventore 
+                        doloremque, itaque eaque, id culpa nemo quis doloribus 
+                        blanditiis excepturi laudantium porro quod aspernatur 
+                        pariatur.
+                    </h6>
+                </div>
+
+                <div class="col">
+                    <img class="picture2" src="../BarangaySystem/icons/MotherandChild/motherandchild2.png">
                 </div>
             </div>
         </div>
 
-        <br>
-        <br>
+      <!-- Picture Slideshow-->
 
-        <div class="container">
-            <div class="row title-spacing">
-                <div class="col"> 
-                    <h2 class="text-center"> 
-                        Schedule ng Pagbibigay ng Bakuna
-                    </h2>
-                    <h2 class="text-center"> 
-                        para sa mga Batang Isang Taon Pababa
-                    </h2>
-                </div> 
-            </div>
+            <br>
+            <bR>
 
-            <hr style="background-color: black;">
+        <div class="container container2 text-center">
+            <h2>Barangay Medical Mission</h2>
+
+            <h6> &nbsp; <i class="fas fa-user-md"></i> &nbsp; Free Check-Up &nbsp; | 
+                 &nbsp; <i class="fas fa-comment-medical"></i> &nbsp; Free Health Seminar &nbsp; | 
+                 &nbsp; <i class="fas fa-first-aid"></i> &nbsp; Free Consultation &nbsp; | 
+                 &nbsp; <i class="fas fa-prescription-bottle"></i> &nbsp; Free Product Orientation </h6>
+            
+            <hr style="background-color:black;">
 
             <br>
             <br>
+
             <div class="row">
-                <div class="col-sm-10 righttable">
-                    <table class="table table-hover maintable" style="width: 100%; height: 100%;">
+                <div class="col">
+                    <div id="demo" class="carousel slide" data-ride="carousel" style="width: 500px; height: 400px;">
+                        <ul class="carousel-indicators">
+                            <li data-target="#demo" data-slide-to="0" class="active"></li>
+                            <li data-target="#demo" data-slide-to="1"></li>
+                            <li data-target="#demo" data-slide-to="2"></li>
+                        </ul>
 
-                        <thead class="text-center" style="color: black">
-                            <tr style="margin-bottom: 10px;">
-                                <th rowspan="3">
-                                    BAKUNA
-                                </th>
-                                <th rowspan="3">
-                                    SAKIT NA MAIIWASAN
-                                </th>
-                            </tr>
-                                <tr>
-                                    <th colspan="6">
-                                        NIREREKOMENDANG EDAD NG BATA
-                                    </th>
-                                    <tr>
-                                        <th>
-                                            PAGKA-PANGANAK
-                                        </th>
-                                        <th> 1 &half; <br>
-                                            BUWAN
-                                        </th>
-                                        <th> 2 &half; <br>
-                                            BUWAN
-                                        </th>
-                                        <th>3 &half; <br>
-                                            BUWAN
-                                        </th>
-                                        <th> 9 <br>
-                                            BUWAN
-                                        </th>
-                                        <th>1 <br>
-                                            TAON
-                                        </th>
-                                    </tr>
-                                </tr>
-                        </thead>
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                            <img src="../BarangaySystem/icons/MotherandChild/mandc1.jpg">
+                            </div>
+                            <div class="carousel-item">
+                            <img src="../BarangaySystem/icons/MotherandChild/mandc2.jpg">
+                            </div>
+                            <div class="carousel-item">
+                            <img src="../BarangaySystem/icons/MotherandChild/mandc3.jpg">
+                            </div>
+                        </div>
 
-                        <tbody class="text-center">
-                        <tr>
-                            <td>BCG</td>
-                            <td>Tuberkulosis</td>
-                            <td><i class="fas fa-check"></i></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <td>HEPATITIS B</td>
-                            <td>Hepatitis B</td>
-                            <td><i class="fas fa-check"></i></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <td>PENTAVALENT VACCINE</td>
-                            <td style="font-size: 12px;">Dipterya, Tetano, Hepa B, Pertussis, Pulmonya, Meningitis</td>
-                            <td></td>
-                            <td><i class="fas fa-check"></i></td>
-                            <td><i class="fas fa-check"></i></td>
-                            <td><i class="fas fa-check"></i></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <td>ORAL POLIO VACCINE</td>
-                            <td>Polio</td>
-                            <td></td>
-                            <td><i class="fas fa-check"></i></td>
-                            <td><i class="fas fa-check"></i></td>
-                            <td><i class="fas fa-check"></i></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <td>INACTIVATED POLIO VACCINE</td>
-                            <td>Polio</td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td><i class="fas fa-check"></i></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <td>PNEUMOCOCCAL CONJUGATE VACCINE</td>
-                            <td>Pulmonya, Meningitis</td>
-                            <td></td>
-                            <td><i class="fas fa-check"></i></td>
-                            <td><i class="fas fa-check"></i></td>
-                            <td><i class="fas fa-check"></i></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <td>MEASLES, MUMPS, RUBELLA</td>
-                            <td>Tigdas, Beke, German Measles</td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td><i class="fas fa-check"></i></td>
-                            <td><i class="fas fa-check"></i></td>
-                        </tr>
-                        </tbody>
-                    </table>
+                        <a class="carousel-control-prev" href="#demo" data-slide="prev">
+                            <span class="carousel-control-prev-icon"></span>
+                        </a>
+                        <a class="carousel-control-next" href="#demo" data-slide="next">
+                            <span class="carousel-control-next-icon"></span>
+                        </a>
+                    </div> 
                 </div>
 
-                <div class="col-sm-2 text-center besidetable" style="height:100%; width:100%;">
-                    <h2>MGA PAALALA</h2>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
-                    <hr style="background-color: red;">
+                <div class="col">
+                    <div id="demo" class="carousel slide" data-ride="carousel" style="width: 500px; height: 400px;">
+                        <ul class="carousel-indicators">
+                            <li data-target="#demo" data-slide-to="0" class="active"></li>
+                            <li data-target="#demo" data-slide-to="1"></li>
+                            <li data-target="#demo" data-slide-to="2"></li>
+                        </ul>
 
-                    <p style="font-size: 15px;">Nagsisimula ang pagbabakuna ng bata sa kapanganakan.</p>
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                            <img src="../BarangaySystem/icons/MotherandChild/mandc4.jpg">
+                            </div>
+                            <div class="carousel-item">
+                            <img src="../BarangaySystem/icons/MotherandChild/mandc5.jpg">
+                            </div>
+                            <div class="carousel-item">
+                            <img src="../BarangaySystem/icons/MotherandChild/mandc6.jpg">
+                            </div>
+                        </div>
 
-                    <hr style="background-color: red;">
-
-                    <p style="font-size: 15px;">Sundin ang schedule ng bakuna at siguruhing makumpleto 
-                       ang mga ito hanggang sumapit ang kanyang unang kaarawan.</p>
-
-                    <hr style="background-color: red;">
-
-                    <p style="font-size: 15px;">Ang mga bakunang hindi nakalista ay maaring makuha 
-                       sa pribadong ospital o doktor.</p>
+                        <a class="carousel-control-prev" href="#demo" data-slide="prev">
+                            <span class="carousel-control-prev-icon"></span>
+                        </a>
+                        <a class="carousel-control-next" href="#demo" data-slide="next">
+                            <span class="carousel-control-next-icon"></span>
+                        </a>
+                    </div> 
                 </div>
+
             </div>
         </div>
 
@@ -398,8 +322,12 @@
             </div>  
         </div>
         
+        <?php 
+          print_r($userdetails);
+        ?>
 
         <script src="../BarangaySystem/bootstrap/js/bootstrap.bundle.js" type="text/javascript"> </script>
+
 
 
     </body>
