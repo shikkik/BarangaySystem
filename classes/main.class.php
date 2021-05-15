@@ -165,6 +165,7 @@ class BMISClass {
     }
 
 
+ //  --------------------------------------------------------- ANNOUNCEMENT CRUD ---------------------------------------------------------
 
 
     public function create_announcement() {
@@ -178,26 +179,21 @@ class BMISClass {
             $connection = $this->openConn();
             $stmt = $connection->prepare("INSERT INTO tbl_announcement (`id_announcement`, 
             `event`, `start_date`, `end_date`, `addedby`) VALUES (?, ?, ?, ?, ?)");
-
             $stmt->execute([$id_announcement, $event, $start_date, $end_date, $addedby]);
 
             $message2 = "Announcement Added";
             echo "<script type='text/javascript'>alert('$message2');</script>";
-            
             header('refresh:0');
         }
     }
 
     public function view_announcement(){
-
         $connection = $this->openConn();
-
         $stmt = $connection->prepare("SELECT * from tbl_announcement");
         $stmt->execute();
         $view = $stmt->fetchAll();
 
         return $view;
-       
     }
 
     public function update_announcement() {
@@ -208,16 +204,14 @@ class BMISClass {
             $end_date = $_POST['end_date'];
             $addedby = $_POST['addedby'];
 
-
-            
-                $connection = $this->openConn();
-                $stmt = $connection->prepare("UPDATE tbl_announcement SET event =?, start_date =?, 
-                end_date = ?, addedby =? WHERE id_announcement = ?");
-                $stmt->execute([ $event, $start_date, $end_date, $addedby, $id_announcement]);
+            $connection = $this->openConn();
+            $stmt = $connection->prepare("UPDATE tbl_announcement SET event =?, start_date =?, 
+            end_date = ?, addedby =? WHERE id_announcement = ?");
+            $stmt->execute([ $event, $start_date, $end_date, $addedby, $id_announcement]);
                
-                $message2 = "Announcement Updated";
-                echo "<script type='text/javascript'>alert('$message2');</script>";
-                header("refresh: 0");
+            $message2 = "Announcement Updated";
+            echo "<script type='text/javascript'>alert('$message2');</script>";
+             header("refresh: 0");
 
         }
     }
@@ -246,7 +240,7 @@ class BMISClass {
     }
 
 
-    //  -------------------------------------- MEDICINE CRUD --------------------------------------------=
+    //  --------------------------------------------------------- MEDICINE CRUD ---------------------------------------------------------
 
 
     public function create_medicine() {
@@ -265,15 +259,64 @@ class BMISClass {
 
 
             $connection = $this->openConn();
-            $stmt = $connection->prepare("INSERT INTO tbl_announcement (`id_medicine`, 
-            `event`, `start_date`, `end_date`, `addedby`) VALUES (?, ?, ?, ?, ?)");
+            $stmt = $connection->prepare("INSERT INTO tbl_medicine (`id_medicine`, 
+            `item`, `dateman`, `origin`, `datein`, `dateout`, `stocks`, `remarks`, `addedby`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)");
 
             $stmt->execute([$id_medicine, $item, $dateman, $origin, $datein, $dateout, $stocks, $remarks, $addedby]);
 
-            $message2 = "Announcement Added";
+            $message2 = "Medicine Added";
             echo "<script type='text/javascript'>alert('$message2');</script>";
             
             header('refresh:0');
+        }
+    }
+
+
+    public function view_medicine(){
+        $connection = $this->openConn();
+        $stmt = $connection->prepare("SELECT * from tbl_medicine");
+        $stmt->execute();
+        $view = $stmt->fetchAll();
+
+        return $view;
+    }
+
+    public function update_medicine() {
+        if (isset($_POST['update_medicine'])) {
+            $id_medicine = $_GET['id_medicine'];
+            $item = $_POST['item'];
+            $dateman = $_POST['dateman'];
+            $origin = $_POST['origin'];
+            $datein = $_POST['datein'];
+            $dateout = $_POST['dateout'];
+            $stocks = $_POST['stocks'];
+            $remarks = $_POST['remarks'];
+            $addedby = $_POST['addedby'];
+
+
+            $connection = $this->openConn();
+            $stmt = $connection->prepare("UPDATE tbl_medicine SET item =?, dateman =?, 
+            origin = ?, datein = ?, dateout = ?, stocks = ?, remarks =?, addedby = ?
+            WHERE id_medicine = ?");
+            $stmt->execute([ $item, $dateman, $origin, $datein, $dateout, $stocks, $remarks, $addedby, $id_medicine]);
+            
+            $message2 = "Medicine Item Updated";
+            echo "<script type='text/javascript'>alert('$message2');</script>";
+             header("refresh: 0");
+
+        }
+    }
+
+    public function delete_medicine(){
+
+        $id_medicine = $_POST['id_medicine'];
+
+        if(isset($_POST['delete_medicine'])) {
+            $connection = $this->openConn();
+            $stmt = $connection->prepare("DELETE FROM tbl_medicine where id_medicine = ?");
+            $stmt->execute([$id_medicine]);
+
+            header("Refresh:0");
         }
     }
 

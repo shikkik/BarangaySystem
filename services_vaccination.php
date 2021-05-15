@@ -76,7 +76,7 @@
         <!-- eto yung navbar -->
 
         <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top">
-            <a class="navbar-brand" href="#">Barangay Sorsogon</a>
+            <a class="navbar-brand" href="resident_homepage.php">Barangay Sorsogon</a>
 
             <div class="dropdown ml-auto">
                 <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown"><?= $userdetails['surname'];?>, <?= $userdetails['firstname'];?>

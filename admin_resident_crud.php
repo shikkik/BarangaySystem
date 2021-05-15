@@ -30,6 +30,12 @@
     <link rel="stylesheet" href="dashboard.css"/>
 
     <title>Admin Dashboard</title>
+    <style>
+        table, th, td {
+        border: 1px solid black;
+        border-collapse: collapse;
+        }
+    </style>
   </head>
   <body id="body">
     <div class="container">
@@ -107,6 +113,7 @@
                     <form action="" method="post">
                         <thead> 
                             <tr>
+                                <th> Actions</th>
                                 <th> Email </th>
                                 <th> Password </th>
                                 <th> Surname </th>
@@ -129,22 +136,6 @@
                         <?php if(is_array($view)) {?>
                             <?php foreach($view as $view) {?>
                             <tr>
-                                <th> <?= $view['email'];?> </th>
-                                <th> <?= $view['password'];?> </th>
-                                <th> <?= $view['lname'];?> </th>
-                                <th> <?= $view['fname'];?> </th>
-                                <th> <?= $view['mi'];?> </th>
-                                <th> <?= $view['age'];?> </th>
-                                <th> <?= $view['sex'];?> </th>
-                                <th> <?= $view['status'];?> </th>
-                                <th> <?= $view['address'];?> </th>
-                                <th> <?= $view['contact'];?> </th>
-                                <th> <?= $view['bdate'];?> </th>
-                                <th> <?= $view['bplace'];?> </th>
-                                <th> <?= $view['nationality'];?> </th>
-                                <th> <?= $view['family_role'];?> </th>
-                                <th> <?= $view['role'];?> </th>
-                                <th> <?= $view['addedby'];?> </th>
                                 <td>    
                                 <form action="" method="post">
                                     <a href="resident_crud.php?email=<?= $view['email'];?>" class="btn btn-primary">  Update </a>
@@ -152,6 +143,22 @@
                                     <button class="btn btn-danger" type="submit" name="delete_resident"> Delete </button>
                                     </form>
                                 </td>
+                                <td> <?= $view['email'];?> </td>
+                                <td> <?= $view['password'];?> </td>
+                                <td> <?= $view['lname'];?> </td>
+                                <td> <?= $view['fname'];?> </td>
+                                <td> <?= $view['mi'];?> </td>
+                                <td> <?= $view['age'];?> </td>
+                                <td> <?= $view['sex'];?> </td>
+                                <td> <?= $view['status'];?> </td>
+                                <td> <?= $view['address'];?> </td>
+                                <td> <?= $view['contact'];?> </td>
+                                <td> <?= $view['bdate'];?> </td>
+                                <td> <?= $view['bplace'];?> </td>
+                                <td> <?= $view['nationality'];?> </td>
+                                <td> <?= $view['family_role'];?> </td>
+                                <td> <?= $view['role'];?> </td>
+                                <td> <?= $view['addedby'];?> </td>
                             </tr>
                             <?php }?>
                         <?php } ?>
@@ -202,7 +209,7 @@
         <div class="sidebar__menu">
           <div class="sidebar__link active_menu_link">
             <i class="fa fa-home"></i>
-            <a href="#">Dashboard</a>
+            <a href="admin_dashboard.php">Dashboard</a>
           </div>
 
           <br>
@@ -224,7 +231,7 @@
 
           <div class="sidebar__link">
             <i class="fa fa-bullhorn"></i>
-            <a href="#">Announcement</a>
+            <a href="admin_announcement_crud.php">Announcement</a>
           </div>
           <div class="sidebar__link">
             <i class="fa fa-paw"></i>

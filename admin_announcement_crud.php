@@ -25,6 +25,12 @@
     <link rel="stylesheet" href="dashboard.css"/>
 
     <title>Admin Dashboard</title>
+    <style>
+        table, th, td {
+        border: 1px solid black;
+        border-collapse: collapse;
+        }
+    </style>
   </head>
   <body id="body">
     <div class="container">
@@ -156,7 +162,7 @@
         <div class="sidebar__menu">
           <div class="sidebar__link active_menu_link">
             <i class="fa fa-home"></i>
-            <a href="#">Dashboard</a>
+            <a href="admin_dashboard.php">Dashboard</a>
           </div>
 
           <br>
@@ -178,7 +184,7 @@
 
           <div class="sidebar__link">
             <i class="fa fa-bullhorn"></i>
-            <a href="#">Announcement</a>
+            <a href="admin_announcement_crud.php">Announcement</a>
           </div>
           <div class="sidebar__link">
             <i class="fa fa-paw"></i>

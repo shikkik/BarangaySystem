@@ -5,7 +5,7 @@
     $bmis->validate_admin();
     $bmis->create_medicine();
     $view = $bmis->view_medicine();
-    $upmed = $bmis->update_medicine();
+    $bmis->update_medicine();
     $bmis->delete_medicine();
     //$staffcount = $staffbmis->count_med();
 
@@ -27,6 +27,13 @@
     <link rel="stylesheet" href="dashboard.css"/>
 
     <title>Admin Dashboard</title>
+
+    <style>
+        table, th, td {
+        border: 1px solid black;
+        border-collapse: collapse;
+        }
+    </style>
   </head>
   <body id="body">
     <div class="container">
@@ -50,7 +57,7 @@
                 <input type="text" class="form-control" name="item"  placeholder="Enter medicine item">
 
                 <label class="mtop" >Date Manufactured </label>
-                <input type="text" class="form-control" name="dateman"  placeholder="Enter date manufactured">
+                <input type="date" class="form-control" name="dateman"  placeholder="Enter date manufactured">
 
                 <br>
                 <br>
@@ -80,8 +87,8 @@
                 <br>
                 <br>
 
-                <button class="btn btn-primary" type="submit" name="add_staff"> Add </button>
-                <button class="btn btn-primary" type="submit" name="update_staff"> Commit Update </button>
+                <button class="btn btn-primary" type="submit" name="create_medicine"> Add </button>
+                <button class="btn btn-primary" type="submit" name="update_medicine"> Commit Update </button>
                 </form>
                 </div>
             </div>
@@ -90,7 +97,7 @@
               <i class="fa fa-users fa-2x text-lightblue"aria-hidden="true">
               </i>
               <div class="card_inner">
-                <p class="text-primary-p">Number of Staff</p>
+                <p class="text-primary-p">Types of Medicine Available </p>
                 <span class="font-bold text-title"><?= $staffcount?></span>
               </div>
             </div>
@@ -103,7 +110,7 @@
 
 
           <br>
-          <h2>Lists of Staff</h2>
+          <h2>Medicine Inventory Table</h2>
           <br>
           <br>
 
@@ -116,7 +123,6 @@
                         <th> Medicine Item </th>
                         <th> Date Manufactured </th>
                         <th> Shipped From </th>
-                        <th> Middle Name </th>
                         <th> Date In </th>
                         <th> Date Out </th>
                         <th> Stocks </th>
