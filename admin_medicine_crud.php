@@ -1,14 +1,16 @@
 <?php 
     error_reporting(E_ALL ^ E_WARNING);
-    require('classes/staff.class.php');
+    require('classes/main.class.php');
     $userdetails = $bmis->get_userdata();
     $bmis->validate_admin();
-    $view = $staffbmis->view_staff();
-    $staffbmis->create_staff();
-    $upstaff = $staffbmis->update_staff();
-    $staffbmis->delete_staff();
-    $staffcount = $staffbmis->count_staff();
-  
+    $bmis->create_medicine();
+    $view = $bmis->view_medicine();
+    $bmis->update_medicine();
+    $bmis->delete_medicine();
+    //$staffcount = $staffbmis->count_med();
+
+    
+
 ?>
 
 <!DOCTYPE html>
@@ -25,6 +27,7 @@
     <link rel="stylesheet" href="dashboard.css"/>
 
     <title>Admin Dashboard</title>
+
     <style>
         table, th, td {
         border: 1px solid black;
@@ -42,66 +45,50 @@
 
       <main>
       <div class="main__container">
-        <h2>Barangay Staff</h2>
+        <h2>Medicine Inventory</h2>
         <br>
             
         <div class="main__cards">
             <div class="card" style="width: 580px; height: 300px;">
-                <h3> Add/Update New Staff</h3> 
+                <h3> Add/Update Medicine Items</h3> 
                 <div class="card_inner">
                 <form method="post">
-                <label class="mtop"> Last Name</label>
-                <input type="text" class="form-control" name="lname"  placeholder="Enter last name">
+                <label class="mtop"> Medicine Item</label>
+                <input type="text" class="form-control" name="item"  placeholder="Enter medicine item">
 
-                <label class="mtop" >First Name </label>
-                <input type="text" class="form-control" name="fname"  placeholder="Enter first name">
-
-                <br>
-                <br>
-
-                <label class="mtop"> Middle Initial </label>
-                <input type="text" class="form-control" name="mi" placeholder="Enter middle initial">
-
-                <label class="mtop">Email </label>
-                <input type="email" class="form-control" name="email"  placeholder="Enter email">
+                <label class="mtop" >Date Manufactured </label>
+                <input type="date" class="form-control" name="dateman"  placeholder="Enter date manufactured">
 
                 <br>
                 <br>
 
-                <label class="mtop">Contact Number</label>
-                <input type="tel" class="form-control" name="contact" placeholder="Enter contact number">
+                <label class="mtop"> Shipped From </label>
+                <input type="text" class="form-control" name="origin" placeholder="Enter shipment address">
 
-                <label class="mtop">Password</label>
-                <input type="password" class="form-control" name="password" placeholder="Enter password">
-
-                <br>
-                <br>
-
-                <label class="mtop">Position </label>
-                <input type="text" class="form-control" name="position"  placeholder="Enter position">
-
-                <label class="mtop"> Address </label>
-                <input type="text" class="form-control" name="address"  placeholder="Enter Address">
+                <label class="mtop">Date In </label>
+                <input type="date" class="form-control" name="datein">
 
                 <br>
                 <br>
 
-                <label class="mtop">Age </label>
-                <input type="number" class="form-control" name="age" placeholder="Age">
+                <label class="mtop">Date Out</label>
+                <input type="date" class="form-control" name="dateout">
 
-                <label class="mtop">Gender</label>
-                <select class="form-control" name="sex" id="sex">
-                <option value="Male">Male</opt ion>
-                <option value="Female">Female</option>
-                </select>
-                
-                <input type="hidden" class="form-control" name="role" value="user">
+                <label class="mtop">Stocks </label>
+                <input type="text" class="form-control" name="stocks" placeholder="Enter stocks">
+
+                <br>
+                <br>
+
+                <label class="mtop">Remarks </label>
+                <input type="text" class="form-control" name="remarks"  placeholder="Enter remarks">
+    
                 <input type="hidden" class="form-control" name="addedby" value="<?= $userdetails['surname']?>, <?= $userdetails['firstname']?>">
                 <br>
                 <br>
 
-                <button class="btn btn-primary" type="submit" name="add_staff"> Add </button>
-                <button class="btn btn-primary" type="submit" name="update_staff"> Commit Update </button>
+                <button class="btn btn-primary" type="submit" name="create_medicine"> Add </button>
+                <button class="btn btn-primary" type="submit" name="update_medicine"> Commit Update </button>
                 </form>
                 </div>
             </div>
@@ -110,7 +97,7 @@
               <i class="fa fa-users fa-2x text-lightblue"aria-hidden="true">
               </i>
               <div class="card_inner">
-                <p class="text-primary-p">Number of Staff</p>
+                <p class="text-primary-p">Types of Medicine Available </p>
                 <span class="font-bold text-title"><?= $staffcount?></span>
               </div>
             </div>
@@ -123,7 +110,7 @@
 
 
           <br>
-          <h2>Lists of Staff</h2>
+          <h2>Medicine Inventory Table</h2>
           <br>
           <br>
 
@@ -132,17 +119,14 @@
                 <thead> 
                     <tr>
                         <th> Actions </th>
-                        <th> Email </th>
-                        <th> Password </th>
-                        <th> Surname </th>
-                        <th> First name </th>
-                        <th> Middle Name </th>
-                        <th> Age </th>
-                        <th> Sex </th>
-                        <th> Address </th>
-                        <th> Contact </th>
-                        <th> Position </th>
-                        <th> Role </th>
+                        <th> ID </th>
+                        <th> Medicine Item </th>
+                        <th> Date Manufactured </th>
+                        <th> Shipped From </th>
+                        <th> Date In </th>
+                        <th> Date Out </th>
+                        <th> Stocks </th>
+                        <th> Remarks </th>
                         <th> AddedBy </th>
                         
                     </tr>
@@ -153,22 +137,19 @@
                         <tr>
                             <td>    
                             <form action="" method="post">
-                                <a href="admin_staff_crud.php?email=<?= $view['email'];?>" class="btn btn-primary"> Update </a>
-                                <input type="hidden" name="email" value="<?= $view['email'];?>">
-                                <button class="btn btn-danger" type="submit" name="delete_staff"> Delete </button>
+                                <a href="admin_medicine_crud.php?id_medicine=<?= $view['id_medicine'];?>" class="btn btn-primary"> Update </a>
+                                <input type="hidden" name="id_medicine" value="<?= $view['id_medicine'];?>">
+                                <button class="btn btn-danger" type="submit" name="delete_medicine"> Delete </button>
                             </form>
                             </td>
-                            <td> <?= $view['email'];?> </td>
-                            <td> <?= $view['password'];?> </td>
-                            <td> <?= $view['lname'];?> </td>
-                            <td> <?= $view['fname'];?> </td>
-                            <td> <?= $view['mi'];?> </td>
-                            <td> <?= $view['age'];?> </td>
-                            <td> <?= $view['sex'];?> </td>
-                            <td> <?= $view['address'];?> </td>
-                            <td> <?= $view['contact'];?> </td>
-                            <td> <?= $view['position'];?> </td>
-                            <td> <?= $view['role'];?> </td>
+                            <td> <?= $view['id_medicine'];?> </td>
+                            <td> <?= $view['item'];?> </td>
+                            <td> <?= $view['dateman'];?> </td>
+                            <td> <?= $view['origin'];?> </td>
+                            <td> <?= $view['datein'];?> </td>
+                            <td> <?= $view['dateout'];?> </td>
+                            <td> <?= $view['stocks'];?> </td>
+                            <td> <?= $view['remarks'];?> </td>
                             <td> <?= $view['addedby'];?> </td>
                             
                         </tr>
@@ -220,7 +201,7 @@
         <div class="sidebar__menu">
           <div class="sidebar__link active_menu_link">
             <i class="fa fa-home"></i>
-            <a href="admin_dashboard.php">Dashboard</a>
+            <a href="#">Dashboard</a>
           </div>
 
           <br>
@@ -242,11 +223,11 @@
 
           <div class="sidebar__link">
             <i class="fa fa-bullhorn"></i>
-            <a href="admin_announcement_crud.php">Announcement</a>
+            <a href="#">Announcement</a>
           </div>
           <div class="sidebar__link">
             <i class="fa fa-paw"></i>
-            <a href="admin_animal_crud.php">Animal Registry and Welfare</a>
+            <a href="animal.php">Animal Registry and Welfare</a>
           </div>
           <div class="sidebar__link">
             <i class="fa fa-user-shield"></i>

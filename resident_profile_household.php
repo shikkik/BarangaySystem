@@ -61,6 +61,23 @@
                 </div>
             </div>
 
+            <div class="row" style="margin-top: 3em; margin-bottom: 5em;"> 
+                <div class="col-xl-12">
+                    <div class="form-inline">
+                    <form method="post">
+                            <input class="form-control" name="lname" type="hidden" value="<?= $userdetails['surname'];?>"/>
+                            <input class="form-control" name="mi" type="hidden" value="<?= $userdetails['mname'];?>" />
+                            <button type="submit button" class="btn btn-info"  name="search_household">View Household</button>
+                        <div id="demo" >
+                        <br /><br />
+                            <?php include'testingsearch.php'?>
+                        </div>
+                    </form>
+                    </div>                                   
+                </div>
+            </div>
+
+
             <div class="row margin mtop"> 
                 <div class="col-sm"> </div>
                 <div class="col-12">   
@@ -89,18 +106,8 @@
                 <div class="col-sm"> </div>
             </div>
 
-            <form method="POST" action="">
-                <div class="form-inline">
-                        <input  class="form-control" name="mname" type="hidden" value="<?= $userdetails['mname'];?>" placeholder="Search here..." required=""/>
-                        <input  class="form-control" name="surname" type="hidden" value="<?= $userdetails['surname'];?>" placeholder="Search here..." required=""/>
-                        <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#demo" name="search">View Household</button>
-                    <div id="demo" class="collapse">
-                    <br /><br />
-                        <?php include'testingsearch.php'?>
-                    
-                    </div>
-                </div>                                   
-            </form>
+           
+            
             
   
         </div>

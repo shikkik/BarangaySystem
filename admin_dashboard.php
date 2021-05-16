@@ -502,7 +502,7 @@
 
           <div class="sidebar__link">
             <i class="fa fa-bullhorn"></i>
-            <a href="#">Announcement</a>
+            <a href="admin_announcement_crud.php">Announcement</a>
           </div>
           <div class="sidebar__link">
             <i class="fa fa-paw"></i>
