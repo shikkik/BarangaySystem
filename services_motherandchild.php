@@ -67,6 +67,7 @@
                 margin-top: 60px;
             }
 
+
         </style>
     </head>
 
@@ -139,11 +140,11 @@
 
             <div class="row">
                 <div class="col">
-                    <div id="demo" class="carousel slide" data-ride="carousel" style="width: 500px; height: 400px;">
+                    <div id="demo1" class="carousel slide" data-ride="carousel" style="width: 500px; height: 400px;">
                         <ul class="carousel-indicators">
-                            <li data-target="#demo" data-slide-to="0" class="active"></li>
-                            <li data-target="#demo" data-slide-to="1"></li>
-                            <li data-target="#demo" data-slide-to="2"></li>
+                            <li data-target="#demo1" data-slide-to="0" class="active"></li>
+                            <li data-target="#demo1" data-slide-to="1"></li>
+                            <li data-target="#demo1" data-slide-to="2"></li>
                         </ul>
 
                         <div class="carousel-inner">
@@ -158,10 +159,10 @@
                             </div>
                         </div>
 
-                        <a class="carousel-control-prev" href="#demo" data-slide="prev">
+                        <a class="carousel-control-prev" href="#demo1" data-slide="prev">
                             <span class="carousel-control-prev-icon"></span>
                         </a>
-                        <a class="carousel-control-next" href="#demo" data-slide="next">
+                        <a class="carousel-control-next" href="#demo1" data-slide="next">
                             <span class="carousel-control-next-icon"></span>
                         </a>
                     </div> 
@@ -171,11 +172,11 @@
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
                 <div class="col">
-                    <div id="demo" class="carousel slide" data-ride="carousel" style="width: 500px; height: 400px;">
+                    <div id="demo2" class="carousel slide" data-ride="carousel" style="width: 500px; height: 400px;">
                         <ul class="carousel-indicators">
-                            <li data-target="#demo" data-slide-to="0" class="active"></li>
-                            <li data-target="#demo" data-slide-to="1"></li>
-                            <li data-target="#demo" data-slide-to="2"></li>
+                            <li data-target="#demo2" data-slide-to="0" class="active"></li>
+                            <li data-target="#demo2" data-slide-to="1"></li>
+                            <li data-target="#demo2" data-slide-to="2"></li>
                         </ul>
 
                         <div class="carousel-inner">
@@ -190,10 +191,10 @@
                             </div>
                         </div>
 
-                        <a class="carousel-control-prev" href="#demo" data-slide="prev">
+                        <a class="carousel-control-prev" href="#demo2" data-slide="prev">
                             <span class="carousel-control-prev-icon"></span>
                         </a>
-                        <a class="carousel-control-next" href="#demo" data-slide="next">
+                        <a class="carousel-control-next" href="#demo2" data-slide="next">
                             <span class="carousel-control-next-icon"></span>
                         </a>
                     </div> 
@@ -228,91 +229,60 @@
 
                         <div class="modal-body">
                             <form action="/action_page.php" class="was-validated">
-                                <div class="row"> 
+                                <div class="row modalrow"> 
 
                                     <div class="col">
                                         <div class="form-group">
-                                            <label for="uname">Animal:</label>
-                                            <input type="text" class="form-control" placeholder="Enter Animal" required>
+                                            <label for="lname">Lastname:</label>
+                                            <input type="text" class="form-control" placeholder="Enter your Lastname" required>
                                             <div class="valid-feedback">Valid.</div>
                                             <div class="invalid-feedback">Please fill out this field.</div>
                                         </div>
 
                                         <div class="form-group">
-                                            <label for="origin">Origin:</label>
-                                            <input type="text" class="form-control" placeholder="Enter Origin" required>
+                                            <label for="mname">Middlename:</label>
+                                            <input type="text" class="form-control" placeholder="Enter your Middlename" required>
                                             <div class="valid-feedback">Valid.</div>
                                             <div class="invalid-feedback">Please fill out this field.</div>  
                                         </div>
 
                                         <div class="form-group">            
-                                            <label for="disease">Disease:</label>
-                                            <input type="text" class="form-control" placeholder="Enter Disease" required>
+                                            <label for="cno">Contact Number:</label>
+                                            <input type="text" maxlength="11" class="form-control" placeholder="Enter your Contact Numebr" required>
                                             <div class="valid-feedback">Valid.</div>
                                             <div class="invalid-feedback">Please fill out this field.</div>
                                         </div>
                                     </div>
 
                                     <div class="col">
+
                                         <div class="form-group">
-                                            <label for="breed">Breed:</label>
-                                            <input type="text" class="form-control" placeholder="Enter Breed" required>
+                                            <label for="fname">Firstname:</label>
+                                            <input type="text" class="form-control" placeholder="Enter your Firstname" required>
+                                            <div class="valid-feedback">Valid.</div>
+                                            <div class="invalid-feedback">Please fill out this field.</div>  
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="address">Address:</label>
+                                            <input type="text" class="form-control" placeholder="Enter your Address" required>
                                             <div class="valid-feedback">Valid.</div>
                                             <div class="invalid-feedback">Please fill out this field.</div>
                                         </div>
                                         <div class="form-group">
-                                            <label for="purpose">Purpose:</label>
-                                            <input type="text" class="form-control" placeholder="Enter Purpose" required>
-                                            <div class="valid-feedback">Valid.</div>
-                                            <div class="invalid-feedback">Please fill out this field.</div>
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="vaccination">Vaccination:</label>
-                                            <input type="text" class="form-control" placeholder="Enter Vaccination" required>
+                                            <label for="age" class="mtop">Age </label>
+                                            <input type="number" class="form-control" placeholder="Enter your Age" required>
                                             <div class="valid-feedback">Valid.</div>
                                             <div class="invalid-feedback">Please fill out this field.</div>
                                         </div>
                                     </div>
 
                                 </div>
-
-                                <div class="row">
-
-                                    <div class="col">
-                                        <label for="Age" class="mtop">Age </label>
-                                        <input type="number" class="form-control" placeholder="Enter Age" required>
-                                        <div class="valid-feedback">Valid.</div>
-                                        <div class="invalid-feedback">Please fill out this field.</div>
-                                    </div>
-
-                                    <div class="col">
-                                            <label for="Sex"class="mtop">Sex</label>
-                                        <div class="form-check">
-                                            <label class="form-check-label">
-                                            <input type="radio" class="form-check-input" name="optradio">Male
-                                            </label>
-                                        </div>
-                                        <div class="form-check">
-                                            <label class="form-check-label">
-                                            <input type="radio" class="form-check-input" name="optradio">Female
-                                            </label>
-                                        </div>    
-                                    </div>
-
-                                    <div class="col">
-                                        <div class="form-group">
-                                            <label for="Date"class="mtop">Date </label>
-                                            <input type="date" class="form-control" required>
-                                            <div class="valid-feedback">Valid.</div>
-                                            <div class="invalid-feedback">Please fill out this field.</div>
-                                        </div>
-                                    </div>  
-                                </div> 
                             </form>
                             
                             <!-- Modal Footer -->
                             
-                            <div class="modal-footer">
+                            <div class="modal-footer paa">
                                 <button type="button" class="btn btn-dark" data-dismiss="modal">Close</button>
                                 <button type="button" class="btn btn-primary">Save changes</button>
                             </div>  

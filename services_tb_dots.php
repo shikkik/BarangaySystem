@@ -194,22 +194,22 @@
 
                                     <div class="col">
                                         <div class="form-group">
-                                            <label for="uname">Animal:</label>
-                                            <input type="text" class="form-control" placeholder="Enter Animal" required>
+                                            <label for="lname">Lastname:</label>
+                                            <input type="text" class="form-control" placeholder="Enter your Lastname" required>
                                             <div class="valid-feedback">Valid.</div>
                                             <div class="invalid-feedback">Please fill out this field.</div>
                                         </div>
 
                                         <div class="form-group">
-                                            <label for="origin">Origin:</label>
-                                            <input type="text" class="form-control" placeholder="Enter Origin" required>
+                                            <label for="mname">Middlename:</label>
+                                            <input type="text" class="form-control" placeholder="Enter your Middlename" required>
                                             <div class="valid-feedback">Valid.</div>
                                             <div class="invalid-feedback">Please fill out this field.</div>  
                                         </div>
 
                                         <div class="form-group">            
-                                            <label for="disease">Disease:</label>
-                                            <input type="text" class="form-control" placeholder="Enter Disease" required>
+                                            <label for="cno">Contact Number:</label>
+                                            <input type="tel" maxlength="11" class="form-control" placeholder="Enter your Contact No." pattern="[0-9]{11}" required>
                                             <div class="valid-feedback">Valid.</div>
                                             <div class="invalid-feedback">Please fill out this field.</div>
                                         </div>
@@ -217,20 +217,22 @@
 
                                     <div class="col">
                                         <div class="form-group">
-                                            <label for="breed">Breed:</label>
-                                            <input type="text" class="form-control" placeholder="Enter Breed" required>
+                                            <label for="fname">Firstname:</label>
+                                            <input type="text" class="form-control" placeholder="Enter your Firstname" required>
+                                            <div class="valid-feedback">Valid.</div>
+                                            <div class="invalid-feedback">Please fill out this field.</div>  
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="address">Address:</label>
+                                            <input type="text" class="form-control" placeholder="Enter your Address" required>
                                             <div class="valid-feedback">Valid.</div>
                                             <div class="invalid-feedback">Please fill out this field.</div>
                                         </div>
+
                                         <div class="form-group">
-                                            <label for="purpose">Purpose:</label>
-                                            <input type="text" class="form-control" placeholder="Enter Purpose" required>
-                                            <div class="valid-feedback">Valid.</div>
-                                            <div class="invalid-feedback">Please fill out this field.</div>
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="vaccination">Vaccination:</label>
-                                            <input type="text" class="form-control" placeholder="Enter Vaccination" required>
+                                            <label for="occupation">Occupation:</label>
+                                            <input type="text" class="form-control" placeholder="Enter your Occupation" required>
                                             <div class="valid-feedback">Valid.</div>
                                             <div class="invalid-feedback">Please fill out this field.</div>
                                         </div>
@@ -263,12 +265,43 @@
 
                                     <div class="col">
                                         <div class="form-group">
-                                            <label for="Date"class="mtop">Date </label>
+                                            <label for="Date"class="mtop">Birthday </label>
                                             <input type="date" class="form-control" required>
                                             <div class="valid-feedback">Valid.</div>
                                             <div class="invalid-feedback">Please fill out this field.</div>
                                         </div>
                                     </div>  
+                                </div> 
+
+                                <div class="row">
+
+                                    <div class="col">
+                                        <div class="form-group">
+                                            <label for="height">Height:</label>
+                                            <input type="text" class="form-control" placeholder="Enter Height" required>
+                                            <div class="valid-feedback">Valid.</div>
+                                            <div class="invalid-feedback">Please fill out this field.</div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col">
+                                        <div class="form-group">
+                                            <label for="weight">Weight:</label>
+                                            <input type="text" class="form-control" placeholder="Enter Weight" required>
+                                            <div class="valid-feedback">Valid.</div>
+                                            <div class="invalid-feedback">Please fill out this field.</div>
+                                        </div>   
+                                    </div>
+
+                                    <div class="col">
+                                        <div class="form-group">
+                                            <label for="phno">Philhealth No:</label>
+                                            <input type="text" class="form-control" placeholder="Enter Philhealth No." required>
+                                            <div class="valid-feedback">Valid.</div>
+                                            <div class="invalid-feedback">Please fill out this field.</div>
+                                        </div>
+                                    </div>  
+                                    
                                 </div> 
                             </form>
                             
