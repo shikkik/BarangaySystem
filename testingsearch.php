@@ -1,6 +1,6 @@
 <?php
 	// require the database connection
-	require 'classes/conn.php';
+	require 'classes/resident.class.php';
 	if(ISSET($_POST['search'])){
 ?>
 	<table class="table table-bordered" >
@@ -26,7 +26,7 @@
 			<?php
 				$surname = $_POST['surname'];
                 $mname = $_POST['mname'];
-				$query = $conn->prepare("SELECT * FROM `tbl_resident` WHERE `lname` LIKE '%$surname%' and  `mi` LIKE '%$mname%'");
+				$query = $con->prepare("SELECT * FROM `tbl_resident` WHERE `lname` LIKE '%$surname%' and  `mi` LIKE '%$mname%'");
 				$query->execute();
 				while($row = $query->fetch()){
 			?>
@@ -72,7 +72,7 @@
 		</thead>
 		<tbody>
 			<?php
-				$query = $conn->prepare("SELECT * FROM `tbl_resident`");
+				$query = $con->prepare("SELECT * FROM `tbl_resident`");
 				$query->execute();
 				while($row = $query->fetch()){
 			?>
@@ -98,5 +98,5 @@
 	</table>
 <?php
 	}
-$conn = null;
+$con = null;
 ?>

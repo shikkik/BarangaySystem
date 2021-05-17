@@ -91,17 +91,15 @@
 
             <form method="POST" action="">
                 <div class="form-inline">
-                        <input  class="form-control" name="mname" type="hidden" value="<?= $userdetails['mname'];?>" placeholder="Search here..." required=""/>
-                        <input  class="form-control" name="surname" type="hidden" value="<?= $userdetails['surname'];?>" placeholder="Search here..." required=""/>
-                        <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#demo" name="search">View Household</button>
+                        <input  class="form-control" name="mname" type="" value="<?= $userdetails['mname'];?>" placeholder="Search here..." required=""/>
+                        <input  class="form-control" name="surname" type="" value="<?= $userdetails['surname'];?>" placeholder="Search here..." required=""/>
+                        <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#demo" name="search" >View Household</button>
                     <div id="demo" class="collapse">
-                    <br /><br />
                         <?php include'testingsearch.php'?>
-                    
                     </div>
                 </div>                                   
             </form>
-            
+             
   
         </div>
 
