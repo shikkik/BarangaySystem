@@ -112,46 +112,17 @@
         }
 
         public function view_household_list() {
-            
-            //$lname = $_GET['lname'];
-            //$mi = $_GET['mi'];
+            $lname = $_POST['lname'];
+            $mi = $_POST['mi'];
 
-            $connection = $this->openConn();
+            if(isset($_POST['search_household'])) {
+                $connection = $this->openConn();
 
-            //$stmt = $connection->prepare("SELECT * from tbl_resident 
-            //WHERE lname LIKE '%$lname%'");
-            //$stmt->execute();
-            //$view = $stmt->fetch();
-            
-           
-            //return $view;
-            
-            if(isset($_POST[''])) {
-                
+                $stmt1 = $connection->prepare("SELECT * FROM `tbl_resident` WHERE `lname` LIKE '%$lname%' and  `mi` LIKE '%$mi%'");
+			    $stmt1->execute();
             }
-        }
+            else {
 
-
-
-
-
-
-        public function view_single_resident(){
-
-            $email = $_GET['email'];
-            
-            $connection = $this->openConn();
-            $stmt = $connection->prepare("SELECT * FROM tbl_resident where email = '$email'");
-            $stmt->execute();
-            $view = $stmt->fetch(); 
-            $total = $stmt->rowCount();
- 
-            //eto yung condition na i ch check kung may laman si products at i re return niya kapag meron
-            if($total > 0 )  {
-                return $view;
-            }
-            else{
-                return false;
             }
         }
 
@@ -218,6 +189,24 @@
 
     //-------------------------------- EXTRA FUNCTIONS FOR RESIDENT CLASS ---------------------------------
 
+    public function get_single_resident($id_resident){
+
+        $id_resident = $_GET['id_resident'];
+        
+        $connection = $this->openConn();
+        $stmt = $connection->prepare("SELECT * FROM tbl_resident where id_resident = ?");
+        $stmt->execute([$id_resident]);
+        $resident = $stmt->fetch(); 
+        $total = $stmt->rowCount();
+
+        if($total > 0 )  {
+            return $resident;
+        }
+        else{
+            return false;
+        }
+    }
+   
     public function check_resident($email) {
 
         $connection = $this->openConn();

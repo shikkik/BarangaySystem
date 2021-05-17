@@ -1,8 +1,11 @@
 <?php 
     require('classes/resident.class.php');
 
-    $view = $residentbmis->view_single_resident($email);
+    //$view = $residentbmis->view_single_resident($email);
     $userdetails = $residentbmis->get_userdata();
+    
+  
+    
 ?>
 
 <!DOCTYPE html> 
@@ -32,11 +35,12 @@
                 <a class="nav-item nav-link" href="logout.php"><i class="fas fa-sign-out-alt"></i></a>
             </div>
         </nav>
+
         <div class="container"  style="margin-top: 4em;">
             <div class="row">
                 <div class="col-12">
                     <h1 class="text-center">Resident Profile</h1>
-                    <hr>
+                    
 
                 <div class="row margin mtop"> 
                     <div class="col-sm"> </div>
@@ -45,23 +49,30 @@
                             <div class="card-body">
                                 <div class="row">
                                     <div class="col">
-                                    <h5> Name: <?= $userdetails['fullname'];?></h5>
-                                   
-                                    <h5> Gender: <?= $view ['sex'];?> </h5>
+                                        <h3 class="text-center"> Change Password </h3>
+                                        <form method="post">
+                                        <input type="hidden" name="email" value="<?= $userdetails['emailadd'];?>">
 
-                                    
-                                    </div>
+                                        <label> Current Password </label>
+                                        <input class="form-control" type="password" name="password" placeholder="Current Passsword" require>
+                                        <label> New Password </label>
+                                        <input class="form-control" type="password" name="newpassword" placeholder="New Passsword" require>
+                                        <label> Verify Password </label>
+                                        <input class="form-control" type="password" name="checkpassword" placeholder="Verify Passsword" require>
 
-                                    <div class="col">
-                                    
-                                    </div>
-                                </div>
-                                
+                                        <br>
+
+                                        <button class="btn btn-primary" type="submit" name="change_pass"> Change Password </button>
+                                        </form>
+                                    </div>  
+                                </div>   
                             </div>
                         </div>
                     </div> 
 
-                    <div class="col-sm> </div>
+                    <div class="col-sm"> 
+                
+                    </div>
                 </div>
             </div>
         </div>
@@ -70,10 +81,7 @@
         
         </section>
 
-        <?php 
-           print_r($userdetails);
-        ?>
-
+        <script src="../BarangaySystem/bootstrap/js/bootstrap.bundle.js" type="text/javascript"> </script>
          
     </body>
 </html>

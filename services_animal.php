@@ -1,8 +1,14 @@
 <?php 
-    require('classes/main.class.php');
     require('classes/resident.class.php');
-    
     $userdetails = $bmis->get_userdata();
+
+    $id_resident = $_GET['id_resident'];
+    $resident = $residentbmis->get_single_resident($id_resident);
+
+    print_r($resident);
+    
+    
+    
 ?>
 
 <!DOCTYPE html>
@@ -182,7 +188,7 @@
               <!-- Modal Body -->
 
               <div class="modal-body">
-                <form action="/action_page.php" class="was-validated">
+                <form method="post" class="was-validated">
                   <div class="row"> 
 
                       <div class="col-sm-6">
@@ -269,16 +275,18 @@
                             <div class="valid-feedback">Valid.</div>
                             <div class="invalid-feedback">Please fill out this field.</div>
                         </div>
-                      </div>  
-                  </div> 
+
+                        
+                      </div> 
+                  
+                  
+                  <!-- Modal Footer -->
+                    
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-dark" data-dismiss="modal">Close</button>
+                    <button name ="create_tbdots" type="submit" class="btn btn-primary">Save changes</button>
+                  </div>  
                 </form>
-                  
-                <!-- Modal Footer -->
-                  
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-dark" data-dismiss="modal">Close</button>
-                  <button type="button" class="btn btn-primary">Save changes</button>
-                </div>  
               </div>
             </div>
           </div>

@@ -31,6 +31,9 @@
         }
         */
 
+    
+    //------------------------------------- CRUD FUNCTIONS FOR STAFF -----------------------------------------------
+
         public function create_staff() {
 
             if(isset($_POST['add_staff'])) {
@@ -49,16 +52,16 @@
 
                 if ($this->check_staff($email) == 0 ) {
 
-                        $connection = $this->openConn();
-                        $stmt = $connection->prepare("INSERT INTO tbl_user (`email`,`password`,`lname`,`fname`,
-                        `mi`, `age`, `sex`, `address`, `contact`, `position` , `role`, `addedby`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+                    $connection = $this->openConn();
+                    $stmt = $connection->prepare("INSERT INTO tbl_user (`email`,`password`,`lname`,`fname`,
+                    `mi`, `age`, `sex`, `address`, `contact`, `position` , `role`, `addedby`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
     
-                        $stmt->Execute([$email, $password, $lname, $fname, $mi, $age, $sex, 
-                        $address, $contact, $position, $role, $addedby]);
-                        $message2 = "New Staff Adedd";
+                    $stmt->Execute([$email, $password, $lname, $fname, $mi, $age, $sex, 
+                    $address, $contact, $position, $role, $addedby]);
+                    $message2 = "New Staff Adedd";
     
-                        echo "<script type='text/javascript'>alert('$message2');</script>";
-                        header('refresh:0');
+                    echo "<script type='text/javascript'>alert('$message2');</script>";
+                    header('refresh:0');
     
                 }
 
@@ -66,18 +69,8 @@
                     echo "<script type='text/javascript'>alert('Email Account already exists');</script>";
                 }
             }
-            
         }
 
-        public function check_staff($email) {
-
-            $connection = $this->openConn();
-            $stmt = $connection->prepare("SELECT * FROM tbl_user WHERE email = ?");
-            $stmt->Execute([$email]);
-            $total = $stmt->rowCount(); 
-    
-            return $total;
-        }
 
         public function view_staff(){
 
@@ -89,16 +82,6 @@
             //$rows = $stmt->
             return $view;
            
-        }
-
-        public function count_staff() {
-            $connection = $this->openConn();
-
-            $stmt = $connection->prepare("SELECT COUNT(*) from tbl_user");
-            $stmt->execute();
-            $staffcount = $stmt->fetchColumn();
-
-            return $staffcount;
         }
 
         public function view_single_staff(){
@@ -134,8 +117,6 @@
                 $position = $_POST['position'];
                 $role = $_POST['role'];
                 $addedby = $_POST['addedby'];
-
-
                 
                     $connection = $this->openConn();
                     $stmt = $connection->prepare("UPDATE tbl_user SET password =?, lname =?, 
@@ -167,7 +148,28 @@
                  header('refresh:0');
             }
         }
-    }
 
+    //--------------------------------------------- EXTRA FUNCTIONS FOR STAFF -------------------------------------------------
+
+        public function check_staff($email) {
+
+            $connection = $this->openConn();
+            $stmt = $connection->prepare("SELECT * FROM tbl_user WHERE email = ?");
+            $stmt->Execute([$email]);
+            $total = $stmt->rowCount(); 
+
+            return $total;
+        }
+
+        public function count_staff() {
+            $connection = $this->openConn();
+
+            $stmt = $connection->prepare("SELECT COUNT(*) from tbl_user");
+            $stmt->execute();
+            $staffcount = $stmt->fetchColumn();
+
+            return $staffcount;
+        }
+    }
     $staffbmis = new StaffClass();
 ?>

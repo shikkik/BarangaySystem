@@ -1,8 +1,12 @@
 <?php 
-    require('classes/main.class.php');
     require('classes/resident.class.php');
     
     $userdetails = $bmis->get_userdata();
+
+    $id_resident = $_GET['id_resident'];
+    $resident = $residentbmis->get_single_resident($id_resident);
+
+    $bmis->create_tbdots();
 ?>
 
 <!DOCTYPE html>
@@ -189,27 +193,28 @@
                         <!-- Modal Body -->
 
                         <div class="modal-body">
-                            <form action="/action_page.php" class="was-validated">
+                            <form method="post" class="was-validated">
                                 <div class="row"> 
 
                                     <div class="col">
                                         <div class="form-group">
+                                            <input name="id_resident" type="hidden" value="<?= $resident['id_resident']?>">
                                             <label for="lname">Lastname:</label>
-                                            <input type="text" class="form-control" placeholder="Enter your Lastname" required>
+                                            <input name="lname" type="text" class="form-control" value="<?= $resident['lname']?>" required>
                                             <div class="valid-feedback">Valid.</div>
                                             <div class="invalid-feedback">Please fill out this field.</div>
                                         </div>
 
                                         <div class="form-group">
                                             <label for="mname">Middlename:</label>
-                                            <input type="text" class="form-control" placeholder="Enter your Middlename" required>
+                                            <input name="mi" type="text" class="form-control" value="<?= $resident['mi']?>" required>
                                             <div class="valid-feedback">Valid.</div>
                                             <div class="invalid-feedback">Please fill out this field.</div>  
                                         </div>
 
                                         <div class="form-group">            
                                             <label for="cno">Contact Number:</label>
-                                            <input type="tel" maxlength="11" class="form-control" placeholder="Enter your Contact No." pattern="[0-9]{11}" required>
+                                            <input name="contact" type="tel" maxlength="11" class="form-control" value="<?= $resident['contact']?>" pattern="[0-9]{11}" required>
                                             <div class="valid-feedback">Valid.</div>
                                             <div class="invalid-feedback">Please fill out this field.</div>
                                         </div>
@@ -218,21 +223,21 @@
                                     <div class="col">
                                         <div class="form-group">
                                             <label for="fname">Firstname:</label>
-                                            <input type="text" class="form-control" placeholder="Enter your Firstname" required>
+                                            <input name="fname" type="text" class="form-control" value="<?= $resident['fname']?>" required>
                                             <div class="valid-feedback">Valid.</div>
                                             <div class="invalid-feedback">Please fill out this field.</div>  
                                         </div>
 
                                         <div class="form-group">
                                             <label for="address">Address:</label>
-                                            <input type="text" class="form-control" placeholder="Enter your Address" required>
+                                            <input name="address" type="text" class="form-control" value="<?= $resident['address']?>" required>
                                             <div class="valid-feedback">Valid.</div>
                                             <div class="invalid-feedback">Please fill out this field.</div>
                                         </div>
 
                                         <div class="form-group">
                                             <label for="occupation">Occupation:</label>
-                                            <input type="text" class="form-control" placeholder="Enter your Occupation" required>
+                                            <input name="occupation" type="text" class="form-control" placeholder="Enter your Occupation" required>
                                             <div class="valid-feedback">Valid.</div>
                                             <div class="invalid-feedback">Please fill out this field.</div>
                                         </div>
@@ -244,7 +249,7 @@
 
                                     <div class="col">
                                         <label for="Age" class="mtop">Age </label>
-                                        <input type="number" class="form-control" placeholder="Enter Age" required>
+                                        <input name="age" type="number" class="form-control" value="<?= $resident['age']?>" required>
                                         <div class="valid-feedback">Valid.</div>
                                         <div class="invalid-feedback">Please fill out this field.</div>
                                     </div>
@@ -253,12 +258,12 @@
                                             <label for="Sex"class="mtop">Sex</label>
                                         <div class="form-check">
                                             <label class="form-check-label">
-                                            <input type="radio" class="form-check-input" name="optradio">Male
+                                            <input name="sex" type="radio" class="form-check-input" name="optradio">Male
                                             </label>
                                         </div>
                                         <div class="form-check">
                                             <label class="form-check-label">
-                                            <input type="radio" class="form-check-input" name="optradio">Female
+                                            <input name="sex" type="radio" class="form-check-input" name="optradio">Female
                                             </label>
                                         </div>    
                                     </div>
@@ -266,7 +271,7 @@
                                     <div class="col">
                                         <div class="form-group">
                                             <label for="Date"class="mtop">Birthday </label>
-                                            <input type="date" class="form-control" required>
+                                            <input name="bdate" type="date" class="form-control" required>
                                             <div class="valid-feedback">Valid.</div>
                                             <div class="invalid-feedback">Please fill out this field.</div>
                                         </div>
@@ -278,7 +283,7 @@
                                     <div class="col">
                                         <div class="form-group">
                                             <label for="height">Height:</label>
-                                            <input type="text" class="form-control" placeholder="Enter Height" required>
+                                            <input name="height" type="text" class="form-control" placeholder="Enter Height" required>
                                             <div class="valid-feedback">Valid.</div>
                                             <div class="invalid-feedback">Please fill out this field.</div>
                                         </div>
@@ -287,7 +292,7 @@
                                     <div class="col">
                                         <div class="form-group">
                                             <label for="weight">Weight:</label>
-                                            <input type="text" class="form-control" placeholder="Enter Weight" required>
+                                            <input name="weight" type="text" class="form-control" placeholder="Enter Weight" required>
                                             <div class="valid-feedback">Valid.</div>
                                             <div class="invalid-feedback">Please fill out this field.</div>
                                         </div>   
@@ -296,21 +301,22 @@
                                     <div class="col">
                                         <div class="form-group">
                                             <label for="phno">Philhealth No:</label>
-                                            <input type="text" class="form-control" placeholder="Enter Philhealth No." required>
+                                            <input name="philhealth" type="text" class="form-control" placeholder="Enter Philhealth No." required>
                                             <div class="valid-feedback">Valid.</div>
                                             <div class="invalid-feedback">Please fill out this field.</div>
                                         </div>
                                     </div>  
                                     
                                 </div> 
+
+                                <!-- Modal Footer -->
+                            
+                                <div class="modal-footer">
+                                    <input name="addedby" type="hidden" value="<?= $userdetails['surname']?>, <?= $userdetails['firstname']?>">
+                                    <button type="button" class="btn btn-dark" data-dismiss="modal">Close</button>
+                                    <button name="create_tbdots" type="submit" class="btn btn-primary">Save changes</button>
+                                </div>  
                             </form>
-                            
-                            <!-- Modal Footer -->
-                            
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-dark" data-dismiss="modal">Close</button>
-                                <button type="button" class="btn btn-primary">Save changes</button>
-                            </div>  
                         </div>
                     </div>
                 </div>

@@ -102,12 +102,9 @@
               </div>
             </div>
 
-           
-
           </div>
 
           <br>
-
 
           <br>
           <h2>Medicine Inventory Table</h2>

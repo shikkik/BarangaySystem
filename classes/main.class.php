@@ -320,6 +320,53 @@ class BMISClass {
         }
     }
 
+    //------------------------------------------ TB DOTS CRUD -----------------------------------------------
+
+
+    public function create_tbdots() {
+
+        if(isset($_POST['create_tbdots'])) {
+            $id_tbdots = $_POST['id_tbdots'];
+            $id_resident = $_POST['id_resident'];
+            $lname = $_POST['lname'];
+            $fname = $_POST['fname'];
+            $mi = $_POST['mi'];
+            $age = $_POST['age'];
+            $sex = $_POST['sex'];
+            $address = $_POST['address'];
+            $occupation = $_POST['occupation'];
+            $contact = $_POST['contact'];
+            $bdate = $_POST['bdate'];
+            $height = $_POST['height'];
+            $weight = $_POST['weight'];
+            $philhealth = $_POST['philhealth'];
+            $remarks = $_POST['remarks'];
+            $addedby = $_POST['addedby'];
+
+
+
+            $connection = $this->openConn();
+            $stmt = $connection->prepare("INSERT INTO tbl_tbdots (`id_tbdots`, `id_resident`, 
+            `lname`, `fname`, `mi`, `age`, `sex`, `address`, `occupation`, `contact`, `bdate`, `height`, 
+            `weight`, `philhealth`, `remarks`, `addedby`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+
+            $stmt->execute([$id_tbdots, $id_resident, $lname, $fname, $mi, $age, $sex, 
+            $address, $occupation, $contact, $bdate, $height, $weight, $philhealth, $remarks, $addedby]);
+
+            $message2 = "Application Applied";
+            echo "<script type='text/javascript'>alert('$message2');</script>";
+            
+            header('refresh:0');
+
+        }
+
+    }
+    
+    //------------------------------------------ EXTRA FUNCTIONS ----------------------------------------------
+    public function show_announcement() {
+        
+    }
+
 }
 
 $bmis = new BMISClass(); //variable to call outside of its class
