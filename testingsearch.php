@@ -1,7 +1,10 @@
 <?php
 	// require the database connection
 	require 'classes/conn.php';
-	if(ISSET($_POST['search'])){
+	if(isset($_POST['search_household'])){
+
+		$lname = $_POST['lname'];
+        $mi = $_POST['mi'];
 ?>
 	<table class="table table-bordered" >
 		<thead class="alert-info">
@@ -24,10 +27,11 @@
 		</thead>
 		<tbody>
 			<?php
-				$surname = $_POST['surname'];
-                $mname = $_POST['mname'];
-				$query = $conn->prepare("SELECT * FROM `tbl_resident` WHERE `lname` LIKE '%$surname%' and  `mi` LIKE '%$mname%'");
+				
+
+				$query = $conn->prepare("SELECT * FROM `tbl_resident` WHERE `lname` LIKE '%$lname%' and  `mi` LIKE '%$mi%'");
 				$query->execute();
+				
 				while($row = $query->fetch()){
 			?>
 			<tr>
@@ -43,18 +47,15 @@
                 <td><?php echo $row['bplace']?></td>
                 <td><?php echo $row['nationality']?></td>
 			</tr>
-    
-			
-			
 			<?php
-			            	}
+			}
 			?>
 		</tbody>
 	</table>
 <?php		
 	}else{
 ?>
-	<h1> No Family Members </h1>
+
 <?php
 	}
 $conn = null;
