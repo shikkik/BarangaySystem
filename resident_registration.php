@@ -46,89 +46,89 @@
                 <div class="col-sm-10">   
                     <div class="card mbottom">
                         <div class="card-body">
-                        <form method="post">
-                            <div class="row">
-                                <div class="col">
-                                    <label class="mtop"> Last Name</label>
-                                    <input type="text" class="form-control" name="lname"  placeholder="Enter last name">
-                                </div>
-
-                                <div class="col">
-                                    <label class="mtop" >First Name </label>
-                                    <input type="text" class="form-control" name="fname"  placeholder="Enter first name">
-                                </div>
-                            </div>
-
-                            <div class="row"> 
-                                <div class="col"> 
-                                    <label class="mtop"> Middle Initial </label>
-                                    <input type="text" class="form-control" name="mi" placeholder="Enter middle initial">
-                                </div>
-
-                                <div class="col"> 
-                                    <label class="mtop"> Status </label>
-                                    <input type="text" class="form-control" name="status"  placeholder="Enter status">  
-                                </div>
-                            </div>
-                         
-                            <div class="row">
-                                <div class="col">
-                                    <label class="mtop">Email </label>
-                                    <input type="email" class="form-control" name="email"  placeholder="Enter email">
-                                    <label class="mtop">Birth Date </label>
-                                    <input type="date" class="form-control" name="bdate">
-                                    <label class="mtop">Contact Number</label>
-                                    <input type="tel" class="form-control" name="contact" placeholder="Enter contact number">
-                                </div>
-
-                                <div class="col">
-                                    <label class="mtop">Password</label>
-                                    <input type="password" class="form-control" name="password" placeholder="Enter password">
-                                    <label class="mtop">Birth Place </label>
-                                    <input type="text" class="form-control" name="bplace"  placeholder="Enter birth place">
-                                    <label class="mtop">Nationality </label>
-                                    <input type="text" class="form-control" name="nationality"  placeholder="Enter nationality">
-                                </div>
-                            </div>
-
-                            <div class="row">
-                                <div class="col">
-                                    <label class="mtop"> Address </label>
-                                    <input type="text" class="form-control" name="address"  placeholder="Enter Address">
-                                </div>
-                            </div>
-
-                            <div class="row">
-                                <div class="col">
-                                    <label class="mtop">Age </label>
-                                    <input type="number" class="form-control" name="age" placeholder="Age">
-                                </div>
-
-                                <div class="col rb">
-                                    <label class="mtop">Gender</label>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="sex">
-                                        <label class="form-check-label">Male</label>
+                            <form method="post">
+                                <div class="row">
+                                    <div class="col">
+                                        <label class="mtop"> Last Name</label>
+                                        <input type="text" class="form-control" name="lname"  placeholder="Enter last name">
                                     </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="sex">
-                                        <label class="form-check-label" for="flexRadioDefault2">Female</label>
+
+                                    <div class="col">
+                                        <label class="mtop" >First Name </label>
+                                        <input type="text" class="form-control" name="fname"  placeholder="Enter first name">
                                     </div>
-                                </div>       
-                            </div>
-
-                            <div class="row mtop"> 
-                                <div class="col">   
-                                    <button class="btn btn-primary" type="submit" name="add_resident"> Submit </button>
                                 </div>
 
-                                <div class="col"> 
-                                   
-                                    <input type="hidden" class="form-control" name="role" value="resident">
-                                
+                                <div class="row"> 
+                                    <div class="col"> 
+                                        <label class="mtop"> Middle Initial </label>
+                                        <input type="text" class="form-control" name="mi" placeholder="Enter middle initial">
+                                    </div>
+
+                                    <div class="col"> 
+                                        <label class="mtop"> Status </label>
+                                        <input type="text" class="form-control" name="status"  placeholder="Enter status">  
+                                    </div>
                                 </div>
-                            </div>
-                        </form>
+                            
+                                <div class="row">
+                                    <div class="col">
+                                        <label class="mtop">Email </label>
+                                        <input type="email" class="form-control" name="email"  placeholder="Enter email">
+                                        <label class="mtop">Birth Date </label>
+                                        <input type="date" class="form-control" name="bdate">
+                                        <label class="mtop">Contact Number</label>
+                                        <input type="tel" class="form-control" name="contact" placeholder="Enter contact number">
+                                    </div>
+
+                                    <div class="col">
+                                        <label class="mtop">Password</label>
+                                        <input type="password" class="form-control" name="password" placeholder="Enter password">
+                                        <label class="mtop">Birth Place </label>
+                                        <input type="text" class="form-control" name="bplace"  placeholder="Enter birth place">
+                                        <label class="mtop">Nationality </label>
+                                        <input type="text" class="form-control" name="nationality"  placeholder="Enter nationality">
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col">
+                                        <label class="mtop"> Address </label>
+                                        <input type="text" class="form-control" name="address"  placeholder="Enter Address">
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col">
+                                        <label class="mtop">Age </label>
+                                        <input type="number" class="form-control" name="age" placeholder="Age">
+                                    </div>
+
+                                    <div class="col rb">
+                                        <label class="mtop">Gender</label>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="sex">
+                                            <label class="form-check-label">Male</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="sex">
+                                            <label class="form-check-label" for="flexRadioDefault2">Female</label>
+                                        </div>
+                                    </div>       
+                                </div>
+
+                                <div class="row mtop"> 
+                                    <div class="col">   
+                                        <button class="btn btn-primary" type="submit" name="add_resident"> Submit </button>
+                                    </div>
+
+                                    <div class="col"> 
+                                    
+                                        <input type="hidden" class="form-control" name="role" value="resident">
+                                    
+                                    </div>
+                                </div>
+                            </form>
                         </div>
                     </div> 
                 </div>
