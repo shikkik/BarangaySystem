@@ -13,7 +13,8 @@
             <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-modal/2.2.6/js/bootstrap-modalmanager.min.js" integrity="sha512-/HL24m2nmyI2+ccX+dSHphAHqLw60Oj5sK8jf59VWtFWZi9vx7jzoxbZmcBeeTeCUc7z1mTs3LfyXGuBU32t+w==" crossorigin="anonymous"></script>
         <!-- responsive tags for screen compatibility -->
-        <meta name="viewport" content="width=device-width, initial-scale=1"><!-- bootstrap css --> 
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- bootstrap css --> 
         <link href="../BarangaySystem/bootstrap/css/bootstrap.css" rel="stylesheet" type="text/css">
         <!-- fontawesome icons --> 
         <script src="https://kit.fontawesome.com/67a9b7069e.js" crossorigin="anonymous"></script>
@@ -58,14 +59,23 @@
                 margin-left: 10px;
             }
 
-            .applybutton
-            {
+            .applybutton{
                 width: 100% !important;
                 height: 50px !important;
                 position: relative;
                 bottom: -30px;
                 border-radius: 20px;
                 margin-top: 30px;
+            }
+
+            .besidetable{
+                background-color: lightblue;
+                margin-top: 5px;
+
+            }
+
+            .righttable{
+                border: 1px solid black;
             }
 
         </style>
@@ -76,7 +86,7 @@
         <!-- eto yung navbar -->
 
         <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top">
-            <a class="navbar-brand" href="#">Barangay Sorsogon</a>
+            <a class="navbar-brand" href="resident_homepage.php">Barangay Sorsogon</a>
 
             <div class="dropdown ml-auto">
                 <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown"><?= $userdetails['surname'];?>, <?= $userdetails['firstname'];?>
@@ -129,11 +139,14 @@
                 </div> 
             </div>
 
+            <hr style="background-color: black;">
+
             <br>
             <br>
+
             <div class="row">
-                <div class="col-sm-10">
-                    <table class="table table-hover" style="width: 100%; height: 100%;">
+                <div class="col-sm-10 righttable">
+                    <table class="table table-hover maintable" style="width: 100%; height: 100%;">
 
                         <thead class="text-center" style="color: black">
                             <tr style="margin-bottom: 10px;">
@@ -246,7 +259,8 @@
                     </table>
                 </div>
 
-                <div class="col-sm-2 text-center" style="height:100%; width:100%;">
+
+                <div class="col text-center besidetable hover" style="height:100%; width:100%; margin-left: 10px;">
                     <h2>MGA PAALALA</h2>
 
                     <hr style="background-color: red;">
@@ -266,7 +280,7 @@
             </div>
         </div>
 
-            <!-- Button trigger modal -->
+        <!-- Button trigger modal -->
 
         <div class="container">
             <div class="col">   
@@ -292,26 +306,12 @@
 
                         <div class="modal-body">
                             <form action="/action_page.php" class="was-validated">
+
                                 <div class="row"> 
-
                                     <div class="col">
                                         <div class="form-group">
-                                            <label for="uname">Animal:</label>
-                                            <input type="text" class="form-control" placeholder="Enter Animal" required>
-                                            <div class="valid-feedback">Valid.</div>
-                                            <div class="invalid-feedback">Please fill out this field.</div>
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label for="origin">Origin:</label>
-                                            <input type="text" class="form-control" placeholder="Enter Origin" required>
-                                            <div class="valid-feedback">Valid.</div>
-                                            <div class="invalid-feedback">Please fill out this field.</div>  
-                                        </div>
-
-                                        <div class="form-group">            
-                                            <label for="disease">Disease:</label>
-                                            <input type="text" class="form-control" placeholder="Enter Disease" required>
+                                            <label for="cname">Child's Name:</label>
+                                            <input type="text" class="form-control" placeholder="Enter Child's Name" required>
                                             <div class="valid-feedback">Valid.</div>
                                             <div class="invalid-feedback">Please fill out this field.</div>
                                         </div>
@@ -319,29 +319,15 @@
 
                                     <div class="col">
                                         <div class="form-group">
-                                            <label for="breed">Breed:</label>
-                                            <input type="text" class="form-control" placeholder="Enter Breed" required>
-                                            <div class="valid-feedback">Valid.</div>
-                                            <div class="invalid-feedback">Please fill out this field.</div>
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="purpose">Purpose:</label>
-                                            <input type="text" class="form-control" placeholder="Enter Purpose" required>
-                                            <div class="valid-feedback">Valid.</div>
-                                            <div class="invalid-feedback">Please fill out this field.</div>
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="vaccination">Vaccination:</label>
-                                            <input type="text" class="form-control" placeholder="Enter Vaccination" required>
+                                            <label for="address">Address:</label>
+                                            <input type="text" class="form-control" placeholder="Enter Address" required>
                                             <div class="valid-feedback">Valid.</div>
                                             <div class="invalid-feedback">Please fill out this field.</div>
                                         </div>
                                     </div>
-
                                 </div>
 
                                 <div class="row">
-
                                     <div class="col">
                                         <label for="Age" class="mtop">Age </label>
                                         <input type="number" class="form-control" placeholder="Enter Age" required>
@@ -362,16 +348,102 @@
                                             </label>
                                         </div>    
                                     </div>
-
                                     <div class="col">
                                         <div class="form-group">
-                                            <label for="Date"class="mtop">Date </label>
+                                            <label for="date"class="mtop">Birthday: </label>
                                             <input type="date" class="form-control" required>
                                             <div class="valid-feedback">Valid.</div>
                                             <div class="invalid-feedback">Please fill out this field.</div>
                                         </div>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col">
+                                        <div class="form-group">
+                                            <label for="height">Height:</label>
+                                            <input type="text" class="form-control" placeholder="Enter Height" required>
+                                            <div class="valid-feedback">Valid.</div>
+                                            <div class="invalid-feedback">Please fill out this field.</div>
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="form-group">
+                                            <label for="weight">Weight:</label>
+                                            <input type="text" class="form-control" placeholder="Enter Weight" required>
+                                            <div class="valid-feedback">Valid.</div>
+                                            <div class="invalid-feedback">Please fill out this field.</div>
+                                        </div>   
+                                    </div> 
+                                    <div class="col">
+                                        <div class="form-group">
+                                            <label for="bplace">Birthplace:</label>
+                                            <input type="text" class="form-control" placeholder="Enter Birthplace" required>
+                                            <div class="valid-feedback">Valid.</div>
+                                            <div class="invalid-feedback">Please fill out this field.</div>
+                                        </div>
                                     </div>  
-                                </div> 
+                                </div>
+
+                                <br>
+
+                                <h6>Owner's Info</h6>
+
+                                <hr>
+
+                                <div class="row"> 
+                                    <div class="col">
+                                        <div class="form-group">
+                                            <label for="lname">Lastname:</label>
+                                            <input type="text" class="form-control" placeholder="Enter your Lastname" required>
+                                            <div class="valid-feedback">Valid.</div>
+                                            <div class="invalid-feedback">Please fill out this field.</div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col">
+                                        <div class="form-group">
+                                            <label for="fname">Firstname:</label>
+                                            <input type="text" class="form-control" placeholder="Enter your Firstname" required>
+                                            <div class="valid-feedback">Valid.</div>
+                                            <div class="invalid-feedback">Please fill out this field.</div>
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="form-group">
+                                            <label for="mname">Middlename:</label>
+                                            <input type="text" class="form-control" placeholder="Enter your Middlename" required>
+                                            <div class="valid-feedback">Valid.</div>
+                                            <div class="invalid-feedback">Please fill out this field.</div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row"> 
+                                    <div class="col">
+                                        <div class="form-group">
+                                            <label for="vaccine">Vaccine:</label>
+                                            <select class="form-control" placeholder="Enter your Vaccine">
+                                            <option>BCG</option>
+                                            <option>Hepatitis B</option>
+                                            <option>Pentavalent Vaccine</option>
+                                            <option>Oral Polio Vaccine</option>
+                                            <option>Inactivated Polio Vaccine</option>
+                                            <option>Pneumococcal Conjugate Vaccine</option>
+                                            <option>Measles, Mumps, Rubella</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="form-group">
+                                            <label for="date"class="mtop">Date of Vaccine: </label>
+                                            <input type="date" class="form-control" required>
+                                            <div class="valid-feedback">Valid.</div>
+                                            <div class="invalid-feedback">Please fill out this field.</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
                             </form>
                             
                             <!-- Modal Footer -->

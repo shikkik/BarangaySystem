@@ -73,7 +73,7 @@
     <!-- eto yung navbar -->
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top">
-      <a class="navbar-brand" href="#">Barangay Sorsogon</a>
+      <a class="navbar-brand" href="resident_homepage.php">Barangay Sorsogon</a>
 
       <div class="dropdown ml-auto">
           <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown"><?= $userdetails['surname'];?>, <?= $userdetails['firstname'];?>
@@ -100,7 +100,7 @@
             <div class="header">
               <h4>We take care your pets</h4> 
               <h1>Animal Registry & Welfare </h1>
-                <img src="../BarangaySystem/icons/navpic.png">
+                <img src="../BarangaySystem/icons/Animal/navpic.png">
             </div>
           </div>
         </div>
@@ -121,16 +121,16 @@
 
               <div class="carousel-inner">
                 <div class="carousel-item active">
-                  <img src="../BarangaySystem/icons/animal1.png">
+                  <img src="../BarangaySystem/icons/Animal/animal1.png">
                 </div>
                 <div class="carousel-item">
-                  <img src="../BarangaySystem/icons/animal2.png">
+                  <img src="../BarangaySystem/icons/Animal/animal2.png">
                 </div>
                 <div class="carousel-item">
-                  <img src="../BarangaySystem/icons/animal3.png">
+                  <img src="../BarangaySystem/icons/Animal/animal3.png">
                 </div>
                 <div class="carousel-item">
-                  <img src="../BarangaySystem/icons/animal4.png">
+                  <img src="../BarangaySystem/icons/Animal/animal4.png">
                 </div>
               </div>
 

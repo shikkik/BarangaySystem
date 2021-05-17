@@ -2,12 +2,19 @@
     error_reporting(E_ALL ^ E_WARNING);
     
     if(!isset($_SESSION)) {
+        $showdate = date("Y-m-d");
+        date_default_timezone_set('Asia/Manila');
+        $showtime = date("h:i:a");
+        $_SESSION['storedate'] = $showdate;
+        $_SESSION['storetime'] = $showdate;
         session_start();
     }
 
     //include('autoloader.php');
     require('classes/main.class.php');
     $bmis->login();
+
+   
     
 
     

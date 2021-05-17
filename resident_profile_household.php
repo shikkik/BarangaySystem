@@ -61,6 +61,23 @@
                 </div>
             </div>
 
+            <div class="row" style="margin-top: 3em; margin-bottom: 5em;"> 
+                <div class="col-xl-12">
+                    <div class="form-inline">
+                    <form method="post">
+                            <input class="form-control" name="lname" type="hidden" value="<?= $userdetails['surname'];?>"/>
+                            <input class="form-control" name="mi" type="hidden" value="<?= $userdetails['mname'];?>" />
+                            <button type="submit button" class="btn btn-info"  name="search_household">View Household</button>
+                        <div id="demo" >
+                        <br /><br />
+                            <?php include'testingsearch.php'?>
+                        </div>
+                    </form>
+                    </div>                                   
+                </div>
+            </div>
+
+
             <div class="row margin mtop"> 
                 <div class="col-sm"> </div>
                 <div class="col-12">   
@@ -89,6 +106,7 @@
                 <div class="col-sm"> </div>
             </div>
 
+<<<<<<< HEAD
             <form method="POST" action="">
                 <div class="form-inline">
                         <input  class="form-control" name="mname" type="" value="<?= $userdetails['mname'];?>" placeholder="Search here..." required=""/>
@@ -100,6 +118,11 @@
                 </div>                                   
             </form>
              
+=======
+           
+            
+            
+>>>>>>> 6fc0bb9a3846913f755379e1864a3ccf7cefbee6
   
         </div>
 

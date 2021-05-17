@@ -32,6 +32,9 @@
         }
         */
 
+
+        //------------------------------------ RESIDENT CRUD FUNCTIONS ----------------------------------------
+
         public function create_resident() {
 
             if(isset($_POST['add_resident'])) {
@@ -71,8 +74,8 @@
     
                         $stmt->Execute([$email, $password, $lname, $fname, $mi, $age, $sex, $status, 
                         $address, $contact, $bdate, $bplace, $nationality, $familyrole, $role, $addedby]);
+
                         $message2 = "Account added, you can now continue logging in";
-    
                         echo "<script type='text/javascript'>alert('$message2');</script>";
                     }
                 }
@@ -107,47 +110,6 @@
 
             return $rescount;
         }
-
-        public function count_male_resident() {
-            $connection = $this->openConn();
-
-            $stmt = $connection->prepare("SELECT COUNT(*) from tbl_resident where sex = 'male' ");
-            $stmt->execute();
-            $rescount = $stmt->fetchColumn();
-
-            return $rescount;
-        }
-
-        public function count_female_resident() {
-            $connection = $this->openConn();
-
-            $stmt = $connection->prepare("SELECT COUNT(*) from tbl_resident where sex = 'female'");
-            $stmt->execute();
-            $rescount = $stmt->fetchColumn();
-
-            return $rescount;
-        }
-
-        public function count_head_resident() {
-            $connection = $this->openConn();
-
-            $stmt = $connection->prepare("SELECT COUNT(*) from tbl_resident where family_role = 'Family Head'");
-            $stmt->execute();
-            $rescount = $stmt->fetchColumn();
-
-            return $rescount;
-        }
-
-        public function count_member_resident() {
-            $connection = $this->openConn();
-
-            $stmt = $connection->prepare("SELECT COUNT(*) from tbl_resident where family_role = 'Family Member'");
-            $stmt->execute();
-            $rescount = $stmt->fetchColumn();
-
-            return $rescount;
-        }
-
 
         public function view_household_list() {
             
@@ -242,17 +204,7 @@
 
 
 
-        //Other functions for the resident datas and pages 
 
-        public function check_resident($email) {
-
-            $connection = $this->openConn();
-            $stmt = $connection->prepare("SELECT * FROM tbl_resident WHERE email = ?");
-            $stmt->Execute([$email]);
-            $total = $stmt->rowCount(); 
-    
-            return $total;
-        }
 
         public function check_household($lname, $mi) {
             $connection = $this->openConn();
@@ -264,7 +216,87 @@
         }
 
 
+    //-------------------------------- EXTRA FUNCTIONS FOR RESIDENT CLASS ---------------------------------
 
+    public function check_resident($email) {
+
+        $connection = $this->openConn();
+        $stmt = $connection->prepare("SELECT * FROM tbl_resident WHERE email = ?");
+        $stmt->Execute([$email]);
+        $total = $stmt->rowCount(); 
+
+        return $total;
+    }
+
+    public function resident_change_password() {
+        
+        if(isset($_POST['change_pass'])) {
+
+            $email = $_POST['email'];
+            $password = $_POST['password'];
+            $newpassword = $_POST['newpassword'];
+            $confirmpassword = $_POST['confirmpassword'];
+
+            $connection = $this->openConn(); 
+
+            $stmt1 = $connection->prepare("SELECT password FROM tbl_resident WHERE email = ?");
+            $stmt1->Execute([$email]);
+            $stmt1->fetch();
+
+            if($stmt1 > 0){
+
+                if($password) {
+
+                }
+
+            } 
+
+            else {
+                $message2 = "Invalid";
+                echo "<script type='text/javascript'>alert('$message2');</script>";
+            }
+        }
+    }
+
+    public function count_male_resident() {
+        $connection = $this->openConn();
+
+        $stmt = $connection->prepare("SELECT COUNT(*) from tbl_resident where sex = 'male' ");
+        $stmt->execute();
+        $rescount = $stmt->fetchColumn();
+
+        return $rescount;
+    }
+
+    public function count_female_resident() {
+        $connection = $this->openConn();
+
+        $stmt = $connection->prepare("SELECT COUNT(*) from tbl_resident where sex = 'female'");
+        $stmt->execute();
+        $rescount = $stmt->fetchColumn();
+
+        return $rescount;
+    }
+
+    public function count_head_resident() {
+        $connection = $this->openConn();
+
+        $stmt = $connection->prepare("SELECT COUNT(*) from tbl_resident where family_role = 'Family Head'");
+        $stmt->execute();
+        $rescount = $stmt->fetchColumn();
+
+        return $rescount;
+    }
+
+    public function count_member_resident() {
+        $connection = $this->openConn();
+
+        $stmt = $connection->prepare("SELECT COUNT(*) from tbl_resident where family_role = 'Family Member'");
+        $stmt->execute();
+        $rescount = $stmt->fetchColumn();
+
+        return $rescount;
+    }
 
     }
 

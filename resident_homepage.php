@@ -82,7 +82,7 @@
                         <div class="card"> 
                             <div class="card-body text-center"> 
                             <a href="services_animal.php">
-                                <img src="../BarangaySystem/icons/animalreg.png">
+                                <img src="../BarangaySystem/icons/ResidentHomepage/animalreg.png">
                                 <h4> Animal Registry & Welfare </h4> 
                             </a>
                             </div>
@@ -92,7 +92,7 @@
                     <div class="col"> 
                         <div class="card"> 
                             <div class="card-body text-center">
-                                <img src="../BarangaySystem/icons/tbdots.png"> 
+                                <img src="../BarangaySystem/icons/ResidentHomepage/tbdots.png"> 
                                 <a href="services_tb_dots.php"> <h4> TB DOTS Consultation</h4> 
                             </a>
                             </div>
@@ -102,7 +102,7 @@
                     <div class="col"> 
                         <div class="card"> 
                             <div class="card-body text-center">
-                                <img src="../BarangaySystem/icons/vaccine.png"> 
+                                <img src="../BarangaySystem/icons/ResidentHomepage/vaccine.png"> 
                                 <a href="services_vaccination.php"> <h4> Vaccination Programs </h4> 
                             </a>
                             </div>
@@ -115,8 +115,8 @@
                     <div class="col"> 
                         <div class="card"> 
                             <div class="card-body text-center"> 
-                            <a href="https://github.com/shikkik">
-                                <img src="../BarangaySystem/icons/motherchild.png">
+                            <a href="services_motherandchild.php">
+                                <img src="../BarangaySystem/icons/ResidentHomepage/motherchild.png">
                                 <h4> Mother & Child Check-Up</h4> 
                             </a>
                             </div>
@@ -126,7 +126,7 @@
                     <div class="col"> 
                         <div class="card"> 
                             <div class="card-body text-center">
-                                <img src="../BarangaySystem/icons/familyplan.png"> 
+                                <img src="../BarangaySystem/icons/ResidentHomepage/familyplan.png"> 
                                 <a href=""> <h4> Family Planning </h4> 
                             </a>
                             </div>
@@ -136,7 +136,7 @@
                     <div class="col"> 
                         <div class="card"> 
                             <div class="card-body text-center">
-                                <img src="../BarangaySystem/icons/complain.png"> 
+                                <img src="../BarangaySystem/icons/ResidentHomepage/complain.png"> 
                                 <a href=""> <h4> Complain/Blotter Report</h4> 
                             </a>
                             </div>
@@ -159,7 +159,7 @@
                     <div class="col"> 
                         <div class="card"> 
                             <div class="card-body text-center"> 
-                            <img src="../BarangaySystem/icons/residency.png">
+                            <img src="../BarangaySystem/icons/ResidentHomepage/residency.png">
                                 <a href=""> <h4> Certificate of Residency </h4> </a>
                             </div>
                         </div>
@@ -168,7 +168,7 @@
                     <div class="col"> 
                         <div class="card"> 
                             <div class="card-body text-center">
-                            <img src="../BarangaySystem/icons/clearance.png"> 
+                            <img src="../BarangaySystem/icons/ResidentHomepage/clearance.png"> 
                                 <a href=""> <h4> Barangay Clearance </h4> </a>
                             </div>
                         </div>
@@ -179,7 +179,7 @@
                     <div class="col"> 
                     <div class="card"> 
                             <div class="card-body text-center"> 
-                                <img src="../BarangaySystem/icons/indigency.png">
+                                <img src="../BarangaySystem/icons/ResidentHomepage/indigency.png">
                                 <a href=""> <h4> Certificate of Indigency </h4> </a>
                             </div>
                         </div>

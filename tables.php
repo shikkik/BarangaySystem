@@ -111,6 +111,9 @@ Resident Application Tables
     addedby VARCHAR(255) NOT NULL , 
     PRIMARY KEY (id_animal)) ENGINE = InnoDB;
 
+    "ALTER TABLE `tbl_animal` DROP `origin`;"
+    "ALTER TABLE `tbl_animal` DROP `vaccdate`;"
+
     CREATE TABLE bmis.tbl_motherchild 
     ( id_motherchild INT NOT NULL AUTO_INCREMENT , 
     lname VARCHAR(255) NOT NULL , 
@@ -195,6 +198,10 @@ Non user tables
     addedby VARCHAR(255) NOT NULL , 
     PRIMARY KEY (id_announcement)) ENGINE = InnoDB;
 
+    ALTER TABLE `tbl_announcement` ADD `target` VARCHAR(255) NULL AFTER `event`;
+
+
+
     CREATE TABLE bmis.tbl_medicine 
     ( id_medicine INT NOT NULL AUTO_INCREMENT , 
     item VARCHAR(255) NOT NULL , 
@@ -206,6 +213,8 @@ Non user tables
     stocks INT NOT NULL , 
     remarks VARCHAR(255) NOT NULL , 
     PRIMARY KEY (id_medicine)) ENGINE = InnoDB;
+
+    "ALTER TABLE `tbl_medicine` DROP `dosage`;"
 
     ALTER TABLE tbl_medicine ADD addedby VARCHAR(255) NOT NULL AFTER remarks;
     ALTER TABLE tbl_medicine CHANGE date_in datein DATE NOT NULL;

@@ -7,6 +7,7 @@
     $view = $bmis->view_announcement();
     $bmis->update_announcement();
     $bmis->delete_announcement();
+    $announcementcount = $bmis->count_announcement();
 
 ?>
 
@@ -24,6 +25,12 @@
     <link rel="stylesheet" href="dashboard.css"/>
 
     <title>Admin Dashboard</title>
+    <style>
+        table, th, td {
+        border: 1px solid black;
+        border-collapse: collapse;
+        }
+    </style>
   </head>
   <body id="body">
     <div class="container">
@@ -38,7 +45,7 @@
         <h2>Announcement Management </h2>
         <div class="main__cards">
             <div class="card" style="width: 670px; height: 340px;">
-                <h3> Create Announcement </h3> 
+                <h3> Create/Update Announcement </h3> 
                 <div class="card_inner">
                 <form method="post">
                 <br>
@@ -61,8 +68,8 @@
               <i class="fa fa-users fa-2x text-lightblue"aria-hidden="true">
               </i>
               <div class="card_inner">
-                <p class="text-primary-p">Number of Staff</p>
-                <span class="font-bold text-title"><?= $staffcount?></span>
+                <p class="text-primary-p">Announcements Released </p>
+                <span class="font-bold text-title"><?= $announcementcount?></span>
               </div>
             </div>
 
@@ -155,7 +162,7 @@
         <div class="sidebar__menu">
           <div class="sidebar__link active_menu_link">
             <i class="fa fa-home"></i>
-            <a href="#">Dashboard</a>
+            <a href="admin_dashboard.php">Dashboard</a>
           </div>
 
           <br>
@@ -177,7 +184,7 @@
 
           <div class="sidebar__link">
             <i class="fa fa-bullhorn"></i>
-            <a href="#">Announcement</a>
+            <a href="admin_announcement_crud.php">Announcement</a>
           </div>
           <div class="sidebar__link">
             <i class="fa fa-paw"></i>
