@@ -1,13 +1,14 @@
 <?php 
     require('classes/resident.class.php');
-    $id_resident = $_GET['id_resident'];
-    $view = $residentbmis->get_single_resident($id_resident);
-    
-    //$view = $residentbmis->view_single_resident($email);
     $userdetails = $residentbmis->get_userdata();
+    $id_resident = $_GET['id_resident'];
+    $resident = $residentbmis->get_single_resident($id_resident);
+    $residentbmis->profile_update();
+    
 
+    //$view = $residentbmis->view_household_list();
 
-    //  $view = $residentbmis->view_household_list();
+    print_r($resident);
 
     //$lname = $_GET['lname'];
     //$lname = $_GET['mi'];
@@ -16,7 +17,6 @@
     //$stmt = $connection->prepare("SELECT * FROM tbl_resident WHERE lname ='$lname'");
     //$stmt->execute();  
    // $view = $stmt->fetch();
-    print_r($view);
 ?>
 
 <!DOCTYPE html> 
@@ -71,27 +71,60 @@
                 <div class="col-12">   
                     <div class="card mbottom">
                         <div class="card-body">
+                        <form method="post">
                             <div class="row">
                                 <div class="col">
-                                    <h5> Name <?= $userdetails['surname'];?>, <?= $userdetails['firstname'];?> <?= $userdetails['mname'];?>.</h5> 
-                                    <h5> Email <?= $userdetails['emailadd'];?> </h5>
-                                    <h5> Sex <?= $userdetails['sex'];?> </h5>
+                                
+                                    <div class="row">
+                                    <h5> Name: <?= $resident['lname'];?>, <?= $resident['fname'];?> <?= $resident['mi'];?></h5> 
+                                    </div>
+                                    <div class="row">
+                                        <h5> Email: <?= $resident['email'];?> </h5>
+                                    </div>
+
+                                    <div class="row">
+                                        <h5> Sex: <?= $resident['sex'];?> </h5>
+                                    </div>
+                                    
+                                    <div class="row">
+                                    <h5>Age:</h5>
+                                    <input type="text" name="address" value="<?= $resident['age'];?>">
+                                    </div>
+
+                                    <div class="row">
                                     <h5>Status:</h5>
-                                    <input type="text" name="address" placeholder="<?= $userdetails['status'];?>">
-                                    <br>
+                                    <input type="text" name="address" value="<?= $resident['status'];?>">
+                                    </div>
+                                    
+                                    <div class="row">
                                     <h5>Address:</h5>
-                                    <input type="text" name="address" placeholder="<?= $userdetails['address'];?>">
-                                    <br>
+                                    <input type="text" name="address" value="<?= $resident['address'];?>">
+                                    </div>
+
+                                    <div class="row">
                                     <h5>Contact:</h5>
-                                    <input type="text" name="address" placeholder="<?= $userdetails['contact'];?>">
-    
+                                    <input type="text" name="address" value="<?= $resident['contact'];?>">
+                                    </div>
+                                    
+                                    <div class="row">
+                                    <h5> Birth Date: <?= $resident['bdate'];?> </h5>
+                                    </div>
 
-                                    <h5> Birth Date <?= $userdetails['bdate'];?> </h5>
-                                    <h5> Birth Place <?= $userdetails['bplace'];?> </h5>
-                                    <h5> Nationality <?= $userdetails['nationality'];?> </h5>
-                                    <h5> Family Role <?= $userdetails['family_role'];?> </h5>
+                                    <div class="row">
+                                    <h5> Birth Place: <?= $resident['bplace'];?> </h5>
+                                    </div>
+
+                                    <div class="row">
+                                    <h5> Nationality: <?= $resident['nationality'];?> </h5>
+                                    </div>
+
+                                    <div class="row">
+                                    <h5> Family Role: <?= $resident['family_role'];?> </h5>
+                                    </div>
                                 </div>
-
+                                </div>
+                                <button class="btn btn-primary" type="submit" name="profile_update"> Update </button>
+                        </form>
                                 <div class="col"></div>
                             </div>  
                         </div>
@@ -101,16 +134,18 @@
                 <div class="col-sm"> </div>
             </div>
 
-            <div class="row" style="margin-top: 3em; margin-bottom: 5em;"> 
+            <div class="row" style="margin-top: 3em; margin-bottom: 5em; margin-left:22%;"> 
                 <div class="col-xl-12">
                     <div class="form-inline">
                     <form method="post">
-                            <input class="form-control" name="lname" type="hidden" value="<?= $userdetails['surname'];?>"/>
-                            <input class="form-control" name="mi" type="hidden" value="<?= $userdetails['mname'];?>" />
+                            <input class="form-control" name="lname" type="hidden" value="<?= $resident['lname'];?>"/>
+                            <input class="form-control" name="mi" type="hidden" value="<?= $resident['mi'];?>" />
                             <button type="submit button" class="btn btn-info"  name="search_household">View Household</button>
+                            
                         <div>
                         <br /><br />
                             <?php include'testingsearch.php'?>
+                            
                         </div>
                     </form>
                     </div>                                   

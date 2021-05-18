@@ -110,7 +110,7 @@
 
             return $rescount;
         }
-        /* 
+         
         public function view_household_list() {
             $lname = $_POST['lname'];
             $mi = $_POST['mi'];
@@ -125,7 +125,7 @@
 
             }
         }
-        */
+        
 
         public function update_resident() {
             if (isset($_POST['update_resident'])) {
@@ -160,6 +160,8 @@
 
             }
         }
+
+
         
 
         public function delete_resident(){
@@ -287,6 +289,29 @@
         $rescount = $stmt->fetchColumn();
 
         return $rescount;
+    }
+
+    public function profile_update() {
+        if (isset($_POST['profile_update'])) {
+            $id_resident = $_POST['id_resident'];
+            $age = $_POST['age'];
+            $status = $_POST['status'];
+            $address = $_POST['address'];
+            $contact = $_POST['contact'];
+           
+                $connection = $this->openConn();
+                $stmt = $connection->prepare("UPDATE tbl_resident SET  age =?,  status =?, 
+                address =?, contact =? WHERE id_resident = ?");
+                $stmt->execute([ $age, $status, $address,
+                $contact, $id_resident]);
+               
+                echo "naka udpate na";
+                header("refresh:0");
+
+        }
+        else{
+            echo"di gumagana";
+        }
     }
 
     }

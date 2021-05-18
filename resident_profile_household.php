@@ -3,7 +3,7 @@
 
     //$view = $residentbmis->view_single_resident($email);
     $userdetails = $residentbmis->get_userdata();
-    $view = $residentbmis->view_household_list();
+    //$view = $residentbmis->view_household_list();
 
     //$lname = $_GET['lname'];
     //$lname = $_GET['mi'];
@@ -106,23 +106,9 @@
                 <div class="col-sm"> </div>
             </div>
 
-<<<<<<< HEAD
-            <form method="POST" action="">
-                <div class="form-inline">
-                        <input  class="form-control" name="mname" type="" value="<?= $userdetails['mname'];?>" placeholder="Search here..." required=""/>
-                        <input  class="form-control" name="surname" type="" value="<?= $userdetails['surname'];?>" placeholder="Search here..." required=""/>
-                        <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#demo" name="search" >View Household</button>
-                    <div id="demo" class="collapse">
-                        <?php include'testingsearch.php'?>
-                    </div>
-                </div>                                   
-            </form>
-             
-=======
            
             
             
->>>>>>> 6fc0bb9a3846913f755379e1864a3ccf7cefbee6
   
         </div>
 
