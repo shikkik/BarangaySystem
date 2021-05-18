@@ -321,7 +321,43 @@ class BMISClass {
         }
     }
 
+    //------------------------------------------ TB DOTS CRUD -----------------------------------------------
 
+
+    public function create_tbdots() {
+
+        if(isset($_POST['create_tbdots'])) {
+            $id_tbdots = $_POST['id_tbdots'];
+            $id_resident = $_POST['id_resident'];
+            $lname = $_POST['lname'];
+            $fname = $_POST['fname'];
+            $mi = $_POST['mi'];
+            $age = $_POST['age'];
+            $sex = $_POST['sex'];
+            $address = $_POST['address'];
+            $contact = $_POST['contact'];
+            $bdate = $_POST['bdate'];
+            $height = $_POST['height'];
+            $weight = $_POST['weight'];
+
+
+
+            $connection = $this->openConn();
+            $stmt = $connection->prepare("INSERT INTO tbl_medicine (`id_medicine`, 
+            `item`, `dateman`, `origin`, `datein`, `dateout`, `stocks`, `remarks`, `addedby`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)");
+
+            $stmt->execute([$id_medicine, $item, $dateman, $origin, $datein, $dateout, $stocks, $remarks, $addedby]);
+
+            $message2 = "Medicine Added";
+            echo "<script type='text/javascript'>alert('$message2');</script>";
+            
+            header('refresh:0');
+
+        }
+
+    }
+    
+    //------------------------------------------ EXTRA FUNCTIONS ----------------------------------------------
     public function show_announcement() {
         
     }
