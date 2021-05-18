@@ -24,9 +24,6 @@
 
     <head> 
     <title> Barangay Management System </title>
-        <script src="../BarangaySystem/customjs/main.js" type="text/javascript"> </script>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
         <!-- responsive tags for screen compatibility -->
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <!-- custom css --> 
@@ -54,16 +51,11 @@
                 </ul>
             </div>
         </nav>
-
-
-
         <div class="container"  style="margin-top: 4em;">
             <div class="row">
                 <div class="col-12">
                     <h1 class="text-center">Resident Profile</h1>
                     <hr>
-                </div>
-            </div>
 
         
             <div class="row margin mtop"> 
@@ -128,8 +120,7 @@
                                 <div class="col"></div>
                             </div>  
                         </div>
-                    </div>
-                </div> 
+                    </div> 
 
                 <div class="col-sm"> </div>
             </div>
@@ -151,14 +142,16 @@
                     </div>                                   
                 </div>
             </div>
-
-           
-            
-            
-  
         </div>
 
-        <script src="../BarangaySystem/bootstrap/js/bootstrap.bundle.js" type="text/javascript"> </script>
         
+        
+        </section>
+
+        <?php 
+           print_r($userdetails);
+        ?>
+
+         
     </body>
 </html>

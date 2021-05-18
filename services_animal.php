@@ -153,7 +153,12 @@
 
           <div class="col text1">
               <h1>Animal Welfare</h1>
-              <h5>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam molestiae modi accusantium, ex mollitia dolores laudantium esse sed quis quasi! Ut perferendis inventore fuga tenetur, id porro quaerat ipsum saepe!</h5>
+              <h5>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam 
+                molestiae modi accusantium, ex mollitia dolores laudantium esse sed 
+                quis quasi! Ut perferendis inventore fuga tenetur, id porro quaerat 
+                ipsum saepe!
+              </h5>
           </div>
         </div>
       </div>
@@ -183,33 +188,33 @@
               <!-- Modal Body -->
 
               <div class="modal-body">
-                <form action="/action_page.php" class="was-validated">
+                <form method="post" class="was-validated">
                   <div class="row"> 
 
-                    <div class="col">
-                      <div class="form-group">
-                        <label for="uname">Animal:</label>
-                        <input type="text" class="form-control" placeholder="Enter Animal" required>
+                      <div class="col-sm-6">
+                        <div class="form-group">
+                          <label for="uname">Animal:</label>
+                          <input type="text" class="form-control" placeholder="Enter Animal" required>
+                            <div class="valid-feedback">Valid.</div>
+                            <div class="invalid-feedback">Please fill out this field.</div>
+                        </div>
+
+                        <div class="form-group">
+                          <label for="origin">Origin:</label>
+                          <input type="text" class="form-control" placeholder="Enter Origin" required>
+                            <div class="valid-feedback">Valid.</div>
+                            <div class="invalid-feedback">Please fill out this field.</div>  
+                        </div>
+
+                        <div class="form-group">            
+                          <label for="disease">Disease:</label>
+                          <input type="text" class="form-control" placeholder="Enter Disease" required>
                           <div class="valid-feedback">Valid.</div>
                           <div class="invalid-feedback">Please fill out this field.</div>
-                      </div>
+                        </div>
+                    </div>
 
-                      <div class="form-group">
-                        <label for="origin">Origin:</label>
-                        <input type="text" class="form-control" placeholder="Enter Origin" required>
-                          <div class="valid-feedback">Valid.</div>
-                          <div class="invalid-feedback">Please fill out this field.</div>  
-                      </div>
-
-                      <div class="form-group">            
-                        <label for="disease">Disease:</label>
-                        <input type="text" class="form-control" placeholder="Enter Disease" required>
-                        <div class="valid-feedback">Valid.</div>
-                        <div class="invalid-feedback">Please fill out this field.</div>
-                      </div>
-                  </div>
-
-                    <div class="col">
+                    <div class="col-sm-6">
                       <div class="form-group">
                         <label for="breed">Breed:</label>
                         <input type="text" class="form-control" placeholder="Enter Breed" required>
@@ -222,49 +227,66 @@
                         <div class="valid-feedback">Valid.</div>
                         <div class="invalid-feedback">Please fill out this field.</div>
                       </div>
-                      <div class="form-group">
-                        <label for="vaccination">Vaccination:</label>
-                        <input type="text" class="form-control" placeholder="Enter Vaccination" required>
+                        <label for="vaccine">Vaccine:</label>
+                        <select class="form-control" name="vaccine" id="vaccine" placeholder="Enter your Vaccine" required>
+                          <option value="">Choose your Vaccine</option>
+                          <option value="vaccine1">Parvovirus (Dogs)</option>
+                          <option value="vaccine2">Distemper (Dogs)</option>
+                          <option value="vaccine3">Parainfluenza (Dogs)</option>
+                          <option value="vaccine4">Hepatitis (Dogs)</option>
+                          <option value="vaccine5">Leptospirosis (Dogs)</option>
+                          <option value="vaccine6">Anti-Rabies (Dogs)</option>
+                          <option value="vaccine7">FVRCP (Cats)</option>
+                          <option value="vaccine8">FeLV (Cats)</option>
+                          <option value="vaccine9">Anti-Rabies (Cats)</option>
+                          <option value="vaccine10">Bordetella (Cats)</option>
+                        </select>
                         <div class="valid-feedback">Valid.</div>
                         <div class="invalid-feedback">Please fill out this field.</div>
-                      </div>
                     </div>
 
                   </div>
 
-                    <div class="row">
-
-                        <div class="col">
-                          <label for="Age" class="mtop">Age </label>
-                          <input type="number" class="form-control" placeholder="Enter Age" required>
-                          <div class="valid-feedback">Valid.</div>
-                          <div class="invalid-feedback">Please fill out this field.</div>
+                  <div class="row">
+                      <div class="col-sm-4">
+                        <label for="Age" class="mtop">Age </label>
+                        <input type="number" class="form-control" placeholder="Enter Age" required>
+                        <div class="valid-feedback">Valid.</div>
+                        <div class="invalid-feedback">Please fill out this field.</div>
+                      </div>
+                      <div class="col-sm-3">
+                          <label for="Sex"class="mtop">Sex</label>
+                        <div class="form-check">
+                          <label class="form-check-label">
+                            <input type="radio" class="form-check-input" name="optradio">Male
+                          </label>
                         </div>
+                        <div class="form-check">
+                          <label class="form-check-label">
+                            <input type="radio" class="form-check-input" name="optradio">Female
+                          </label>
+                        </div>    
+                      </div>
 
-                        <div class="col">
-                            <label for="Sex"class="mtop">Sex</label>
-                          <div class="form-check">
-                            <label class="form-check-label">
-                              <input type="radio" class="form-check-input" name="optradio">Male
-                            </label>
-                          </div>
-                          <div class="form-check">
-                            <label class="form-check-label">
-                              <input type="radio" class="form-check-input" name="optradio">Female
-                            </label>
-                          </div>    
+                      <div class="col-sm-5">
+                        <div class="form-group">
+                            <label for="Date"class="mtop">Date </label>
+                            <input type="date" class="form-control" required>
+                            <div class="valid-feedback">Valid.</div>
+                            <div class="invalid-feedback">Please fill out this field.</div>
                         </div>
 
                         
                       </div> 
-                  </form>
                   
-                <!-- Modal Footer -->
                   
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-dark" data-dismiss="modal">Close</button>
-                  <button type="button" class="btn btn-primary">Save changes</button>
-                </div>  
+                  <!-- Modal Footer -->
+                    
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-dark" data-dismiss="modal">Close</button>
+                    <button name ="create_tbdots" type="submit" class="btn btn-primary">Save changes</button>
+                  </div>  
+                </form>
               </div>
             </div>
           </div>

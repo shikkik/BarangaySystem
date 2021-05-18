@@ -248,7 +248,7 @@
 
                                         <div class="form-group">            
                                             <label for="cno">Contact Number:</label>
-                                            <input type="text" maxlength="11" class="form-control" placeholder="Enter your Contact Numebr" required>
+                                            <input type="text" maxlength="11" class="form-control" placeholder="Enter your Contact Numebr" pattern="[0-9]{11}" required>
                                             <div class="valid-feedback">Valid.</div>
                                             <div class="invalid-feedback">Please fill out this field.</div>
                                         </div>

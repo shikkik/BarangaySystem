@@ -335,20 +335,26 @@ class BMISClass {
             $age = $_POST['age'];
             $sex = $_POST['sex'];
             $address = $_POST['address'];
+            $occupation = $_POST['occupation'];
             $contact = $_POST['contact'];
             $bdate = $_POST['bdate'];
             $height = $_POST['height'];
             $weight = $_POST['weight'];
+            $philhealth = $_POST['philhealth'];
+            $remarks = $_POST['remarks'];
+            $addedby = $_POST['addedby'];
 
 
 
             $connection = $this->openConn();
-            $stmt = $connection->prepare("INSERT INTO tbl_medicine (`id_medicine`, 
-            `item`, `dateman`, `origin`, `datein`, `dateout`, `stocks`, `remarks`, `addedby`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)");
+            $stmt = $connection->prepare("INSERT INTO tbl_tbdots (`id_tbdots`, `id_resident`, 
+            `lname`, `fname`, `mi`, `age`, `sex`, `address`, `occupation`, `contact`, `bdate`, `height`, 
+            `weight`, `philhealth`, `remarks`, `addedby`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
 
-            $stmt->execute([$id_medicine, $item, $dateman, $origin, $datein, $dateout, $stocks, $remarks, $addedby]);
+            $stmt->execute([$id_tbdots, $id_resident, $lname, $fname, $mi, $age, $sex, 
+            $address, $occupation, $contact, $bdate, $height, $weight, $philhealth, $remarks, $addedby]);
 
-            $message2 = "Medicine Added";
+            $message2 = "Application Applied";
             echo "<script type='text/javascript'>alert('$message2');</script>";
             
             header('refresh:0');

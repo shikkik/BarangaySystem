@@ -387,7 +387,7 @@
 
                                 <br>
 
-                                <h6>Owner's Info</h6>
+                                <h6>Parent's Info</h6>
 
                                 <hr>
 
@@ -421,18 +421,19 @@
 
                                 <div class="row"> 
                                     <div class="col">
-                                        <div class="form-group">
-                                            <label for="vaccine">Vaccine:</label>
-                                            <select class="form-control" placeholder="Enter your Vaccine">
-                                            <option>BCG</option>
-                                            <option>Hepatitis B</option>
-                                            <option>Pentavalent Vaccine</option>
-                                            <option>Oral Polio Vaccine</option>
-                                            <option>Inactivated Polio Vaccine</option>
-                                            <option>Pneumococcal Conjugate Vaccine</option>
-                                            <option>Measles, Mumps, Rubella</option>
-                                            </select>
-                                        </div>
+                                        <label for="vaccine">Vaccine:</label>
+                                        <select class="form-control" name="vaccine" id="vaccine" placeholder="Enter your Vaccine" required>
+                                        <option value="">Choose your Vaccine</option>
+                                        <option value="vaccine1">BCG</option>
+                                        <option value="vaccine2">Hepatitis B</option>
+                                        <option value="vaccine3">Pentavalent Vaccine</option>
+                                        <option value="vaccine4">Oral Polio Vaccine</option>
+                                        <option value="vaccine5">Inactivated Polio Vaccine</option>
+                                        <option value="vaccine6">Pneumococcal Conjugate Vaccine</option>
+                                        <option value="vaccine7">Measles, Mumps, Rubella</option>
+                                        </select>
+                                        <div class="valid-feedback">Valid.</div>
+                                        <div class="invalid-feedback">Please fill out this field.</div>
                                     </div>
                                     <div class="col">
                                         <div class="form-group">
