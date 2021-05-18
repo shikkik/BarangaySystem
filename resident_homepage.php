@@ -93,7 +93,7 @@
                         <div class="card"> 
                             <div class="card-body text-center">
                                 <img src="../BarangaySystem/icons/ResidentHomepage/tbdots.png"> 
-                                <a href="services_tb_dots.php"> <h4> TB DOTS Consultation</h4> 
+                                <a href="services_tb_dots.php?id_resident=<?= $userdetails['id_resident'];?>"> <h4> TB DOTS Consultation</h4> 
                             </a>
                             </div>
                         </div>

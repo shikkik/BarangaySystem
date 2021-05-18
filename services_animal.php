@@ -183,7 +183,7 @@
               <!-- Modal Body -->
 
               <div class="modal-body">
-                <form action="/action_page.php" class="was-validated">
+                <form method="post" class="was-validated">
                   <div class="row"> 
 
                     <div class="col">
@@ -257,14 +257,15 @@
 
                         
                       </div> 
-                  </form>
                   
-                <!-- Modal Footer -->
                   
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-dark" data-dismiss="modal">Close</button>
-                  <button type="button" class="btn btn-primary">Save changes</button>
-                </div>  
+                  <!-- Modal Footer -->
+                    
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-dark" data-dismiss="modal">Close</button>
+                    <button name ="create_tbdots" type="submit" class="btn btn-primary">Save changes</button>
+                  </div>  
+                </form>
               </div>
             </div>
           </div>

@@ -71,11 +71,20 @@ Resident Application Tables
     sched_time TIME NOT NULL , 
     remarks VARCHAR(1000) NOT NULL ) ENGINE = InnoDB;
 
+    ALTER TABLE `tbl_tbdots` ADD `occupation` VARCHAR(255) NOT NULL AFTER `address`;
     ALTER TABLE `tbl_tbdots` ADD `id_resident` INT NOT NULL AFTER `id_tbdots`;
     ALTER TABLE tbl_tbdots ADD addedby INT NOT NULL AFTER remarks;
     ALTER TABLE tbl_tbdots CHANGE id_tbdots id_tbdots INT(11) NOT NULL AUTO_INCREMENT, add PRIMARY KEY (id_tbdots);
     ALTER TABLE `tbl_tbdots` CHANGE `weight` `weight` VARCHAR(255) NOT NULL;
     ALTER TABLE `tbl_tbdots` CHANGE `height` `height` VARCHAR(255) NOT NULL;
+    ALTER TABLE `tbl_tbdots` CHANGE `remarks` `remarks` VARCHAR(1000) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL;
+    ALTER TABLE `tbl_tbdots` DROP `sched_date`;
+    ALTER TABLE `tbl_tbdots` DROP `sched_time`;
+
+    ALTER TABLE `tbl_tbdots` ADD `date_applied` DATE NOT NULL DEFAULT CURRENT_TIMESTAMP AFTER `addedby`;
+
+   ALTER TABLE `tbl_tbdots` DROP FOREIGN KEY `tbl_tbdots_ibfk_1`; ALTER TABLE `tbl_tbdots` ADD CONSTRAINT `tbl_tbdots_ibfk_1` FOREIGN KEY (`id_resident`) 
+   REFERENCES `tbl_resident`(`id_resident`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 
 
