@@ -85,8 +85,8 @@
                         <div class="card-body">
                             <div class="row">
                                 <div class="col">
-                                    <h5 name="name"> Name <?= $userdetails['surname'];?>, <?= $userdetails['firstname'];?> <?= $userdetails['mname'];?>.</h5> 
-                                    <h5 name="email"> Email <?= $userdetails['emailadd'];?> </h5>
+                                    <h5 > Name <?= $userdetails['surname'];?>, <?= $userdetails['firstname'];?> <?= $userdetails['mname'];?>.</h5> 
+                                    <h5 > Email <?= $userdetails['emailadd'];?> </h5>
                                     <h5> Sex <?= $userdetails['sex'];?> </h5>
                                     <h5> Status <?= $userdetails['status'];?> </h5>
                                     <h5> Address <?= $userdetails['address'];?> </h5>
@@ -98,16 +98,13 @@
                                 </div>
 
                                 <div class="col">
-                                <label for="address">Address: </label>
-                                 <input type="label" value="<?= $userdetails['address'];?>">
-                                 <label for="address">Address: </label>
-                                 <input type="text" value="<?= $userdetails['address'];?>">
-                                 <label for="address">Address: </label>
-                                 <input type="text" value="<?= $userdetails['address'];?>">
-                                 <label for="address">Address: </label>
-                                 <input type="text" value="<?= $userdetails['address'];?>">
-                                 <label for="address">Address: </label>
-                                 <input type="text" value="<?= $userdetails['address'];?>">
+                                    <div class="form-inline">
+                                        <h5 for="address">Address: </h5>
+                                        <input class="form-control" type="text" value="<?= $userdetails['address'];?>">
+                                        <h5 for="address">Status: </h5>
+                                        <input class="form- control" type="text" value="<?= $userdetails['address'];?>">
+                                        <label for="address">Email: </label>
+                                    </div>
                                 </div>
                                  
                             </div>  
