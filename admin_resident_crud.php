@@ -144,7 +144,7 @@
                                     </form>
                                 </td>
                                 <td> <?= $view['email'];?> </td>
-                                <td> <?= $view['password'];?> </td>
+                                <td> <?= $view['password'];?> </td> 
                                 <td> <?= $view['lname'];?> </td>
                                 <td> <?= $view['fname'];?> </td>
                                 <td> <?= $view['mi'];?> </td>

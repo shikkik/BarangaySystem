@@ -1,8 +1,14 @@
 <?php 
-    require('classes/main.class.php');
     require('classes/resident.class.php');
-    
     $userdetails = $bmis->get_userdata();
+
+    $id_resident = $_GET['id_resident'];
+    $resident = $residentbmis->get_single_resident($id_resident);
+
+    print_r($resident);
+    
+    
+    
 ?>
 
 <!DOCTYPE html>
@@ -249,14 +255,7 @@
                           </div>    
                         </div>
 
-                        <div class="col">
-                          <div class="form-group">
-                              <label for="Date"class="mtop">Date </label>
-                              <input type="date" class="form-control" required>
-                              <div class="valid-feedback">Valid.</div>
-                              <div class="invalid-feedback">Please fill out this field.</div>
-                          </div>
-                        </div>  
+                        
                       </div> 
                   </form>
                   

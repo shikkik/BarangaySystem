@@ -321,6 +321,11 @@ class BMISClass {
         }
     }
 
+
+    public function show_announcement() {
+        
+    }
+
 }
 
 $bmis = new BMISClass(); //variable to call outside of its class

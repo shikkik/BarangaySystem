@@ -61,23 +61,7 @@
                 </div>
             </div>
 
-            <div class="row" style="margin-top: 3em; margin-bottom: 5em;"> 
-                <div class="col-xl-12">
-                    <div class="form-inline">
-                    <form method="post">
-                            <input class="form-control" name="lname" type="hidden" value="<?= $userdetails['surname'];?>"/>
-                            <input class="form-control" name="mi" type="hidden" value="<?= $userdetails['mname'];?>" />
-                            <button type="submit button" class="btn btn-info"  name="search_household">View Household</button>
-                        <div id="demo" >
-                        <br /><br />
-                            <?php include'testingsearch.php'?>
-                        </div>
-                    </form>
-                    </div>                                   
-                </div>
-            </div>
-
-
+        
             <div class="row margin mtop"> 
                 <div class="col-sm"> </div>
                 <div class="col-12">   
@@ -85,34 +69,46 @@
                         <div class="card-body">
                             <div class="row">
                                 <div class="col">
-                                    <h5 > Name <?= $userdetails['surname'];?>, <?= $userdetails['firstname'];?> <?= $userdetails['mname'];?>.</h5> 
-                                    <h5 > Email <?= $userdetails['emailadd'];?> </h5>
+                                    <h5> Name <?= $userdetails['surname'];?>, <?= $userdetails['firstname'];?> <?= $userdetails['mname'];?>.</h5> 
+                                    <h5> Email <?= $userdetails['emailadd'];?> </h5>
                                     <h5> Sex <?= $userdetails['sex'];?> </h5>
-                                    <h5> Status <?= $userdetails['status'];?> </h5>
-                                    <h5> Address <?= $userdetails['address'];?> </h5>
-                                    <h5> Contact <?= $userdetails['contact'];?> </h5>
+                                    
+                                    <input type="text" name="address" placeholder="<?= $userdetails['status'];?>">
+                                    <br>
+                                    <input type="text" name="address" placeholder="<?= $userdetails['address'];?>">
+                                    <br>
+                                    <input type="text" name="address" placeholder="<?= $userdetails['contact'];?>">
+    
+
                                     <h5> Birth Date <?= $userdetails['bdate'];?> </h5>
                                     <h5> Birth Place <?= $userdetails['bplace'];?> </h5>
                                     <h5> Nationality <?= $userdetails['nationality'];?> </h5>
                                     <h5> Family Role <?= $userdetails['family_role'];?> </h5>
                                 </div>
 
-                                <div class="col">
-                                    <div class="form-inline">
-                                        <h5 for="address">Address: </h5>
-                                        <input class="form-control" type="text" value="<?= $userdetails['address'];?>">
-                                        <h5 for="address">Status: </h5>
-                                        <input class="form- control" type="text" value="<?= $userdetails['address'];?>">
-                                        <label for="address">Email: </label>
-                                    </div>
-                                </div>
-                                 
+                                <div class="col"></div>
                             </div>  
                         </div>
                     </div>
                 </div> 
 
                 <div class="col-sm"> </div>
+            </div>
+
+            <div class="row" style="margin-top: 3em; margin-bottom: 5em;"> 
+                <div class="col-xl-12">
+                    <div class="form-inline">
+                    <form method="post">
+                            <input class="form-control" name="lname" type="hidden" value="<?= $userdetails['surname'];?>"/>
+                            <input class="form-control" name="mi" type="hidden" value="<?= $userdetails['mname'];?>" />
+                            <button type="submit button" class="btn btn-info"  name="search_household">View Household</button>
+                        <div>
+                        <br /><br />
+                            <?php include'testingsearch.php'?>
+                        </div>
+                    </form>
+                    </div>                                   
+                </div>
             </div>
 
            
