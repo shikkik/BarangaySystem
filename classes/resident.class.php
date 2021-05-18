@@ -110,7 +110,7 @@
 
             return $rescount;
         }
-
+        /* 
         public function view_household_list() {
             $lname = $_POST['lname'];
             $mi = $_POST['mi'];
@@ -125,6 +125,7 @@
 
             }
         }
+        */
 
         public function update_resident() {
             if (isset($_POST['update_resident'])) {
@@ -159,6 +160,7 @@
 
             }
         }
+        
 
         public function delete_resident(){
 

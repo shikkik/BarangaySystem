@@ -1,9 +1,13 @@
 <?php 
     require('classes/resident.class.php');
-
+    $id_resident = $_GET['id_resident'];
+    $view = $residentbmis->get_single_resident($id_resident);
+    
     //$view = $residentbmis->view_single_resident($email);
     $userdetails = $residentbmis->get_userdata();
-    $view = $residentbmis->view_household_list();
+
+
+    //  $view = $residentbmis->view_household_list();
 
     //$lname = $_GET['lname'];
     //$lname = $_GET['mi'];
@@ -12,7 +16,7 @@
     //$stmt = $connection->prepare("SELECT * FROM tbl_resident WHERE lname ='$lname'");
     //$stmt->execute();  
    // $view = $stmt->fetch();
-    
+    print_r($view);
 ?>
 
 <!DOCTYPE html> 
@@ -39,7 +43,7 @@
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-
+                
             <div class="dropdown ml-auto">
                 <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown"><?= $userdetails['surname'];?>, <?= $userdetails['firstname'];?>
                     <span class="caret"></span>
@@ -72,11 +76,13 @@
                                     <h5> Name <?= $userdetails['surname'];?>, <?= $userdetails['firstname'];?> <?= $userdetails['mname'];?>.</h5> 
                                     <h5> Email <?= $userdetails['emailadd'];?> </h5>
                                     <h5> Sex <?= $userdetails['sex'];?> </h5>
-                                    
+                                    <h5>Status:</h5>
                                     <input type="text" name="address" placeholder="<?= $userdetails['status'];?>">
                                     <br>
+                                    <h5>Address:</h5>
                                     <input type="text" name="address" placeholder="<?= $userdetails['address'];?>">
                                     <br>
+                                    <h5>Contact:</h5>
                                     <input type="text" name="address" placeholder="<?= $userdetails['contact'];?>">
     
 
