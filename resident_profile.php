@@ -3,6 +3,7 @@
     $userdetails = $residentbmis->get_userdata();
     $id_resident = $_GET['id_resident'];
     $resident = $residentbmis->get_single_resident($id_resident);
+
     $residentbmis->profile_update();
     
 
@@ -80,12 +81,12 @@
                                     
                                     <div class="row">
                                     <h5>Age:</h5>
-                                    <input type="text" name="address" value="<?= $resident['age'];?>">
+                                    <input type="text" name="age" value="<?= $resident['age'];?>">
                                     </div>
 
                                     <div class="row">
                                     <h5>Status:</h5>
-                                    <input type="text" name="address" value="<?= $resident['status'];?>">
+                                    <input type="text" name="status" value="<?= $resident['status'];?>">
                                     </div>
                                     
                                     <div class="row">
@@ -95,7 +96,7 @@
 
                                     <div class="row">
                                     <h5>Contact:</h5>
-                                    <input type="text" name="address" value="<?= $resident['contact'];?>">
+                                    <input type="text" name="contact" value="<?= $resident['contact'];?>">
                                     </div>
                                     
                                     <div class="row">
