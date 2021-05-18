@@ -44,10 +44,7 @@
                 </button>
                 <ul class="dropdown-menu">
                     <button class="btn" onclick="profile();"> <i class="fas fa-user" style="padding: 0.5em;"></i>Personal Profile  </button>
-                    
                     <button class="btn" onclick="logout();"> <i class="fas fa-sign-out-alt" style="padding: 0.5em;"></i> Logout  </button>
-                    
-                    <a href="resident_profile.php?=<?= $userdetails['email'];?>"> <i class="fas fa-user" style="padding: 0.5em;"></i>Personal Profile  </a>
                 </ul>
             </div>
         </nav>

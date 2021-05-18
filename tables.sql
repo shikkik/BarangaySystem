@@ -71,8 +71,11 @@ Resident Application Tables
     sched_time TIME NOT NULL , 
     remarks VARCHAR(1000) NOT NULL ) ENGINE = InnoDB;
 
+    ALTER TABLE `tbl_tbdots` ADD `id_resident` INT NOT NULL AFTER `id_tbdots`;
     ALTER TABLE tbl_tbdots ADD addedby INT NOT NULL AFTER remarks;
     ALTER TABLE tbl_tbdots CHANGE id_tbdots id_tbdots INT(11) NOT NULL AUTO_INCREMENT, add PRIMARY KEY (id_tbdots);
+    ALTER TABLE `tbl_tbdots` CHANGE `weight` `weight` VARCHAR(255) NOT NULL;
+    ALTER TABLE `tbl_tbdots` CHANGE `height` `height` VARCHAR(255) NOT NULL;
 
 
 
