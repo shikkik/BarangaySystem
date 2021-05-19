@@ -38,7 +38,7 @@
 
             if(isset($_POST['add_staff'])) {
                 $email = $_POST['email'];
-                $password = $_POST['password'];
+                $password = md5($_POST['password']);
                 $lname = $_POST['lname'];
                 $fname = $_POST['fname'];
                 $mi = $_POST['mi'];
@@ -106,7 +106,7 @@
         public function update_staff() {
             if (isset($_POST['update_staff'])) {
                 $email = $_GET['email'];
-                $password = $_POST['password'];
+                $password = md5($_POST['password']);
                 $lname = $_POST['lname'];
                 $fname = $_POST['fname'];
                 $mi = $_POST['mi'];

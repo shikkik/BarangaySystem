@@ -97,7 +97,7 @@ class BMISClass {
         }
         $_SESSION['userdata'] = null;
         unset($_SESSION['userdata']); 
-        session_destroy();
+        
     }
 
     // etong method na get_userdata() kukuha ng session mo na 'userdata' mo na i identify sino yung naka login sa site 
@@ -167,7 +167,39 @@ class BMISClass {
     }
 
 
- //  --------------------------------------------------------- ANNOUNCEMENT CRUD ---------------------------------------------------------
+ //----------------------------------------------------- ADMIN CRUD ---------------------------------------------------------
+    public function create_admin() {
+
+        if(isset($_POST['add_admin'])) {
+        
+            $email = $_POST['email'];
+            $password = md5($_POST['password']);
+            $lname = $_POST['lname'];
+            $fname = $_POST['fname'];
+            $mi = $_POST['mi'];
+            $role = $_POST['role'];
+    
+                if ($this->check_admin($email) == 0 ) {
+        
+                    $connection = $this->openConn();
+                    $stmt = $connection->prepare("INSERT INTO tbl_admin (`email`,`password`,`lname`,`fname`,
+                    `mi`, `role` ) VALUES (?, ?, ?, ?, ?, ?)");
+                    
+                    $stmt->Execute([$email, $password, $lname, $fname, $mi, $role]);
+                    
+                    $message2 = "Administrator account added, you can now continue logging in";
+                    echo "<script type='text/javascript'>alert('$message2');</script>";
+                }
+            }
+    
+            else {
+                echo "<script type='text/javascript'>alert('Account already exists');</script>";
+            }
+    }
+
+
+
+ //  ----------------------------------------------- ANNOUNCEMENT CRUD ---------------------------------------------------------
 
 
     public function create_announcement() {
@@ -367,6 +399,16 @@ class BMISClass {
     //------------------------------------------ EXTRA FUNCTIONS ----------------------------------------------
     public function show_announcement() {
         
+    }
+
+    public function check_admin($email) {
+
+        $connection = $this->openConn();
+        $stmt = $connection->prepare("SELECT * FROM tbl_admin WHERE email = ?");
+        $stmt->Execute([$email]);
+        $total = $stmt->rowCount(); 
+
+        return $total;
     }
 
 }

@@ -11,22 +11,23 @@ Accounts Tables
     PRIMARY KEY (id_admin)) ENGINE = InnoDB;
 
     CREATE TABLE bmis.tbl_user 
-    ( id_user INT NOT NULL AUTO_INCREMENT , 
-    email VARCHAR(255) NOT NULL , 
-    password VARCHAR(255) NOT NULL , 
-    lname VARCHAR(255) NOT NULL , 
-    fname VARCHAR(255) NOT NULL , 
-    mi VARCHAR(255) NOT NULL , 
-    age INT(20) NOT NULL , 
-    sex VARCHAR(255) NOT NULL , 
-    address VARCHAR(255) NOT NULL, 
-    contact VARCHAR(255) NOT NULL , 
-    position VARCHAR(255) NOT NULL , 
-    role VARCHAR(255) NOT NULL , 
+    ( id_user INT NOT NULL AUTO_INCREMENT ,
+    email VARCHAR(255) NOT NULL ,
+    password VARCHAR(255) NOT NULL ,
+    lname VARCHAR(255) NOT NULL ,
+    fname VARCHAR(255) NOT NULL ,
+    mi VARCHAR(255) NOT NULL ,
+    age INT(20) NOT NULL ,
+    sex VARCHAR(255) NOT NULL ,
+    address VARCHAR(255) NOT NULL,
+    contact VARCHAR(255) NOT NULL ,
+    position VARCHAR(255) NOT NULL ,
+    role VARCHAR(255) NOT NULL ,
     PRIMARY KEY (id_user)) ENGINE = InnoDB;
 
     ALTER TABLE tbl_user ADD addedby INT NOT NULL AFTER role;
     ALTER TABLE `tbl_user` CHANGE `addedby` `addedby` VARCHAR(255) NOT NULL;
+    ALTER TABLE `tbl_user` CHANGE `addedby` `addedby` VARCHAR(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL;
 
 
     CREATE TABLE bmis.tbl_resident 

@@ -84,7 +84,6 @@
                     echo "<script type='text/javascript'>alert('Email Account already exists');</script>";
                 }
             }
-            
         }
 
         
@@ -130,7 +129,7 @@
         public function update_resident() {
             if (isset($_POST['update_resident'])) {
                 $email = $_GET['email'];
-                $password = $_POST['password'];
+                $password = md5($_POST['password']);
                 $lname = $_POST['lname'];
                 $fname = $_POST['fname'];
                 $mi = $_POST['mi'];
@@ -146,13 +145,11 @@
                 $role = $_POST['role'];
                 $addedby = $_POST['addedby'];
 
-
-                
                     $connection = $this->openConn();
                     $stmt = $connection->prepare("UPDATE tbl_resident SET password =?, lname =?, 
                     fname = ?, mi =?, age =?, sex =?, status =?, address =?, contact =?,
                     bdate =?, bplace =?, nationality =?,family_role =?, role =?, addedby =? WHERE email = ?");
-                    $stmt->execute([ $password, $lname, $fname, $mi, $age, $sex, $status, $address,
+                    $stmt->execute([$password, $lname, $fname, $mi, $age, $sex, $status, $address,
                     $contact, $bdate, $bplace, $nationality, $familyrole, $role, $addedby, $email]);
                    
                     echo "naka udpate na";
