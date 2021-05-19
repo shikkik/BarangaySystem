@@ -39,7 +39,7 @@
 
             if(isset($_POST['add_resident'])) {
                 $email = $_POST['email'];
-                $password = $_POST['password'];
+                $password = md5($_POST['password']);
                 $lname = $_POST['lname'];
                 $fname = $_POST['fname'];
                 $mi = $_POST['mi'];

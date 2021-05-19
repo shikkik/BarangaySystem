@@ -6,18 +6,6 @@
 
     $residentbmis->profile_update();
     
-
-    //$view = $residentbmis->view_household_list();
-
-    print_r($resident);
-
-    //$lname = $_GET['lname'];
-    //$lname = $_GET['mi'];
-
-    //$connection = $residentbmis->openConn();
-    //$stmt = $connection->prepare("SELECT * FROM tbl_resident WHERE lname ='$lname'");
-    //$stmt->execute();  
-   // $view = $stmt->fetch();
 ?>
 
 <!DOCTYPE html> 
@@ -149,10 +137,7 @@
         
         </section>
 
-        <?php 
-           print_r($userdetails);
-        ?>
-
+ 
          
     </body>
 </html>

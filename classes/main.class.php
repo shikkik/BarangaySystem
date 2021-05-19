@@ -40,7 +40,7 @@ class BMISClass {
             if(isset($_POST['login'])) {
 
                 $email = $_POST['email'];
-                $password = $_POST['password'];
+                $password = md5($_POST['password']);
             
                 $connection = $this->openConn();
 
@@ -97,6 +97,7 @@ class BMISClass {
         }
         $_SESSION['userdata'] = null;
         unset($_SESSION['userdata']); 
+        session_destroy();
     }
 
     // etong method na get_userdata() kukuha ng session mo na 'userdata' mo na i identify sino yung naka login sa site 

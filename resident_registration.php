@@ -117,6 +117,16 @@
                                     </div>       
                                 </div>
 
+                                <div class="row">
+                                    <div class="col">
+                                        <label class="mtop"> Family Role </label>
+                                        <select class="form-control" name="family_role">
+                                            <option value="Family Member">Family Member</option>
+                                            <option value="Family Head">Family Head</option>
+                                        </select>
+                                    </div>
+                                </div>
+
                                 <div class="row mtop"> 
                                     <div class="col">   
                                         <button class="btn btn-primary" type="submit" name="add_resident"> Submit </button>
