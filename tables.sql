@@ -135,11 +135,17 @@ Resident Application Tables
     age INT NOT NULL , 
     address VARCHAR(255) NOT NULL , 
     contact VARCHAR(255) NOT NULL , 
-    sched_date DATE NOT NULL , 
-    sched_time TIME NOT NULL , 
     remarks VARCHAR(1000) NOT NULL , 
     addedby VARCHAR(255) NOT NULL , 
     PRIMARY KEY (id_motherchild)) ENGINE = InnoDB;
+
+    ALTER TABLE `tbl_motherchild` CHANGE `remarks` `remarks` VARCHAR(1000) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL;
+    ALTER TABLE `tbl_motherchild` ADD `id_resident` INT NOT NULL AFTER `id_motherchild`;
+    ALTER TABLE `tbl_motherchild` ADD `dateapply` VARCHAR(244) NOT NULL AFTER `remarks`, ADD `timeapply` VARCHAR(244) NOT NULL AFTER `dateapply`;
+
+    ALTER TABLE `tbl_motherchild` CHANGE `timeapply` `timeapply` TIME(244) NOT NULL;
+    ALTER TABLE `tbl_motherchild` CHANGE `dateapply` `dateapply` DATE NOT NULL;
+
 
     CREATE TABLE bmis.tbl_familyplan 
     ( id_familyplan INT NOT NULL AUTO_INCREMENT , 

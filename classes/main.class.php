@@ -395,6 +395,57 @@ class BMISClass {
         }
 
     }
+
+    //------------------------------------------ TB DOTS CRUD -----------------------------------------------
+
+
+    public function create_motherchild() {
+
+        if(isset($_POST['create_motherchild'])) {
+            $id_resident = $_POST['id_resident'];
+            $lname = $_POST['lname'];
+            $fname = $_POST['fname'];
+            $mi = $_POST['mi'];
+            $age = $_POST['age'];
+            $contact = $_POST['contact'];
+            $address = $_POST['address'];
+            $remarks = $_POST['remarks'];
+            $timeapply = $_POST['timeapply'];
+            $dateapply = $_POST['dateapply'];
+            $addedby = $_POST['addedby'];
+
+
+            if(($_POST['$timeapply'] >= 1000) && ($_POST['$timeapply'] <= 1600)) {
+                $connection = $this->openConn();
+                $stmt = $connection->prepare("INSERT INTO tbl_motherchild (`id_resident`, 
+                `lname`, `fname`, `mi`, `age`, `contact`, `address`, `remarks`,  `timeapply`, `dateapply`, `addedby`)
+                VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+
+                $stmt->execute([$id_resident, $lname, $fname, $mi, $age, 
+                $contact, $address,  $remarks, $timeapply, $dateapply,  $addedby]);
+
+                $message2 = "Application Applied, you will be receive our text message for further details";
+                echo "<script type='text/javascript'>alert('$message2');</script>";
+                
+                header('refresh:0');
+            }
+
+            else {
+                $message2 = "Sorry, barangay consultations are available from 8:00 AM to 6:00 PM only";
+                echo "<script type='text/javascript'>alert('$message2');</script>";
+            
+                header('refresh:0');
+
+                
+            }
+
+
+
+            
+
+        }
+
+    }
     
     //------------------------------------------ EXTRA FUNCTIONS ----------------------------------------------
     public function show_announcement() {

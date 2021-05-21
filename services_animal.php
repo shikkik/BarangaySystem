@@ -82,18 +82,14 @@
       <a class="navbar-brand" href="resident_homepage.php">Barangay Sorsogon</a>
 
       <div class="dropdown ml-auto">
-          <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown"><?= $userdetails['surname'];?>, <?= $userdetails['firstname'];?>
-              <span class="caret"></span>
-          </button>
-          <ul class="dropdown-menu">
-            <form method="post">
-                <input type="hidden" value="<?= $userdetails['surname'];?>">  
-                <input type="hidden" value="<?= $userdetails['mname'];?>">
-                <li><button class="btn" href="resident_profile.php"> <i class="fas fa-user"></i> Personal Profile </button></li>
-            </form>
-                <button class="btn" onclick="logout();"> <i class="fas fa-sign-out-alt"> </i> Logout </button>
-          </ul>
-      </div>
+                <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown"><?= $userdetails['surname'];?>, <?= $userdetails['firstname'];?>
+                    <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu">
+                    <a class="btn" href="resident_profile.php?id_resident=<?= $userdetails['id_resident'];?>"> <i class="fas fa-user" style="padding: 0.5em;"></i>Personal Profile  </a>
+                    <a class="btn" href="logout.php"> <i class="fas fa-sign-out-alt" style="padding: 0.5em;"></i> Logout  </a>
+                </ul>
+            </div>
       
     </nav>
 
