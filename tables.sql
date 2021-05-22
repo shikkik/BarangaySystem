@@ -169,6 +169,11 @@ Resident Application Tables
     addedby VARCHAR(255) NOT NULL , 
     PRIMARY KEY (id_familyplan)) ENGINE = InnoDB;
 
+    ALTER TABLE `tbl_familyplan` ADD `id_resident` INT NOT NULL AFTER `id_familyplan`;
+    ALTER TABLE `tbl_familyplan` ADD FOREIGN KEY (`id_resident`) REFERENCES `tbl_resident`(`id_resident`) ON DELETE CASCADE ON UPDATE CASCADE;
+    ALTER TABLE `tbl_familyplan` CHANGE `sched_date` `dateapply` DATE NOT NULL DEFAULT CURRENT_TIMESTAMP;
+    ALTER TABLE `tbl_familyplan` CHANGE `sched_time` `timeapply` TIME NOT NULL;
+    ALTER TABLE `tbl_familyplan` CHANGE `sp_occupation` `sp_occupation` VARCHAR(255) NOT NULL;
 
 Documents Processing
 

@@ -9,12 +9,6 @@
     $cdate = $dt->format('Y/m/d');
     $ctime = $tm->format('H:i');
 
-    echo "$cdate";
-
-    echo "<br>";
-   
-    echo "$ctime";
-
     $bmis->create_motherchild();
 
 
@@ -328,21 +322,21 @@
                                     <div class="col">
                                         <div class="form-group">
                                             <label for="lname">Lastname:</label>
-                                            <input name="lname" type="text" class="form-control" placeholder="Enter your Lastname" required>
+                                            <input name="lname" type="text" class="form-control" value="<?= $resident['lname']?>" required>
                                             <div class="valid-feedback">Valid.</div>
                                             <div class="invalid-feedback">Please fill out this field.</div>
                                         </div>
 
                                         <div class="form-group">
                                             <label for="mname">Middlename:</label>
-                                            <input name="mi" type="text" class="form-control" placeholder="Enter your Middlename" required>
+                                            <input name="mi" type="text" class="form-control" value="<?= $resident['mi']?>" required>
                                             <div class="valid-feedback">Valid.</div>
                                             <div class="invalid-feedback">Please fill out this field.</div>  
                                         </div>
 
                                         <div class="form-group">            
                                             <label for="cno">Contact Number:</label>
-                                            <input name="contact" type="text" maxlength="11" class="form-control" placeholder="Enter your Contact Numebr" pattern="[0-9]{11}" required>
+                                            <input name="contact" type="text" maxlength="11" class="form-control" value="<?= $resident['contact']?>" pattern="[0-9]{11}" required>
                                             <div class="valid-feedback">Valid.</div>
                                             <div class="invalid-feedback">Please fill out this field.</div>
                                         </div>
@@ -352,20 +346,20 @@
 
                                         <div class="form-group">
                                             <label for="fname">Firstname:</label>
-                                            <input name="fname" type="text" class="form-control" placeholder="Enter your Firstname" required>
+                                            <input name="fname" type="text" class="form-control" value="<?= $resident['fname']?>" required>
                                             <div class="valid-feedback">Valid.</div>
                                             <div class="invalid-feedback">Please fill out this field.</div>  
                                         </div>
 
                                         <div class="form-group">
                                             <label for="address">Address:</label>
-                                            <input name="address" type="text" class="form-control" placeholder="Enter your Address" required>
+                                            <input name="address" type="text" class="form-control" value="<?= $resident['address']?>" required>
                                             <div class="valid-feedback">Valid.</div>
                                             <div class="invalid-feedback">Please fill out this field.</div>
                                         </div>
                                         <div class="form-group">
                                             <label for="age" class="mtop">Age </label>
-                                            <input name="age" type="number" class="form-control" placeholder="Enter your Age" required>
+                                            <input name="age" type="number" class="form-control" value="<?= $resident['age']?>" required>
                                             <div class="valid-feedback">Valid.</div>
                                             <div class="invalid-feedback">Please fill out this field.</div>
                                         </div>
@@ -381,10 +375,11 @@
                             
                             <div class="modal-footer">
                                 <div class="paa">
-                                    <button type="button" class="btn btn-dark" data-dismiss="modal">Close</button>
-                                    <button type="button" class="btn btn-primary">Save changes</button>
+                                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                                    <button name="create_motherchild" type="submit" class="btn btn-primary">Save changes</button>
                                 </div>
                             </div>  
+                        </form>
                         </div>
                     </div>
                 </div>

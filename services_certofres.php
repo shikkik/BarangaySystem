@@ -176,7 +176,6 @@
     <body>
 
         <!-- eto yung navbar -->
-
         <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top">
             <a class="navbar-brand" href="#">Barangay Sorsogon</a>
 
@@ -190,7 +189,7 @@
                         <input type="hidden" value="<?= $userdetails['mname'];?>">
                         <li><button class="btn" href="resident_profile.php"> <i class="fas fa-user"></i> Personal Profile </button></li>
                     </form>
-                        <button class="btn" onclick="logout();"> <i class="fas fa-sign-out-alt"> </i> Logout </button>
+                    <button class="btn" onclick="logout();"> <i class="fas fa-sign-out-alt"> </i> Logout </button>
                 </ul>
             </div>
         </nav>

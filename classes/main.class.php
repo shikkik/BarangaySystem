@@ -219,6 +219,12 @@ class BMISClass {
             echo "<script type='text/javascript'>alert('$message2');</script>";
             header('refresh:0');
         }
+
+        else {
+            $message2 = "There was a problem in creating this data";
+            echo "<script type='text/javascript'>alert('$message2');</script>";
+            header("refresh: 0");
+        }
     }
 
     public function view_announcement(){
@@ -226,7 +232,6 @@ class BMISClass {
         $stmt = $connection->prepare("SELECT * from tbl_announcement");
         $stmt->execute();
         $view = $stmt->fetchAll();
-
         return $view;
     }
 
@@ -246,12 +251,16 @@ class BMISClass {
             $message2 = "Announcement Updated";
             echo "<script type='text/javascript'>alert('$message2');</script>";
              header("refresh: 0");
+        }
 
+        else {
+            $message2 = "There was a problem in updating this data";
+            echo "<script type='text/javascript'>alert('$message2');</script>";
+            header("refresh: 0");
         }
     }
 
     public function delete_announcement(){
-
         $id_announcement = $_POST['id_announcement'];
 
         if(isset($_POST['delete_announcement'])) {
@@ -265,11 +274,9 @@ class BMISClass {
 
     public function count_announcement() {
         $connection = $this->openConn();
-
         $stmt = $connection->prepare("SELECT COUNT(*) from tbl_announcement");
         $stmt->execute();
         $ancount = $stmt->fetchColumn();
-
         return $ancount;
     }
 
@@ -289,8 +296,6 @@ class BMISClass {
             $stocks = $_POST['stocks'];
             $remarks = $_POST['remarks'];
             $addedby = $_POST['addedby'];
-
-
 
             $connection = $this->openConn();
             $stmt = $connection->prepare("INSERT INTO tbl_medicine (`id_medicine`, 
@@ -336,13 +341,18 @@ class BMISClass {
             
             $message2 = "Medicine Item Updated";
             echo "<script type='text/javascript'>alert('$message2');</script>";
-             header("refresh: 0");
+            header("refresh: 0");
 
+        }
+
+        else {
+            $message2 = "There was a problem in updating this data";
+            echo "<script type='text/javascript'>alert('$message2');</script>";
+            header("refresh: 0");
         }
     }
 
     public function delete_medicine(){
-
         $id_medicine = $_POST['id_medicine'];
 
         if(isset($_POST['delete_medicine'])) {
@@ -358,7 +368,6 @@ class BMISClass {
 
 
     public function create_tbdots() {
-
         if(isset($_POST['create_tbdots'])) {
             $id_tbdots = $_POST['id_tbdots'];
             $id_resident = $_POST['id_resident'];
@@ -389,18 +398,74 @@ class BMISClass {
 
             $message2 = "Application Applied";
             echo "<script type='text/javascript'>alert('$message2');</script>";
-            
             header('refresh:0');
+        }
+    }
 
+    public function view_tbdots(){
+        $connection = $this->openConn();
+        $stmt = $connection->prepare("SELECT * from tbl_tbdots");
+        $stmt->execute();
+        $view = $stmt->fetchAll();
+        return $view;
+    }
+
+    public function update_tbdots() {
+        if (isset($_POST['update_tbdots'])) {
+            $id_tbdots = $_GET['id_tbdots'];
+            $lname = $_POST['lname'];
+            $fname = $_POST['fname'];
+            $mi = $_POST['mi'];
+            $age = $_POST['age'];
+            $sex = $_POST['sex'];
+            $address = $_POST['address'];
+            $occupation = $_POST['occupation'];
+            $contact = $_POST['contact'];
+            $bdate = $_POST['bdate'];
+            $height = $_POST['height'];
+            $weight = $_POST['weight'];
+            $philhealth = $_POST['philhealth'];
+            $remarks = $_POST['remarks'];
+            $addedby = $_POST['addedby'];
+
+
+            $connection = $this->openConn();
+            $stmt = $connection->prepare("UPDATE tbl_tbdots SET lname =?, fname =?, 
+            mi = ?, age = ?, sex = ?, `address` = ?, occupation = ?, contact = ?,
+            bdate = ?, height = ?, `weight` = ?, philhealth = ? remarks =?, addedby = ?
+            WHERE id_tbdots = ?");
+            $stmt->execute([ $lname, $fname, $mi, $age, $sex, $address, $occupation, $contact, 
+            $bdate, $height, $weight, $philhealth, $remarks, $addedby, $id_tbdots]);
+            
+            $message2 = "TB DOTS Data Updated";
+            echo "<script type='text/javascript'>alert('$message2');</script>";
+             header("refresh: 0");
         }
 
+        else {
+            $message2 = "There was a problem in updating this data";
+            echo "<script type='text/javascript'>alert('$message2');</script>";
+            header("refresh: 0");
+        }
     }
+
+    public function delete_tbdots(){
+        $id_medicine = $_POST['id_medicine'];
+
+        if(isset($_POST['delete_medicine'])) {
+            $connection = $this->openConn();
+            $stmt = $connection->prepare("DELETE FROM tbl_medicine where id_medicine = ?");
+            $stmt->execute([$id_medicine]);
+
+            header("Refresh:0");
+        }
+    }
+
 
     //------------------------------------------ TB DOTS CRUD -----------------------------------------------
 
 
     public function create_motherchild() {
-
         if(isset($_POST['create_motherchild'])) {
             $id_resident = $_POST['id_resident'];
             $lname = $_POST['lname'];
@@ -415,7 +480,7 @@ class BMISClass {
             $addedby = $_POST['addedby'];
 
 
-            if(($_POST['$timeapply'] >= 1000) && ($_POST['$timeapply'] <= 1600)) {
+            if(($_POST['$timeapply'] >= 1000) && ($_POST['$timeapply'] <= 2000)) {
                 $connection = $this->openConn();
                 $stmt = $connection->prepare("INSERT INTO tbl_motherchild (`id_resident`, 
                 `lname`, `fname`, `mi`, `age`, `contact`, `address`, `remarks`,  `timeapply`, `dateapply`, `addedby`)
@@ -426,25 +491,179 @@ class BMISClass {
 
                 $message2 = "Application Applied, you will be receive our text message for further details";
                 echo "<script type='text/javascript'>alert('$message2');</script>";
-                
                 header('refresh:0');
             }
 
             else {
-                $message2 = "Sorry, barangay consultations are available from 8:00 AM to 6:00 PM only";
+                $message2 = "Sorry, Barangay consultations are available from 10:00 AM to 8:00 PM only";
                 echo "<script type='text/javascript'>alert('$message2');</script>";
-            
                 header('refresh:0');
-
-                
             }
+        }
+    }
+
+    public function view_motherchild(){
+        $connection = $this->openConn();
+        $stmt = $connection->prepare("SELECT * from tbl_motherchild");
+        $stmt->execute();
+        $view = $stmt->fetchAll();
+        return $view;
+    }
+
+    public function update_motherchild() {
+        if (isset($_POST['update_motherchild'])) {
+            $id_motherchild = $_GET['id_motherchild'];
+            $lname = $_POST['lname'];
+            $fname = $_POST['fname'];
+            $mi = $_POST['mi'];
+            $age = $_POST['age'];
+            $contact = $_POST['contact'];
+            $address = $_POST['address'];
+            $remarks = $_POST['remarks'];
+            $addedby = $_POST['addedby'];
 
 
-
+            $connection = $this->openConn();
+            $stmt = $connection->prepare("UPDATE tbl_tbdots SET lname = ?, fname = ?, mi = ?, 
+            age = ?, contact = ?, address = ?, remarks = ?, addedby = ? WHERE id_motherchild = ?");
+            $stmt->execute([ $lname, $fname, $mi, $age, $address, $contact, $remarks, $addedby, $id_motherchild]);
             
-
+            $message2 = "Mother & Child Check-up Data Updated";
+            echo "<script type='text/javascript'>alert('$message2');</script>";
+             header("refresh: 0");
         }
 
+        else {
+            $message2 = "There was a problem in updating this data";
+            echo "<script type='text/javascript'>alert('$message2');</script>";
+            header("refresh: 0");
+        }
+    }
+
+    public function delete_motherchild(){
+        $id_motherchild = $_POST['id_motherchild'];
+
+        if(isset($_POST['delete_motherchild'])) {
+            $connection = $this->openConn();
+            $stmt = $connection->prepare("DELETE FROM tbl_motherchild where id_motherchild = ?");
+            $stmt->execute([$id_motherchild]);
+
+            header("Refresh:0");
+        }
+    }
+
+    //------------------------------------------------------- FAMILY PLAN CRUD ----------------------------------------------------------------------
+
+
+    public function create_familyplan() {
+        if(isset($_POST['create_familyplan'])) {
+            
+            $lname = $_POST['lname'];
+            $fname = $_POST['fname'];
+            $mi = $_POST['mi'];
+            $age = $_POST['age'];
+            $contact = $_POST['contact'];
+            $address = $_POST['address'];
+            $occupation = $_POST['occupation'];
+            $status = $_POST['status'];
+            $bdate = $_POST['bdate'];
+
+            $spouse = $_POST['sp_lname']. " ". $_POST['sp_fname']. " ". $_POST['sp_mi'];
+            $sp_age = $_POST['sp_age'];
+            $sp_bdate = $_POST['sp_bdate'];
+            $sp_occupation = $_POST['sp_occupation'];
+            $children = $_POST['children'];
+            $income = $_POST['income'];
+
+            $id_resident = $_POST['id_resident'];
+            $timeapply = $_POST['timeapply'];
+            $dateapply = $_POST['dateapply'];
+            $addedby = $_POST['addedby'];
+
+
+            if(($_POST['$timeapply'] >= 1000) && ($_POST['$timeapply'] <= 2000)) {
+                $connection = $this->openConn();
+                $stmt = $connection->prepare("INSERT INTO tbl_familyplan (`id_resident`, 
+                `lname`, `fname`, `mi`, `age`, `contact`, `address`, `occupation`, `status`, `bdate`, 
+                `spouse`, `sp_age`, `sp_bdate`, `sp_occupation`, `children`, `income`, `timeapply`, `dateapply`, 
+                `addedby`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+
+                $stmt->execute([$id_resident, $lname, $fname, $mi, $age,
+                $contact, $address, $occupation, $status, $bdate, $spouse, $sp_age, $sp_bdate, $sp_occupation,
+                $children, $income, $timeapply, $dateapply,  $addedby]);
+
+                $message2 = "Application Applied, you will be receive our text message for further details";
+                echo "<script type='text/javascript'>alert('$message2');</script>";
+                header('refresh:0');
+            }
+
+            else {
+                $message2 = "Sorry, Barangay consultations are available from 10:00 AM to 8:00 PM only";
+                echo "<script type='text/javascript'>alert('$message2');</script>";
+                header('refresh:0');
+            }
+        }
+
+    }
+
+    public function view_familyplan(){
+        $connection = $this->openConn();
+        $stmt = $connection->prepare("SELECT * from tbl_familyplan");
+        $stmt->execute();
+        $view = $stmt->fetchAll();
+        return $view;
+    }
+
+    public function update_familyplan() {
+        if (isset($_POST['update_familyplan'])) {
+            $id_familyplan = $_GET['id_familyplan'];
+            $lname = $_POST['lname'];
+            $fname = $_POST['fname'];
+            $mi = $_POST['mi'];
+            $age = $_POST['age'];
+            $contact = $_POST['contact'];
+            $address = $_POST['address'];
+            $occupation = $_POST['occupation'];
+            $status = $_POST['status'];
+            $bdate = $_POST['bdate'];
+
+            $spouse = $_POST['sp_lname']. " ". $_POST['sp_fname']. " ". $_POST['sp_mi'];
+            $sp_age = $_POST['sp_age'];
+            $sp_bdate = $_POST['sp_bdate'];
+            $sp_occupation = $_POST['sp_occupation'];
+            $children = $_POST['children'];
+            $income = $_POST['income'];
+            $addedby = $_POST['addedby'];
+
+            $connection = $this->openConn();
+            $stmt = $connection->prepare("UPDATE tbl_tbdots SET lname = ?, fname = ?, mi = ?, 
+            age = ?, contact = ?, address = ?, occupation = ?, status = ?, bdate =?, spouse = ?,
+            sp_age = ?, sp_bdate = ?, sp_occupation = ?, children = ?, income = ? addedby = ? WHERE id_familyplan = ?");
+            $stmt->execute([ $lname, $fname, $mi, $age,  $contact, $address, $occupation, $status, $bdate,
+            $spouse, $sp_age, $sp_bdate, $sp_occupation, $children, $income, $addedby, $id_familyplan]);
+            
+            $message2 = "Family Plan Data Updated";
+            echo "<script type='text/javascript'>alert('$message2');</script>";
+             header("refresh: 0");
+        }
+        
+        else {
+            $message2 = "There was a problem in updating this data";
+            echo "<script type='text/javascript'>alert('$message2');</script>";
+            header("refresh: 0");
+        }
+    }
+
+    public function delete_familyplan(){
+        $id_familyplan = $_POST['id_familyplan'];
+
+        if(isset($_POST['delete_familyplan'])) {
+            $connection = $this->openConn();
+            $stmt = $connection->prepare("DELETE FROM tbl_familyplan where id_familyplan = ?");
+            $stmt->execute([$id_familyplan]);
+
+            header("Refresh:0");
+        }
     }
     
     //------------------------------------------ EXTRA FUNCTIONS ----------------------------------------------

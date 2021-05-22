@@ -129,7 +129,7 @@
                         <div class="card"> 
                             <div class="card-body text-center">
                                 <img src="../BarangaySystem/icons/ResidentHomepage/familyplan.png"> 
-                                <a href=""> <h4> Family Planning </h4> 
+                                <a href="services_familyplanning.php?id_resident=<?= $userdetails['id_resident'];?>"> <h4> Family Planning </h4> 
                             </a>
                             </div>
                         </div>
