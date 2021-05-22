@@ -53,7 +53,7 @@ class BMISClass {
                 //statement na mag ch check kung admin yung role
                 if($user['role'] == 'administrator') {
                     $this->set_userdata($user);
-                    header('Location: admin_dashboard.php');
+                    header('Location: admn_dashboard.php');
                     return (0);
                 }
 
