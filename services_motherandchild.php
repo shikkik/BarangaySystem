@@ -1,8 +1,23 @@
 <?php 
-    require('classes/main.class.php');
     require('classes/resident.class.php');
-    
     $userdetails = $bmis->get_userdata();
+    $id_resident = $_GET['id_resident'];
+    $resident = $residentbmis->get_single_resident($id_resident);
+
+    $dt = new DateTime("now", new DateTimeZone('Asia/Manila'));
+    $tm = new DateTime("now", new DateTimeZone('Asia/Manila'));
+    $cdate = $dt->format('Y/m/d');
+    $ctime = $tm->format('H:i');
+
+    echo "$cdate";
+
+    echo "<br>";
+   
+    echo "$ctime";
+
+    $bmis->create_motherchild();
+
+
 ?>
 
 <!DOCTYPE html>
@@ -161,16 +176,10 @@
                     <span class="caret"></span>
                 </button>
                 <ul class="dropdown-menu">
-                    <form method="post">
-                        <input type="hidden" value="<?= $userdetails['surname'];?>">  
-                        <input type="hidden" value="<?= $userdetails['mname'];?>">
-                        <li><button class="btn" href="resident_profile.php"> <i class="fas fa-user"></i> Personal Profile </button></li>
-                    </form>
-                        <button class="btn" onclick="logout();"> <i class="fas fa-sign-out-alt"> </i> Logout </button>
-                
+                    <a class="btn" href="resident_profile.php?id_resident=<?= $userdetails['id_resident'];?>"> <i class="fas fa-user" style="padding: 0.5em;"></i>Personal Profile  </a>
+                    <a class="btn" href="logout.php"> <i class="fas fa-sign-out-alt" style="padding: 0.5em;"></i> Logout  </a>
                 </ul>
             </div>
-
         </nav>
 
         <!-- Under Navbar -->
@@ -313,27 +322,27 @@
                         <!-- Modal Body -->
 
                         <div class="modal-body">
-                            <form action="/action_page.php" class="was-validated">
+                            <form method="post" class="was-validated">
                                 <div class="row modalrow"> 
 
                                     <div class="col">
                                         <div class="form-group">
                                             <label for="lname">Lastname:</label>
-                                            <input type="text" class="form-control" placeholder="Enter your Lastname" required>
+                                            <input name="lname" type="text" class="form-control" placeholder="Enter your Lastname" required>
                                             <div class="valid-feedback">Valid.</div>
                                             <div class="invalid-feedback">Please fill out this field.</div>
                                         </div>
 
                                         <div class="form-group">
                                             <label for="mname">Middlename:</label>
-                                            <input type="text" class="form-control" placeholder="Enter your Middlename" required>
+                                            <input name="mi" type="text" class="form-control" placeholder="Enter your Middlename" required>
                                             <div class="valid-feedback">Valid.</div>
                                             <div class="invalid-feedback">Please fill out this field.</div>  
                                         </div>
 
                                         <div class="form-group">            
                                             <label for="cno">Contact Number:</label>
-                                            <input type="text" maxlength="11" class="form-control" placeholder="Enter your Contact Numebr" pattern="[0-9]{11}" required>
+                                            <input name="contact" type="text" maxlength="11" class="form-control" placeholder="Enter your Contact Numebr" pattern="[0-9]{11}" required>
                                             <div class="valid-feedback">Valid.</div>
                                             <div class="invalid-feedback">Please fill out this field.</div>
                                         </div>
@@ -343,29 +352,32 @@
 
                                         <div class="form-group">
                                             <label for="fname">Firstname:</label>
-                                            <input type="text" class="form-control" placeholder="Enter your Firstname" required>
+                                            <input name="fname" type="text" class="form-control" placeholder="Enter your Firstname" required>
                                             <div class="valid-feedback">Valid.</div>
                                             <div class="invalid-feedback">Please fill out this field.</div>  
                                         </div>
 
                                         <div class="form-group">
                                             <label for="address">Address:</label>
-                                            <input type="text" class="form-control" placeholder="Enter your Address" required>
+                                            <input name="address" type="text" class="form-control" placeholder="Enter your Address" required>
                                             <div class="valid-feedback">Valid.</div>
                                             <div class="invalid-feedback">Please fill out this field.</div>
                                         </div>
                                         <div class="form-group">
                                             <label for="age" class="mtop">Age </label>
-                                            <input type="number" class="form-control" placeholder="Enter your Age" required>
+                                            <input name="age" type="number" class="form-control" placeholder="Enter your Age" required>
                                             <div class="valid-feedback">Valid.</div>
                                             <div class="invalid-feedback">Please fill out this field.</div>
                                         </div>
-                                    </div>
 
+                                        <input type="hidden" name="remarks">
+                                        <input type="hidden" name="dateapply" value="<?= $cdate?>">
+                                        <input type="hidden" name="timeapply" value="<?= $ctime?>">
+                                        <input name="addedby" type="hidden" value="<?= $userdetails['surname']?>, <?= $userdetails['firstname']?>">
+                                        <input name="id_resident" type="hidden" value="<?= $resident['id_resident']?>">
+                                    </div>
                                 </div>
-                            </form>
                             
-                            <!-- Modal Footer -->
                             
                             <div class="modal-footer">
                                 <div class="paa">
@@ -549,8 +561,6 @@
         
 
         <script src="../BarangaySystem/bootstrap/js/bootstrap.bundle.js" type="text/javascript"> </script>
-
-
 
     </body>
 </html>

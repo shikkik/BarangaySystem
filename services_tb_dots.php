@@ -153,16 +153,10 @@
                     <span class="caret"></span>
                 </button>
                 <ul class="dropdown-menu">
-                <form method="post">
-                    <input type="hidden" value="<?= $userdetails['surname'];?>">  
-                    <input type="hidden" value="<?= $userdetails['mname'];?>">
-                    <li><button class="btn" href="resident_profile.php"> <i class="fas fa-user"></i> Personal Profile </button></li>
-                </form>
-                    <button class="btn" onclick="logout();"> <i class="fas fa-sign-out-alt"> </i> Logout </button>
-                
+                    <a class="btn" href="resident_profile.php?id_resident=<?= $userdetails['id_resident'];?>"> <i class="fas fa-user" style="padding: 0.5em;"></i>Personal Profile  </a>
+                    <a class="btn" href="logout.php"> <i class="fas fa-sign-out-alt" style="padding: 0.5em;"></i> Logout  </a>
                 </ul>
             </div>
-
         </nav>
 
         <!-- Under Navbar -->
@@ -282,7 +276,6 @@
 
                                     <div class="col">
                                         <div class="form-group">
-                                            <input name="id_resident" type="hidden" value="<?= $resident['id_resident']?>">
                                             <label for="lname">Lastname:</label>
                                             <input name="lname" type="text" class="form-control" value="<?= $resident['lname']?>" required>
                                             <div class="valid-feedback">Valid.</div>
@@ -396,11 +389,18 @@
                                 <!-- Modal Footer -->
                             
                                 <div class="modal-footer">
+<<<<<<< HEAD
                                     <div class="paa">
                                         <input name="addedby" type="hidden" value="<?= $userdetails['surname']?>, <?= $userdetails['firstname']?>">
                                         <button type="button" class="btn btn-dark" data-dismiss="modal">Close</button>
                                         <button name="create_tbdots" type="submit" class="btn btn-primary">Save changes</button>
                                     </div>
+=======
+                                    <input name="addedby" type="hidden" value="<?= $userdetails['surname']?>, <?= $userdetails['firstname']?>">
+                                    <input name="id_resident" type="hidden" value="<?= $resident['id_resident']?>">
+                                    <button type="button" class="btn btn-dark" data-dismiss="modal">Close</button>
+                                    <button name="create_tbdots" type="submit" class="btn btn-primary">Save changes</button>
+>>>>>>> 6da0b601548c03047e06727452593f0fdfb42382
                                 </div>  
                             </form>
                         </div>

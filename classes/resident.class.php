@@ -197,7 +197,7 @@
         $connection = $this->openConn();
         $stmt = $connection->prepare("SELECT * FROM tbl_resident where id_resident = ?");
         $stmt->execute([$id_resident]);
-        $resident = $stmt->fetch(); 
+        $resident = $stmt->fetch();
         $total = $stmt->rowCount();
 
         if($total > 0 )  {
