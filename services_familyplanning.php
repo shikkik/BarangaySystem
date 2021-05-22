@@ -1,12 +1,8 @@
 <?php 
+    require('classes/main.class.php');
     require('classes/resident.class.php');
     
     $userdetails = $bmis->get_userdata();
-
-    $id_resident = $_GET['id_resident'];
-    $resident = $residentbmis->get_single_resident($id_resident);
-
-    $bmis->create_tbdots();
 ?>
 
 <!DOCTYPE html>
@@ -23,17 +19,8 @@
         <script src="https://kit.fontawesome.com/67a9b7069e.js" crossorigin="anonymous"></script>
     
         <style>
-            body{
-                background-color: #FBFCFC;
-            }
 
-            .container2{
-                margin-top: 5%;
-            }
-
-            .text1{
-                margin-top: 60px;
-            }
+            /* Modal */
 
             .applybutton
             {
@@ -46,9 +33,16 @@
                 letter-spacing: 3px;
             }
 
+            /* Under Navbar */
+
             .container1{
                 background-color: #AED6F1;
                 height: 400px;
+            }
+
+            .picture0{
+                height: 80px;
+                width: 80px;
             }
             
             .picture1{
@@ -61,11 +55,117 @@
                 width: 100%;
             }
 
+            /* 1st Content */
+
+            .container2{
+                margin-top: 10px;
+            }
+
+            .picture3{
+                height: 900px;
+                width: 100%;
+                border-radius: 20px;
+            }
+
+            .picture4{
+                height: 440px;
+                width: 100%;
+                border-radius: 20px;
+            }
+
+            .picture5{
+                height: 440px;
+                width: 100%;
+                border-radius: 20px;
+                margin-top: 20px;
+            }
+
+            .text1{
+                margin-top: 30px;
+            }
+
+            /* 2nd Content */
+
+            .container3{
+                margin-top: 50px;
+            }
+
+            .picture6{
+                width: 100%;
+                height: 400px;
+                border-radius: 20px;
+            }
+
+            .picture7{
+                width: 100%;
+                height: 400px;
+                border-radius: 20px;
+                border: solid black;
+            }
+
+            * {box-sizing: border-box;}
+
+            .overlay {
+            position: absolute; 
+            bottom: 160px; 
+            background: rgb(0, 0, 0);
+            background: rgba(0, 0, 0, 0.5); /* Black see-through */
+            color: #f1f1f1; 
+            width: 94%;
+            transition: .5s ease;
+            opacity:0;
+            color: white;
+            font-size: 20px;
+            padding: 20px;
+            text-align: center;
+            }
+
+            .col7:hover .overlay {
+            opacity: 1;
+            }
+
+            .col6:hover .overlay {
+            opacity: 1;
+            }
+
+            .overlay1 {
+            position: absolute; 
+            bottom: 160px; 
+            background: rgb(0, 0, 0);
+            background: rgba(0, 0, 0, 0.5); /* Black see-through */
+            color: #f1f1f1; 
+            width: 95%;
+            transition: .5s ease;
+            opacity:0;
+            color: white;
+            font-size: 20px;
+            padding: 20px;
+            text-align: center;
+            }
+
+            .col5:hover .overlay {
+            opacity: 1;
+            }
+
+            .col5:hover .overlay1 {
+            opacity: 1;
+            bottom: 640px;
+            }
+
+            .col3:hover .overlay1 {
+            opacity: 1;
+            bottom: 400px;
+            }
+
+            /* Modal Footer */
+
             .paa{
                 margin-top: 10px;
                 position: relative;
                 left: -28%;
             }
+
+            /* Footer Style */
 
             a{
                 color:white;
@@ -138,27 +238,28 @@
             }
             }
 
+
         </style>
     </head>
 
     <body>
 
-        <!-- eto yung navbar -->
+        <!-- Eto yung navbar -->
 
         <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top">
-            <a class="navbar-brand" href="resident_homepage.php">Barangay Sorsogon</a>
+            <a class="navbar-brand" href="#">Barangay Sorsogon</a>
 
             <div class="dropdown ml-auto">
                 <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown"><?= $userdetails['surname'];?>, <?= $userdetails['firstname'];?>
                     <span class="caret"></span>
                 </button>
                 <ul class="dropdown-menu">
-                <form method="post">
-                    <input type="hidden" value="<?= $userdetails['surname'];?>">  
-                    <input type="hidden" value="<?= $userdetails['mname'];?>">
-                    <li><button class="btn" href="resident_profile.php"> <i class="fas fa-user"></i> Personal Profile </button></li>
-                </form>
-                    <button class="btn" onclick="logout();"> <i class="fas fa-sign-out-alt"> </i> Logout </button>
+                    <form method="post">
+                        <input type="hidden" value="<?= $userdetails['surname'];?>">  
+                        <input type="hidden" value="<?= $userdetails['mname'];?>">
+                        <li><button class="btn" href="resident_profile.php"> <i class="fas fa-user"></i> Personal Profile </button></li>
+                    </form>
+                        <button class="btn" onclick="logout();"> <i class="fas fa-sign-out-alt"> </i> Logout </button>
                 
                 </ul>
             </div>
@@ -170,83 +271,89 @@
         <div class="container-fluid container1">
             <div class="row text-center">
                 <div class="col">
-                    <img class="picture1" src="../BarangaySystem/icons/TB Dots/tbdots1.png">
+                    <img class="picture1" src="../BarangaySystem/icons/FamilyPlanning/family4.png">
                 </div>
 
                 <div class="col text1">
-                    <h1>Tuberculosis</h1>
+                    <img class="picture0" src="../BarangaySystem/icons/FamilyPlanning/family0.png">
+                    <h2>Family Planning</h2>
                     <hr style="background-color:black;">
-                    <h6>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cumque vitae doloribus 
-                        natus ex laborum eligendi ut pariatur, odio rem corrupti asperiores delectus optio.
+                    <h6>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Delectus ut molestiae 
+                        officiis atque distinctio incidunt doloremque!
                     </h6>
                 </div>
 
                 <div class="col">
-                    <img class="picture2" src="../BarangaySystem/icons/TB Dots/tbdots0.png">
+                    <img class="picture2" src="../BarangaySystem/icons/FamilyPlanning/family5.png">
                 </div>
             </div>
         </div>
 
+        <br>
+        <br>
+        <br>
+
+        <!-- 1st Info -->
 
         <div class="container container2">
 
-            <div class="row title-spacing">
-                <div class="col"> 
-                    <h2 class="text-center"> Mga 
-                        <span style="color: red;"> sintomas </span> sakit na 
-                        <span style="color: red;"> Tuberculosis </span>
-                    </h2>
-                </div> 
-            </div>
+            <h1 class="text-center">Things you need to know</h1>
+            
+            <hr style="background-color:black;">
 
             <br>
 
-            <div class="card">
-                <div class="card-body">
-                    <div class="row justify-content-center text-center">
-
-                        <div class="col-sm-3"> 
-                                <img style="width: 250px; height: 250px;" src="../BarangaySystem/icons/TB Dots/tbdots2.png">
-                                <h3>Ubo</h3>
-                        </div>
-
-                        <div class="col-sm-3"> 
-                                <img style="width: 250px; height: 250px;" src="../BarangaySystem/icons/TB Dots/tbdots3.png">
-                                <h3>Pagbaba ng Timbang</h3>
-                        </div>
-
-                        <div class="col-sm-3"> 
-                                <img style="width: 250px; height: 250px;" src="../BarangaySystem/icons/TB Dots/tbdots4.png">
-                                <h3>Lagnat</h3>
-                        </div>
-
-                        <div class="col-sm-3"> 
-                                <img style="width: 250px; height: 250px;" src="../BarangaySystem/icons/TB Dots/tbdots5.png">
-                                <h3>Labis na Pagpapawis</h3>
-                        </div>  
-                        
-                    </div>
+            <div class="row">
+                <div class="col col3">
+                    <img class="picture3" src="../BarangaySystem/icons/FamilyPlanning/family1.jpg">
+                    <div class="overlay1">Family PLanning Tips</div>
+                </div>
+                <div class="col col5">
+                        <img class="picture4" src="../BarangaySystem/icons/FamilyPlanning/family2.jpg">
+                        <div class="overlay1">Family Planning and Counseling</div>
+                        <img class="picture5" src="../BarangaySystem/icons/FamilyPlanning/family3.jpg">
+                        <div class="overlay">Safe and Effective</div>
                 </div>
             </div>
-
-            <br>
-
-            <div class="row text-center">
-                <div class="col">
-                    <h4> <span style="color: red;"> Alinman </span> sa mga sintomas na tumagal ng 
-                         <span style="color: red;"> 2 linggo o higit pa </span> 
-                    </h4>
-                    <h4>Makipag ugnayan na at kumonsulta!</h4>
-                </div>
-            </div>
-
         </div>
 
-        <br>
-        <br>
-        <br>
+        <!-- 2nd Info -->
 
-            <!-- Button trigger modal -->
+        <div class="container container3">
+
+            <br>
+
+            <div class="row">
+                <div class="col col6">
+
+                    <h1 class="text-center">Contraceptives</h1>
+                    <hr style="background-color:black;">
+
+                    <img class="picture6" src="../BarangaySystem/icons/FamilyPlanning/family6.png">
+                    <div class="overlay">Contraceptives Methods</div>
+                </div>
+
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+                <div class="col col7">
+
+                    <h1 class="text-center">Fertility Calendar Guide</h1>
+                    <hr style="background-color:black;">
+
+                    <img class="picture7" src="../BarangaySystem/icons/FamilyPlanning/family7.jpg">
+                    <div class="overlay">Calendar Guide</div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Button trigger modal -->
+
+        <br>
+        <br>
+        <br>
 
         <div class="container">
 
@@ -254,9 +361,8 @@
             
             <hr style="background-color:black;">
 
-
             <div class="col">   
-                <button type="button" class="btn btn-primary applybutton" data-toggle="modal" data-target="#exampleModalCenter">
+                <button type="button" class="btn btn-primary applybutton button" data-toggle="modal" data-target="#exampleModalCenter">
                     Apply
                 </button>
             </div>
@@ -277,48 +383,47 @@
                         <!-- Modal Body -->
 
                         <div class="modal-body">
-                            <form method="post" class="was-validated">
+                            <form action="/action_page.php" class="was-validated">
                                 <div class="row"> 
 
                                     <div class="col">
                                         <div class="form-group">
-                                            <input name="id_resident" type="hidden" value="<?= $resident['id_resident']?>">
                                             <label for="lname">Lastname:</label>
-                                            <input name="lname" type="text" class="form-control" value="<?= $resident['lname']?>" required>
+                                            <input type="text" class="form-control" placeholder="Enter your Lastname" required>
                                             <div class="valid-feedback">Valid.</div>
                                             <div class="invalid-feedback">Please fill out this field.</div>
                                         </div>
 
                                         <div class="form-group">
                                             <label for="mname">Middlename:</label>
-                                            <input name="mi" type="text" class="form-control" value="<?= $resident['mi']?>" required>
+                                            <input type="text" class="form-control" placeholder="Enter your Middlename" required>
                                             <div class="valid-feedback">Valid.</div>
                                             <div class="invalid-feedback">Please fill out this field.</div>  
                                         </div>
 
                                         <div class="form-group">            
                                             <label for="cno">Contact Number:</label>
-                                            <input name="contact" type="tel" maxlength="11" class="form-control" value="<?= $resident['contact']?>" pattern="[0-9]{11}" required>
+                                            <input type="text" maxlength="11" class="form-control" placeholder="Enter your Contact Numebr" pattern="[0-9]{11}" required>
                                             <div class="valid-feedback">Valid.</div>
                                             <div class="invalid-feedback">Please fill out this field.</div>
                                         </div>
                                     </div>
 
                                     <div class="col">
+
                                         <div class="form-group">
                                             <label for="fname">Firstname:</label>
-                                            <input name="fname" type="text" class="form-control" value="<?= $resident['fname']?>" required>
+                                            <input type="text" class="form-control" placeholder="Enter your Firstname" required>
                                             <div class="valid-feedback">Valid.</div>
                                             <div class="invalid-feedback">Please fill out this field.</div>  
                                         </div>
 
                                         <div class="form-group">
                                             <label for="address">Address:</label>
-                                            <input name="address" type="text" class="form-control" value="<?= $resident['address']?>" required>
+                                            <input type="text" class="form-control" placeholder="Enter your Address" required>
                                             <div class="valid-feedback">Valid.</div>
                                             <div class="invalid-feedback">Please fill out this field.</div>
                                         </div>
-
                                         <div class="form-group">
                                             <label for="occupation">Occupation:</label>
                                             <input name="occupation" type="text" class="form-control" placeholder="Enter your Occupation" required>
@@ -331,25 +436,125 @@
 
                                 <div class="row">
 
-                                    <div class="col">
+                                    <div class="col-sm-4">
                                         <label for="Age" class="mtop">Age </label>
-                                        <input name="age" type="number" class="form-control" placeholder="Enter your Age" value="<?= $resident['age']?>" required>
+                                        <input name="age" type="number" placeholder="Enter your Age" class="form-control" value="<?= $resident['age']?>" required>
+                                        <div class="valid-feedback">Valid.</div>
+                                        <div class="invalid-feedback">Please fill out this field.</div>
+                                    </div>
+
+                                    <div class="col-sm-4">
+                                        <label for="status">Status:</label>
+                                        <select class="form-control select" name="status" id="status" placeholder="Enter your Status" required="required">
+                                            <option value="">Choose your Status</option>
+                                            <option value="status1">Single</option>
+                                            <option value="status2">In a relationship</option>
+                                            <option value="status3">Engaged</option>
+                                            <option value="status4">Married</option>
+                                            <option value="status5">Widowed</option>
+                                            <option value="status6">Divorced</option>
+                                        </select>
+                                        <div class="valid-feedback">Valid.</div>
+                                        <div class="invalid-feedback">Please fill out this field.</div>
+                                    </div>
+
+                                    <div class="col-sm-4">
+                                        <div class="form-group">
+                                            <label for="Date"class="mtop">Birthday </label>
+                                            <input name="bdate" type="date" class="form-control" required>
+                                            <div class="valid-feedback">Valid.</div>
+                                            <div class="invalid-feedback">Please fill out this field.</div>
+                                        </div>
+                                    </div>  
+
+                                </div> 
+
+                                <br>
+
+                                <h6>Spouse Info</h6>
+
+                                <hr>
+
+                                <div class="row"> 
+
+                                    <div class="col">
+                                        <div class="form-group">
+                                            <label for="lname">Lastname:</label>
+                                            <input type="text" class="form-control" placeholder="Enter your Lastname" required>
+                                            <div class="valid-feedback">Valid.</div>
+                                            <div class="invalid-feedback">Please fill out this field.</div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="mname">Middlename:</label>
+                                            <input type="text" class="form-control" placeholder="Enter your Middlename" required>
+                                            <div class="valid-feedback">Valid.</div>
+                                            <div class="invalid-feedback">Please fill out this field.</div>  
+                                        </div>
+                                    </div>
+
+                                    <div class="col">
+                                        <div class="form-group">
+                                            <label for="fname">Firstname:</label>
+                                            <input type="text" class="form-control" placeholder="Enter your Firstname" required>
+                                            <div class="valid-feedback">Valid.</div>
+                                            <div class="invalid-feedback">Please fill out this field.</div>  
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="occupation">Occupation:</label>
+                                            <input name="occupation" type="text" class="form-control" placeholder="Enter your Occupation" required>
+                                            <div class="valid-feedback">Valid.</div>
+                                            <div class="invalid-feedback">Please fill out this field.</div>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                                <div class="row"> 
+
+                                    <div class="col">
+                                        <label for="children">Children:</label>
+                                            <select class="form-control select" name="children" id="children" required="required">
+                                                <option value="">How many children </option>
+                                                <option value="children1">1</option>
+                                                <option value="children2">2</option>
+                                                <option value="children3">3</option>
+                                                <option value="children4">4</option>
+                                                <option value="children5">5</option>
+                                                <option value="children6">6 or more</option>
+                                            </select>
                                         <div class="valid-feedback">Valid.</div>
                                         <div class="invalid-feedback">Please fill out this field.</div>
                                     </div>
 
                                     <div class="col">
-                                            <label for="Sex"class="mtop">Sex</label>
-                                        <div class="form-check">
-                                            <label class="form-check-label">
-                                            <input name="sex" type="radio" class="form-check-input" name="optradio">Male
-                                            </label>
-                                        </div>
-                                        <div class="form-check">
-                                            <label class="form-check-label">
-                                            <input name="sex" type="radio" class="form-check-input" name="optradio">Female
-                                            </label>
-                                        </div>    
+                                        <label for="income">Income:</label>
+                                            <select class="form-control select" name="income" id="income" required="required">
+                                                <option value="">Enter your Income </option>
+                                                <option value="income1">5,000 +</option>
+                                                <option value="income2">10,000 +</option>
+                                                <option value="income3">20,000 +</option>
+                                                <option value="income4">30,000 +</option>
+                                                <option value="income5">40,000 +</option>
+                                                <option value="income6">50,000 +</option>
+                                                <option value="income7">60,000 or more </option>
+                                            </select>
+                                        <div class="valid-feedback">Valid.</div>
+                                        <div class="invalid-feedback">Please fill out this field.</div>
+                                    </div>
+
+                                </div>
+
+                                <br>
+
+                                <div class="row">
+
+                                    <div class="col">
+                                        <label for="Age" class="mtop">Age </label>
+                                        <input name="age" type="number" class="form-control" placeholder="Enter your Age" value="<?= $resident['age']?>" required>
+                                        <div class="valid-feedback">Valid.</div>
+                                        <div class="invalid-feedback">Please fill out this field.</div>
                                     </div>
 
                                     <div class="col">
@@ -360,49 +565,19 @@
                                             <div class="invalid-feedback">Please fill out this field.</div>
                                         </div>
                                     </div>  
+
                                 </div> 
 
-                                <div class="row">
-
-                                    <div class="col">
-                                        <div class="form-group">
-                                            <label for="height">Height:</label>
-                                            <input name="height" type="text" class="form-control" placeholder="Enter Height" required>
-                                            <div class="valid-feedback">Valid.</div>
-                                            <div class="invalid-feedback">Please fill out this field.</div>
-                                        </div>
-                                    </div>
-
-                                    <div class="col">
-                                        <div class="form-group">
-                                            <label for="weight">Weight:</label>
-                                            <input name="weight" type="text" class="form-control" placeholder="Enter Weight" required>
-                                            <div class="valid-feedback">Valid.</div>
-                                            <div class="invalid-feedback">Please fill out this field.</div>
-                                        </div>   
-                                    </div>
-
-                                    <div class="col">
-                                        <div class="form-group">
-                                            <label for="phno">Philhealth No:</label>
-                                            <input name="philhealth" type="text" class="form-control" placeholder="Enter Philhealth No." required>
-                                            <div class="valid-feedback">Valid.</div>
-                                            <div class="invalid-feedback">Please fill out this field.</div>
-                                        </div>
-                                    </div>  
-                                    
-                                </div> 
-
-                                <!-- Modal Footer -->
-                            
-                                <div class="modal-footer">
-                                    <div class="paa">
-                                        <input name="addedby" type="hidden" value="<?= $userdetails['surname']?>, <?= $userdetails['firstname']?>">
-                                        <button type="button" class="btn btn-dark" data-dismiss="modal">Close</button>
-                                        <button name="create_tbdots" type="submit" class="btn btn-primary">Save changes</button>
-                                    </div>
-                                </div>  
                             </form>
+                            
+                            <!-- Modal Footer -->
+                            
+                            <div class="modal-footer">
+                                <div class="paa">
+                                    <button type="button" class="btn btn-dark" data-dismiss="modal">Close</button>
+                                    <button type="button" class="btn btn-primary">Save changes</button>
+                                </div>
+                            </div>  
                         </div>
                     </div>
                 </div>
@@ -576,9 +751,11 @@
             </div>
 
         </footer>
+        
 
         <script src="../BarangaySystem/bootstrap/js/bootstrap.bundle.js" type="text/javascript"> </script>
-  
-        
+
+
+
     </body>
 </html>

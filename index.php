@@ -59,12 +59,26 @@
                         <div class="card-body"> 
                             <form method="post"> 
                                 <label> Email </label>
+                                
                                 <br>
+
                                 <input type="email" class="form-control" name="email" placeholder="E-mail" required> 
+                                
                                 <br>
+
                                 <label> Password </label>
+                                
                                 <br>
-                                <input type="password" class="form-control" name="password" placeholder="Password" required>
+
+                                <input type="password" class="form-control" id="myInput" name="password" placeholder="Password" required>
+                                
+                                <br>
+
+                                <div class="custom-control custom-switch">
+                                    <input type="checkbox" onclick="myFunction()" class="custom-control-input" id="switch1">
+                                    <label class="custom-control-label" for="switch1">Show Password</label>
+                                </div>
+
                                 <br>
                                 
                                 <button class="btn btn-primary login-button" type="submit" name="login"> Log-in </button>
@@ -86,5 +100,17 @@
         </div>
 
         </section>
+
+        <script>
+            function myFunction() {
+                var x = document.getElementById("myInput");
+                    if (x.type === "password") {
+                        x.type = "text";
+                    } else {
+                        x.type = "password";
+                }
+            }
+        </script>
+
     </body>
 </html>

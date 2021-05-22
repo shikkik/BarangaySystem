@@ -59,16 +59,8 @@
             background: #555; 
             }
 
-            .card5 {
-                width: 195px;
-                height: 210px;
-                overflow: auto;
-                margin: auto;
-                color: white;
-            }
-
             .card4 {
-                width: 195px;
+                width: 250px;
                 height: 210px;
                 overflow: hidden;
                 margin: auto;
@@ -76,7 +68,7 @@
             }
 
             .card3 {
-                width: 195px;
+                width: 250px;
                 height: 210px;
                 overflow: hidden;
                 margin: auto;
@@ -84,7 +76,7 @@
             }
 
             .card2 {
-                width: 195px;
+                width: 250px;
                 height: 210px;
                 overflow: auto;
                 margin: auto;
@@ -92,7 +84,7 @@
             }
 
             .card1 {
-                width: 195px;
+                width: 250px;
                 height: 210px;
                 overflow: auto;
                 margin: auto;
@@ -102,73 +94,73 @@
             a{
                 color:white;
                 }
-                .shfooter .collapse {
+            .shfooter .collapse {
                 display: inherit;
-                }
+            }
                 @media (max-width:767px) {
-                .shfooter ul {
+            .shfooter ul {
                     margin-bottom: 0;
-                }
+            }
 
-                .shfooter .collapse {
+            .shfooter .collapse {
                     display: none;
-                }
+            }
 
-                .shfooter .collapse.show {
+            .shfooter .collapse.show {
                     display: block;
-                }
+            }
 
-                .shfooter .title .fa-angle-up,
-                .shfooter .title[aria-expanded=true] .fa-angle-down {
+            .shfooter .title .fa-angle-up,
+            .shfooter .title[aria-expanded=true] .fa-angle-down {
                     display: none;
-                }
+            }
 
-                .shfooter .title[aria-expanded=true] .fa-angle-up {
+            .shfooter .title[aria-expanded=true] .fa-angle-up {
                     display: block;
-                }
+            }
 
-                .shfooter .navbar-toggler {
+            .shfooter .navbar-toggler {
                     display: inline-block;
                     padding: 0;
-                }
+            }
 
-                }
+            }
 
-                .resize {
+            .resize {
                 text-align: center;
-                }
-                .resize {
+            }
+            .resize {
                 margin-top: 3rem;
                 font-size: 1.25rem;
-                }
-                /*RESIZESCREEN ANIMATION*/
-                .fa-angle-double-right {
+            }
+            /*RESIZESCREEN ANIMATION*/
+            .fa-angle-double-right {
                 animation: rightanime 1s linear infinite;
-                }
+            }
 
-                .fa-angle-double-left {
+            .fa-angle-double-left {
                 animation: leftanime 1s linear infinite;
-                }
-                @keyframes rightanime {
+            }
+            @keyframes rightanime {
                 50% {
                     transform: translateX(10px);
                     opacity: 0.5;
-                }
+            }
                 100% {
                     transform: translateX(10px);
                     opacity: 0;
-                }
-                }
-                @keyframes leftanime {
+            }
+            }
+            @keyframes leftanime {
                 50% {
                     transform: translateX(-10px);
                     opacity: 0.5;
-                }
+            }
                 100% {
                     transform: translateX(-10px);
                     opacity: 0;
-                }
-                }
+            }
+            }
 
         </style>
   </head>
@@ -199,10 +191,10 @@
             <div class="row"> 
                 <div class="col"> 
                     <div class="header">
-                        <h1 class="text1">Certificate Of Residency </h1>
-                        <h5>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Temporibus animi  
-                        <br> voluptatum hic, mollitia, dignissimos itaque placeat illum vero id officia adipisci 
-                        <br> modi ut, laboriosam optio omnis eligendi totam reiciendis labore! </h5>
+                        <h1 class="text1">Certificate of Indigency</h1>
+                        <h5> A Certificate of Indigency or a Certificate of Low Income is a document 
+                        <br> that are sometimes required by the Philippine government or a private 
+                        <br> institution as proof of an individual's financial situation.</h5>
                     </div>
 
                     <br>
@@ -234,24 +226,47 @@
 
             <div class="row">
                 <div class="col">
-                    <i class="fas fa-id-card fa-7x"></i>
-
-                    <br>
-                    <br>
-
-                    <h3>Step 1: Prepare</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. 
-                    <br> Inventore tenetur fugiat repudiandae sit minus</p>
-                </div>
-                <div class="col">
                     <i class="fas fa-laptop fa-7x"></i>
 
                     <br>
                     <br>
 
-                    <h3>Step 2: Apply</h3>
+                    <h3>Step 1: Fill-Up</h3>
                     <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. 
-                    <br> Inventore tenetur fugiat repudiandae sit minus</p>
+                    Inventore tenetur fugiat repudiandae sit minus</p>
+                </div>
+
+                <div class="col">
+                    <i class="fas fa-user-check fa-7x"></i>
+
+                    <br>
+                    <br>
+
+                    <h3>Step 2: Assessment</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. 
+                    Inventore tenetur fugiat repudiandae sit minus</p>
+                </div>
+
+                <div class="col">
+                    <i class="fas fa-thumbs-up fa-7x"></i>
+
+                    <br>
+                    <br>
+
+                    <h3>Step 3: Approval</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. 
+                    Inventore tenetur fugiat repudiandae sit minus</p>
+                </div>
+
+                <div class="col">
+                    <i class="fas fa-file fa-7x"></i>
+
+                    <br>
+                    <br>
+
+                    <h3>Step 4: Release</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. 
+                    Inventore tenetur fugiat repudiandae sit minus</p>
                 </div>
             </div>
 
@@ -272,13 +287,13 @@
                 <div class="col">
                     <div class="card bg-primary card1">
                         <div class="card-header">
-                            <h5> Eligibility <br><br> <i class="fas fa-user-check fa-2x"></i>  </h5>
+                            <h5> Client Group <br><br> <i class="fas fa-user-check fa-2x"></i>  </h5>
                         </div>
                         <div class="card-body">
                             <ul style="text-align: left; font-size: 16px;">
                                 <p class="card-text">
-                                    <li> A Philippines Resident. </li>
-                                    <li> Have been living for six months or more in a barangay. </li>
+                                    <li> Indigent Individuals </li>
+                                    <li> Families in the Community. </li>
                                 </p>
                             </ul>
                         </div>
@@ -321,25 +336,6 @@
                             <ul style="text-align: justify;">
                                 <p class="card-text">
                                     <li> 3-4 Days </li>
-                                </p>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card bg-primary card5">
-                        <div class="card-header">
-                            <h6> Need for the Document<br><br> <i class="fas fa-file fa-2x"></i>  </h6>
-                        </div>
-                        <div class="card-body">
-                            <ul style="text-align: left; font-size: 16px;">
-                                <p class="card-text">
-                                    <li> Job/Employment </li>
-                                    <li> Open a Bank Account </li>
-                                    <li> Business Establishment </li>
-                                    <li> Financial Transaction such as lending, loan or financing. </li>
-                                    <li> Certify that you are living or residing in a certain barangay </li>
-                                    <li> Other important transactions. </li>
                                 </p>
                             </ul>
                         </div>
@@ -402,8 +398,8 @@
                                 <div class="row"> 
                                     <div class="col"> 
                                         <div class="form-group">
-                                            <label class="mtop"> Address: </label>
-                                            <input type="text" class="form-control" name="address" placeholder="Enter your Address" required>
+                                            <label class="mtop"> Purpose: </label>
+                                            <input type="text" class="form-control" name="purpose" placeholder="Enter your Purpose" required>
                                             <div class="valid-feedback">Valid.</div>
                                             <div class="invalid-feedback">Please fill out this field.</div>
                                         </div>

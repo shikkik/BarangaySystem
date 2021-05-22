@@ -25,47 +25,18 @@
                 background-color: #EBF5FB;
             }
 
-            .picture1{
-                height: 550px;
-                width: 880px;
-                margin-top: 10px;
-                margin-left: 50px;
-                border-radius: 20px;
-            }
-
-            .container1{
-                margin-top: 30px;
-            }
-
             .text1{
-                margin-top: 8%;
-                font-family: Arial, Helvetica, sans-serif;
-                text-align: left;
-            }
-
-            h1{
-                font-size: 65px;
-                color: black;
-                margin-top: 8%;
-                font-family: Arial, Helvetica, sans-serif;
-                text-align: left;
-                line-height: 23px;
-                margin-left: 10px;
-            }
-
-            p{
-                color: black;
-                line-height: 22px;
-                margin-left: 10px;
+                margin-top: 60px;
             }
 
             .applybutton{
                 width: 100% !important;
                 height: 50px !important;
-                position: relative;
-                bottom: -30px;
                 border-radius: 20px;
-                margin-top: 30px;
+                margin-top: 5%;
+                margin-bottom: 8%;
+                font-size: 25px;
+                letter-spacing: 3px;
             }
 
             .besidetable{
@@ -76,6 +47,99 @@
 
             .righttable{
                 border: 1px solid black;
+            }
+
+            .paa{
+                margin-top: 10px;
+                position: relative;
+                left: -28%;
+            }
+
+            .container1{
+                background-color: #AED6F1;
+                height: 400px;
+            }
+            
+            .picture1{
+                height: 400px;
+                width: 100%;
+            }
+
+            .picture2{
+                height: 380px;
+                width: 100%;
+                margin-top: 5px;
+            }
+
+            a{
+                color:white;
+                }
+            .shfooter .collapse {
+                display: inherit;
+            }
+                @media (max-width:767px) {
+            .shfooter ul {
+                    margin-bottom: 0;
+            }
+
+            .shfooter .collapse {
+                    display: none;
+            }
+
+            .shfooter .collapse.show {
+                    display: block;
+            }
+
+            .shfooter .title .fa-angle-up,
+            .shfooter .title[aria-expanded=true] .fa-angle-down {
+                    display: none;
+            }
+
+            .shfooter .title[aria-expanded=true] .fa-angle-up {
+                    display: block;
+            }
+
+            .shfooter .navbar-toggler {
+                    display: inline-block;
+                    padding: 0;
+            }
+
+            }
+
+            .resize {
+                text-align: center;
+            }
+            .resize {
+                margin-top: 3rem;
+                font-size: 1.25rem;
+            }
+            /*RESIZESCREEN ANIMATION*/
+            .fa-angle-double-right {
+                animation: rightanime 1s linear infinite;
+            }
+
+            .fa-angle-double-left {
+                animation: leftanime 1s linear infinite;
+            }
+            @keyframes rightanime {
+                50% {
+                    transform: translateX(10px);
+                    opacity: 0.5;
+            }
+                100% {
+                    transform: translateX(10px);
+                    opacity: 0;
+            }
+            }
+            @keyframes leftanime {
+                50% {
+                    transform: translateX(-10px);
+                    opacity: 0.5;
+            }
+                100% {
+                    transform: translateX(-10px);
+                    opacity: 0;
+            }
             }
 
         </style>
@@ -108,18 +172,21 @@
         <!-- Under Navbar -->
 
         <div class="container-fluid container1">
-            <div class="row">
-                <div class="col-sm-4 text1">
-                    <h1>VACCINATION</h1>
-                    <h1>PROGRAM</h1>
-
-                    <br>
-
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum sunt quam consequuntur qui debitis nesciunt a odio. Debitis mollitia quia labore eius ut. A, nihil officiis doloremque id assumenda amet! 
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam, earum nemo, error excepturi praesentium vel ipsa neque suscipit, minima saepe voluptas libero. Deserunt eos doloremque, vitae illo quae in voluptatem.</p>
+            <div class="row text-center">
+                <div class="col">
+                    <img class="picture1" src="../BarangaySystem/icons/Vaccination/vaccination3.png">
                 </div>
-                <div class="col-sm-8">
-                    <img class="picture1" src="../BarangaySystem/icons/Vaccination/vaccination1.jpg">
+
+                <div class="col text1">
+                    <h1>Vaccination</h1>
+                    <hr style="background-color:black;">
+                    <h6>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cumque vitae doloribus 
+                        natus ex laborum eligendi ut pariatur, odio rem corrupti asperiores delectus optio.
+                    </h6>
+                </div>
+
+                <div class="col">
+                    <img class="picture2" src="../BarangaySystem/icons/Vaccination/vaccination2.png">
                 </div>
             </div>
         </div>
@@ -280,9 +347,18 @@
             </div>
         </div>
 
+        <br>
+        <br>
+        <br>
+
         <!-- Button trigger modal -->
 
         <div class="container">
+
+            <h1 class="text-center">Registration</h1>
+            
+            <hr style="background-color:black;">
+
             <div class="col">   
                 <button type="button" class="btn btn-primary applybutton" data-toggle="modal" data-target="#exampleModalCenter">
                     Apply
@@ -450,14 +526,184 @@
                             <!-- Modal Footer -->
                             
                             <div class="modal-footer">
-                                <button type="button" class="btn btn-dark" data-dismiss="modal">Close</button>
-                                <button type="button" class="btn btn-primary">Save changes</button>
+                                <div class="paa">
+                                    <button type="button" class="btn btn-dark" data-dismiss="modal">Close</button>
+                                    <button type="button" class="btn btn-primary">Save changes</button>
+                                </div>
                             </div>  
                         </div>
                     </div>
                 </div>
             </div>  
         </div>
+
+        <!-- Footer -->
+
+        <footer id="footer" class="bg-primary text-white d-flex-column text-center">
+            <hr class="mt-0">
+
+            <div class="text-center">
+                <h1>Services</h1>
+                <ul class="list-unstyled list-inline">
+
+                &nbsp;
+
+                <li class="list-inline-item">
+                    <a href="#!" class="sbtn btn-large mx-1" title="HealthCare">
+                    <i class="fas fa-first-aid fa-2x"></i>
+                    </a>
+                </li>
+
+                &nbsp;
+
+                <li class="list-inline-item">
+                    <a href="#!" class="sbtn btn-large mx-1" title="Documents">
+                    <i class="fas fa-file fa-2x"></i>
+                    </a>
+                </li>
+
+                &nbsp;
+
+                <li class="list-inline-item">
+                    <a href="#!" class="sbtn btn-large mx-1" title="Documents">
+                    <i class="fas fa-user-friends fa-2x"></i>
+                    </a>
+                </li>
+
+                &nbsp;
+
+                <li class="list-inline-item">
+                    <a href="#!" class="sbtn btn-large mx-1" title="Blotter">
+                    <i class="fas fa-user-shield fa-2x"></i>
+                    </a>
+                </li>
+
+                &nbsp;
+
+                <li class="list-inline-item">
+                    <a href="#!" class="sbtn btn-large mx-1" title="Inquiries">
+                    <i class="fas fa-question fa-2x"></i>
+                    </a>
+                </li>
+                </ul>
+            </div>
+
+            <hr class="mb-0">
+
+            <!--Footer Links-->
+
+            <div class="container text-left text-md-center">
+                <div class="row">
+
+                    <!--First column-->
+
+                    <div class="col-md-3 mx-auto shfooter">
+                        <h5 class="my-2 font-weight-bold d-none d-md-block">HealthCare</h5>
+                        <div class="d-md-none title" data-target="#HealthCare" data-toggle="collapse">
+                            <div class="mt-3 font-weight-bold">HealthCare
+                                <div class="float-right navbar-toggler">
+                                    <i class="fas fa-angle-down"></i>
+                                    <i class="fas fa-angle-up"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <ul class="list-unstyled collapse" id="HealthCare">
+                            <li><a href="#">Animal Registry & Welfare</a></li>
+                            <li><a href="#">TB Dots Consultation</a></li>
+                            <li><a href="#">Vaccination Programs</a></li>
+                            <li><a href="#">Mother & Child Check-Up</a></li>
+                        </ul>
+                    </div>
+
+                    <!--/.First column-->
+
+                    <hr class="clearfix w-100 d-md-none mb-0">
+
+                    <!--Second column-->
+
+                    <div class="col-md-3 mx-auto shfooter">
+                        <h5 class="my-2 font-weight-bold d-none d-md-block">Documentation</h5>
+                        <div class="d-md-none title" data-target="#Documentation" data-toggle="collapse">
+                            <div class="mt-3 font-weight-bold">Documentation
+                                <div class="float-right navbar-toggler">
+                                    <i class="fas fa-angle-down"></i>
+                                    <i class="fas fa-angle-up"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <ul class="list-unstyled collapse" id="Documentation">
+                            <li><a href="#">Certificate of Residency</a></li>
+                            <li><a href="#">Barangay Clearance</a></li>
+                            <li><a href="#">Certificate of Indigency</a></li>
+                        </ul>
+                    </div>
+
+                    <!--/.Second column-->
+
+                    <hr class="clearfix w-100 d-md-none mb-0">
+
+                    <!--Third column-->
+
+                    <div class="col-md-3 mx-auto shfooter">
+                        <h5 class="my-2 font-weight-bold d-none d-md-block">Other Services</h5>
+                        <div class="d-md-none title" data-target="#OtherServices" data-toggle="collapse">
+                            <div class="mt-3 font-weight-bold">Other Services
+                                <div class="float-right navbar-toggler">
+                                    <i class="fas fa-angle-down"></i>
+                                    <i class="fas fa-angle-up"></i>
+                                </div>
+                            </div>
+                        </div>
+
+                        <ul class="list-unstyled collapse" id="OtherServices">
+                            <li><a href="#">Family Planning</a></li>
+                            <li><a href="#">Blotter</a></li>
+                        </ul>
+                    </div>
+
+                    <!--/.Third column-->
+
+                    <hr class="clearfix w-100 d-md-none mb-0">
+ 
+                    <!--Fourth column-->
+
+                    <div class="col-md-3 mx-auto shfooter">
+                        <h5 class="my-2 font-weight-bold d-none d-md-block">Get Help</h5>
+                        <div class="d-md-none title" data-target="#Get-Help" data-toggle="collapse">
+                        <div class="mt-3 font-weight-bold">Get Help
+                            <div class="float-right navbar-toggler">
+                            <i class="fas fa-angle-down"></i>
+                            <i class="fas fa-angle-up"></i>
+                            </div>
+                        </div>
+                        </div>
+                        <ul class="list-unstyled collapse" id="Get-Help">
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms</a></li>
+                        </ul>
+                    </div>
+
+                    <!--/.Fourth column-->
+
+                </div>
+            </div>
+
+            <!--/.Footer Links-->
+
+            <hr class="mb-0">
+
+            <!--Copyright-->
+
+            <div class="py-3 text-center">
+                Copyright 2020 -
+                <script>
+                document.write(new Date().getFullYear())
+                </script> 
+                SAD/DBA | For Educational Purposes Only
+            </div>
+
+        </footer>
         
 
         <script src="../BarangaySystem/bootstrap/js/bootstrap.bundle.js" type="text/javascript"> </script>
