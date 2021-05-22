@@ -316,7 +316,7 @@
 
                     <div class="row"> 
                         <div class="col-md-12">
-                        <table class="table table-dark">
+                        <table class="table table-dark table-responsive" id="dataTable" width="100%" cellspacing="0">
                             <form action="" method="post">
                                 <thead> 
                                     <tr>
@@ -336,7 +336,7 @@
                                         
                                     </tr>
                                 </thead>
-                                <tbody> 
+                                <tbody>
                                 <?php if(is_array($view)) {?>
                                     <?php foreach($view as $view) {?>
                                         <tr>
