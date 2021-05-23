@@ -6,18 +6,6 @@
 
     $residentbmis->profile_update();
     
-
-    //$view = $residentbmis->view_household_list();
-
-    print_r($resident);
-
-    //$lname = $_GET['lname'];
-    //$lname = $_GET['mi'];
-
-    //$connection = $residentbmis->openConn();
-    //$stmt = $connection->prepare("SELECT * FROM tbl_resident WHERE lname ='$lname'");
-    //$stmt->execute();  
-   // $view = $stmt->fetch();
 ?>
 
 <!DOCTYPE html> 
@@ -25,6 +13,8 @@
 
     <head> 
     <title> Barangay Management System </title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
         <!-- responsive tags for screen compatibility -->
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <!-- custom css --> 
@@ -44,8 +34,8 @@
                     <span class="caret"></span>
                 </button>
                 <ul class="dropdown-menu">
-                    <button class="btn"> <i class="fas fa-user" style="padding: 0.5em;"></i>Personal Profile  </button>
-                    <button class="btn" onclick="logout();"> <i class="fas fa-sign-out-alt" style="padding: 0.5em;"></i> Logout  </button>
+                    <a class="btn" href="resident_profile.php?id_resident=<?= $userdetails['id_resident'];?>"> <i class="fas fa-user" style="padding: 0.5em;"></i>Personal Profile  </a>
+                    <a class="btn" href="logout.php"> <i class="fas fa-sign-out-alt" style="padding: 0.5em;"></i> Logout  </a>
                 </ul>
             </div>
         </nav>
@@ -153,8 +143,7 @@
         
         </section>
 
-       
-
-         
+ 
+        <script src="../BarangaySystem/bootstrap/js/bootstrap.bundle.js" type="text/javascript"> </script>
     </body>
 </html>

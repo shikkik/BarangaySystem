@@ -1,8 +1,17 @@
 <?php 
-    require('classes/main.class.php');
     require('classes/resident.class.php');
-    
     $userdetails = $bmis->get_userdata();
+    $id_resident = $_GET['id_resident'];
+    $resident = $residentbmis->get_single_resident($id_resident);
+
+    $dt = new DateTime("now", new DateTimeZone('Asia/Manila'));
+    $tm = new DateTime("now", new DateTimeZone('Asia/Manila'));
+    $cdate = $dt->format('Y/m/d');
+    $ctime = $tm->format('H:i');
+
+    $bmis->create_motherchild();
+
+
 ?>
 
 <!DOCTYPE html>
@@ -40,10 +49,11 @@
             {
                 width: 100% !important;
                 height: 50px !important;
-                position: relative;
-                bottom: -30px;
                 border-radius: 20px;
-                margin-top: 30px;
+                margin-top: 5%;
+                margin-bottom: 8%;
+                font-size: 25px;
+                letter-spacing: 3px;
             }
 
             /* Under Navbar */
@@ -67,6 +77,83 @@
                 margin-top: 60px;
             }
 
+            .paa{
+                margin-top: 10px;
+                position: relative;
+                left: -28%;
+            }
+
+            a{
+                color:white;
+                }
+            .shfooter .collapse {
+                display: inherit;
+            }
+                @media (max-width:767px) {
+            .shfooter ul {
+                    margin-bottom: 0;
+            }
+
+            .shfooter .collapse {
+                    display: none;
+            }
+
+            .shfooter .collapse.show {
+                    display: block;
+            }
+
+            .shfooter .title .fa-angle-up,
+            .shfooter .title[aria-expanded=true] .fa-angle-down {
+                    display: none;
+            }
+
+            .shfooter .title[aria-expanded=true] .fa-angle-up {
+                    display: block;
+            }
+
+            .shfooter .navbar-toggler {
+                    display: inline-block;
+                    padding: 0;
+            }
+
+            }
+
+            .resize {
+                text-align: center;
+            }
+            .resize {
+                margin-top: 3rem;
+                font-size: 1.25rem;
+            }
+            /*RESIZESCREEN ANIMATION*/
+            .fa-angle-double-right {
+                animation: rightanime 1s linear infinite;
+            }
+
+            .fa-angle-double-left {
+                animation: leftanime 1s linear infinite;
+            }
+            @keyframes rightanime {
+                50% {
+                    transform: translateX(10px);
+                    opacity: 0.5;
+            }
+                100% {
+                    transform: translateX(10px);
+                    opacity: 0;
+            }
+            }
+            @keyframes leftanime {
+                50% {
+                    transform: translateX(-10px);
+                    opacity: 0.5;
+            }
+                100% {
+                    transform: translateX(-10px);
+                    opacity: 0;
+            }
+            }
+
 
         </style>
     </head>
@@ -83,22 +170,16 @@
                     <span class="caret"></span>
                 </button>
                 <ul class="dropdown-menu">
-                    <form method="post">
-                        <input type="hidden" value="<?= $userdetails['surname'];?>">  
-                        <input type="hidden" value="<?= $userdetails['mname'];?>">
-                        <li><button class="btn" href="resident_profile.php"> <i class="fas fa-user"></i> Personal Profile </button></li>
-                    </form>
-                        <button class="btn" onclick="logout();"> <i class="fas fa-sign-out-alt"> </i> Logout </button>
-                
+                    <a class="btn" href="resident_profile.php?id_resident=<?= $userdetails['id_resident'];?>"> <i class="fas fa-user" style="padding: 0.5em;"></i>Personal Profile  </a>
+                    <a class="btn" href="logout.php"> <i class="fas fa-sign-out-alt" style="padding: 0.5em;"></i> Logout  </a>
                 </ul>
             </div>
-
         </nav>
 
         <!-- Under Navbar -->
 
         <div class="container-fluid container1">
-            <div class="row text-center row1">
+            <div class="row text-center">
                 <div class="col">
                     <img class="picture1" src="../BarangaySystem/icons/MotherandChild/motherandchild1.png">
                 </div>
@@ -107,10 +188,7 @@
                     <h2>Mother and Child Check-Up</h2>
                     <hr style="background-color:black;">
                     <h6>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                        Iste possimus veniam deleniti, aut nesciunt inventore 
-                        doloremque, itaque eaque, id culpa nemo quis doloribus 
-                        blanditiis excepturi laudantium porro quod aspernatur 
-                        pariatur.
+                        Iste possimus veniam deleniti.
                     </h6>
                 </div>
 
@@ -203,9 +281,19 @@
             </div>
         </div>
 
+        <br>
+        <br>
+        <br>
+
+
         <!-- Button trigger modal -->
 
         <div class="container">
+
+            <h1 class="text-center">Registration</h1>
+            
+            <hr style="background-color:black;">
+
             <div class="col">   
                 <button type="button" class="btn btn-primary applybutton" data-toggle="modal" data-target="#exampleModalCenter">
                     Apply
@@ -228,27 +316,27 @@
                         <!-- Modal Body -->
 
                         <div class="modal-body">
-                            <form action="/action_page.php" class="was-validated">
+                            <form method="post" class="was-validated">
                                 <div class="row modalrow"> 
 
                                     <div class="col">
                                         <div class="form-group">
                                             <label for="lname">Lastname:</label>
-                                            <input type="text" class="form-control" placeholder="Enter your Lastname" required>
+                                            <input name="lname" type="text" class="form-control" value="<?= $resident['lname']?>" required>
                                             <div class="valid-feedback">Valid.</div>
                                             <div class="invalid-feedback">Please fill out this field.</div>
                                         </div>
 
                                         <div class="form-group">
                                             <label for="mname">Middlename:</label>
-                                            <input type="text" class="form-control" placeholder="Enter your Middlename" required>
+                                            <input name="mi" type="text" class="form-control" value="<?= $resident['mi']?>" required>
                                             <div class="valid-feedback">Valid.</div>
                                             <div class="invalid-feedback">Please fill out this field.</div>  
                                         </div>
 
                                         <div class="form-group">            
                                             <label for="cno">Contact Number:</label>
-                                            <input type="text" maxlength="11" class="form-control" placeholder="Enter your Contact Numebr" pattern="[0-9]{11}" required>
+                                            <input name="contact" type="text" maxlength="11" class="form-control" value="<?= $resident['contact']?>" pattern="[0-9]{11}" required>
                                             <div class="valid-feedback">Valid.</div>
                                             <div class="invalid-feedback">Please fill out this field.</div>
                                         </div>
@@ -258,44 +346,216 @@
 
                                         <div class="form-group">
                                             <label for="fname">Firstname:</label>
-                                            <input type="text" class="form-control" placeholder="Enter your Firstname" required>
+                                            <input name="fname" type="text" class="form-control" value="<?= $resident['fname']?>" required>
                                             <div class="valid-feedback">Valid.</div>
                                             <div class="invalid-feedback">Please fill out this field.</div>  
                                         </div>
 
                                         <div class="form-group">
                                             <label for="address">Address:</label>
-                                            <input type="text" class="form-control" placeholder="Enter your Address" required>
+                                            <input name="address" type="text" class="form-control" value="<?= $resident['address']?>" required>
                                             <div class="valid-feedback">Valid.</div>
                                             <div class="invalid-feedback">Please fill out this field.</div>
                                         </div>
                                         <div class="form-group">
                                             <label for="age" class="mtop">Age </label>
-                                            <input type="number" class="form-control" placeholder="Enter your Age" required>
+                                            <input name="age" type="number" class="form-control" value="<?= $resident['age']?>" required>
                                             <div class="valid-feedback">Valid.</div>
                                             <div class="invalid-feedback">Please fill out this field.</div>
                                         </div>
-                                    </div>
 
+                                        <input type="hidden" name="remarks">
+                                        <input type="hidden" name="dateapply" value="<?= $cdate?>">
+                                        <input type="hidden" name="timeapply" value="<?= $ctime?>">
+                                        <input name="addedby" type="hidden" value="<?= $userdetails['surname']?>, <?= $userdetails['firstname']?>">
+                                        <input name="id_resident" type="hidden" value="<?= $resident['id_resident']?>">
+                                    </div>
                                 </div>
-                            </form>
                             
-                            <!-- Modal Footer -->
                             
-                            <div class="modal-footer paa">
-                                <button type="button" class="btn btn-dark" data-dismiss="modal">Close</button>
-                                <button type="button" class="btn btn-primary">Save changes</button>
+                            <div class="modal-footer">
+                                <div class="paa">
+                                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                                    <button name="create_motherchild" type="submit" class="btn btn-primary">Save changes</button>
+                                </div>
                             </div>  
+                        </form>
                         </div>
                     </div>
                 </div>
             </div>  
         </div>
+
+        <!-- Footer -->
+
+        <footer id="footer" class="bg-primary text-white d-flex-column text-center">
+            <hr class="mt-0">
+
+            <div class="text-center">
+                <h1>Services</h1>
+                <ul class="list-unstyled list-inline">
+
+                &nbsp;
+
+                <li class="list-inline-item">
+                    <a href="#!" class="sbtn btn-large mx-1" title="HealthCare">
+                    <i class="fas fa-first-aid fa-2x"></i>
+                    </a>
+                </li>
+
+                &nbsp;
+
+                <li class="list-inline-item">
+                    <a href="#!" class="sbtn btn-large mx-1" title="Documents">
+                    <i class="fas fa-file fa-2x"></i>
+                    </a>
+                </li>
+
+                &nbsp;
+
+                <li class="list-inline-item">
+                    <a href="#!" class="sbtn btn-large mx-1" title="Documents">
+                    <i class="fas fa-user-friends fa-2x"></i>
+                    </a>
+                </li>
+
+                &nbsp;
+
+                <li class="list-inline-item">
+                    <a href="#!" class="sbtn btn-large mx-1" title="Blotter">
+                    <i class="fas fa-user-shield fa-2x"></i>
+                    </a>
+                </li>
+
+                &nbsp;
+
+                <li class="list-inline-item">
+                    <a href="#!" class="sbtn btn-large mx-1" title="Inquiries">
+                    <i class="fas fa-question fa-2x"></i>
+                    </a>
+                </li>
+                </ul>
+            </div>
+
+            <hr class="mb-0">
+
+            <!--Footer Links-->
+
+            <div class="container text-left text-md-center">
+                <div class="row">
+
+                    <!--First column-->
+
+                    <div class="col-md-3 mx-auto shfooter">
+                        <h5 class="my-2 font-weight-bold d-none d-md-block">HealthCare</h5>
+                        <div class="d-md-none title" data-target="#HealthCare" data-toggle="collapse">
+                            <div class="mt-3 font-weight-bold">HealthCare
+                                <div class="float-right navbar-toggler">
+                                    <i class="fas fa-angle-down"></i>
+                                    <i class="fas fa-angle-up"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <ul class="list-unstyled collapse" id="HealthCare">
+                            <li><a href="#">Animal Registry & Welfare</a></li>
+                            <li><a href="#">TB Dots Consultation</a></li>
+                            <li><a href="#">Vaccination Programs</a></li>
+                            <li><a href="#">Mother & Child Check-Up</a></li>
+                        </ul>
+                    </div>
+
+                    <!--/.First column-->
+
+                    <hr class="clearfix w-100 d-md-none mb-0">
+
+                    <!--Second column-->
+
+                    <div class="col-md-3 mx-auto shfooter">
+                        <h5 class="my-2 font-weight-bold d-none d-md-block">Documentation</h5>
+                        <div class="d-md-none title" data-target="#Documentation" data-toggle="collapse">
+                            <div class="mt-3 font-weight-bold">Documentation
+                                <div class="float-right navbar-toggler">
+                                    <i class="fas fa-angle-down"></i>
+                                    <i class="fas fa-angle-up"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <ul class="list-unstyled collapse" id="Documentation">
+                            <li><a href="#">Certificate of Residency</a></li>
+                            <li><a href="#">Barangay Clearance</a></li>
+                            <li><a href="#">Certificate of Indigency</a></li>
+                        </ul>
+                    </div>
+
+                    <!--/.Second column-->
+
+                    <hr class="clearfix w-100 d-md-none mb-0">
+
+                    <!--Third column-->
+
+                    <div class="col-md-3 mx-auto shfooter">
+                        <h5 class="my-2 font-weight-bold d-none d-md-block">Other Services</h5>
+                        <div class="d-md-none title" data-target="#OtherServices" data-toggle="collapse">
+                            <div class="mt-3 font-weight-bold">Other Services
+                                <div class="float-right navbar-toggler">
+                                    <i class="fas fa-angle-down"></i>
+                                    <i class="fas fa-angle-up"></i>
+                                </div>
+                            </div>
+                        </div>
+
+                        <ul class="list-unstyled collapse" id="OtherServices">
+                            <li><a href="#">Family Planning</a></li>
+                            <li><a href="#">Blotter</a></li>
+                        </ul>
+                    </div>
+
+                    <!--/.Third column-->
+
+                    <hr class="clearfix w-100 d-md-none mb-0">
+ 
+                    <!--Fourth column-->
+
+                    <div class="col-md-3 mx-auto shfooter">
+                        <h5 class="my-2 font-weight-bold d-none d-md-block">Get Help</h5>
+                        <div class="d-md-none title" data-target="#Get-Help" data-toggle="collapse">
+                        <div class="mt-3 font-weight-bold">Get Help
+                            <div class="float-right navbar-toggler">
+                            <i class="fas fa-angle-down"></i>
+                            <i class="fas fa-angle-up"></i>
+                            </div>
+                        </div>
+                        </div>
+                        <ul class="list-unstyled collapse" id="Get-Help">
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms</a></li>
+                        </ul>
+                    </div>
+
+                    <!--/.Fourth column-->
+
+                </div>
+            </div>
+
+            <!--/.Footer Links-->
+
+            <hr class="mb-0">
+
+            <!--Copyright-->
+
+            <div class="py-3 text-center">
+                Copyright 2020 -
+                <script>
+                document.write(new Date().getFullYear())
+                </script> 
+                SAD/DBA | For Educational Purposes Only
+            </div>
+
+        </footer>
         
 
         <script src="../BarangaySystem/bootstrap/js/bootstrap.bundle.js" type="text/javascript"> </script>
-
-
 
     </body>
 </html>

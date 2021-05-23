@@ -12,8 +12,6 @@
     $rescountf = $residentbmis->count_female_resident();
     $rescountfh = $residentbmis->count_head_resident();
     $rescountfm = $residentbmis->count_member_resident();
-
-    //print_r($userdetails);
 ?>
 
 <!DOCTYPE html>
@@ -21,14 +19,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous"/>
     <script src="https://kit.fontawesome.com/e4c20ed0dd.js" crossorigin="anonymous"></script>
-    
     <!-- CSS -->
     <link rel="stylesheet" href="dashboard.css"/>
-
     <title>Admin Dashboard</title>
     <style>
         table, th, td {
@@ -37,9 +32,10 @@
         }
     </style>
   </head>
+  
   <body id="body">
     <div class="container">
-      <nav class="navbar">
+    <nav class="navbar">
         <div class="nav_icon" onclick="toggleSidebar()">
           <i class="fa fa-bars" aria-hidden="true"></i>
         </div>

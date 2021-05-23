@@ -5,6 +5,8 @@
     //$view = $residentbmis->check_resident($email);
     //$residentbmis->view_household_list();
 
+    
+
 ?>
 
 <script> 
@@ -43,8 +45,8 @@
                     <span class="caret"></span>
                 </button>
                 <ul class="dropdown-menu">
-                    <button class="btn"><a href="resident_profile.php?id_resident=<?= $userdetails['id_resident'];?>"> <i class="fas fa-user" style="padding: 0.5em;"></i>Personal Profile  </button>
-                    <button class="btn" onclick="logout();"> <i class="fas fa-sign-out-alt" style="padding: 0.5em;"></i> Logout  </button>
+                    <a class="btn" href="resident_profile.php?id_resident=<?= $userdetails['id_resident'];?>"> <i class="fas fa-user" style="padding: 0.5em;"></i>Personal Profile  </a>
+                    <a class="btn" href="logout.php"> <i class="fas fa-sign-out-alt" style="padding: 0.5em;"></i> Logout  </a>
                 </ul>
             </div>
         </nav>
@@ -93,7 +95,7 @@
                         <div class="card"> 
                             <div class="card-body text-center">
                                 <img src="../BarangaySystem/icons/ResidentHomepage/tbdots.png"> 
-                                <a href="services_tb_dots.php?id_resident=<?= $userdetails['id_resident'];?>"> <h4> TB DOTS Consultation</h4> 
+                                <a href="services_tb_dots.php?id_resident=<?= $userdetails['id_resident'];?>"> <h4> TB DOTS Program</h4> 
                             </a>
                             </div>
                         </div>
@@ -103,7 +105,7 @@
                         <div class="card"> 
                             <div class="card-body text-center">
                                 <img src="../BarangaySystem/icons/ResidentHomepage/vaccine.png"> 
-                                <a href="services_vaccination.php"> <h4> Vaccination Programs </h4> 
+                                <a href="services_vaccination.php"> <h4> Vaccination Program </h4> 
                             </a>
                             </div>
                         </div>
@@ -115,7 +117,7 @@
                     <div class="col"> 
                         <div class="card"> 
                             <div class="card-body text-center"> 
-                            <a href="services_motherandchild.php">
+                            <a href="services_motherandchild.php?id_resident=<?= $userdetails['id_resident'];?>">
                                 <img src="../BarangaySystem/icons/ResidentHomepage/motherchild.png">
                                 <h4> Mother & Child Check-Up</h4> 
                             </a>
@@ -127,7 +129,7 @@
                         <div class="card"> 
                             <div class="card-body text-center">
                                 <img src="../BarangaySystem/icons/ResidentHomepage/familyplan.png"> 
-                                <a href=""> <h4> Family Planning </h4> 
+                                <a href="services_familyplanning.php?id_resident=<?= $userdetails['id_resident'];?>"> <h4> Family Planning </h4> 
                             </a>
                             </div>
                         </div>

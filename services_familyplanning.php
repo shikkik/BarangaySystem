@@ -1,8 +1,15 @@
 <?php 
-    require('classes/main.class.php');
     require('classes/resident.class.php');
-    
     $userdetails = $bmis->get_userdata();
+    $id_resident = $_GET['id_resident'];
+    $resident = $residentbmis->get_single_resident($id_resident);
+
+    $dt = new DateTime("now", new DateTimeZone('Asia/Manila'));
+    $tm = new DateTime("now", new DateTimeZone('Asia/Manila'));
+    $cdate = $dt->format('Y/m/d');
+    $ctime = $tm->format('H:i');
+
+    $bmis->create_familyplan();
 ?>
 
 <!DOCTYPE html>
@@ -10,26 +17,20 @@
 <html>
     <head> 
         <title> Barangay Management System </title>
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-modal/2.2.6/js/bootstrap-modalmanager.min.js" integrity="sha512-/HL24m2nmyI2+ccX+dSHphAHqLw60Oj5sK8jf59VWtFWZi9vx7jzoxbZmcBeeTeCUc7z1mTs3LfyXGuBU32t+w==" crossorigin="anonymous"></script>
         <!-- responsive tags for screen compatibility -->
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <!-- bootstrap css --> 
+        <meta name="viewport" content="width=device-width, initial-scale=1"><!-- bootstrap css --> 
         <link href="../BarangaySystem/bootstrap/css/bootstrap.css" rel="stylesheet" type="text/css">
         <!-- fontawesome icons --> 
         <script src="https://kit.fontawesome.com/67a9b7069e.js" crossorigin="anonymous"></script>
     
         <style>
 
-            body{
-                background-color: #EBF5FB;
-            }
+            /* Modal */
 
-            .text1{
-                margin-top: 60px;
-            }
-
-            .applybutton{
+            .applybutton
+            {
                 width: 100% !important;
                 height: 50px !important;
                 border-radius: 20px;
@@ -39,25 +40,16 @@
                 letter-spacing: 3px;
             }
 
-            .besidetable{
-                background-color: lightblue;
-                margin-top: 5px;
-
-            }
-
-            .righttable{
-                border: 1px solid black;
-            }
-
-            .paa{
-                margin-top: 10px;
-                position: relative;
-                left: -28%;
-            }
+            /* Under Navbar */
 
             .container1{
                 background-color: #AED6F1;
                 height: 400px;
+            }
+
+            .picture0{
+                height: 80px;
+                width: 80px;
             }
             
             .picture1{
@@ -66,10 +58,121 @@
             }
 
             .picture2{
-                height: 380px;
+                height: 400px;
                 width: 100%;
-                margin-top: 5px;
             }
+
+            /* 1st Content */
+
+            .container2{
+                margin-top: 10px;
+            }
+
+            .picture3{
+                height: 900px;
+                width: 100%;
+                border-radius: 20px;
+            }
+
+            .picture4{
+                height: 440px;
+                width: 100%;
+                border-radius: 20px;
+            }
+
+            .picture5{
+                height: 440px;
+                width: 100%;
+                border-radius: 20px;
+                margin-top: 20px;
+            }
+
+            .text1{
+                margin-top: 30px;
+            }
+
+            /* 2nd Content */
+
+            .container3{
+                margin-top: 50px;
+            }
+
+            .picture6{
+                width: 100%;
+                height: 400px;
+                border-radius: 20px;
+            }
+
+            .picture7{
+                width: 100%;
+                height: 400px;
+                border-radius: 20px;
+                border: solid black;
+            }
+
+            * {box-sizing: border-box;}
+
+            .overlay {
+            position: absolute; 
+            bottom: 160px; 
+            background: rgb(0, 0, 0);
+            background: rgba(0, 0, 0, 0.5); /* Black see-through */
+            color: #f1f1f1; 
+            width: 94%;
+            transition: .5s ease;
+            opacity:0;
+            color: white;
+            font-size: 20px;
+            padding: 20px;
+            text-align: center;
+            }
+
+            .col7:hover .overlay {
+            opacity: 1;
+            }
+
+            .col6:hover .overlay {
+            opacity: 1;
+            }
+
+            .overlay1 {
+            position: absolute; 
+            bottom: 160px; 
+            background: rgb(0, 0, 0);
+            background: rgba(0, 0, 0, 0.5); /* Black see-through */
+            color: #f1f1f1; 
+            width: 95%;
+            transition: .5s ease;
+            opacity:0;
+            color: white;
+            font-size: 20px;
+            padding: 20px;
+            text-align: center;
+            }
+
+            .col5:hover .overlay {
+            opacity: 1;
+            }
+
+            .col5:hover .overlay1 {
+            opacity: 1;
+            bottom: 640px;
+            }
+
+            .col3:hover .overlay1 {
+            opacity: 1;
+            bottom: 400px;
+            }
+
+            /* Modal Footer */
+
+            .paa{
+                margin-top: 10px;
+                position: relative;
+                left: -28%;
+            }
+
+            /* Footer Style */
 
             a{
                 color:white;
@@ -142,31 +245,25 @@
             }
             }
 
+
         </style>
     </head>
 
     <body>
 
-        <!-- eto yung navbar -->
+        <!-- Eto yung navbar -->
 
         <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top">
             <a class="navbar-brand" href="resident_homepage.php">Barangay Sorsogon</a>
-
             <div class="dropdown ml-auto">
                 <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown"><?= $userdetails['surname'];?>, <?= $userdetails['firstname'];?>
                     <span class="caret"></span>
                 </button>
                 <ul class="dropdown-menu">
-                    <form method="post">
-                        <input type="hidden" value="<?= $userdetails['surname'];?>">  
-                        <input type="hidden" value="<?= $userdetails['mname'];?>">
-                        <li><button class="btn" href="resident_profile.php"> <i class="fas fa-user"></i> Personal Profile </button></li>
-                    </form>
-                        <button class="btn" onclick="logout();"> <i class="fas fa-sign-out-alt"> </i> Logout </button>
-                
+                    <a class="btn" href="resident_profile.php?id_resident=<?= $userdetails['id_resident'];?>"> <i class="fas fa-user" style="padding: 0.5em;"></i>Personal Profile  </a>
+                    <a class="btn" href="logout.php"> <i class="fas fa-sign-out-alt" style="padding: 0.5em;"></i> Logout  </a>
                 </ul>
             </div>
-
         </nav>
 
         <!-- Under Navbar -->
@@ -174,184 +271,89 @@
         <div class="container-fluid container1">
             <div class="row text-center">
                 <div class="col">
-                    <img class="picture1" src="../BarangaySystem/icons/Vaccination/vaccination3.png">
+                    <img class="picture1" src="../BarangaySystem/icons/FamilyPlanning/family4.png">
                 </div>
 
                 <div class="col text1">
-                    <h1>Vaccination</h1>
+                    <img class="picture0" src="../BarangaySystem/icons/FamilyPlanning/family0.png">
+                    <h2>Family Planning</h2>
                     <hr style="background-color:black;">
-                    <h6>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cumque vitae doloribus 
-                        natus ex laborum eligendi ut pariatur, odio rem corrupti asperiores delectus optio.
+                    <h6>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Delectus ut molestiae 
+                        officiis atque distinctio incidunt doloremque!
                     </h6>
                 </div>
 
                 <div class="col">
-                    <img class="picture2" src="../BarangaySystem/icons/Vaccination/vaccination2.png">
+                    <img class="picture2" src="../BarangaySystem/icons/FamilyPlanning/family5.png">
                 </div>
             </div>
         </div>
 
         <br>
         <br>
+        <br>
 
-        <div class="container">
-            <div class="row title-spacing">
-                <div class="col"> 
-                    <h2 class="text-center"> 
-                        Schedule ng Pagbibigay ng Bakuna
-                    </h2>
-                    <h2 class="text-center"> 
-                        para sa mga Batang Isang Taon Pababa
-                    </h2>
-                </div> 
-            </div>
+        <!-- 1st Info -->
 
-            <hr style="background-color: black;">
+        <div class="container container2">
 
-            <br>
+            <h1 class="text-center">Things you need to know</h1>
+            
+            <hr style="background-color:black;">
+
             <br>
 
             <div class="row">
-                <div class="col-sm-10 righttable">
-                    <table class="table table-hover maintable" style="width: 100%; height: 100%;">
-
-                        <thead class="text-center" style="color: black">
-                            <tr style="margin-bottom: 10px;">
-                                <th rowspan="3">
-                                    BAKUNA
-                                </th>
-                                <th rowspan="3">
-                                    SAKIT NA MAIIWASAN
-                                </th>
-                            </tr>
-                                <tr>
-                                    <th colspan="6">
-                                        NIREREKOMENDANG EDAD NG BATA
-                                    </th>
-                                    <tr>
-                                        <th>
-                                            PAGKA-PANGANAK
-                                        </th>
-                                        <th> 1 &half; <br>
-                                            BUWAN
-                                        </th>
-                                        <th> 2 &half; <br>
-                                            BUWAN
-                                        </th>
-                                        <th>3 &half; <br>
-                                            BUWAN
-                                        </th>
-                                        <th> 9 <br>
-                                            BUWAN
-                                        </th>
-                                        <th>1 <br>
-                                            TAON
-                                        </th>
-                                    </tr>
-                                </tr>
-                        </thead>
-
-                        <tbody class="text-center">
-                        <tr>
-                            <td>BCG</td>
-                            <td>Tuberkulosis</td>
-                            <td><i class="fas fa-check"></i></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <td>HEPATITIS B</td>
-                            <td>Hepatitis B</td>
-                            <td><i class="fas fa-check"></i></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <td>PENTAVALENT VACCINE</td>
-                            <td style="font-size: 12px;">Dipterya, Tetano, Hepa B, Pertussis, Pulmonya, Meningitis</td>
-                            <td></td>
-                            <td><i class="fas fa-check"></i></td>
-                            <td><i class="fas fa-check"></i></td>
-                            <td><i class="fas fa-check"></i></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <td>ORAL POLIO VACCINE</td>
-                            <td>Polio</td>
-                            <td></td>
-                            <td><i class="fas fa-check"></i></td>
-                            <td><i class="fas fa-check"></i></td>
-                            <td><i class="fas fa-check"></i></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <td>INACTIVATED POLIO VACCINE</td>
-                            <td>Polio</td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td><i class="fas fa-check"></i></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <td>PNEUMOCOCCAL CONJUGATE VACCINE</td>
-                            <td>Pulmonya, Meningitis</td>
-                            <td></td>
-                            <td><i class="fas fa-check"></i></td>
-                            <td><i class="fas fa-check"></i></td>
-                            <td><i class="fas fa-check"></i></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <td>MEASLES, MUMPS, RUBELLA</td>
-                            <td>Tigdas, Beke, German Measles</td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td><i class="fas fa-check"></i></td>
-                            <td><i class="fas fa-check"></i></td>
-                        </tr>
-                        </tbody>
-                    </table>
+                <div class="col col3">
+                    <img class="picture3" src="../BarangaySystem/icons/FamilyPlanning/family1.jpg">
+                    <div class="overlay1">Family PLanning Tips</div>
                 </div>
-
-
-                <div class="col text-center besidetable hover" style="height:100%; width:100%; margin-left: 10px;">
-                    <h2>MGA PAALALA</h2>
-
-                    <hr style="background-color: red;">
-
-                    <p style="font-size: 15px;">Nagsisimula ang pagbabakuna ng bata sa kapanganakan.</p>
-
-                    <hr style="background-color: red;">
-
-                    <p style="font-size: 15px;">Sundin ang schedule ng bakuna at siguruhing makumpleto 
-                       ang mga ito hanggang sumapit ang kanyang unang kaarawan.</p>
-
-                    <hr style="background-color: red;">
-
-                    <p style="font-size: 15px;">Ang mga bakunang hindi nakalista ay maaring makuha 
-                       sa pribadong ospital o doktor.</p>
+                <div class="col col5">
+                        <img class="picture4" src="../BarangaySystem/icons/FamilyPlanning/family2.jpg">
+                        <div class="overlay1">Family Planning and Counseling</div>
+                        <img class="picture5" src="../BarangaySystem/icons/FamilyPlanning/family3.jpg">
+                        <div class="overlay">Safe and Effective</div>
                 </div>
             </div>
         </div>
 
-        <br>
-        <br>
-        <br>
+        <!-- 2nd Info -->
+
+        <div class="container container3">
+
+            <br>
+
+            <div class="row">
+                <div class="col col6">
+
+                    <h1 class="text-center">Contraceptives</h1>
+                    <hr style="background-color:black;">
+
+                    <img class="picture6" src="../BarangaySystem/icons/FamilyPlanning/family6.png">
+                    <div class="overlay">Contraceptives Methods</div>
+                </div>
+
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+                <div class="col col7">
+
+                    <h1 class="text-center">Fertility Calendar Guide</h1>
+                    <hr style="background-color:black;">
+
+                    <img class="picture7" src="../BarangaySystem/icons/FamilyPlanning/family7.jpg">
+                    <div class="overlay">Calendar Guide</div>
+                </div>
+            </div>
+        </div>
+
 
         <!-- Button trigger modal -->
+
+        <br>
+        <br>
+        <br>
 
         <div class="container">
 
@@ -360,7 +362,7 @@
             <hr style="background-color:black;">
 
             <div class="col">   
-                <button type="button" class="btn btn-primary applybutton" data-toggle="modal" data-target="#exampleModalCenter">
+                <button type="button" class="btn btn-primary applybutton button" data-toggle="modal" data-target="#exampleModalCenter">
                     Apply
                 </button>
             </div>
@@ -381,97 +383,111 @@
                         <!-- Modal Body -->
 
                         <div class="modal-body">
-                            <form action="/action_page.php" class="was-validated">
-
+                            <form method="post" class="was-validated">
                                 <div class="row"> 
+
                                     <div class="col">
                                         <div class="form-group">
-                                            <label for="cname">Child's Name:</label>
-                                            <input type="text" class="form-control" placeholder="Enter Child's Name" required>
+                                            <label for="lname">Lastname:</label>
+                                            <input name="lname" type="text" class="form-control" value="<?= $resident['lname']?>" required>
+                                            <div class="valid-feedback">Valid.</div>
+                                            <div class="invalid-feedback">Please fill out this field.</div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="mname">Middlename:</label>
+                                            <input name="mi" type="text" class="form-control" value="<?= $resident['mi']?>" required>
+                                            <div class="valid-feedback">Valid.</div>
+                                            <div class="invalid-feedback">Please fill out this field.</div>  
+                                        </div>
+
+                                        <div class="form-group">            
+                                            <label for="cno">Contact Number:</label>
+                                            <input name="contact" type="text" maxlength="11" class="form-control" value="<?= $resident['contact']?>" pattern="[0-9]{11}" required>
                                             <div class="valid-feedback">Valid.</div>
                                             <div class="invalid-feedback">Please fill out this field.</div>
                                         </div>
                                     </div>
 
                                     <div class="col">
+
+                                        <div class="form-group">
+                                            <label for="fname">Firstname:</label>
+                                            <input name="fname" type="text" class="form-control" value="<?= $resident['fname']?>" required>
+                                            <div class="valid-feedback">Valid.</div>
+                                            <div class="invalid-feedback">Please fill out this field.</div>  
+                                        </div>
+
                                         <div class="form-group">
                                             <label for="address">Address:</label>
-                                            <input type="text" class="form-control" placeholder="Enter Address" required>
+                                            <input name="address" type="text" class="form-control" value="<?= $resident['address']?>" required>
+                                            <div class="valid-feedback">Valid.</div>
+                                            <div class="invalid-feedback">Please fill out this field.</div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="occupation">Occupation:</label>
+                                            <input name="occupation" type="text" class="form-control" placeholder="Enter your Occupation" required>
                                             <div class="valid-feedback">Valid.</div>
                                             <div class="invalid-feedback">Please fill out this field.</div>
                                         </div>
                                     </div>
+
                                 </div>
 
                                 <div class="row">
-                                    <div class="col">
+
+                                    <div class="col-sm-4">
                                         <label for="Age" class="mtop">Age </label>
-                                        <input type="number" class="form-control" placeholder="Enter Age" required>
+                                        <input name="age" type="number" placeholder="Enter your Age" class="form-control" value="<?= $resident['age']?>" required>
                                         <div class="valid-feedback">Valid.</div>
                                         <div class="invalid-feedback">Please fill out this field.</div>
                                     </div>
 
-                                    <div class="col">
-                                            <label for="Sex"class="mtop">Sex</label>
-                                        <div class="form-check">
-                                            <label class="form-check-label">
-                                            <input type="radio" class="form-check-input" name="optradio">Male
-                                            </label>
-                                        </div>
-                                        <div class="form-check">
-                                            <label class="form-check-label">
-                                            <input type="radio" class="form-check-input" name="optradio">Female
-                                            </label>
-                                        </div>    
+                                    <div class="col-sm-4">
+                                        <label for="status">Status:</label>
+                                        <select class="form-control select" name="status" id="status" placeholder="Enter your Status" required="required">
+                                            <option value="">Choose your Status</option>
+                                            <option value="status1">Single</option>
+                                            <option value="status2">In a relationship</option>
+                                            <option value="status3">Engaged</option>
+                                            <option value="status4">Married</option>
+                                            <option value="status5">Widowed</option>
+                                            <option value="status6">Divorced</option>
+                                        </select>
+                                        <div class="valid-feedback">Valid.</div>
+                                        <div class="invalid-feedback">Please fill out this field.</div>
                                     </div>
-                                    <div class="col">
-                                        <div class="form-group">
-                                            <label for="date"class="mtop">Birthday: </label>
-                                            <input type="date" class="form-control" required>
-                                            <div class="valid-feedback">Valid.</div>
-                                            <div class="invalid-feedback">Please fill out this field.</div>
-                                        </div>
-                                    </div>
-                                </div>
 
-                                <div class="row">
-                                    <div class="col">
+                                    <div class="col-sm-4">
                                         <div class="form-group">
-                                            <label for="height">Height:</label>
-                                            <input type="text" class="form-control" placeholder="Enter Height" required>
-                                            <div class="valid-feedback">Valid.</div>
-                                            <div class="invalid-feedback">Please fill out this field.</div>
-                                        </div>
-                                    </div>
-                                    <div class="col">
-                                        <div class="form-group">
-                                            <label for="weight">Weight:</label>
-                                            <input type="text" class="form-control" placeholder="Enter Weight" required>
-                                            <div class="valid-feedback">Valid.</div>
-                                            <div class="invalid-feedback">Please fill out this field.</div>
-                                        </div>   
-                                    </div> 
-                                    <div class="col">
-                                        <div class="form-group">
-                                            <label for="bplace">Birthplace:</label>
-                                            <input type="text" class="form-control" placeholder="Enter Birthplace" required>
+                                            <label for="Date"class="mtop">Birthday </label>
+                                            <input name="bdate" type="date" class="form-control" required>
                                             <div class="valid-feedback">Valid.</div>
                                             <div class="invalid-feedback">Please fill out this field.</div>
                                         </div>
                                     </div>  
-                                </div>
+
+                                </div> 
 
                                 <br>
 
-                                <h6>Parent's Info</h6>
+                                <h6>Spouse Info</h6>
 
                                 <hr>
 
                                 <div class="row"> 
+
                                     <div class="col">
                                         <div class="form-group">
                                             <label for="lname">Lastname:</label>
-                                            <input type="text" class="form-control" placeholder="Enter your Lastname" required>
+                                            <input name="sp_lname" type="text" class="form-control" placeholder="Enter your Lastname" required>
+                                            <div class="valid-feedback">Valid.</div>
+                                            <div class="invalid-feedback">Please fill out this field.</div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="mname">Middlename:</label>
+                                            <input name="sp_mi" type="text" class="form-control" placeholder="Enter your Middlename" required>
                                             <div class="valid-feedback">Valid.</div>
                                             <div class="invalid-feedback">Please fill out this field.</div>
                                         </div>
@@ -480,57 +496,90 @@
                                     <div class="col">
                                         <div class="form-group">
                                             <label for="fname">Firstname:</label>
-                                            <input type="text" class="form-control" placeholder="Enter your Firstname" required>
+                                            <input name="sp_fname" type="text" class="form-control" placeholder="Enter your Firstname" required>
                                             <div class="valid-feedback">Valid.</div>
-                                            <div class="invalid-feedback">Please fill out this field.</div>
+                                            <div class="invalid-feedback">Please fill out this field.</div>  
                                         </div>
-                                    </div>
-                                    <div class="col">
+
                                         <div class="form-group">
-                                            <label for="mname">Middlename:</label>
-                                            <input type="text" class="form-control" placeholder="Enter your Middlename" required>
+                                            <label for="occupation">Occupation:</label>
+                                            <input name="sp_occupation" type="text" class="form-control" placeholder="Enter your Occupation" required>
                                             <div class="valid-feedback">Valid.</div>
                                             <div class="invalid-feedback">Please fill out this field.</div>
                                         </div>
                                     </div>
+
                                 </div>
 
                                 <div class="row"> 
+
                                     <div class="col">
-                                        <label for="vaccine">Vaccine:</label>
-                                        <select class="form-control" name="vaccine" id="vaccine" placeholder="Enter your Vaccine" required>
-                                        <option value="">Choose your Vaccine</option>
-                                        <option value="vaccine1">BCG</option>
-                                        <option value="vaccine2">Hepatitis B</option>
-                                        <option value="vaccine3">Pentavalent Vaccine</option>
-                                        <option value="vaccine4">Oral Polio Vaccine</option>
-                                        <option value="vaccine5">Inactivated Polio Vaccine</option>
-                                        <option value="vaccine6">Pneumococcal Conjugate Vaccine</option>
-                                        <option value="vaccine7">Measles, Mumps, Rubella</option>
-                                        </select>
+                                        <label for="children">Children:</label>
+                                            <select class="form-control select" name="children" id="children" required="required">
+                                                <option value="">How many children </option>
+                                                <option value="1">1</option>
+                                                <option value="2">2</option>
+                                                <option value="3">3</option>
+                                                <option value="4">4</option>
+                                                <option value="5">5</option>
+                                                <option value="6">6 or more</option>
+                                            </select>
                                         <div class="valid-feedback">Valid.</div>
                                         <div class="invalid-feedback">Please fill out this field.</div>
                                     </div>
+
+                                    <div class="col">
+                                        <label for="income">Total Income:</label>
+                                            <select class="form-control select" name="income" id="income" required="required">
+                                                <option value="">Enter your Income </option>
+                                                <option value="5000">Below 5,000</option>
+                                                <option value="5000">5,000+</option>
+                                                <option value="10000">10,000 +</option>
+                                                <option value="20000">20,000 +</option>
+                                                <option value="30000">30,000 +</option>
+                                                <option value="40000">40,000 +</option>
+                                                <option value="50000">50,000 +</option>
+                                                <option value="60000">60,000 or more </option>
+                                            </select>
+                                        <div class="valid-feedback">Valid.</div>
+                                        <div class="invalid-feedback">Please fill out this field.</div>
+                                    </div>
+
+                                </div>
+
+                                <br>
+
+                                <div class="row">
+                                    <div class="col">
+                                        <label for="Age" class="mtop">Age </label>
+                                        <input name="sp_age" type="number" class="form-control" placeholder="Enter your Age" value="<?= $resident['age']?>" required>
+                                        <div class="valid-feedback">Valid.</div>
+                                        <div class="invalid-feedback">Please fill out this field.</div>
+                                    </div>
+
                                     <div class="col">
                                         <div class="form-group">
-                                            <label for="date"class="mtop">Date of Vaccine: </label>
-                                            <input type="date" class="form-control" required>
+                                            <label for="Date"class="mtop">Birthday </label>
+                                            <input name="sp_bdate" type="date" class="form-control" required>
                                             <div class="valid-feedback">Valid.</div>
                                             <div class="invalid-feedback">Please fill out this field.</div>
                                         </div>
-                                    </div>
-                                </div>
-                                
-                            </form>
+                                    </div>  
+                                </div> 
                             
                             <!-- Modal Footer -->
                             
                             <div class="modal-footer">
                                 <div class="paa">
-                                    <button type="button" class="btn btn-dark" data-dismiss="modal">Close</button>
-                                    <button type="button" class="btn btn-primary">Save changes</button>
+                                        <input type="hidden" name="dateapply" value="<?= $cdate?>">
+                                        <input type="hidden" name="timeapply" value="<?= $ctime?>">
+                                        <input name="addedby" type="hidden" value="<?= $userdetails['surname']?>, <?= $userdetails['firstname']?>">
+                                        <input name="id_resident" type="hidden" value="<?= $resident['id_resident']?>">
+                                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                                    <button name="create_familyplan" type="submit" class="btn btn-primary">Save changes</button>
                                 </div>
-                            </div>  
+                            </div>
+                            </form>  
                         </div>
                     </div>
                 </div>
@@ -707,6 +756,7 @@
         
 
         <script src="../BarangaySystem/bootstrap/js/bootstrap.bundle.js" type="text/javascript"> </script>
+
 
 
     </body>
