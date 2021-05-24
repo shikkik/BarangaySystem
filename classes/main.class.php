@@ -450,12 +450,12 @@ class BMISClass {
     }
 
     public function delete_tbdots(){
-        $id_medicine = $_POST['id_medicine'];
+        $id_tbdots = $_POST['id_tbdots'];
 
-        if(isset($_POST['delete_medicine'])) {
+        if(isset($_POST['delete_tbdots'])) {
             $connection = $this->openConn();
-            $stmt = $connection->prepare("DELETE FROM tbl_medicine where id_medicine = ?");
-            $stmt->execute([$id_medicine]);
+            $stmt = $connection->prepare("DELETE FROM tbl_tbdots where id_tbdots = ?");
+            $stmt->execute([$id_tbdots]);
 
             header("Refresh:0");
         }
@@ -514,7 +514,7 @@ class BMISClass {
 
 
             $connection = $this->openConn();
-            $stmt = $connection->prepare("UPDATE tbl_tbdots SET lname = ?, fname = ?, mi = ?, 
+            $stmt = $connection->prepare("UPDATE tbl_motherchild SET lname = ?, fname = ?, mi = ?, 
             age = ?, contact = ?, address = ?, remarks = ?, addedby = ? WHERE id_motherchild = ?");
             $stmt->execute([ $lname, $fname, $mi, $age, $address, $contact, $remarks, $addedby, $id_motherchild]);
             
@@ -611,7 +611,7 @@ class BMISClass {
             $addedby = $_POST['addedby'];
 
             $connection = $this->openConn();
-            $stmt = $connection->prepare("UPDATE tbl_tbdots SET lname = ?, fname = ?, mi = ?, 
+            $stmt = $connection->prepare("UPDATE tbl_familyplan SET lname = ?, fname = ?, mi = ?, 
             age = ?, contact = ?, address = ?, occupation = ?, status = ?, bdate =?, spouse = ?,
             sp_age = ?, sp_bdate = ?, sp_occupation = ?, children = ?, income = ? addedby = ? WHERE id_familyplan = ?");
             $stmt->execute([ $lname, $fname, $mi, $age,  $contact, $address, $occupation, $status, $bdate,

@@ -113,6 +113,9 @@ Resident Application Tables
     ALTER TABLE `tbl_vaccine` DROP `mother`;
     ALTER TABLE `tbl_vaccine` DROP `dosage`;
     ALTER TABLE `tbl_vaccine` DROP `remarks`;
+    ALTER TABLE `tbl_vaccine` CHANGE `id_resident` `id_resident` INT(11) NULL;
+
+    ALTER TABLE `tbl_vaccine` ADD FOREIGN KEY (`id_resident`) REFERENCES `tbl_resident`(`id_resident`) ON DELETE CASCADE ON UPDATE CASCADE;
 
     ALTER TABLE `tbl_vaccine` ADD `lname` VARCHAR(255) NOT NULL AFTER `weight`, ADD `fname` VARCHAR(255) NOT NULL AFTER `lname`, ADD `mi` VARCHAR(255) NOT NULL AFTER `fname`, ADD `vaccine` VARCHAR(255) NOT NULL AFTER `mi`;
 

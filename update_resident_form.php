@@ -26,12 +26,12 @@
             <div class="row">
                 <div class="col">
                     <label> Last Name</label>
-                        <input type="text" class="form-control" name="lname"  placeholder="Enter last name">
+                        <input value="<?= $view['lname']?>" type="text" class="form-control" name="lname"  placeholder="Enter last name">
                     </div>
                 
                 <div class="col">
                     <label class="mtop" >First Name </label>
-                    <input type="text" class="form-control" name="fname"  placeholder="Enter first name">
+                    <input value="<?= $view['fname']?>" type="text" class="form-control" name="fname"  placeholder="Enter first name">
                 </div>
             </div>
 
