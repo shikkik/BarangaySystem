@@ -3,7 +3,7 @@
     include('classes/resident.class.php');
 
     $userdetails = $bmis->get_userdata();
-    //$bmis->validate_admin();
+    $bmis->validate_admin();
 
 ?>
 

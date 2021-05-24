@@ -99,7 +99,7 @@
                     <label class="mtop">Gender</label>
                     <select class="form-control" name="sex" id="sex">
                     <option value="">---</option>
-                    <option value="Male">Male</opt ion>
+                    <option value="Male">Male</option>
                     <option value="Female">Female</option>
                     </select>
                 </div>           

@@ -4,7 +4,12 @@
     $id_resident = $_GET['id_resident'];
     $resident = $residentbmis->get_single_resident($id_resident);
     
-    //$bmis->create_vaccine();
+    $dt = new DateTime("now", new DateTimeZone('Asia/Manila'));
+    $tm = new DateTime("now", new DateTimeZone('Asia/Manila'));
+    $cdate = $dt->format('Y/m/d');
+    $ctime = $tm->format('H');
+
+    $bmis->create_vaccine();
 ?>
 
 <!DOCTYPE html>
@@ -408,7 +413,7 @@
                                 <div class="row">
                                     <div class="col">
                                         <label for="Age" class="mtop">Age </label>
-                                        <input type="number" class="form-control" placeholder="Enter Age" required>
+                                        <input name="age" type="number" class="form-control" placeholder="Enter Age" required>
                                         <div class="valid-feedback">Valid.</div>
                                         <div class="invalid-feedback">Please fill out this field.</div>
                                     </div>
@@ -417,19 +422,19 @@
                                             <label for="Sex"class="mtop">Sex</label>
                                         <div class="form-check">
                                             <label class="form-check-label">
-                                            <input type="radio" class="form-check-input" name="optradio">Male
+                                            <input name="sex" value="Male" type="radio" class="form-check-input" name="optradio">Male
                                             </label>
                                         </div>
                                         <div class="form-check">
                                             <label class="form-check-label">
-                                            <input type="radio" class="form-check-input" name="optradio">Female
+                                            <input name="sex" type="radio" value="Female" class="form-check-input" name="optradio">Female
                                             </label>
                                         </div>    
                                     </div>
                                     <div class="col">
                                         <div class="form-group">
                                             <label for="date"class="mtop">Birthday: </label>
-                                            <input type="date" class="form-control" required>
+                                            <input name="bdate" type="date" class="form-control" required>
                                             <div class="valid-feedback">Valid.</div>
                                             <div class="invalid-feedback">Please fill out this field.</div>
                                         </div>
@@ -440,7 +445,7 @@
                                     <div class="col">
                                         <div class="form-group">
                                             <label for="height">Height:</label>
-                                            <input type="text" class="form-control" placeholder="Enter Height" required>
+                                            <input name="height" type="text" class="form-control" placeholder="Enter Height" required>
                                             <div class="valid-feedback">Valid.</div>
                                             <div class="invalid-feedback">Please fill out this field.</div>
                                         </div>
@@ -448,7 +453,7 @@
                                     <div class="col">
                                         <div class="form-group">
                                             <label for="weight">Weight:</label>
-                                            <input type="text" class="form-control" placeholder="Enter Weight" required>
+                                            <input name="weight" type="text" class="form-control" placeholder="Enter Weight" required>
                                             <div class="valid-feedback">Valid.</div>
                                             <div class="invalid-feedback">Please fill out this field.</div>
                                         </div>   
@@ -456,7 +461,7 @@
                                     <div class="col">
                                         <div class="form-group">
                                             <label for="bplace">Birthplace:</label>
-                                            <input type="text" class="form-control" placeholder="Enter Birthplace" required>
+                                            <input name="bplace" type="text" class="form-control" placeholder="Enter Birthplace" required>
                                             <div class="valid-feedback">Valid.</div>
                                             <div class="invalid-feedback">Please fill out this field.</div>
                                         </div>
@@ -516,7 +521,7 @@
                                     <div class="col">
                                         <div class="form-group">
                                             <label for="date"class="mtop">Date of Vaccine: </label>
-                                            <input type="date" class="form-control" required>
+                                            <input name="vaccdate" value="<?= $cdate?>" type="date" class="form-control" required>
                                             <div class="valid-feedback">Valid.</div>
                                             <div class="invalid-feedback">Please fill out this field.</div>
                                         </div>
@@ -529,6 +534,8 @@
                             
                             <div class="modal-footer">
                                 <div class="paa">
+                                    <input name="addedby" type="hidden" value="<?= $userdetails['surname']?>, <?= $userdetails['firstname']?>">
+                                    <input name="id_resident" type="hidden" value="<?= $resident['id_resident']?>">
                                     <button type="button" class="btn btn-dark" data-dismiss="modal">Close</button>
                                     <button name="create_vaccine" type="submit" class="btn btn-primary">Save changes</button>
                                 </div>

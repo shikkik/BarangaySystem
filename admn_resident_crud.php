@@ -2,7 +2,7 @@
    error_reporting(E_ALL ^ E_WARNING);
    require('classes/resident.class.php');
    $userdetails = $bmis->get_userdata();
-   //$bmis->validate_admin();
+   $bmis->validate_admin();
    $view = $residentbmis->view_resident();
    $residentbmis->create_resident();
    $residentbmis->update_resident();

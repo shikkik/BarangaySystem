@@ -640,6 +640,98 @@ class BMISClass {
             header("Refresh:0");
         }
     }
+
+    //------------------------------------------ VACCINATION PROGRAM CRUD -----------------------------------------------
+
+
+    public function create_vaccine() {
+
+        if(isset($_POST['create_vaccine'])) {
+            $id_resident = $_POST['id_resident'];
+            $child = $_POST['child'];
+            $age = $_POST['age'];
+            $sex = $_POST['sex'];
+            $bdate = $_POST['bdate'];
+            $bplace = $_POST['bplace'];
+            $address = $_POST['address'];
+            $height = $_POST['height'];
+            $weight = $_POST['weight'];
+            $lname = $_POST['lname'];
+            $fname = $_POST['fname'];
+            $mi = $_POST['mi'];
+            $vaccine = $_POST['vaccine'];
+            $vaccdate = $_POST['vaccdate'];
+            $addedby = $_POST['addedby'];
+
+
+            $connection = $this->openConn();
+            $stmt = $connection->prepare("INSERT INTO tbl_vaccine (`id_resident`, 
+            `child`, `age`, `sex`, `bdate`, `bplace`, `address`, `height`,  `weight`,
+            `lname`, `fname`, `mi`, `vaccine`, `vaccdate`, `addedby`)
+            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+
+            $stmt->execute([$id_resident, $child, $age, $sex, $bdate, $bplace, $address, $height, $weight,
+            $lname, $fname, $mi, $vaccine, $vaccdate, $addedby]);
+
+            $message2 = "Application Applied, you will receive our text message for further details";
+            echo "<script type='text/javascript'>alert('$message2');</script>";
+            header("refresh: 0");
+        }
+        
+        
+    }
+
+    public function view_vaccine(){
+        $connection = $this->openConn();
+        $stmt = $connection->prepare("SELECT * from tbl_vaccine");
+        $stmt->execute();
+        $view = $stmt->fetchAll();
+        return $view;
+    }
+
+    public function update_vaccine() {
+        if (isset($_POST['update_vaccine'])) {
+            $id_vaccine = $_GET['id_vaccine'];
+            $child = $_POST['child'];
+            $age = $_POST['age'];
+            $sex = $_POST['sex'];
+            $bdate = $_POST['bdate'];
+            $bplace = $_POST['bplace'];
+            $address = $_POST['address'];
+            $height = $_POST['height'];
+            $weight = $_POST['weight'];
+            $lname = $_POST['lname'];
+            $fname = $_POST['fname'];
+            $mi = $_POST['mi'];
+            $vaccine = $_POST['vaccine'];
+            $vaccdate = $_POST['vaccdate'];
+            $addedby = $_POST['addedby'];
+
+
+            $connection = $this->openConn();
+            $stmt = $connection->prepare("UPDATE tbl_vaccine SET child = ?, age = ?, sex = ?,
+            bdate = ?, bplace= ?, address = ?, height = ?, weight = ?, lname = ?, fname = ?, mi = ?, 
+            vaccine = ?, vaccdate = ?, addedby = ? WHERE id_vaccine = ?");
+            $stmt->execute([$child, $age, $sex, $bdate, $bplace, $address, $height, $weight,
+            $lname, $fname, $mi, $vaccine, $vaccdate, $addedby, $id_vaccine]);
+            
+            $message2 = "Vaccination Program Data Updated";
+            echo "<script type='text/javascript'>alert('$message2');</script>";
+            header("refresh: 0");
+        }
+    }
+
+    public function delete_vaccine(){
+        $id_vaccine = $_POST['id_vaccine'];
+
+        if(isset($_POST['delete_vaccine'])) {
+            $connection = $this->openConn();
+            $stmt = $connection->prepare("DELETE FROM tbl_vaccine where id_vaccine = ?");
+            $stmt->execute([$id_vaccine]);
+
+            header("Refresh:0");
+        }
+    }
     
     //------------------------------------------ EXTRA FUNCTIONS ----------------------------------------------
     public function show_announcement() {

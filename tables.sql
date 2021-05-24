@@ -107,8 +107,14 @@ Resident Application Tables
     addedby VARCHAR(255) NOT NULL , 
     PRIMARY KEY (id_vaccine)) ENGINE = InnoDB;
 
+    ALTER TABLE `tbl_vaccine` ADD `dateapply` DATE NOT NULL DEFAULT CURRENT_TIMESTAMP AFTER `addedby`;
     ALTER TABLE `tbl_vaccine` ADD `id_resident` INT NOT NULL AFTER `id_vaccine`;
+    ALTER TABLE `tbl_vaccine` DROP `father`;
+    ALTER TABLE `tbl_vaccine` DROP `mother`;
+    ALTER TABLE `tbl_vaccine` DROP `dosage`;
+    ALTER TABLE `tbl_vaccine` DROP `remarks`;
 
+    ALTER TABLE `tbl_vaccine` ADD `lname` VARCHAR(255) NOT NULL AFTER `weight`, ADD `fname` VARCHAR(255) NOT NULL AFTER `lname`, ADD `mi` VARCHAR(255) NOT NULL AFTER `fname`, ADD `vaccine` VARCHAR(255) NOT NULL AFTER `mi`;
 
     CREATE TABLE bmis.tbl_animal 
     ( id_animal INT NOT NULL AUTO_INCREMENT , 

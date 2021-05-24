@@ -2,13 +2,12 @@
     error_reporting(E_ALL ^ E_WARNING);
     require('classes/staff.class.php');
     $userdetails = $bmis->get_userdata();
-    //$bmis->validate_admin();
+    $bmis->validate_admin();
     $view = $staffbmis->view_staff();
     $staffbmis->create_staff();
     $upstaff = $staffbmis->update_staff();
     $staffbmis->delete_staff();
     $staffcount = $staffbmis->count_staff();
-
 ?>
 
 <?php 
