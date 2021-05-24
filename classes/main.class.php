@@ -466,40 +466,30 @@ class BMISClass {
 
 
     public function create_motherchild() {
-        if(isset($_POST['create_motherchild'])) {
-            $id_resident = $_POST['id_resident'];
-            $lname = $_POST['lname'];
-            $fname = $_POST['fname'];
-            $mi = $_POST['mi'];
-            $age = $_POST['age'];
-            $contact = $_POST['contact'];
-            $address = $_POST['address'];
-            $remarks = $_POST['remarks'];
-            $timeapply = $_POST['timeapply'];
-            $dateapply = $_POST['dateapply'];
-            $addedby = $_POST['addedby'];
+        $id_resident = $_POST['id_resident'];
+        $lname = $_POST['lname'];
+        $fname = $_POST['fname'];
+        $mi = $_POST['mi'];
+        $age = $_POST['age'];
+        $contact = $_POST['contact'];
+        $address = $_POST['address'];
+        $remarks = $_POST['remarks'];
+        $dateapply = $_POST['dateapply'];
+        $addedby = $_POST['addedby'];
 
 
-            if(($_POST['$timeapply'] >= 1000) && ($_POST['$timeapply'] <= 2000)) {
-                $connection = $this->openConn();
-                $stmt = $connection->prepare("INSERT INTO tbl_motherchild (`id_resident`, 
-                `lname`, `fname`, `mi`, `age`, `contact`, `address`, `remarks`,  `timeapply`, `dateapply`, `addedby`)
-                VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+        $connection = $this->openConn();
+        $stmt = $connection->prepare("INSERT INTO tbl_motherchild (`id_resident`, 
+        `lname`, `fname`, `mi`, `age`, `contact`, `address`, `remarks`, `dateapply`, `addedby`)
+        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
 
-                $stmt->execute([$id_resident, $lname, $fname, $mi, $age, 
-                $contact, $address,  $remarks, $timeapply, $dateapply,  $addedby]);
+        $stmt->execute([$id_resident, $lname, $fname, $mi, $age, 
+        $contact, $address,  $remarks, $dateapply,  $addedby]);
 
-                $message2 = "Application Applied, you will be receive our text message for further details";
-                echo "<script type='text/javascript'>alert('$message2');</script>";
-                header('refresh:0');
-            }
-
-            else {
-                $message2 = "Sorry, Barangay consultations are available from 10:00 AM to 8:00 PM only";
-                echo "<script type='text/javascript'>alert('$message2');</script>";
-                header('refresh:0');
-            }
-        }
+        $message2 = "Application Applied, you will be receive our text message for further details";
+        echo "<script type='text/javascript'>alert('$message2');</script>";
+        header("refresh: 0");
+        
     }
 
     public function view_motherchild(){
@@ -556,8 +546,6 @@ class BMISClass {
 
 
     public function create_familyplan() {
-        if(isset($_POST['create_familyplan'])) {
-            
             $lname = $_POST['lname'];
             $fname = $_POST['fname'];
             $mi = $_POST['mi'];
@@ -574,36 +562,23 @@ class BMISClass {
             $sp_occupation = $_POST['sp_occupation'];
             $children = $_POST['children'];
             $income = $_POST['income'];
-
             $id_resident = $_POST['id_resident'];
-            $timeapply = $_POST['timeapply'];
             $dateapply = $_POST['dateapply'];
             $addedby = $_POST['addedby'];
 
-
-            if(($_POST['$timeapply'] >= 1000) && ($_POST['$timeapply'] <= 2000)) {
                 $connection = $this->openConn();
                 $stmt = $connection->prepare("INSERT INTO tbl_familyplan (`id_resident`, 
                 `lname`, `fname`, `mi`, `age`, `contact`, `address`, `occupation`, `status`, `bdate`, 
-                `spouse`, `sp_age`, `sp_bdate`, `sp_occupation`, `children`, `income`, `timeapply`, `dateapply`, 
-                `addedby`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+                `spouse`, `sp_age`, `sp_bdate`, `sp_occupation`, `children`, `income`, `dateapply`, 
+                `addedby`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
 
                 $stmt->execute([$id_resident, $lname, $fname, $mi, $age,
                 $contact, $address, $occupation, $status, $bdate, $spouse, $sp_age, $sp_bdate, $sp_occupation,
-                $children, $income, $timeapply, $dateapply,  $addedby]);
+                $children, $income, $dateapply,  $addedby]);
 
                 $message2 = "Application Applied, you will be receive our text message for further details";
                 echo "<script type='text/javascript'>alert('$message2');</script>";
                 header('refresh:0');
-            }
-
-            else {
-                $message2 = "Sorry, Barangay consultations are available from 10:00 AM to 8:00 PM only";
-                echo "<script type='text/javascript'>alert('$message2');</script>";
-                header('refresh:0');
-            }
-        }
-
     }
 
     public function view_familyplan(){

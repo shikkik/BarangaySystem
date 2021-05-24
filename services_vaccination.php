@@ -1,8 +1,10 @@
 <?php 
-    require('classes/main.class.php');
     require('classes/resident.class.php');
-    
     $userdetails = $bmis->get_userdata();
+    $id_resident = $_GET['id_resident'];
+    $resident = $residentbmis->get_single_resident($id_resident);
+    
+    //$bmis->create_vaccine();
 ?>
 
 <!DOCTYPE html>
@@ -381,13 +383,13 @@
                         <!-- Modal Body -->
 
                         <div class="modal-body">
-                            <form action="/action_page.php" class="was-validated">
+                            <form method="post" class="was-validated">
 
                                 <div class="row"> 
                                     <div class="col">
                                         <div class="form-group">
                                             <label for="cname">Child's Name:</label>
-                                            <input type="text" class="form-control" placeholder="Enter Child's Name" required>
+                                            <input name="child" type="text" class="form-control" placeholder="Enter Child's Name" required>
                                             <div class="valid-feedback">Valid.</div>
                                             <div class="invalid-feedback">Please fill out this field.</div>
                                         </div>
@@ -396,7 +398,7 @@
                                     <div class="col">
                                         <div class="form-group">
                                             <label for="address">Address:</label>
-                                            <input type="text" class="form-control" placeholder="Enter Address" required>
+                                            <input name="address" value="<?= $resident['address']?>" type="text" class="form-control" required>
                                             <div class="valid-feedback">Valid.</div>
                                             <div class="invalid-feedback">Please fill out this field.</div>
                                         </div>
@@ -471,7 +473,7 @@
                                     <div class="col">
                                         <div class="form-group">
                                             <label for="lname">Lastname:</label>
-                                            <input type="text" class="form-control" placeholder="Enter your Lastname" required>
+                                            <input name="lname" value="<?= $resident['lname']?>" type="text" class="form-control" required>
                                             <div class="valid-feedback">Valid.</div>
                                             <div class="invalid-feedback">Please fill out this field.</div>
                                         </div>
@@ -480,7 +482,7 @@
                                     <div class="col">
                                         <div class="form-group">
                                             <label for="fname">Firstname:</label>
-                                            <input type="text" class="form-control" placeholder="Enter your Firstname" required>
+                                            <input name="fname" value="<?= $resident['fname']?>" type="text" class="form-control" required>
                                             <div class="valid-feedback">Valid.</div>
                                             <div class="invalid-feedback">Please fill out this field.</div>
                                         </div>
@@ -488,7 +490,7 @@
                                     <div class="col">
                                         <div class="form-group">
                                             <label for="mname">Middlename:</label>
-                                            <input type="text" class="form-control" placeholder="Enter your Middlename" required>
+                                            <input name="mi" value="<?= $resident['mi']?>" type="text" class="form-control" required>
                                             <div class="valid-feedback">Valid.</div>
                                             <div class="invalid-feedback">Please fill out this field.</div>
                                         </div>
@@ -500,13 +502,13 @@
                                         <label for="vaccine">Vaccine:</label>
                                         <select class="form-control" name="vaccine" id="vaccine" placeholder="Enter your Vaccine" required>
                                         <option value="">Choose your Vaccine</option>
-                                        <option value="vaccine1">BCG</option>
-                                        <option value="vaccine2">Hepatitis B</option>
-                                        <option value="vaccine3">Pentavalent Vaccine</option>
-                                        <option value="vaccine4">Oral Polio Vaccine</option>
-                                        <option value="vaccine5">Inactivated Polio Vaccine</option>
-                                        <option value="vaccine6">Pneumococcal Conjugate Vaccine</option>
-                                        <option value="vaccine7">Measles, Mumps, Rubella</option>
+                                        <option value="BCG">BCG</option>
+                                        <option value="Hepatitis B">Hepatitis B</option>
+                                        <option value="Pentavalent Vaccine">Pentavalent Vaccine</option>
+                                        <option value="Oral Polio Vaccine">Oral Polio Vaccine</option>
+                                        <option value="Inactivated Polio Vaccine">Inactivated Polio Vaccine</option>
+                                        <option value="Pneumococcal Conjugate Vaccine">Pneumococcal Conjugate Vaccine</option>
+                                        <option value="Measles, Mumps, Rubella">Measles, Mumps, Rubella</option>
                                         </select>
                                         <div class="valid-feedback">Valid.</div>
                                         <div class="invalid-feedback">Please fill out this field.</div>
@@ -521,16 +523,17 @@
                                     </div>
                                 </div>
                                 
-                            </form>
+                            
                             
                             <!-- Modal Footer -->
                             
                             <div class="modal-footer">
                                 <div class="paa">
                                     <button type="button" class="btn btn-dark" data-dismiss="modal">Close</button>
-                                    <button type="button" class="btn btn-primary">Save changes</button>
+                                    <button name="create_vaccine" type="submit" class="btn btn-primary">Save changes</button>
                                 </div>
                             </div>  
+                            </form>
                         </div>
                     </div>
                 </div>

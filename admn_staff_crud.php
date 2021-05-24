@@ -109,7 +109,7 @@
                     <tr>
                         <td>    
                             <form action="" method="post">
-                                <a href="update_staff.php?email=<?= $view['email'];?>" class="btn btn-primary"> Update </a>
+                                <a href="update_staff_form.php?email=<?= $view['email'];?>" class="btn btn-primary"> Update </a>
                                 <input type="hidden" name="email" value="<?= $view['email'];?>">
                                 <button class="btn btn-danger" type="submit" name="delete_staff"> Delete </button>
                             </form>

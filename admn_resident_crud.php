@@ -187,7 +187,7 @@
                     <tr>
                         <td>    
                         <form action="" method="post">
-                            <a href="update_resident.php?email=<?= $view['email'];?>" class="btn btn-primary">  Update </a>
+                            <a href="update_resident_form.php?email=<?= $view['email'];?>" class="btn btn-primary">  Update </a>
                             <input type="hidden" name="email" value="<?= $view['email'];?>">
                             <button class="btn btn-danger" type="submit" name="delete_resident"> Delete </button>
                         </form>

@@ -7,9 +7,20 @@
     $dt = new DateTime("now", new DateTimeZone('Asia/Manila'));
     $tm = new DateTime("now", new DateTimeZone('Asia/Manila'));
     $cdate = $dt->format('Y/m/d');
-    $ctime = $tm->format('H:i');
-
-    $bmis->create_motherchild();
+    $ctime = $tm->format('H');
+    
+    if(isset($_POST['create_motherchild'])) {
+        if(($ctime >= 10) && ($ctime <= 20)) {
+            $bmis->create_motherchild();
+        }
+    
+        else {
+            $message2 = "Sorry, Barangay consultations are available from 10:00 AM to 8:00 PM only";
+            echo "<script type='text/javascript'>alert('$message2');</script>";
+            header('refresh:0');
+        }
+    }
+    
 
 
 ?>
@@ -163,7 +174,7 @@
         <!-- Eto yung navbar -->
 
         <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top">
-            <a class="navbar-brand" href="#">Barangay Sorsogon</a>
+            <a class="navbar-brand" href="resident_homepage.php">Barangay Sorsogon</a>
 
             <div class="dropdown ml-auto">
                 <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown"><?= $userdetails['surname'];?>, <?= $userdetails['firstname'];?>
@@ -366,7 +377,6 @@
 
                                         <input type="hidden" name="remarks">
                                         <input type="hidden" name="dateapply" value="<?= $cdate?>">
-                                        <input type="hidden" name="timeapply" value="<?= $ctime?>">
                                         <input name="addedby" type="hidden" value="<?= $userdetails['surname']?>, <?= $userdetails['firstname']?>">
                                         <input name="id_resident" type="hidden" value="<?= $resident['id_resident']?>">
                                     </div>

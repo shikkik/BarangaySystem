@@ -105,7 +105,7 @@
                         <div class="card"> 
                             <div class="card-body text-center">
                                 <img src="../BarangaySystem/icons/ResidentHomepage/vaccine.png"> 
-                                <a href="services_vaccination.php"> <h4> Vaccination Program </h4> 
+                                <a href="services_vaccination.php?id_resident=<?= $userdetails['id_resident'];?>"> <h4> Vaccination Program </h4> 
                             </a>
                             </div>
                         </div>
@@ -125,8 +125,8 @@
                         </div>
                     </div>
 
-                    <div class="col"> 
-                        <div class="card"> 
+                    <div class="col">
+                        <div class="card">
                             <div class="card-body text-center">
                                 <img src="../BarangaySystem/icons/ResidentHomepage/familyplan.png"> 
                                 <a href="services_familyplanning.php?id_resident=<?= $userdetails['id_resident'];?>"> <h4> Family Planning </h4> 
