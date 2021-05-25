@@ -119,13 +119,10 @@
                             <div class="invalid-feedback">Please fill out this field.</div>
                         </div>
                     </div>
-                  
                   </div>
                 
-                  
-                  
                 <!-- Modal Footer -->
-                  
+                
                 <div class="modal-footer">
                   <div class="paa">
                     <input name="dateapply" type="hidden" class="form-control" value="<?= $cdate?>">

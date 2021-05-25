@@ -93,6 +93,7 @@
                         <a class="collapse-item" href="admn_vaccine_crud.php">Vaccination Program</a>
                         <a class="collapse-item" href="admn_familyplan_crud.php">Family Planning</a>
                         <a class="collapse-item" href="admn_motherchild_crud.php">Mother & Child <br> Check-up</a>
+                        <a class="collapse-item" href="admn_medicine_crud.php">Medicine Inventory</a>
                     </div>
                 </div>
             </li>

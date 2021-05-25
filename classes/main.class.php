@@ -425,12 +425,6 @@ class BMISClass {
             header("refresh: 0");
 
         }
-
-        else {
-            $message2 = "There was a problem in updating this data";
-            echo "<script type='text/javascript'>alert('$message2');</script>";
-            header("refresh: 0");
-        }
     }
 
     public function delete_medicine(){
