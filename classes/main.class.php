@@ -606,17 +606,11 @@ class BMISClass {
             $connection = $this->openConn();
             $stmt = $connection->prepare("UPDATE tbl_familyplan SET lname = ?, fname = ?, mi = ?, 
             age = ?, contact = ?, address = ?, occupation = ?, status = ?, bdate =?, spouse = ?,
-            sp_age = ?, sp_bdate = ?, sp_occupation = ?, children = ?, income = ? addedby = ? WHERE id_familyplan = ?");
+            sp_age = ?, sp_bdate = ?, sp_occupation = ?, children = ?, income = ?, addedby = ? WHERE id_familyplan = ?");
             $stmt->execute([ $lname, $fname, $mi, $age,  $contact, $address, $occupation, $status, $bdate,
             $spouse, $sp_age, $sp_bdate, $sp_occupation, $children, $income, $addedby, $id_familyplan]);
             
             $message2 = "Family Plan Data Updated";
-            echo "<script type='text/javascript'>alert('$message2');</script>";
-             header("refresh: 0");
-        }
-        
-        else {
-            $message2 = "There was a problem in updating this data";
             echo "<script type='text/javascript'>alert('$message2');</script>";
             header("refresh: 0");
         }
