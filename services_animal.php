@@ -5,7 +5,17 @@
     $id_resident = $_GET['id_resident'];
     $resident = $residentbmis->get_single_resident($id_resident);
 
-    print_r($resident);
+    $dt = new DateTime("now", new DateTimeZone('Asia/Manila'));
+    $tm = new DateTime("now", new DateTimeZone('Asia/Manila'));
+    $cdate = $dt->format('Y/m/d');
+    $ctime = $tm->format('H');
+
+    if (isset($_POST['create_animal'])) {
+      $bmis->create_animal();
+    }
+    
+
+
     
     
     
@@ -281,99 +291,82 @@
                       <div class="col-sm-6">
                         <div class="form-group">
                           <label for="uname">Animal:</label>
-                          <input type="text" class="form-control" placeholder="Enter Animal" required>
+                          <input name="pettype" type="text" class="form-control" placeholder="Enter Animal" required>
                             <div class="valid-feedback">Valid.</div>
                             <div class="invalid-feedback">Please fill out this field.</div>
                         </div>
 
                         <div class="form-group">
-                          <label for="origin">Origin:</label>
-                          <input type="text" class="form-control" placeholder="Enter Origin" required>
-                            <div class="valid-feedback">Valid.</div>
-                            <div class="invalid-feedback">Please fill out this field.</div>  
+                        <label for="Age" class="mtop">Age </label>
+                      <input name="age" type="number" class="form-control" placeholder="Enter Pets Age" required>
+                      <div class="valid-feedback">Valid.</div>
+                      <div class="invalid-feedback">Please fill out this field.</div>
                         </div>
 
                         <div class="form-group">            
-                          <label for="disease">Disease:</label>
-                          <input type="text" class="form-control" placeholder="Enter Disease" required>
-                          <div class="valid-feedback">Valid.</div>
-                          <div class="invalid-feedback">Please fill out this field.</div>
+                        <label for="Sex"class="mtop">Sex</label>
+                      <div class="form-check">
+                        <label class="form-check-label">
+                          <input name="sex" value="Male" type="radio" class="form-check-input" name="optradio">Male
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <label class="form-check-label">
+                          <input name="sex" value="Female" type="radio" class="form-check-input" name="optradio">Female
+                        </label>
+                      </div>    
                         </div>
                     </div>
 
                     <div class="col-sm-6">
                       <div class="form-group">
                         <label for="breed">Breed:</label>
-                        <input type="text" class="form-control" placeholder="Enter Breed" required>
+                        <input name="breed" type="text" class="form-control" placeholder="Enter Breed" required>
                           <div class="valid-feedback">Valid.</div>
                           <div class="invalid-feedback">Please fill out this field.</div>
                       </div>
                       <div class="form-group">
                         <label for="purpose">Purpose:</label>
-                        <input type="text" class="form-control" placeholder="Enter Purpose" required>
+                        <input name="purpose" type="text" class="form-control" placeholder="Enter Purpose" required>
                         <div class="valid-feedback">Valid.</div>
                         <div class="invalid-feedback">Please fill out this field.</div>
                       </div>
                         <label for="vaccine">Vaccine:</label>
-                        <select class="form-control" name="vaccine" id="vaccine" placeholder="Enter your Vaccine" required>
+                        <select class="form-control" name="vaccination" id="vaccine" placeholder="Enter your Vaccine" required>
                           <option value="">Choose your Vaccine</option>
-                          <option value="vaccine1">Parvovirus (Dogs)</option>
-                          <option value="vaccine2">Distemper (Dogs)</option>
-                          <option value="vaccine3">Parainfluenza (Dogs)</option>
-                          <option value="vaccine4">Hepatitis (Dogs)</option>
-                          <option value="vaccine5">Leptospirosis (Dogs)</option>
-                          <option value="vaccine6">Anti-Rabies (Dogs)</option>
-                          <option value="vaccine7">FVRCP (Cats)</option>
-                          <option value="vaccine8">FeLV (Cats)</option>
-                          <option value="vaccine9">Anti-Rabies (Cats)</option>
-                          <option value="vaccine10">Bordetella (Cats)</option>
+                          <option value="Parvovirus">Parvovirus (Dogs)</option>
+                          <option value="Distemper">Distemper (Dogs)</option>
+                          <option value="Parainfluenza">Parainfluenza (Dogs)</option>
+                          <option value="Hepatitis">Hepatitis (Dogs)</option>
+                          <option value="Leptospirosis">Leptospirosis (Dogs)</option>
+                          <option value="Anti-Rabies">Anti-Rabies (Dogs)</option>
+                          <option value="FVRCP">FVRCP (Cats)</option>
+                          <option value="FeLV">FeLV (Cats)</option>
+                          <option value="Anti-Rabies">Anti-Rabies (Cats)</option>
+                          <option value="Bordetella">Bordetella (Cats)</option>
                         </select>
                         <div class="valid-feedback">Valid.</div>
                         <div class="invalid-feedback">Please fill out this field.</div>
                     </div>
-
                   </div>
-
-                  <div class="row">
-                    <div class="col-sm-4">
-                      <label for="Age" class="mtop">Age </label>
-                      <input type="number" class="form-control" placeholder="Enter your Age" required>
-                      <div class="valid-feedback">Valid.</div>
-                      <div class="invalid-feedback">Please fill out this field.</div>
-                    </div>
-                    <div class="col-sm-3">
-                        <label for="Sex"class="mtop">Sex</label>
-                      <div class="form-check">
-                        <label class="form-check-label">
-                          <input type="radio" class="form-check-input" name="optradio">Male
-                        </label>
-                      </div>
-                      <div class="form-check">
-                        <label class="form-check-label">
-                          <input type="radio" class="form-check-input" name="optradio">Female
-                        </label>
-                      </div>    
-                    </div>
-                    <div class="col-sm-5">
-                      <div class="form-group">
-                          <label for="Date"class="mtop">Date </label>
-                          <input type="date" class="form-control" required>
-                          <div class="valid-feedback">Valid.</div>
-                          <div class="invalid-feedback">Please fill out this field.</div>
-                      </div>
-                    </div>
-                  </div>
-                </form>
+                
                   
                   
                 <!-- Modal Footer -->
                   
                 <div class="modal-footer">
                   <div class="paa">
+                    <input name="id_resident" type="hidden" class="form-control" value="<?= $resident['id_resident']?>">
+                    <input name="contact" type="hidden" class="form-control" value="<?= $resident['contact']?>">
+                    <input name="address" type="hidden" class="form-control" value="<?= $resident['address']?>">
+                    <input name="owner" type="hidden" class="form-control" value="<?= $userdetails['surname']?> <?= $userdetails['firstname']?> <?= $userdetails['mname']?>">
+                    <input name="dateapply" type="hidden" class="form-control" value="<?= $cdate?>">
+                    <input name="addedby" type="hidden" class="form-control" value="<?= $userdetails['surname']?> <?= $userdetails['firstname']?> <?= $userdetails['mname']?>">
                     <button type="button" class="btn btn-dark" data-dismiss="modal">Close</button>
-                    <button name ="create_tbdots" type="submit" class="btn btn-primary">Save changes</button>
+                    <button name ="create_animal" type="submit" class="btn btn-primary">Save changes</button>
                   </div>
                 </div> 
+              </form>
               </div>
             </div>
           </div>

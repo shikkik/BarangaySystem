@@ -280,6 +280,87 @@ class BMISClass {
         return $ancount;
     }
 
+    //------------------------------------------ MOTHER CHILD CHECKUP CRUD -----------------------------------------------
+
+
+    public function create_animal() {
+        $id_resident = $_POST['id_resident'];
+        $pettype = $_POST['pettype'];
+        $breed = $_POST['breed'];
+        $sex = $_POST['sex'];
+        $age = $_POST['age'];
+        $purpose = $_POST['purpose'];
+        $vaccination = $_POST['vaccination'];
+        $owner = $_POST['owner'];
+        $address = $_POST['address'];
+        $contact = $_POST['contact'];
+        $dateapply = $_POST['dateapply'];
+        $addedby = $_POST['addedby'];
+
+
+        $connection = $this->openConn();
+        $stmt = $connection->prepare("INSERT INTO tbl_animal (`id_resident`, 
+        `pettype`, `breed`, `sex`, `age`, `purpose`, `vaccination`, `owner`, `address`,
+        `contact`, `dateapply`, `addedby`)
+        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+
+        $stmt->execute([$id_resident, $pettype, $breed, $sex, $age, $purpose, $vaccination,
+        $owner, $address,  $contact, $dateapply,  $addedby]);
+
+        $message2 = "Application Applied, you will be receive our text message for further details";
+        echo "<script type='text/javascript'>alert('$message2');</script>";
+        header("refresh: 0");
+        
+    }
+
+    public function view_animal(){
+        $connection = $this->openConn();
+        $stmt = $connection->prepare("SELECT * from tbl_animal");
+        $stmt->execute();
+        $view = $stmt->fetchAll();
+        return $view;
+    }
+
+    public function update_animal() {
+        if (isset($_POST['update_animal'])) {
+            $id_animal = $_GET['id_animal'];
+            $pettype = $_POST['pettype'];
+            $breed = $_POST['breed'];
+            $sex = $_POST['sex'];
+            $age = $_POST['age'];
+            $purpose = $_POST['purpose'];
+            $vaccination = $_POST['vaccination'];
+            $owner = $_POST['owner'];
+            $address = $_POST['address'];
+            $contact = $_POST['contact'];
+            $dateapply = $_POST['dateapply'];
+            $addedby = $_POST['addedby'];
+
+            $connection = $this->openConn();
+            $stmt = $connection->prepare("UPDATE tbl_animal SET pettype = ?, breed = ?, sex = ?, 
+            age = ?, purpose = ?, vaccination = ?, owner = ?, address = ?, contact = ?, dateapply = ?,
+            addedby = ? WHERE id_animal = ?");
+            $stmt->execute([ $pettype, $breed, $sex, $age, $purpose, $vaccination, $owner, 
+            $address, $contact, $dateapply, $addedby, $id_animal]);
+            
+            $message2 = "Animal Registry & Welfare Data Updated";
+            echo "<script type='text/javascript'>alert('$message2');</script>";
+            header("refresh: 0");
+        }
+    }
+
+    public function delete_animal(){
+        $id_animal = $_POST['id_animal'];
+
+        if(isset($_POST['delete_animal'])) {
+            $connection = $this->openConn();
+            $stmt = $connection->prepare("DELETE FROM tbl_animal where id_animal = ?");
+            $stmt->execute([$id_animal]);
+
+            header("Refresh:0");
+        }
+    }
+
 
     //  --------------------------------------------------------- MEDICINE CRUD ---------------------------------------------------------
 
@@ -462,7 +543,7 @@ class BMISClass {
     }
 
 
-    //------------------------------------------ TB DOTS CRUD -----------------------------------------------
+    //------------------------------------------ MOTHER CHILD CHECKUP CRUD -----------------------------------------------
 
 
     public function create_motherchild() {

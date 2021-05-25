@@ -136,8 +136,10 @@ Resident Application Tables
     addedby VARCHAR(255) NOT NULL , 
     PRIMARY KEY (id_animal)) ENGINE = InnoDB;
 
-    "ALTER TABLE `tbl_animal` DROP `origin`;"
-    "ALTER TABLE `tbl_animal` DROP `vaccdate`;"
+    ALTER TABLE `tbl_animal` DROP `origin`;
+    ALTER TABLE `tbl_animal` DROP `vaccdate`;
+    ALTER TABLE `tbl_animal` DROP `disease`;
+    ALTER TABLE `tbl_animal` ADD `dateapply` DATE NULL DEFAULT CURRENT_TIMESTAMP AFTER `contact`;
 
     CREATE TABLE bmis.tbl_motherchild 
     ( id_motherchild INT NOT NULL AUTO_INCREMENT , 
