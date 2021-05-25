@@ -512,7 +512,6 @@ class BMISClass {
             $remarks = $_POST['remarks'];
             $addedby = $_POST['addedby'];
 
-
             $connection = $this->openConn();
             $stmt = $connection->prepare("UPDATE tbl_motherchild SET lname = ?, fname = ?, mi = ?, 
             age = ?, contact = ?, address = ?, remarks = ?, addedby = ? WHERE id_motherchild = ?");
@@ -521,12 +520,6 @@ class BMISClass {
             $message2 = "Mother & Child Check-up Data Updated";
             echo "<script type='text/javascript'>alert('$message2');</script>";
              header("refresh: 0");
-        }
-
-        else {
-            $message2 = "There was a problem in updating this data";
-            echo "<script type='text/javascript'>alert('$message2');</script>";
-            header("refresh: 0");
         }
     }
 
