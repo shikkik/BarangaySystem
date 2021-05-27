@@ -29,14 +29,22 @@
         <!-- responsive tags for screen compatibility -->
         <meta name="viewport" content="width=device-width, initial-scale=1 shrink-to-fit=no">
         <!-- custom css --> 
-        <link href="../BarangaySystem/customcss/index.css" rel="stylesheet" type="text/css">
+        <link href="../BarangaySystem/css/index.css" rel="stylesheet" type="text/css">
         <!-- bootstrap css -->
         <link href="../BarangaySystem/bootstrap/css/bootstrap.css" rel="stylesheet" type="text/css"> 
         <!-- fontawesome icons --> 
         <script src="https://kit.fontawesome.com/67a9b7069e.js" crossorigin="anonymous"></script>
         <!-- fontawesome icons --> 
         <script src="../BarangaySystem/customjs/main.js" type="text/javascript"></script>
+
+        <style> 
+            body {
+                background-color: #00405B !important;
+            }
+        </style>
     </head>
+
+
 
     <body>
 
@@ -46,7 +54,7 @@
         <div class="container-fluid"> 
             <div class="row">
                 <div class="col-sm"></div>
-                    <div class="col-sm main-heading text-center" > 
+                    <div class="col-sm main-heading text-center text-white" > 
                         <h3> Barangay Information Management System</h3>
                         <p1> Designed for accessibility, now available in your barangay. </p1>
                     </div>

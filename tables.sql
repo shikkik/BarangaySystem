@@ -107,6 +107,18 @@ Resident Application Tables
     addedby VARCHAR(255) NOT NULL , 
     PRIMARY KEY (id_vaccine)) ENGINE = InnoDB;
 
+    ALTER TABLE `tbl_vaccine` ADD `dateapply` DATE NOT NULL DEFAULT CURRENT_TIMESTAMP AFTER `addedby`;
+    ALTER TABLE `tbl_vaccine` ADD `id_resident` INT NOT NULL AFTER `id_vaccine`;
+    ALTER TABLE `tbl_vaccine` DROP `father`;
+    ALTER TABLE `tbl_vaccine` DROP `mother`;
+    ALTER TABLE `tbl_vaccine` DROP `dosage`;
+    ALTER TABLE `tbl_vaccine` DROP `remarks`;
+    ALTER TABLE `tbl_vaccine` CHANGE `id_resident` `id_resident` INT(11) NULL;
+
+    ALTER TABLE `tbl_vaccine` ADD FOREIGN KEY (`id_resident`) REFERENCES `tbl_resident`(`id_resident`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+    ALTER TABLE `tbl_vaccine` ADD `lname` VARCHAR(255) NOT NULL AFTER `weight`, ADD `fname` VARCHAR(255) NOT NULL AFTER `lname`, ADD `mi` VARCHAR(255) NOT NULL AFTER `fname`, ADD `vaccine` VARCHAR(255) NOT NULL AFTER `mi`;
+
     CREATE TABLE bmis.tbl_animal 
     ( id_animal INT NOT NULL AUTO_INCREMENT , 
     pettype VARCHAR(255) NOT NULL , 
@@ -124,8 +136,10 @@ Resident Application Tables
     addedby VARCHAR(255) NOT NULL , 
     PRIMARY KEY (id_animal)) ENGINE = InnoDB;
 
-    "ALTER TABLE `tbl_animal` DROP `origin`;"
-    "ALTER TABLE `tbl_animal` DROP `vaccdate`;"
+    ALTER TABLE `tbl_animal` DROP `origin`;
+    ALTER TABLE `tbl_animal` DROP `vaccdate`;
+    ALTER TABLE `tbl_animal` DROP `disease`;
+    ALTER TABLE `tbl_animal` ADD `dateapply` DATE NULL DEFAULT CURRENT_TIMESTAMP AFTER `contact`;
 
     CREATE TABLE bmis.tbl_motherchild 
     ( id_motherchild INT NOT NULL AUTO_INCREMENT , 
@@ -141,12 +155,12 @@ Resident Application Tables
 
     ALTER TABLE `tbl_motherchild` CHANGE `remarks` `remarks` VARCHAR(1000) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL;
     ALTER TABLE `tbl_motherchild` ADD `id_resident` INT NOT NULL AFTER `id_motherchild`;
-    ALTER TABLE `tbl_motherchild` ADD `dateapply` VARCHAR(244) NOT NULL AFTER `remarks`, ADD `timeapply` VARCHAR(244) NOT NULL AFTER `dateapply`;
-
-    ALTER TABLE `tbl_motherchild` CHANGE `timeapply` `timeapply` TIME(244) NOT NULL;
+    ALTER TABLE `tbl_motherchild` ADD `dateapply` VARCHAR(244) NOT NULL AFTER `remarks`;
     ALTER TABLE `tbl_motherchild` CHANGE `dateapply` `dateapply` DATE NOT NULL;
 
 
+    
+    
     CREATE TABLE bmis.tbl_familyplan 
     ( id_familyplan INT NOT NULL AUTO_INCREMENT , 
     lname VARCHAR(255) NOT NULL , 
@@ -174,6 +188,8 @@ Resident Application Tables
     ALTER TABLE `tbl_familyplan` CHANGE `sched_date` `dateapply` DATE NOT NULL DEFAULT CURRENT_TIMESTAMP;
     ALTER TABLE `tbl_familyplan` CHANGE `sched_time` `timeapply` TIME NOT NULL;
     ALTER TABLE `tbl_familyplan` CHANGE `sp_occupation` `sp_occupation` VARCHAR(255) NOT NULL;
+
+    ALTER TABLE `tbl_familyplan` DROP `timeapply`;
 
 Documents Processing
 

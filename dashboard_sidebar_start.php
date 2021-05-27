@@ -1,17 +1,3 @@
-<?php
-    error_reporting(E_ALL ^ E_WARNING);
-    require('classes/staff.class.php');
-    $userdetails = $bmis->get_userdata();
-    //$bmis->validate_admin();
-    $view = $staffbmis->view_staff();
-    $staffbmis->create_staff();
-    $upstaff = $staffbmis->update_staff();
-    $staffbmis->delete_staff();
-    $staffcount = $staffbmis->count_staff();
-
-?>
-
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -23,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>SB Admin 2 - Blank</title>
+    <title>Barangay Services & Healthcare System k</title>
 
     <!-- Custom fonts for this template-->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -102,37 +88,45 @@
                 <div id="collapsePages" class="collapse show" aria-labelledby="headingPages"
                     data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="admn_animal_crud.php">Animal Welfare Registry</a>
+                    <a class="collapse-item" href="admn_animal_crud.php">Animal Welfare Registry</a>
                         <a class="collapse-item" href="admn_tbdots_crud.php">TB DOTS Program</a>
                         <a class="collapse-item" href="admn_vaccine_crud.php">Vaccination Program</a>
                         <a class="collapse-item" href="admn_familyplan_crud.php">Family Planning</a>
                         <a class="collapse-item" href="admn_motherchild_crud.php">Mother & Child <br> Check-up</a>
+                        <a class="collapse-item" href="admn_medicine_crud.php">Medicine Inventory</a>
                     </div>
                 </div>
             </li>
 
-            <!-- Nav Item - Charts -->
+            <!-- Announcement Management -->
+            <li class="nav-item">
+                <a class="nav-link" href="admn_announcement_crud.php">
+                    <i class="fas fa-fw fa-chart-area"></i>
+                    <span>Announcements</span></a>
+            </li>
+
+            <!-- Certificate of Residency -->
             <li class="nav-item">
                 <a class="nav-link" href="admn_certofres.php">
                     <i class="fas fa-fw fa-chart-area"></i>
                     <span>Certificate of Residency</span></a>
             </li>
 
-            <!-- Nav Item - Tables -->
+            <!-- Barangay Clearance -->
             <li class="nav-item">
                 <a class="nav-link" href="admn_brgyclearance.php">
                     <i class="fas fa-fw fa-table"></i>
                     <span>Barangay Clearance</span></a>
             </li>
 
-            <!-- Nav Item - Tables -->
+            <!-- Certificate of Indigency -->
             <li class="nav-item">
                 <a class="nav-link" href="admn_indigency.php">
                     <i class="fas fa-fw fa-table"></i>
                     <span>Certificate of Indigency</span></a>
             </li>
 
-            <!-- Nav Item - Tables -->
+            <!-- Complain Blotter Report -->
             <li class="nav-item">
                 <a class="nav-link" href="admn_blotterreport.php">
                     <i class="fas fa-fw fa-table"></i>
@@ -245,120 +239,3 @@
                     </ul>
                 </nav>
                 <!-- End of Topbar -->
-
-                <!-- Begin Page Content -->
-                <div class="container-fluid">
-
-                    <!-- Page Heading -->
-
-                    <h1 class="h3 mb-4 text-gray-800">Barangay Staff Data</h1>
-
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="card"> 
-                                <div class="card-header"> Update Barangay Staff Data </div>
-                                <div class="card-body"> 
-                                <form method="post">
-                                    <label class="mtop"> Last Name</label>
-                                    <input type="text" class="form-control" name="lname"  placeholder="Enter last name">
-
-                                    <label class="mtop" >First Name </label>
-                                    <input type="text" class="form-control" name="fname"  placeholder="Enter first name">
-
-                                    <label class="mtop"> Middle Initial </label>
-                                    <input type="text" class="form-control" name="mi" placeholder="Enter middle initial">
-
-                                    <label class="mtop">Email </label>
-                                    <input type="email" class="form-control" name="email"  placeholder="Enter email">
-
-                                    <label class="mtop">Contact Number</label>
-                                    <input type="tel" class="form-control" name="contact" placeholder="Enter contact number">
-
-                                    <label class="mtop">Password</label>
-                                    <input type="password" class="form-control" name="password" placeholder="Enter password">
-
-                                    <label class="mtop">Position </label>
-                                    <input type="text" class="form-control" name="position"  placeholder="Enter position">
-
-                                    <label class="mtop"> Address </label>
-                                    <input type="text" class="form-control" name="address"  placeholder="Enter Address">
-
-                                    <label class="mtop">Age </label>
-                                    <input type="number" class="form-control" name="age" placeholder="Age">
-
-                                    <label class="mtop">Gender</label>
-                                    <select class="form-control" name="sex" id="sex">
-                                    <option value="Male">Male</opt ion>
-                                    <option value="Female">Female</option>
-                                    </select>
-                                    
-                                    <input type="hidden" class="form-control" name="role" value="user">
-                                    <input type="hidden" class="form-control" name="addedby" value="<?= $userdetails['surname']?>, <?= $userdetails['firstname']?>">
-                                    <button class="btn btn-primary" type="submit" name="update_staff"> Update </button>
-                                </form>         
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <br>
-                </div>
-                <!-- /.container-fluid -->
-
-            </div>
-            <!-- End of Main Content -->
-
-            <!-- Footer -->
-            <footer class="sticky-footer bg-white">
-                <div class="container my-auto">
-                    <div class="copyright text-center my-auto">
-                        <span>Copyright &copy; Barangay Services & Healthcare Management System 2021</span>
-                    </div>
-                </div>
-            </footer>
-            <!-- End of Footer -->
-
-        </div>
-        <!-- End of Content Wrapper -->
-
-    </div>
-    <!-- End of Page Wrapper -->
-
-    <!-- Scroll to Top Button-->
-    <a class="scroll-to-top rounded" href="#page-top">
-        <i class="fas fa-angle-up"></i>
-    </a>
-
-    <!-- Logout Modal-->
-    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
-                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">×</span>
-                    </button>
-                </div>
-                <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
-                <div class="modal-footer">
-                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                    <a class="btn btn-primary" href="login.html">Logout</a>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Bootstrap core JavaScript-->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-    <!-- Core plugin JavaScript-->
-    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
-
-    <!-- Custom scripts for all pages-->
-    <script src="js/sb-admin-2.min.js"></script>
-
-</body>
-
-</html>

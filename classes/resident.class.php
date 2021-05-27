@@ -4,39 +4,9 @@
     
 
     class ResidentClass extends BMISClass {
-
-        /*
-        //authentication method for residents to enter
-        public function residentlogin() {
-        if(isset($_POST['residentlogin'])) {
-
-            $username = $_POST['email'];
-            $password = $_POST['password']; 
-        
-            $connection = $this->openConn();
-            $stmt = $connection->prepare("SELECT * FROM tbl_residents WHERE email = ? AND password = ?");
-            $stmt->Execute([$username, $password]);
-            $user = $stmt->fetch();
-            $total = $stmt->rowCount();
-            
-                //calls the set_userdata function 
-                if($total > 0) {
-                    $this->set_userdata($user);
-                    header('Location: resident_homepage.php');
-                }
-                
-                else {
-                    echo '<script>alert("Email or Password is Invalid")</script>';
-                }
-            }
-        }
-        */
-
-
         //------------------------------------ RESIDENT CRUD FUNCTIONS ----------------------------------------
 
         public function create_resident() {
-
             if(isset($_POST['add_resident'])) {
                 $email = $_POST['email'];
                 $password = md5($_POST['password']);
@@ -60,7 +30,7 @@
 
                 if ($this->check_resident($email) == 0 ) {
 
-                    if( !in_array( $age, range( $min_age, $max_age) ) ){
+                    if(!in_array( $age, range( $min_age, $max_age) ) ){
                         $message1 = "Sorry, you are still underaged to register an account";
                         echo "<script type='text/javascript'>alert('$message1');</script>";
                         return(0);
@@ -77,6 +47,8 @@
 
                         $message2 = "Account added, you can now continue logging in";
                         echo "<script type='text/javascript'>alert('$message2');</script>";
+
+                        header("Refresh:0");
                     }
                 }
 
@@ -86,45 +58,13 @@
             }
         }
 
-        
-
         public function view_resident(){
-
             $connection = $this->openConn();
-
             $stmt = $connection->prepare("SELECT * from tbl_resident");
             $stmt->execute();
             $view = $stmt->fetchAll();
-
             return $view;
-           
         }
-
-        public function count_resident() {
-            $connection = $this->openConn();
-
-            $stmt = $connection->prepare("SELECT COUNT(*) from tbl_resident");
-            $stmt->execute();
-            $rescount = $stmt->fetchColumn();
-
-            return $rescount;
-        }
-         
-        public function view_household_list() {
-            $lname = $_POST['lname'];
-            $mi = $_POST['mi'];
-
-            if(isset($_POST['search_household'])) {
-                $connection = $this->openConn();
-
-                $stmt1 = $connection->prepare("SELECT * FROM `tbl_resident` WHERE `lname` LIKE '%$lname%' and  `mi` LIKE '%$mi%'");
-			    $stmt1->execute();
-            }
-            else {
-
-            }
-        }
-        
 
         public function update_resident() {
             if (isset($_POST['update_resident'])) {
@@ -145,24 +85,20 @@
                 $role = $_POST['role'];
                 $addedby = $_POST['addedby'];
 
-                    $connection = $this->openConn();
-                    $stmt = $connection->prepare("UPDATE tbl_resident SET password =?, lname =?, 
-                    fname = ?, mi =?, age =?, sex =?, status =?, address =?, contact =?,
-                    bdate =?, bplace =?, nationality =?,family_role =?, role =?, addedby =? WHERE email = ?");
-                    $stmt->execute([$password, $lname, $fname, $mi, $age, $sex, $status, $address,
-                    $contact, $bdate, $bplace, $nationality, $familyrole, $role, $addedby, $email]);
+                $connection = $this->openConn();
+                $stmt = $connection->prepare("UPDATE tbl_resident SET password =?, lname =?, 
+                fname = ?, mi =?, age =?, sex =?, status =?, address =?, contact =?,
+                bdate =?, bplace =?, nationality =?,family_role =?, role =?, addedby =? WHERE email = ?");
+                $stmt->execute([$password, $lname, $fname, $mi, $age, $sex, $status, $address,
+                $contact, $bdate, $bplace, $nationality, $familyrole, $role, $addedby, $email]);
                    
-                    echo "naka udpate na";
-                    header("location: resident_crud.php");
-
+                $message2 = "Resident Data Updated";
+                echo "<script type='text/javascript'>alert('$message2');</script>";
+                header("refresh: 0");
             }
         }
 
-
-        
-
         public function delete_resident(){
-
             $email = $_POST['email'];
 
             if(isset($_POST['delete_resident'])) {
@@ -173,20 +109,6 @@
                 header("Refresh:0");
             }
         }
-
-
-
-
-
-        public function check_household($lname, $mi) {
-            $connection = $this->openConn();
-            $stmt = $connection->prepare("SELECT * FROM tbl_resident WHERE lname = ? AND mi = ?");
-            $stmt->Execute([$lname, $mi]);
-            $total = $stmt->rowCount(); 
-    
-            return $total;
-        }
-
 
     //-------------------------------- EXTRA FUNCTIONS FOR RESIDENT CLASS ---------------------------------
 
@@ -216,6 +138,33 @@
         $total = $stmt->rowCount(); 
 
         return $total;
+    }
+
+    public function count_resident() {
+        $connection = $this->openConn();
+        $stmt = $connection->prepare("SELECT COUNT(*) from tbl_resident");
+        $stmt->execute();
+        $rescount = $stmt->fetchColumn();
+        return $rescount;
+    }
+
+    public function check_household($lname, $mi) {
+        $connection = $this->openConn();
+        $stmt = $connection->prepare("SELECT * FROM tbl_resident WHERE lname = ? AND mi = ?");
+        $stmt->Execute([$lname, $mi]);
+        $total = $stmt->rowCount(); 
+        return $total;
+    }
+
+    public function view_household_list() {
+        $lname = $_POST['lname'];
+        $mi = $_POST['mi'];
+
+        if(isset($_POST['search_household'])) {
+            $connection = $this->openConn();
+            $stmt1 = $connection->prepare("SELECT * FROM `tbl_resident` WHERE `lname` LIKE '%$lname%' and  `mi` LIKE '%$mi%'");
+            $stmt1->execute();
+        }
     }
 
     public function resident_change_password() {

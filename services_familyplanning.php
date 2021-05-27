@@ -7,9 +7,19 @@
     $dt = new DateTime("now", new DateTimeZone('Asia/Manila'));
     $tm = new DateTime("now", new DateTimeZone('Asia/Manila'));
     $cdate = $dt->format('Y/m/d');
-    $ctime = $tm->format('H:i');
+    $ctime = $tm->format('H');
 
-    $bmis->create_familyplan();
+    if(isset($_POST['create_familyplan'])) {
+        if(($ctime >= 10) && ($ctime <= 20)) {
+            $bmis->create_familyplan();
+        }
+    
+        else {
+            $message2 = "Sorry, Barangay consultations are available from 10:00 AM to 8:00 PM only";
+            echo "<script type='text/javascript'>alert('$message2');</script>";
+            header('refresh:0');
+        }
+    }
 ?>
 
 <!DOCTYPE html>
@@ -410,7 +420,6 @@
                                     </div>
 
                                     <div class="col">
-
                                         <div class="form-group">
                                             <label for="fname">Firstname:</label>
                                             <input name="fname" type="text" class="form-control" value="<?= $resident['fname']?>" required>
@@ -447,12 +456,12 @@
                                         <label for="status">Status:</label>
                                         <select class="form-control select" name="status" id="status" placeholder="Enter your Status" required="required">
                                             <option value="">Choose your Status</option>
-                                            <option value="status1">Single</option>
-                                            <option value="status2">In a relationship</option>
-                                            <option value="status3">Engaged</option>
-                                            <option value="status4">Married</option>
-                                            <option value="status5">Widowed</option>
-                                            <option value="status6">Divorced</option>
+                                            <option value="Single">Single</option>
+                                            <option value="In a relationship">In a relationship</option>
+                                            <option value="Engaged">Engaged</option>
+                                            <option value="Married">Married</option>
+                                            <option value="Widowed">Widowed</option>
+                                            <option value="Divorced">Divorced</option>
                                         </select>
                                         <div class="valid-feedback">Valid.</div>
                                         <div class="invalid-feedback">Please fill out this field.</div>
@@ -572,7 +581,6 @@
                             <div class="modal-footer">
                                 <div class="paa">
                                         <input type="hidden" name="dateapply" value="<?= $cdate?>">
-                                        <input type="hidden" name="timeapply" value="<?= $ctime?>">
                                         <input name="addedby" type="hidden" value="<?= $userdetails['surname']?>, <?= $userdetails['firstname']?>">
                                         <input name="id_resident" type="hidden" value="<?= $resident['id_resident']?>">
                                     <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
