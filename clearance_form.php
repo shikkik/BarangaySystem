@@ -42,7 +42,7 @@ $resident = $residentbmis->get_single_resident($id_resident);
 
      ?> 
        
-       <div class="col-xs-12 col-sm-6 col-md-8" style="" >
+       <div class="col-xs-12 col-sm-6 col-md-8"  >
             <div style=" background: black;" >
                 <div class="col-xs-4 col-sm-6 col-md-3" style="background: white; margin-right:10px; border: 2px solid black;">
                     <center><image src="../BarangaySystem/icons/logo.png" style="width:90%;height:164px;"/></center>

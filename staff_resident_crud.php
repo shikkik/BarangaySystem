@@ -2,11 +2,9 @@
    error_reporting(E_ALL ^ E_WARNING);
    require('classes/resident.class.php');
    $userdetails = $bmis->get_userdata();
-   $bmis->validate_admin();
    $view = $residentbmis->view_resident();
    $residentbmis->create_resident();
    $residentbmis->update_resident();
-   $residentbmis->delete_resident();
    $rescount = $residentbmis->count_resident();
    $rescountm = $residentbmis->count_male_resident();
    $rescountf = $residentbmis->count_female_resident();
@@ -16,7 +14,7 @@
 ?>
 
 <?php 
-    include('dashboard_sidebar_start.php');
+    include('dashboard_sidebar_start_staff.php');
 ?>
     <!-- Begin Page Content -->
     <div class="container-fluid">
@@ -188,8 +186,7 @@
                         <td>    
                         <form action="" method="post">
                             <a href="update_resident_form.php?id_resident=<?= $view['id_resident'];?>" class="btn btn-primary">  Update </a>
-                            <input type="hidden" name="email" value="<?= $view['id_resident'];?>">
-                            <button class="btn btn-danger" type="submit" name="delete_resident"> Delete </button>
+                            <input type="hidden" name="email" value="<?= $view['email'];?>">
                         </form>
                         </td>
                         <td> <?= $view['email'];?> </td>
