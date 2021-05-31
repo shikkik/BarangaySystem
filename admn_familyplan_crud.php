@@ -3,6 +3,7 @@
    require('classes/resident.class.php');
    $userdetails = $bmis->get_userdata();
    $bmis->validate_admin();
+   $fpcount = $residentbmis->count_familyplan();
    $view = $bmis->view_familyplan();
    
    if(isset($_POST['create_familyplan'])) {
@@ -230,34 +231,12 @@
         <div class="col-md-4"> 
             <div class="card"> 
                 <div class="card-body"> 
-                    <h5> Number of Residents </h5> <br> <?= $rescount ?>
+                    <h5> Total </h5> <br> <?= $fpcount ?>
                 </div>
             </div> 
 
             <br> 
 
-            <div class="card"> 
-                <div class="card-body"> 
-                    <h5> Total Household Head </h5> <br> <?= $rescountfh ?>
-                </div>
-            </div>
-            
-            <br>
-
-            <div class="card"> 
-                <div class="card-body"> 
-                    <h5> Male Residents </h5> <br> <?= $rescountm ?>
-                </div>
-            </div>
-
-            <br> 
-
-            <div class="card"> 
-                <div class="card-body"> 
-                    <h5> Female Residents </h5> <br> <?= $rescountf ?>
-                </div>
-            </div>
-        </div> 
 
     </div>
 

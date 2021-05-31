@@ -2,7 +2,7 @@
    error_reporting(E_ALL ^ E_WARNING);
    require('classes/resident.class.php');
    $userdetails = $bmis->get_userdata();
-   $bmis->validate_admin();
+   //$bmis->validate_admin();
    $bmis->create_medicine();
    $view = $bmis->view_medicine();
    $bmis->update_medicine();
@@ -12,7 +12,7 @@
 ?>
 
 <?php 
-    include('dashboard_sidebar_start.php');
+    include('dashboard_sidebar_start_staff.php');
 ?>
     <!-- Begin Page Content -->
     <div class="container-fluid">
@@ -73,7 +73,7 @@
             </div> 
 
             <br> 
-
+ 
 
     </div>
 
@@ -104,9 +104,8 @@
                         <tr>
                             <td>    
                             <form action="" method="post">
-                                <a href="update_medicine_form.php?id_medicine=<?= $view['id_medicine'];?>" class="btn btn-primary"> Update </a>
+                                <a href="update_medicine_form.php?id_medicine=<?= $view['id_medicine'];?>" class="btn btn-primary">  Update </a>
                                 <input type="hidden" name="id_medicine" value="<?= $view['id_medicine'];?>">
-                                <button class="btn btn-danger" type="submit" name="delete_medicine"> Delete </button>
                             </form>
                             </td>
                             <td> <?= $view['id_medicine'];?> </td>

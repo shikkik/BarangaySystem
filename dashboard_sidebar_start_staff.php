@@ -91,12 +91,12 @@
                 <div id="collapsePages" class="collapse show" aria-labelledby="headingPages"
                     data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                    <a class="collapse-item" href="admn_animal_crud.php">Animal Welfare Registry</a>
-                        <a class="collapse-item" href="admn_tbdots_crud.php">TB DOTS Program</a>
-                        <a class="collapse-item" href="admn_vaccine_crud.php">Vaccination Program</a>
-                        <a class="collapse-item" href="admn_familyplan_crud.php">Family Planning</a>
-                        <a class="collapse-item" href="admn_motherchild_crud.php">Mother & Child <br> Check-up</a>
-                        <a class="collapse-item" href="admn_medicine_crud.php">Medicine Inventory</a>
+                    <a class="collapse-item" href="staff_animal_crud.php">Animal Welfare Registry</a>
+                        <a class="collapse-item" href="staff_tbdots_crud.php">TB DOTS Program</a>
+                        <a class="collapse-item" href="staff_vaccine_crud.php">Vaccination Program</a>
+                        <a class="collapse-item" href="staff_familyplan_crud.php">Family Planning</a>
+                        <a class="collapse-item" href="staff_motherchild_crud.php">Mother & Child <br> Check-up</a>
+                        <a class="collapse-item" href="staff_medicine_crud.php">Medicine Inventory</a>
                     </div>
                 </div>
             </li>
