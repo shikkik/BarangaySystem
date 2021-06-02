@@ -118,6 +118,10 @@
                         x.type = "password";
                 }
             }
+
+            function trying() {
+                window.location.href = "resident_registration.php";
+            }
         </script>
 
     </body>
