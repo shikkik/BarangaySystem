@@ -151,6 +151,25 @@
 
     //--------------------------------------------- EXTRA FUNCTIONS FOR STAFF -------------------------------------------------
 
+            public function get_single_staff($id_user){
+
+                $id_user = $_GET['id_user'];
+                
+                $connection = $this->openConn();
+                $stmt = $connection->prepare("SELECT * FROM tbl_user where id_user = ?");
+                $stmt->execute([$id_user]);
+                $user = $stmt->fetch();
+                $total = $stmt->rowCount();
+
+                if($total > 0 )  {
+                    return $user;
+                }
+                else{
+                    return false;
+                }
+            }
+
+
         public function check_staff($email) {
 
             $connection = $this->openConn();

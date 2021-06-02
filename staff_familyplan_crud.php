@@ -2,9 +2,9 @@
    error_reporting(E_ALL ^ E_WARNING);
    require('classes/resident.class.php');
    $userdetails = $bmis->get_userdata();
-   $bmis->validate_admin();
+   //$bmis->validate_admin();
+   $fpcount = $residentbmis->count_familyplan();
    $view = $bmis->view_familyplan();
-   $tbcount = $residentbmis->count_tbdots();
    
    if(isset($_POST['create_familyplan'])) {
     $bmis->create_familyplan();
@@ -15,7 +15,7 @@
 ?>
 
 <?php 
-    include('dashboard_sidebar_start.php');
+    include('dashboard_sidebar_start_staff.php');
 ?>
     <!-- Begin Page Content -->
     <div class="container-fluid">
@@ -231,13 +231,11 @@
         <div class="col-md-4"> 
             <div class="card"> 
                 <div class="card-body"> 
-                    <h5> Total  </h5> <br> <?= $tbcount ?>
+                    <h5> Total </h5> <br> <?= $fpcount ?>
                 </div>
             </div> 
 
-           
-
-            
+            <br> 
 
     </div>
 
@@ -271,7 +269,6 @@
                         <form action="" method="post">
                             <a href="update_familyplan_form.php?id_familyplan=<?= $view['id_familyplan'];?>" class="btn btn-primary">  Update </a>
                             <input type="hidden" name="id_familyplan" value="<?= $view['id_familyplan'];?>">
-                            <button class="btn btn-danger" type="submit" name="delete_familyplan"> Delete </button>
                         </form>
                         </td>
                         <td> <?= $view['id_familyplan'];?> </td>

@@ -9,7 +9,7 @@
     $ctime = $tm->format('H');
 
     $userdetails = $bmis->get_userdata();
-    $bmis->validate_admin();
+    //$bmis->validate_admin();
 
     $bmis->create_vaccine();
     $view = $bmis->view_vaccine();
@@ -17,11 +17,11 @@
     $bmis->delete_vaccine();
     $vacccount = $residentbmis->count_vacc();
 
-?>  
+?>
 
 
 <?php 
-    include('dashboard_sidebar_start.php');
+    include('dashboard_sidebar_start_staff.php');
 ?>
 
 <!-- Begin Page Content -->
@@ -188,8 +188,7 @@
             </div>
         </div> 
 
-        <br> 
-
+        <br>  
 
 </div>
 
@@ -228,7 +227,6 @@
                     <form action="" method="post">
                         <a href="update_vaccine_form.php?id_vaccine=<?= $view['id_vaccine'];?>" class="btn btn-primary">  Update </a>
                         <input type="hidden" name="id_vaccine" value="<?= $view['id_vaccine'];?>">
-                        <button class="btn btn-danger" type="submit" name="delete_vaccine"> Delete </button>
                     </form>
                     </td>
                     <td> <?= $view['id_vaccine'];?> </td>

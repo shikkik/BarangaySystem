@@ -67,7 +67,7 @@ class BMISClass {
                     //statement na mag ch check kung user yung role
                     if($user['role'] == 'user') {
                         $this->set_userdata($user);
-                        header('Location: testingcrud.php');
+                        header('Location: staff_dashboard.php');
                         return(0);
                     }
 
@@ -131,7 +131,8 @@ class BMISClass {
 
         //eto si userdata yung mag s set ng name mo tsaka role/access habang ikaw ay nag b browse at gumagamit ng store management
         $_SESSION['userdata'] = array(
-            "id_resident" => $array['id_resident'], 
+            "id_resident" => $array['id_resident'],
+            "id_user" => $array['id_user'],
             "emailadd" => $array['email'],
             //"fullname" => $array['lname']. " ".$array['fname']. " ".$array['mi'],
             "surname" => $array['lname'],

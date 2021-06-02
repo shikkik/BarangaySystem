@@ -2,12 +2,12 @@
    error_reporting(E_ALL ^ E_WARNING);
    require('classes/resident.class.php');
    $userdetails = $bmis->get_userdata();
-   $bmis->validate_admin();
+   //$bmis->validate_admin();
    $view = $bmis->view_animal();
    $anmcount = $residentbmis->count_animals();
    $anmcountm = $residentbmis->count_male_animals();
    $anmcountf = $residentbmis->count_female_animals();
-   
+
    $dt = new DateTime("now", new DateTimeZone('Asia/Manila'));
    $tm = new DateTime("now", new DateTimeZone('Asia/Manila'));
    $cdate = $dt->format('Y/m/d');
@@ -22,7 +22,7 @@
 ?>
 
 <?php 
-    include('dashboard_sidebar_start.php');
+    include('dashboard_sidebar_start_staff.php');
 ?>
     <!-- Begin Page Content -->
     <div class="container-fluid">
@@ -175,7 +175,8 @@
                     <h5> Female Animals </h5> <br> <?= $anmcountf ?>
                 </div>
             </div>
-        </div> 
+        </div>
+
 
     </div>
 
@@ -211,7 +212,6 @@
                         <form action="" method="post">
                             <a href="update_animal_form.php?id_animal=<?= $view['id_animal'];?>" class="btn btn-primary">  Update </a>
                             <input type="hidden" name="id_animal" value="<?= $view['id_animal'];?>">
-                            <button class="btn btn-danger" type="submit" name="delete_animal"> Delete </button>
                         </form>
                         </td>
                         <td> <?= $view['id_animal'];?> </td>
