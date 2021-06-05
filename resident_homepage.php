@@ -1,13 +1,18 @@
 <?php 
     //error_reporting(E_ALL ^ E_WARNING);
-    require('classes/resident.class.php');
+    include('classes/resident.class.php');
     $userdetails = $bmis->get_userdata();
-    //$view = $residentbmis->check_resident($email);
-    //$residentbmis->view_household_list();
 
-    
+    $dt = new DateTime("now", new DateTimeZone('Asia/Manila'));
+    $tm = new DateTime("now", new DateTimeZone('Asia/Manila'));
+    $cdate = $dt->format('Y/m/d');
+    $ctime = $tm->format('H');
+
+    //$event = $view_announcement();
 
 ?>
+
+
 
 <script> 
     function logout() {
@@ -46,10 +51,31 @@
                 </button>
                 <ul class="dropdown-menu">
                     <a class="btn" href="resident_profile.php?id_resident=<?= $userdetails['id_resident'];?>"> <i class="fas fa-user" style="padding: 0.5em;"></i>Personal Profile  </a>
+                    <a class="btn" href="resident_changepass.php?id_resident=<?= $userdetails['id_resident'];?>"> <i class="fas fa-lock" style="padding: 0.5em;"></i>Change Password  </a>
                     <a class="btn" href="logout.php"> <i class="fas fa-sign-out-alt" style="padding: 0.5em;"></i> Logout  </a>
                 </ul>
             </div>
         </nav>
+
+        <?php 
+
+            if($cdate) { ?>
+                <div class="alert alert-info alert-dismissible fade show" role="alert">
+                <strong>ANNOUNCEMENT!</strong> <?= $event?>
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                </div>
+
+        <?php 
+            }
+
+            else {
+                return(0);
+            }
+
+        ?>
+
 
         <section class="heading-section"> 
             <div class="container text-center"> 

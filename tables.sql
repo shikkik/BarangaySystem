@@ -239,6 +239,8 @@ Non user tables
     PRIMARY KEY (id_announcement)) ENGINE = InnoDB;
 
     ALTER TABLE `tbl_announcement` ADD `target` VARCHAR(255) NULL AFTER `event`;
+    ALTER TABLE `tbl_announcement` CHANGE `start_date` `start_date` DATE NOT NULL;
+    ALTER TABLE `tbl_announcement` CHANGE `end_date` `end_date` DATE NOT NULL;
 
 
 
@@ -280,3 +282,39 @@ Non user tables
 
 
 
+
+
+        if (isset($_POST['resident_change_password'])) {
+            $id_resident = $_GET['id_resident'];
+            $oldpassword = md5($_POST['oldpassword']);
+            $oldpasswordverify = md5($_POST['oldpasswordverify']);
+            $newpassword = md5($_POST['newpassword']);
+            $checkpassword = $_POST['checkpassword'];
+
+            $connection = $this->openConn();
+            $stmt = $connection->prepare("SELECT `password` FROM tbl_resident WHERE id_resident = ?");
+            $stmt->execute([$id_resident]);
+            $result = $stmt->fetch();
+
+            if($result > 0) {
+                
+                if (md5($_POST['newpassword']) != md5($_POST['checkpassword'])){
+                    echo "New Password and Verification Password does not Match";
+                }
+
+                elseif (md5($_POST['oldpassword']) != md5($_POST['oldpasswordverify'])){
+                    echo "Old Password is Incorrect";
+                }
+
+                else {
+                    $connection = $this->openConn();
+                    $stmt = $connection->prepare("UPDATE tbl_resident SET password =? WHERE id_resident = ?");
+                    $stmt->execute([ md5($newpassword), $id_resident]);
+                    
+                    $message2 = "Password Updated";
+                    echo "<script type='text/javascript'>alert('$message2');</script>";
+                    header("refresh: 0");
+                }
+
+            }
+        }

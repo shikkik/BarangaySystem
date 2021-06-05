@@ -134,6 +134,7 @@ class BMISClass {
             "id_resident" => $array['id_resident'],
             "id_user" => $array['id_user'],
             "emailadd" => $array['email'],
+            "password" => $array['password'],
             //"fullname" => $array['lname']. " ".$array['fname']. " ".$array['mi'],
             "surname" => $array['lname'],
             "firstname" => $array['fname'],
