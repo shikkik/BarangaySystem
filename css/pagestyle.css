@@ -1,0 +1,33 @@
+.header {
+    text-align: center;
+    margin-top: 4em;
+    margin-bottom: 5em;
+}
+
+.card-spacing {
+    margin-top: 2em;
+    margin-bottom: 5em;
+}
+
+hr {
+    border: 0;
+    height: 1em;
+    background: #333;
+    background-image: linear-gradient(to right, #72B8AA, #56889A, #72B8AA);
+    width: 90%;
+}
+
+.title-spacing {
+    margin-top: 3em ;
+    margin-bottom: 3em ;
+}
+
+.mtop {
+    margin-bottom: 1em;
+    
+}
+
+
+/*body {
+     background-color: aqua !important;
+ }*/

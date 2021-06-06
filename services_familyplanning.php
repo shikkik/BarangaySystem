@@ -1,8 +1,25 @@
 <?php 
-    require('classes/main.class.php');
     require('classes/resident.class.php');
-    
     $userdetails = $bmis->get_userdata();
+    $id_resident = $_GET['id_resident'];
+    $resident = $residentbmis->get_single_resident($id_resident);
+
+    $dt = new DateTime("now", new DateTimeZone('Asia/Manila'));
+    $tm = new DateTime("now", new DateTimeZone('Asia/Manila'));
+    $cdate = $dt->format('Y/m/d');
+    $ctime = $tm->format('H');
+
+    if(isset($_POST['create_familyplan'])) {
+        if(($ctime >= 10) && ($ctime <= 20)) {
+            $bmis->create_familyplan();
+        }
+    
+        else {
+            $message2 = "Sorry, Barangay consultations are available from 10:00 AM to 8:00 PM only";
+            echo "<script type='text/javascript'>alert('$message2');</script>";
+            header('refresh:0');
+        }
+    }
 ?>
 
 <!DOCTYPE html>
@@ -247,23 +264,16 @@
         <!-- Eto yung navbar -->
 
         <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top">
-            <a class="navbar-brand" href="#">Barangay Sorsogon</a>
-
+            <a class="navbar-brand" href="resident_homepage.php">Barangay Sorsogon</a>
             <div class="dropdown ml-auto">
                 <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown"><?= $userdetails['surname'];?>, <?= $userdetails['firstname'];?>
                     <span class="caret"></span>
                 </button>
                 <ul class="dropdown-menu">
-                    <form method="post">
-                        <input type="hidden" value="<?= $userdetails['surname'];?>">  
-                        <input type="hidden" value="<?= $userdetails['mname'];?>">
-                        <li><button class="btn" href="resident_profile.php"> <i class="fas fa-user"></i> Personal Profile </button></li>
-                    </form>
-                        <button class="btn" onclick="logout();"> <i class="fas fa-sign-out-alt"> </i> Logout </button>
-                
+                    <a class="btn" href="resident_profile.php?id_resident=<?= $userdetails['id_resident'];?>"> <i class="fas fa-user" style="padding: 0.5em;"></i>Personal Profile  </a>
+                    <a class="btn" href="logout.php"> <i class="fas fa-sign-out-alt" style="padding: 0.5em;"></i> Logout  </a>
                 </ul>
             </div>
-
         </nav>
 
         <!-- Under Navbar -->
@@ -383,44 +393,43 @@
                         <!-- Modal Body -->
 
                         <div class="modal-body">
-                            <form action="/action_page.php" class="was-validated">
+                            <form method="post" class="was-validated">
                                 <div class="row"> 
 
                                     <div class="col">
                                         <div class="form-group">
                                             <label for="lname">Lastname:</label>
-                                            <input type="text" class="form-control" placeholder="Enter your Lastname" required>
+                                            <input name="lname" type="text" class="form-control" value="<?= $resident['lname']?>" required>
                                             <div class="valid-feedback">Valid.</div>
                                             <div class="invalid-feedback">Please fill out this field.</div>
                                         </div>
 
                                         <div class="form-group">
                                             <label for="mname">Middlename:</label>
-                                            <input type="text" class="form-control" placeholder="Enter your Middlename" required>
+                                            <input name="mi" type="text" class="form-control" value="<?= $resident['mi']?>" required>
                                             <div class="valid-feedback">Valid.</div>
                                             <div class="invalid-feedback">Please fill out this field.</div>  
                                         </div>
 
                                         <div class="form-group">            
                                             <label for="cno">Contact Number:</label>
-                                            <input type="text" maxlength="11" class="form-control" placeholder="Enter your Contact Numebr" pattern="[0-9]{11}" required>
+                                            <input name="contact" type="text" maxlength="11" class="form-control" value="<?= $resident['contact']?>" pattern="[0-9]{11}" required>
                                             <div class="valid-feedback">Valid.</div>
                                             <div class="invalid-feedback">Please fill out this field.</div>
                                         </div>
                                     </div>
 
                                     <div class="col">
-
                                         <div class="form-group">
                                             <label for="fname">Firstname:</label>
-                                            <input type="text" class="form-control" placeholder="Enter your Firstname" required>
+                                            <input name="fname" type="text" class="form-control" value="<?= $resident['fname']?>" required>
                                             <div class="valid-feedback">Valid.</div>
                                             <div class="invalid-feedback">Please fill out this field.</div>  
                                         </div>
 
                                         <div class="form-group">
                                             <label for="address">Address:</label>
-                                            <input type="text" class="form-control" placeholder="Enter your Address" required>
+                                            <input name="address" type="text" class="form-control" value="<?= $resident['address']?>" required>
                                             <div class="valid-feedback">Valid.</div>
                                             <div class="invalid-feedback">Please fill out this field.</div>
                                         </div>
@@ -447,12 +456,12 @@
                                         <label for="status">Status:</label>
                                         <select class="form-control select" name="status" id="status" placeholder="Enter your Status" required="required">
                                             <option value="">Choose your Status</option>
-                                            <option value="status1">Single</option>
-                                            <option value="status2">In a relationship</option>
-                                            <option value="status3">Engaged</option>
-                                            <option value="status4">Married</option>
-                                            <option value="status5">Widowed</option>
-                                            <option value="status6">Divorced</option>
+                                            <option value="Single">Single</option>
+                                            <option value="In a relationship">In a relationship</option>
+                                            <option value="Engaged">Engaged</option>
+                                            <option value="Married">Married</option>
+                                            <option value="Widowed">Widowed</option>
+                                            <option value="Divorced">Divorced</option>
                                         </select>
                                         <div class="valid-feedback">Valid.</div>
                                         <div class="invalid-feedback">Please fill out this field.</div>
@@ -480,30 +489,30 @@
                                     <div class="col">
                                         <div class="form-group">
                                             <label for="lname">Lastname:</label>
-                                            <input type="text" class="form-control" placeholder="Enter your Lastname" required>
+                                            <input name="sp_lname" type="text" class="form-control" placeholder="Enter your Lastname" required>
                                             <div class="valid-feedback">Valid.</div>
                                             <div class="invalid-feedback">Please fill out this field.</div>
                                         </div>
 
                                         <div class="form-group">
                                             <label for="mname">Middlename:</label>
-                                            <input type="text" class="form-control" placeholder="Enter your Middlename" required>
+                                            <input name="sp_mi" type="text" class="form-control" placeholder="Enter your Middlename" required>
                                             <div class="valid-feedback">Valid.</div>
-                                            <div class="invalid-feedback">Please fill out this field.</div>  
+                                            <div class="invalid-feedback">Please fill out this field.</div>
                                         </div>
                                     </div>
 
                                     <div class="col">
                                         <div class="form-group">
                                             <label for="fname">Firstname:</label>
-                                            <input type="text" class="form-control" placeholder="Enter your Firstname" required>
+                                            <input name="sp_fname" type="text" class="form-control" placeholder="Enter your Firstname" required>
                                             <div class="valid-feedback">Valid.</div>
                                             <div class="invalid-feedback">Please fill out this field.</div>  
                                         </div>
 
                                         <div class="form-group">
                                             <label for="occupation">Occupation:</label>
-                                            <input name="occupation" type="text" class="form-control" placeholder="Enter your Occupation" required>
+                                            <input name="sp_occupation" type="text" class="form-control" placeholder="Enter your Occupation" required>
                                             <div class="valid-feedback">Valid.</div>
                                             <div class="invalid-feedback">Please fill out this field.</div>
                                         </div>
@@ -517,28 +526,29 @@
                                         <label for="children">Children:</label>
                                             <select class="form-control select" name="children" id="children" required="required">
                                                 <option value="">How many children </option>
-                                                <option value="children1">1</option>
-                                                <option value="children2">2</option>
-                                                <option value="children3">3</option>
-                                                <option value="children4">4</option>
-                                                <option value="children5">5</option>
-                                                <option value="children6">6 or more</option>
+                                                <option value="1">1</option>
+                                                <option value="2">2</option>
+                                                <option value="3">3</option>
+                                                <option value="4">4</option>
+                                                <option value="5">5</option>
+                                                <option value="6">6 or more</option>
                                             </select>
                                         <div class="valid-feedback">Valid.</div>
                                         <div class="invalid-feedback">Please fill out this field.</div>
                                     </div>
 
                                     <div class="col">
-                                        <label for="income">Income:</label>
+                                        <label for="income">Total Income:</label>
                                             <select class="form-control select" name="income" id="income" required="required">
                                                 <option value="">Enter your Income </option>
-                                                <option value="income1">5,000 +</option>
-                                                <option value="income2">10,000 +</option>
-                                                <option value="income3">20,000 +</option>
-                                                <option value="income4">30,000 +</option>
-                                                <option value="income5">40,000 +</option>
-                                                <option value="income6">50,000 +</option>
-                                                <option value="income7">60,000 or more </option>
+                                                <option value="5000">Below 5,000</option>
+                                                <option value="5000">5,000+</option>
+                                                <option value="10000">10,000 +</option>
+                                                <option value="20000">20,000 +</option>
+                                                <option value="30000">30,000 +</option>
+                                                <option value="40000">40,000 +</option>
+                                                <option value="50000">50,000 +</option>
+                                                <option value="60000">60,000 or more </option>
                                             </select>
                                         <div class="valid-feedback">Valid.</div>
                                         <div class="invalid-feedback">Please fill out this field.</div>
@@ -549,10 +559,9 @@
                                 <br>
 
                                 <div class="row">
-
                                     <div class="col">
                                         <label for="Age" class="mtop">Age </label>
-                                        <input name="age" type="number" class="form-control" placeholder="Enter your Age" value="<?= $resident['age']?>" required>
+                                        <input name="sp_age" type="number" class="form-control" placeholder="Enter your Age" value="<?= $resident['age']?>" required>
                                         <div class="valid-feedback">Valid.</div>
                                         <div class="invalid-feedback">Please fill out this field.</div>
                                     </div>
@@ -560,24 +569,25 @@
                                     <div class="col">
                                         <div class="form-group">
                                             <label for="Date"class="mtop">Birthday </label>
-                                            <input name="bdate" type="date" class="form-control" required>
+                                            <input name="sp_bdate" type="date" class="form-control" required>
                                             <div class="valid-feedback">Valid.</div>
                                             <div class="invalid-feedback">Please fill out this field.</div>
                                         </div>
                                     </div>  
-
                                 </div> 
-
-                            </form>
                             
                             <!-- Modal Footer -->
                             
                             <div class="modal-footer">
                                 <div class="paa">
-                                    <button type="button" class="btn btn-dark" data-dismiss="modal">Close</button>
-                                    <button type="button" class="btn btn-primary">Save changes</button>
+                                        <input type="hidden" name="dateapply" value="<?= $cdate?>">
+                                        <input name="addedby" type="hidden" value="<?= $userdetails['surname']?>, <?= $userdetails['firstname']?>">
+                                        <input name="id_resident" type="hidden" value="<?= $resident['id_resident']?>">
+                                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                                    <button name="create_familyplan" type="submit" class="btn btn-primary">Save changes</button>
                                 </div>
-                            </div>  
+                            </div>
+                            </form>  
                         </div>
                     </div>
                 </div>

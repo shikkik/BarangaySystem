@@ -107,6 +107,18 @@ Resident Application Tables
     addedby VARCHAR(255) NOT NULL , 
     PRIMARY KEY (id_vaccine)) ENGINE = InnoDB;
 
+    ALTER TABLE `tbl_vaccine` ADD `dateapply` DATE NOT NULL DEFAULT CURRENT_TIMESTAMP AFTER `addedby`;
+    ALTER TABLE `tbl_vaccine` ADD `id_resident` INT NOT NULL AFTER `id_vaccine`;
+    ALTER TABLE `tbl_vaccine` DROP `father`;
+    ALTER TABLE `tbl_vaccine` DROP `mother`;
+    ALTER TABLE `tbl_vaccine` DROP `dosage`;
+    ALTER TABLE `tbl_vaccine` DROP `remarks`;
+    ALTER TABLE `tbl_vaccine` CHANGE `id_resident` `id_resident` INT(11) NULL;
+
+    ALTER TABLE `tbl_vaccine` ADD FOREIGN KEY (`id_resident`) REFERENCES `tbl_resident`(`id_resident`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+    ALTER TABLE `tbl_vaccine` ADD `lname` VARCHAR(255) NOT NULL AFTER `weight`, ADD `fname` VARCHAR(255) NOT NULL AFTER `lname`, ADD `mi` VARCHAR(255) NOT NULL AFTER `fname`, ADD `vaccine` VARCHAR(255) NOT NULL AFTER `mi`;
+
     CREATE TABLE bmis.tbl_animal 
     ( id_animal INT NOT NULL AUTO_INCREMENT , 
     pettype VARCHAR(255) NOT NULL , 
@@ -124,8 +136,10 @@ Resident Application Tables
     addedby VARCHAR(255) NOT NULL , 
     PRIMARY KEY (id_animal)) ENGINE = InnoDB;
 
-    "ALTER TABLE `tbl_animal` DROP `origin`;"
-    "ALTER TABLE `tbl_animal` DROP `vaccdate`;"
+    ALTER TABLE `tbl_animal` DROP `origin`;
+    ALTER TABLE `tbl_animal` DROP `vaccdate`;
+    ALTER TABLE `tbl_animal` DROP `disease`;
+    ALTER TABLE `tbl_animal` ADD `dateapply` DATE NULL DEFAULT CURRENT_TIMESTAMP AFTER `contact`;
 
     CREATE TABLE bmis.tbl_motherchild 
     ( id_motherchild INT NOT NULL AUTO_INCREMENT , 
@@ -141,12 +155,12 @@ Resident Application Tables
 
     ALTER TABLE `tbl_motherchild` CHANGE `remarks` `remarks` VARCHAR(1000) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL;
     ALTER TABLE `tbl_motherchild` ADD `id_resident` INT NOT NULL AFTER `id_motherchild`;
-    ALTER TABLE `tbl_motherchild` ADD `dateapply` VARCHAR(244) NOT NULL AFTER `remarks`, ADD `timeapply` VARCHAR(244) NOT NULL AFTER `dateapply`;
-
-    ALTER TABLE `tbl_motherchild` CHANGE `timeapply` `timeapply` TIME(244) NOT NULL;
+    ALTER TABLE `tbl_motherchild` ADD `dateapply` VARCHAR(244) NOT NULL AFTER `remarks`;
     ALTER TABLE `tbl_motherchild` CHANGE `dateapply` `dateapply` DATE NOT NULL;
 
 
+    
+    
     CREATE TABLE bmis.tbl_familyplan 
     ( id_familyplan INT NOT NULL AUTO_INCREMENT , 
     lname VARCHAR(255) NOT NULL , 
@@ -169,6 +183,13 @@ Resident Application Tables
     addedby VARCHAR(255) NOT NULL , 
     PRIMARY KEY (id_familyplan)) ENGINE = InnoDB;
 
+    ALTER TABLE `tbl_familyplan` ADD `id_resident` INT NOT NULL AFTER `id_familyplan`;
+    ALTER TABLE `tbl_familyplan` ADD FOREIGN KEY (`id_resident`) REFERENCES `tbl_resident`(`id_resident`) ON DELETE CASCADE ON UPDATE CASCADE;
+    ALTER TABLE `tbl_familyplan` CHANGE `sched_date` `dateapply` DATE NOT NULL DEFAULT CURRENT_TIMESTAMP;
+    ALTER TABLE `tbl_familyplan` CHANGE `sched_time` `timeapply` TIME NOT NULL;
+    ALTER TABLE `tbl_familyplan` CHANGE `sp_occupation` `sp_occupation` VARCHAR(255) NOT NULL;
+
+    ALTER TABLE `tbl_familyplan` DROP `timeapply`;
 
 Documents Processing
 
@@ -218,6 +239,8 @@ Non user tables
     PRIMARY KEY (id_announcement)) ENGINE = InnoDB;
 
     ALTER TABLE `tbl_announcement` ADD `target` VARCHAR(255) NULL AFTER `event`;
+    ALTER TABLE `tbl_announcement` CHANGE `start_date` `start_date` DATE NOT NULL;
+    ALTER TABLE `tbl_announcement` CHANGE `end_date` `end_date` DATE NOT NULL;
 
 
 
@@ -259,3 +282,39 @@ Non user tables
 
 
 
+
+
+        if (isset($_POST['resident_change_password'])) {
+            $id_resident = $_GET['id_resident'];
+            $oldpassword = md5($_POST['oldpassword']);
+            $oldpasswordverify = md5($_POST['oldpasswordverify']);
+            $newpassword = md5($_POST['newpassword']);
+            $checkpassword = $_POST['checkpassword'];
+
+            $connection = $this->openConn();
+            $stmt = $connection->prepare("SELECT `password` FROM tbl_resident WHERE id_resident = ?");
+            $stmt->execute([$id_resident]);
+            $result = $stmt->fetch();
+
+            if($result > 0) {
+                
+                if (md5($_POST['newpassword']) != md5($_POST['checkpassword'])){
+                    echo "New Password and Verification Password does not Match";
+                }
+
+                elseif (md5($_POST['oldpassword']) != md5($_POST['oldpasswordverify'])){
+                    echo "Old Password is Incorrect";
+                }
+
+                else {
+                    $connection = $this->openConn();
+                    $stmt = $connection->prepare("UPDATE tbl_resident SET password =? WHERE id_resident = ?");
+                    $stmt->execute([ md5($newpassword), $id_resident]);
+                    
+                    $message2 = "Password Updated";
+                    echo "<script type='text/javascript'>alert('$message2');</script>";
+                    header("refresh: 0");
+                }
+
+            }
+        }

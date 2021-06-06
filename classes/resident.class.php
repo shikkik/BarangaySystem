@@ -4,39 +4,9 @@
     
 
     class ResidentClass extends BMISClass {
-
-        /*
-        //authentication method for residents to enter
-        public function residentlogin() {
-        if(isset($_POST['residentlogin'])) {
-
-            $username = $_POST['email'];
-            $password = $_POST['password']; 
-        
-            $connection = $this->openConn();
-            $stmt = $connection->prepare("SELECT * FROM tbl_residents WHERE email = ? AND password = ?");
-            $stmt->Execute([$username, $password]);
-            $user = $stmt->fetch();
-            $total = $stmt->rowCount();
-            
-                //calls the set_userdata function 
-                if($total > 0) {
-                    $this->set_userdata($user);
-                    header('Location: resident_homepage.php');
-                }
-                
-                else {
-                    echo '<script>alert("Email or Password is Invalid")</script>';
-                }
-            }
-        }
-        */
-
-
         //------------------------------------ RESIDENT CRUD FUNCTIONS ----------------------------------------
 
         public function create_resident() {
-
             if(isset($_POST['add_resident'])) {
                 $email = $_POST['email'];
                 $password = md5($_POST['password']);
@@ -60,7 +30,7 @@
 
                 if ($this->check_resident($email) == 0 ) {
 
-                    if( !in_array( $age, range( $min_age, $max_age) ) ){
+                    if(!in_array( $age, range( $min_age, $max_age) ) ){
                         $message1 = "Sorry, you are still underaged to register an account";
                         echo "<script type='text/javascript'>alert('$message1');</script>";
                         return(0);
@@ -77,6 +47,8 @@
 
                         $message2 = "Account added, you can now continue logging in";
                         echo "<script type='text/javascript'>alert('$message2');</script>";
+
+                        header("Refresh:0");
                     }
                 }
 
@@ -86,45 +58,13 @@
             }
         }
 
-        
-
         public function view_resident(){
-
             $connection = $this->openConn();
-
             $stmt = $connection->prepare("SELECT * from tbl_resident");
             $stmt->execute();
             $view = $stmt->fetchAll();
-
             return $view;
-           
         }
-
-        public function count_resident() {
-            $connection = $this->openConn();
-
-            $stmt = $connection->prepare("SELECT COUNT(*) from tbl_resident");
-            $stmt->execute();
-            $rescount = $stmt->fetchColumn();
-
-            return $rescount;
-        }
-         
-        public function view_household_list() {
-            $lname = $_POST['lname'];
-            $mi = $_POST['mi'];
-
-            if(isset($_POST['search_household'])) {
-                $connection = $this->openConn();
-
-                $stmt1 = $connection->prepare("SELECT * FROM `tbl_resident` WHERE `lname` LIKE '%$lname%' and  `mi` LIKE '%$mi%'");
-			    $stmt1->execute();
-            }
-            else {
-
-            }
-        }
-        
 
         public function update_resident() {
             if (isset($_POST['update_resident'])) {
@@ -145,24 +85,20 @@
                 $role = $_POST['role'];
                 $addedby = $_POST['addedby'];
 
-                    $connection = $this->openConn();
-                    $stmt = $connection->prepare("UPDATE tbl_resident SET password =?, lname =?, 
-                    fname = ?, mi =?, age =?, sex =?, status =?, address =?, contact =?,
-                    bdate =?, bplace =?, nationality =?,family_role =?, role =?, addedby =? WHERE email = ?");
-                    $stmt->execute([$password, $lname, $fname, $mi, $age, $sex, $status, $address,
-                    $contact, $bdate, $bplace, $nationality, $familyrole, $role, $addedby, $email]);
+                $connection = $this->openConn();
+                $stmt = $connection->prepare("UPDATE tbl_resident SET password =?, lname =?, 
+                fname = ?, mi =?, age =?, sex =?, status =?, address =?, contact =?,
+                bdate =?, bplace =?, nationality =?,family_role =?, role =?, addedby =? WHERE email = ?");
+                $stmt->execute([$password, $lname, $fname, $mi, $age, $sex, $status, $address,
+                $contact, $bdate, $bplace, $nationality, $familyrole, $role, $addedby, $email]);
                    
-                    echo "naka udpate na";
-                    header("location: resident_crud.php");
-
+                $message2 = "Resident Data Updated";
+                echo "<script type='text/javascript'>alert('$message2');</script>";
+                header("refresh: 0");
             }
         }
 
-
-        
-
         public function delete_resident(){
-
             $email = $_POST['email'];
 
             if(isset($_POST['delete_resident'])) {
@@ -173,20 +109,6 @@
                 header("Refresh:0");
             }
         }
-
-
-
-
-
-        public function check_household($lname, $mi) {
-            $connection = $this->openConn();
-            $stmt = $connection->prepare("SELECT * FROM tbl_resident WHERE lname = ? AND mi = ?");
-            $stmt->Execute([$lname, $mi]);
-            $total = $stmt->rowCount(); 
-    
-            return $total;
-        }
-
 
     //-------------------------------- EXTRA FUNCTIONS FOR RESIDENT CLASS ---------------------------------
 
@@ -218,33 +140,30 @@
         return $total;
     }
 
-    public function resident_change_password() {
-        
-        if(isset($_POST['change_pass'])) {
+    public function count_resident() {
+        $connection = $this->openConn();
+        $stmt = $connection->prepare("SELECT COUNT(*) from tbl_resident");
+        $stmt->execute();
+        $rescount = $stmt->fetchColumn();
+        return $rescount;
+    }
 
-            $email = $_POST['email'];
-            $password = $_POST['password'];
-            $newpassword = $_POST['newpassword'];
-            $confirmpassword = $_POST['confirmpassword'];
+    public function check_household($lname, $mi) {
+        $connection = $this->openConn();
+        $stmt = $connection->prepare("SELECT * FROM tbl_resident WHERE lname = ? AND mi = ?");
+        $stmt->Execute([$lname, $mi]);
+        $total = $stmt->rowCount(); 
+        return $total;
+    }
 
-            $connection = $this->openConn(); 
+    public function view_household_list() {
+        $lname = $_POST['lname'];
+        $mi = $_POST['mi'];
 
-            $stmt1 = $connection->prepare("SELECT password FROM tbl_resident WHERE email = ?");
-            $stmt1->Execute([$email]);
-            $stmt1->fetch();
-
-            if($stmt1 > 0){
-
-                if($password) {
-
-                }
-
-            } 
-
-            else {
-                $message2 = "Invalid";
-                echo "<script type='text/javascript'>alert('$message2');</script>";
-            }
+        if(isset($_POST['search_household'])) {
+            $connection = $this->openConn();
+            $stmt1 = $connection->prepare("SELECT * FROM `tbl_resident` WHERE `lname` LIKE '%$lname%' and  `mi` LIKE '%$mi%'");
+            $stmt1->execute();
         }
     }
 
@@ -288,6 +207,86 @@
         return $rescount;
     }
 
+    public function count_animals() {
+        $connection = $this->openConn();
+
+        $stmt = $connection->prepare("SELECT COUNT(*) from tbl_animal");
+        $stmt->execute();
+        $rescount = $stmt->fetchColumn();
+
+        return $rescount;
+    }
+
+    public function count_female_animals() {
+        $connection = $this->openConn();
+
+        $stmt = $connection->prepare("SELECT COUNT(*) from tbl_animal where sex = 'female'");
+        $stmt->execute();
+        $rescount = $stmt->fetchColumn();
+
+        return $rescount;
+    }
+
+    public function count_male_animals() {
+        $connection = $this->openConn();
+
+        $stmt = $connection->prepare("SELECT COUNT(*) from tbl_animal where sex = 'male'");
+        $stmt->execute();
+        $rescount = $stmt->fetchColumn();
+
+        return $rescount;
+    }
+
+    public function count_tbdots() {
+        $connection = $this->openConn();
+
+        $stmt = $connection->prepare("SELECT COUNT(*) from tbl_tbdots");
+        $stmt->execute();
+        $rescount = $stmt->fetchColumn();
+
+        return $rescount;
+    }
+
+    public function count_vacc() {
+        $connection = $this->openConn();
+
+        $stmt = $connection->prepare("SELECT COUNT(*) from tbl_vaccine");
+        $stmt->execute();
+        $rescount = $stmt->fetchColumn();
+
+        return $rescount;
+    }
+
+    public function count_familyplan() {
+        $connection = $this->openConn();
+
+        $stmt = $connection->prepare("SELECT COUNT(*) from tbl_familyplan");
+        $stmt->execute();
+        $rescount = $stmt->fetchColumn();
+
+        return $rescount;
+    }
+    public function count_motherchild() {
+        $connection = $this->openConn();
+
+        $stmt = $connection->prepare("SELECT COUNT(*) from tbl_motherchild");
+        $stmt->execute();
+        $rescount = $stmt->fetchColumn();
+
+        return $rescount;
+    }
+
+    public function count_medicine() {
+        $connection = $this->openConn();
+
+        $stmt = $connection->prepare("SELECT COUNT(*) from tbl_medicine");
+        $stmt->execute();
+        $rescount = $stmt->fetchColumn();
+
+        return $rescount;
+    }
+
+
     public function profile_update() {
 
         if (isset($_POST['profile_update'])) {
@@ -310,6 +309,46 @@
         }
 
     }
+
+    //-------------------------------------- EXTRA FUNCTIONS ------------------------------------------------
+
+    public function change_password() {
+        if (isset($_POST['resident_change_password'])) {
+            $id_resident = $_GET['id_resident'];
+            $oldpassword = md5($_POST['oldpassword']);
+            $oldpasswordverify = md5($_POST['oldpasswordverify']);
+            $newpassword = md5($_POST['newpassword']);
+            $checkpassword = $_POST['checkpassword'];
+
+            $connection = $this->openConn();
+            $stmt = $connection->prepare("SELECT `password` FROM tbl_resident WHERE id_resident = ?");
+            $stmt->execute([$id_resident]);
+            $result = $stmt->fetch();
+
+            if($result > 0) {
+                
+                if (md5($_POST['newpassword']) != md5($_POST['checkpassword'])){
+                    echo "New Password and Verification Password does not Match";
+                }
+
+                elseif (md5($_POST['oldpassword']) != md5($_POST['oldpasswordverify'])){
+                    echo "Old Password is Incorrect";
+                }
+
+                else {
+                    $connection = $this->openConn();
+                    $stmt = $connection->prepare("UPDATE tbl_resident SET password =? WHERE id_resident = ?");
+                    $stmt->execute([ md5($newpassword), $id_resident]);
+                    
+                    $message2 = "Password Updated";
+                    echo "<script type='text/javascript'>alert('$message2');</script>";
+                    header("refresh: 0");
+                }
+
+            }
+        }
+    }
+
 
     }
 

@@ -7,15 +7,20 @@
     $dt = new DateTime("now", new DateTimeZone('Asia/Manila'));
     $tm = new DateTime("now", new DateTimeZone('Asia/Manila'));
     $cdate = $dt->format('Y/m/d');
-    $ctime = $tm->format('H:i');
+    $ctime = $tm->format('H');
+    
+    if(isset($_POST['create_motherchild'])) {
+        if(($ctime >= 10) && ($ctime <= 20)) {
+            $bmis->create_motherchild();
+        }
 
-    echo "$cdate";
-
-    echo "<br>";
-   
-    echo "$ctime";
-
-    $bmis->create_motherchild();
+        else {
+            $message2 = "Sorry, Barangay consultations are available from 10:00 AM to 8:00 PM only";
+            echo "<script type='text/javascript'>alert('$message2');</script>";
+            header('refresh:0');
+        }
+    }
+    
 
 
 ?>
@@ -169,7 +174,7 @@
         <!-- Eto yung navbar -->
 
         <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top">
-            <a class="navbar-brand" href="#">Barangay Sorsogon</a>
+            <a class="navbar-brand" href="resident_homepage.php">Barangay Sorsogon</a>
 
             <div class="dropdown ml-auto">
                 <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown"><?= $userdetails['surname'];?>, <?= $userdetails['firstname'];?>
@@ -328,21 +333,21 @@
                                     <div class="col">
                                         <div class="form-group">
                                             <label for="lname">Lastname:</label>
-                                            <input name="lname" type="text" class="form-control" placeholder="Enter your Lastname" required>
+                                            <input name="lname" type="text" class="form-control" value="<?= $resident['lname']?>" required>
                                             <div class="valid-feedback">Valid.</div>
                                             <div class="invalid-feedback">Please fill out this field.</div>
                                         </div>
 
                                         <div class="form-group">
                                             <label for="mname">Middlename:</label>
-                                            <input name="mi" type="text" class="form-control" placeholder="Enter your Middlename" required>
+                                            <input name="mi" type="text" class="form-control" value="<?= $resident['mi']?>" required>
                                             <div class="valid-feedback">Valid.</div>
                                             <div class="invalid-feedback">Please fill out this field.</div>  
                                         </div>
 
                                         <div class="form-group">            
                                             <label for="cno">Contact Number:</label>
-                                            <input name="contact" type="text" maxlength="11" class="form-control" placeholder="Enter your Contact Numebr" pattern="[0-9]{11}" required>
+                                            <input name="contact" type="text" maxlength="11" class="form-control" value="<?= $resident['contact']?>" pattern="[0-9]{11}" required>
                                             <div class="valid-feedback">Valid.</div>
                                             <div class="invalid-feedback">Please fill out this field.</div>
                                         </div>
@@ -352,27 +357,26 @@
 
                                         <div class="form-group">
                                             <label for="fname">Firstname:</label>
-                                            <input name="fname" type="text" class="form-control" placeholder="Enter your Firstname" required>
+                                            <input name="fname" type="text" class="form-control" value="<?= $resident['fname']?>" required>
                                             <div class="valid-feedback">Valid.</div>
                                             <div class="invalid-feedback">Please fill out this field.</div>  
                                         </div>
 
                                         <div class="form-group">
                                             <label for="address">Address:</label>
-                                            <input name="address" type="text" class="form-control" placeholder="Enter your Address" required>
+                                            <input name="address" type="text" class="form-control" value="<?= $resident['address']?>" required>
                                             <div class="valid-feedback">Valid.</div>
                                             <div class="invalid-feedback">Please fill out this field.</div>
                                         </div>
                                         <div class="form-group">
                                             <label for="age" class="mtop">Age </label>
-                                            <input name="age" type="number" class="form-control" placeholder="Enter your Age" required>
+                                            <input name="age" type="number" class="form-control" value="<?= $resident['age']?>" required>
                                             <div class="valid-feedback">Valid.</div>
                                             <div class="invalid-feedback">Please fill out this field.</div>
                                         </div>
 
                                         <input type="hidden" name="remarks">
                                         <input type="hidden" name="dateapply" value="<?= $cdate?>">
-                                        <input type="hidden" name="timeapply" value="<?= $ctime?>">
                                         <input name="addedby" type="hidden" value="<?= $userdetails['surname']?>, <?= $userdetails['firstname']?>">
                                         <input name="id_resident" type="hidden" value="<?= $resident['id_resident']?>">
                                     </div>
@@ -381,10 +385,11 @@
                             
                             <div class="modal-footer">
                                 <div class="paa">
-                                    <button type="button" class="btn btn-dark" data-dismiss="modal">Close</button>
-                                    <button type="button" class="btn btn-primary">Save changes</button>
+                                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                                    <button name="create_motherchild" type="submit" class="btn btn-primary">Save changes</button>
                                 </div>
                             </div>  
+                        </form>
                         </div>
                     </div>
                 </div>
