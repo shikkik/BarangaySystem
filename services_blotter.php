@@ -1,12 +1,23 @@
 <?php 
     require('classes/resident.class.php');
-    
     $userdetails = $bmis->get_userdata();
-
     $id_resident = $_GET['id_resident'];
     $resident = $residentbmis->get_single_resident($id_resident);
 
-    $bmis->create_tbdots();
+    $dt = new DateTime("now", new DateTimeZone('Asia/Manila'));
+    $tm = new DateTime("now", new DateTimeZone('Asia/Manila'));
+    $cdate = $dt->format('Y/m/d');
+    $ctime = $tm->format('H:i');
+
+    echo "$cdate";
+
+    echo "<br>";
+   
+    echo "$ctime";
+
+    $bmis->create_motherchild();
+
+
 ?>
 
 <!DOCTYPE html>
@@ -23,17 +34,8 @@
         <script src="https://kit.fontawesome.com/67a9b7069e.js" crossorigin="anonymous"></script>
     
         <style>
-            body{
-                background-color: #FBFCFC;
-            }
 
-            .container2{
-                margin-top: 5%;
-            }
-
-            .text1{
-                margin-top: 60px;
-            }
+            /* Modal */
 
             .applybutton
             {
@@ -46,26 +48,182 @@
                 letter-spacing: 3px;
             }
 
-            .container1{
-                background-color: #AED6F1;
-                height: 400px;
-            }
-            
-            .picture1{
-                height: 400px;
-                width: 100%;
+            /* Under Navbar */
+
+            .container1 {
+                position: relative;
+                font-family: Arial;
+                background-color: lightblue;
             }
 
-            .picture2{
-                height: 400px;
-                width: 100%;
+            .text-block {
+                position: absolute;
+                bottom: 30%;
+                right: 33%;
+                background-color: black; 
+                opacity: .7;
+                color: white;
+                padding-left: 20px;
+                padding-right: 20px;
+                border-radius: 20px;
             }
+
+            /* Slideshow */
+
+            * {
+            box-sizing: border-box;
+            }
+
+            .picture {
+            position: relative;
+            left: -15px;
+            width: 102.7%;
+            }
+
+            .picture1{
+                height: 8%;
+            }
+
+            /* Position the image container (needed to position the left and right arrows) */
+            .container2 {
+            position: relative;
+            }
+
+            /* Hide the images by default */
+            .mySlides {
+            display: none;
+            }
+
+            /* Add a pointer when hovering over the thumbnail images */
+            .cursor {
+            cursor: grabbing;
+            }
+
+            /* Next & previous buttons */
+            .prev,
+            .next {
+            cursor: pointer;
+            position: absolute;
+            top: 18%;
+            width: auto;
+            padding: 30px;
+            margin-top: -50px;
+            color: white;
+            font-weight: bold;
+            font-size: 20px;
+            border-radius: 0 3px 3px 0;
+            user-select: none;
+            -webkit-user-select: none;
+            cursor: grab;
+            }
+
+            /* Position the "next button" to the right */
+            .next {
+            right: 15px;
+            border-radius: 3px 0 0 3px;
+            }
+
+            /* On hover, add a black background color with a little bit see-through */
+            .prev:hover,
+            .next:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+            }
+
+            /* Number text (1/3 etc) */
+            .numbertext {
+            color: #f2f2f2;
+            font-size: 20px;
+            padding: 8px 12px;
+            position: absolute;
+            top: 55px;
+            }
+
+            /* Container for image text */
+            .caption-container {
+            position: relative;
+            left: -15px;
+            text-align: center;
+            background-color: #222;
+            padding: 3px;
+            color: white;
+            width: 102.7%;
+            font-size: 25px;
+            }
+
+            .row:after {
+            content: "";
+            display: table;
+            clear: both;
+            }
+
+            /* Six columns side by side */
+            .column {
+            width: 16.66%;
+            }
+
+            /* Add a transparency effect for thumnbail images */
+            .demo {
+            opacity: 0.6;
+            }
+
+            .active,
+            .demo:hover {
+            opacity: 1;
+            }
+
 
             .paa{
                 margin-top: 10px;
                 position: relative;
                 left: -28%;
             }
+
+            /* Card Flip */
+
+            .container3{
+                margin-top: -65%;
+            }
+
+            .flip-card {
+                background-color: transparent;
+                width: 300px;
+                height: 300px;
+                perspective: 1000px;
+            }
+
+            .flip-card-inner {
+                position: relative;
+                width: 100%;
+                height: 100%;
+                text-align: center;
+                transition: transform 0.6s;
+                transform-style: preserve-3d;
+                box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+            }
+
+            .flip-card:hover .flip-card-inner {
+                transform: rotateY(180deg);
+            }
+
+            .flip-card-front, .flip-card-back {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                -webkit-backface-visibility: hidden;
+                backface-visibility: hidden;
+            }
+
+            .flip-card-front {
+                color: white;
+            }
+
+            .flip-card-back {
+                padding: 7px;
+                color: white;
+                transform: rotateY(180deg);
+            }
+
+            /* Footer */
 
             a{
                 color:white;
@@ -138,15 +296,16 @@
             }
             }
 
+
         </style>
     </head>
 
     <body>
 
-        <!-- eto yung navbar -->
+        <!-- Eto yung navbar -->
 
         <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top">
-            <a class="navbar-brand" href="resident_homepage.php">Barangay Sorsogon</a>
+            <a class="navbar-brand" href="#">Barangay Sorsogon</a>
 
             <div class="dropdown ml-auto">
                 <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown"><?= $userdetails['surname'];?>, <?= $userdetails['firstname'];?>
@@ -162,92 +321,173 @@
         <!-- Under Navbar -->
 
         <div class="container-fluid container1">
-            <div class="row text-center">
-                <div class="col">
-                    <img class="picture1" src="../BarangaySystem/icons/TB Dots/tbdots1.png">
-                </div>
+            <img src="../BarangaySystem/icons/Blotter/blotter2.png" alt="Nature" style="width:100%; height: 55%;">
+            <div class="text-block text-center">
+                <h1 style="font-size: 70px; letter-spacing: 5px;">Blotter</h1>
+                <br>
+                <p> Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quae nobis 
+                <br> ad aut eum id sed beatae, nostrum, harum quasi reprehenderit deleniti 
+                <br> optio molestiae cumque quidem perspiciatis nihil vitae laudantium culpa.</p>
+            </div>
+        </div>
 
-                <div class="col text1">
-                    <h1>Tuberculosis</h1>
-                    <hr style="background-color:black;">
-                    <h6>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cumque vitae doloribus 
-                        natus ex laborum eligendi ut pariatur, odio rem corrupti asperiores delectus optio.
-                    </h6>
-                </div>
+        <br>
+        <br>
+        <br>
 
-                <div class="col">
-                    <img class="picture2" src="../BarangaySystem/icons/TB Dots/tbdots0.png">
+        <!-- Slideshow -->
+
+        <div class="container container2">
+            <h1 style="text-align:center">Blotter Reason</h1>
+            <hr style="background-color: black;">
+
+            <br> 
+
+            <div class="mySlides">
+                <div class="numbertext">1 / 6</div>
+                <img style="width: 1140px; height:550px;" class="picture" src="../BarangaySystem/icons/Blotter/blotter3.jpg">
+            </div>
+
+            <div class="mySlides">
+                <div class="numbertext">2 / 6</div>
+                <img style="width: 1140px; height:550px;" class="picture" src="../BarangaySystem/icons/Blotter/blotter4.jpg">
+            </div>
+
+            <div class="mySlides">
+                <div class="numbertext">3 / 6</div>
+                <img style="width: 1140px; height:550px;" class="picture" src="../BarangaySystem/icons/Blotter/blotter5.jpg">
+            </div>
+                
+            <div class="mySlides">
+                <div class="numbertext">4 / 6</div>
+                <img style="width: 1140px; height:550px;" class="picture" src="../BarangaySystem/icons/Blotter/blotter6.jpg">
+            </div>
+
+            <div class="mySlides">
+                <div class="numbertext">5 / 6</div>
+                <img style="width: 1140px; height:550px;" class="picture" src="../BarangaySystem/icons/Blotter/blotter7.jpg">
+            </div>
+                
+            <div class="mySlides">
+                <div class="numbertext">6 / 6</div>
+                <img style="width: 1140px; height:550px;" class="picture" src="../BarangaySystem/icons/Blotter/blotter8.jpg">
+            </div>
+                
+            <a class="prev" onclick="plusSlides(-1)">❮</a>
+            <a class="next" onclick="plusSlides(1)">❯</a>
+
+            <div class="caption-container">
+                <p id="caption"></p>
+            </div>
+
+            <div class="row">
+                <div class="column">
+                <img class="demo cursor picture1" src="../BarangaySystem/icons/Blotter/blotter3.jpg" style="width:100%" onclick="currentSlide(1)" alt="Physical Threatening">
+                </div>
+                <div class="column">
+                <img class="demo cursor picture1" src="../BarangaySystem/icons/Blotter/blotter4.jpg" style="width:100%" onclick="currentSlide(2)" alt="Domestic Violence">
+                </div>
+                <div class="column">
+                <img class="demo cursor picture1" src="../BarangaySystem/icons/Blotter/blotter5.jpg" style="width:100%" onclick="currentSlide(3)" alt="Aggresiveness">
+                </div>
+                <div class="column">
+                <img class="demo cursor picture1" src="../BarangaySystem/icons/Blotter/blotter6.jpg" style="width:100%" onclick="currentSlide(4)" alt="Sexual Harassment">
+                </div>
+                <div class="column">
+                <img class="demo cursor picture1" src="../BarangaySystem/icons/Blotter/blotter7.jpg" style="width:100%" onclick="currentSlide(5)" alt="Psychological Abuse">
+                </div>    
+                <div class="column">
+                <img class="demo cursor picture1" src="../BarangaySystem/icons/Blotter/blotter8.jpg" style="width:100%" onclick="currentSlide(6)" alt="Emotional Abuse">
                 </div>
             </div>
         </div>
 
+        <div class="container container3">
+            <h1 style="text-align:center">Blotter Reason</h1>
+            <hr style="background-color: black;">
 
-        <div class="container container2">
+            <br> 
 
-            <div class="row title-spacing">
-                <div class="col"> 
-                    <h2 class="text-center"> Mga 
-                        <span style="color: red;"> sintomas </span> sakit na 
-                        <span style="color: red;"> Tuberculosis </span>
-                    </h2>
-                </div> 
-            </div>
-
-            <br>
-
-            <div class="card">
-                <div class="card-body">
-                    <div class="row justify-content-center text-center">
-
-                        <div class="col-sm-3"> 
-                                <img style="width: 250px; height: 250px;" src="../BarangaySystem/icons/TB Dots/tbdots2.png">
-                                <h3>Ubo</h3>
+            <div class="row">
+                <div class="col">
+                    <div class="flip-card">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front bg-primary">
+                                <br>
+                                <br>
+                                <i class="fas fa-question-circle fa-4x"></i>
+                                <br>
+                                <br>
+                                <h2>How can I file a Barangay Blotter?</h2>
+                            </div>
+                            <div class="flip-card-back  bg-info">
+                                <br>
+                                <h5>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                                    Amet omnis, repellat ducimus ad reprehenderit, exercitationem 
+                                    iusto itaque repudiandae quasi dolores quaerat ipsam eius. 
+                                    Cupiditate ut dolor dignissimos architecto, eum necessitatibus?</h5> 
+                            </div>
                         </div>
-
-                        <div class="col-sm-3"> 
-                                <img style="width: 250px; height: 250px;" src="../BarangaySystem/icons/TB Dots/tbdots3.png">
-                                <h3>Pagbaba ng Timbang</h3>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="flip-card">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front bg-primary">
+                                <br>
+                                <br>
+                                <i class="fas fa-question-circle fa-4x"></i>
+                                <br>
+                                <br>
+                                <h2>What is Barangay Blotter?</h2>
+                            </div>
+                            <div class="flip-card-back  bg-info">
+                                <br>
+                                <h5>The entry in the barangay blotter merely states that private complainant 
+                                    was embraced ("niyakap") by the accused. This may be attributed to inaccurate 
+                                    reporting or to the victim's incomplete narration of events, whether or not 
+                                    intentionally done.</h5> 
+                            </div>
                         </div>
-
-                        <div class="col-sm-3"> 
-                                <img style="width: 250px; height: 250px;" src="../BarangaySystem/icons/TB Dots/tbdots4.png">
-                                <h3>Lagnat</h3>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="flip-card">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front bg-primary">
+                                <br>
+                                <br>
+                                <i class="fas fa-question-circle fa-4x"></i>
+                                <br>
+                                <br>
+                                <h3>What is the purpose of Barangay Blotter?</h3>
+                            </div>
+                            <div class="flip-card-back  bg-info">
+                                <br>
+                                <h5>A written record of arrests and other occurrences maintained 
+                                    by the barangay. The report kept by the barangay when a suspect 
+                                    is booked, which involves the written recording of facts about 
+                                    the person's arrest and the charges against him or her.</h5> 
+                            </div>
                         </div>
-
-                        <div class="col-sm-3"> 
-                                <img style="width: 250px; height: 250px;" src="../BarangaySystem/icons/TB Dots/tbdots5.png">
-                                <h3>Labis na Pagpapawis</h3>
-                        </div>  
-                        
                     </div>
                 </div>
             </div>
-
-            <br>
-
-            <div class="row text-center">
-                <div class="col">
-                    <h4> <span style="color: red;"> Alinman </span> sa mga sintomas na tumagal ng 
-                         <span style="color: red;"> 2 linggo o higit pa </span> 
-                    </h4>
-                    <h4>Makipag ugnayan na at kumonsulta!</h4>
-                </div>
-            </div>
-
         </div>
 
+
         <br>
         <br>
         <br>
 
-            <!-- Button trigger modal -->
 
-        <div class="container">
+        <!-- Button trigger modal -->
+
+        <div class="container container4">
 
             <h1 class="text-center">Registration</h1>
             
             <hr style="background-color:black;">
-
 
             <div class="col">   
                 <button type="button" class="btn btn-primary applybutton" data-toggle="modal" data-target="#exampleModalCenter">
@@ -272,130 +512,68 @@
 
                         <div class="modal-body">
                             <form method="post" class="was-validated">
-                                <div class="row"> 
+                                <div class="row modalrow"> 
 
                                     <div class="col">
                                         <div class="form-group">
                                             <label for="lname">Lastname:</label>
-                                            <input name="lname" type="text" class="form-control" value="<?= $resident['lname']?>" required>
+                                            <input name="lname" type="text" class="form-control" placeholder="Enter your Lastname" required>
                                             <div class="valid-feedback">Valid.</div>
                                             <div class="invalid-feedback">Please fill out this field.</div>
                                         </div>
 
                                         <div class="form-group">
                                             <label for="mname">Middlename:</label>
-                                            <input name="mi" type="text" class="form-control" value="<?= $resident['mi']?>" required>
+                                            <input name="mi" type="text" class="form-control" placeholder="Enter your Middlename" required>
                                             <div class="valid-feedback">Valid.</div>
                                             <div class="invalid-feedback">Please fill out this field.</div>  
                                         </div>
 
                                         <div class="form-group">            
                                             <label for="cno">Contact Number:</label>
-                                            <input name="contact" type="tel" maxlength="11" class="form-control" value="<?= $resident['contact']?>" pattern="[0-9]{11}" required>
+                                            <input name="contact" type="text" maxlength="11" class="form-control" placeholder="Enter your Contact Numebr" pattern="[0-9]{11}" required>
                                             <div class="valid-feedback">Valid.</div>
                                             <div class="invalid-feedback">Please fill out this field.</div>
                                         </div>
                                     </div>
 
                                     <div class="col">
+
                                         <div class="form-group">
                                             <label for="fname">Firstname:</label>
-                                            <input name="fname" type="text" class="form-control" value="<?= $resident['fname']?>" required>
+                                            <input name="fname" type="text" class="form-control" placeholder="Enter your Firstname" required>
                                             <div class="valid-feedback">Valid.</div>
                                             <div class="invalid-feedback">Please fill out this field.</div>  
                                         </div>
 
                                         <div class="form-group">
                                             <label for="address">Address:</label>
-                                            <input name="address" type="text" class="form-control" value="<?= $resident['address']?>" required>
+                                            <input name="address" type="text" class="form-control" placeholder="Enter your Address" required>
                                             <div class="valid-feedback">Valid.</div>
                                             <div class="invalid-feedback">Please fill out this field.</div>
                                         </div>
-
                                         <div class="form-group">
-                                            <label for="occupation">Occupation:</label>
-                                            <input name="occupation" type="text" class="form-control" placeholder="Enter your Occupation" required>
+                                            <label for="age" class="mtop">Age </label>
+                                            <input name="age" type="number" class="form-control" placeholder="Enter your Age" required>
                                             <div class="valid-feedback">Valid.</div>
                                             <div class="invalid-feedback">Please fill out this field.</div>
                                         </div>
-                                    </div>
 
-                                </div>
-
-                                <div class="row">
-
-                                    <div class="col">
-                                        <label for="Age" class="mtop">Age </label>
-                                        <input name="age" type="number" class="form-control" placeholder="Enter your Age" value="<?= $resident['age']?>" required>
-                                        <div class="valid-feedback">Valid.</div>
-                                        <div class="invalid-feedback">Please fill out this field.</div>
-                                    </div>
-
-                                    <div class="col">
-                                            <label for="Sex"class="mtop">Sex</label>
-                                        <div class="form-check">
-                                            <label class="form-check-label">
-                                            <input name="sex" type="radio" class="form-check-input" name="optradio">Male
-                                            </label>
-                                        </div>
-                                        <div class="form-check">
-                                            <label class="form-check-label">
-                                            <input name="sex" type="radio" class="form-check-input" name="optradio">Female
-                                            </label>
-                                        </div>    
-                                    </div>
-
-                                    <div class="col">
-                                        <div class="form-group">
-                                            <label for="Date"class="mtop">Birthday </label>
-                                            <input name="bdate" type="date" class="form-control" required>
-                                            <div class="valid-feedback">Valid.</div>
-                                            <div class="invalid-feedback">Please fill out this field.</div>
-                                        </div>
-                                    </div>  
-                                </div> 
-
-                                <div class="row">
-
-                                    <div class="col">
-                                        <div class="form-group">
-                                            <label for="height">Height:</label>
-                                            <input name="height" type="text" class="form-control" placeholder="Enter Height" required>
-                                            <div class="valid-feedback">Valid.</div>
-                                            <div class="invalid-feedback">Please fill out this field.</div>
-                                        </div>
-                                    </div>
-
-                                    <div class="col">
-                                        <div class="form-group">
-                                            <label for="weight">Weight:</label>
-                                            <input name="weight" type="text" class="form-control" placeholder="Enter Weight" required>
-                                            <div class="valid-feedback">Valid.</div>
-                                            <div class="invalid-feedback">Please fill out this field.</div>
-                                        </div>   
-                                    </div>
-
-                                    <div class="col">
-                                        <div class="form-group">
-                                            <label for="phno">Philhealth No:</label>
-                                            <input name="philhealth" type="text" class="form-control" placeholder="Enter Philhealth No." required>
-                                            <div class="valid-feedback">Valid.</div>
-                                            <div class="invalid-feedback">Please fill out this field.</div>
-                                        </div>
-                                    </div>  
-                                    
-                                </div> 
-
-                                <!-- Modal Footer -->
-                            
-                                <div class="modal-footer">
-                                    <div class="paa">
+                                        <input type="hidden" name="remarks">
+                                        <input type="hidden" name="dateapply" value="<?= $cdate?>">
+                                        <input type="hidden" name="timeapply" value="<?= $ctime?>">
                                         <input name="addedby" type="hidden" value="<?= $userdetails['surname']?>, <?= $userdetails['firstname']?>">
-                                        <button type="button" class="btn btn-dark" data-dismiss="modal">Close</button>
-                                        <button name="create_tbdots" type="submit" class="btn btn-primary">Save changes</button>
+                                        <input name="id_resident" type="hidden" value="<?= $resident['id_resident']?>">
                                     </div>
-                                </div>  
-                            </form>
+                                </div>
+                            
+                            
+                            <div class="modal-footer">
+                                <div class="paa">
+                                    <button type="button" class="btn btn-dark" data-dismiss="modal">Close</button>
+                                    <button type="button" class="btn btn-primary">Save changes</button>
+                                </div>
+                            </div>  
                         </div>
                     </div>
                 </div>
@@ -569,9 +747,39 @@
             </div>
 
         </footer>
+        
+        <script>
+            var slideIndex = 1;
+            showSlides(slideIndex);
+
+            function plusSlides(n) {
+            showSlides(slideIndex += n);
+            }
+
+            function currentSlide(n) {
+            showSlides(slideIndex = n);
+            }
+
+            function showSlides(n) {
+            var i;
+            var slides = document.getElementsByClassName("mySlides");
+            var dots = document.getElementsByClassName("demo");
+            var captionText = document.getElementById("caption");
+            if (n > slides.length) {slideIndex = 1}
+            if (n < 1) {slideIndex = slides.length}
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex-1].style.display = "block";
+            dots[slideIndex-1].className += " active";
+            captionText.innerHTML = dots[slideIndex-1].alt;
+            }
+        </script>
 
         <script src="../BarangaySystem/bootstrap/js/bootstrap.bundle.js" type="text/javascript"> </script>
-  
-        
+
     </body>
 </html>
