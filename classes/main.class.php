@@ -195,13 +195,12 @@ class BMISClass {
             $id_announcement = $_POST['id_announcement'];
             $event = $_POST['event'];
             $start_date = $_POST['start_date'];
-            $end_date = $_POST['end_date'];
             $addedby = $_POST['addedby'];
 
             $connection = $this->openConn();
             $stmt = $connection->prepare("INSERT INTO tbl_announcement (`id_announcement`, 
-            `event`, `start_date`, `end_date`, `addedby`) VALUES (?, ?, ?, ?, ?)");
-            $stmt->execute([$id_announcement, $event, $start_date, $end_date, $addedby]);
+            `event`, `start_date`, `addedby`) VALUES ( ?, ?, ?, ?)");
+            $stmt->execute([$id_announcement, $event, $start_date, $addedby]);
 
             $message2 = "Announcement Added";
             echo "<script type='text/javascript'>alert('$message2');</script>";
@@ -209,9 +208,6 @@ class BMISClass {
         }
 
         else {
-            $message2 = "There was a problem in creating this data";
-            echo "<script type='text/javascript'>alert('$message2');</script>";
-            header("refresh: 0");
         }
     }
 
@@ -242,9 +238,6 @@ class BMISClass {
         }
 
         else {
-            $message2 = "There was a problem in updating this data";
-            echo "<script type='text/javascript'>alert('$message2');</script>";
-            header("refresh: 0");
         }
     }
 

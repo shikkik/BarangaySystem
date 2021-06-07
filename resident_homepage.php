@@ -8,8 +8,6 @@
     $cdate = $dt->format('Y/m/d');
     $ctime = $tm->format('H');
 
-    //$event = $view_announcement();
-
 ?>
 
 
@@ -57,24 +55,46 @@
             </div>
         </nav>
 
-        <?php 
+        
 
-            if($cdate) { ?>
-                <div class="alert alert-info alert-dismissible fade show" role="alert">
-                <strong>ANNOUNCEMENT!</strong> <?= $event?>
+        <?php 
+            $view = $bmis->view_announcement();
+
+            if($view > 0 ) { ?>
+            <table class="table table-dark table-responsive">
+                <thead style="display:none"> 
+                    <tr>
+                        <th> Announcement </th>
+                    </tr>
+                </thead>
+                <tbody style="display:none"> 
+                <?php if(is_array($view)) {?>
+                    <?php foreach($view as $view) {?>
+                        <tr>
+                            <td> <?= $view['event'];?> </td>             
+                        </tr>
+                    <?php }?>
+                <?php } ?>
+                </tbody>
+            </table>
+
+            <div class="alert alert-info alert-dismissible fade show" role="alert" style="margin-top: -20px;">
+                <strong><h4>ANNOUNCEMENT!<h4></strong> <br> <p> <?= $view['event'];?> </p>
                 <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
-                </div>
+            </div>
 
         <?php 
-            }
+            } 
 
-            else {
-                return(0);
+            else {  
+            
             }
 
         ?>
+
+
 
 
         <section class="heading-section"> 
@@ -216,6 +236,9 @@
 
             </div>
         </section>
+
+
+        
 
         <script src="../BarangaySystem/bootstrap/js/bootstrap.bundle.js" type="text/javascript"> </script>
     </body>
