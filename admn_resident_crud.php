@@ -7,6 +7,7 @@
    $residentbmis->create_resident();
    $residentbmis->update_resident();
    $residentbmis->delete_resident();
+
    $rescount = $residentbmis->count_resident();
    $rescountm = $residentbmis->count_male_resident();
    $rescountf = $residentbmis->count_female_resident();
@@ -187,8 +188,8 @@
                     <tr>
                         <td>    
                         <form action="" method="post">
-                            <a href="update_resident_form.php?id_resident=<?= $view['id_resident'];?>" class="btn btn-primary">  Update </a>
-                            <input type="hidden" name="email" value="<?= $view['id_resident'];?>">
+                            <a href="update_resident_form.php?email=<?= $view['email'];?>" class="btn btn-primary">  Update </a>
+                            <input type="hidden" name="email" value="<?= $view['email'];?>">
                             <button class="btn btn-danger" type="submit" name="delete_resident"> Delete </button>
                         </form>
                         </td>
