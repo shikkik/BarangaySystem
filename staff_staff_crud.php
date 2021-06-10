@@ -19,12 +19,13 @@
 
     <!-- Page Heading -->
 
-    <h1 class="h3 mb-4 text-gray-800">Barangay Staff Data</h1>
+    <h1 class="h3 mb-4 text-gray-800 text-center">Barangay Staff Profile</h1>
 
     <div class="row">
+        <div class="col-md-3"></div>
         <div class="col-md-6">
             <div class="card"> 
-                <div class="card-header"> Barangay Staff Data</div>
+                <div class="card-header"> Barangay Staff Credentials</div>
                 <div class="card-body"> 
                 <form method="post">
                     <label class="mtop"> Last Name</label>
@@ -59,16 +60,8 @@
                 </div>
             </div>
         </div>
+        <div class="col-md-3"></div>
 
-        <div class="col-md-6>"> 
-            <div class="card"> 
-                <div class="card-body"> 
-                    <h5> Number of Staffs Registered </h5>
-                    <br>
-                    <h5> <?= $staffcount?></h5>
-                </div>
-            </div>
-        </div>
     </div>
                     
     <br>
