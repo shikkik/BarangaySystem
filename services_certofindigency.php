@@ -410,7 +410,7 @@
                         </div>
 
                         <div class="form-group">
-                        <label for="mi" class="mtop">Middle Name </label>
+                        <label for="mi" class="mtop">Middle Name: </label>
                         <input name="mi" type="text" class="form-control" placeholder="Enter Middle Name" required>
                         <div class="valid-feedback">Valid.</div>
                         <div class="invalid-feedback">Please fill out this field.</div>
