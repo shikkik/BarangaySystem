@@ -68,7 +68,7 @@
 
         public function update_resident() {
             if (isset($_POST['update_resident'])) {
-                $email = $_GET['email'];
+                $id_resident = $_GET['id_resident'];
                 $password = md5($_POST['password']);
                 $lname = $_POST['lname'];
                 $fname = $_POST['fname'];
@@ -88,9 +88,9 @@
                 $connection = $this->openConn();
                 $stmt = $connection->prepare("UPDATE tbl_resident SET password =?, lname =?, 
                 fname = ?, mi =?, age =?, sex =?, status =?, address =?, contact =?,
-                bdate =?, bplace =?, nationality =?,family_role =?, role =?, addedby =? WHERE email = ?");
+                bdate =?, bplace =?, nationality =?,family_role =?, role =?, addedby =? WHERE id_resident = ?");
                 $stmt->execute([$password, $lname, $fname, $mi, $age, $sex, $status, $address,
-                $contact, $bdate, $bplace, $nationality, $familyrole, $role, $addedby, $email]);
+                $contact, $bdate, $bplace, $nationality, $familyrole, $role, $addedby, $id_resident]);
                    
                 $message2 = "Resident Data Updated";
                 echo "<script type='text/javascript'>alert('$message2');</script>";
@@ -99,12 +99,12 @@
         }
 
         public function delete_resident(){
-            $email = $_POST['email'];
+            $id_resident = $_POST['id_resident'];
 
             if(isset($_POST['delete_resident'])) {
                 $connection = $this->openConn();
-                $stmt = $connection->prepare("DELETE FROM tbl_resident where email = ?");
-                $stmt->execute([$email]);
+                $stmt = $connection->prepare("DELETE FROM tbl_resident where id_resident = ?");
+                $stmt->execute([$id_resident]);
 
                 $message2 = "Resident Data Deleted";
                 
