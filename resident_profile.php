@@ -68,7 +68,7 @@
                                     <input class="input" type="text" name="status" value="<?= $resident['status'];?>">
                                     <input style="margin-right: 70px;" class="input" type="text" name="age" value="<?= $resident['age'];?>">
                                     <input class="input" type="text" name="address" value="<?= $resident['address'];?>">
-                                    <input class="input" type="text" name="contact" value="<?= $resident['contact'];?>">
+                                    <input class="input" type="text" name="contact" value="<?= $resident['contact'];?>"> 
                                 </div>
                                 <div class="col-md-3"> 
                                     <h5 style="margin-right: 2em; display:inline-block;"> Birth Date: </h5>
@@ -99,7 +99,7 @@
                                     <button class="btn btn-primary" type="submit" name="profile_update"> Update </button>
                                     <a href="resident_profile.php?id_resident=<?= $userdetails['id_resident'];?>"></a>
                                 <div>
-                                <br /><br />
+                                <br /><br /> 
                                  <?php include'testingsearch.php'?>
                             </div>
                         </form>
