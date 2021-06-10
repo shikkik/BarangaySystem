@@ -39,7 +39,7 @@
             <div class="row"> 
                 <div class="col"> 
                     <label class="mtop"> Middle Initial </label>
-                    <input type="text" class="form-control" name="mi" placeholder="Enter middle initial">
+                    <input value="<?= $view['mi']?>" type="text" class="form-control" name="mi" placeholder="Enter middle initial">
                 </div>
 
                 <div class="col"> 

@@ -1,4 +1,5 @@
 <?php 
+    error_reporting(E_ALL ^ E_WARNING);
     require('classes/resident.class.php');
     $userdetails = $residentbmis->get_userdata();
     $id_resident = $_GET['id_resident'];

@@ -90,10 +90,9 @@
                         <th> Medicine Item </th>
                         <th> Date Manufactured </th>
                         <th> Shipped From </th>
-                        <th> Date In </th>
-                        <th> Date Out </th>
+                        <th> Date Accepted </th>
+                        <th> Distribution Date </th>
                         <th> Stocks </th>
-                        <th> Remarks </th>
                         <th> AddedBy </th>
                         
                     </tr>
@@ -115,7 +114,6 @@
                             <td> <?= $view['datein'];?> </td>
                             <td> <?= $view['dateout'];?> </td>
                             <td> <?= $view['stocks'];?> </td>
-                            <td> <?= $view['remarks'];?> </td>
                             <td> <?= $view['addedby'];?> </td>
                             
                         </tr>

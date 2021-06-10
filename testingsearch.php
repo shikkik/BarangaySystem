@@ -1,14 +1,23 @@
 <?php
 	// require the database connection
+	error_reporting(E_ALL ^ E_WARNING);
 	require 'classes/conn.php';
 	if(isset($_POST['search_household'])){
 
 		$lname = $_POST['lname'];
         $mi = $_POST['mi'];
 ?>
-	<table class="table table-bordered" >
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<link href="../BarangaySystem/bootstrap/css/bootstrap.css" rel="stylesheet" type="text/css">
+	</head>
+
+	<body>
+
+		<table class="table table-responsive">
 		<thead class="alert-info">
-            
 			<tr>
                 <th> Surname </th>
                 <th> First name </th>
@@ -21,8 +30,6 @@
                 <th> Bdate </th>
                 <th> Bplace </th>
                 <th> Nationality </th>
-                
-                
 			</tr>
 		</thead>
 		<tbody>
@@ -59,3 +66,7 @@
 	}
 $con = null;
 ?>
+		
+	</body>
+</html>
+

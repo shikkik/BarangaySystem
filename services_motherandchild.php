@@ -174,7 +174,8 @@
         <!-- Eto yung navbar -->
 
         <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top">
-            <a class="navbar-brand" href="resident_homepage.php">Barangay Sorsogon</a>
+        <a class="navbar-brand" href="index.php"> <img src="../BarangaySystem/icons/beverlylogo.png" width="40px" height="40px">&nbsp; 
+        <a class="navbar-brand" href="resident_homepage.php">Barangay Beverly Hills</a>
 
             <div class="dropdown ml-auto">
                 <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown"><?= $userdetails['surname'];?>, <?= $userdetails['firstname'];?>
@@ -332,14 +333,14 @@
 
                                     <div class="col">
                                         <div class="form-group">
-                                            <label for="lname">Lastname:</label>
+                                            <label for="lname">Last name:</label>
                                             <input name="lname" type="text" class="form-control" value="<?= $resident['lname']?>" required>
                                             <div class="valid-feedback">Valid.</div>
                                             <div class="invalid-feedback">Please fill out this field.</div>
                                         </div>
 
                                         <div class="form-group">
-                                            <label for="mname">Middlename:</label>
+                                            <label for="mname">Middle name:</label>
                                             <input name="mi" type="text" class="form-control" value="<?= $resident['mi']?>" required>
                                             <div class="valid-feedback">Valid.</div>
                                             <div class="invalid-feedback">Please fill out this field.</div>  
@@ -356,7 +357,7 @@
                                     <div class="col">
 
                                         <div class="form-group">
-                                            <label for="fname">Firstname:</label>
+                                            <label for="fname">First name:</label>
                                             <input name="fname" type="text" class="form-control" value="<?= $resident['fname']?>" required>
                                             <div class="valid-feedback">Valid.</div>
                                             <div class="invalid-feedback">Please fill out this field.</div>  

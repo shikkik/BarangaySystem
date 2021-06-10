@@ -195,13 +195,12 @@ class BMISClass {
             $id_announcement = $_POST['id_announcement'];
             $event = $_POST['event'];
             $start_date = $_POST['start_date'];
-            $end_date = $_POST['end_date'];
             $addedby = $_POST['addedby'];
 
             $connection = $this->openConn();
             $stmt = $connection->prepare("INSERT INTO tbl_announcement (`id_announcement`, 
-            `event`, `start_date`, `end_date`, `addedby`) VALUES (?, ?, ?, ?, ?)");
-            $stmt->execute([$id_announcement, $event, $start_date, $end_date, $addedby]);
+            `event`, `start_date`, `addedby`) VALUES ( ?, ?, ?, ?)");
+            $stmt->execute([$id_announcement, $event, $start_date, $addedby]);
 
             $message2 = "Announcement Added";
             echo "<script type='text/javascript'>alert('$message2');</script>";
@@ -209,9 +208,6 @@ class BMISClass {
         }
 
         else {
-            $message2 = "There was a problem in creating this data";
-            echo "<script type='text/javascript'>alert('$message2');</script>";
-            header("refresh: 0");
         }
     }
 
@@ -242,9 +238,6 @@ class BMISClass {
         }
 
         else {
-            $message2 = "There was a problem in updating this data";
-            echo "<script type='text/javascript'>alert('$message2');</script>";
-            header("refresh: 0");
         }
     }
 
@@ -782,6 +775,186 @@ class BMISClass {
             header("Refresh:0");
         }
     }
+
+    //------------------------------------------ Certificate of Residency CRUD -----------------------------------------------
+    public function get_single_certofres($id_resident){
+
+        $id_resident = $_GET['id_resident'];
+        
+        $connection = $this->openConn();
+        $stmt = $connection->prepare("SELECT * FROM tbl_rescert where id_resident = ?");
+        $stmt->execute([$id_resident]);
+        $resident = $stmt->fetch();
+        $total = $stmt->rowCount();
+
+        if($total > 0 )  {
+            return $resident;
+        }
+        else{
+            return false;
+        }
+    }
+    public function create_certofres() {
+
+        if(isset($_POST['create_certofres'])) {
+            $id_rescert = $_POST['id_rescert'];
+            $id_resident = $_POST['id_resident'];
+            $lname = $_POST['lname'];
+            $fname = $_POST['fname'];
+            $mi = $_POST['mi'];
+            $age = $_POST['age'];
+            $status = $_POST['status'];
+            $address = $_POST['address'];
+            $nationality = $_POST['nationality'];
+            $addedby = $_POST['addedby'];
+
+
+            $connection = $this->openConn();
+            $stmt = $connection->prepare("INSERT INTO tbl_rescert (`id_rescert`, `id_resident`, `lname`, `fname`, `mi`,
+             `age`, `status`, `address`,`nationality`, `addedby`)
+            VALUES (?,?, ?, ?, ?, ?, ?, ?, ?, ?)");
+
+            $stmt->execute([$id_rescert, $id_resident, $lname, $fname, $mi,  $age, $status,  $address, $nationality,   $addedby]);
+
+            $message2 = "Application Applied, you will receive our text message for further details";
+            echo "<script type='text/javascript'>alert('$message2');</script>";
+            header("refresh: 0");
+        }
+        
+        
+    }
+
+    public function view_certofres(){
+        $connection = $this->openConn();
+        $stmt = $connection->prepare("SELECT * from tbl_rescert");
+        $stmt->execute();
+        $view = $stmt->fetchAll();
+        return $view;
+    }
+
+
+    public function delete_certofres(){
+        $id_rescert = $_POST['id_rescert'];
+
+        if(isset($_POST['delete_clearance'])) {
+            $connection = $this->openConn();
+            $stmt = $connection->prepare("DELETE FROM tbl_rescert where id_rescert = ?");
+            $stmt->execute([$id_rescert]);
+
+            header("Refresh:0");
+        }
+    }
+
+     //------------------------------------------ CERT OF INIDIGENCY CRUD -----------------------------------------------
+
+     public function create_certofindigency() {
+
+        if(isset($_POST['create_certofindigency'])) {
+            $id_indigency = $_POST['id_indigency'];
+            $id_resident = $_POST['id_resident'];
+            $lname = $_POST['lname'];
+            $fname = $_POST['fname'];
+            $mi = $_POST['mi'];
+            $age = $_POST['age'];
+            $status = $_POST['status'];
+            $address = $_POST['address'];
+            $purpose = $_POST['purpose'];
+            $addedby = $_POST['addedby'];
+
+
+            $connection = $this->openConn();
+            $stmt = $connection->prepare("INSERT INTO tbl_indigency (`id_indigency`, `id_resident`, `lname`, `fname`, `mi`,
+             `age`, `status`, `address`,`purpose`, `addedby`)
+            VALUES (?,?, ?, ?, ?, ?, ?, ?, ?, ?)");
+
+            $stmt->execute([$id_indigency, $id_resident, $lname, $fname, $mi,  $age, $status,  $address, $purpose,   $addedby]);
+
+            $message2 = "Application Applied, you will receive our text message for further details";
+            echo "<script type='text/javascript'>alert('$message2');</script>";
+            header("refresh: 0");
+        }
+        
+        
+    }
+
+    public function view_certofindigency(){
+        $connection = $this->openConn();
+        $stmt = $connection->prepare("SELECT * from tbl_indigency");
+        $stmt->execute();
+        $view = $stmt->fetchAll();
+        return $view;
+    }
+
+
+    public function delete_certofindigency(){
+        $id_indigency = $_POST['id_indigency'];
+
+        if(isset($_POST['delete_certofindegency'])) {
+            $connection = $this->openConn();
+            $stmt = $connection->prepare("DELETE FROM tbl_indigince where id_indigency = ?");
+            $stmt->execute([$id_indigency]);
+
+            header("Refresh:0");
+        }
+    }
+
+
+     //------------------------------------------ BRGY CLEARANCE CRUD -----------------------------------------------
+
+     public function create_brgyclearance() {
+
+        if(isset($_POST['create_brgyclearance'])) {
+            $id_clearance = $_POST['id_clearance'];
+            $id_resident = $_POST['id_resident'];
+            $lname = $_POST['lname'];
+            $fname = $_POST['fname'];
+            $mi = $_POST['mi'];
+            $age = $_POST['age'];
+            $status = $_POST['status'];
+            $address = $_POST['address'];
+            $purpose = $_POST['purpose'];
+            $addedby = $_POST['addedby'];
+
+
+            $connection = $this->openConn();
+            $stmt = $connection->prepare("INSERT INTO tbl_clearance (`id_clearance`, `id_resident`, `lname`, `fname`, `mi`,
+             `age`, `status`, `address`,`purpose`, `addedby`)
+            VALUES (?,?, ?, ?, ?, ?, ?, ?, ?, ?)");
+
+            $stmt->execute([$id_clearance, $id_resident, $lname, $fname, $mi,  $age, $status,  $address, $purpose,   $addedby]);
+
+            $message2 = "Application Applied, you will receive our text message for further details";
+            echo "<script type='text/javascript'>alert('$message2');</script>";
+            header("refresh: 0");
+        }
+        
+        
+    }
+
+    public function view_clearance(){
+        $connection = $this->openConn();
+        $stmt = $connection->prepare("SELECT * from tbl_clearance");
+        $stmt->execute();
+        $view = $stmt->fetchAll();
+        return $view;
+    }
+
+
+    public function delete_clearance(){
+        $id_clearance = $_POST['id_clearance'];
+
+        if(isset($_POST['delete_clearance'])) {
+            $connection = $this->openConn();
+            $stmt = $connection->prepare("DELETE FROM tbl_clearance where id_clearance = ?");
+            $stmt->execute([$id_clearance]);
+
+            header("Refresh:0");
+        }
+    }
+
+
+
+
     
     //------------------------------------------ EXTRA FUNCTIONS ----------------------------------------------
 
@@ -835,6 +1008,8 @@ class BMISClass {
     }
 
 }
+
+    
 
 $bmis = new BMISClass(); //variable to call outside of its class
 

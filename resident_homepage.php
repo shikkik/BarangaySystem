@@ -1,5 +1,5 @@
 <?php 
-    //error_reporting(E_ALL ^ E_WARNING);
+    error_reporting(E_ALL ^ E_WARNING);
     include('classes/resident.class.php');
     $userdetails = $bmis->get_userdata();
 
@@ -7,8 +7,6 @@
     $tm = new DateTime("now", new DateTimeZone('Asia/Manila'));
     $cdate = $dt->format('Y/m/d');
     $ctime = $tm->format('H');
-
-    //$event = $view_announcement();
 
 ?>
 
@@ -117,7 +115,8 @@
     <body> 
         <!-- eto yung navbar -->
         <nav class="navbar navbar-dark bg-primary sticky-top">
-            <a class="navbar-brand" href="resident_homepage.php">Barangay Sorsogon</a>
+            <a class="navbar-brand" href="index.php"> <img src="../BarangaySystem/icons/beverlylogo.png" width="40px" height="40px">&nbsp; 
+            <a class="navbar-brand" href="resident_homepage.php">Barangay Beverly Hills</a>
 
             <div class="dropdown ml-auto">
                 <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown"><?= $userdetails['surname'];?>, <?= $userdetails['firstname'];?>
@@ -131,24 +130,46 @@
             </div>
         </nav>
 
-        <?php 
+        
 
-            if($cdate) { ?>
-                <div class="alert alert-info alert-dismissible fade show" role="alert">
-                <strong>ANNOUNCEMENT!</strong> <?= $event?>
+        <?php 
+            $view = $bmis->view_announcement();
+
+            if($view > 0 ) { ?>
+            <table class="table table-dark table-responsive">
+                <thead style="display:none"> 
+                    <tr>
+                        <th> Announcement </th>
+                    </tr>
+                </thead>
+                <tbody style="display:none"> 
+                <?php if(is_array($view)) {?>
+                    <?php foreach($view as $view) {?>
+                        <tr>
+                            <td> <?= $view['event'];?> </td>             
+                        </tr>
+                    <?php }?>
+                <?php } ?>
+                </tbody>
+            </table>
+
+            <div class="alert alert-info alert-dismissible fade show" role="alert" style="margin-top: -20px;">
+                <strong><h4>ANNOUNCEMENT!<h4></strong> <br> <p> <?= $view['event'];?> </p>
                 <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
-                </div>
+            </div>
 
         <?php 
             }
 
             else {
-                return(0);
+            
             }
 
         ?>
+
+
 
 
         <section class="heading-section"> 
@@ -239,7 +260,7 @@
                         <div class="card"> 
                             <div class="card-body text-center">
                                 <img src="../BarangaySystem/icons/ResidentHomepage/complain.png"> 
-                                <a href=""> <h4> Complain/Blotter Report</h4> 
+                                <a href="services_compblot.php"> <h4> Complain/Blotter Report</h4> 
                             </a>
                             </div>
                         </div>
@@ -262,7 +283,7 @@
                         <div class="card"> 
                             <div class="card-body text-center"> 
                             <img src="../BarangaySystem/icons/ResidentHomepage/residency.png">
-                                <a href=""> <h4> Certificate of Residency </h4> </a>
+                                <a href="services_certofres.php"> <h4> Certificate of Residency </h4> </a>
                             </div>
                         </div>
                     </div>
@@ -271,7 +292,7 @@
                         <div class="card"> 
                             <div class="card-body text-center">
                             <img src="../BarangaySystem/icons/ResidentHomepage/clearance.png"> 
-                                <a href=""> <h4> Barangay Clearance </h4> </a>
+                                <a href="services_brgyclearance.php"> <h4> Barangay Clearance </h4> </a>
                             </div>
                         </div>
                         
@@ -282,7 +303,7 @@
                     <div class="card"> 
                             <div class="card-body text-center"> 
                                 <img src="../BarangaySystem/icons/ResidentHomepage/indigency.png">
-                                <a href=""> <h4> Certificate of Indigency </h4> </a>
+                                <a href="services_certofindigency.php"> <h4> Certificate of Indigency </h4> </a>
                             </div>
                         </div>
                     </div>
@@ -291,6 +312,7 @@
             </div>
         </section>
 
+<<<<<<< HEAD
         <br>
         <br>
         <br>
@@ -462,6 +484,10 @@
             </div>
 
         </footer>
+=======
+
+        
+>>>>>>> 822595582c58e2b568e4a4f6cd83ac6f50aa1dc3
 
         <script src="../BarangaySystem/bootstrap/js/bootstrap.bundle.js" type="text/javascript"> </script>
     </body>

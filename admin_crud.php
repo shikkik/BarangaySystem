@@ -1,5 +1,6 @@
 <?php
 
+    
     require('classes/main.class.php');
     $bmis->create_admin();
     $bmis->validate_admin();

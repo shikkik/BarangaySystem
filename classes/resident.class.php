@@ -68,7 +68,7 @@
 
         public function update_resident() {
             if (isset($_POST['update_resident'])) {
-                $email = $_GET['email'];
+                $id_resident = $_GET['id_resident'];
                 $password = md5($_POST['password']);
                 $lname = $_POST['lname'];
                 $fname = $_POST['fname'];
@@ -88,9 +88,9 @@
                 $connection = $this->openConn();
                 $stmt = $connection->prepare("UPDATE tbl_resident SET password =?, lname =?, 
                 fname = ?, mi =?, age =?, sex =?, status =?, address =?, contact =?,
-                bdate =?, bplace =?, nationality =?,family_role =?, role =?, addedby =? WHERE email = ?");
+                bdate =?, bplace =?, nationality =?,family_role =?, role =?, addedby =? WHERE id_resident = ?");
                 $stmt->execute([$password, $lname, $fname, $mi, $age, $sex, $status, $address,
-                $contact, $bdate, $bplace, $nationality, $familyrole, $role, $addedby, $email]);
+                $contact, $bdate, $bplace, $nationality, $familyrole, $role, $addedby, $id_resident]);
                    
                 $message2 = "Resident Data Updated";
                 echo "<script type='text/javascript'>alert('$message2');</script>";
@@ -99,18 +99,24 @@
         }
 
         public function delete_resident(){
-            $email = $_POST['email'];
+            $id_resident = $_POST['id_resident'];
 
             if(isset($_POST['delete_resident'])) {
                 $connection = $this->openConn();
-                $stmt = $connection->prepare("DELETE FROM tbl_resident where email = ?");
-                $stmt->execute([$email]);
+                $stmt = $connection->prepare("DELETE FROM tbl_resident where id_resident = ?");
+                $stmt->execute([$id_resident]);
 
+                $message2 = "Resident Data Deleted";
+                
+                echo "<script type='text/javascript'>alert('$message2');</script>";
                 header("Refresh:0");
             }
         }
 
     //-------------------------------- EXTRA FUNCTIONS FOR RESIDENT CLASS ---------------------------------
+
+    
+
 
     public function get_single_resident($id_resident){
 
@@ -288,23 +294,24 @@
 
 
     public function profile_update() {
+        $id_resident = $_GET['id_resident'];
+        $age = $_POST['age'];
+        $status = $_POST['status'];
+        $address = $_POST['address'];
+        $contact = $_POST['contact'];
 
         if (isset($_POST['profile_update'])) {
-
-            $id_resident = $_GET['id_resident'];
-            $age = $_POST['age'];
-            $status = $_POST['status'];
-            $address = $_POST['address'];
-            $contact = $_POST['contact'];
            
             $connection = $this->openConn();
-            $stmt = $connection->prepare("UPDATE tbl_resident SET  age = ?,  status = ?, 
-            address = ?, contact = ? WHERE id_resident = ?");
+            $stmt = $connection->prepare("UPDATE tbl_resident SET  `age` = ?,  `status` = ?, 
+            `address` = ?, `contact` = ? WHERE id_resident = ?");
             $stmt->execute([ $age, $status, $address,
             $contact, $id_resident]);
                
-                echo "naka udpate na";
-                header("refresh:0");
+            $message2 = "Resident Profile Updated";
+                
+            echo "<script type='text/javascript'>alert('$message2');</script>";
+            header("Refresh:0");
 
         }
 

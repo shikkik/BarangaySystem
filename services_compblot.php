@@ -3,7 +3,7 @@
     require('classes/resident.class.php');
     
     $userdetails = $bmis->get_userdata();
-    $bmis->create_certofindigency();
+    $bmis->create_certofres();
 ?>
 
 <!DOCTYPE html>
@@ -30,6 +30,11 @@
                 text-align: center;
             }
 
+            .text1{
+                margin-top: 30px;
+                font-size: 50px;
+            }
+
             .applybutton
             {
                 width: 100% !important;
@@ -46,11 +51,6 @@
                 margin-top: 10px;
                 position: relative;
                 left: -28%;
-            }
-
-            .text1{
-                margin-top: 30px;
-                font-size: 50px;
             }
 
             .picture{
@@ -78,8 +78,16 @@
             background: #555; 
             }
 
+            .card5 {
+                width: 195px;
+                height: 210px;
+                overflow: auto;
+                margin: auto;
+                color: white;
+            }
+
             .card4 {
-                width: 250px;
+                width: 195px;
                 height: 210px;
                 overflow: hidden;
                 margin: auto;
@@ -87,7 +95,7 @@
             }
 
             .card3 {
-                width: 250px;
+                width: 195px;
                 height: 210px;
                 overflow: hidden;
                 margin: auto;
@@ -95,7 +103,7 @@
             }
 
             .card2 {
-                width: 250px;
+                width: 195px;
                 height: 210px;
                 overflow: auto;
                 margin: auto;
@@ -103,7 +111,7 @@
             }
 
             .card1 {
-                width: 250px;
+                width: 195px;
                 height: 210px;
                 overflow: auto;
                 margin: auto;
@@ -113,73 +121,73 @@
             a{
                 color:white;
                 }
-            .shfooter .collapse {
+                .shfooter .collapse {
                 display: inherit;
-            }
+                }
                 @media (max-width:767px) {
-            .shfooter ul {
+                .shfooter ul {
                     margin-bottom: 0;
-            }
+                }
 
-            .shfooter .collapse {
+                .shfooter .collapse {
                     display: none;
-            }
+                }
 
-            .shfooter .collapse.show {
+                .shfooter .collapse.show {
                     display: block;
-            }
+                }
 
-            .shfooter .title .fa-angle-up,
-            .shfooter .title[aria-expanded=true] .fa-angle-down {
+                .shfooter .title .fa-angle-up,
+                .shfooter .title[aria-expanded=true] .fa-angle-down {
                     display: none;
-            }
+                }
 
-            .shfooter .title[aria-expanded=true] .fa-angle-up {
+                .shfooter .title[aria-expanded=true] .fa-angle-up {
                     display: block;
-            }
+                }
 
-            .shfooter .navbar-toggler {
+                .shfooter .navbar-toggler {
                     display: inline-block;
                     padding: 0;
-            }
+                }
 
-            }
+                }
 
-            .resize {
+                .resize {
                 text-align: center;
-            }
-            .resize {
+                }
+                .resize {
                 margin-top: 3rem;
                 font-size: 1.25rem;
-            }
-            /*RESIZESCREEN ANIMATION*/
-            .fa-angle-double-right {
+                }
+                /*RESIZESCREEN ANIMATION*/
+                .fa-angle-double-right {
                 animation: rightanime 1s linear infinite;
-            }
+                }
 
-            .fa-angle-double-left {
+                .fa-angle-double-left {
                 animation: leftanime 1s linear infinite;
-            }
-            @keyframes rightanime {
+                }
+                @keyframes rightanime {
                 50% {
                     transform: translateX(10px);
                     opacity: 0.5;
-            }
+                }
                 100% {
                     transform: translateX(10px);
                     opacity: 0;
-            }
-            }
-            @keyframes leftanime {
+                }
+                }
+                @keyframes leftanime {
                 50% {
                     transform: translateX(-10px);
                     opacity: 0.5;
-            }
+                }
                 100% {
                     transform: translateX(-10px);
                     opacity: 0;
-            }
-            }
+                }
+                }
 
         </style>
   </head>
@@ -187,7 +195,6 @@
     <body>
 
         <!-- eto yung navbar -->
-
         <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top">
         <a class="navbar-brand" href="index.php"> <img src="../BarangaySystem/icons/beverlylogo.png" width="40px" height="40px">&nbsp; 
         <a class="navbar-brand" href="resident_homepage.php">Barangay Beverly Hills</a>
@@ -202,7 +209,7 @@
                         <input type="hidden" value="<?= $userdetails['mname'];?>">
                         <li><button class="btn" href="resident_profile.php"> <i class="fas fa-user"></i> Personal Profile </button></li>
                     </form>
-                        <button class="btn" onclick="logout();"> <i class="fas fa-sign-out-alt"> </i> Logout </button>
+                    <button class="btn" onclick="logout();"> <i class="fas fa-sign-out-alt"> </i> Logout </button>
                 </ul>
             </div>
         </nav>
@@ -211,10 +218,10 @@
             <div class="row"> 
                 <div class="col"> 
                     <div class="header">
-                        <h1 class="text1">Certificate of Indigency</h1>
-                        <h5> A Certificate of Indigency or a Certificate of Low Income is a document 
-                        <br> that are sometimes required by the Philippine government or a private 
-                        <br> institution as proof of an individual's financial situation.</h5>
+                        <h1 class="text1">Complain / Blotter </h1>
+                        <h5>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Temporibus animi  
+                        <br> voluptatum hic, mollitia, dignissimos itaque placeat illum vero id officia adipisci 
+                        <br> modi ut, laboriosam optio omnis eligendi totam reiciendis labore! </h5>
                     </div>
 
                     <br>
@@ -246,47 +253,24 @@
 
             <div class="row">
                 <div class="col">
+                    <i class="fas fa-id-card fa-7x"></i>
+
+                    <br>
+                    <br>
+
+                    <h3>Step 1: Prepare</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. 
+                    <br> Inventore tenetur fugiat repudiandae sit minus</p>
+                </div>
+                <div class="col">
                     <i class="fas fa-laptop fa-7x"></i>
 
                     <br>
                     <br>
 
-                    <h3>Step 1: Fill-Up</h3>
+                    <h3>Step 2: Apply</h3>
                     <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. 
-                    Inventore tenetur fugiat repudiandae sit minus</p>
-                </div>
-
-                <div class="col">
-                    <i class="fas fa-user-check fa-7x"></i>
-
-                    <br>
-                    <br>
-
-                    <h3>Step 2: Assessment</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. 
-                    Inventore tenetur fugiat repudiandae sit minus</p>
-                </div>
-
-                <div class="col">
-                    <i class="fas fa-thumbs-up fa-7x"></i>
-
-                    <br>
-                    <br>
-
-                    <h3>Step 3: Approval</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. 
-                    Inventore tenetur fugiat repudiandae sit minus</p>
-                </div>
-
-                <div class="col">
-                    <i class="fas fa-file fa-7x"></i>
-
-                    <br>
-                    <br>
-
-                    <h3>Step 4: Release</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. 
-                    Inventore tenetur fugiat repudiandae sit minus</p>
+                    <br> Inventore tenetur fugiat repudiandae sit minus</p>
                 </div>
             </div>
 
@@ -307,13 +291,13 @@
                 <div class="col">
                     <div class="card bg-primary card1">
                         <div class="card-header">
-                            <h5> Client Group <br><br> <i class="fas fa-user-check fa-2x"></i>  </h5>
+                            <h5> Eligibility <br><br> <i class="fas fa-user-check fa-2x"></i>  </h5>
                         </div>
                         <div class="card-body">
                             <ul style="text-align: left; font-size: 16px;">
                                 <p class="card-text">
-                                    <li> Indigent Individuals </li>
-                                    <li> Families in the Community. </li>
+                                    <li> A Philippines Resident. </li>
+                                    <li> Have been living for six months or more in a barangay. </li>
                                 </p>
                             </ul>
                         </div>
@@ -361,6 +345,25 @@
                         </div>
                     </div>
                 </div>
+                <div class="col">
+                    <div class="card bg-primary card5">
+                        <div class="card-header">
+                            <h6> Need for the Document<br><br> <i class="fas fa-file fa-2x"></i>  </h6>
+                        </div>
+                        <div class="card-body">
+                            <ul style="text-align: left; font-size: 16px;">
+                                <p class="card-text">
+                                    <li> Job/Employment </li>
+                                    <li> Open a Bank Account </li>
+                                    <li> Business Establishment </li>
+                                    <li> Financial Transaction such as lending, loan or financing. </li>
+                                    <li> Certify that you are living or residing in a certain barangay </li>
+                                    <li> Other important transactions. </li>
+                                </p>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
 
@@ -368,125 +371,141 @@
         <br>
         <br>
 
-                    <!-- Button trigger modal -->
+         <!-- Button trigger modal -->
 
-                    <div class="container">
+         <div class="container">
 
-                <h1 class="text-center">Registration</h1>
-                    
-                <hr style="background-color:black;">
+<h1 class="text-center">Registration</h1>
+    
+<hr style="background-color:black;">
 
-                <div class="col">   
-                <button type="button" class="btn btn-primary applybutton" data-toggle="modal" data-target="#exampleModalCenter">
-                    Request Certificate of Indigency
-                </button>
-                </div>
+<div class="col">   
+<button type="button" class="btn btn-primary applybutton" data-toggle="modal" data-target="#exampleModalCenter">
+    File Complain / Blotter
+</button>
+</div>
 
 
-                <!-- Modal -->
+<!-- Modal -->
 
-                <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-                <div class="modal-dialog modal-dialog-centered" role="document">
-                <div class="modal-content">
-                <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalCenterTitle">Registration Form</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-                </div>
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+<div class="modal-dialog modal-dialog-centered" role="document">
+<div class="modal-content">
+<div class="modal-header">
+<h5 class="modal-title" id="exampleModalCenterTitle">Registration Form</h5>
+<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+</button>
+</div>
 
-                <!-- Modal Body -->
+<!-- Modal Body -->
 
-                <div class="modal-body">
-                <form method="post" class="was-validated">
-                <div class="row"> 
+<div class="modal-body">
+<form method="post" class="was-validated">
+<div class="row"> 
 
-                    <div class="col-sm-6">
-                        <div class="form-group">
-                        <label for="lname">Last Name:</label>
-                        <input name="lname" type="text" class="form-control" placeholder="Enter Last Name" required>
-                            <div class="valid-feedback">Valid.</div>
-                            <div class="invalid-feedback">Please fill out this field.</div>
-                        </div>
+    <div class="col-sm-6">
+        <div class="form-group">
+        <label for="lname">Last Name:</label>
+        <input name="lname" type="text" class="form-control" placeholder="Enter Last Name" required>
+            <div class="valid-feedback">Valid.</div>
+            <div class="invalid-feedback">Please fill out this field.</div>
+        </div>
 
-                        <div class="form-group">
-                        <label for="mi" class="mtop">Middle Name: </label>
-                        <input name="mi" type="text" class="form-control" placeholder="Enter Middle Name" required>
-                        <div class="valid-feedback">Valid.</div>
-                        <div class="invalid-feedback">Please fill out this field.</div>
-                        </div>
+        <div class="form-group">
+        <label for="mi" class="mtop">Middle Name: </label>
+        <input name="mi" type="text" class="form-control" placeholder="Enter Middle Name" required>
+        <div class="valid-feedback">Valid.</div>
+        <div class="invalid-feedback">Please fill out this field.</div>
+        </div>
 
-                        <div class="form-group">
-                        <label for="address" class="mtop"> Address: </label>
-                        <input type="text" class="form-control" name="address" placeholder="Enter your Address" required>
-                        <div class="valid-feedback">Valid.</div>
-                        <div class="invalid-feedback">Please fill out this field.</div>
-                        </div>
-
-                        <div class="form-group">
-                        <label for="status">Status:</label>
-                        <select class="form-control" name="status" id="status" placeholder="Enter Status" required>
-                        <option value="">Choose your Status</option>
-                        <option value="Single">Single</option>
-                            <option value="In a relationship">In a relationship</option>
-                            <option value="Engaged">Engaged</option>
-                            <option value="Married">Married</option>
-                            <option value="Widowed">Widowed</option>
-                            <option value="Divorces">Divorced</option>
-                        </select>
-                        <div class="valid-feedback">Valid.</div>
-                        <div class="invalid-feedback">Please fill out this field.</div>
-                    </div>
-
-                    </div>
-                        
-                        <div class="col-sm-6">
-
-                        <div class="form-group">
-                        <label for="fname">First Name:</label>
-                        <input name="fname" type="text" class="form-control" placeholder="Enter Firs Name" required>
-                            <div class="valid-feedback">Valid.</div>
-                            <div class="invalid-feedback">Please fill out this field.</div>
-                        </div>
-
-                        <div class="form-group">
-                        <label for="Age" class="mtop">Age: </label>
-                        <input type="number" name="age" class="form-control" placeholder="Enter your Age" required>
-                        <div class="valid-feedback">Valid.</div>
-                        <div class="invalid-feedback">Please fill out this field.</div>
-                        </div>
-
-                        
-                    
-                    <div class="form-group">
-                        <label for="purpose">Purpose:</label>
-                        <input name="purpose" type="text" class="form-control" placeholder="Enter Purpose" required>
-                        <div class="valid-feedback">Valid.</div>
-                        <div class="invalid-feedback">Please fill out this field.</div>
-                    </div>
-
-                    
-                </div>
-                </div>
-
+        <div class="form-group">
+            
+                <label class="mtop">Gender</label>
+                <select class="form-control" name="sex" id="sex" required>
+                <option value="">---</option>
+                <option value="Male">Male</opt ion>
+                <option value="Female">Female</option>
+                    </select>
+        <div class="valid-feedback">Valid.</div>
+        <div class="invalid-feedback">Please fill out this field.</div>
                 
-                
-                <!-- Modal Footer -->
-                
-                <div class="modal-footer">
-                <div class="paa">
-                    <input name="id_resident" type="hidden" class="form-control" value="<?= $userdetails['id_resident']?>">
-                    <input name="addedby" type="hidden" class="form-control" value="<?= $userdetails['surname']?> <?= $userdetails['firstname']?> <?= $userdetails['mname']?>">
-                    <button type="button" class="btn btn-dark" data-dismiss="modal">Close</button>
-                    <button name ="create_certofindigency" type="submit" class="btn btn-primary">Submit Request</button>
-                </div>
-                </div> 
-                </form>
-                </div>
-                </div>
-                </div>
-                </div>
-                </div> 
+        </div>       
+        
+
+        
+
+        <div class="form-group">
+        <label for="status">Status:</label>
+        <select class="form-control" name="status" id="status" placeholder="Enter Status" required>
+        <option value="">Choose your Status</option>
+        <option value="Single">Single</option>
+            <option value="In a relationship">In a relationship</option>
+            <option value="Engaged">Engaged</option>
+            <option value="Married">Married</option>
+            <option value="Widowed">Widowed</option>
+            <option value="Divorces">Divorced</option>
+        </select>
+        <div class="valid-feedback">Valid.</div>
+        <div class="invalid-feedback">Please fill out this field.</div>
+    </div>
+
+    </div>
+        
+        <div class="col-sm-6">
+
+        <div class="form-group">
+        <label for="fname">First Name:</label>
+        <input name="fname" type="text" class="form-control" placeholder="Enter Firs Name" required>
+            <div class="valid-feedback">Valid.</div>
+            <div class="invalid-feedback">Please fill out this field.</div>
+        </div>
+
+        <div class="form-group">
+        <label for="Age" class="mtop">Age: </label>
+        <input type="number" name="age" class="form-control" placeholder="Enter your Age" required>
+        <div class="valid-feedback">Valid.</div>
+        <div class="invalid-feedback">Please fill out this field.</div>
+        </div>
+
+        <div class="form-group">
+        <label for="address" class="mtop"> Address: </label>
+        <input type="text" class="form-control" name="address" placeholder="Enter your Address" required>
+        <div class="valid-feedback">Valid.</div>
+        <div class="invalid-feedback">Please fill out this field.</div>
+        </div>
+
+        
+    
+    <div class="form-group">
+        <label for="nationality">Nationality:</label>
+        <input name="nationality" type="text" class="form-control" placeholder="Enter Nationality" required>
+        <div class="valid-feedback">Valid.</div>
+        <div class="invalid-feedback">Please fill out this field.</div>
+    </div>
+
+    
+</div>
+</div>
+
+
+
+<!-- Modal Footer -->
+
+<div class="modal-footer">
+<div class="paa">
+    <input name="id_resident" type="hidden" class="form-control" value="<?= $userdetails['id_resident']?>">
+    <input name="addedby" type="hidden" class="form-control" value="<?= $userdetails['surname']?> <?= $userdetails['firstname']?> <?= $userdetails['mname']?>">
+    <button type="button" class="btn btn-dark" data-dismiss="modal">Close</button>
+    <button name ="create_certofres" type="submit" class="btn btn-primary">Submit Request</button>
+</div>
+</div> 
+</form>
+</div>
+</div>
+</div>
+</div>
+</div> 
 
         <br>
         <br>
