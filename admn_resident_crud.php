@@ -7,6 +7,7 @@
    $residentbmis->create_resident();
    $residentbmis->update_resident();
    $residentbmis->delete_resident();
+
    $rescount = $residentbmis->count_resident();
    $rescountm = $residentbmis->count_male_resident();
    $rescountf = $residentbmis->count_female_resident();

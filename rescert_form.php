@@ -91,17 +91,17 @@ $resident = $residentbmis->get_single_certofres($id_resident);
                 <div class="col-xs-7 col-sm-5 col-md-8" style="background: white;  ">`
                     <div class="pull-center" style="font-size: 16px; text-align:center;"><b>
                         Republic of the Philippines<br>
-                        Municipality of Opol<br>
-                        Province of Misamis Oriental<br>
-                        BARANGAY IGPIT<br>
-                        Tel. 999-0000<br><br></b>
+                        Municipality of Antipolo<br>
+                        Province of Metro Manila<br>
+                        BARANGAY BEVERLY HILLS<br>
+                        Tel. +632 633-9667<br><br></b>
                     </div>
                   
                     <div class="pull-right" style="border: 2px ;">
                        
                     </div>
                     <div class="col-xs-12 col-md-12">
-                        <p class="text-center" style="font-size: 20px; font-size:bold;">OFFICE OF THE BARANGAY CAPTAIN<br><br><b style="font-size: 28px;">BARANGAY CLEARANCE</b></p>
+                        <p class="text-center" style="font-size: 20px; font-size:bold;">OFFICE OF THE BARANGAY CAPTAIN<br><br><b style="font-size: 28px;">CERTIFICATE OF RESIDENCY</b></p>
                         <p style="font-size: 18px;">TO WHOM IT MAY CONCERN:</p>
                         <p style="text-indent:40px;text-align: justify;">This is to certify that <?= $resident['fname'];?> <?= $resident['mi'];?>. <?= $resident['lname'];?>  
                          is a bonafide resident of <?= $resident['address'];?> and that he/she has no derogatory / criminal records filled in this brangay</p><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>

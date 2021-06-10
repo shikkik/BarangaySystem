@@ -106,6 +106,9 @@
                 $stmt = $connection->prepare("DELETE FROM tbl_resident where email = ?");
                 $stmt->execute([$email]);
 
+                $message2 = "Resident Data Deleted";
+                
+                echo "<script type='text/javascript'>alert('$message2');</script>";
                 header("Refresh:0");
             }
         }

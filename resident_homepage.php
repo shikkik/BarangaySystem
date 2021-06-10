@@ -8,8 +8,6 @@
     $cdate = $dt->format('Y/m/d');
     $ctime = $tm->format('H');
 
-    //$event = $view_announcement();
-
 ?>
 
 
@@ -43,7 +41,8 @@
     <body> 
         <!-- eto yung navbar -->
         <nav class="navbar navbar-dark bg-primary sticky-top">
-            <a class="navbar-brand" href="resident_homepage.php">Barangay Sorsogon</a>
+            <a class="navbar-brand" href="index.php"> <img src="../BarangaySystem/icons/beverlylogo.png" width="40px" height="40px">&nbsp; 
+            <a class="navbar-brand" href="resident_homepage.php">Barangay Beverly Hills</a>
 
             <div class="dropdown ml-auto">
                 <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown"><?= $userdetails['surname'];?>, <?= $userdetails['firstname'];?>
@@ -57,24 +56,46 @@
             </div>
         </nav>
 
-        <?php 
+        
 
-            if($cdate) { ?>
-                <div class="alert alert-info alert-dismissible fade show" role="alert">
-                <strong>ANNOUNCEMENT!</strong> <?= $event?>
+        <?php 
+            $view = $bmis->view_announcement();
+
+            if($view > 0 ) { ?>
+            <table class="table table-dark table-responsive">
+                <thead style="display:none"> 
+                    <tr>
+                        <th> Announcement </th>
+                    </tr>
+                </thead>
+                <tbody style="display:none"> 
+                <?php if(is_array($view)) {?>
+                    <?php foreach($view as $view) {?>
+                        <tr>
+                            <td> <?= $view['event'];?> </td>             
+                        </tr>
+                    <?php }?>
+                <?php } ?>
+                </tbody>
+            </table>
+
+            <div class="alert alert-info alert-dismissible fade show" role="alert" style="margin-top: -20px;">
+                <strong><h4>ANNOUNCEMENT!<h4></strong> <br> <p> <?= $view['event'];?> </p>
                 <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
-                </div>
+            </div>
 
         <?php 
-            }
+            } 
 
-            else {
-                return(0);
+            else {  
+            
             }
 
         ?>
+
+
 
 
         <section class="heading-section"> 
@@ -165,7 +186,7 @@
                         <div class="card"> 
                             <div class="card-body text-center">
                                 <img src="../BarangaySystem/icons/ResidentHomepage/complain.png"> 
-                                <a href=""> <h4> Complain/Blotter Report</h4> 
+                                <a href="services_compblot.php"> <h4> Complain/Blotter Report</h4> 
                             </a>
                             </div>
                         </div>
@@ -216,6 +237,9 @@
 
             </div>
         </section>
+
+
+        
 
         <script src="../BarangaySystem/bootstrap/js/bootstrap.bundle.js" type="text/javascript"> </script>
     </body>
