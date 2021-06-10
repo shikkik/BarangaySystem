@@ -257,7 +257,6 @@
                         <th> Age </th>
                         <th> Address </th>
                         <th> Contact </th>
-                        <th> Remarks </th>
                         <th> Date Applied </th>
                         <th> AddedBy </th>
                     </tr>
@@ -281,7 +280,6 @@
                         <td> <?= $view['age'];?> </td>
                         <td> <?= $view['address'];?> </td>
                         <td> <?= $view['contact'];?> </td>
-                        <td> <?= $view['remarks'];?> </td>
                         <td> <?= $view['dateapply'];?> </td>
                         <td> <?= $view['addedby'];?> </td>
                     </tr>
