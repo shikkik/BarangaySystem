@@ -7,20 +7,15 @@
     $dt = new DateTime("now", new DateTimeZone('Asia/Manila'));
     $tm = new DateTime("now", new DateTimeZone('Asia/Manila'));
     $cdate = $dt->format('Y/m/d');
-    $ctime = $tm->format('H');
-    
-    if(isset($_POST['create_motherchild'])) {
-        if(($ctime >= 10) && ($ctime <= 20)) {
-            $bmis->create_motherchild();
-        }
+    $ctime = $tm->format('H:i');
 
-        else {
-            $message2 = "Sorry, Barangay consultations are available from 10:00 AM to 8:00 PM only";
-            echo "<script type='text/javascript'>alert('$message2');</script>";
-            header('refresh:0');
-        }
-    }
-    
+    echo "$cdate";
+
+    echo "<br>";
+   
+    echo "$ctime";
+
+    $bmis->create_motherchild();
 
 
 ?>
@@ -40,20 +35,6 @@
     
         <style>
 
-
-            /* Slideshow */
-
-            .carousel-inner img 
-            {
-                width: 100%;
-                height: 100%;
-                border-radius: 10px;
-            }
-
-            .container2{
-                margin-top: 30px;
-            }
-
             /* Modal */
 
             .applybutton
@@ -69,30 +50,180 @@
 
             /* Under Navbar */
 
-            .container1{
-                background-color: #AED6F1;
-                height: 400px;
+            .container1 {
+                position: relative;
+                font-family: Arial;
+                background-color: lightblue;
             }
-            
+
+            .text-block {
+                position: absolute;
+                bottom: 30%;
+                right: 33%;
+                background-color: black; 
+                opacity: .7;
+                color: white;
+                padding-left: 20px;
+                padding-right: 20px;
+                border-radius: 20px;
+            }
+
+            /* Slideshow */
+
+            * {
+            box-sizing: border-box;
+            }
+
+            .picture {
+            position: relative;
+            left: -15px;
+            width: 102.7%;
+            }
+
             .picture1{
-                height: 400px;
-                width: 100%;
+                height: 8%;
             }
 
-            .picture2{
-                height: 400px;
-                width: 100%;
+            /* Position the image container (needed to position the left and right arrows) */
+            .container2 {
+            position: relative;
             }
 
-            .text1{
-                margin-top: 60px;
+            /* Hide the images by default */
+            .mySlides {
+            display: none;
             }
+
+            /* Add a pointer when hovering over the thumbnail images */
+            .cursor {
+            cursor: grabbing;
+            }
+
+            /* Next & previous buttons */
+            .prev,
+            .next {
+            cursor: pointer;
+            position: absolute;
+            top: 18%;
+            width: auto;
+            padding: 30px;
+            margin-top: -50px;
+            color: white;
+            font-weight: bold;
+            font-size: 20px;
+            border-radius: 0 3px 3px 0;
+            user-select: none;
+            -webkit-user-select: none;
+            cursor: grab;
+            }
+
+            /* Position the "next button" to the right */
+            .next {
+            right: 15px;
+            border-radius: 3px 0 0 3px;
+            }
+
+            /* On hover, add a black background color with a little bit see-through */
+            .prev:hover,
+            .next:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+            }
+
+            /* Number text (1/3 etc) */
+            .numbertext {
+            color: #f2f2f2;
+            font-size: 20px;
+            padding: 8px 12px;
+            position: absolute;
+            top: 55px;
+            }
+
+            /* Container for image text */
+            .caption-container {
+            position: relative;
+            left: -15px;
+            text-align: center;
+            background-color: #222;
+            padding: 3px;
+            color: white;
+            width: 102.7%;
+            font-size: 25px;
+            }
+
+            .row:after {
+            content: "";
+            display: table;
+            clear: both;
+            }
+
+            /* Six columns side by side */
+            .column {
+            width: 16.66%;
+            }
+
+            /* Add a transparency effect for thumnbail images */
+            .demo {
+            opacity: 0.6;
+            }
+
+            .active,
+            .demo:hover {
+            opacity: 1;
+            }
+
 
             .paa{
                 margin-top: 10px;
                 position: relative;
                 left: -28%;
             }
+
+            /* Card Flip */
+
+            .container3{
+                margin-top: -65%;
+            }
+
+            .flip-card {
+                background-color: transparent;
+                width: 300px;
+                height: 300px;
+                perspective: 1000px;
+            }
+
+            .flip-card-inner {
+                position: relative;
+                width: 100%;
+                height: 100%;
+                text-align: center;
+                transition: transform 0.6s;
+                transform-style: preserve-3d;
+                box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+            }
+
+            .flip-card:hover .flip-card-inner {
+                transform: rotateY(180deg);
+            }
+
+            .flip-card-front, .flip-card-back {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                -webkit-backface-visibility: hidden;
+                backface-visibility: hidden;
+            }
+
+            .flip-card-front {
+                color: white;
+            }
+
+            .flip-card-back {
+                padding: 7px;
+                color: white;
+                transform: rotateY(180deg);
+            }
+
+            /* Footer */
 
             a{
                 color:white;
@@ -174,7 +305,7 @@
         <!-- Eto yung navbar -->
 
         <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top">
-            <a class="navbar-brand" href="resident_homepage.php">Barangay Sorsogon</a>
+            <a class="navbar-brand" href="#">Barangay Sorsogon</a>
 
             <div class="dropdown ml-auto">
                 <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown"><?= $userdetails['surname'];?>, <?= $userdetails['firstname'];?>
@@ -190,107 +321,160 @@
         <!-- Under Navbar -->
 
         <div class="container-fluid container1">
-            <div class="row text-center">
-                <div class="col">
-                    <img class="picture1" src="../BarangaySystem/icons/MotherandChild/motherandchild1.png">
-                </div>
+            <img src="../BarangaySystem/icons/Blotter/blotter2.png" alt="Nature" style="width:100%; height: 55%;">
+            <div class="text-block text-center">
+                <h1 style="font-size: 70px; letter-spacing: 5px;">Blotter</h1>
+                <br>
+                <p> Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quae nobis 
+                <br> ad aut eum id sed beatae, nostrum, harum quasi reprehenderit deleniti 
+                <br> optio molestiae cumque quidem perspiciatis nihil vitae laudantium culpa.</p>
+            </div>
+        </div>
 
-                <div class="col text1">
-                    <h2>Mother and Child Check-Up</h2>
-                    <hr style="background-color:black;">
-                    <h6>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                        Iste possimus veniam deleniti.
-                    </h6>
-                </div>
+        <br>
+        <br>
+        <br>
 
-                <div class="col">
-                    <img class="picture2" src="../BarangaySystem/icons/MotherandChild/motherandchild2.png">
+        <!-- Slideshow -->
+
+        <div class="container container2">
+            <h1 style="text-align:center">Blotter Reason</h1>
+            <hr style="background-color: black;">
+
+            <br> 
+
+            <div class="mySlides">
+                <div class="numbertext">1 / 6</div>
+                <img style="width: 1140px; height:550px;" class="picture" src="../BarangaySystem/icons/Blotter/blotter3.jpg">
+            </div>
+
+            <div class="mySlides">
+                <div class="numbertext">2 / 6</div>
+                <img style="width: 1140px; height:550px;" class="picture" src="../BarangaySystem/icons/Blotter/blotter4.jpg">
+            </div>
+
+            <div class="mySlides">
+                <div class="numbertext">3 / 6</div>
+                <img style="width: 1140px; height:550px;" class="picture" src="../BarangaySystem/icons/Blotter/blotter5.jpg">
+            </div>
+                
+            <div class="mySlides">
+                <div class="numbertext">4 / 6</div>
+                <img style="width: 1140px; height:550px;" class="picture" src="../BarangaySystem/icons/Blotter/blotter6.jpg">
+            </div>
+
+            <div class="mySlides">
+                <div class="numbertext">5 / 6</div>
+                <img style="width: 1140px; height:550px;" class="picture" src="../BarangaySystem/icons/Blotter/blotter7.jpg">
+            </div>
+                
+            <div class="mySlides">
+                <div class="numbertext">6 / 6</div>
+                <img style="width: 1140px; height:550px;" class="picture" src="../BarangaySystem/icons/Blotter/blotter8.jpg">
+            </div>
+                
+            <a class="prev" onclick="plusSlides(-1)">❮</a>
+            <a class="next" onclick="plusSlides(1)">❯</a>
+
+            <div class="caption-container">
+                <p id="caption"></p>
+            </div>
+
+            <div class="row">
+                <div class="column">
+                <img class="demo cursor picture1" src="../BarangaySystem/icons/Blotter/blotter3.jpg" style="width:100%" onclick="currentSlide(1)" alt="Physical Threatening">
+                </div>
+                <div class="column">
+                <img class="demo cursor picture1" src="../BarangaySystem/icons/Blotter/blotter4.jpg" style="width:100%" onclick="currentSlide(2)" alt="Domestic Violence">
+                </div>
+                <div class="column">
+                <img class="demo cursor picture1" src="../BarangaySystem/icons/Blotter/blotter5.jpg" style="width:100%" onclick="currentSlide(3)" alt="Aggresiveness">
+                </div>
+                <div class="column">
+                <img class="demo cursor picture1" src="../BarangaySystem/icons/Blotter/blotter6.jpg" style="width:100%" onclick="currentSlide(4)" alt="Sexual Harassment">
+                </div>
+                <div class="column">
+                <img class="demo cursor picture1" src="../BarangaySystem/icons/Blotter/blotter7.jpg" style="width:100%" onclick="currentSlide(5)" alt="Psychological Abuse">
+                </div>    
+                <div class="column">
+                <img class="demo cursor picture1" src="../BarangaySystem/icons/Blotter/blotter8.jpg" style="width:100%" onclick="currentSlide(6)" alt="Emotional Abuse">
                 </div>
             </div>
         </div>
 
-      <!-- Picture Slideshow-->
+        <div class="container container3">
+            <h1 style="text-align:center">Blotter Reason</h1>
+            <hr style="background-color: black;">
 
-            <br>
-            <bR>
-
-        <div class="container container2 text-center">
-            <h2>Barangay Medical Mission</h2>
-
-            <h6> &nbsp; <i class="fas fa-user-md"></i> &nbsp; Free Check-Up &nbsp; | 
-                 &nbsp; <i class="fas fa-comment-medical"></i> &nbsp; Free Health Seminar &nbsp; | 
-                 &nbsp; <i class="fas fa-first-aid"></i> &nbsp; Free Consultation &nbsp; | 
-                 &nbsp; <i class="fas fa-prescription-bottle"></i> &nbsp; Free Product Orientation </h6>
-            
-            <hr style="background-color:black;">
-
-            <br>
-            <br>
+            <br> 
 
             <div class="row">
                 <div class="col">
-                    <div id="demo1" class="carousel slide" data-ride="carousel" style="width: 500px; height: 400px;">
-                        <ul class="carousel-indicators">
-                            <li data-target="#demo1" data-slide-to="0" class="active"></li>
-                            <li data-target="#demo1" data-slide-to="1"></li>
-                            <li data-target="#demo1" data-slide-to="2"></li>
-                        </ul>
-
-                        <div class="carousel-inner">
-                            <div class="carousel-item active">
-                            <img src="../BarangaySystem/icons/MotherandChild/mandc1.jpg">
+                    <div class="flip-card">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front bg-primary">
+                                <br>
+                                <br>
+                                <i class="fas fa-question-circle fa-4x"></i>
+                                <br>
+                                <br>
+                                <h2>How can I file a Barangay Blotter?</h2>
                             </div>
-                            <div class="carousel-item">
-                            <img src="../BarangaySystem/icons/MotherandChild/mandc2.jpg">
-                            </div>
-                            <div class="carousel-item">
-                            <img src="../BarangaySystem/icons/MotherandChild/mandc3.jpg">
+                            <div class="flip-card-back  bg-info">
+                                <br>
+                                <h5>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                                    Amet omnis, repellat ducimus ad reprehenderit, exercitationem 
+                                    iusto itaque repudiandae quasi dolores quaerat ipsam eius. 
+                                    Cupiditate ut dolor dignissimos architecto, eum necessitatibus?</h5> 
                             </div>
                         </div>
-
-                        <a class="carousel-control-prev" href="#demo1" data-slide="prev">
-                            <span class="carousel-control-prev-icon"></span>
-                        </a>
-                        <a class="carousel-control-next" href="#demo1" data-slide="next">
-                            <span class="carousel-control-next-icon"></span>
-                        </a>
-                    </div> 
+                    </div>
                 </div>
-
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-
                 <div class="col">
-                    <div id="demo2" class="carousel slide" data-ride="carousel" style="width: 500px; height: 400px;">
-                        <ul class="carousel-indicators">
-                            <li data-target="#demo2" data-slide-to="0" class="active"></li>
-                            <li data-target="#demo2" data-slide-to="1"></li>
-                            <li data-target="#demo2" data-slide-to="2"></li>
-                        </ul>
-
-                        <div class="carousel-inner">
-                            <div class="carousel-item active">
-                            <img src="../BarangaySystem/icons/MotherandChild/mandc4.jpg">
+                    <div class="flip-card">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front bg-primary">
+                                <br>
+                                <br>
+                                <i class="fas fa-question-circle fa-4x"></i>
+                                <br>
+                                <br>
+                                <h2>What is Barangay Blotter?</h2>
                             </div>
-                            <div class="carousel-item">
-                            <img src="../BarangaySystem/icons/MotherandChild/mandc5.jpg">
-                            </div>
-                            <div class="carousel-item">
-                            <img src="../BarangaySystem/icons/MotherandChild/mandc6.jpg">
+                            <div class="flip-card-back  bg-info">
+                                <br>
+                                <h5>The entry in the barangay blotter merely states that private complainant 
+                                    was embraced ("niyakap") by the accused. This may be attributed to inaccurate 
+                                    reporting or to the victim's incomplete narration of events, whether or not 
+                                    intentionally done.</h5> 
                             </div>
                         </div>
-
-                        <a class="carousel-control-prev" href="#demo2" data-slide="prev">
-                            <span class="carousel-control-prev-icon"></span>
-                        </a>
-                        <a class="carousel-control-next" href="#demo2" data-slide="next">
-                            <span class="carousel-control-next-icon"></span>
-                        </a>
-                    </div> 
+                    </div>
                 </div>
-
+                <div class="col">
+                    <div class="flip-card">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front bg-primary">
+                                <br>
+                                <br>
+                                <i class="fas fa-question-circle fa-4x"></i>
+                                <br>
+                                <br>
+                                <h3>What is the purpose of Barangay Blotter?</h3>
+                            </div>
+                            <div class="flip-card-back  bg-info">
+                                <br>
+                                <h5>A written record of arrests and other occurrences maintained 
+                                    by the barangay. The report kept by the barangay when a suspect 
+                                    is booked, which involves the written recording of facts about 
+                                    the person's arrest and the charges against him or her.</h5> 
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
+
 
         <br>
         <br>
@@ -299,7 +483,7 @@
 
         <!-- Button trigger modal -->
 
-        <div class="container">
+        <div class="container container4">
 
             <h1 class="text-center">Registration</h1>
             
@@ -333,21 +517,21 @@
                                     <div class="col">
                                         <div class="form-group">
                                             <label for="lname">Lastname:</label>
-                                            <input name="lname" type="text" class="form-control" value="<?= $resident['lname']?>" required>
+                                            <input name="lname" type="text" class="form-control" placeholder="Enter your Lastname" required>
                                             <div class="valid-feedback">Valid.</div>
                                             <div class="invalid-feedback">Please fill out this field.</div>
                                         </div>
 
                                         <div class="form-group">
                                             <label for="mname">Middlename:</label>
-                                            <input name="mi" type="text" class="form-control" value="<?= $resident['mi']?>" required>
+                                            <input name="mi" type="text" class="form-control" placeholder="Enter your Middlename" required>
                                             <div class="valid-feedback">Valid.</div>
                                             <div class="invalid-feedback">Please fill out this field.</div>  
                                         </div>
 
                                         <div class="form-group">            
                                             <label for="cno">Contact Number:</label>
-                                            <input name="contact" type="text" maxlength="11" class="form-control" value="<?= $resident['contact']?>" pattern="[0-9]{11}" required>
+                                            <input name="contact" type="text" maxlength="11" class="form-control" placeholder="Enter your Contact Numebr" pattern="[0-9]{11}" required>
                                             <div class="valid-feedback">Valid.</div>
                                             <div class="invalid-feedback">Please fill out this field.</div>
                                         </div>
@@ -357,26 +541,27 @@
 
                                         <div class="form-group">
                                             <label for="fname">Firstname:</label>
-                                            <input name="fname" type="text" class="form-control" value="<?= $resident['fname']?>" required>
+                                            <input name="fname" type="text" class="form-control" placeholder="Enter your Firstname" required>
                                             <div class="valid-feedback">Valid.</div>
                                             <div class="invalid-feedback">Please fill out this field.</div>  
                                         </div>
 
                                         <div class="form-group">
                                             <label for="address">Address:</label>
-                                            <input name="address" type="text" class="form-control" value="<?= $resident['address']?>" required>
+                                            <input name="address" type="text" class="form-control" placeholder="Enter your Address" required>
                                             <div class="valid-feedback">Valid.</div>
                                             <div class="invalid-feedback">Please fill out this field.</div>
                                         </div>
                                         <div class="form-group">
                                             <label for="age" class="mtop">Age </label>
-                                            <input name="age" type="number" class="form-control" value="<?= $resident['age']?>" required>
+                                            <input name="age" type="number" class="form-control" placeholder="Enter your Age" required>
                                             <div class="valid-feedback">Valid.</div>
                                             <div class="invalid-feedback">Please fill out this field.</div>
                                         </div>
 
                                         <input type="hidden" name="remarks">
                                         <input type="hidden" name="dateapply" value="<?= $cdate?>">
+                                        <input type="hidden" name="timeapply" value="<?= $ctime?>">
                                         <input name="addedby" type="hidden" value="<?= $userdetails['surname']?>, <?= $userdetails['firstname']?>">
                                         <input name="id_resident" type="hidden" value="<?= $resident['id_resident']?>">
                                     </div>
@@ -385,11 +570,10 @@
                             
                             <div class="modal-footer">
                                 <div class="paa">
-                                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-                                    <button name="create_motherchild" type="submit" class="btn btn-primary">Save changes</button>
+                                    <button type="button" class="btn btn-dark" data-dismiss="modal">Close</button>
+                                    <button type="button" class="btn btn-primary">Save changes</button>
                                 </div>
                             </div>  
-                        </form>
                         </div>
                     </div>
                 </div>
@@ -564,6 +748,36 @@
 
         </footer>
         
+        <script>
+            var slideIndex = 1;
+            showSlides(slideIndex);
+
+            function plusSlides(n) {
+            showSlides(slideIndex += n);
+            }
+
+            function currentSlide(n) {
+            showSlides(slideIndex = n);
+            }
+
+            function showSlides(n) {
+            var i;
+            var slides = document.getElementsByClassName("mySlides");
+            var dots = document.getElementsByClassName("demo");
+            var captionText = document.getElementById("caption");
+            if (n > slides.length) {slideIndex = 1}
+            if (n < 1) {slideIndex = slides.length}
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex-1].style.display = "block";
+            dots[slideIndex-1].className += " active";
+            captionText.innerHTML = dots[slideIndex-1].alt;
+            }
+        </script>
 
         <script src="../BarangaySystem/bootstrap/js/bootstrap.bundle.js" type="text/javascript"> </script>
 

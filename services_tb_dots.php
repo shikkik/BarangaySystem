@@ -389,10 +389,11 @@
                                 <!-- Modal Footer -->
                             
                                 <div class="modal-footer">
-                                    <input name="addedby" type="hidden" value="<?= $userdetails['surname']?>, <?= $userdetails['firstname']?>">
-                                    <input name="id_resident" type="hidden" value="<?= $resident['id_resident']?>">
-                                    <button type="button" class="btn btn-dark" data-dismiss="modal">Close</button>
-                                    <button name="create_tbdots" type="submit" class="btn btn-primary">Save changes</button>
+                                    <div class="paa">
+                                        <input name="addedby" type="hidden" value="<?= $userdetails['surname']?>, <?= $userdetails['firstname']?>">
+                                        <button type="button" class="btn btn-dark" data-dismiss="modal">Close</button>
+                                        <button name="create_tbdots" type="submit" class="btn btn-primary">Save changes</button>
+                                    </div>
                                 </div>  
                             </form>
                         </div>

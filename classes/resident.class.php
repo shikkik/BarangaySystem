@@ -170,36 +170,6 @@
         }
     }
 
-    public function resident_change_password() {
-        
-        if(isset($_POST['change_pass'])) {
-
-            $email = $_POST['email'];
-            $password = $_POST['password'];
-            $newpassword = $_POST['newpassword'];
-            $confirmpassword = $_POST['confirmpassword'];
-
-            $connection = $this->openConn(); 
-
-            $stmt1 = $connection->prepare("SELECT password FROM tbl_resident WHERE email = ?");
-            $stmt1->Execute([$email]);
-            $stmt1->fetch();
-
-            if($stmt1 > 0){
-
-                if($password) {
-
-                }
-
-            } 
-
-            else {
-                $message2 = "Invalid";
-                echo "<script type='text/javascript'>alert('$message2');</script>";
-            }
-        }
-    }
-
     public function count_male_resident() {
         $connection = $this->openConn();
 
@@ -342,6 +312,46 @@
         }
 
     }
+
+    //-------------------------------------- EXTRA FUNCTIONS ------------------------------------------------
+
+    public function change_password() {
+        if (isset($_POST['resident_change_password'])) {
+            $id_resident = $_GET['id_resident'];
+            $oldpassword = md5($_POST['oldpassword']);
+            $oldpasswordverify = md5($_POST['oldpasswordverify']);
+            $newpassword = md5($_POST['newpassword']);
+            $checkpassword = $_POST['checkpassword'];
+
+            $connection = $this->openConn();
+            $stmt = $connection->prepare("SELECT `password` FROM tbl_resident WHERE id_resident = ?");
+            $stmt->execute([$id_resident]);
+            $result = $stmt->fetch();
+
+            if($result > 0) {
+                
+                if (md5($_POST['newpassword']) != md5($_POST['checkpassword'])){
+                    echo "New Password and Verification Password does not Match";
+                }
+
+                elseif (md5($_POST['oldpassword']) != md5($_POST['oldpasswordverify'])){
+                    echo "Old Password is Incorrect";
+                }
+
+                else {
+                    $connection = $this->openConn();
+                    $stmt = $connection->prepare("UPDATE tbl_resident SET password =? WHERE id_resident = ?");
+                    $stmt->execute([ md5($newpassword), $id_resident]);
+                    
+                    $message2 = "Password Updated";
+                    echo "<script type='text/javascript'>alert('$message2');</script>";
+                    header("refresh: 0");
+                }
+
+            }
+        }
+    }
+
 
     }
 

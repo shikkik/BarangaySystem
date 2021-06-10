@@ -2,14 +2,15 @@
 
 class BMISClass {
 
-    //pag s set ng database connection na inherited sa child classes
+//------------------------------------------ DATABASE CONNECTION ----------------------------------------------------
+    
     protected $server = "mysql:host=localhost;dbname=bmis";
     protected $user = "root";
     protected $pass = "";
     protected $options = array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION, PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC);
     protected $con;
 
-    //displays an error 404
+
     public function show_404()
     {
         http_response_code(404);
@@ -17,8 +18,6 @@ class BMISClass {
         die;
     }
 
-    
-    //eto yung nag o open ng connection ng db
     public function openConn() {
         try {
             $this->con = new PDO($this->server, $this->user, $this->pass, $this->options);
@@ -35,6 +34,8 @@ class BMISClass {
         $this->con = null;
     }
 
+
+    //------------------------------------------ AUTHENTICATION & SESSION HANDLING --------------------------------------------
         //authentication function para sa sa tatlong type ng accounts
         public function login() {
             if(isset($_POST['login'])) {
@@ -133,6 +134,7 @@ class BMISClass {
             "id_resident" => $array['id_resident'],
             "id_user" => $array['id_user'],
             "emailadd" => $array['email'],
+            "password" => $array['password'],
             //"fullname" => $array['lname']. " ".$array['fname']. " ".$array['mi'],
             "surname" => $array['lname'],
             "firstname" => $array['fname'],
@@ -151,21 +153,6 @@ class BMISClass {
         return $_SESSION['userdata'];
     }
 
-    //eto yung function na mag bibigay restriction sa mga admin pages
-    public function validate_admin(){
-        $userdetails = $this->get_userdata();
-
-        if (isset($userdetails)) {
-            
-            if($userdetails['role'] != "administrator") {
-                $this->show_404();
-            }
-
-            else {
-                return $userdetails;
-            }
-        }
-    }
 
 
  //----------------------------------------------------- ADMIN CRUD ---------------------------------------------------------
@@ -977,9 +964,6 @@ class BMISClass {
 
     
     //------------------------------------------ EXTRA FUNCTIONS ----------------------------------------------
-    public function show_announcement() {
-        
-    }
 
     public function check_admin($email) {
 
@@ -991,7 +975,44 @@ class BMISClass {
         return $total;
     }
 
-   
+    //eto yung function na mag bibigay restriction sa mga admin pages
+    public function validate_admin(){
+        $userdetails = $this->get_userdata();
+
+        if (isset($userdetails)) {
+            
+            if($userdetails['role'] != "administrator") {
+                $this->show_404();
+            }
+
+            else {
+                return $userdetails;
+            }
+        }
+    }
+
+    public function validate_staff() {
+
+        if(isset($userdetails)) {
+            if($userdetails['role'] != "administrator" || $userdetails['role'] != "user") {
+                $this->show_404();
+            }
+
+            else {
+                return $userdetails;
+            }
+        }
+    }
+
+    public function count_animal() {
+        $connection = $this->openConn();
+
+        $stmt = $connection->prepare("SELECT COUNT(*) from tbl_animal");
+        $stmt->execute();
+        $animalcount = $stmt->fetchColumn();
+
+        return $animalcount;
+    }
 
 }
 
