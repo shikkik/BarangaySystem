@@ -24,6 +24,80 @@
         <!-- fontawesome icons --> 
         <script src="https://kit.fontawesome.com/67a9b7069e.js" crossorigin="anonymous"></script>
 
+    <style>
+
+     .footerlinks{
+      color:white;
+      }
+      .shfooter .collapse {
+          display: inherit;
+      }
+          @media (max-width:767px) {
+      .shfooter ul {
+              margin-bottom: 0;
+      }
+
+      .shfooter .collapse {
+              display: none;
+      }
+
+      .shfooter .collapse.show {
+              display: block;
+      }
+
+      .shfooter .title .fa-angle-up,
+      .shfooter .title[aria-expanded=true] .fa-angle-down {
+              display: none;
+      }
+
+      .shfooter .title[aria-expanded=true] .fa-angle-up {
+              display: block;
+      }
+
+      .shfooter .navbar-toggler {
+              display: inline-block;
+              padding: 0;
+      }
+
+      }
+
+      .resize {
+          text-align: center;
+      }
+      .resize {
+          margin-top: 3rem;
+          font-size: 1.25rem;
+      }
+      /*RESIZESCREEN ANIMATION*/
+      .fa-angle-double-right {
+          animation: rightanime 1s linear infinite;
+      }
+
+      .fa-angle-double-left {
+          animation: leftanime 1s linear infinite;
+      }
+      @keyframes rightanime {
+          50% {
+              transform: translateX(10px);
+              opacity: 0.5;
+      }
+          100% {
+              transform: translateX(10px);
+              opacity: 0;
+      }
+      }
+      @keyframes leftanime {
+          50% {
+              transform: translateX(-10px);
+              opacity: 0.5;
+      }
+          100% {
+              transform: translateX(-10px);
+              opacity: 0;
+      }
+      }
+
+    </style>
     <body> 
         <!-- eto yung navbar -->
         <nav class="navbar navbar-dark bg-primary sticky-top">
@@ -39,111 +113,281 @@
                 </ul>
             </div>
         </nav>
+
         <div class="container"  style="margin-top: 4em;">
             <div class="row">
                 <div class="col-12">
                     <h1 class="" style="text-align:left;">Resident Profile</h1>
                     
-            <div class="row margin mtop"> 
-                <div class="col-sm"> </div>
-                <div class="col-12">   
-                    <div class="card mbottom">
-                        <div class="card-body" style="border-style: inset;">
-                        <form method="post">
-                            <div class="row" >
-                                <div class="col">
-                                
-                                    <div class="row settings">
-                                    
-                                    <h5 style="margin-right: 2em;text-align: right;"> Name:</h5> <h5><?= $resident['lname'];?>, <?= $resident['fname'];?> <?= $resident['mi'];?></h5> 
-                                    </div>
-                                    <div class="row">
-                                        <h5 style="margin-right: 2em;text-align: right;"> Email: </h5> <h5> <?= $resident['email'];?> </h5>
-                                    </div>
+                        <div class="row margin mtop"> 
+                            <div class="col-sm"> </div>
+                            <div class="col-12">   
+                                <div class="card mbottom">
+                                    <div class="card-body" style="border-style: inset;">
+                                    <form method="post">
+                                        <div class="row" >
+                                            <div class="col">
+                                            
+                                                <div class="row settings">
+                                                
+                                                <h5 style="margin-right: 2em;text-align: right;"> Name:</h5> <h5><?= $resident['lname'];?>, <?= $resident['fname'];?> <?= $resident['mi'];?></h5> 
+                                                </div>
+                                                <div class="row">
+                                                    <h5 style="margin-right: 2em;text-align: right;"> Email: </h5> <h5> <?= $resident['email'];?> </h5>
+                                                </div>
 
-                                    <div class="row">
-                                        <h5 style="margin-right: 2em;text-align: right;"> Sex: </h5> <h5> <?= $resident['sex'];?> </h5>
-                                    </div>
-                                    
-                                    <div class="row">
-                                    <h5 style="margin-right: 2em;display:inline-block;">Age:</h5>
-                                    <input class="input" type="text" name="age" value="<?= $resident['age'];?>">
-                                    </div>
+                                                <div class="row">
+                                                    <h5 style="margin-right: 2em;text-align: right;"> Sex: </h5> <h5> <?= $resident['sex'];?> </h5>
+                                                </div>
+                                                
+                                                <div class="row">
+                                                <h5 style="margin-right: 2em;display:inline-block;">Age:</h5>
+                                                <input class="input" type="text" name="age" value="<?= $resident['age'];?>">
+                                                </div>
 
-                                    <div class="row">
-                                    <h5 style="margin-right: 2em;display:inline-block;">Status:</h5>
-                                    <input class="input" type="text" name="status" value="<?= $resident['status'];?>">
-                                    </div>
-                                    
-                                    <div class="row">
-                                    <h5 style="margin-right: 2em;display:inline-block;">Address:</h5>
-                                    <input class="input" type="text" name="address" value="<?= $resident['address'];?>">
-                                    </div>
+                                                <div class="row">
+                                                <h5 style="margin-right: 2em;display:inline-block;">Status:</h5>
+                                                <input class="input" type="text" name="status" value="<?= $resident['status'];?>">
+                                                </div>
+                                                
+                                                <div class="row">
+                                                <h5 style="margin-right: 2em;display:inline-block;">Address:</h5>
+                                                <input class="input" type="text" name="address" value="<?= $resident['address'];?>">
+                                                </div>
 
-                                    <div class="row">
-                                    <h5 style="margin-right: 2em;display:inline-block;">Contact:</h5>
-                                    <input class="input" type="text" name="contact" value="<?= $resident['contact'];?>">
-                                    </div>
-                                </div>
-                                    
-                                    <div class="col">
+                                                <div class="row">
+                                                <h5 style="margin-right: 2em;display:inline-block;">Contact:</h5>
+                                                <input class="input" type="text" name="contact" value="<?= $resident['contact'];?>">
+                                                </div>
+                                            </div>
+                                                
+                                                <div class="col">
 
-                                        <div class="row">
-                                        <h5 style="margin-right: 2em; display:inline-block;"> Birth Date: </h5> <h5> <?= $resident['bdate'];?> </h5>
+                                                    <div class="row">
+                                                    <h5 style="margin-right: 2em; display:inline-block;"> Birth Date: </h5> <h5> <?= $resident['bdate'];?> </h5>
+                                                    </div>
+
+                                                    <div class="row">
+                                                    <h5 style="margin-right: 2em;display:inline-block;"> Birth Place: </h5> <h5> <?= $resident['bplace'];?> </h5>
+                                                    </div>
+
+                                                    <div class="row">
+                                                    <h5 style="margin-right: 2em;display:inline-block;"> Nationality: </h5> <h5> <?= $resident['nationality'];?> </h5>
+                                                    </div>
+
+                                                    <div class="row">
+                                                    <h5 style="margin-right: 2em;display:inline-block;"> Family Role: </h5> <h5> <?= $resident['family_role'];?> </h5>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
-
-                                        <div class="row">
-                                        <h5 style="margin-right: 2em;display:inline-block;"> Birth Place: </h5> <h5> <?= $resident['bplace'];?> </h5>
-                                        </div>
-
-                                        <div class="row">
-                                        <h5 style="margin-right: 2em;display:inline-block;"> Nationality: </h5> <h5> <?= $resident['nationality'];?> </h5>
-                                        </div>
-
-                                        <div class="row">
-                                        <h5 style="margin-right: 2em;display:inline-block;"> Family Role: </h5> <h5> <?= $resident['family_role'];?> </h5>
-                                        </div>
-                                    </div>
-                                </div>
+                                    </form>
+                
+                                    <div class="col"></div>
+                                </div>  
                             </div>
+                        </div> 
+
+                    <div class="col-sm"> </div>
+                </div>
+
+                <div class="row" style=" margin-bottom: 5em;"> 
+                    <div class="col-xl-12">
+                        <div class="form-inline">
+                        <form method="post">
+                                <input class="form-control" name="lname" type="hidden" value="<?= $resident['lname'];?>"/>
+                                <input class="form-control" name="mi" type="hidden" value="<?= $resident['mi'];?>" />
+                                <button type="submit button" class="btn btn-info"  name="search_household">View Household</button>
+                                <button class="btn btn-primary" type="submit" name="profile_update"> Update </button>
+                                <a href="resident_profile.php?id_resident=<?= $userdetails['id_resident'];?>"></a>
+                                <button class="btn"><a href="clearance_form.php?id_resident=<?= $userdetails['id_resident'];?>"> <i class="fas fa-user" style="padding: 0.5em;"></i>Generate  </button>
                                 
+                            <div>
+                            <br /><br />
+                                <?php include'testingsearch.php'?>
+                                
+                            </div>
                         </form>
-            
-                                <div class="col"></div>
-                            </div>  
-                        </div>
-                    </div> 
-
-                <div class="col-sm"> </div>
-            </div>
-
-            <div class="row" style=" margin-bottom: 5em;"> 
-                <div class="col-xl-12">
-                    <div class="form-inline">
-                    <form method="post">
-                            <input class="form-control" name="lname" type="hidden" value="<?= $resident['lname'];?>"/>
-                            <input class="form-control" name="mi" type="hidden" value="<?= $resident['mi'];?>" />
-                            <button type="submit button" class="btn btn-info"  name="search_household">View Household</button>
-                            <button class="btn btn-primary" type="submit" name="profile_update"> Update </button>
-                            <a href="resident_profile.php?id_resident=<?= $userdetails['id_resident'];?>"></a>
-                            <button class="btn"><a href="clearance_form.php?id_resident=<?= $userdetails['id_resident'];?>"> <i class="fas fa-user" style="padding: 0.5em;"></i>Generate  </button>
-                            
-                        <div>
-                        <br /><br />
-                            <?php include'testingsearch.php'?>
-                            
-                        </div>
-                    </form>
-                    </div>                                   
+                        </div>                                   
+                    </div>
                 </div>
             </div>
         </div>
 
-        
-        
-        </section>
+        <br>
+        <br>
+        <br>
+
+        <!-- Footer -->
+
+        <footer id="footer" class="bg-primary text-white d-flex-column text-center">
+            <hr class="mt-0">
+
+            <div class="text-center">
+                <h1 class="text-white">Services</h1>
+                <ul class="list-unstyled list-inline">
+
+                &nbsp;
+
+                <li class="list-inline-item">
+                    <a class="footerlinks" href="#!" class="sbtn btn-large mx-1" title="HealthCare">
+                    <i class="fas fa-first-aid fa-2x"></i>
+                    </a>
+                </li>
+
+                &nbsp;
+
+                <li class="list-inline-item">
+                    <a class="footerlinks" href="#!" class="sbtn btn-large mx-1" title="Documents">
+                    <i class="fas fa-file fa-2x"></i>
+                    </a>
+                </li>
+
+                &nbsp;
+
+                <li class="list-inline-item">
+                    <a class="footerlinks" href="#!" class="sbtn btn-large mx-1" title="Documents">
+                    <i class="fas fa-user-friends fa-2x"></i>
+                    </a>
+                </li>
+
+                &nbsp;
+
+                <li class="list-inline-item">
+                    <a class="footerlinks" href="#!" class="sbtn btn-large mx-1" title="Blotter">
+                    <i class="fas fa-user-shield fa-2x"></i>
+                    </a>
+                </li>
+
+                &nbsp;
+
+                <li class="list-inline-item">
+                    <a class="footerlinks" href="#!" class="sbtn btn-large mx-1" title="Inquiries">
+                    <i class="fas fa-question fa-2x"></i>
+                    </a>
+                </li>
+                </ul>
+            </div>
+
+            <hr class="mb-0">
+
+            <!--Footer Links-->
+
+            <div class="container text-left text-md-center">
+                <div class="row">
+
+                    <!--First column-->
+
+                    <div class="col-md-3 mx-auto shfooter">
+                        <h5 class="my-2 font-weight-bold d-none d-md-block">HealthCare</h5>
+                        <div class="d-md-none title" data-target="#HealthCare" data-toggle="collapse">
+                            <div class="mt-3 font-weight-bold">HealthCare
+                                <div class="float-right navbar-toggler">
+                                    <i class="fas fa-angle-down"></i>
+                                    <i class="fas fa-angle-up"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <ul class="list-unstyled collapse" id="HealthCare">
+                            <li><a class="footerlinks" href="#">Animal Registry & Welfare</a></li>
+                            <li><a class="footerlinks" href="#">TB Dots Consultation</a></li>
+                            <li><a class="footerlinks" href="#">Vaccination Programs</a></li>
+                            <li><a class="footerlinks" href="#">Mother & Child Check-Up</a></li>
+                        </ul>
+                    </div>
+
+                    <!--/.First column-->
+
+                    <hr class="clearfix w-100 d-md-none mb-0">
+
+                    <!--Second column-->
+
+                    <div class="col-md-3 mx-auto shfooter">
+                        <h5 class="my-2 font-weight-bold d-none d-md-block">Documentation</h5>
+                        <div class="d-md-none title" data-target="#Documentation" data-toggle="collapse">
+                            <div class="mt-3 font-weight-bold">Documentation
+                                <div class="float-right navbar-toggler">
+                                    <i class="fas fa-angle-down"></i>
+                                    <i class="fas fa-angle-up"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <ul class="list-unstyled collapse" id="Documentation">
+                            <li><a class="footerlinks" href="#">Certificate of Residency</a></li>
+                            <li><a class="footerlinks" href="#">Barangay Clearance</a></li>
+                            <li><a class="footerlinks" href="#">Certificate of Indigency</a></li>
+                        </ul>
+                    </div>
+
+                    <!--/.Second column-->
+
+                    <hr class="clearfix w-100 d-md-none mb-0">
+
+                    <!--Third column-->
+
+                    <div class="col-md-3 mx-auto shfooter">
+                        <h5 class="my-2 font-weight-bold d-none d-md-block">Other Services</h5>
+                        <div class="d-md-none title" data-target="#OtherServices" data-toggle="collapse">
+                            <div class="mt-3 font-weight-bold">Other Services
+                                <div class="float-right navbar-toggler">
+                                    <i class="fas fa-angle-down"></i>
+                                    <i class="fas fa-angle-up"></i>
+                                </div>
+                            </div>
+                        </div>
+
+                        <ul class="list-unstyled collapse" id="OtherServices">
+                            <li><a class="footerlinks" href="#">Family Planning</a></li>
+                            <li><a class="footerlinks" href="#">Blotter</a></li>
+                        </ul>
+                    </div>
+
+                    <!--/.Third column-->
+
+                    <hr class="clearfix w-100 d-md-none mb-0">
+ 
+                    <!--Fourth column-->
+
+                    <div class="col-md-3 mx-auto shfooter">
+                        <h5 class="my-2 font-weight-bold d-none d-md-block">Get Help</h5>
+                        <div class="d-md-none title" data-target="#Get-Help" data-toggle="collapse">
+                        <div class="mt-3 font-weight-bold">Get Help
+                            <div class="float-right navbar-toggler">
+                            <i class="fas fa-angle-down"></i>
+                            <i class="fas fa-angle-up"></i>
+                            </div>
+                        </div>
+                        </div>
+                        <ul class="list-unstyled collapse" id="Get-Help">
+                        <li><a class="footerlinks" href="#">Contact Us</a></li>
+                        <li><a class="footerlinks" href="#">Privacy Policy</a></li>
+                        <li><a class="footerlinks" href="#">Terms</a></li>
+                        </ul>
+                    </div>
+
+                    <!--/.Fourth column-->
+
+                </div>
+            </div>
+
+            <!--/.Footer Links-->
+
+            <hr class="mb-0">
+
+            <!--Copyright-->
+
+            <div class="py-3 text-center">
+                Copyright 2020 -
+                <script>
+                document.write(new Date().getFullYear())
+                </script> 
+                SAD/DBA | For Educational Purposes Only
+            </div>
+
+        </footer>
 
  
         <script src="../BarangaySystem/bootstrap/js/bootstrap.bundle.js" type="text/javascript"> </script>
+
     </body>
 </html>
