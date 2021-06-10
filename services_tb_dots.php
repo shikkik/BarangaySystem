@@ -1,5 +1,10 @@
 <?php 
     require('classes/resident.class.php');
+
+    $dt = new DateTime("now", new DateTimeZone('Asia/Manila'));
+    $tm = new DateTime("now", new DateTimeZone('Asia/Manila'));
+    $cdate = $dt->format('Y/m/d');
+    $ctime = $tm->format('H');
     
     $userdetails = $bmis->get_userdata();
 
@@ -7,6 +12,8 @@
     $resident = $residentbmis->get_single_resident($id_resident);
 
     $bmis->create_tbdots();
+
+
 ?>
 
 <!DOCTYPE html>
@@ -391,6 +398,8 @@
                             
                                 <div class="modal-footer">
                                     <div class="paa">
+                                        <input name="id_resident" type="hidden" value="<?= $userdetails['id_resident']?>">
+                                        <input name="date_applied" type="hidden" value="<?= $cdate?>">
                                         <input name="addedby" type="hidden" value="<?= $userdetails['surname']?>, <?= $userdetails['firstname']?>">
                                         <button type="button" class="btn btn-dark" data-dismiss="modal">Close</button>
                                         <button name="create_tbdots" type="submit" class="btn btn-primary">Save changes</button>

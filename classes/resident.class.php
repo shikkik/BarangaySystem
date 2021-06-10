@@ -86,9 +86,9 @@
                 $addedby = $_POST['addedby'];
 
                 $connection = $this->openConn();
-                $stmt = $connection->prepare("UPDATE tbl_resident SET password =?, lname =?, 
-                fname = ?, mi =?, age =?, sex =?, status =?, address =?, contact =?,
-                bdate =?, bplace =?, nationality =?,family_role =?, role =?, addedby =? WHERE id_resident = ?");
+                $stmt = $connection->prepare("UPDATE tbl_resident SET `password` =?, `lname` =?, 
+                `fname` = ?, `mi` =?, `age` =?, `sex` =?, `status` =?, `address` =?, `contact` =?,
+                `bdate` =?, `bplace` =?, `nationality` =?, `family_role` =?, `role` =?, `addedby` =? WHERE `id_resident` = ?");
                 $stmt->execute([$password, $lname, $fname, $mi, $age, $sex, $status, $address,
                 $contact, $bdate, $bplace, $nationality, $familyrole, $role, $addedby, $id_resident]);
                    
