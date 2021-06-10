@@ -64,8 +64,8 @@
                                     <h5><?= $resident['lname'];?>, <?= $resident['fname'];?> <?= $resident['mi'];?></h5> 
                                     <h5> <?= $resident['email'];?> </h5>
                                     <h5> <?= $resident['sex'];?> </h5>
-                                    <input style="margin-right: 70px;" class="input" type="text" name="age" value="<?= $resident['age'];?>">
                                     <input class="input" type="text" name="status" value="<?= $resident['status'];?>">
+                                    <input style="margin-right: 70px;" class="input" type="text" name="age" value="<?= $resident['age'];?>">
                                     <input class="input" type="text" name="address" value="<?= $resident['address'];?>">
                                     <input class="input" type="text" name="contact" value="<?= $resident['contact'];?>">
                                 </div>
@@ -82,37 +82,26 @@
                                     <h5> <?= $resident['family_role'];?> </h5>
                                 </div>
                             </div>               
+                            </div>  
+                            </div>
+                            </div> 
+
+                            <div class="col-sm"> </div>
+                            </div>
+                            <div class="row" style=" margin-bottom: 5em;"> 
+                                <div class="col-xl-12">
+                                    <div class="form-inline">
+                                    <br>
+                                    <input class="form-control" name="lname" type="hidden" value="<?= $resident['lname'];?>"/>
+                                    <input class="form-control" name="mi" type="hidden" value="<?= $resident['mi'];?>" />
+                                    <button type="submit button" class="btn btn-info"  name="search_household">View Household</button>
+                                    <button class="btn btn-primary" type="submit" name="profile_update"> Update </button>
+                                    <a href="resident_profile.php?id_resident=<?= $userdetails['id_resident'];?>"></a>
+                                <div>
+                                <br /><br />
+                                 <?php include'testingsearch.php'?>
+                            </div>
                         </form>
-                        </div>  
-                        </div>
-                    </div> 
-
-                <div class="col-sm"> </div>
-            </div>
-
-
-          
-
-
-            <div class="row" style=" margin-bottom: 5em;"> 
-                <div class="col-xl-12">
-                    <div class="form-inline">
-                    <form method="post">
-
-                    <br>
-                            <input class="form-control" name="lname" type="hidden" value="<?= $resident['lname'];?>"/>
-                            <input class="form-control" name="mi" type="hidden" value="<?= $resident['mi'];?>" />
-                            <button type="submit button" class="btn btn-info"  name="search_household">View Household</button>
-                            <button class="btn btn-primary" type="submit" name="profile_update"> Update </button>
-                            <a href="resident_profile.php?id_resident=<?= $userdetails['id_resident'];?>"></a>
-                            
-                            
-                        <div>
-                        <br /><br />
-                            <?php include'testingsearch.php'?>
-                            
-                        </div>
-                    </form>
                     </div>                                   
                 </div>
             </div>

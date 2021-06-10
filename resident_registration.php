@@ -133,6 +133,7 @@
                                 
                             <input type="hidden" class="form-control" name="role" value="resident">
                             <button class="btn btn-primary" type="submit" name="add_resident"> Submit </button>
+                            <a class="btn btn-danger" href="index.php"> Back to Login</a>
                         </form>
                         </div>
                     </div> 

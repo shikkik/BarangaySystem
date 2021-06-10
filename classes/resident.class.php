@@ -294,23 +294,24 @@
 
 
     public function profile_update() {
+        $id_resident = $_GET['id_resident'];
+        $age = $_POST['age'];
+        $status = $_POST['status'];
+        $address = $_POST['address'];
+        $contact = $_POST['contact'];
 
         if (isset($_POST['profile_update'])) {
-
-            $id_resident = $_GET['id_resident'];
-            $age = $_POST['age'];
-            $status = $_POST['status'];
-            $address = $_POST['address'];
-            $contact = $_POST['contact'];
            
             $connection = $this->openConn();
-            $stmt = $connection->prepare("UPDATE tbl_resident SET  age = ?,  status = ?, 
-            address = ?, contact = ? WHERE id_resident = ?");
+            $stmt = $connection->prepare("UPDATE tbl_resident SET  `age` = ?,  `status` = ?, 
+            `address` = ?, `contact` = ? WHERE id_resident = ?");
             $stmt->execute([ $age, $status, $address,
             $contact, $id_resident]);
                
-                echo "naka udpate na";
-                header("refresh:0");
+            $message2 = "Resident Profile Updated";
+                
+            echo "<script type='text/javascript'>alert('$message2');</script>";
+            header("Refresh:0");
 
         }
 

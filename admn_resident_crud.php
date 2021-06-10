@@ -165,7 +165,9 @@
 				</div>
 			</form>
 			<br /><br />
-			<?php include'search_resident.php'?>
+			<?php 
+                include('search_resident.php');
+            ?>
 		</div>
 
 
