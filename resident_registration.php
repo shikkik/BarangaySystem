@@ -23,8 +23,8 @@
     <body >
         <!-- eto yung navbar -->
         <nav class="navbar sticky-top navbar-dark bg-primary">
-            <a class="navbar-brand" href="index.php"> <img src="../BarangaySystem/icons/logo.png" width="40px" height="40px">&nbsp; 
-            <span style="font-size: 1em;"> Barangay Sorsogon </span> </a>
+            <a class="navbar-brand" href="index.php"> <img src="../BarangaySystem/icons/beverlylogo.png" width="40px" height="40px">&nbsp; 
+            <span style="font-size: 1em;"> Barangay Beverly Hills </span> </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"></button>
             <div class="collapse navbar-collapse" id="navbarNav">
               <ul class="navbar-nav ml-auto">
@@ -44,8 +44,8 @@
                 <div class="col-sm"> </div>
 
                 <div class="col-sm-10">   
-                    <div class="card mbottom">
-                        <div class="card-body">
+                    <div class="card mbottom" style="margin-bottom: 3em;">
+                        <div class="card-body" >
                             <form method="post">
                                 <div class="row">
                                     <div class="col">
@@ -96,6 +96,14 @@
                                         <label class="mtop"> Address </label>
                                         <input type="text" class="form-control" name="address"  placeholder="Enter Address">
                                     </div>
+
+                                    <div class="col">
+                                        <label class="mtop"> Family Role </label>
+                                        <select class="form-control" name="family_role">
+                                            <option value="Family Member">Family Member</option>
+                                            <option value="Family Head">Family Head</option>
+                                        </select>
+                                    </div>
                                 </div>
 
                                 <div class="row">
@@ -117,19 +125,12 @@
                                     </div>       
                                 </div>
 
-                                <div class="row">
-                                    <div class="col">
-                                        <label class="mtop"> Family Role </label>
-                                        <select class="form-control" name="family_role">
-                                            <option value="Family Member">Family Member</option>
-                                            <option value="Family Head">Family Head</option>
-                                        </select>
-                                    </div>
-                                </div>
+                                
+                                    
 
                                 <div class="row mtop"> 
                                     <div class="col">   
-                                        <button class="btn btn-primary" type="submit" name="add_resident"> Submit </button>
+                                        <button class="btn btn-primary" style="margin-left:30em; margin-top: 4em;" type="submit" name="add_resident"> Submit </button>
                                     </div>
 
                                     <div class="col"> 

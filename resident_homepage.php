@@ -41,7 +41,8 @@
     <body> 
         <!-- eto yung navbar -->
         <nav class="navbar navbar-dark bg-primary sticky-top">
-            <a class="navbar-brand" href="resident_homepage.php">Barangay Sorsogon</a>
+            <a class="navbar-brand" href="index.php"> <img src="../BarangaySystem/icons/beverlylogo.png" width="40px" height="40px">&nbsp; 
+            <a class="navbar-brand" href="resident_homepage.php">Barangay Beverly Hills</a>
 
             <div class="dropdown ml-auto">
                 <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown"><?= $userdetails['surname'];?>, <?= $userdetails['firstname'];?>
@@ -185,7 +186,7 @@
                         <div class="card"> 
                             <div class="card-body text-center">
                                 <img src="../BarangaySystem/icons/ResidentHomepage/complain.png"> 
-                                <a href=""> <h4> Complain/Blotter Report</h4> 
+                                <a href="services_compblot.php"> <h4> Complain/Blotter Report</h4> 
                             </a>
                             </div>
                         </div>
@@ -208,7 +209,7 @@
                         <div class="card"> 
                             <div class="card-body text-center"> 
                             <img src="../BarangaySystem/icons/ResidentHomepage/residency.png">
-                                <a href=""> <h4> Certificate of Residency </h4> </a>
+                                <a href="services_certofres.php"> <h4> Certificate of Residency </h4> </a>
                             </div>
                         </div>
                     </div>
@@ -217,7 +218,7 @@
                         <div class="card"> 
                             <div class="card-body text-center">
                             <img src="../BarangaySystem/icons/ResidentHomepage/clearance.png"> 
-                                <a href=""> <h4> Barangay Clearance </h4> </a>
+                                <a href="services_brgyclearance.php"> <h4> Barangay Clearance </h4> </a>
                             </div>
                         </div>
                         
@@ -228,7 +229,7 @@
                     <div class="card"> 
                             <div class="card-body text-center"> 
                                 <img src="../BarangaySystem/icons/ResidentHomepage/indigency.png">
-                                <a href=""> <h4> Certificate of Indigency </h4> </a>
+                                <a href="services_certofindigency.php"> <h4> Certificate of Indigency </h4> </a>
                             </div>
                         </div>
                     </div>

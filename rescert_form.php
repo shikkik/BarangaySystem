@@ -2,7 +2,7 @@
 require('classes/resident.class.php');
 $userdetails = $residentbmis->get_userdata();
 $id_resident = $_GET['id_resident'];
-$resident = $residentbmis->get_single_resident($id_resident);
+$resident = $residentbmis->get_single_certofres($id_resident);
   ?>
 <!DOCTYPE html>
 <html id="clearance">
@@ -48,38 +48,38 @@ $resident = $residentbmis->get_single_resident($id_resident);
                     <center><image src="../BarangaySystem/icons/logo.png" style="width:90%;height:164px;"/></center>
                     <div style="margin-top:20px; text-align: center; word-wrap: break-word;">
                         
-                                    <p>
+                                    <p style="margin-top: 2em;">
                                     <b>Vincent Vilfamat</b><br>
                                     <span style="font-size:12px;">PUNONG BARANGAY</span>
-                                    </p>
+                                    </p><br>
                                     <p>
                                     KAG. Mikhos Dungca<br>
                                     <span style="font-size:12px;">Sports / Law / Ordinance</span>
-                                    </p>
+                                    </p><br>
                                     
                                     <p>
                                     KAG. PJ Mendros<br>
                                     <span style="font-size:12px;">Public Safety / Peace and Order</span>
-                                    </p>
+                                    </p><br>
                                     
                                     <p>
                                     KAG. Eugene Evangelista<br>
                                     <span style="font-size:12px;">Culture & Arts / Tourism / Womens Sector</span>
-                                    </p>
+                                    </p><br>
                                     <p>
                                     KAG. Kyle Pilapil<br>
                                     <span style="font-size:12px;">Budget & Finance / Electrification</span>
-                                    </p>
+                                    </p><br>
                                    
                                     <p>
                                     KAG. Jr Gapas<br>
                                     <span style="font-size:12px;">Agriculture / Livelihood / Farmers Sector / PWD Sector</span>
-                                    </p>
+                                    </p><br>
                                    
                                     <p>
                                     KAG. Kjell Ibabao<br>
                                     <span style="font-size:12px;">Health & Sanitation / Education</span>
-                                    </p>
+                                    </p><br>
                                   
                                     <p>
                                     KAG. Remedios<br>
@@ -91,48 +91,41 @@ $resident = $residentbmis->get_single_resident($id_resident);
                 <div class="col-xs-7 col-sm-5 col-md-8" style="background: white;  ">`
                     <div class="pull-center" style="font-size: 16px; text-align:center;"><b>
                         Republic of the Philippines<br>
-                        Municipality of Opol<br>
-                        Province of Misamis Oriental<br>
-                        BARANGAY IGPIT<br>
-                        Tel. 999-0000<br><br></b>
+                        Municipality of Antipolo<br>
+                        Province of Metro Manila<br>
+                        BARANGAY BEVERLY HILLS<br>
+                        Tel. +632 633-9667<br><br></b>
                     </div>
-                    <div class="pull-right" style="border: 2px solid black;">
+                  
+                    <div class="pull-right" style="border: 2px ;">
                        
                     </div>
                     <div class="col-xs-12 col-md-12">
-                        <p class="text-center" style="font-size: 20px; font-size:bold;">OFFICE OF THE BARANGAY CAPTAIN<br><br><b style="font-size: 28px;">BARANGAY CLEARANCE</b></p>
+                        <p class="text-center" style="font-size: 20px; font-size:bold;">OFFICE OF THE BARANGAY CAPTAIN<br><br><b style="font-size: 28px;">CERTIFICATE OF RESIDENCY</b></p>
                         <p style="font-size: 18px;">TO WHOM IT MAY CONCERN:</p>
                         <p style="text-indent:40px;text-align: justify;">This is to certify that <?= $resident['fname'];?> <?= $resident['mi'];?>. <?= $resident['lname'];?>  
-                         is a bonafide resident of <?= $resident['address'];?> and that he/she has no derogatory / criminal records filled in this brangay</p>
-
+                         is a bonafide resident of <?= $resident['address'];?> and that he/she has no derogatory / criminal records filled in this brangay</p><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
                         
-                    </div>  
+                    
+                        <label style="font-size:18px;">____________</label>    <label style="font-size:18px;margin-left:4em;">VINCENT VILFAMAT</label><br> 
+                        <label style=" text-align: center;">Signature </label>     <label style=" text-align: center;margin-left:10em;">Punong Barangay</label>
+                       
+                        
+                    </div>
                     
                 </div>
-                <div class="col-xs-offset-6 col-xs-5 col-md-offset-6 col-md-4" ><br><br><br>
-                    
+                
+                <div class="col-xs-offset-8 col-xs-5 col-md-offset-8 col-md-4 "  >
+                
                 </div>
-                <div class="col-xs-8 col-md-4">
-                    <?php
-                    $qry = mysqli_query($con,"SELECT * from tblofficial");
-                    while($row=mysqli_fetch_array($qry)){
-                        if($row['sPosition'] == "Captain"){
-                            echo '
-                            <p>
-                            <b style="font-size:18px;">'.strtoupper($row['completeName']).'<br>
-                            <span style=" text-align: center;">OFFICER OF THE DAY</span></b>
-                            </p>
-                            ';
-                        }
-                    }
-                    ?>
-                </div>
-                <div class="col-xs-3 pull-right" style="margin-bottom:40px;">
-                    <img class=" pull-right" src="barcode.php?clr=<?php echo base64_decode($_GET['val']);?>" style="width:170px; height: 60px; " />
 
-                    <span class="pull-right"><?php echo substr_replace($_GET['clearance'],'****',0,3);?> </span>
-               
+                <div class="col-xs-8 col-md-4" style="margin-top: 7em;">
+                <b style="font-size:18px;">Rest. Cert. No. _______<br>
+                <span style=" text-align: center;">Issued at ____________</span><br>
+                <span style=" text-align: center;">Issued on ___________</span></b>
                 </div>
+                
+                
             </div>
         </div>
     <button class="btn btn-primary noprint" id="printpagebutton" onclick="PrintElem('#clearance')">Print</button>

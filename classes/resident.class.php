@@ -115,6 +115,9 @@
 
     //-------------------------------- EXTRA FUNCTIONS FOR RESIDENT CLASS ---------------------------------
 
+    
+
+
     public function get_single_resident($id_resident){
 
         $id_resident = $_GET['id_resident'];

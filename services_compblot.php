@@ -218,7 +218,7 @@
             <div class="row"> 
                 <div class="col"> 
                     <div class="header">
-                        <h1 class="text1">Certificate Of Residency </h1>
+                        <h1 class="text1">Complain / Blotter </h1>
                         <h5>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Temporibus animi  
                         <br> voluptatum hic, mollitia, dignissimos itaque placeat illum vero id officia adipisci 
                         <br> modi ut, laboriosam optio omnis eligendi totam reiciendis labore! </h5>
@@ -381,7 +381,7 @@
 
 <div class="col">   
 <button type="button" class="btn btn-primary applybutton" data-toggle="modal" data-target="#exampleModalCenter">
-    Request Certificate of Residency
+    File Complain / Blotter
 </button>
 </div>
 
@@ -420,11 +420,20 @@
         </div>
 
         <div class="form-group">
-        <label for="address" class="mtop"> Address: </label>
-        <input type="text" class="form-control" name="address" placeholder="Enter your Address" required>
+            
+                <label class="mtop">Gender</label>
+                <select class="form-control" name="sex" id="sex" required>
+                <option value="">---</option>
+                <option value="Male">Male</opt ion>
+                <option value="Female">Female</option>
+                    </select>
         <div class="valid-feedback">Valid.</div>
         <div class="invalid-feedback">Please fill out this field.</div>
-        </div>
+                
+        </div>       
+        
+
+        
 
         <div class="form-group">
         <label for="status">Status:</label>
@@ -455,6 +464,13 @@
         <div class="form-group">
         <label for="Age" class="mtop">Age: </label>
         <input type="number" name="age" class="form-control" placeholder="Enter your Age" required>
+        <div class="valid-feedback">Valid.</div>
+        <div class="invalid-feedback">Please fill out this field.</div>
+        </div>
+
+        <div class="form-group">
+        <label for="address" class="mtop"> Address: </label>
+        <input type="text" class="form-control" name="address" placeholder="Enter your Address" required>
         <div class="valid-feedback">Valid.</div>
         <div class="invalid-feedback">Please fill out this field.</div>
         </div>
