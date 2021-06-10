@@ -1,5 +1,7 @@
 <?php
+    
    error_reporting(E_ALL ^ E_WARNING);
+   //ini_set('display_errors',0);
    require('classes/resident.class.php');
    $userdetails = $bmis->get_userdata();
    $bmis->validate_admin();
@@ -7,6 +9,7 @@
    $residentbmis->create_resident();
    $residentbmis->update_resident();
    $residentbmis->delete_resident();
+   
 
    $rescount = $residentbmis->count_resident();
    $rescountm = $residentbmis->count_male_resident();

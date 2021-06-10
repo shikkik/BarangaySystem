@@ -8,7 +8,8 @@
     $upstaff = $staffbmis->update_staff();
     $staffbmis->delete_staff();
     $staffcount = $staffbmis->count_staff();
-
+    $id_user = $_GET['id_user'];
+    $staff = $staffbmis->get_single_staff($id_user);
 ?>
 
 <?php 
@@ -30,16 +31,16 @@
                                 <div class="card-body"> 
                                 <form method="post">
                                     <label class="mtop"> Last Name</label>
-                                    <input type="text" class="form-control" name="lname"  placeholder="Enter last name">
+                                    <input type="text" class="form-control" name="lname" value="<?= $staff['lname'];?>"  placeholder="Enter last name">
 
                                     <label class="mtop" >First Name </label>
-                                    <input type="text" class="form-control" name="fname"  placeholder="Enter first name">
+                                    <input type="text" class="form-control" name="fname" value="<?= $staff['fname'];?>" placeholder="Enter first name">
 
                                     <label class="mtop"> Middle Initial </label>
-                                    <input type="text" class="form-control" name="mi" placeholder="Enter middle initial">
+                                    <input type="text" class="form-control" name="mi" value="<?= $staff['mi'];?>" placeholder="Enter middle initial">
 
                                     <label class="mtop">Email </label>
-                                    <input type="email" class="form-control" name="email"  placeholder="Enter email">
+                                    <input type="email" class="form-control" name="email" value="<?= $staff['email'];?>" placeholder="Enter email">
 
                                     <label class="mtop">Contact Number</label>
                                     <input type="tel" class="form-control" name="contact" placeholder="Enter contact number">

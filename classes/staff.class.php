@@ -86,10 +86,10 @@
 
         public function view_single_staff(){
 
-            $email = $_GET['email'];
+            $id_staff = $_GET['id_staff'];
             
             $connection = $this->openConn();
-            $stmt = $connection->prepare("SELECT * FROM tbl_user where email = '$email'");
+            $stmt = $connection->prepare("SELECT * FROM tbl_user where id_user = '$id_staff'");
             $stmt->execute();
             $view = $stmt->fetch(); 
             $total = $stmt->rowCount();
@@ -105,7 +105,7 @@
 
         public function update_staff() {
             if (isset($_POST['update_staff'])) {
-                $email = $_GET['email'];
+                $id_user = $_GET['id_user'];
                 $password = md5($_POST['password']);
                 $lname = $_POST['lname'];
                 $fname = $_POST['fname'];
@@ -121,9 +121,9 @@
                     $connection = $this->openConn();
                     $stmt = $connection->prepare("UPDATE tbl_user SET password =?, lname =?, 
                     fname = ?, mi =?, age =?, sex =?, address =?, contact =?, position =?, 
-                    role =?, addedby =? WHERE email = ?");
+                    role =?, addedby =? WHERE id_user = ?");
                     $stmt->execute([ $password, $lname, $fname, $mi, $age, $sex, $address,
-                    $contact, $position,$role, $addedby, $email]);
+                    $contact, $position,$role, $addedby, $id_user]);
                    
                     $message2 = "Staff Account Updated";
     
@@ -135,12 +135,12 @@
 
         public function delete_staff(){
 
-            $email = $_POST['email'];
+            $id_user = $_POST['id_user'];
 
             if(isset($_POST['delete_staff'])) {
                 $connection = $this->openConn();
-                $stmt = $connection->prepare("DELETE FROM tbl_user where email = ?");
-                $stmt->execute([$email]);
+                $stmt = $connection->prepare("DELETE FROM tbl_user where id_user = ?");
+                $stmt->execute([$id_user]);
 
                 $message2 = "Staff Account Deleted";
     
@@ -170,11 +170,11 @@
             }
 
 
-        public function check_staff($email) {
+        public function check_staff($id_user) {
 
             $connection = $this->openConn();
-            $stmt = $connection->prepare("SELECT * FROM tbl_user WHERE email = ?");
-            $stmt->Execute([$email]);
+            $stmt = $connection->prepare("SELECT * FROM tbl_user WHERE id_user = ?");
+            $stmt->Execute([$id_user]);
             $total = $stmt->rowCount(); 
 
             return $total;

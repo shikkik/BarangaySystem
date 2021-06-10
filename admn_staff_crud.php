@@ -1,4 +1,5 @@
 <?php
+    //ini_set('display_errors',0);
     error_reporting(E_ALL ^ E_WARNING);
     require('classes/staff.class.php');
     $userdetails = $bmis->get_userdata();
@@ -8,6 +9,7 @@
     $upstaff = $staffbmis->update_staff();
     $staffbmis->delete_staff();
     $staffcount = $staffbmis->count_staff();
+    
 ?>
 
 <?php 
@@ -108,7 +110,7 @@
                     <tr>
                         <td>    
                             <form action="" method="post">
-                                <a href="update_staff_form.php?email=<?= $view['email'];?>" class="btn btn-primary"> Update </a>
+                                <a href="update_staff_form.php?id_user=<?= $view['id_user'];?>" class="btn btn-primary"> Update </a>
                                 <input type="hidden" name="email" value="<?= $view['email'];?>">
                                 <button class="btn btn-danger" type="submit" name="delete_staff"> Delete </button>
                             </form>

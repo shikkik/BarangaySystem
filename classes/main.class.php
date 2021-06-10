@@ -261,7 +261,7 @@ class BMISClass {
         return $ancount;
     }
 
-    //------------------------------------------ MOTHER CHILD CHECKUP CRUD -----------------------------------------------
+    //------------------------------------------ Animal Welfare CRUD -----------------------------------------------
 
 
     public function create_animal() {
@@ -342,6 +342,25 @@ class BMISClass {
         }
     }
 
+    public function get_single_animal(){
+
+        $id_animal = $_GET['id_animal'];
+
+        $connection = $this->openConn();
+        $stmt = $connection->prepare("SELECT * FROM tbl_animal where id_animal = ?");
+        $stmt->execute([$id_animal]);
+        $animal = $stmt->fetch();
+        $total = $stmt->rowCount();
+
+        if($total > 0 )  {
+            return $animal;
+        }
+        else{
+            return false;
+        }
+    }
+    
+
 
     //  --------------------------------------------------------- MEDICINE CRUD ---------------------------------------------------------
 
@@ -417,6 +436,24 @@ class BMISClass {
             $stmt->execute([$id_medicine]);
 
             header("Refresh:0");
+        }
+    }
+
+    public function get_single_medicine(){
+
+        $id_medicine = $_GET['id_medicine'];
+
+        $connection = $this->openConn();
+        $stmt = $connection->prepare("SELECT * FROM tbl_medicine where id_medicine = ?");
+        $stmt->execute([$id_medicine]);
+        $medicine = $stmt->fetch();
+        $total = $stmt->rowCount();
+
+        if($total > 0 )  {
+            return $medicine;
+        }
+        else{
+            return false;
         }
     }
 
@@ -517,6 +554,24 @@ class BMISClass {
         }
     }
 
+    public function get_single_tbdots(){
+
+        $id_tbdots = $_GET['id_tbdots'];
+
+        $connection = $this->openConn();
+        $stmt = $connection->prepare("SELECT * FROM tbl_tbdots where id_tbdots = ?");
+        $stmt->execute([$id_tbdots]);
+        $tbdots = $stmt->fetch();
+        $total = $stmt->rowCount();
+
+        if($total > 0 )  {
+            return $tbdots;
+        }
+        else{
+            return false;
+        }
+    }
+
 
     //------------------------------------------ MOTHER CHILD CHECKUP CRUD -----------------------------------------------
 
@@ -588,6 +643,24 @@ class BMISClass {
             $stmt->execute([$id_motherchild]);
 
             header("Refresh:0");
+        }
+    }
+
+    public function get_single_motherchild(){
+
+        $id_motherchild = $_GET['id_motherchild'];
+
+        $connection = $this->openConn();
+        $stmt = $connection->prepare("SELECT * FROM tbl_motherchild where id_motherchild = ?");
+        $stmt->execute([$id_motherchild]);
+        $motherchild = $stmt->fetch();
+        $total = $stmt->rowCount();
+
+        if($total > 0 )  {
+            return $motherchild;
+        }
+        else{
+            return false;
         }
     }
 
@@ -684,6 +757,24 @@ class BMISClass {
         }
     }
 
+    public function get_single_familyplan(){
+
+        $id_familyplan = $_GET['id_familyplan'];
+
+        $connection = $this->openConn();
+        $stmt = $connection->prepare("SELECT * FROM tbl_familyplan where id_familyplan = ?");
+        $stmt->execute([$id_familyplan]);
+        $familyplan = $stmt->fetch();
+        $total = $stmt->rowCount();
+
+        if($total > 0 )  {
+            return $familyplan;
+        }
+        else{
+            return false;
+        }
+    }
+
     //------------------------------------------ VACCINATION PROGRAM CRUD -----------------------------------------------
 
 
@@ -773,6 +864,24 @@ class BMISClass {
             $stmt->execute([$id_vaccine]);
 
             header("Refresh:0");
+        }
+    }
+
+    public function get_single_vaccine(){
+
+        $id_vaccine = $_GET['id_vaccine'];
+
+        $connection = $this->openConn();
+        $stmt = $connection->prepare("SELECT * FROM tbl_vaccine where id_vaccine = ?");
+        $stmt->execute([$id_vaccine]);
+        $vaccine = $stmt->fetch();
+        $total = $stmt->rowCount();
+
+        if($total > 0 )  {
+            return $vaccine;
+        }
+        else{
+            return false;
         }
     }
 

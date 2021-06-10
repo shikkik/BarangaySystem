@@ -207,9 +207,9 @@
                     <form method="post">
                         <input type="hidden" value="<?= $userdetails['surname'];?>">  
                         <input type="hidden" value="<?= $userdetails['mname'];?>">
-                        <li><button class="btn" href="resident_profile.php"> <i class="fas fa-user"></i> Personal Profile </button></li>
+                        <li><a class="btn" href="resident_profile.php"> <i class="fas fa-user"></i> Personal Profile </a></li>
                     </form>
-                    <button class="btn" onclick="logout();"> <i class="fas fa-sign-out-alt"> </i> Logout </button>
+                    <a class="btn" href="logout.php"> <i class="fas fa-sign-out-alt"> </i> Logout </a>
                 </ul>
             </div>
         </nav>

@@ -15,6 +15,8 @@
     $view = $bmis->view_vaccine();
     $bmis->update_vaccine();
     $bmis->delete_vaccine();
+    $id_vaccine = $_GET['id_vaccine'];
+    $vaccine = $residentbmis->get_single_vaccine($id_vaccine);
 
 ?>
 
@@ -125,7 +127,7 @@
                                     <div class="col">
                                         <div class="form-group">
                                             <label for="lname">Last name:</label>
-                                            <input name="lname" value="<?= $resident['lname']?>" type="text" class="form-control" required>
+                                            <input name="lname" value="<?= $vaccine['lname']?>" type="text" class="form-control" required>
                                             <div class="valid-feedback">Valid.</div>
                                             <div class="invalid-feedback">Please fill out this field.</div>
                                         </div>
@@ -134,7 +136,7 @@
                                     <div class="col">
                                         <div class="form-group">
                                             <label for="fname">First name:</label>
-                                            <input name="fname" type="text" class="form-control" required>
+                                            <input name="fname"value="<?= $vaccine['fname']?>" type="text" class="form-control" required>
                                             <div class="valid-feedback">Valid.</div>
                                             <div class="invalid-feedback">Please fill out this field.</div>
                                         </div>
@@ -142,7 +144,7 @@
                                     <div class="col">
                                         <div class="form-group">
                                             <label for="mname">Middle name:</label>
-                                            <input name="mi" type="text" class="form-control" required>
+                                            <input name="mi" type="text" value="<?= $vaccine['mi']?>" class="form-control" required>
                                             <div class="valid-feedback">Valid.</div>
                                             <div class="invalid-feedback">Please fill out this field.</div>
                                         </div>
@@ -152,7 +154,7 @@
                                 <div class="row"> 
                                     <div class="col">
                                         <label for="vaccine">Vaccine:</label>
-                                        <select class="form-control" name="vaccine" id="vaccine" placeholder="Enter your Vaccine" required>
+                                        <select class="form-control" name="vaccine" id="vaccine"  placeholder="Enter your Vaccine" required>
                                         <option value="">Choose your Vaccine</option>
                                         <option value="BCG">BCG</option>
                                         <option value="Hepatitis B">Hepatitis B</option>
@@ -168,7 +170,7 @@
                                     <div class="col">
                                         <div class="form-group">
                                             <label for="date"class="mtop">Date of Vaccine: </label>
-                                            <input name="vaccdate" value="<?= $cdate?>" type="date" class="form-control" required>
+                                            <input name="vaccdate" value="<?= $cdate?>"  type="date" class="form-control" required>
                                             <div class="valid-feedback">Valid.</div>
                                             <div class="invalid-feedback">Please fill out this field.</div>
                                         </div>
