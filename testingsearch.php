@@ -6,9 +6,17 @@
 		$lname = $_POST['lname'];
         $mi = $_POST['mi'];
 ?>
-	<table class="table table-bordered" >
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<link href="../BarangaySystem/bootstrap/css/bootstrap.css" rel="stylesheet" type="text/css">
+	</head>
+
+	<body>
+
+		<table class="table table-responsive">
 		<thead class="alert-info">
-            
 			<tr>
                 <th> Surname </th>
                 <th> First name </th>
@@ -21,8 +29,6 @@
                 <th> Bdate </th>
                 <th> Bplace </th>
                 <th> Nationality </th>
-                
-                
 			</tr>
 		</thead>
 		<tbody>
@@ -59,3 +65,7 @@
 	}
 $con = null;
 ?>
+		
+	</body>
+</html>
+

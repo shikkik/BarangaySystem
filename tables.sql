@@ -228,6 +228,8 @@ Documents Processing
     addedby VARCHAR(255) NOT NULL , 
     PRIMARY KEY (id_indigency)) ENGINE = InnoDB;
 
+    ALTER TABLE `tbl_rescert` ADD `id_resident` INT(20) NOT NULL AFTER `id_rescert`;
+
 Non user tables
 
     CREATE TABLE bmis.tbl_announcement 

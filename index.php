@@ -55,7 +55,7 @@
             <div class="row">
                 <div class="col-sm"></div>
                     <div class="col-sm main-heading text-center text-white" > 
-                        <h3> Barangay Information Management System</h3>
+                        <h3> Barangay Beverly Hills Services Management System</h3>
                         <p1> Designed for accessibility, now available in your barangay. </p1>
                     </div>
                 <div class="col-sm"></div>
