@@ -86,9 +86,9 @@
             </div>
 
         <?php 
-            } 
+            }
 
-            else {  
+            else {
             
             }
 
