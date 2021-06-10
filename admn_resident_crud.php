@@ -12,7 +12,7 @@
    $rescountf = $residentbmis->count_female_resident();
    $rescountfh = $residentbmis->count_head_resident();
    $rescountfm = $residentbmis->count_member_resident();
-
+   
 ?>
 
 <?php 
@@ -154,72 +154,23 @@
 
     </div>
 
-    <br>
-    <div class="row"> 
-        <div class="col-md-12"> 
-            <h1 class="h3 mb-4 text-gray-800">Resident Data</h1>
-            <table class="table table-dark table-responsive">
-            <form method="post">
-                <thead> 
-                    <tr>
-                        <th> Actions</th>
-                        <th> Email </th>
-                        <th> Password </th>
-                        <th> Surname </th>
-                        <th> First name </th>
-                        <th> MI </th>
-                        <th> Age </th>
-                        <th> Sex </th>
-                        <th> Status </th>
-                        <th> Address </th>
-                        <th> Contact </th>
-                        <th> Bdate </th>
-                        <th> Bplace </th>
-                        <th> Nationality </th>
-                        <th> Family Role </th>
-                        <th> Role </th>
-                        <th> AddedBy </th>
-                    </tr>
-                </thead>
-                <tbody> 
-                <?php if(is_array($view)) {?>
-                    <?php foreach($view as $view) {?>
-                    <tr>
-                        <td>    
-                        <form action="" method="post">
-                            <a href="update_resident_form.php?id_resident=<?= $view['id_resident'];?>" class="btn btn-primary">  Update </a>
-                            <input type="hidden" name="email" value="<?= $view['id_resident'];?>">
-                            <button class="btn btn-danger" type="submit" name="delete_resident"> Delete </button>
-                        </form>
-                        </td>
-                        <td> <?= $view['email'];?> </td>
-                        <td> <?= $view['password'];?> </td> 
-                        <td> <?= $view['lname'];?> </td>
-                        <td> <?= $view['fname'];?> </td>
-                        <td> <?= $view['mi'];?> </td>
-                        <td> <?= $view['age'];?> </td>
-                        <td> <?= $view['sex'];?> </td>
-                        <td> <?= $view['status'];?> </td>
-                        <td> <?= $view['address'];?> </td>
-                        <td> <?= $view['contact'];?> </td>
-                        <td> <?= $view['bdate'];?> </td>
-                        <td> <?= $view['bplace'];?> </td>
-                        <td> <?= $view['nationality'];?> </td>
-                        <td> <?= $view['family_role'];?> </td>
-                        <td> <?= $view['role'];?> </td>
-                        <td> <?= $view['addedby'];?> </td>
-                    </tr>
-                    <?php }?>
-                <?php } ?>
-                </tbody>
-            </form>
-            </table>
-        </div>
-    </div>
+    <br> 
+    <div class="col-md-12">
+			<form method="POST" action="">
+				<div class="form-inline" >
+					<input type="search" class="form-control" name="keyword" value="" placeholder="Search here..." required=""/>
+					<button class="btn btn-success" name="search_resident">Search</button>
+					<a href="admn_resident_crud.php" class="btn btn-info">Reload</a>
+				</div>
+			</form>
+			<br /><br />
+			<?php include'search_resident.php'?>
+		</div>
 
-    </div>
+
+    
     <!-- /.container-fluid -->
-
+    
 </div>
 <!-- End of Main Content -->
 

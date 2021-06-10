@@ -162,7 +162,7 @@
                         <div class="card"> 
                             <div class="card-body text-center"> 
                             <img src="../BarangaySystem/icons/ResidentHomepage/residency.png">
-                                <a href=""> <h4> Certificate of Residency </h4> </a>
+                                <a href="services_certofres.php"> <h4> Certificate of Residency </h4> </a>
                             </div>
                         </div>
                     </div>
@@ -171,7 +171,7 @@
                         <div class="card"> 
                             <div class="card-body text-center">
                             <img src="../BarangaySystem/icons/ResidentHomepage/clearance.png"> 
-                                <a href=""> <h4> Barangay Clearance </h4> </a>
+                                <a href="services_brgyclearance.php"> <h4> Barangay Clearance </h4> </a>
                             </div>
                         </div>
                         
@@ -182,7 +182,7 @@
                     <div class="card"> 
                             <div class="card-body text-center"> 
                                 <img src="../BarangaySystem/icons/ResidentHomepage/indigency.png">
-                                <a href=""> <h4> Certificate of Indigency </h4> </a>
+                                <a href="services_certofindigency.php"> <h4> Certificate of Indigency </h4> </a>
                             </div>
                         </div>
                     </div>

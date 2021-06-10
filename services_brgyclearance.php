@@ -3,6 +3,8 @@
     require('classes/resident.class.php');
     
     $userdetails = $bmis->get_userdata();
+    $bmis->create_brgyclearance();
+
 ?>
 
 <!DOCTYPE html>
@@ -27,6 +29,24 @@
                 color: black;
                 font-family: Arial, Helvetica, sans-serif;
                 text-align: center;
+            }
+
+            .applybutton
+            {
+                width: 100% !important;
+                height: 50px !important;
+                border-radius: 20px;
+                margin-top: 5%;
+                margin-bottom: 8%;
+                font-size: 25px;
+                letter-spacing: 3px;
+            }
+
+            .paa
+            {
+                margin-top: 10px;
+                position: relative;
+                left: -28%;
             }
 
             .text1{
@@ -367,164 +387,126 @@
         <br>
         <br>
 
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <h1 class="text-center">Registration Form</h1>
-                    <hr style="background-color: black;">
-                </div>
-            </div>
+        <!-- Button trigger modal -->
 
-            <br>
+      <div class="container">
 
-            <div class="row margin mtop"> 
-                <div class="col-sm"> </div>
+        <h1 class="text-center">Registration</h1>
+            
+        <hr style="background-color:black;">
 
-                <div class="col-sm-8"> 
-                    <div class="card mbottom">
-                        <div class="card-body">
-                            <form method="post" action="/action_page.php" class="was-validated">
-                                <div class="row">
-                                    <div class="col">
-                                        <div class="form-group">
-                                            <label class="mtop"> Last Name:</label>
-                                            <input type="text" class="form-control" name="lname"  placeholder="Enter your Lastname" required>
-                                            <div class="valid-feedback">Valid.</div>
-                                            <div class="invalid-feedback">Please fill out this field.</div>
-                                        </div>
-                                    </div>
-
-                                    <div class="col">
-                                        <div class="form-group">
-                                            <label class="mtop" >First Name: </label>
-                                            <input type="text" class="form-control" name="fname"  placeholder="Enter your Firstname" required>
-                                            <div class="valid-feedback">Valid.</div>
-                                            <div class="invalid-feedback">Please fill out this field.</div>
-                                        </div>
-                                    </div>
-                                    <div class="col">
-                                        <div class="form-group"> 
-                                            <label class="mtop"> Middle Name: </label>
-                                            <input type="text" class="form-control" name="mname" placeholder="Enter your Middlename" required>
-                                            <div class="valid-feedback">Valid.</div>
-                                            <div class="invalid-feedback">Please fill out this field.</div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <br>
-
-                                <div class="row"> 
-                                    <div class="col"> 
-                                        <div class="form-group">
-                                            <label class="mtop"> Address: </label>
-                                            <input type="text" class="form-control" name="address" placeholder="Enter your Address" required>
-                                            <div class="valid-feedback">Valid.</div>
-                                            <div class="invalid-feedback">Please fill out this field.</div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="row"> 
-                                    <div class="col"> 
-                                        <div class="form-group">
-                                            <label class="mtop"> Purpose: </label>
-                                            <input type="text" class="form-control" name="purpose" placeholder="Enter your Purpose" required>
-                                            <div class="valid-feedback">Valid.</div>
-                                            <div class="invalid-feedback">Please fill out this field.</div>
-                                        </div>
-                                    </div>
-                                </div>
-                            
-                                <br>
-
-                                <div class="row">
-                                    <div class="col">
-                                        <div class="form-group">
-                                            <label for="Age" class="mtop">Age: </label>
-                                            <input type="number" class="form-control" placeholder="Enter your Age" required>
-                                            <div class="valid-feedback">Valid.</div>
-                                            <div class="invalid-feedback">Please fill out this field.</div>
-                                        </div>
-                                    </div>
-                                    <div class="col">
-                                        <label for="status">Status:</label>
-                                        <select class="form-control select" name="status" id="status" placeholder="Enter your Status" required="required">
-                                            <option value="">Choose your Status</option>
-                                            <option value="status1">Single</option>
-                                            <option value="status2">In a relationship</option>
-                                            <option value="status3">Engaged</option>
-                                            <option value="status4">Married</option>
-                                            <option value="status5">Widowed</option>
-                                            <option value="status6">Divorced</option>
-                                        </select>
-                                        <div class="valid-feedback">Valid.</div>
-                                        <div class="invalid-feedback">Please fill out this field.</div>
-                                    </div>
-                                </div>
-
-                                <!-- Modal Trigger Button -->
-
-                                <div class="container">
-                                    <div class="row mtop"> 
-                                        <div class="col">   
-                                            <button class="btn btn-primary" 
-                                                    style="width: 40%; 
-                                                        border-radius: 5px;
-                                                        margin-left: 30%;
-                                                        margin-top: 50px;
-                                                        font-size: 25px;" 
-                                                    type="button"
-                                                    data-toggle="modal" 
-                                                    data-target="#exampleModal"> 
-                                                Submit 
-                                            </button>
-                                        </div>
-                                    </div>
-
-                                    <!-- Modal -->
-
-                                    <div class="modal fade" 
-                                         id="exampleModal" 
-                                         tabindex="-1" 
-                                         role="dialog" 
-                                         aria-labelledby="exampleModalLabel" 
-                                         aria-hidden="true">
-                                        <div class="modal-dialog" role="document" style="margin-top: 10%; width: 450px;">
-                                            <div class="modal-content">
-                                                <div class="modal-header" >
-                                                    <h5 style="margin-left: 31%; font-size: 25px;" class="modal-title" id="exampleModalLabel">Are you sure?</h5>
-                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                    <span aria-hidden="true">&times;</span>
-                                                    </button>
-                                                </div>
-                                                <div class="modal-footer">
-                                                    <button style="width: 15%;
-                                                                   font-size: 20px;" 
-                                                            type="button" 
-                                                            class="btn btn-danger" 
-                                                            data-dismiss="modal">
-                                                        No
-                                                    </button>
-                                                    <button style="margin-right: 35%; 
-                                                                   width: 15%;
-                                                                   font-size: 20px;" 
-                                                            type="button" 
-                                                            class="btn btn-success">
-                                                        Yes
-                                                    </button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm"> </div>
-            </div>
+        <div class="col">   
+        <button type="button" class="btn btn-primary applybutton" data-toggle="modal" data-target="#exampleModalCenter">
+            Request Clearance
+        </button>
         </div>
+
+
+<!-- Modal -->
+
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalCenterTitle">Registration Form</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+      </div>
+
+      <!-- Modal Body -->
+
+      <div class="modal-body">
+        <form method="post" class="was-validated">
+          <div class="row"> 
+
+              <div class="col-sm-6">
+                <div class="form-group">
+                  <label for="lname">Last Name:</label>
+                  <input name="lname" type="text" class="form-control" placeholder="Enter Last Name" required>
+                    <div class="valid-feedback">Valid.</div>
+                    <div class="invalid-feedback">Please fill out this field.</div>
+                </div>
+
+                <div class="form-group">
+                <label for="mi" class="mtop">Middle Name </label>
+                <input name="mi" type="text" class="form-control" placeholder="Enter Middle Name" required>
+                <div class="valid-feedback">Valid.</div>
+                <div class="invalid-feedback">Please fill out this field.</div>
+                </div>
+
+                <div class="form-group">
+                <label for="address" class="mtop"> Address: </label>
+                <input type="text" class="form-control" name="address" placeholder="Enter your Address" required>
+                <div class="valid-feedback">Valid.</div>
+                <div class="invalid-feedback">Please fill out this field.</div>
+                </div>
+
+                <div class="form-group">
+                <label for="status">Status:</label>
+                <select class="form-control" name="status" id="status" placeholder="Enter Status" required>
+                  <option value="">Choose your Status</option>
+                  <option value="Single">Single</option>
+                    <option value="In a relationship">In a relationship</option>
+                    <option value="Engaged">Engaged</option>
+                    <option value="Married">Married</option>
+                    <option value="Widowed">Widowed</option>
+                    <option value="Divorces">Divorced</option>
+                </select>
+                <div class="valid-feedback">Valid.</div>
+                <div class="invalid-feedback">Please fill out this field.</div>
+            </div>
+
+              </div>
+                
+                <div class="col-sm-6">
+
+                <div class="form-group">
+                  <label for="fname">First Name:</label>
+                  <input name="fname" type="text" class="form-control" placeholder="Enter Firs Name" required>
+                    <div class="valid-feedback">Valid.</div>
+                    <div class="invalid-feedback">Please fill out this field.</div>
+                </div>
+
+                <div class="form-group">
+                <label for="Age" class="mtop">Age: </label>
+                <input type="number" name="age" class="form-control" placeholder="Enter your Age" required>
+                <div class="valid-feedback">Valid.</div>
+                <div class="invalid-feedback">Please fill out this field.</div>
+                </div>
+
+                
+            
+              <div class="form-group">
+                <label for="purpose">Purpose:</label>
+                <input name="purpose" type="text" class="form-control" placeholder="Enter Purpose" required>
+                <div class="valid-feedback">Valid.</div>
+                <div class="invalid-feedback">Please fill out this field.</div>
+              </div>
+
+              
+          </div>
+          </div>
+        
+          
+          
+        <!-- Modal Footer -->
+          
+        <div class="modal-footer">
+          <div class="paa">
+            <input name="id_resident" type="hidden" class="form-control" value="<?= $userdetails['id_resident']?>">
+            <input name="addedby" type="hidden" class="form-control" value="<?= $userdetails['surname']?> <?= $userdetails['firstname']?> <?= $userdetails['mname']?>">
+            <button type="button" class="btn btn-dark" data-dismiss="modal">Close</button>
+            <button name ="create_brgyclearance" type="submit" class="btn btn-primary">Submit Request</button>
+          </div>
+        </div> 
+      </form>
+      </div>
+    </div>
+  </div>
+</div>
+</div>    
+</section>
 
         <br>
         <br>
