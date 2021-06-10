@@ -86,6 +86,7 @@ Resident Application Tables
 
    ALTER TABLE `tbl_tbdots` DROP FOREIGN KEY `tbl_tbdots_ibfk_1`; ALTER TABLE `tbl_tbdots` ADD CONSTRAINT `tbl_tbdots_ibfk_1` FOREIGN KEY (`id_resident`) 
    REFERENCES `tbl_resident`(`id_resident`) ON DELETE CASCADE ON UPDATE CASCADE;
+   ALTER TABLE `tbl_tbdots` DROP `remarks`;
 
 
 

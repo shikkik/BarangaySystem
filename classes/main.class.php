@@ -476,7 +476,7 @@ class BMISClass {
             $height = $_POST['height'];
             $weight = $_POST['weight'];
             $philhealth = $_POST['philhealth'];
-            $remarks = $_POST['remarks'];
+            $date_applied = $_POST['date_applied'];
             $addedby = $_POST['addedby'];
 
 
@@ -484,10 +484,10 @@ class BMISClass {
             $connection = $this->openConn();
             $stmt = $connection->prepare("INSERT INTO tbl_tbdots (`id_tbdots`, `id_resident`, 
             `lname`, `fname`, `mi`, `age`, `sex`, `address`, `occupation`, `contact`, `bdate`, `height`, 
-            `weight`, `philhealth`, `remarks`, `addedby`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+            `weight`, `philhealth`, `date_applied`, `addedby`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
 
             $stmt->execute([$id_tbdots, $id_resident, $lname, $fname, $mi, $age, $sex, 
-            $address, $occupation, $contact, $bdate, $height, $weight, $philhealth, $remarks, $addedby]);
+            $address, $occupation, $contact, $bdate, $height, $weight, $philhealth, $date_applied, $addedby]);
 
             $message2 = "Application Applied";
             echo "<script type='text/javascript'>alert('$message2');</script>";

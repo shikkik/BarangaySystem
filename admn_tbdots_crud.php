@@ -8,11 +8,11 @@
    $tbcount = $residentbmis->count_tbdots();
    $residentbmis->create_tbdots();
 
-   if(isset($_POST['create_familyplan'])) {
-    $bmis->create_familyplan();
-   }
+   $dt = new DateTime("now", new DateTimeZone('Asia/Manila'));
+   $tm = new DateTime("now", new DateTimeZone('Asia/Manila'));
+   $cdate = $dt->format('Y/m/d');
+   $ctime = $tm->format('H');
 
-   $bmis->delete_familyplan();
 
 ?>
 
@@ -30,7 +30,7 @@
         <div class="card-header"> Add New TB DOTS Data</div>
         <div class="card-body">
         <form method="post" class="was-validated">
-                                <div class="row"> 
+            <div class="row"> 
 
                                     <div class="col">
                                         <div class="form-group">
@@ -91,16 +91,11 @@
 
                                     <div class="col">
                                             <label for="Sex"class="mtop">Sex</label>
-                                        <div class="form-check">
-                                            <label class="form-check-label">
-                                            <input name="sex" type="radio" class="form-check-input" name="optradio">Male
-                                            </label>
-                                        </div>
-                                        <div class="form-check">
-                                            <label class="form-check-label">
-                                            <input name="sex" type="radio" class="form-check-input" name="optradio">Female
-                                            </label>
-                                        </div>    
+                                            <select class="form-control" name="sex" id="sex">
+                                            <option value="">---</option>
+                                            <option value="Male">Male</opt ion>
+                                            <option value="Female">Female</option>
+                                            </select>  
                                     </div>
 
                                     <div class="col">
@@ -118,7 +113,7 @@
                                     <div class="col">
                                         <div class="form-group">
                                             <label for="height">Height:</label>
-                                            <input name="height" type="text" class="form-control" placeholder="Enter Height" required>
+                                            <input name="height" type="text" class="form-control" placeholder="Enter height in cm" required>
                                             <div class="valid-feedback">Valid.</div>
                                             <div class="invalid-feedback">Please fill out this field.</div>
                                         </div>
@@ -127,12 +122,14 @@
                                     <div class="col">
                                         <div class="form-group">
                                             <label for="weight">Weight:</label>
-                                            <input name="weight" type="text" class="form-control" placeholder="Enter Weight" required>
+                                            <input name="weight" type="text" class="form-control" placeholder="Enter weight in kg" required>
                                             <div class="valid-feedback">Valid.</div>
                                             <div class="invalid-feedback">Please fill out this field.</div>
                                         </div>   
                                     </div>
+                                </div> 
 
+                                <div class="row"> 
                                     <div class="col">
                                         <div class="form-group">
                                             <label for="phno">Philhealth No:</label>
@@ -141,15 +138,21 @@
                                             <div class="invalid-feedback">Please fill out this field.</div>
                                         </div>
                                     </div>  
-                                    
-                                </div> 
 
-                                        <input name="id_resident" type="hidden" value="<?= $userdetails['id_resident']?>">
-                                        <input name="addedby" type="hidden" value="<?= $userdetails['surname']?>, <?= $userdetails['firstname']?>">
-                                        <button name="create_tbdots" type="submit" class="btn btn-primary">Save changes</button>
-                               
-                            
-                            </form>
+                                    <div class="col">
+                                        <div class="form-group">
+                                            <label for="phno">Resident ID:</label>
+                                            <input name="id_resident" type="text" class="form-control" placeholder="Enter Resident ID" required>
+                                            <div class="valid-feedback">Valid.</div>
+                                            <div class="invalid-feedback">Please fill out this field.</div>
+                                        </div>
+                                    </div>  
+                                </div>
+
+                <input name="date_applied" type="hidden" value="<?= $cdate?>">
+                <input name="addedby" type="hidden" value="<?= $userdetails['surname']?>, <?= $userdetails['firstname']?>">
+                <button name="create_tbdots" type="submit" class="btn btn-primary">Save changes</button>         
+            </form>
         </div>
         </div>
         </div>
@@ -157,7 +160,7 @@
         <div class="col-md-4"> 
             <div class="card"> 
                 <div class="card-body"> 
-                    <h5> Total  </h5> <br> <?= $tbcount ?>
+                    <h5> Total TB Dots Program Registered  </h5> <br> <?= $tbcount ?>
                 </div>
             </div> 
 
@@ -171,7 +174,7 @@
     <div class="row"> 
         <div class="col-md-12"> 
             <h1 class="h3 mb-4 text-gray-800">TB Dots Data</h1>
-            <table class="table table-dark ">
+            <table class="table table-dark table-responsive">
             <form method="post">
                 <thead> 
                     <tr>
@@ -190,9 +193,8 @@
                         <th> Height </th>
                         <th> Weight </th>
                         <th> Philhealth </th>
-                        <th> Remarks </th>
-                        <th> AddedBy </th>
                         <th> Date Applied </th>
+                        <th> AddedBy </th>
                     </tr>
                 </thead>
                 <tbody> 
@@ -220,9 +222,9 @@
                         <td> <?= $view['height'];?> </td>
                         <td> <?= $view['weight'];?> </td>
                         <td> <?= $view['philhealth'];?> </td>
-                        <td> <?= $view['remarks'];?> </td>
+                        <td> <?= $view['date_applied'];?> </td>
                         <td> <?= $view['addedby'];?> </td>
-                        <td> <?= $view['dateapply'];?> </td>
+                        
                     </tr>
                     <?php }?>
                 <?php } ?>
