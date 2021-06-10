@@ -1,5 +1,5 @@
 <?php 
-    //error_reporting(E_ALL ^ E_WARNING);
+    error_reporting(E_ALL ^ E_WARNING);
     include('classes/resident.class.php');
     $userdetails = $bmis->get_userdata();
 

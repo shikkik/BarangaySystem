@@ -1,4 +1,5 @@
 <?php
+    error_reporting(E_ALL ^ E_WARNING);
     include('classes/staff.class.php');
     include('classes/resident.class.php');
 

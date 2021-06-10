@@ -1,5 +1,6 @@
 <?php
 	// require the database connection
+	error_reporting(E_ALL ^ E_WARNING);
 	require 'classes/conn.php';
 	if(isset($_POST['search_household'])){
 
