@@ -16,7 +16,9 @@
     $view = $bmis->view_vaccine();
     $bmis->update_vaccine();
     $bmis->delete_vaccine();
-    $vacccount = $residentbmis->count_vacc();
+    $vacccount = $bmis->count_vacc();
+    $vacccountmale = $bmis->count_male_vacc();
+    $vacccountfemale = $bmis->count_female_vacc();
 
 ?>  
 
@@ -68,17 +70,13 @@
 
                                     <div class="col">
                                             <label for="Sex"class="mtop">Sex</label>
-                                        <div class="form-check">
-                                            <label class="form-check-label">
-                                            <input name="sex" value="Male" type="radio" class="form-check-input" name="optradio">Male
-                                            </label>
-                                        </div>
-                                        <div class="form-check">
-                                            <label class="form-check-label">
-                                            <input name="sex" type="radio" value="Female" class="form-check-input" name="optradio">Female
-                                            </label>
-                                        </div>    
+                                            <select class="form-control" name="sex" id="sex">
+                                            <option value="">---</option>
+                                            <option value="Male">Male</option>
+                                            <option value="Female">Female</option>
+                                            </select>  
                                     </div>
+
                                     <div class="col">
                                         <div class="form-group">
                                             <label for="date"class="mtop">Birthday: </label>
@@ -182,17 +180,56 @@
     </div>
     </div>
 
-    <div class="col-md-4"> 
-        <div class="card"> 
-            <div class="card-body"> 
-                <h5> Total </h5> <br> <?= $vacccount ?>
+    <div class="col-md-4">
+            <div class="card border-left-primary shadow">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                                Total Vaccination Program Applicants</div>
+                                <div class="h5 mb-0 font-weight-bold text-dark"><?= $vacccount?></div>
+                        </div>
+                        <div class="col-auto">
+                            <i class="fas fa-user fa-2x text-dark"></i>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </div> 
 
-        <br> 
+            <br>
 
+            <div class="card border-left-primary shadow">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                                Total Male Vaccination Program Applicants</div>
+                                <div class="h5 mb-0 font-weight-bold text-dark"><?= $vacccountmale?></div>
+                        </div>
+                        <div class="col-auto">
+                            <i class="fas fa-male fa-2x text-dark"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-</div>
+            <br>
+
+            <div class="card border-left-primary shadow">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                                Total Female Vaccination Program Applicants</div>
+                                <div class="h5 mb-0 font-weight-bold text-dark"><?= $vacccountfemale?></div>
+                        </div>
+                        <div class="col-auto">
+                            <i class="fas fa-female fa-2x text-dark"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
 <br>
 <div class="row"> 

@@ -359,6 +359,66 @@ class BMISClass {
             return false;
         }
     }
+
+    public function count_animal() {
+        $connection = $this->openConn();
+
+        $stmt = $connection->prepare("SELECT COUNT(*) from tbl_animal");
+        $stmt->execute();
+        $animalcount = $stmt->fetchColumn();
+
+        return $animalcount;
+    }
+
+    public function count_animal_dogs() {
+        $connection = $this->openConn();
+
+        $stmt = $connection->prepare("SELECT COUNT(*) from tbl_animal where pettype = 'dog'");
+        $stmt->execute();
+        $animalcount = $stmt->fetchColumn();
+
+        return $animalcount;
+    }
+
+    public function count_animal_cats() {
+        $connection = $this->openConn();
+
+        $stmt = $connection->prepare("SELECT COUNT(*) from tbl_animal where pettype = 'cat'");
+        $stmt->execute();
+        $animalcount = $stmt->fetchColumn();
+
+        return $animalcount;
+    }
+
+    public function count_animals() {
+        $connection = $this->openConn();
+
+        $stmt = $connection->prepare("SELECT COUNT(*) from tbl_animal");
+        $stmt->execute();
+        $rescount = $stmt->fetchColumn();
+
+        return $rescount;
+    }
+
+    public function count_female_animals() {
+        $connection = $this->openConn();
+
+        $stmt = $connection->prepare("SELECT COUNT(*) from tbl_animal where sex = 'female'");
+        $stmt->execute();
+        $rescount = $stmt->fetchColumn();
+
+        return $rescount;
+    }
+
+    public function count_male_animals() {
+        $connection = $this->openConn();
+
+        $stmt = $connection->prepare("SELECT COUNT(*) from tbl_animal where sex = 'male'");
+        $stmt->execute();
+        $rescount = $stmt->fetchColumn();
+
+        return $rescount;
+    }
     
 
 
@@ -455,6 +515,16 @@ class BMISClass {
         else{
             return false;
         }
+    }
+
+    public function count_medicine() {
+        $connection = $this->openConn();
+
+        $stmt = $connection->prepare("SELECT COUNT(*) from tbl_medicine");
+        $stmt->execute();
+        $rescount = $stmt->fetchColumn();
+
+        return $rescount;
     }
 
     //------------------------------------------ TB DOTS CRUD -----------------------------------------------
@@ -572,6 +642,37 @@ class BMISClass {
         }
     }
 
+    public function count_tbdots() {
+        $connection = $this->openConn();
+
+        $stmt = $connection->prepare("SELECT COUNT(*) from tbl_tbdots");
+        $stmt->execute();
+        $rescount = $stmt->fetchColumn();
+
+        return $rescount;
+    }
+
+    
+    public function count_male_tbdots() {
+        $connection = $this->openConn();
+
+        $stmt = $connection->prepare("SELECT COUNT(*) FROM tbl_tbdots WHERE sex = 'Male'");
+        $stmt->execute();
+        $rescount = $stmt->fetchColumn();
+
+        return $rescount;
+    }
+
+    public function count_female_tbdots() {
+        $connection = $this->openConn();
+
+        $stmt = $connection->prepare("SELECT COUNT(*) FROM tbl_tbdots WHERE sex = 'Female'");
+        $stmt->execute();
+        $rescount = $stmt->fetchColumn();
+
+        return $rescount;
+    }
+
 
     //------------------------------------------ MOTHER CHILD CHECKUP CRUD -----------------------------------------------
 
@@ -662,6 +763,16 @@ class BMISClass {
         else{
             return false;
         }
+    }
+
+    public function count_motherchild() {
+        $connection = $this->openConn();
+
+        $stmt = $connection->prepare("SELECT COUNT(*) from tbl_motherchild");
+        $stmt->execute();
+        $rescount = $stmt->fetchColumn();
+
+        return $rescount;
     }
 
     //------------------------------------------------------- FAMILY PLAN CRUD ----------------------------------------------------------------------
@@ -775,6 +886,16 @@ class BMISClass {
         }
     }
 
+    public function count_familyplan() {
+        $connection = $this->openConn();
+
+        $stmt = $connection->prepare("SELECT COUNT(*) from tbl_familyplan");
+        $stmt->execute();
+        $rescount = $stmt->fetchColumn();
+
+        return $rescount;
+    }
+
     //------------------------------------------ VACCINATION PROGRAM CRUD -----------------------------------------------
 
 
@@ -883,6 +1004,36 @@ class BMISClass {
         else{
             return false;
         }
+    }
+
+    public function count_vacc() {
+        $connection = $this->openConn();
+
+        $stmt = $connection->prepare("SELECT COUNT(*) FROM tbl_vaccine");
+        $stmt->execute();
+        $rescount = $stmt->fetchColumn();
+
+        return $rescount;
+    }
+
+    public function count_male_vacc() {
+        $connection = $this->openConn();
+
+        $stmt = $connection->prepare("SELECT COUNT(*) FROM tbl_vaccine WHERE sex = 'Male'");
+        $stmt->execute();
+        $rescount = $stmt->fetchColumn();
+
+        return $rescount;
+    }
+
+    public function count_female_vacc() {
+        $connection = $this->openConn();
+
+        $stmt = $connection->prepare("SELECT COUNT(*) FROM tbl_vaccine WHERE sex = 'Female'");
+        $stmt->execute();
+        $rescount = $stmt->fetchColumn();
+
+        return $rescount;
     }
 
     //------------------------------------------ Certificate of Residency CRUD -----------------------------------------------
@@ -1106,35 +1257,6 @@ class BMISClass {
         }
     }
 
-    public function count_animal() {
-        $connection = $this->openConn();
-
-        $stmt = $connection->prepare("SELECT COUNT(*) from tbl_animal");
-        $stmt->execute();
-        $animalcount = $stmt->fetchColumn();
-
-        return $animalcount;
-    }
-
-    public function count_animal_dogs() {
-        $connection = $this->openConn();
-
-        $stmt = $connection->prepare("SELECT COUNT(*) from tbl_animal where pettype = 'dog'");
-        $stmt->execute();
-        $animalcount = $stmt->fetchColumn();
-
-        return $animalcount;
-    }
-
-    public function count_animal_cats() {
-        $connection = $this->openConn();
-
-        $stmt = $connection->prepare("SELECT COUNT(*) from tbl_animal where pettype = 'cat'");
-        $stmt->execute();
-        $animalcount = $stmt->fetchColumn();
-
-        return $animalcount;
-    }
 
 }
 
