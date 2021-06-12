@@ -30,7 +30,7 @@
     <div class="row"> 
         <div class="col-md-8"> 
         <div class="card">
-        <div class="card-header"> Add New Barangay Resident</div>
+        <div class="card-header bg-primary text-white"> Add New Barangay Resident</div>
         <div class="card-body">
         <form method="post"> 
             <div class="row">
@@ -126,7 +126,7 @@
 
         <div class="col-md-4"> 
             <div class="card"> 
-                <div class="card-body"> 
+                <div class="card-body border-left-primary"> 
                     <h5> Number of Residents </h5> <br> <?= $rescount ?>
                 </div>
             </div> 
@@ -134,7 +134,7 @@
             <br> 
 
             <div class="card"> 
-                <div class="card-body"> 
+                <div class="card-body border-left-primary"> 
                     <h5> Total Household Head </h5> <br> <?= $rescountfh ?>
                 </div>
             </div>
@@ -142,7 +142,7 @@
             <br>
 
             <div class="card"> 
-                <div class="card-body"> 
+                <div class="card-body border-left-primary"> 
                     <h5> Male Residents </h5> <br> <?= $rescountm ?>
                 </div>
             </div>
@@ -150,7 +150,7 @@
             <br> 
 
             <div class="card"> 
-                <div class="card-body"> 
+                <div class="card-body border-left-primary"> 
                     <h5> Female Residents </h5> <br> <?= $rescountf ?>
                 </div>
             </div>

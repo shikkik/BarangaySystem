@@ -33,7 +33,7 @@
     <div class="row"> 
         <div class="col-md-8"> 
         <div class="card">
-        <div class="card-header"> Add New Animal Registry & Welfare Data</div>
+        <div class="card-header bg-primary text-white"> Add New Animal Registry & Welfare Data</div>
         <div class="card-body">
         <form method="post" class="was-validated">
                   <div class="row"> 
@@ -143,8 +143,7 @@
                   <div class="paa">
                     <input name="dateapply" type="hidden" class="form-control" value="<?= $cdate?>">
                     <input name="addedby" type="hidden" class="form-control" value="<?= $userdetails['surname']?> <?= $userdetails['firstname']?> <?= $userdetails['mname']?>">
-                    <button type="button" class="btn btn-dark" data-dismiss="modal">Close</button>
-                    <button name ="create_animal" type="submit" class="btn btn-primary">Save changes</button>
+                    <button name ="create_animal" type="submit" class="btn btn-primary">Submit</button>
                   </div>
                 </div> 
               </form>
@@ -154,7 +153,7 @@
 
         <div class="col-md-4"> 
             <div class="card"> 
-                <div class="card-body"> 
+                <div class="card-body border-left-success"> 
                     <h5> Number of Animals </h5> <br> <?= $anmcount ?>
                 </div>
             </div> 
@@ -164,7 +163,7 @@
             <br>
 
             <div class="card"> 
-                <div class="card-body"> 
+                <div class="card-body border-left-success"> 
                     <h5> Male Animals </h5> <br> <?= $anmcountm ?>
                 </div>
             </div>
@@ -172,7 +171,7 @@
             <br> 
 
             <div class="card"> 
-                <div class="card-body"> 
+                <div class="card-body border-left-success"> 
                     <h5> Female Animals </h5> <br> <?= $anmcountf ?>
                 </div>
             </div>
