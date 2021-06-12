@@ -135,45 +135,45 @@
             </div>
         </div>
 
-        <div class="col-md-4">  
-            <div class="card card-upper-space">
-                <div class="card-body"> 
-                    <h5>Dogs </h5> <br>
-                    <h2> <?= $animalcountd;?></h2>
-                </div>
-            </div>
-        </div>
-
     </div>
 
     <div class="row">
-    <div class="col-md-4">  
-            <div class="card card-upper-space border-left-warning shadow h-70 py-2">
-                <div class="card-body"> 
-                    <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Cats</div>
-                     <div class="h5 mb-0 font-weight-bold text-gray-800"><?= $animalcountc;?></div>
-                     <i class="fas fa-calendar fa-2x text-gray-300"></i>
+        <div class="col-md-4">
+            <div class="card border-left-success shadow">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
+                                Total Cats Registered</div>
+                                <div class="h5 mb-0 font-weight-bold text-dark"><?= $animalcountc?></div>
+                        </div>
+                        <div class="col-auto">
+                            <i class="fas fa-cat fa-2x text-dark"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card border-left-success shadow">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
+                                Total Dogs Registered</div>
+                                <div class="h5 mb-0 font-weight-bold text-dark"><?= $animalcountd?></div>
+                        </div>
+                        <div class="col-auto">
+                            <i class="fas fa-dog fa-2x text-dark"></i>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 
-    <div class="col-md-4">
-        <div class="card border-left-primary shadow  py-2">
-            <div class="card-body">
-                <div class="row no-gutters align-items-center">
-                    <div class="col mr-2">
-                         <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
-                            Earnings (Monthly)</div>
-                            <div class="h5 mb-0 font-weight-bold text-gray-800">$40,000</div>
-                    </div>
-                    <div class="col-auto">
-                        <i class="fas fa-calendar fa-2x text-gray-300"></i>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+
 
 <!-- /.container-fluid -->
 
