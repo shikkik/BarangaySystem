@@ -262,7 +262,7 @@
                         <div class="card"> 
                             <div class="card-body text-center">
                                 <img src="../BarangaySystem/icons/ResidentHomepage/complain.png"> 
-                                <a href="services_compblot.php"> <h4> Complain/Blotter Report</h4> 
+                                <a href="services_blotter.php?id_resident=<?= $userdetails['id_resident'];?>"> <h4> Complain/Blotter Report</h4> 
                             </a>
                             </div>
                         </div>
