@@ -2,6 +2,8 @@
     require('classes/staff.class.php');
     include('classes/resident.class.php');
     $userdetails = $bmis->get_userdata();
+<<<<<<< HEAD
+=======
 
     $rescount = $residentbmis->count_resident();
     $rescountm = $residentbmis->count_male_resident();
@@ -12,6 +14,7 @@
     $staffcount = $staffbmis->count_staff();
 
     $animalcount = $bmis->count_animal();
+>>>>>>> 9ebee3904e4025eda3756e9ad0784fd3c3975e65
 ?>
 
 
