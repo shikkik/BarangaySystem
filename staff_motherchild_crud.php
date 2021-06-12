@@ -25,29 +25,29 @@
     <div class="row"> 
         <div class="col-md-8"> 
         <div class="card">
-        <div class="card-header"> Add New Mother and Child Check-up Data</div>
+        <div class="card-header bg-primary text-white"> Add New Mother and Child Check-up Data</div>
         <div class="card-body">
         <form method="post" class="was-validated">
                                 <div class="row"> 
 
                                     <div class="col">
                                         <div class="form-group">
-                                            <label for="lname">Last name:</label>
-                                            <input name="lname" type="text" class="form-control" value="<?= $resident['lname']?>" required>
+                                            <label for="lname">Last Name:</label>
+                                            <input name="lname" type="text" class="form-control" placeholder="Enter your Last Name" value="" required>
                                             <div class="valid-feedback">Valid.</div>
                                             <div class="invalid-feedback">Please fill out this field.</div>
                                         </div>
 
                                         <div class="form-group">
-                                            <label for="mname">Middle name:</label>
-                                            <input name="mi" type="text" class="form-control" value="<?= $resident['mi']?>" required>
+                                            <label for="mname">Middle Name:</label>
+                                            <input name="mi" type="text" class="form-control" placeholder="Enter your Middle Name" value="" required>
                                             <div class="valid-feedback">Valid.</div>
                                             <div class="invalid-feedback">Please fill out this field.</div>  
                                         </div>
 
                                         <div class="form-group">            
                                             <label for="cno">Contact Number:</label>
-                                            <input name="contact" type="text" maxlength="11" class="form-control" value="<?= $resident['contact']?>" pattern="[0-9]{11}" required>
+                                            <input name="contact" type="text" maxlength="11" placeholder="Enter your Contact Number" class="form-control" value="" pattern="[0-9]{11}" required>
                                             <div class="valid-feedback">Valid.</div>
                                             <div class="invalid-feedback">Please fill out this field.</div>
                                         </div>
@@ -56,28 +56,28 @@
                                     <div class="col">
 
                                         <div class="form-group">
-                                            <label for="fname">First name:</label>
-                                            <input name="fname" type="text" class="form-control" value="<?= $resident['fname']?>" required>
+                                            <label for="fname">First Name:</label>
+                                            <input name="fname" type="text" class="form-control" placeholder="Enter your First Name" value="" required>
                                             <div class="valid-feedback">Valid.</div>
                                             <div class="invalid-feedback">Please fill out this field.</div>  
                                         </div>
 
                                         <div class="form-group">
                                             <label for="address">Address:</label>
-                                            <input name="address" type="text" class="form-control" value="<?= $resident['address']?>" required>
+                                            <input name="address" type="text" class="form-control" placeholder="Enter your Address" value="" required>
                                             <div class="valid-feedback">Valid.</div>
                                             <div class="invalid-feedback">Please fill out this field.</div>
                                         </div>
                                         <div class="form-group">
                                             <label for="age" class="mtop">Age </label>
-                                            <input name="age" type="number" class="form-control" value="<?= $resident['age']?>" required>
+                                            <input name="age" type="number" class="form-control" placeholder="Enter your Age" value="" required>
                                             <div class="valid-feedback">Valid.</div>
                                             <div class="invalid-feedback">Please fill out this field.</div>
                                         </div>
 
                                         <div class="form-group">
                                             <label for="age" class="mtop">Resident ID </label>
-                                            <input name="id_resident" class="form-control" type="text" required>
+                                            <input name="id_resident" class="form-control" placeholder="Enter your Resident ID" type="text" required>
                                             <div class="valid-feedback">Valid.</div>
                                             <div class="invalid-feedback">Please fill out this field.</div>
                                         </div>
@@ -101,16 +101,22 @@
         </div>
         </div>
 
-        <div class="col-md-4"> 
-            <div class="card"> 
-                <div class="card-body"> 
-                    <h5> Total </h5> <br> <?= $mccount ?>
+        <div class="col-md-4">
+            <div class="card border-left-primary shadow">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                                Total Mother & Child Checkup Applicants</div>
+                                <div class="h5 mb-0 font-weight-bold text-dark"><?= $mccount?></div>
+                        </div>
+                        <div class="col-auto">
+                            <i class="fas fa-baby fa-2x text-dark"></i>
+                        </div>
+                    </div>
                 </div>
-            </div> 
-
-            <br>
-
-    </div>
+            </div>
+        </div>
 
     <br>
     <div class="row"> 
@@ -140,8 +146,7 @@
                     <tr>
                         <td>    
                         <form action="" method="post">
-                            <a href="update_motherchild_form.php?id_motherchild=<?= $view['id_motherchild'];?>" class="btn btn-primary">  Update </a>
-                            <input type="hidden" name="id_motherchild" value="<?= $view['id_motherchild'];?>">
+                            <a href="staff_update_motherchild_form.php?id_motherchild=<?= $view['id_motherchild'];?>" class="btn btn-primary">  Update </a>
                         </form>
                         </td>
                         <td> <?= $view['id_motherchild'];?> </td>
@@ -165,9 +170,6 @@
     </div>
 
     </div>
-    <!-- /.container-fluid -->
-
-</div>
 <!-- End of Main Content -->
 
 <?php 

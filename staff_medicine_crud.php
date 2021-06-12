@@ -22,7 +22,7 @@
     <div class="row"> 
         <div class="col-md-8"> 
         <div class="card">
-        <div class="card-header"> Add New Medicine Item</div>
+        <div class="card-header bg-primary text-white"> Add New Medicine Item</div>
         <div class="card-body">
         <form method="post">
                 <label class="mtop"> Medicine Item</label>
@@ -65,17 +65,22 @@
         </div>
         </div>
 
-        <div class="col-md-4"> 
-            <div class="card"> 
-                <div class="card-body"> 
-                    <h5> Total </h5> <br> <?= $medcount ?>
+        <div class="col-md-4">
+            <div class="card border-left-primary shadow">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                                Total Medicine Inventory</div>
+                                <div class="h5 mb-0 font-weight-bold text-dark"><?= $medcount?></div>
+                        </div>
+                        <div class="col-auto">
+                            <i class="fas fa-pills fa-2x text-dark"></i>
+                        </div>
+                    </div>
                 </div>
-            </div> 
-
-            <br> 
- 
-
-    </div>
+            </div>
+        </div>
 
     <br>
     <div class="row"> 
@@ -90,7 +95,7 @@
                         <th> Medicine Item </th>
                         <th> Date Manufactured </th>
                         <th> Shipped From </th>
-                        <th> Date Accepted </th>
+                        <th> Date Accepted</th>
                         <th> Distribution Date </th>
                         <th> Stocks </th>
                         <th> AddedBy </th>
@@ -103,8 +108,7 @@
                         <tr>
                             <td>    
                             <form action="" method="post">
-                                <a href="update_medicine_form.php?id_medicine=<?= $view['id_medicine'];?>" class="btn btn-primary">  Update </a>
-                                <input type="hidden" name="id_medicine" value="<?= $view['id_medicine'];?>">
+                                <a href="staff_update_medicine_form.php?id_medicine=<?= $view['id_medicine'];?>" class="btn btn-primary"> Update </a>
                             </form>
                             </td>
                             <td> <?= $view['id_medicine'];?> </td>

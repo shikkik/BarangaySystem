@@ -24,7 +24,7 @@
     <div class="row"> 
         <div class="col-md-8"> 
         <div class="card">
-        <div class="card-header"> Add New Barangay Resident</div>
+        <div class="card-header bg-primary text-white"> Add New Barangay Resident</div>
         <div class="card-body">
         <form method="post"> 
             <div class="row">
@@ -119,101 +119,89 @@
         </div>
 
         <div class="col-md-4"> 
-            <div class="card"> 
-                <div class="card-body"> 
-                    <h5> Number of Residents </h5> <br> <?= $rescount ?>
+            <div class="card border-left-primary shadow">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                            Number of Residents</div>
+                                <div class="h5 mb-0 font-weight-bold text-dark"><?= $rescount ?></div>
+                        </div>
+                        <div class="col-auto">
+                            <i class="fas fa-user fa-2x text-dark"></i>
+                        </div>
+                    </div>
                 </div>
-            </div> 
+            </div>
 
             <br> 
 
-            <div class="card"> 
-                <div class="card-body"> 
-                    <h5> Total Household Head </h5> <br> <?= $rescountfh ?>
+            <div class="card border-left-primary shadow">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                            Total Household Head</div>
+                                <div class="h5 mb-0 font-weight-bold text-dark"><?= $rescountfh ?></div>
+                        </div>
+                        <div class="col-auto">
+                            <i class="fas fa-user fa-2x text-dark"></i>
+                        </div>
+                    </div>
                 </div>
             </div>
             
             <br>
 
-            <div class="card"> 
-                <div class="card-body"> 
-                    <h5> Male Residents </h5> <br> <?= $rescountm ?>
+            <div class="card border-left-primary shadow">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                            Total Male Residents</div>
+                                <div class="h5 mb-0 font-weight-bold text-dark"><?= $rescountm ?></div>
+                        </div>
+                        <div class="col-auto">
+                            <i class="fas fa-male fa-2x text-dark"></i>
+                        </div>
+                    </div>
                 </div>
             </div>
 
             <br> 
 
-            <div class="card"> 
-                <div class="card-body"> 
-                    <h5> Female Residents </h5> <br> <?= $rescountf ?>
+            <div class="card border-left-primary shadow">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                            Total Female Residents</div>
+                                <div class="h5 mb-0 font-weight-bold text-dark"><?= $rescountf ?></div>
+                        </div>
+                        <div class="col-auto">
+                            <i class="fas fa-male fa-2x text-dark"></i>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div> 
 
     </div>
 
-    <br>
-    <div class="row"> 
-        <div class="col-md-12"> 
-            <h1 class="h3 mb-4 text-gray-800">Resident Data</h1>
-            <table class="table table-dark table-responsive">
-            <form method="post">
-                <thead> 
-                    <tr>
-                        <th> Actions</th>
-                        <th> Email </th>
-                        <th> Password </th>
-                        <th> Surname </th>
-                        <th> First name </th>
-                        <th> MI </th>
-                        <th> Age </th>
-                        <th> Sex </th>
-                        <th> Status </th>
-                        <th> Address </th>
-                        <th> Contact </th>
-                        <th> Bdate </th>
-                        <th> Bplace </th>
-                        <th> Nationality </th>
-                        <th> Family Role </th>
-                        <th> Role </th>
-                        <th> AddedBy </th>
-                    </tr>
-                </thead>
-                <tbody> 
-                <?php if(is_array($view)) {?>
-                    <?php foreach($view as $view) {?>
-                    <tr>
-                        <td>    
-                        <form action="" method="post">
-                            <a href="update_resident_form.php?id_resident=<?= $view['id_resident'];?>" class="btn btn-primary">  Update </a>
-                            <input type="hidden" name="email" value="<?= $view['email'];?>">
-                        </form>
-                        </td>
-                        <td> <?= $view['email'];?> </td>
-                        <td> <?= $view['password'];?> </td> 
-                        <td> <?= $view['lname'];?> </td>
-                        <td> <?= $view['fname'];?> </td>
-                        <td> <?= $view['mi'];?> </td>
-                        <td> <?= $view['age'];?> </td>
-                        <td> <?= $view['sex'];?> </td>
-                        <td> <?= $view['status'];?> </td>
-                        <td> <?= $view['address'];?> </td>
-                        <td> <?= $view['contact'];?> </td>
-                        <td> <?= $view['bdate'];?> </td>
-                        <td> <?= $view['bplace'];?> </td>
-                        <td> <?= $view['nationality'];?> </td>
-                        <td> <?= $view['family_role'];?> </td>
-                        <td> <?= $view['role'];?> </td>
-                        <td> <?= $view['addedby'];?> </td>
-                    </tr>
-                    <?php }?>
-                <?php } ?>
-                </tbody>
-            </form>
-            </table>
-        </div>
-    </div>
-
+    <br> 
+    <div class="col-md-12">
+			<form method="POST" action="">
+				<div class="form-inline" >
+					<input type="search" class="form-control" name="keyword" value="" placeholder="Search here..." required=""/>
+					<button class="btn btn-success" name="search_resident">Search</button>
+					<a href="admn_resident_crud.php" class="btn btn-info">Reload</a>
+				</div>
+			</form>
+			<br /><br />
+			<?php 
+                include('staff_search_resident.php');
+            ?>
+		</div>
     </div>
     <!-- /.container-fluid -->
 

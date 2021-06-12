@@ -22,6 +22,7 @@
 
     <!-- Custom styles for this template-->
     <link href="css/sb-admin-2.min.css" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/67a9b7069e.js" crossorigin="anonymous"></script>
 
 </head>
 
@@ -110,28 +111,28 @@
 
             <!-- Certificate of Residency -->
             <li class="nav-item">
-                <a class="nav-link" href="admn_certofres.php">
+                <a class="nav-link" href="staff_certofres.php">
                     <i class="fas fa-fw fa-chart-area"></i>
                     <span>Certificate of Residency</span></a>
             </li>
 
             <!-- Barangay Clearance -->
             <li class="nav-item">
-                <a class="nav-link" href="admn_brgyclearance.php">
+                <a class="nav-link" href="staff_brgyclearance.php">
                     <i class="fas fa-fw fa-table"></i>
                     <span>Barangay Clearance</span></a>
             </li>
 
             <!-- Certificate of Indigency -->
             <li class="nav-item">
-                <a class="nav-link" href="admn_indigency.php">
+                <a class="nav-link" href="staff_indigency.php">
                     <i class="fas fa-fw fa-table"></i>
                     <span>Certificate of Indigency</span></a>
             </li>
 
             <!-- Complain Blotter Report -->
             <li class="nav-item">
-                <a class="nav-link" href="admn_blotterreport.php">
+                <a class="nav-link" href="staff_blotterreport.php">
                     <i class="fas fa-fw fa-table"></i>
                     <span>Complain/Blotter Report</span></a>
             </li>

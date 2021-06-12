@@ -2,8 +2,6 @@
     require('classes/staff.class.php');
     include('classes/resident.class.php');
     $userdetails = $bmis->get_userdata();
-<<<<<<< HEAD
-=======
 
     $rescount = $residentbmis->count_resident();
     $rescountm = $residentbmis->count_male_resident();
@@ -12,9 +10,22 @@
     $rescountfm = $residentbmis->count_member_resident();
 
     $staffcount = $staffbmis->count_staff();
-
+    $staffcountm = $staffbmis->count_mstaff();
+    $staffcountf = $staffbmis->count_fstaff();
     $animalcount = $bmis->count_animal();
->>>>>>> 9ebee3904e4025eda3756e9ad0784fd3c3975e65
+
+    $animalcountd = $bmis->count_animal_dogs();
+    $animalcountc = $bmis->count_animal_cats();
+
+    $tbcount = $residentbmis->count_tbdots();
+
+    $vacccount = $residentbmis->count_vacc();
+
+    $fpcount = $residentbmis->count_familyplan();
+
+    $mccount = $residentbmis->count_motherchild();
+
+    $medcount = $residentbmis->count_medicine();
 ?>
 
 
@@ -34,24 +45,38 @@
 <div class="container-fluid">
 
 <!-- Page Heading -->
-
-
 <div class="row"> 
         <div class="col-md-4">
         <h4> Barangay Resident Data </h4> 
-            <div class="card">
-                <div class="card-body"> 
-                    <h5>Total Barangay Residents</h5> <br>
-                    <h2> <?= $rescount;?></h2>
+            <div class="card border-left-primary shadow">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                                Total Barangay Residents</div>
+                                <div class="h5 mb-0 font-weight-bold text-dark"><?= $rescount?></div>
+                        </div>
+                        <div class="col-auto">
+                            <i class="fas fa-user-friends fa-2x text-dark"></i>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
 
         <div class="col-md-4">  
-            <div class="card card-upper-space">
-                <div class="card-body"> 
-                    <h5>Total Household Heads</h5> <br>
-                    <h2> <?= $rescountfh;?></h2>
+            <div class="card border-left-primary shadow card-upper-space">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                                Total Household Heads</div>
+                                <div class="h5 mb-0 font-weight-bold text-dark"><?= $rescountfh?></div>
+                        </div>
+                        <div class="col-auto">
+                            <i class="fas fa-user-tie fa-2x text-dark"></i>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -68,75 +93,260 @@
 
     <div class="row"> 
         <div class="col-md-4">  
-            <div class="card card-upper-space">
-                <div class="card-body"> 
-                    <h5>Total Male Residents</h5> <br>
-                    <h2> <?= $rescountm;?></h2>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-md-4">  
-            <div class="card card-upper-space">
-                <div class="card-body"> 
-                    <h5>Total Female Residents</h5> <br>
-                    <h2> <?= $rescountf;?></h2>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="row card-row-gap"> 
-        <div class="col-md-4">
-            <h4> Barangay Staff Data </h4> 
-            <div class="card">
-                <div class="card-body"> 
-                    <h5>Total Barangay Staffs</h5> <br>
-                    <h2> <?= $staffcount;?></h2>
-                </div>
-            </div>
-        </div>
-
-    </div>
-
-    <div class="row card-row-gap"> 
-        <div class="col-md-4">
-        <h4> Animal Welfare & Registry Data </h4> 
-            <div class="card">
-                <div class="card-body"> 
-                    <h5>Animals Registered</h5> <br>
-                    <h2> <?= $animalcount;?></h2>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-md-4">  
-            <div class="card card-upper-space">
-                <div class="card-body"> 
-                    <h5>Most Common Animal Registered </h5> <br>
-                    <h2> <?= $rescountfh;?></h2>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-xl-3 col-md-6 mb-4">
-                            <div class="card border-left-primary shadow h-100 py-2">
-                                <div class="card-body">
-                                    <div class="row no-gutters align-items-center">
-                                        <div class="col mr-2">
-                                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
-                                                Earnings (Monthly)</div>
-                                            <div class="h5 mb-0 font-weight-bold text-gray-800">$40,000</div>
-                                        </div>
-                                        <div class="col-auto">
-                                            <i class="fas fa-calendar fa-2x text-gray-300"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+            <div class="card border-left-primary shadow card-upper-space">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                                Total Male Residents</div>
+                                <div class="h5 mb-0 font-weight-bold text-dark"><?= $rescountm?></div>
                         </div>
+                        <div class="col-auto">
+                            <i class="fas fa-male fa-2x text-dark"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-</div>
+        <div class="col-md-4">  
+            <div class="card border-left-primary shadow card-upper-space">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                                Total Female Residents</div>
+                                <div class="h5 mb-0 font-weight-bold text-dark"><?= $rescountf?></div>
+                        </div>
+                        <div class="col-auto">
+                            <i class="fas fa-female fa-2x text-dark"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <div class="row"> 
+    <div class="col-md-4">
+        <h4> Barangay Staff Data </h4> 
+        <div class="card border-left-info shadow">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-info text-uppercase mb-1">
+                                Total Barngay Staffs</div>
+                                <div class="h5 mb-0 font-weight-bold text-dark"><?= $staffcount?></div>
+                        </div>
+                        <div class="col-auto">
+                            <i class="fas fa-user-friends fa-2x text-dark"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">  
+        <div class="card border-left-info shadow card-upper-space">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-info text-uppercase mb-1">
+                                Total Barngay Male Staffs</div>
+                                <div class="h5 mb-0 font-weight-bold text-dark"><?= $staffcountm?></div>
+                        </div>
+                        <div class="col-auto">
+                            <i class="fas fa-male fa-2x text-dark"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+    <div class="col-md-4">  
+        <div class="card border-left-info shadow card-upper-space">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-info text-uppercase mb-1">
+                                Total Barngay Female Staffs</div>
+                                <div class="h5 mb-0 font-weight-bold text-dark"><?= $staffcountf?></div>
+                        </div>
+                        <div class="col-auto">
+                            <i class="fas fa-female fa-2x text-dark"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <br>
+    <div class="row"> 
+        <div class="col-md-4">
+        <h4> Animal Welfare & Registry </h4> 
+        <div class="card border-left-success shadow">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
+                                Total Animals Registered</div>
+                                <div class="h5 mb-0 font-weight-bold text-dark"><?= $animalcount?></div>
+                        </div>
+                        <div class="col-auto">
+                            <i class="fas fa-paw fa-2x text-dark"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card border-left-success shadow card-upper-space">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
+                                Total Dogs Registered</div>
+                                <div class="h5 mb-0 font-weight-bold text-dark"><?= $animalcountd?></div>
+                        </div>
+                        <div class="col-auto">
+                            <i class="fas fa-dog fa-2x text-dark"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="row">
+        <div class="col-md-4">
+            <div class="card border-left-success shadow card-upper-space">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
+                                Total Cats Registered</div>
+                                <div class="h5 mb-0 font-weight-bold text-dark"><?= $animalcountc?></div>
+                        </div>
+                        <div class="col-auto">
+                            <i class="fas fa-cat fa-2x text-dark"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <div class="row"> 
+    <div class="col-md-4">
+        <h4> TB DOTS Data </h4> 
+        <div class="card border-left-danger shadow">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-danger text-uppercase mb-1">
+                                Total TB Dots Registered</div>
+                                <div class="h5 mb-0 font-weight-bold text-dark"><?= $tbcount?></div>
+                        </div>
+                        <div class="col-auto">
+                            <i class="fas fa-user-md fa-2x text-dark"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+    </div>
+    <br>
+    <div class="row"> 
+    <div class="col-md-4">
+        <h4> Vaccination Program Data </h4> 
+        <div class="card border-left-secondary shadow">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-secodary text-uppercase mb-1">
+                                Total Vaccination Program Registered</div>
+                                <div class="h5 mb-0 font-weight-bold text-dark"><?= $vacccount?></div>
+                        </div>
+                        <div class="col-auto">
+                            <i class="fas fa-crutch fa-2x text-dark"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+    </div>
+    <br>
+    <div class="row"> 
+    <div class="col-md-4">
+        <h4> Family Planning Data </h4> 
+        <div class="card border-left-dark shadow">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-dark text-uppercase mb-1">
+                                Total Family Planning Registered</div>
+                                <div class="h5 mb-0 font-weight-bold text-dark"><?= $fpcount?></div>
+                        </div>
+                        <div class="col-auto">
+                            <i class="fas fa-user-friends fa-2x text-dark"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+    </div>
+    <br>
+    <div class="row"> 
+    <div class="col-md-4">
+        <h4> Mother & Child Data </h4> 
+        <div class="card border-left-primary shadow">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                                Total Mother & Child Check Registered</div>
+                                <div class="h5 mb-0 font-weight-bold text-dark"><?= $mccount?></div>
+                        </div>
+                        <div class="col-auto">
+                            <i class="fas fa-stethoscope fa-2x text-dark"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+    </div>
+    <br>
+    <div class="row"> 
+    <div class="col-md-4">
+        <h4> Medicine Data </h4> 
+        <div class="card border-left-success shadow">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
+                                Total Medicine Registered</div>
+                                <div class="h5 mb-0 font-weight-bold text-dark"><?= $medcount?></div>
+                        </div>
+                        <div class="col-auto">
+                            <i class="fas fa-capsules fa-2x text-dark"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+    </div>
+
+
 <!-- /.container-fluid -->
 
 </div>

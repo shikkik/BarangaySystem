@@ -43,10 +43,9 @@
 			?>
 			<tr>
 			<td>    
-                        <form action="" method="post">
+            <form action="" method="post">
                             <a href="update_resident_form.php?id_resident=<?= $view['id_resident'];?>" class="btn btn-primary">  Update </a>
                             <input type="hidden" name="id_resident" value="<?= $view['id_resident'];?>">
-                            <button class="btn btn-danger" type="submit" name="delete_resident"> Delete </button>
                         </form>
             </td>
 			<td> <?= $view['email'];?> </td>
@@ -104,9 +103,8 @@
 			<tr>
 			<td>    
                         <form action="" method="post">
-                            <a href="update_resident_form.php?id_resident=<?= $view['id_resident'];?>" class="btn btn-primary">  Update </a>
+                            <a href="staff_update_resident_form.php?id_resident=<?= $view['id_resident'];?>" class="btn btn-primary">  Update </a>
                             <input type="hidden" name="id_resident" value="<?= $view['id_resident'];?>">
-                            <button class="btn btn-danger" type="submit" name="delete_resident"> Delete </button>
                         </form>
             </td>
 			<td> <?= $view['email'];?> </td>

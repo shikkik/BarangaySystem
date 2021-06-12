@@ -3,14 +3,10 @@
    require('classes/resident.class.php');
    $userdetails = $bmis->get_userdata();
    //$bmis->validate_admin();
-   $fpcount = $residentbmis->count_familyplan();
-   $view = $bmis->view_familyplan();
-   
-   if(isset($_POST['create_familyplan'])) {
-    $bmis->create_familyplan();
-   }
-
-   $bmis->delete_familyplan();
+   $view = $residentbmis->view_resident();
+   $bmis->update_familyplan();
+   $id_familyplan = $_GET['id_familyplan'];
+   $familyplan = $residentbmis->get_single_familyplan($id_familyplan);
 
 ?>
 
@@ -23,31 +19,32 @@
     <!-- Page Heading -->
                 
     <div class="row"> 
+        <div class="col-md-2"> </div> 
         <div class="col-md-8"> 
         <div class="card">
-        <div class="card-header bg-primary text-white"> Add New Family Planning Data</div>
+        <div class="card-header bg-success text-white"> Update Family Planning Data</div>
         <div class="card-body">
         <form method="post" class="was-validated">
                                 <div class="row"> 
 
                                     <div class="col">
                                         <div class="form-group">
-                                            <label for="lname">Last Name:</label>
-                                            <input name="lname" type="text" class="form-control" placeholder="Enter your Last Name" value="" required>
+                                            <label for="lname">Lastname:</label>
+                                            <input name="lname" type="text" class="form-control" value="<?= $familyplan['lname']?>" required>
                                             <div class="valid-feedback">Valid.</div>
                                             <div class="invalid-feedback">Please fill out this field.</div>
                                         </div>
 
                                         <div class="form-group">
-                                            <label for="mname">Middle Name:</label>
-                                            <input name="mi" type="text" class="form-control" placeholder="Enter your Middle Name"value="" required>
+                                            <label for="mname">Middlename:</label>
+                                            <input name="mi" type="text" class="form-control" value="<?= $familyplan['mi']?>" required>
                                             <div class="valid-feedback">Valid.</div>
                                             <div class="invalid-feedback">Please fill out this field.</div>  
                                         </div>
 
                                         <div class="form-group">            
                                             <label for="cno">Contact Number:</label>
-                                            <input name="contact" type="text" maxlength="11" class="form-control" placeholder="Enter your Contact Number" value="" pattern="[0-9]{11}" required>
+                                            <input name="contact" type="text" maxlength="11" class="form-control" value="<?= $familyplan['contact']?>" pattern="[0-9]{11}" required>
                                             <div class="valid-feedback">Valid.</div>
                                             <div class="invalid-feedback">Please fill out this field.</div>
                                         </div>
@@ -55,21 +52,21 @@
 
                                     <div class="col">
                                         <div class="form-group">
-                                            <label for="fname">First Name:</label>
-                                            <input name="fname" type="text" class="form-control" placeholder="Enter your First Name" value="" required>
+                                            <label for="fname">Firstname:</label>
+                                            <input name="fname" type="text" class="form-control" value="<?= $familyplan['fname']?>" required>
                                             <div class="valid-feedback">Valid.</div>
                                             <div class="invalid-feedback">Please fill out this field.</div>  
                                         </div>
 
                                         <div class="form-group">
                                             <label for="address">Address:</label>
-                                            <input name="address" type="text" class="form-control" placeholder="Enter your Address" value="" required>
+                                            <input name="address" type="text" class="form-control" value="<?= $familyplan['address']?>" required>
                                             <div class="valid-feedback">Valid.</div>
                                             <div class="invalid-feedback">Please fill out this field.</div>
                                         </div>
                                         <div class="form-group">
                                             <label for="occupation">Occupation:</label>
-                                            <input name="occupation" type="text" class="form-control" placeholder="Enter your Occupation" required>
+                                            <input name="occupation" type="text" class="form-control" value="<?= $familyplan['occupation']?>" placeholder="Enter your Occupation" required>
                                             <div class="valid-feedback">Valid.</div>
                                             <div class="invalid-feedback">Please fill out this field.</div>
                                         </div>
@@ -80,7 +77,7 @@
                                 <div class="row">
                                     <div class="col-sm-4">
                                         <label for="Age" class="mtop">Age </label>
-                                        <input name="age" type="number" placeholder="Enter your Age" class="form-control" value="" required>
+                                        <input name="age" type="number" placeholder="Enter your Age" class="form-control" value="<?= $familyplan['age']?>" required>
                                         <div class="valid-feedback">Valid.</div>
                                         <div class="invalid-feedback">Please fill out this field.</div>
                                     </div>
@@ -121,14 +118,14 @@
 
                                     <div class="col">
                                         <div class="form-group">
-                                            <label for="lname">Lastname:</label>
+                                            <label for="lname">Last name:</label>
                                             <input name="sp_lname" type="text" class="form-control" placeholder="Enter your Lastname" required>
                                             <div class="valid-feedback">Valid.</div>
                                             <div class="invalid-feedback">Please fill out this field.</div>
                                         </div>
 
                                         <div class="form-group">
-                                            <label for="mname">Middlename:</label>
+                                            <label for="mname">Middle name:</label>
                                             <input name="sp_mi" type="text" class="form-control" placeholder="Enter your Middlename" required>
                                             <div class="valid-feedback">Valid.</div>
                                             <div class="invalid-feedback">Please fill out this field.</div>
@@ -137,7 +134,7 @@
 
                                     <div class="col">
                                         <div class="form-group">
-                                            <label for="fname">Firstname:</label>
+                                            <label for="fname">First name:</label>
                                             <input name="sp_fname" type="text" class="form-control" placeholder="Enter your Firstname" required>
                                             <div class="valid-feedback">Valid.</div>
                                             <div class="invalid-feedback">Please fill out this field.</div>  
@@ -197,11 +194,6 @@
                                         <input name="sp_age" type="number" class="form-control" placeholder="Enter your Age" value="<?= $resident['age']?>" required>
                                         <div class="valid-feedback">Valid.</div>
                                         <div class="invalid-feedback">Please fill out this field.</div>
-
-                                        <label for="Resident ID" class="mtop">Resident ID </label>
-                                        <input name="id_resident" type="text" class="form-control" placeholder="Enter Resident ID" required>
-                                        <div class="valid-feedback">Valid.</div>
-                                        <div class="invalid-feedback">Please fill out this field.</div>
                                     </div>
 
                                     <div class="col">
@@ -220,81 +212,15 @@
                                 <div class="paa">
                                         <input type="hidden" name="dateapply" value="<?= $cdate?>">
                                         <input name="addedby" type="hidden" value="<?= $userdetails['surname']?>, <?= $userdetails['firstname']?>">
-                                    <button name="create_familyplan" type="submit" class="btn btn-primary">Save changes</button>
+                                    <button name="update_familyplan" type="submit" class="btn btn-primary">Save changes</button>
                                 </div>
                             </div>
                             </form>
         </div>
         </div>
         </div>
-
-        <div class="col-md-4">
-            <div class="card border-left-primary shadow">
-                <div class="card-body">
-                    <div class="row no-gutters align-items-center">
-                        <div class="col mr-2">
-                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
-                                Total Family Planning Applicants </div>
-                                <div class="h5 mb-0 font-weight-bold text-dark"><?= $fpcount?></div>
-                        </div>
-                        <div class="col-auto">
-                            <i class="fas fa-child fa-2x text-dark"></i>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-    <br>
-    <div class="row"> 
-        <div class="col-md-12"> 
-            <h1 class="h3 mb-4 text-gray-800">Family Planning Data</h1>
-            <table class="table table-dark table-responsive">
-            <form method="post">
-                <thead> 
-                    <tr>
-                        <th> Actions</th>
-                        <th> ID </th>
-                        <th> ID_Resident </th>
-                        <th> Surname </th>
-                        <th> First name </th>
-                        <th> Middlename </th>
-                        <th> Age </th>
-                        <th> Address </th>
-                        <th> Contact </th>
-                        <th> Date Applied </th>
-                        <th> AddedBy </th>
-                    </tr>
-                </thead>
-                <tbody> 
-                <?php if(is_array($view)) {?>
-                    <?php foreach($view as $view) {?>
-                    <tr>
-                        <td>    
-                        <form action="" method="post">
-                            <a href="staff_update_familyplan_form.php?id_familyplan=<?= $view['id_familyplan'];?>" class="btn btn-primary">  Update </a>
-        
-                        </form>
-                        </td>
-                        <td> <?= $view['id_familyplan'];?> </td>
-                        <td> <?= $view['id_resident'];?> </td> 
-                        <td> <?= $view['lname'];?> </td>
-                        <td> <?= $view['fname'];?> </td>
-                        <td> <?= $view['mi'];?> </td>
-                        <td> <?= $view['age'];?> </td>
-                        <td> <?= $view['address'];?> </td>
-                        <td> <?= $view['contact'];?> </td>
-                        <td> <?= $view['dateapply'];?> </td>
-                        <td> <?= $view['addedby'];?> </td>
-                    </tr>
-                    <?php }?>
-                <?php } ?>
-                </tbody>
-            </form>
-            </table>
-        </div>
+        <div class="col-md-2"> </div>
     </div>
-
     </div>
     <!-- /.container-fluid -->
 

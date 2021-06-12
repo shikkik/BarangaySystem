@@ -76,6 +76,7 @@
                 $age = $_POST['age'];
                 $sex = $_POST['sex'];
                 $status = $_POST['status'];
+                $email = $_POST['email'];
                 $address = $_POST['address'];
                 $contact = $_POST['contact'];
                 $bdate = $_POST['bdate'];
@@ -87,9 +88,9 @@
 
                 $connection = $this->openConn();
                 $stmt = $connection->prepare("UPDATE tbl_resident SET `password` =?, `lname` =?, 
-                `fname` = ?, `mi` =?, `age` =?, `sex` =?, `status` =?, `address` =?, `contact` =?,
+                `fname` = ?, `mi` =?, `age` =?, `sex` =?, `status` =?, `email` =?, `address` =?, `contact` =?,
                 `bdate` =?, `bplace` =?, `nationality` =?, `family_role` =?, `role` =?, `addedby` =? WHERE `id_resident` = ?");
-                $stmt->execute([$password, $lname, $fname, $mi, $age, $sex, $status, $address,
+                $stmt->execute([$password, $lname, $fname, $mi, $age, $sex, $status,$email, $address,
                 $contact, $bdate, $bplace, $nationality, $familyrole, $role, $addedby, $id_resident]);
                    
                 $message2 = "Resident Data Updated";
