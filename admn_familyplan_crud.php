@@ -26,7 +26,7 @@
     <div class="row"> 
         <div class="col-md-8"> 
         <div class="card">
-        <div class="card-header"> Add New Family Planning Data</div>
+        <div class="card-header bg-primary text-white"> Add New Family Planning Data</div>
         <div class="card-body">
         <form method="post" class="was-validated">
                                 <div class="row"> 
@@ -229,17 +229,22 @@
         </div>
         </div>
 
-        <div class="col-md-4"> 
-            <div class="card"> 
-                <div class="card-body"> 
-                    <h5> Total </h5> <br> <?= $fpcount ?>
+        <div class="col-md-4">
+            <div class="card border-left-primary shadow">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                                Total Family Planning Applicants </div>
+                                <div class="h5 mb-0 font-weight-bold text-dark"><?= $fpcount?></div>
+                        </div>
+                        <div class="col-auto">
+                            <i class="fas fa-child fa-2x text-dark"></i>
+                        </div>
+                    </div>
                 </div>
-            </div> 
-
-            <br> 
-
-
-    </div>
+            </div>
+        </div>
 
     <br>
     <div class="row"> 
