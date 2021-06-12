@@ -1,5 +1,6 @@
 <?php
    error_reporting(E_ALL ^ E_WARNING);
+   ini_set('display_errors',0);
    require('classes/resident.class.php');
    $userdetails = $bmis->get_userdata();
    $bmis->validate_admin();
@@ -33,7 +34,7 @@
     <div class="row"> 
         <div class="col-md-6"> 
             <div class="card">
-            <div class="card-header"> Event Announcement Form </div>
+            <div class="card-header bg-primary text-white"> Event Announcement Form </div>
             <div class="card-body">
             <form method="post">
                 <div class="row"> 

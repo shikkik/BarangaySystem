@@ -86,9 +86,9 @@
                 $addedby = $_POST['addedby'];
 
                 $connection = $this->openConn();
-                $stmt = $connection->prepare("UPDATE tbl_resident SET password =?, lname =?, 
-                fname = ?, mi =?, age =?, sex =?, status =?, address =?, contact =?,
-                bdate =?, bplace =?, nationality =?,family_role =?, role =?, addedby =? WHERE id_resident = ?");
+                $stmt = $connection->prepare("UPDATE tbl_resident SET `password` =?, `lname` =?, 
+                `fname` = ?, `mi` =?, `age` =?, `sex` =?, `status` =?, `address` =?, `contact` =?,
+                `bdate` =?, `bplace` =?, `nationality` =?, `family_role` =?, `role` =?, `addedby` =? WHERE `id_resident` = ?");
                 $stmt->execute([$password, $lname, $fname, $mi, $age, $sex, $status, $address,
                 $contact, $bdate, $bplace, $nationality, $familyrole, $role, $addedby, $id_resident]);
                    
@@ -212,86 +212,6 @@
 
         return $rescount;
     }
-
-    public function count_animals() {
-        $connection = $this->openConn();
-
-        $stmt = $connection->prepare("SELECT COUNT(*) from tbl_animal");
-        $stmt->execute();
-        $rescount = $stmt->fetchColumn();
-
-        return $rescount;
-    }
-
-    public function count_female_animals() {
-        $connection = $this->openConn();
-
-        $stmt = $connection->prepare("SELECT COUNT(*) from tbl_animal where sex = 'female'");
-        $stmt->execute();
-        $rescount = $stmt->fetchColumn();
-
-        return $rescount;
-    }
-
-    public function count_male_animals() {
-        $connection = $this->openConn();
-
-        $stmt = $connection->prepare("SELECT COUNT(*) from tbl_animal where sex = 'male'");
-        $stmt->execute();
-        $rescount = $stmt->fetchColumn();
-
-        return $rescount;
-    }
-
-    public function count_tbdots() {
-        $connection = $this->openConn();
-
-        $stmt = $connection->prepare("SELECT COUNT(*) from tbl_tbdots");
-        $stmt->execute();
-        $rescount = $stmt->fetchColumn();
-
-        return $rescount;
-    }
-
-    public function count_vacc() {
-        $connection = $this->openConn();
-
-        $stmt = $connection->prepare("SELECT COUNT(*) from tbl_vaccine");
-        $stmt->execute();
-        $rescount = $stmt->fetchColumn();
-
-        return $rescount;
-    }
-
-    public function count_familyplan() {
-        $connection = $this->openConn();
-
-        $stmt = $connection->prepare("SELECT COUNT(*) from tbl_familyplan");
-        $stmt->execute();
-        $rescount = $stmt->fetchColumn();
-
-        return $rescount;
-    }
-    public function count_motherchild() {
-        $connection = $this->openConn();
-
-        $stmt = $connection->prepare("SELECT COUNT(*) from tbl_motherchild");
-        $stmt->execute();
-        $rescount = $stmt->fetchColumn();
-
-        return $rescount;
-    }
-
-    public function count_medicine() {
-        $connection = $this->openConn();
-
-        $stmt = $connection->prepare("SELECT COUNT(*) from tbl_medicine");
-        $stmt->execute();
-        $rescount = $stmt->fetchColumn();
-
-        return $rescount;
-    }
-
 
     public function profile_update() {
         $id_resident = $_GET['id_resident'];

@@ -1,4 +1,5 @@
 <?php
+    ini_set('display_errors',0);
     error_reporting(E_ALL ^ E_WARNING);
     require('classes/staff.class.php');
     $userdetails = $bmis->get_userdata();
@@ -8,6 +9,7 @@
     $upstaff = $staffbmis->update_staff();
     $staffbmis->delete_staff();
     $staffcount = $staffbmis->count_staff();
+    
 ?>
 
 <?php 
@@ -21,9 +23,9 @@
     <h1 class="h3 mb-4 text-gray-800">Barangay Staff Data</h1>
 
     <div class="row">
-        <div class="col-md-6">
+        <div class="col-md-8">
             <div class="card"> 
-                <div class="card-header"> Add new Barangay Staff </div>
+                <div class="card-header bg-primary text-white"> Add new Barangay Staff </div>
                 <div class="card-body"> 
                 <form method="post">
                     <label class="mtop"> Last Name</label>
@@ -61,19 +63,26 @@
                                         
                     <input type="hidden" class="form-control" name="role" value="user">
                     <input type="hidden" class="form-control" name="addedby" value="<?= $userdetails['surname']?>, <?= $userdetails['firstname']?>">
-
+                    <br>
                     <button class="btn btn-primary" type="submit" name="add_staff"> Add </button>
                 </form>         
                 </div>
             </div>
         </div>
 
-        <div class="col-md-6>"> 
-            <div class="card"> 
-                <div class="card-body"> 
-                    <h5> Number of Staffs Registered </h5>
-                    <br>
-                    <h5> <?= $staffcount?></h5>
+        <div class="col-md-4">
+            <div class="card border-left-primary shadow">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                                Number of Staff Registered</div>
+                                <div class="h5 mb-0 font-weight-bold text-dark"><?= $staffcount?></div>
+                        </div>
+                        <div class="col-auto">
+                            <i class="fas fa-user-tie fa-2x text-dark"></i>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -108,8 +117,8 @@
                     <tr>
                         <td>    
                             <form action="" method="post">
-                                <a href="update_staff_form.php?email=<?= $view['email'];?>" class="btn btn-primary"> Update </a>
-                                <input type="hidden" name="email" value="<?= $view['email'];?>">
+                                <a href="update_staff_form.php?id_user=<?= $view['id_user'];?>" class="btn btn-primary"> Update </a>
+                                <input type="hidden" name="id_user" value="<?= $view['id_user'];?>">
                                 <button class="btn btn-danger" type="submit" name="delete_staff"> Delete </button>
                             </form>
                         </td>

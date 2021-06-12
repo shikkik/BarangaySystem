@@ -261,7 +261,7 @@ class BMISClass {
         return $ancount;
     }
 
-    //------------------------------------------ MOTHER CHILD CHECKUP CRUD -----------------------------------------------
+    //------------------------------------------ Animal Welfare CRUD -----------------------------------------------
 
 
     public function create_animal() {
@@ -342,6 +342,85 @@ class BMISClass {
         }
     }
 
+    public function get_single_animal(){
+
+        $id_animal = $_GET['id_animal'];
+
+        $connection = $this->openConn();
+        $stmt = $connection->prepare("SELECT * FROM tbl_animal where id_animal = ?");
+        $stmt->execute([$id_animal]);
+        $animal = $stmt->fetch();
+        $total = $stmt->rowCount();
+
+        if($total > 0 )  {
+            return $animal;
+        }
+        else{
+            return false;
+        }
+    }
+
+    public function count_animal() {
+        $connection = $this->openConn();
+
+        $stmt = $connection->prepare("SELECT COUNT(*) from tbl_animal");
+        $stmt->execute();
+        $animalcount = $stmt->fetchColumn();
+
+        return $animalcount;
+    }
+
+    public function count_animal_dogs() {
+        $connection = $this->openConn();
+
+        $stmt = $connection->prepare("SELECT COUNT(*) from tbl_animal where pettype = 'dog'");
+        $stmt->execute();
+        $animalcount = $stmt->fetchColumn();
+
+        return $animalcount;
+    }
+
+    public function count_animal_cats() {
+        $connection = $this->openConn();
+
+        $stmt = $connection->prepare("SELECT COUNT(*) from tbl_animal where pettype = 'cat'");
+        $stmt->execute();
+        $animalcount = $stmt->fetchColumn();
+
+        return $animalcount;
+    }
+
+    public function count_animals() {
+        $connection = $this->openConn();
+
+        $stmt = $connection->prepare("SELECT COUNT(*) from tbl_animal");
+        $stmt->execute();
+        $rescount = $stmt->fetchColumn();
+
+        return $rescount;
+    }
+
+    public function count_female_animals() {
+        $connection = $this->openConn();
+
+        $stmt = $connection->prepare("SELECT COUNT(*) from tbl_animal where sex = 'female'");
+        $stmt->execute();
+        $rescount = $stmt->fetchColumn();
+
+        return $rescount;
+    }
+
+    public function count_male_animals() {
+        $connection = $this->openConn();
+
+        $stmt = $connection->prepare("SELECT COUNT(*) from tbl_animal where sex = 'male'");
+        $stmt->execute();
+        $rescount = $stmt->fetchColumn();
+
+        return $rescount;
+    }
+    
+
 
     //  --------------------------------------------------------- MEDICINE CRUD ---------------------------------------------------------
 
@@ -420,6 +499,34 @@ class BMISClass {
         }
     }
 
+    public function get_single_medicine(){
+
+        $id_medicine = $_GET['id_medicine'];
+
+        $connection = $this->openConn();
+        $stmt = $connection->prepare("SELECT * FROM tbl_medicine where id_medicine = ?");
+        $stmt->execute([$id_medicine]);
+        $medicine = $stmt->fetch();
+        $total = $stmt->rowCount();
+
+        if($total > 0 )  {
+            return $medicine;
+        }
+        else{
+            return false;
+        }
+    }
+
+    public function count_medicine() {
+        $connection = $this->openConn();
+
+        $stmt = $connection->prepare("SELECT COUNT(*) from tbl_medicine");
+        $stmt->execute();
+        $rescount = $stmt->fetchColumn();
+
+        return $rescount;
+    }
+
     //------------------------------------------ TB DOTS CRUD -----------------------------------------------
 
 
@@ -439,7 +546,7 @@ class BMISClass {
             $height = $_POST['height'];
             $weight = $_POST['weight'];
             $philhealth = $_POST['philhealth'];
-            $remarks = $_POST['remarks'];
+            $date_applied = $_POST['date_applied'];
             $addedby = $_POST['addedby'];
 
 
@@ -447,10 +554,10 @@ class BMISClass {
             $connection = $this->openConn();
             $stmt = $connection->prepare("INSERT INTO tbl_tbdots (`id_tbdots`, `id_resident`, 
             `lname`, `fname`, `mi`, `age`, `sex`, `address`, `occupation`, `contact`, `bdate`, `height`, 
-            `weight`, `philhealth`, `remarks`, `addedby`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+            `weight`, `philhealth`, `date_applied`, `addedby`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
 
             $stmt->execute([$id_tbdots, $id_resident, $lname, $fname, $mi, $age, $sex, 
-            $address, $occupation, $contact, $bdate, $height, $weight, $philhealth, $remarks, $addedby]);
+            $address, $occupation, $contact, $bdate, $height, $weight, $philhealth, $date_applied, $addedby]);
 
             $message2 = "Application Applied";
             echo "<script type='text/javascript'>alert('$message2');</script>";
@@ -515,6 +622,55 @@ class BMISClass {
 
             header("Refresh:0");
         }
+    }
+
+    public function get_single_tbdots(){
+
+        $id_tbdots = $_GET['id_tbdots'];
+
+        $connection = $this->openConn();
+        $stmt = $connection->prepare("SELECT * FROM tbl_tbdots where id_tbdots = ?");
+        $stmt->execute([$id_tbdots]);
+        $tbdots = $stmt->fetch();
+        $total = $stmt->rowCount();
+
+        if($total > 0 )  {
+            return $tbdots;
+        }
+        else{
+            return false;
+        }
+    }
+
+    public function count_tbdots() {
+        $connection = $this->openConn();
+
+        $stmt = $connection->prepare("SELECT COUNT(*) from tbl_tbdots");
+        $stmt->execute();
+        $rescount = $stmt->fetchColumn();
+
+        return $rescount;
+    }
+
+    
+    public function count_male_tbdots() {
+        $connection = $this->openConn();
+
+        $stmt = $connection->prepare("SELECT COUNT(*) FROM tbl_tbdots WHERE sex = 'Male'");
+        $stmt->execute();
+        $rescount = $stmt->fetchColumn();
+
+        return $rescount;
+    }
+
+    public function count_female_tbdots() {
+        $connection = $this->openConn();
+
+        $stmt = $connection->prepare("SELECT COUNT(*) FROM tbl_tbdots WHERE sex = 'Female'");
+        $stmt->execute();
+        $rescount = $stmt->fetchColumn();
+
+        return $rescount;
     }
 
 
@@ -589,6 +745,34 @@ class BMISClass {
 
             header("Refresh:0");
         }
+    }
+
+    public function get_single_motherchild(){
+
+        $id_motherchild = $_GET['id_motherchild'];
+
+        $connection = $this->openConn();
+        $stmt = $connection->prepare("SELECT * FROM tbl_motherchild where id_motherchild = ?");
+        $stmt->execute([$id_motherchild]);
+        $motherchild = $stmt->fetch();
+        $total = $stmt->rowCount();
+
+        if($total > 0 )  {
+            return $motherchild;
+        }
+        else{
+            return false;
+        }
+    }
+
+    public function count_motherchild() {
+        $connection = $this->openConn();
+
+        $stmt = $connection->prepare("SELECT COUNT(*) from tbl_motherchild");
+        $stmt->execute();
+        $rescount = $stmt->fetchColumn();
+
+        return $rescount;
     }
 
     //------------------------------------------------------- FAMILY PLAN CRUD ----------------------------------------------------------------------
@@ -684,6 +868,34 @@ class BMISClass {
         }
     }
 
+    public function get_single_familyplan(){
+
+        $id_familyplan = $_GET['id_familyplan'];
+
+        $connection = $this->openConn();
+        $stmt = $connection->prepare("SELECT * FROM tbl_familyplan where id_familyplan = ?");
+        $stmt->execute([$id_familyplan]);
+        $familyplan = $stmt->fetch();
+        $total = $stmt->rowCount();
+
+        if($total > 0 )  {
+            return $familyplan;
+        }
+        else{
+            return false;
+        }
+    }
+
+    public function count_familyplan() {
+        $connection = $this->openConn();
+
+        $stmt = $connection->prepare("SELECT COUNT(*) from tbl_familyplan");
+        $stmt->execute();
+        $rescount = $stmt->fetchColumn();
+
+        return $rescount;
+    }
+
     //------------------------------------------ VACCINATION PROGRAM CRUD -----------------------------------------------
 
 
@@ -776,6 +988,54 @@ class BMISClass {
         }
     }
 
+    public function get_single_vaccine(){
+
+        $id_vaccine = $_GET['id_vaccine'];
+
+        $connection = $this->openConn();
+        $stmt = $connection->prepare("SELECT * FROM tbl_vaccine where id_vaccine = ?");
+        $stmt->execute([$id_vaccine]);
+        $vaccine = $stmt->fetch();
+        $total = $stmt->rowCount();
+
+        if($total > 0 )  {
+            return $vaccine;
+        }
+        else{
+            return false;
+        }
+    }
+
+    public function count_vacc() {
+        $connection = $this->openConn();
+
+        $stmt = $connection->prepare("SELECT COUNT(*) FROM tbl_vaccine");
+        $stmt->execute();
+        $rescount = $stmt->fetchColumn();
+
+        return $rescount;
+    }
+
+    public function count_male_vacc() {
+        $connection = $this->openConn();
+
+        $stmt = $connection->prepare("SELECT COUNT(*) FROM tbl_vaccine WHERE sex = 'Male'");
+        $stmt->execute();
+        $rescount = $stmt->fetchColumn();
+
+        return $rescount;
+    }
+
+    public function count_female_vacc() {
+        $connection = $this->openConn();
+
+        $stmt = $connection->prepare("SELECT COUNT(*) FROM tbl_vaccine WHERE sex = 'Female'");
+        $stmt->execute();
+        $rescount = $stmt->fetchColumn();
+
+        return $rescount;
+    }
+
     //------------------------------------------ Certificate of Residency CRUD -----------------------------------------------
     public function get_single_certofres($id_resident){
 
@@ -836,7 +1096,7 @@ class BMISClass {
     public function delete_certofres(){
         $id_rescert = $_POST['id_rescert'];
 
-        if(isset($_POST['delete_clearance'])) {
+        if(isset($_POST['delete_certofres'])) {
             $connection = $this->openConn();
             $stmt = $connection->prepare("DELETE FROM tbl_rescert where id_rescert = ?");
             $stmt->execute([$id_rescert]);
@@ -997,15 +1257,6 @@ class BMISClass {
         }
     }
 
-    public function count_animal() {
-        $connection = $this->openConn();
-
-        $stmt = $connection->prepare("SELECT COUNT(*) from tbl_animal");
-        $stmt->execute();
-        $animalcount = $stmt->fetchColumn();
-
-        return $animalcount;
-    }
 
 }
 

@@ -5,6 +5,8 @@
    //$bmis->validate_admin();
    $view = $residentbmis->view_resident();
    $bmis->update_animal();
+   $id_animal = $_GET['id_animal'];
+   $animal = $residentbmis->get_single_animal($id_animal);
 
 ?>
 
@@ -20,7 +22,7 @@
         <div class="col-md-2"> </div> 
         <div class="col-md-8"> 
         <div class="card">
-        <div class="card-header"> Update Animal Welfare & Registry Data</div>
+        <div class="card-header bg-success text-white"> Update Animal Welfare & Registry Data</div>
         <div class="card-body">
         <form method="post" class="was-validated">
                   <div class="row"> 
@@ -28,43 +30,38 @@
                       <div class="col-sm-6">
                         <div class="form-group">
                           <label for="uname">Animal:</label>
-                          <input name="pettype" type="text" class="form-control" placeholder="Enter Animal" required>
+                          <input name="pettype" type="text" class="form-control" value="<?= $animal['pettype'];?>" placeholder="Enter Animal" required>
                             <div class="valid-feedback">Valid.</div>
                             <div class="invalid-feedback">Please fill out this field.</div>
                         </div>
 
                         <div class="form-group">
                         <label for="Age" class="mtop">Age </label>
-                      <input name="age" type="number" class="form-control" placeholder="Enter Pets Age" required>
+                      <input name="age" type="number" class="form-control" value="<?= $animal['age'];?>" placeholder="Enter Pets Age" required>
                       <div class="valid-feedback">Valid.</div>
                       <div class="invalid-feedback">Please fill out this field.</div>
                         </div>
 
-                        <div class="form-group">            
-                        <label for="Sex"class="mtop">Sex</label>
-                      <div class="form-check">
-                        <label class="form-check-label">
-                          <input name="sex" value="Male" type="radio" class="form-check-input" name="optradio">Male
-                        </label>
-                      </div>
-                      <div class="form-check">
-                        <label class="form-check-label">
-                          <input name="sex" value="Female" type="radio" class="form-check-input" name="optradio">Female
-                        </label>
-                      </div>    
+                        <div class="form-group"> 
+                            <label>Resident ID:</label>
+                            <input name="id_resident" type="text" class="form-control" value="<?= $animal['id_resident'];?>" placeholder="Enter Resident ID" required>
+                            <div class="valid-feedback">Valid.</div>
+                            <div class="invalid-feedback">Please fill out this field.</div>
                         </div>
+
+                        
                     </div>
 
                     <div class="col-sm-6">
                       <div class="form-group">
                         <label for="breed">Breed:</label>
-                        <input name="breed" type="text" class="form-control" placeholder="Enter Breed" required>
+                        <input name="breed" type="text" class="form-control" value="<?= $animal['breed'];?>" placeholder="Enter Breed" required>
                           <div class="valid-feedback">Valid.</div>
                           <div class="invalid-feedback">Please fill out this field.</div>
                       </div>
                       <div class="form-group">
                         <label for="purpose">Purpose:</label>
-                        <input name="purpose" type="text" class="form-control" placeholder="Enter Purpose" required>
+                        <input name="purpose" type="text" class="form-control" value="<?= $animal['purpose'];?>" placeholder="Enter Purpose" required>
                         <div class="valid-feedback">Valid.</div>
                         <div class="invalid-feedback">Please fill out this field.</div>
                       </div>
@@ -89,11 +86,18 @@
 
                   <div class="row"> 
                     <div class="col-sm-6"> 
-                        <div class="form-group"> 
-                            <label>Resident ID:</label>
-                            <input name="id_resident" type="text" class="form-control" placeholder="Enter Resident ID" required>
-                            <div class="valid-feedback">Valid.</div>
-                            <div class="invalid-feedback">Please fill out this field.</div>
+                    <div class="form-group">            
+                        <label for="Sex"class="mtop">Sex</label>
+                      <div class="form-check">
+                        <label class="form-check-label">
+                          <input name="sex" value="Male" type="radio" class="form-check-input" name="optradio">Male
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <label class="form-check-label">
+                          <input name="sex" value="Female" type="radio" class="form-check-input" name="optradio">Female
+                        </label>
+                      </div>    
                         </div>
 
                         <div class="form-group"> 
@@ -127,7 +131,7 @@
                   <div class="paa">
                     <input name="dateapply" type="hidden" class="form-control" value="<?= $cdate?>">
                     <input name="addedby" type="hidden" class="form-control" value="<?= $userdetails['surname']?> <?= $userdetails['firstname']?> <?= $userdetails['mname']?>">
-                    <button name ="update_animal" type="submit" class="btn btn-primary">Save changes</button>
+                    <button name ="update_animal" type="submit" class="btn btn-success">Update </button>
                   </div>
                 </div> 
               </form>

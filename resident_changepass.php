@@ -136,7 +136,7 @@
                                             
                                             <label> Current Password </label>
                                             <input class="form-control" type="password" name="oldpassword" placeholder="Current Passsword" require>
-                                            <input class="form-control" type="text" name="oldpasswordverify" value="<?= $userdetails['password']?>">
+                                            <input class="form-control" type="hidden" name="oldpasswordverify" value="<?= $userdetails['password']?>">
                                             <label> New Password </label>
                                             <input class="form-control" type="password" name="newpassword" placeholder="New Passsword" require>
                                             <label> Verify Password </label>

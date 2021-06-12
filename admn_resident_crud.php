@@ -1,5 +1,7 @@
 <?php
+    
    error_reporting(E_ALL ^ E_WARNING);
+   ini_set('display_errors',0);
    require('classes/resident.class.php');
    $userdetails = $bmis->get_userdata();
    $bmis->validate_admin();
@@ -7,6 +9,7 @@
    $residentbmis->create_resident();
    $residentbmis->update_resident();
    $residentbmis->delete_resident();
+   
 
    $rescount = $residentbmis->count_resident();
    $rescountm = $residentbmis->count_male_resident();
@@ -27,7 +30,7 @@
     <div class="row"> 
         <div class="col-md-8"> 
         <div class="card">
-        <div class="card-header"> Add New Barangay Resident</div>
+        <div class="card-header bg-primary text-white"> Add New Barangay Resident</div>
         <div class="card-body">
         <form method="post"> 
             <div class="row">
@@ -122,33 +125,69 @@
         </div>
 
         <div class="col-md-4"> 
-            <div class="card"> 
-                <div class="card-body"> 
-                    <h5> Number of Residents </h5> <br> <?= $rescount ?>
+            <div class="card border-left-primary shadow">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                            Number of Residents</div>
+                                <div class="h5 mb-0 font-weight-bold text-dark"><?= $rescount ?></div>
+                        </div>
+                        <div class="col-auto">
+                            <i class="fas fa-user fa-2x text-dark"></i>
+                        </div>
+                    </div>
                 </div>
-            </div> 
+            </div>
 
             <br> 
 
-            <div class="card"> 
-                <div class="card-body"> 
-                    <h5> Total Household Head </h5> <br> <?= $rescountfh ?>
+            <div class="card border-left-primary shadow">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                            Total Household Head</div>
+                                <div class="h5 mb-0 font-weight-bold text-dark"><?= $rescountfh ?></div>
+                        </div>
+                        <div class="col-auto">
+                            <i class="fas fa-user fa-2x text-dark"></i>
+                        </div>
+                    </div>
                 </div>
             </div>
             
             <br>
 
-            <div class="card"> 
-                <div class="card-body"> 
-                    <h5> Male Residents </h5> <br> <?= $rescountm ?>
+            <div class="card border-left-primary shadow">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                            Total Male Residents</div>
+                                <div class="h5 mb-0 font-weight-bold text-dark"><?= $rescountm ?></div>
+                        </div>
+                        <div class="col-auto">
+                            <i class="fas fa-male fa-2x text-dark"></i>
+                        </div>
+                    </div>
                 </div>
             </div>
 
             <br> 
 
-            <div class="card"> 
-                <div class="card-body"> 
-                    <h5> Female Residents </h5> <br> <?= $rescountf ?>
+            <div class="card border-left-primary shadow">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                            Total Female Residents</div>
+                                <div class="h5 mb-0 font-weight-bold text-dark"><?= $rescountf ?></div>
+                        </div>
+                        <div class="col-auto">
+                            <i class="fas fa-male fa-2x text-dark"></i>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div> 

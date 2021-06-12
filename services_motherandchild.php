@@ -10,12 +10,12 @@
     $ctime = $tm->format('H');
     
     if(isset($_POST['create_motherchild'])) {
-        if(($ctime >= 10) && ($ctime <= 20)) {
+        if(($ctime >= 10) && ($ctime <= 18)) {
             $bmis->create_motherchild();
         }
 
         else {
-            $message2 = "Sorry, Barangay consultations are available from 10:00 AM to 8:00 PM only";
+            $message2 = "Sorry, Barangay consultations are available from 10:00 AM to 6:00 PM only";
             echo "<script type='text/javascript'>alert('$message2');</script>";
             header('refresh:0');
         }

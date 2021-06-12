@@ -21,7 +21,7 @@
         <div class="col-md-2"> </div> 
         <div class="col-md-8"> 
         <div class="card">
-        <div class="card-header"> Update Barangay Resident Data</div>
+        <div class="card-header bg-success text-white"> Update Barangay Resident Data</div>
         <div class="card-body">
         <form method="post"> 
             <div class="row">
@@ -109,7 +109,7 @@
             <br>
                    
             <input type="hidden" class="form-control" name="role" value="resident">
-            <button class="btn btn-primary" type="submit" name="update_resident"> Update </button>
+            <button class="btn btn-success" type="submit" name="update_resident"> Update </button>
         </form>
         </div>
         </div>
