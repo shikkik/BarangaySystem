@@ -103,7 +103,7 @@
 
             <!-- Announcement Management -->
             <li class="nav-item">
-                <a class="nav-link" href="admn_announcement_crud.php">
+                <a class="nav-link" href="staff_announcement_crud.php">
                     <i class="fas fa-fw fa-chart-area"></i>
                     <span>Announcements</span></a>
             </li>

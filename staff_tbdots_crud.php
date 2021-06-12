@@ -3,14 +3,14 @@
    require('classes/resident.class.php');
    $userdetails = $bmis->get_userdata();
    //$bmis->validate_admin();
+   $view = $bmis->view_tbdots();
    $tbcount = $residentbmis->count_tbdots();
-   $view = $bmis->view_familyplan();
-   
-   if(isset($_POST['create_familyplan'])) {
-    $bmis->create_familyplan();
-   }
+   $residentbmis->create_tbdots();
 
-   $bmis->delete_familyplan();
+   $dt = new DateTime("now", new DateTimeZone('Asia/Manila'));
+   $tm = new DateTime("now", new DateTimeZone('Asia/Manila'));
+   $cdate = $dt->format('Y/m/d');
+   $ctime = $tm->format('H');
 
 ?>
 

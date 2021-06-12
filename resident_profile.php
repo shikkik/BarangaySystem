@@ -128,80 +128,59 @@
                                     <div class="card-body" style="border-style: inset;">
                                     <form method="post">
                                         <div class="row" >
-                                            <div class="col">
-                                            
-                                                <div class="row settings">
-                                                
-                                                <h5 style="margin-right: 2em;text-align: right;"> Name:</h5> <h5><?= $resident['lname'];?>, <?= $resident['fname'];?> <?= $resident['mi'];?></h5> 
-                                                </div>
-                                                <div class="row">
-                                                    <h5 style="margin-right: 2em;text-align: right;"> Email: </h5> <h5> <?= $resident['email'];?> </h5>
-                                                </div>
-
-                                                <div class="row">
-                                                    <h5 style="margin-right: 2em;text-align: right;"> Sex: </h5> <h5> <?= $resident['sex'];?> </h5>
-                                                </div>
-                                                
-                                                <div class="row">
-                                                <h5 style="margin-right: 2em;display:inline-block;">Age:</h5>
-                                                <input class="input" type="text" name="age" value="<?= $resident['age'];?>">
-                                                </div>
-
-                                                <div class="row">
-                                                <h5 style="margin-right: 2em;display:inline-block;">Status:</h5>
-                                                <input class="input" type="text" name="status" value="<?= $resident['status'];?>">
-                                                </div>
-                                                
-                                                <div class="row">
-                                                <h5 style="margin-right: 2em;display:inline-block;">Address:</h5>
-                                                <input class="input" type="text" name="address" value="<?= $resident['address'];?>">
-                                                </div>
-
-                                                <div class="row">
-                                                <h5 style="margin-right: 2em;display:inline-block;">Contact:</h5>
-                                                <input class="input" type="text" name="contact" value="<?= $resident['contact'];?>">
-                                                </div>
+                                            <div class="col-md-2"> 
+                                                <h5> Name:</h5> 
+                                                <h5> Email: </h5> 
+                                                <h5> Sex: </h5> <h5> 
+                                                <h5>Age:</h5>
+                                                <h5>Status:</h5>
+                                                <h5>Address:</h5>
+                                                <h5>Contact:</h5>
                                             </div>
-                                                
-                                                <div class="col">
 
-                                                    <div class="row">
-                                                    <h5 style="margin-right: 2em; display:inline-block;"> Birth Date: </h5> <h5> <?= $resident['bdate'];?> </h5>
-                                                    </div>
+                                            <div class="col-md-4"> 
+                                                <h5><?= $resident['lname'];?>, <?= $resident['fname'];?> <?= $resident['mi'];?></h5> 
+                                                <h5> <?= $resident['email'];?> </h5>
+                                                <h5><?= $resident['sex'];?> </h5>
+                                                <input class="input" type="text" name="age" value="<?= $resident['age'];?>">
+                                                <input class="input" type="text" name="status" value="<?= $resident['status'];?>">
+                                                <input class="input" type="text" name="address" value="<?= $resident['address'];?>">
+                                                <input class="input" type="text" name="contact" value="<?= $resident['contact'];?>">
+                                            </div>
 
-                                                    <div class="row">
-                                                    <h5 style="margin-right: 2em;display:inline-block;"> Birth Place: </h5> <h5> <?= $resident['bplace'];?> </h5>
-                                                    </div>
+                                            <div class="col-md-2"> 
+                                                <h5> Birth Date: </h5> 
+                                                <h5> Birth Place: </h5> 
+                                                <h5> Nationality: </h5> 
+                                                <h5> Family Role: </h5> <h5> 
+                                            </div>
 
-                                                    <div class="row">
-                                                    <h5 style="margin-right: 2em;display:inline-block;"> Nationality: </h5> <h5> <?= $resident['nationality'];?> </h5>
-                                                    </div>
-
-                                                    <div class="row">
-                                                    <h5 style="margin-right: 2em;display:inline-block;"> Family Role: </h5> <h5> <?= $resident['family_role'];?> </h5>
-                                                    </div>
-                                                </div>
+                                            <div class="col-md-4"> 
+                                            <h5> <?= $resident['bdate'];?> </h5>
+                                            <h5> <?= $resident['bplace'];?> </h5>
+                                            <h5> <?= $resident['nationality'];?> </h5>
+                                            <h5> <?= $resident['family_role'];?> </h5>
+                                            </div>
                                             </div>
                                         </div>
-                                    </form>
-                
-                                    <div class="col"></div>
                                 </div>  
                             </div>
                         </div> 
 
-                    <div class="col-sm"> </div>
-                </div>
+                        <br>
 
-                <div class="row" style=" margin-bottom: 5em;"> 
-                    <div class="col-xl-12">
+                        <div class="row" style=" margin-bottom: 5em;"> 
+                        <div class="col-xl-12">
                         <div class="form-inline">
-                        <form method="post">
                                 <input class="form-control" name="lname" type="hidden" value="<?= $resident['lname'];?>"/>
                                 <input class="form-control" name="mi" type="hidden" value="<?= $resident['mi'];?>" />
                                 <button type="submit button" class="btn btn-info"  name="search_household">View Household</button>
                                 <button class="btn btn-primary" type="submit" name="profile_update"> Update </button>
                                 <a href="resident_profile.php?id_resident=<?= $userdetails['id_resident'];?>"></a>
+<<<<<<< HEAD
+=======
+                                
+>>>>>>> 25dc57d33b519d6bfa4e38abb6483c566608cdcb
                                 
                             <div>
                             <br /><br />
@@ -212,6 +191,10 @@
                         </div>                                   
                     </div>
                 </div>
+
+                </div>
+
+
             </div>
         </div>
 
