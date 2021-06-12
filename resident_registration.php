@@ -195,7 +195,7 @@
                                 </div>
 
                                 <div class="col rb">
-                                    <label class="mtop">Gender</label>
+                                    <label class="mtop">Sex</label>
                                     <select class="form-control" name="sex" id="sex">
                                     <option value="">---</option>
                                     <option value="Male">Male</opt ion>
