@@ -153,7 +153,7 @@
 
         <div class="col-md-4"> 
             <div class="card"> 
-                <div class="card-body border-left-success"> 
+                <div class="card-body border-left-primary"> 
                     <h5> Number of Animals </h5> <br> <?= $anmcount ?>
                 </div>
             </div> 
@@ -163,7 +163,7 @@
             <br>
 
             <div class="card"> 
-                <div class="card-body border-left-success"> 
+                <div class="card-body border-left-primary"> 
                     <h5> Male Animals </h5> <br> <?= $anmcountm ?>
                 </div>
             </div>
@@ -171,7 +171,7 @@
             <br> 
 
             <div class="card"> 
-                <div class="card-body border-left-success"> 
+                <div class="card-body border-left-primary"> 
                     <h5> Female Animals </h5> <br> <?= $anmcountf ?>
                 </div>
             </div>
