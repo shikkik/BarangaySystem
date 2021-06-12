@@ -64,7 +64,9 @@
                                 <div class="h5 mb-0 font-weight-bold text-dark"><?= $rescount?></div>
                         </div>
                         <div class="col-auto">
-                            <i class="fas fa-user-friends fa-2x text-dark"></i>
+                            <span style="color: #4e73df;"> 
+                                <i class="fas fa-user-friends fa-2x text-dark "></i>
+                            </span>
                         </div>
                     </div>
                 </div>
