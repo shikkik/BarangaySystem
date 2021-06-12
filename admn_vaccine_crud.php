@@ -37,7 +37,7 @@
 <div class="row"> 
     <div class="col-md-8"> 
     <div class="card">
-    <div class="card-header"> Add New Vaccine Data</div>
+    <div class="card-header bg-primary text-white"> Add New Vaccination Program Data</div>
     <div class="card-body">
     <form method="post"> 
     <div class="row"> 
