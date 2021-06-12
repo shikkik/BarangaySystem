@@ -77,7 +77,7 @@
       .text1 
       {
         text-align: justify;
-        margin-top: 5%;
+        margin-top: 10%;
         letter-spacing: 1px;
         font-family: Arial, Helvetica, sans-serif;
 

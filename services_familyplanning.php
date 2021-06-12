@@ -401,14 +401,14 @@
 
                                     <div class="col">
                                         <div class="form-group">
-                                            <label for="lname">Last name:</label>
+                                            <label for="lname">Last Name:</label>
                                             <input name="lname" type="text" class="form-control" value="<?= $resident['lname']?>" required>
                                             <div class="valid-feedback">Valid.</div>
                                             <div class="invalid-feedback">Please fill out this field.</div>
                                         </div>
 
                                         <div class="form-group">
-                                            <label for="mname">Middle name:</label>
+                                            <label for="mname">Middle Name:</label>
                                             <input name="mi" type="text" class="form-control" value="<?= $resident['mi']?>" required>
                                             <div class="valid-feedback">Valid.</div>
                                             <div class="invalid-feedback">Please fill out this field.</div>  
@@ -424,7 +424,7 @@
 
                                     <div class="col">
                                         <div class="form-group">
-                                            <label for="fname">First name:</label>
+                                            <label for="fname">First Name:</label>
                                             <input name="fname" type="text" class="form-control" value="<?= $resident['fname']?>" required>
                                             <div class="valid-feedback">Valid.</div>
                                             <div class="invalid-feedback">Please fill out this field.</div>  
@@ -491,15 +491,15 @@
 
                                     <div class="col">
                                         <div class="form-group">
-                                            <label for="lname">Last name:</label>
-                                            <input name="sp_lname" type="text" class="form-control" placeholder="Enter your Lastname" required>
+                                            <label for="lname">Last Name:</label>
+                                            <input name="sp_lname" type="text" class="form-control" placeholder="Enter your Last Name" required>
                                             <div class="valid-feedback">Valid.</div>
                                             <div class="invalid-feedback">Please fill out this field.</div>
                                         </div>
 
                                         <div class="form-group">
-                                            <label for="mname">Middle name:</label>
-                                            <input name="sp_mi" type="text" class="form-control" placeholder="Enter your Middlename" required>
+                                            <label for="mname">Middle Name:</label>
+                                            <input name="sp_mi" type="text" class="form-control" placeholder="Enter your Middle Name" required>
                                             <div class="valid-feedback">Valid.</div>
                                             <div class="invalid-feedback">Please fill out this field.</div>
                                         </div>
@@ -507,8 +507,8 @@
 
                                     <div class="col">
                                         <div class="form-group">
-                                            <label for="fname">First name:</label>
-                                            <input name="sp_fname" type="text" class="form-control" placeholder="Enter your Firstname" required>
+                                            <label for="fname">First Name:</label>
+                                            <input name="sp_fname" type="text" class="form-control" placeholder="Enter your First Name" required>
                                             <div class="valid-feedback">Valid.</div>
                                             <div class="invalid-feedback">Please fill out this field.</div>  
                                         </div>
@@ -534,7 +534,7 @@
                                                 <option value="3">3</option>
                                                 <option value="4">4</option>
                                                 <option value="5">5</option>
-                                                <option value="6">6 or more</option>
+                                                <option value="6">Custom</option>
                                             </select>
                                         <div class="valid-feedback">Valid.</div>
                                         <div class="invalid-feedback">Please fill out this field.</div>
@@ -544,14 +544,13 @@
                                         <label for="income">Total Income:</label>
                                             <select class="form-control select" name="income" id="income" required="required">
                                                 <option value="">Enter your Income </option>
-                                                <option value="5000">Below 5,000</option>
                                                 <option value="5000">5,000</option>
                                                 <option value="10000">10,000</option>
                                                 <option value="20000">20,000</option>
                                                 <option value="30000">30,000</option>
                                                 <option value="40000">40,000</option>
                                                 <option value="50000">50,000</option>
-                                                <option value="60000">60,000 Above </option>
+                                                <option value="60000">Custom</option>
                                             </select>
                                         <div class="valid-feedback">Valid.</div>
                                         <div class="invalid-feedback">Please fill out this field.</div>
