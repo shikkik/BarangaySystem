@@ -22,7 +22,7 @@
         <div class="col-md-2"> </div> 
         <div class="col-md-8"> 
         <div class="card">
-        <div class="card-header"> Update Animal Welfare & Registry Data</div>
+        <div class="card-header bg-success text-white"> Update Animal Welfare & Registry Data</div>
         <div class="card-body">
         <form method="post" class="was-validated">
                   <div class="row"> 
@@ -131,7 +131,7 @@
                   <div class="paa">
                     <input name="dateapply" type="hidden" class="form-control" value="<?= $cdate?>">
                     <input name="addedby" type="hidden" class="form-control" value="<?= $userdetails['surname']?> <?= $userdetails['firstname']?> <?= $userdetails['mname']?>">
-                    <button name ="update_animal" type="submit" class="btn btn-primary">Save changes</button>
+                    <button name ="update_animal" type="submit" class="btn btn-success">Update </button>
                   </div>
                 </div> 
               </form>

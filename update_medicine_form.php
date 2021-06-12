@@ -21,7 +21,7 @@
         <div class="col-md-2"> </div> 
         <div class="col-md-8"> 
         <div class="card">
-        <div class="card-header"> Update Medicine Inventory Data</div>
+        <div class="card-header bg-success text-white"> Update Medicine Inventory Data</div>
         <div class="card-body">
         <form method="post">
                 <label class="mtop"> Medicine Item</label>
@@ -58,7 +58,7 @@
                 <br>
                 <br>
 
-                <button class="btn btn-primary" type="submit" name="update_medicine"> Submit </button>
+                <button class="btn btn-success" type="submit" name="update_medicine">Update </button>
                 </form>
         </div>
         </div>

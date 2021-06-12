@@ -22,7 +22,7 @@
         <div class="col-md-2"> </div> 
         <div class="col-md-8"> 
         <div class="card">
-        <div class="card-header"> Update Family Planning Data</div>
+        <div class="card-header bg-success text-white"> Update Family Planning Data</div>
         <div class="card-body">
         <form method="post" class="was-validated">
                                 <div class="row"> 

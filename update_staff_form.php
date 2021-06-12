@@ -27,7 +27,7 @@
                         <div class="col-md-2"> </div>
                         <div class="col-md-8">
                             <div class="card"> 
-                                <div class="card-header"> Update Barangay Staff Data </div>
+                                <div class="card-header bg-success text-white"> Update Barangay Staff Data </div>
                                 <div class="card-body"> 
                                 <form method="post">
                                     <label class="mtop"> Last Name</label>
@@ -62,10 +62,12 @@
                                     <option value="Male">Male</opt ion>
                                     <option value="Female">Female</option>
                                     </select>
+
+                                    <br>
                                     
                                     <input type="hidden" class="form-control" name="role" value="user">
                                     <input type="hidden" class="form-control" name="addedby" value="<?= $userdetails['surname']?>, <?= $userdetails['firstname']?>">
-                                    <button class="btn btn-primary" type="submit" name="update_staff"> Update </button>
+                                    <button class="btn btn-success" type="submit" name="update_staff"> Update </button>
                                 </form>         
                                 </div>
                             </div>
