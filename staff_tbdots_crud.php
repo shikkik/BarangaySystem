@@ -1,11 +1,15 @@
 <?php
    error_reporting(E_ALL ^ E_WARNING);
+   ini_set('display_errors',0);
    require('classes/resident.class.php');
    $userdetails = $bmis->get_userdata();
    //$bmis->validate_admin();
    $view = $bmis->view_tbdots();
-   $tbcount = $residentbmis->count_tbdots();
-   $residentbmis->create_tbdots();
+   $tbcount = $bmis->count_tbdots();
+   $bmis->create_tbdots();
+   $tbmalecount = $bmis->count_male_tbdots();
+   $tbfemalecount = $bmis->count_female_tbdots();
+
 
    $dt = new DateTime("now", new DateTimeZone('Asia/Manila'));
    $tm = new DateTime("now", new DateTimeZone('Asia/Manila'));
@@ -25,7 +29,7 @@
     <div class="row"> 
         <div class="col-md-8"> 
         <div class="card">
-        <div class="card-header"> Add New TB DOTS Data</div>
+        <div class="card-header bg-primary text-white"> Add New TB DOTS Data</div>
         <div class="card-body">
         <form method="post" class="was-validated">
             <div class="row"> 
@@ -155,18 +159,57 @@
         </div>
         </div>
 
-        <div class="col-md-4"> 
-            <div class="card"> 
-                <div class="card-body"> 
-                    <h5> Total TB Dots Program Registered  </h5> <br> <?= $tbcount ?>
+        <div class="col-md-4">
+            <div class="card border-left-primary shadow">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                                TB DOTS Program Applicants</div>
+                                <div class="h5 mb-0 font-weight-bold text-dark"><?= $tbcount?></div>
+                        </div>
+                        <div class="col-auto">
+                            <i class="fas fa-users fa-2x text-dark"></i>
+                        </div>
+                    </div>
                 </div>
-            </div> 
+            </div>
 
-           
+            <br>
 
-            
+            <div class="card border-left-primary shadow">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                                Male TB DOTS Program Applicants</div>
+                                <div class="h5 mb-0 font-weight-bold text-dark"><?= $tbmalecount?></div>
+                        </div>
+                        <div class="col-auto">
+                            <i class="fas fa-male fa-2x text-dark"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-    </div>
+            <br>
+
+            <div class="card border-left-primary shadow">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                                Female TB DOTS Program Applicants</div>
+                                <div class="h5 mb-0 font-weight-bold text-dark"><?= $tbfemalecount?></div>
+                        </div>
+                        <div class="col-auto">
+                            <i class="fas fa-female fa-2x text-dark"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
 
     <br>
     <div class="row"> 
@@ -201,9 +244,8 @@
                     <tr>
                         <td>    
                         <form action="" method="post">
-                            <a href="update_tbdots_form.php?id_tbdots=<?= $view['id_tbdots'];?>" class="btn btn-primary">  Update </a>
-                            <input type="hidden" name="id_tbdots" value="<?= $view['id_tbdots'];?>">
-                            <button class="btn btn-danger" type="submit" name="delete_tbdots"> Delete </button>
+                            <a href="staff_update_tbdots_form.php?id_tbdots=<?= $view['id_tbdots'];?>" class="btn btn-primary">  Update </a>
+                            
                         </form>
                         </td>
                         <td> <?= $view['id_tbdots'];?> </td>
@@ -230,8 +272,6 @@
             </form>
             </table>
         </div>
-    </div>
-
     </div>
 
     </div>

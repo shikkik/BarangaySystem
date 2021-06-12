@@ -195,21 +195,18 @@
     <body>
 
         <!-- eto yung navbar -->
-        <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top">
-        <a class="navbar-brand" href="index.php"> <img src="../BarangaySystem/icons/beverlylogo.png" width="40px" height="40px">&nbsp; 
-        <a class="navbar-brand" href="resident_homepage.php">Barangay Beverly Hills</a>
+        <nav class="navbar navbar-dark bg-primary sticky-top">
+            <a class="navbar-brand" href="index.php"> <img src="../BarangaySystem/icons/beverlylogo.png" width="40px" height="40px"> 
+            <a class="navbar-brand" href="resident_homepage.php">Barangay Beverly Hills</a>
 
             <div class="dropdown ml-auto">
                 <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown"><?= $userdetails['surname'];?>, <?= $userdetails['firstname'];?>
                     <span class="caret"></span>
                 </button>
                 <ul class="dropdown-menu">
-                    <form method="post">
-                        <input type="hidden" value="<?= $userdetails['surname'];?>">  
-                        <input type="hidden" value="<?= $userdetails['mname'];?>">
-                        <li><a class="btn" href="resident_profile.php"> <i class="fas fa-user"></i> Personal Profile </a></li>
-                    </form>
-                    <a class="btn" href="logout.php"> <i class="fas fa-sign-out-alt"> </i> Logout </a>
+                    <a class="btn" href="resident_profile.php?id_resident=<?= $userdetails['id_resident'];?>"> <i class="fas fa-user" style="padding: 0.5em;"></i>Personal Profile  </a>
+                    <a class="btn" href="resident_changepass.php?id_resident=<?= $userdetails['id_resident'];?>"> <i class="fas fa-lock" ></i> Change Password  </a>
+                    <a class="btn" href="logout.php"> <i class="fas fa-sign-out-alt" style="padding: 0.5em;"></i> Logout  </a>
                 </ul>
             </div>
         </nav>

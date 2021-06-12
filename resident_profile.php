@@ -26,6 +26,8 @@
         <!-- fontawesome icons --> 
         <script src="https://kit.fontawesome.com/67a9b7069e.js" crossorigin="anonymous"></script>
 
+
+
     <style>
 
      .footerlinks{
@@ -103,7 +105,8 @@
     <body> 
         <!-- eto yung navbar -->
         <nav class="navbar navbar-dark bg-primary sticky-top">
-            <a class="navbar-brand" href="resident_homepage.php">Barangay Sorsogon</a>
+            <a class="navbar-brand" href="index.php"> <img src="../BarangaySystem/icons/beverlylogo.png" width="40px" height="40px"> 
+            <a class="navbar-brand" href="resident_homepage.php">Barangay Beverly Hills</a>
 
             <div class="dropdown ml-auto">
                 <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown"><?= $userdetails['surname'];?>, <?= $userdetails['firstname'];?>
@@ -111,87 +114,74 @@
                 </button>
                 <ul class="dropdown-menu">
                     <a class="btn" href="resident_profile.php?id_resident=<?= $userdetails['id_resident'];?>"> <i class="fas fa-user" style="padding: 0.5em;"></i>Personal Profile  </a>
+                    <a class="btn" href="resident_changepass.php?id_resident=<?= $userdetails['id_resident'];?>"> <i class="fas fa-lock" ></i> Change Password  </a>
                     <a class="btn" href="logout.php"> <i class="fas fa-sign-out-alt" style="padding: 0.5em;"></i> Logout  </a>
                 </ul>
             </div>
         </nav>
 
-        <div class="container"  style="margin-top: 4em;">
+        <div class="container"> 
             <div class="row">
-                <div class="col-12">
-                    <h1 class="" style="text-align:left;">Resident Profile</h1>
-                    
-                        <div class="row margin mtop"> 
-                            <div class="col-sm"> </div>
-                            <div class="col-12">   
-                                <div class="card mbottom">
-                                    <div class="card-body" style="border-style: inset;">
-                                    <form method="post">
-                                        <div class="row" >
-                                            <div class="col-md-2"> 
-                                                <h5> Name:</h5> 
-                                                <h5> Email: </h5> 
-                                                <h5> Sex: </h5> <h5> 
-                                                <h5>Age:</h5>
-                                                <h5>Status:</h5>
-                                                <h5>Address:</h5>
-                                                <h5>Contact:</h5>
-                                            </div>
-
-                                            <div class="col-md-4"> 
-                                                <h5><?= $resident['lname'];?>, <?= $resident['fname'];?> <?= $resident['mi'];?></h5> 
-                                                <h5> <?= $resident['email'];?> </h5>
-                                                <h5><?= $resident['sex'];?> </h5>
-                                                <input class="input" type="text" name="age" value="<?= $resident['age'];?>">
-                                                <input class="input" type="text" name="status" value="<?= $resident['status'];?>">
-                                                <input class="input" type="text" name="address" value="<?= $resident['address'];?>">
-                                                <input class="input" type="text" name="contact" value="<?= $resident['contact'];?>">
-                                            </div>
-
-                                            <div class="col-md-2"> 
-                                                <h5> Birth Date: </h5> 
-                                                <h5> Birth Place: </h5> 
-                                                <h5> Nationality: </h5> 
-                                                <h5> Family Role: </h5> <h5> 
-                                            </div>
-
-                                            <div class="col-md-4"> 
-                                            <h5> <?= $resident['bdate'];?> </h5>
-                                            <h5> <?= $resident['bplace'];?> </h5>
-                                            <h5> <?= $resident['nationality'];?> </h5>
-                                            <h5> <?= $resident['family_role'];?> </h5>
-                                            </div>
-                                            </div>
-                                        </div>
-                                </div>  
+                <div class="col"> 
+                    <div class="card" style="margin-top: 2em;">  
+                    <div class="card-header bg-primary text-white"> Personal Information </div>
+                    <div class="card-body"> 
+                        <form method="post">
+                        <div class="row"> 
+                            <div class="col-md-2"> 
+                                <h5> Name:</h5> <br>
+                                <h5> Email: </h5> <br>
+                                <h5> Sex: </h5> <h5> <br>
+                                <h5>Age:</h5> <br>
+                                <h5>Status:</h5> <br>
+                                <h5>Address:</h5> <br>
+                                <h5>Contact:</h5> <br>
                             </div>
-                        </div> 
 
-                        <br>
-
-                        <div class="row" style=" margin-bottom: 5em;"> 
-                        <div class="col-xl-12">
-                        <div class="form-inline">
-                                <input class="form-control" name="lname" type="hidden" value="<?= $resident['lname'];?>"/>
-                                <input class="form-control" name="mi" type="hidden" value="<?= $resident['mi'];?>" />
-                                <button type="submit button" class="btn btn-info"  name="search_household">View Household</button>
-                                <button class="btn btn-primary" type="submit" name="profile_update"> Update </button>
-                                <a href="resident_profile.php?id_resident=<?= $userdetails['id_resident'];?>"></a>
-                                
-                                
-                            <div>
-                            <br /><br />
-                                <?php include'testingsearch.php'?>
-                                
+                            <div class="col-md-4"> 
+                                <h5><?= $resident['lname'];?>, <?= $resident['fname'];?> <?= $resident['mi'];?></h5> <br>
+                                <h5> <?= $resident['email'];?> </h5><br>
+                                <h5><?= $resident['sex'];?> </h5><br>
+                                <input class="form-control" type="text" name="age" value="<?= $resident['age'];?>"><br>
+                                <input class="form-control" type="text" name="status" value="<?= $resident['status'];?>"><br>
+                                <input class="form-control" type="text" name="address" value="<?= $resident['address'];?>"><br>
+                                <input class="form-control" type="text" name="contact" value="<?= $resident['contact'];?>"><br>
                             </div>
-                        </form>
-                        </div>                                   
+
+                            <div class="col-md-2"> 
+                                <h5> Birth Date: </h5> <br>
+                                <h5> Birth Place: </h5> <br>
+                                <h5> Nationality: </h5> <br>
+                                <h5> Family Role: </h5> <h5> <br>
+                            </div>
+
+                            <div class="col-md-4"> 
+                                <h5> <?= $resident['bdate'];?> </h5><br>
+                                <h5> <?= $resident['bplace'];?> </h5><br>
+                                <h5> <?= $resident['nationality'];?> </h5><br>
+                                <h5> <?= $resident['family_role'];?> </h5><br>
+                            </div>
+                        </div>
                     </div>
                 </div>
-
+                </div> 
+            </div>
+            <br>
+            <div class="row" style="margin-bottom: 5em;"> 
+                <div class="col-xl-12">
+                    <div class="form-inline">
+                        <input class="form-control" name="lname" type="hidden" value="<?= $resident['lname'];?>"/>
+                        <input class="form-control" name="mi" type="hidden" value="<?= $resident['mi'];?>" />
+                        <button type="submit button" class="btn btn-info"  name="search_household">View Household</button>
+                        <button class="btn btn-primary" type="submit" name="profile_update"> Update </button>
+                        <a href="resident_profile.php?id_resident=<?= $userdetails['id_resident'];?>"></a>   
+                        <div>
+                            <br><br>
+                            <?php include'testingsearch.php'?>  
+                        </div>
+                    </form>
+                    </div>                                   
                 </div>
-
-
             </div>
         </div>
 

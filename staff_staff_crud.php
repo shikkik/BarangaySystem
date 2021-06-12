@@ -25,7 +25,7 @@
         <div class="col-md-3"></div>
         <div class="col-md-6">
             <div class="card"> 
-                <div class="card-header"> Barangay Staff Credentials</div>
+                <div class="card-header bg-primary text-white"> Barangay Staff Credentials</div>
                 <div class="card-body"> 
                 <form method="post">
                     <label class="mtop"> Last Name</label>
