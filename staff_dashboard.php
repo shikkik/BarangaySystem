@@ -2,7 +2,6 @@
     require('classes/staff.class.php');
     include('classes/resident.class.php');
     $userdetails = $bmis->get_userdata();
-    print_r($userdetails);
 ?>
 
 

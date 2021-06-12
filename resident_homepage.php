@@ -312,7 +312,6 @@
             </div>
         </section>
 
-<<<<<<< HEAD
         <br>
         <br>
         <br>
@@ -484,10 +483,6 @@
             </div>
 
         </footer>
-=======
-
-        
->>>>>>> 822595582c58e2b568e4a4f6cd83ac6f50aa1dc3
 
         <script src="../BarangaySystem/bootstrap/js/bootstrap.bundle.js" type="text/javascript"> </script>
     </body>
