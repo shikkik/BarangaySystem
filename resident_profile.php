@@ -177,7 +177,10 @@
                                 <button type="submit button" class="btn btn-info"  name="search_household">View Household</button>
                                 <button class="btn btn-primary" type="submit" name="profile_update"> Update </button>
                                 <a href="resident_profile.php?id_resident=<?= $userdetails['id_resident'];?>"></a>
+<<<<<<< HEAD
+=======
                                 
+>>>>>>> 25dc57d33b519d6bfa4e38abb6483c566608cdcb
                                 
                             <div>
                             <br /><br />

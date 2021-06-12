@@ -1,5 +1,5 @@
 <?php
-    //ini_set('display_errors',0);
+    ini_set('display_errors',0);
     error_reporting(E_ALL ^ E_WARNING);
     require('classes/staff.class.php');
     $userdetails = $bmis->get_userdata();
@@ -111,7 +111,7 @@
                         <td>    
                             <form action="" method="post">
                                 <a href="update_staff_form.php?id_user=<?= $view['id_user'];?>" class="btn btn-primary"> Update </a>
-                                <input type="hidden" name="email" value="<?= $view['email'];?>">
+                                <input type="hidden" name="id_user" value="<?= $view['id_user'];?>">
                                 <button class="btn btn-danger" type="submit" name="delete_staff"> Delete </button>
                             </form>
                         </td>
