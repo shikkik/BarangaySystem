@@ -263,15 +263,17 @@
 
         <!-- Eto yung navbar -->
 
-        <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top">
-        <a class="navbar-brand" href="index.php"> <img src="../BarangaySystem/icons/beverlylogo.png" width="40px" height="40px">&nbsp; 
-        <a class="navbar-brand" href="resident_homepage.php">Barangay Beverly Hills</a>
+        <nav class="navbar navbar-dark bg-primary sticky-top">
+            <a class="navbar-brand" href="index.php"> <img src="../BarangaySystem/icons/beverlylogo.png" width="40px" height="40px"> 
+            <a class="navbar-brand" href="resident_homepage.php">Barangay Beverly Hills</a>
+
             <div class="dropdown ml-auto">
                 <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown"><?= $userdetails['surname'];?>, <?= $userdetails['firstname'];?>
                     <span class="caret"></span>
                 </button>
                 <ul class="dropdown-menu">
                     <a class="btn" href="resident_profile.php?id_resident=<?= $userdetails['id_resident'];?>"> <i class="fas fa-user" style="padding: 0.5em;"></i>Personal Profile  </a>
+                    <a class="btn" href="resident_changepass.php?id_resident=<?= $userdetails['id_resident'];?>"> <i class="fas fa-lock" ></i> Change Password  </a>
                     <a class="btn" href="logout.php"> <i class="fas fa-sign-out-alt" style="padding: 0.5em;"></i> Logout  </a>
                 </ul>
             </div>
@@ -447,7 +449,7 @@
                                 <div class="row">
 
                                     <div class="col-sm-4">
-                                        <label for="Age" class="mtop">Age </label>
+                                        <label for="Age" class="mtop">Age: </label>
                                         <input name="age" type="number" placeholder="Enter your Age" class="form-control" value="<?= $resident['age']?>" required>
                                         <div class="valid-feedback">Valid.</div>
                                         <div class="invalid-feedback">Please fill out this field.</div>
@@ -470,7 +472,7 @@
 
                                     <div class="col-sm-4">
                                         <div class="form-group">
-                                            <label for="Date"class="mtop">Birthday </label>
+                                            <label for="Date"class="mtop">Birthday: </label>
                                             <input name="bdate" type="date" class="form-control" required>
                                             <div class="valid-feedback">Valid.</div>
                                             <div class="invalid-feedback">Please fill out this field.</div>
@@ -489,14 +491,14 @@
 
                                     <div class="col">
                                         <div class="form-group">
-                                            <label for="lname">Lastname:</label>
+                                            <label for="lname">Last name:</label>
                                             <input name="sp_lname" type="text" class="form-control" placeholder="Enter your Lastname" required>
                                             <div class="valid-feedback">Valid.</div>
                                             <div class="invalid-feedback">Please fill out this field.</div>
                                         </div>
 
                                         <div class="form-group">
-                                            <label for="mname">Middlename:</label>
+                                            <label for="mname">Middle name:</label>
                                             <input name="sp_mi" type="text" class="form-control" placeholder="Enter your Middlename" required>
                                             <div class="valid-feedback">Valid.</div>
                                             <div class="invalid-feedback">Please fill out this field.</div>
@@ -505,7 +507,7 @@
 
                                     <div class="col">
                                         <div class="form-group">
-                                            <label for="fname">Firstname:</label>
+                                            <label for="fname">First name:</label>
                                             <input name="sp_fname" type="text" class="form-control" placeholder="Enter your Firstname" required>
                                             <div class="valid-feedback">Valid.</div>
                                             <div class="invalid-feedback">Please fill out this field.</div>  
@@ -543,13 +545,13 @@
                                             <select class="form-control select" name="income" id="income" required="required">
                                                 <option value="">Enter your Income </option>
                                                 <option value="5000">Below 5,000</option>
-                                                <option value="5000">5,000+</option>
-                                                <option value="10000">10,000 +</option>
-                                                <option value="20000">20,000 +</option>
-                                                <option value="30000">30,000 +</option>
-                                                <option value="40000">40,000 +</option>
-                                                <option value="50000">50,000 +</option>
-                                                <option value="60000">60,000 or more </option>
+                                                <option value="5000">5,000</option>
+                                                <option value="10000">10,000</option>
+                                                <option value="20000">20,000</option>
+                                                <option value="30000">30,000</option>
+                                                <option value="40000">40,000</option>
+                                                <option value="50000">50,000</option>
+                                                <option value="60000">60,000 Above </option>
                                             </select>
                                         <div class="valid-feedback">Valid.</div>
                                         <div class="invalid-feedback">Please fill out this field.</div>
