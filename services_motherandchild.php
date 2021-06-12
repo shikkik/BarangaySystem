@@ -333,15 +333,15 @@
 
                                     <div class="col">
                                         <div class="form-group">
-                                            <label for="lname">Last name:</label>
-                                            <input name="lname" type="text" class="form-control" value="<?= $resident['lname']?>" required>
+                                            <label for="lname">Last Name:</label>
+                                            <input name="lname" type="text" class="form-control" placeholder="Enter Last Name:" value="<?= $resident['lname']?>" required>
                                             <div class="valid-feedback">Valid.</div>
                                             <div class="invalid-feedback">Please fill out this field.</div>
                                         </div>
 
                                         <div class="form-group">
-                                            <label for="mname">Middle name:</label>
-                                            <input name="mi" type="text" class="form-control" value="<?= $resident['mi']?>" required>
+                                            <label for="mname">Middle Name:</label>
+                                            <input name="mi" type="text" class="form-control" placeholder="Enter Middle Name:" value="<?= $resident['mi']?>" required>
                                             <div class="valid-feedback">Valid.</div>
                                             <div class="invalid-feedback">Please fill out this field.</div>  
                                         </div>
@@ -357,8 +357,8 @@
                                     <div class="col">
 
                                         <div class="form-group">
-                                            <label for="fname">First name:</label>
-                                            <input name="fname" type="text" class="form-control" value="<?= $resident['fname']?>" required>
+                                            <label for="fname">First Name:</label>
+                                            <input name="fname" type="text" class="form-control" placeholder="Enter First Name:" value="<?= $resident['fname']?>" required>
                                             <div class="valid-feedback">Valid.</div>
                                             <div class="invalid-feedback">Please fill out this field.</div>  
                                         </div>

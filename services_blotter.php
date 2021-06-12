@@ -333,7 +333,6 @@
 
         <br>
         <br>
-        <br>
 
         <!-- Slideshow -->
 

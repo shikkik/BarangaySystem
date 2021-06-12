@@ -22,6 +22,8 @@
 
     <!-- Custom styles for this template-->
     <link href="css/sb-admin-2.min.css" rel="stylesheet">
+    <!-- fontawesome icons --> 
+    <script src="https://kit.fontawesome.com/67a9b7069e.js" crossorigin="anonymous"></script>
 
 </head>
 

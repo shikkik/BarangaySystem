@@ -472,7 +472,7 @@
                                 <div class="row"> 
                                     <div class="col">
                                         <div class="form-group">
-                                            <label for="lname">Last name:</label>
+                                            <label for="lname">Last Name:</label>
                                             <input name="lname" value="<?= $resident['lname']?>" type="text" class="form-control" required>
                                             <div class="valid-feedback">Valid.</div>
                                             <div class="invalid-feedback">Please fill out this field.</div>
@@ -481,7 +481,7 @@
 
                                     <div class="col">
                                         <div class="form-group">
-                                            <label for="fname">First name:</label>
+                                            <label for="fname">First Name:</label>
                                             <input name="fname" value="<?= $resident['fname']?>" type="text" class="form-control" required>
                                             <div class="valid-feedback">Valid.</div>
                                             <div class="invalid-feedback">Please fill out this field.</div>
@@ -489,7 +489,7 @@
                                     </div>
                                     <div class="col">
                                         <div class="form-group">
-                                            <label for="mname">Middle name:</label>
+                                            <label for="mname">Middle Name:</label>
                                             <input name="mi" value="<?= $resident['mi']?>" type="text" class="form-control" required>
                                             <div class="valid-feedback">Valid.</div>
                                             <div class="invalid-feedback">Please fill out this field.</div>
