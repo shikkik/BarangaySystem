@@ -74,7 +74,7 @@
             }
 
             .picture1{
-                height: 8%;
+                height: 100%;
             }
 
             /* Position the image container (needed to position the left and right arrows) */
@@ -97,7 +97,7 @@
             .next {
             cursor: pointer;
             position: absolute;
-            top: 18%;
+            top: 45%;
             width: auto;
             padding: 30px;
             margin-top: -50px;
@@ -166,7 +166,7 @@
 
 
             .paa{
-                margin-top: 10px;
+                margin-top: 20px;
                 position: relative;
                 left: -28%;
             }
@@ -174,7 +174,7 @@
             /* Card Flip */
 
             .container3{
-                margin-top: -65%;
+                margin-top: 3%;
             }
 
             .flip-card {
@@ -397,7 +397,7 @@
         </div>
 
         <div class="container container3">
-            <h1 style="text-align:center">Blotter Reason</h1>
+            <h1 style="text-align:center">Blotter Information</h1>
             <hr style="background-color: black;">
 
             <br> 
