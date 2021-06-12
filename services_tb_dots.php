@@ -341,16 +341,11 @@
 
                                     <div class="col">
                                             <label for="Sex"class="mtop">Sex</label>
-                                        <div class="form-check">
-                                            <label class="form-check-label">
-                                            <input name="sex" type="radio" class="form-check-input" name="optradio">Male
-                                            </label>
-                                        </div>
-                                        <div class="form-check">
-                                            <label class="form-check-label">
-                                            <input name="sex" type="radio" class="form-check-input" name="optradio">Female
-                                            </label>
-                                        </div>    
+                                            <select class="form-control" name="sex" id="sex">
+                                            <option value="">---</option>
+                                            <option value="Male">Male</option>
+                                            <option value="Female">Female</option>
+                                            </select>  
                                     </div>
 
                                     <div class="col">
@@ -368,7 +363,7 @@
                                     <div class="col">
                                         <div class="form-group">
                                             <label for="height">Height:</label>
-                                            <input name="height" type="text" class="form-control" placeholder="Enter Height" required>
+                                            <input name="height" type="text" class="form-control" placeholder="In Centimeters (cm)" required>
                                             <div class="valid-feedback">Valid.</div>
                                             <div class="invalid-feedback">Please fill out this field.</div>
                                         </div>
@@ -377,7 +372,7 @@
                                     <div class="col">
                                         <div class="form-group">
                                             <label for="weight">Weight:</label>
-                                            <input name="weight" type="text" class="form-control" placeholder="Enter Weight" required>
+                                            <input name="weight" type="text" class="form-control" placeholder="In Kilograms (kg)" required>
                                             <div class="valid-feedback">Valid.</div>
                                             <div class="invalid-feedback">Please fill out this field.</div>
                                         </div>   

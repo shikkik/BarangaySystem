@@ -8,6 +8,9 @@
    $anmcount = $residentbmis->count_animals();
    $anmcountm = $residentbmis->count_male_animals();
    $anmcountf = $residentbmis->count_female_animals();
+
+       $animalcountd = $bmis->count_animal_dogs();
+    $animalcountc = $bmis->count_animal_cats();
    
    $dt = new DateTime("now", new DateTimeZone('Asia/Manila'));
    $tm = new DateTime("now", new DateTimeZone('Asia/Manila'));
@@ -152,27 +155,87 @@
         </div>
 
         <div class="col-md-4"> 
-            <div class="card"> 
-                <div class="card-body border-left-primary"> 
-                    <h5> Number of Animals </h5> <br> <?= $anmcount ?>
+
+          <div class="card border-left-primary shadow">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                            Number of Animals</div>
+                                <div class="h5 mb-0 font-weight-bold text-dark"><?= $anmcount?></div>
+                        </div>
+                        <div class="col-auto">
+                            <i class="fas fa-paw fa-2x text-dark"></i>
+                        </div>
+                    </div>
                 </div>
-            </div> 
-
+            </div>
             <br> 
-
             <br>
 
-            <div class="card"> 
-                <div class="card-body border-left-primary"> 
-                    <h5> Male Animals </h5> <br> <?= $anmcountm ?>
+            <div class="card border-left-primary shadow">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                            Total Cats Registered</div>
+                                <div class="h5 mb-0 font-weight-bold text-dark"><?= $animalcountc?></div>
+                        </div>
+                        <div class="col-auto">
+                            <i class="fas fa-cat fa-2x text-dark"></i>
+                        </div>
+                    </div>
                 </div>
             </div>
 
             <br> 
 
-            <div class="card"> 
-                <div class="card-body border-left-primary"> 
-                    <h5> Female Animals </h5> <br> <?= $anmcountf ?>
+            <div class="card border-left-primary shadow">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                            Total Dogs Registered</div>
+                                <div class="h5 mb-0 font-weight-bold text-dark"><?= $animalcountd?></div>
+                        </div>
+                        <div class="col-auto">
+                            <i class="fas fa-dog fa-2x text-dark"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <br>
+
+            <div class="card border-left-primary shadow">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                            Number of Male Animals</div>
+                                <div class="h5 mb-0 font-weight-bold text-dark"><?= $anmcountm?></div>
+                        </div>
+                        <div class="col-auto">
+                            <i class="fas fa-paw fa-2x text-dark"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <br> 
+
+            <div class="card border-left-primary shadow">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                            Number of Female Animals</div>
+                                <div class="h5 mb-0 font-weight-bold text-dark"><?= $anmcountf?></div>
+                        </div>
+                        <div class="col-auto">
+                            <i class="fas fa-paw fa-2x text-dark"></i>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div> 

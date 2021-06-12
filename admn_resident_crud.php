@@ -125,33 +125,69 @@
         </div>
 
         <div class="col-md-4"> 
-            <div class="card"> 
-                <div class="card-body border-left-primary"> 
-                    <h5> Number of Residents </h5> <br> <?= $rescount ?>
+            <div class="card border-left-primary shadow">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                            Number of Residents</div>
+                                <div class="h5 mb-0 font-weight-bold text-dark"><?= $rescount ?></div>
+                        </div>
+                        <div class="col-auto">
+                            <i class="fas fa-user fa-2x text-dark"></i>
+                        </div>
+                    </div>
                 </div>
-            </div> 
+            </div>
 
             <br> 
 
-            <div class="card"> 
-                <div class="card-body border-left-primary"> 
-                    <h5> Total Household Head </h5> <br> <?= $rescountfh ?>
+            <div class="card border-left-primary shadow">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                            Total Household Head</div>
+                                <div class="h5 mb-0 font-weight-bold text-dark"><?= $rescountfh ?></div>
+                        </div>
+                        <div class="col-auto">
+                            <i class="fas fa-user fa-2x text-dark"></i>
+                        </div>
+                    </div>
                 </div>
             </div>
             
             <br>
 
-            <div class="card"> 
-                <div class="card-body border-left-primary"> 
-                    <h5> Male Residents </h5> <br> <?= $rescountm ?>
+            <div class="card border-left-primary shadow">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                            Total Male Residents</div>
+                                <div class="h5 mb-0 font-weight-bold text-dark"><?= $rescountm ?></div>
+                        </div>
+                        <div class="col-auto">
+                            <i class="fas fa-male fa-2x text-dark"></i>
+                        </div>
+                    </div>
                 </div>
             </div>
 
             <br> 
 
-            <div class="card"> 
-                <div class="card-body border-left-primary"> 
-                    <h5> Female Residents </h5> <br> <?= $rescountf ?>
+            <div class="card border-left-primary shadow">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                            Total Female Residents</div>
+                                <div class="h5 mb-0 font-weight-bold text-dark"><?= $rescountf ?></div>
+                        </div>
+                        <div class="col-auto">
+                            <i class="fas fa-male fa-2x text-dark"></i>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div> 

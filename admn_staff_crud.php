@@ -71,11 +71,18 @@
         </div>
 
         <div class="col-md-4">
-            <div class="card"> 
-                <div class="card-body border-left-primary"> 
-                    <h5> Number of Staffs Registered </h5>
-                    <br>
-                    <h5> <?= $staffcount?></h5>
+            <div class="card border-left-primary shadow">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                                Number of Staff Registered</div>
+                                <div class="h5 mb-0 font-weight-bold text-dark"><?= $staffcount?></div>
+                        </div>
+                        <div class="col-auto">
+                            <i class="fas fa-user-tie fa-2x text-dark"></i>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
