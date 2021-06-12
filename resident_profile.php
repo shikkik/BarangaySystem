@@ -202,7 +202,6 @@
                                 <button type="submit button" class="btn btn-info"  name="search_household">View Household</button>
                                 <button class="btn btn-primary" type="submit" name="profile_update"> Update </button>
                                 <a href="resident_profile.php?id_resident=<?= $userdetails['id_resident'];?>"></a>
-                                <button class="btn"><a href="clearance_form.php?id_resident=<?= $userdetails['id_resident'];?>"> <i class="fas fa-user" style="padding: 0.5em;"></i>Generate  </button>
                                 
                             <div>
                             <br /><br />

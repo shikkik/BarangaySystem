@@ -391,6 +391,7 @@
                             
                                 <div class="modal-footer">
                                     <div class="paa">
+                                    
                                         <input name="addedby" type="hidden" value="<?= $userdetails['surname']?>, <?= $userdetails['firstname']?>">
                                         <button type="button" class="btn btn-dark" data-dismiss="modal">Close</button>
                                         <button name="create_tbdots" type="submit" class="btn btn-primary">Save changes</button>

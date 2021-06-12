@@ -945,7 +945,7 @@ class BMISClass {
     public function delete_certofres(){
         $id_rescert = $_POST['id_rescert'];
 
-        if(isset($_POST['delete_clearance'])) {
+        if(isset($_POST['delete_certofres'])) {
             $connection = $this->openConn();
             $stmt = $connection->prepare("DELETE FROM tbl_rescert where id_rescert = ?");
             $stmt->execute([$id_rescert]);
@@ -1110,6 +1110,26 @@ class BMISClass {
         $connection = $this->openConn();
 
         $stmt = $connection->prepare("SELECT COUNT(*) from tbl_animal");
+        $stmt->execute();
+        $animalcount = $stmt->fetchColumn();
+
+        return $animalcount;
+    }
+
+    public function count_animal_dogs() {
+        $connection = $this->openConn();
+
+        $stmt = $connection->prepare("SELECT COUNT(*) from tbl_animal where pettype = 'dog'");
+        $stmt->execute();
+        $animalcount = $stmt->fetchColumn();
+
+        return $animalcount;
+    }
+
+    public function count_animal_cats() {
+        $connection = $this->openConn();
+
+        $stmt = $connection->prepare("SELECT COUNT(*) from tbl_animal where pettype = 'cat'");
         $stmt->execute();
         $animalcount = $stmt->fetchColumn();
 

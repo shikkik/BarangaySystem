@@ -189,6 +189,31 @@
 
             return $staffcount;
         }
+
+        public function count_mstaff() {
+            $connection = $this->openConn();
+
+            $stmt = $connection->prepare("SELECT COUNT(*) from tbl_user where sex = 'male'");
+            $stmt->execute();
+            $staffcount = $stmt->fetchColumn();
+
+            return $staffcount;
+        }
+
+        public function count_fstaff() {
+            $connection = $this->openConn();
+
+            $stmt = $connection->prepare("SELECT COUNT(*) from tbl_user where sex = 'female'");
+            $stmt->execute();
+            $staffcount = $stmt->fetchColumn();
+
+            return $staffcount;
+        }
+
+
+
+
+
     }
     $staffbmis = new StaffClass();
 ?>

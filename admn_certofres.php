@@ -4,6 +4,7 @@
    require('classes/resident.class.php');
    $userdetails = $bmis->get_userdata();
    $bmis->validate_admin();
+   $bmis->delete_certofres();
    $view = $bmis->view_certofres();
    $id_resident = $_GET['id_resident'];
    $resident = $residentbmis->get_single_certofres($id_resident);
@@ -54,7 +55,7 @@
                         <form action="" method="post">
                             <a class="btn btn-primary" href="rescert_form.php?id_resident=<?= $view['id_resident'];?>">Generate </a> 
                             <input type="hidden" name="id_rescert" value="<?= $view['id_rescert'];?>">
-                            <button class="btn btn-danger" type="submit" name="delete_rescert"> Delete </button>
+                            <button class="btn btn-danger" type="submit" name="delete_certofres"> Delete </button>
                         </form>
                         </td>
                         <td> <?= $view['id_rescert'];?> </td>
