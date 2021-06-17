@@ -41,7 +41,7 @@ class BMISClass {
             if(isset($_POST['login'])) {
 
                 $email = $_POST['email'];
-                $password = md5($_POST['password']);
+                $password = ($_POST['password']);
             
                 $connection = $this->openConn();
 
@@ -131,6 +131,7 @@ class BMISClass {
 
         //eto si userdata yung mag s set ng name mo tsaka role/access habang ikaw ay nag b browse at gumagamit ng store management
         $_SESSION['userdata'] = array(
+            "id_admin" => $array['id_admin'],
             "id_resident" => $array['id_resident'],
             "id_user" => $array['id_user'],
             "emailadd" => $array['email'],
@@ -183,6 +184,64 @@ class BMISClass {
             else {
                 echo "<script type='text/javascript'>alert('Account already exists');</script>";
             }
+    }
+
+    public function get_single_admin($id_admin){
+
+        $id_admin = $_GET['id_admin'];
+        
+        $connection = $this->openConn();
+        $stmt = $connection->prepare("SELECT * FROM tbl_admin where id_admin = ?");
+        $stmt->execute([$id_admin]);
+        $admin = $stmt->fetch();
+        $total = $stmt->rowCount();
+
+        if($total > 0 )  {
+            return $admin;
+        }
+        else{
+            return false;
+        }
+    }
+
+    public function admin_changepass() {
+        $id_admin = $_GET['id_admin'];
+        $oldpassword = ($_POST['oldpassword']);
+        $oldpasswordverify = ($_POST['oldpasswordverify']);
+        $newpassword = ($_POST['newpassword']);
+        $checkpassword = $_POST['checkpassword'];
+
+        if(isset($_POST['admin_changepass'])) {
+
+            $connection = $this->openConn();
+            $stmt = $connection->prepare("SELECT `password` FROM tbl_admin WHERE id_admin = ?");
+            $stmt->execute([$id_admin]);
+            $result = $stmt->fetch();
+
+            if($result == 0) {
+                
+                echo "Old Password is Incorrect";
+            }
+
+            elseif ($oldpassword != $oldpasswordverify) {
+            }
+
+            elseif ($newpassword != $checkpassword){
+                echo "New Password and Verification Password does not Match";
+            }
+
+            else {
+                $connection = $this->openConn();
+                $stmt = $connection->prepare("UPDATE tbl_admin SET password =? WHERE id_admin = ?");
+                $stmt->execute([$newpassword, $id_admin]);
+                
+                $message2 = "Password Updated";
+                echo "<script type='text/javascript'>alert('$message2');</script>";
+                header("refresh: 0");
+            }
+
+
+        }
     }
 
 

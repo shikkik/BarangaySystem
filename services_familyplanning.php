@@ -563,7 +563,7 @@
                                 <div class="row">
                                     <div class="col">
                                         <label for="Age" class="mtop">Age </label>
-                                        <input name="sp_age" type="number" class="form-control" placeholder="Enter your Age" value="<?= $resident['age']?>" required>
+                                        <input name="sp_age" type="number" class="form-control" placeholder="Enter your Age" required>
                                         <div class="valid-feedback">Valid.</div>
                                         <div class="invalid-feedback">Please fill out this field.</div>
                                     </div>

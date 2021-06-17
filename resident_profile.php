@@ -129,6 +129,7 @@
                         <form method="post">
                         <div class="row"> 
                             <div class="col-md-2"> 
+                                <h5> Profile Image </h5> <br>
                                 <h5> Name:</h5> <br>
                                 <h5> Email: </h5> <br>
                                 <h5> Sex: </h5> <h5> <br>
@@ -139,6 +140,7 @@
                             </div>
 
                             <div class="col-md-4"> 
+                                
                                 <h5><?= $resident['lname'];?>, <?= $resident['fname'];?> <?= $resident['mi'];?></h5> <br>
                                 <h5> <?= $resident['email'];?> </h5><br>
                                 <h5><?= $resident['sex'];?> </h5><br>

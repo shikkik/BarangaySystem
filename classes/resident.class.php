@@ -237,43 +237,78 @@
         }
 
     }
+    
+
+    //------------------------------------- RESIDENT FILTERING QUERIES --------------------------------------
+
+    public function view_resident_minor(){
+        $connection = $this->openConn();
+        $stmt = $connection->prepare("SELECT * FROM tbl_resident WHERE `age` <= 17");
+        $stmt->execute();
+        $view = $stmt->fetchAll();
+        return $view;
+    }
+
+    public function view_resident_adult(){
+        $connection = $this->openConn();
+        $stmt = $connection->prepare("SELECT * FROM tbl_resident WHERE `age` >= 18 AND `age` <= 59");
+        $stmt->execute();
+        $view = $stmt->fetchAll();
+        return $view;
+    }
+
+    public function view_resident_senior(){
+        $connection = $this->openConn();
+        $stmt = $connection->prepare("SELECT * FROM tbl_resident WHERE `age` >= 60");
+        $stmt->execute();
+        $view = $stmt->fetchAll();
+        return $view;
+    }
+
+
+
+
 
     //-------------------------------------- EXTRA FUNCTIONS ------------------------------------------------
 
-    public function change_password() {
-        if (isset($_POST['resident_change_password'])) {
-            $id_resident = $_GET['id_resident'];
-            $oldpassword = md5($_POST['oldpassword']);
-            $oldpasswordverify = md5($_POST['oldpasswordverify']);
-            $newpassword = md5($_POST['newpassword']);
-            $checkpassword = $_POST['checkpassword'];
+    public function resident_changepass() {
+        $id_resident = $_GET['id_resident'];
+        $oldpassword = ($_POST['oldpassword']);
+        $oldpasswordverify = ($_POST['oldpasswordverify']);
+        $newpassword = ($_POST['newpassword']);
+        $checkpassword = $_POST['checkpassword'];
+
+        if(isset($_POST['resident_changepass'])) {
 
             $connection = $this->openConn();
             $stmt = $connection->prepare("SELECT `password` FROM tbl_resident WHERE id_resident = ?");
             $stmt->execute([$id_resident]);
             $result = $stmt->fetch();
 
-            if($result > 0) {
+            if($result == 0) {
                 
-                if (md5($_POST['newpassword']) != md5($_POST['checkpassword'])){
-                    echo "New Password and Verification Password does not Match";
-                }
-
-                elseif (md5($_POST['oldpassword']) != md5($_POST['oldpasswordverify'])){
-                    echo "Old Password is Incorrect";
-                }
-
-                else {
-                    $connection = $this->openConn();
-                    $stmt = $connection->prepare("UPDATE tbl_resident SET password =? WHERE id_resident = ?");
-                    $stmt->execute([ md5($newpassword), $id_resident]);
-                    
-                    $message2 = "Password Updated";
-                    echo "<script type='text/javascript'>alert('$message2');</script>";
-                    header("refresh: 0");
-                }
-
+                echo "Old Password is Incorrect";
             }
+
+            elseif ($oldpassword != $oldpasswordverify) {
+                echo "Old Password is Incorrect";
+            }
+
+            elseif ($newpassword != $checkpassword){
+                echo "New Password and Verification Password does not Match";
+            }
+
+            else {
+                $connection = $this->openConn();
+                $stmt = $connection->prepare("UPDATE tbl_resident SET password =? WHERE id_resident = ?");
+                $stmt->execute([$newpassword, $id_resident]);
+                
+                $message2 = "Password Updated";
+                echo "<script type='text/javascript'>alert('$message2');</script>";
+                header("refresh: 0");
+            }
+
+
         }
     }
 
