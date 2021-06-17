@@ -514,14 +514,9 @@
                                         <div class="valid-feedback">Valid.</div>
                                         <div class="invalid-feedback">Please fill out this field.</div>
                                     </div>
-                                    <div class="col">
-                                        <div class="form-group">
-                                            <label for="date"class="mtop">Date of Vaccine: </label>
-                                            <input name="vaccdate" value="<?= $cdate?>" type="date" class="form-control" required>
-                                            <div class="valid-feedback">Valid.</div>
-                                            <div class="invalid-feedback">Please fill out this field.</div>
-                                        </div>
-                                    </div>
+
+                            
+
                                 </div>
                                 
                             
@@ -530,6 +525,7 @@
                             
                             <div class="modal-footer">
                                 <div class="paa">
+                                    <input name="vaccdate" value="<?= $cdate?>" type="hidden" class="form-control">
                                     <input name="addedby" type="hidden" value="<?= $userdetails['surname']?>, <?= $userdetails['firstname']?>">
                                     <input name="id_resident" type="hidden" value="<?= $resident['id_resident']?>">
                                     <button type="button" class="btn btn-dark" data-dismiss="modal">Close</button>

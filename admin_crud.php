@@ -3,7 +3,9 @@
     
     require('classes/main.class.php');
     $bmis->create_admin();
-    $bmis->validate_admin();
+    $userdetails = $bmis->get_userdata();
+
+    print_r($userdetails);
 
 ?>
 
@@ -11,7 +13,7 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-    
+        <link href="css/sb-admin-2.min.css" rel="stylesheet">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Document</title>
     </head>
@@ -37,7 +39,9 @@
                 <input type="text" name="mi">
 
                 <input type="hidden" name="role" value="administrator"> 
-                <button class="btn" type="submit" name="add_admin"> Add </button>
+                <button class="btn btn-dark" type="submit" name="add_admin"> Add </button>
+
+                <a href="admin_changepass.php?id_admin=<?= $userdetails['id_admin']?>" class="btn btn-dark"> Change Password </a>
             </form>
             </div>
         </div> 

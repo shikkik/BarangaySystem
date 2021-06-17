@@ -141,9 +141,9 @@
                 $connection = $this->openConn();
                 $stmt = $connection->prepare("DELETE FROM tbl_user where id_user = ?");
                 $stmt->execute([$id_user]);
-
+                
                 $message2 = "Staff Account Deleted";
-    
+                
                 echo "<script type='text/javascript'>alert('$message2');</script>";
                  header('refresh:0');
             }

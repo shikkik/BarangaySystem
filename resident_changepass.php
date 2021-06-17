@@ -3,7 +3,7 @@
 
     //$view = $residentbmis->view_single_resident($email);
     $userdetails = $residentbmis->get_userdata();
-    $residentbmis->change_password();
+    $residentbmis->resident_changepass();
     //print_r($userdetails);
 
     
@@ -144,7 +144,7 @@
 
                                             <br>
 
-                                            <button class="btn btn-primary" type="submit" name="resident_change_password"> Change Password </button>
+                                            <button class="btn btn-primary" type="submit" name="resident_changepass"> Change Password </button>
                                             </form>
                                         </div>  
                                     </div>   
