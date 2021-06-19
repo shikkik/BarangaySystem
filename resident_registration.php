@@ -112,104 +112,226 @@
             <div class="row">
                 <div class="col-12">
                     <h1 class="text-center">Registration Form</h1>
+                    <br>
                 </div>
             </div>
 
             <div class="row margin mtop"> 
                 <div class="col-sm"> </div>
 
-                <div class="col-sm-10">   
+                <div class="col-sm-8">   
                     <div class="card mbottom" style="margin-bottom: 3em;">
                         <div class="card-body" >
-                        <form method="post"> 
-                            <div class="row">
-                                <div class="col">
-                                    <label> Last Name</label>
-                                        <input type="text" class="form-control" name="lname"  placeholder="Enter last name">
+                            <form method="post" class="was-validated">
+
+                                <div class="row">
+                                    <div class="col">
+                                        <div class="form-group">
+                                            <label> Last Name: </label>
+                                            <input type="text" class="form-control" name="lname"  placeholder="Enter Last Name" required>
+                                            <div class="valid-feedback">Valid.</div>
+                                            <div class="invalid-feedback">Please fill out this field.</div>
+                                        </div>
                                     </div>
-                                
-                                <div class="col">
-                                    <label class="mtop" >First Name </label>
-                                    <input type="text" class="form-control" name="fname"  placeholder="Enter first name">
-                                </div>
-                            </div>
+                                    
+                                    <div class="col">
+                                        <div class="form-group">
+                                            <label class="mtop" >First Name: </label>
+                                            <input type="text" class="form-control" name="fname"  placeholder="Enter First Name" required>
+                                            <div class="valid-feedback">Valid.</div>
+                                            <div class="invalid-feedback">Please fill out this field.</div>
+                                        </div>
+                                    </div>
 
-                            <div class="row"> 
-                                <div class="col"> 
-                                    <label class="mtop"> Middle Initial </label>
-                                    <input type="text" class="form-control" name="mi" placeholder="Enter middle initial">
-                                </div>
-
-                                <div class="col"> 
-                                    <label>Status</label>
-                                        <select class="form-control" name="status" id="status">
-                                        <option value="">---</option>
-                                        <option value="Single">Single</option>
-                                        <option value="Married">Married</option>
-                                        <option value="Widowed">Widowed</option>
-                                        <option value="Divorced">Divorced</option>
-                                        </select>  
-                                </div>
-                            </div>
-                                        
-                            <div class="row">
-                                <div class="col">
-                                    <label>Email </label>
-                                    <input type="email" class="form-control" name="email"  placeholder="Enter email">
-                                    <label class="mtop">Birth Date </label>
-                                    <input type="date" class="form-control" name="bdate">
-                                    <label class="mtop">Contact Number</label>
-                                    <input type="tel" class="form-control" name="contact" placeholder="Enter contact number">
+                                    <div class="col"> 
+                                        <div class="form-group">
+                                            <label class="mtop"> Middle Initial: </label>
+                                            <input type="text" class="form-control" name="mi" placeholder="Enter Middle Initial" required>
+                                            <div class="valid-feedback">Valid.</div>
+                                            <div class="invalid-feedback">Please fill out this field.</div>
+                                        </div>
+                                    </div>
                                 </div>
 
-                                <div class="col">
-                                    <label>Password</label>
-                                    <input type="password" class="form-control" name="password" placeholder="Enter password">
-                                    <label class="mtop">Birth Place </label>
-                                    <input type="text" class="form-control" name="bplace"  placeholder="Enter birth place">
-                                    <label class="mtop">Nationality </label>
-                                    <input type="text" class="form-control" name="nationality"  placeholder="Enter nationality">
-                                </div>
-                            </div>
+                                <div class="row"> 
+                                    <div class="col">
+                                        <div class="form-group">
+                                            <label class="mtop">Contact Number:</label>
+                                            <input type="tel" class="form-control" name="contact" placeholder="Enter Contact Number" required>
+                                            <div class="valid-feedback">Valid.</div>
+                                            <div class="invalid-feedback">Please fill out this field.</div>
+                                        </div>
+                                    </div>
 
-                            <div class="row">
-                                <div class="col">
-                                    <label> Address </label>
-                                    <input type="text" class="form-control" name="address"  placeholder="Enter Address">
-                                </div>
-
-                                <div class="col">
-                                    <label>Family Role</label>
-                                    <select class="form-control" name="family_role" id="family_role">
-                                    <option value="">---</option>
-                                    <option value="Family Head">Family Head</opt ion>
-                                    <option value="Family Member">Family Member</option>
-                                    </select>
-                                </div>
-                            </div>
-
-                            <div class="row">
-                                <div class="col">
-                                    <label>Age</label>
-                                    <input type="number" class="form-control" name="age" placeholder="Age">
+                                    <div class="col">
+                                        <div class="form-group">
+                                            <label>Email: </label>
+                                            <input type="email" class="form-control" name="email"  placeholder="Enter Email" required>
+                                            <div class="valid-feedback">Valid.</div>
+                                            <div class="invalid-feedback">Please fill out this field.</div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="col">
+                                        <div class="form-group">
+                                            <label>Password:</label>
+                                            <input type="password" class="form-control" name="password" placeholder="Enter Password" required>
+                                            <div class="valid-feedback">Valid.</div>
+                                            <div class="invalid-feedback">Please fill out this field.</div>
+                                        </div>
+                                    </div>
                                 </div>
 
-                                <div class="col rb">
-                                    <label class="mtop">Sex</label>
-                                    <select class="form-control" name="sex" id="sex">
-                                    <option value="">---</option>
-                                    <option value="Male">Male</opt ion>
-                                    <option value="Female">Female</option>
-                                    </select>
-                                </div>           
-                            </div>
+                                <div class="row">
+                                    <div class="col">
+                                        <div class="form-group">
+                                            <label> House No: </label>
+                                            <input type="text" class="form-control" name="houseno"  placeholder="Enter House No." required>
+                                            <div class="valid-feedback">Valid.</div>
+                                            <div class="invalid-feedback">Please fill out this field.</div>
+                                        </div>
+                                    </div>
 
-                            <br>
-                                
-                            <input type="hidden" class="form-control" name="role" value="resident">
-                            <button class="btn btn-primary" type="submit" name="add_resident"> Submit </button>
-                            <a class="btn btn-danger" href="index.php"> Back to Login</a>
-                        </form>
+                                    <div class="col">
+                                        <div class="form-group">
+                                            <label> Street: </label>
+                                            <input type="text" class="form-control" name="street"  placeholder="Enter Street" required>
+                                            <div class="valid-feedback">Valid.</div>
+                                            <div class="invalid-feedback">Please fill out this field.</div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col">
+                                        <div class="form-group">
+                                            <label> Barangay: </label>
+                                            <input type="text" class="form-control" name="brgy"  placeholder="Enter Barangay" required>
+                                            <div class="valid-feedback">Valid.</div>
+                                            <div class="invalid-feedback">Please fill out this field.</div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col">
+                                        <div class="form-group">
+                                            <label> Municipality: </label>
+                                            <input type="text" class="form-control" name="municipality"  placeholder="Enter Municipality" required>
+                                            <div class="valid-feedback">Valid.</div>
+                                            <div class="invalid-feedback">Please fill out this field.</div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col">
+                                        <div class="form-group">
+                                            <label class="mtop">Birth Date: </label>
+                                            <input type="date" class="form-control" name="bdate" required>
+                                            <div class="valid-feedback">Valid.</div>
+                                            <div class="invalid-feedback">Please fill out this field.</div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col">
+                                        <div class="form-group">
+                                            <label class="mtop">Birth Place </label>
+                                            <input type="text" class="form-control" name="bplace"  placeholder="Enter Birth Place" required>
+                                            <div class="valid-feedback">Valid.</div>
+                                            <div class="invalid-feedback">Please fill out this field.</div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col">
+                                        <div class="form-group">
+                                            <label class="mtop">Nationality: </label>
+                                            <input type="text" class="form-control" name="nationality"  placeholder="Enter Nationality" required>
+                                            <div class="valid-feedback">Valid.</div>
+                                            <div class="invalid-feedback">Please fill out this field.</div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col"> 
+                                        <div class="form-group">
+                                            <label>Status: </label>
+                                            <select class="form-control" name="status" id="status" required>
+                                                <option value="">Choose your Status</option>
+                                                <option value="Single">Single</option>
+                                                <option value="Married">Married</option>
+                                                <option value="Widowed">Widowed</option>
+                                                <option value="Divorced">Divorced</option>
+                                            </select>
+                                            <div class="valid-feedback">Valid.</div>
+                                            <div class="invalid-feedback">Please fill out this field.</div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col">
+                                        <div class="form-group">
+                                            <label>Age</label>
+                                            <input type="number" class="form-control" name="age" placeholder="Enter Age" required>
+                                            <div class="valid-feedback">Valid.</div>
+                                            <div class="invalid-feedback">Please fill out this field.</div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col rb">
+                                        <div class="form-group">
+                                            <label class="mtop">Sex</label>
+                                            <select class="form-control" name="sex" id="sex" required>
+                                                <option value="">Choose your Sex</option>
+                                                <option value="Male">Male</opt ion>
+                                                <option value="Female">Female</option>
+                                            </select>
+                                            <div class="valid-feedback">Valid.</div>
+                                            <div class="invalid-feedback">Please fill out this field.</div>
+                                        </div>
+                                    </div>         
+                                </div>
+
+                                <div class="row">
+                                    <div class="col">
+                                        <label>Upload Photo:</label>
+                                        <div class="custom-file mb-3 form-group">
+                                            <input type="file" class="custom-file-input" id="customFile" name="filename" required>
+                                            <label class="custom-file-label" for="customFile">Choose File</label>
+                                            <div class="valid-feedback">Valid.</div>
+                                            <div class="invalid-feedback">Please fill out this field.</div>
+                                        </div>
+                                    </div>
+                                  
+                                    <div class="col"> 
+                                        <div class="form-group">
+                                            <label>Registered Voter? </label>
+                                            <select class="form-control" name="regvote" id="regvote" required>
+                                                <option value="">...</option>
+                                                <option value="Yes">Yes</option>
+                                                <option value="No">No</option>
+                                            </select>
+                                            <div class="valid-feedback">Valid.</div>
+                                            <div class="invalid-feedback">Please fill out this field.</div>
+                                        </div>
+                                    </div>                                    
+                                    <div class="col"> 
+                                        <div class="form-group">
+                                            <label>Are you head of the family? </label>
+                                            <select class="form-control" name="famhead" id="famhead" required>
+                                                <option value="">...</option>
+                                                <option value="Yes">Yes</option>
+                                                <option value="No">No</option>
+                                            </select>
+                                            <div class="valid-feedback">Valid.</div>
+                                            <div class="invalid-feedback">Please fill out this field.</div>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                                <br>
+                                    
+                                <input type="hidden" class="form-control" name="role" value="resident">
+                                <button style="width: 130px; margin-left:36%;" class="btn btn-primary" type="submit" name="add_resident"> Submit </button>
+                                <a style="width: 130px;" class="btn btn-danger" href="index.php"> Back to Login</a>
+                            </form>
                         </div>
                     </div> 
                 </div>
@@ -384,6 +506,14 @@
             </div>
 
         </footer>
+
+        <script>
+            // Add the following code if you want the name of the file appear on select
+            $(".custom-file-input").on("change", function() {
+            var fileName = $(this).val().split("\\").pop();
+            $(this).siblings(".custom-file-label").addClass("selected").html(fileName);
+            });
+        </script>
 
         <script src="../BarangaySystem/bootstrap/js/bootstrap.bundle.js" type="text/javascript"> </script>
     </body>
