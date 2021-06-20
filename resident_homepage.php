@@ -26,7 +26,7 @@
 <html>
 
     <head> 
-    <title> Barangay Management System </title>
+    <title> Barangay Information & E-Services Management System </title>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
         <!-- responsive tags for screen compatibility -->
@@ -118,7 +118,7 @@
         <!-- eto yung navbar -->
         <nav class="navbar navbar-dark bg-primary sticky-top">
             <a class="navbar-brand" href="index.php"> <img src="../BarangaySystem/icons/beverlylogo.png" width="40px" height="40px"> 
-            <a class="navbar-brand" href="resident_homepage.php">Barangay Beverly Hills</a>
+            <a class="navbar-brand" href="resident_homepage.php">Barangay Information & E-Services Management System</a>
 
             <div class="dropdown ml-auto">
                 <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown"><?= $userdetails['surname'];?>, <?= $userdetails['firstname'];?>

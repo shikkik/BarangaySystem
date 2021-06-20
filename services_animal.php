@@ -25,7 +25,7 @@
 
 <html>
   <head> 
-    <title> Barangay Management System </title>
+    <title> Barangay Information & E-Services Management System </title>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-modal/2.2.6/js/bootstrap-modalmanager.min.js" integrity="sha512-/HL24m2nmyI2+ccX+dSHphAHqLw60Oj5sK8jf59VWtFWZi9vx7jzoxbZmcBeeTeCUc7z1mTs3LfyXGuBU32t+w==" crossorigin="anonymous"></script>
       <!-- responsive tags for screen compatibility -->
@@ -169,7 +169,7 @@
 
     <nav class="navbar navbar-dark bg-primary sticky-top">
             <a class="navbar-brand" href="index.php"> <img src="../BarangaySystem/icons/beverlylogo.png" width="40px" height="40px"> 
-            <a class="navbar-brand" href="resident_homepage.php">Barangay Beverly Hills</a>
+            <a class="navbar-brand" href="resident_homepage.php">Barangay Information & E-Services Management System</a>
 
             <div class="dropdown ml-auto">
                 <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown"><?= $userdetails['surname'];?>, <?= $userdetails['firstname'];?>

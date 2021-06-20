@@ -197,7 +197,7 @@
     public function count_head_resident() {
         $connection = $this->openConn();
 
-        $stmt = $connection->prepare("SELECT COUNT(*) from tbl_resident where family_role = 'Family Head'");
+        $stmt = $connection->prepare("SELECT COUNT(*) from tbl_resident where family_role = 'Yes'");
         $stmt->execute();
         $rescount = $stmt->fetchColumn();
 
@@ -311,6 +311,58 @@
 
         }
     }
+
+
+
+
+
+    //========================================== SCOPE CHANGED FUNCTIONS ===========================================
+
+    public function view_resident_household(){
+        $connection = $this->openConn();
+        $stmt = $connection->prepare("SELECT * from tbl_resident WHERE `family_role` = 'Yes'");
+        $stmt->execute();
+        $view = $stmt->fetchAll();
+        return $view;
+    }
+
+    public function view_resident_voters(){
+        $connection = $this->openConn();
+        $stmt = $connection->prepare("SELECT * from tbl_resident WHERE `voter` = 'Yes'");
+        $stmt->execute();
+        $view = $stmt->fetchAll();
+        return $view;
+    }
+
+    public function view_resident_male(){
+        $connection = $this->openConn();
+        $stmt = $connection->prepare("SELECT * from tbl_resident WHERE `sex` = 'Male'");
+        $stmt->execute();
+        $view = $stmt->fetchAll();
+        return $view;
+    }
+
+    public function view_resident_female(){
+        $connection = $this->openConn();
+        $stmt = $connection->prepare("SELECT * from tbl_resident WHERE `sex` = 'Female'");
+        $stmt->execute();
+        $view = $stmt->fetchAll();
+        return $view;
+    }
+
+    public function count_voters() {
+        $connection = $this->openConn();
+
+        $stmt = $connection->prepare("SELECT COUNT(*) from tbl_resident where `voter` = 'Yes' ");
+        $stmt->execute();
+        $rescount = $stmt->fetchColumn();
+
+        return $rescount;
+    }
+
+
+
+
 
 
     }

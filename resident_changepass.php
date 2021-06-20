@@ -1,4 +1,5 @@
 <?php 
+    error_reporting(E_ALL ^ E_WARNING);
     require('classes/resident.class.php');
 
     //$view = $residentbmis->view_single_resident($email);
@@ -103,7 +104,7 @@
     <body> 
         <!-- eto yung navbar -->
         <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top">
-            <a class="navbar-brand" href="resident_homepage.php">Barangay Sorsogon</a>
+            <a class="navbar-brand" href="resident_homepage.php">Barangay Information & E-Services Management System</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -120,18 +121,20 @@
             </div>
         </nav>
 
-        <div class="container"  style="margin-top: 4em;">
+        <div class="container"  style="margin-top: 3em;">
             <div class="row">
                 <div class="col-12">
                         <h1 class="text-center">Resident Profile</h1>
+                        <br><br>
                     <div class="row margin mtop"> 
-                        <div class="col-sm"> </div>
-                        <div class="col-12">   
+                        <div class="col-3"> </div>
+                        <div class="col-6">   
                             <div class="card mbottom">
                                 <div class="card-body">
                                     <div class="row">
                                         <div class="col">
                                             <h3 class="text-center"> Change Password </h3>
+                                            <br>
                                             <form method="post">
                                             
                                             <label> Current Password </label>
@@ -152,7 +155,7 @@
                             </div>
                         </div> 
 
-                        <div class="col-sm"> 
+                        <div class="col-3"> 
                         </div>
                     </div>
                 </div>
