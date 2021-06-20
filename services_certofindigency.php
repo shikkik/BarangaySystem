@@ -249,8 +249,7 @@
                     <br>
 
                     <h3>Step 1: Fill-Up</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. 
-                    Inventore tenetur fugiat repudiandae sit minus</p>
+                    <p>First step is to Fill-Up the entire form in our system.</p>
                 </div>
 
                 <div class="col">
@@ -260,8 +259,9 @@
                     <br>
 
                     <h3>Step 2: Assessment</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. 
-                    Inventore tenetur fugiat repudiandae sit minus</p>
+                    <p>Second step is to verify all of the information you've been given
+                    in our system that we can use to make the information of your document
+                    accurately.</p>
                 </div>
 
                 <div class="col">
@@ -271,8 +271,8 @@
                     <br>
 
                     <h3>Step 3: Approval</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. 
-                    Inventore tenetur fugiat repudiandae sit minus</p>
+                    <p>Third step is to approve your document. Therefore, we dont have an
+                    issue when we release your document.</p>
                 </div>
 
                 <div class="col">
@@ -282,8 +282,7 @@
                     <br>
 
                     <h3>Step 4: Release</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. 
-                    Inventore tenetur fugiat repudiandae sit minus</p>
+                    <p>Fourth step is for releasing of your document.</p>
                 </div>
             </div>
 
@@ -352,7 +351,7 @@
                         <div class="card-body">
                             <ul style="text-align: justify;">
                                 <p class="card-text">
-                                    <li> 3-4 Days </li>
+                                    <li> 1-2 Days </li>
                                 </p>
                             </ul>
                         </div>

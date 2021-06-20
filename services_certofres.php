@@ -256,8 +256,8 @@
                     <br>
 
                     <h3>Step 1: Prepare</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. 
-                    <br> Inventore tenetur fugiat repudiandae sit minus</p>
+                    <p>First step is to prepare all of the information that will be<br> needed
+                    in acquiring a certificate of residency.</p>
                 </div>
                 <div class="col">
                     <i class="fas fa-laptop fa-7x"></i>
@@ -266,8 +266,8 @@
                     <br>
 
                     <h3>Step 2: Apply</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. 
-                    <br> Inventore tenetur fugiat repudiandae sit minus</p>
+                    <p>Second Step is to apply in our system and<br> fill-up the entire form
+                    given below.</p>
                 </div>
             </div>
 
@@ -336,7 +336,7 @@
                         <div class="card-body">
                             <ul style="text-align: justify;">
                                 <p class="card-text">
-                                    <li> 3-4 Days </li>
+                                    <li> 1-2 Days </li>
                                 </p>
                             </ul>
                         </div>
