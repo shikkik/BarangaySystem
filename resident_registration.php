@@ -157,7 +157,7 @@
                                     <div class="col">
                                         <div class="form-group">
                                             <label class="mtop">Contact Number:</label>
-                                            <input type="tel" class="form-control" name="contact" placeholder="Enter Contact Number" required>
+                                            <input type="tel" class="form-control" name="contact" maxlength="11" pattern="[0-9]{11}" placeholder="Enter Contact Number" required>
                                             <div class="valid-feedback">Valid.</div>
                                             <div class="invalid-feedback">Please fill out this field.</div>
                                         </div>
@@ -213,7 +213,7 @@
                                     <div class="col">
                                         <div class="form-group">
                                             <label> Municipality: </label>
-                                            <input type="text" class="form-control" name="municipality"  placeholder="Enter Municipality" required>
+                                            <input type="text" class="form-control" name="municipality" placeholder="Enter Municipality" required>
                                             <div class="valid-feedback">Valid.</div>
                                             <div class="invalid-feedback">Please fill out this field.</div>
                                         </div>
@@ -301,7 +301,7 @@
                                   
                                     <div class="col"> 
                                         <div class="form-group">
-                                            <label>Registered Voter? </label>
+                                            <label>Are you a registered voter? </label>
                                             <select class="form-control" name="regvote" id="regvote" required>
                                                 <option value="">...</option>
                                                 <option value="Yes">Yes</option>
