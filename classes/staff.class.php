@@ -38,7 +38,7 @@
 
             if(isset($_POST['add_staff'])) {
                 $email = $_POST['email'];
-                $password = md5($_POST['password']);
+                $password = ($_POST['password']);
                 $lname = $_POST['lname'];
                 $fname = $_POST['fname'];
                 $mi = $_POST['mi'];
@@ -106,7 +106,7 @@
         public function update_staff() {
             if (isset($_POST['update_staff'])) {
                 $id_user = $_GET['id_user'];
-                $password = md5($_POST['password']);
+                $password = ($_POST['password']);
                 $lname = $_POST['lname'];
                 $fname = $_POST['fname'];
                 $mi = $_POST['mi'];
@@ -119,9 +119,9 @@
                 $addedby = $_POST['addedby'];
                 
                     $connection = $this->openConn();
-                    $stmt = $connection->prepare("UPDATE tbl_user SET password =?, lname =?, 
-                    fname = ?, mi =?, age =?, sex =?, address =?, contact =?, position =?, 
-                    role =?, addedby =? WHERE id_user = ?");
+                    $stmt = $connection->prepare("UPDATE tbl_user SET `password` =?, lname =?, 
+                    fname = ?, mi =?, age =?, sex =?, `address` =?, contact =?, position =?, 
+                    `role` =?, addedby =? WHERE id_user = ?");
                     $stmt->execute([ $password, $lname, $fname, $mi, $age, $sex, $address,
                     $contact, $position,$role, $addedby, $id_user]);
                    
@@ -208,6 +208,25 @@
             $staffcount = $stmt->fetchColumn();
 
             return $staffcount;
+        }
+
+
+        //===================================== SCOPE CHANGED FEATURES =======================================
+
+        public function view_staff_male(){
+            $connection = $this->openConn();
+            $stmt = $connection->prepare("SELECT * from tbl_user WHERE `sex` = 'Male'");
+            $stmt->execute();   
+            $view = $stmt->fetchAll();
+            return $view;
+        }
+    
+        public function view_staff_female(){
+            $connection = $this->openConn();
+            $stmt = $connection->prepare("SELECT * from tbl_user WHERE `sex` = 'Female'");
+            $stmt->execute();
+            $view = $stmt->fetchAll();
+            return $view;
         }
 
 

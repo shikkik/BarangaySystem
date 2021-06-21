@@ -21,6 +21,7 @@
                 $bdate = $_POST['bdate'];
                 $bplace = $_POST['bplace'];
                 $nationality = $_POST['nationality'];
+                $voter = $_POST['voter'];
                 $familyrole = $_POST['family_role'];
                 $role = $_POST['role'];
                 $addedby = $_POST['addedby'];
@@ -37,13 +38,18 @@
                     }
     
                     else {
+
+                        $countfiles = count($_FILES['files']['name']);
+
+                    
+
                         $connection = $this->openConn();
-                        $stmt = $connection->prepare("INSERT INTO tbl_resident (`email`,`password`,`lname`,`fname`,
-                        `mi`, `age`, `sex`, `status`, `address`, `contact`, `bdate`, `bplace`, `nationality`,`family_role`,
-                        `role`, `addedby`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,?)");
+                        $stmt = $connection->prepare("INSERT INTO tbl_resident ( `email`,`password`,`lname`,`fname`,
+                        `mi`, `age`, `sex`, `status`, `address`, `contact`, `bdate`, `bplace`, `nationality`,`voter` ,`family_role`,
+                        `role`, `addedby`) VALUES ( ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,?, ?)");
     
-                        $stmt->Execute([$email, $password, $lname, $fname, $mi, $age, $sex, $status, 
-                        $address, $contact, $bdate, $bplace, $nationality, $familyrole, $role, $addedby]);
+                        $stmt->Execute([ $email, $password, $lname, $fname, $mi, $age, $sex, $status, 
+                        $address, $contact, $bdate, $bplace, $nationality, $voter, $familyrole, $role, $addedby]);
 
                         $message2 = "Account added, you can now continue logging in";
                         echo "<script type='text/javascript'>alert('$message2');</script>";
@@ -359,6 +365,27 @@
 
         return $rescount;
     }
+
+    public function search_admn_voter() {
+        
+        $search = $_GET['search'];
+
+        $connection = $this->openConn();
+        $stmt = $connection->prepare("SELECT * from tbl_resident WHERE `fname` = '$search'");
+        $stmt->execute();
+        $view = $stmt->fetchAll();
+        return $view;
+
+            
+
+
+            
+        
+        
+
+    }
+
+
 
 
 

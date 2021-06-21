@@ -55,7 +55,7 @@
 
     <div class="row"> 
         <div class="col-md-4">
-        <h4> Barangay Resident Data </h4> 
+        <h4> Barangay Resident Data </h4>
             <div class="card border-left-primary shadow">
                 <div class="card-body">
                     <div class="row no-gutters align-items-center">
@@ -155,10 +155,6 @@
         </div>
     </div>
 
-    <div class="row" style="margin-top: 1em;"> 
-        <div class="col-md"> <a href="" class="btn btn-primary"> View All Resident Records </a></div>
-        
-    </div>
     <br>
     <div class="row"> 
     <div class="col-md-4">
@@ -170,6 +166,8 @@
                             <div class="text-xs font-weight-bold text-info text-uppercase mb-1">
                                 Total Barngay Staffs</div>
                                 <div class="h5 mb-0 font-weight-bold text-dark"><?= $staffcount?></div>
+                                <br>
+                                <a href="admn_table_totalstaff.php"> View Records </a>
                         </div>
                         <div class="col-auto">
                             <i class="fas fa-user-friends fa-2x text-dark"></i>
@@ -185,8 +183,10 @@
                     <div class="row no-gutters align-items-center">
                         <div class="col mr-2">
                             <div class="text-xs font-weight-bold text-info text-uppercase mb-1">
-                                Total Barngay Male Staffs</div>
+                                Total Barangay Male Staff</div>
                                 <div class="h5 mb-0 font-weight-bold text-dark"><?= $staffcountm?></div>
+                                <br>
+                                <a href="admn_table_malestaff.php"> View Records </a>
                         </div>
                         <div class="col-auto">
                             <i class="fas fa-male fa-2x text-dark"></i>
@@ -206,6 +206,8 @@
                             <div class="text-xs font-weight-bold text-info text-uppercase mb-1">
                                 Total Barngay Female Staffs</div>
                                 <div class="h5 mb-0 font-weight-bold text-dark"><?= $staffcountf?></div>
+                                <br>
+                                <a href="admn_table_femalestaff.php"> View Records </a>
                         </div>
                         <div class="col-auto">
                             <i class="fas fa-female fa-2x text-dark"></i>

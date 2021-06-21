@@ -8,27 +8,22 @@
 		<thead >
             
 			<tr>
-			<th> Actions</th>
-            <th> Email </th>
-            <th> Surname </th>
-            <th> First name </th>
-            <th> MI </th>
-            <th> Age </th>
-            <th> Sex </th>
-            <th> Status </th>
-            <th> House No.</th>
-            <th> Street </th>
-            <th> Brgy. </th>
-            <th> Address </th>
-            <th> Contact </th>
-            <th> Bdate </th>
-            <th> Bplace </th>
-            <th> Nationality </th>
-            <th> Family Head </th>
-            <th> Role </th>
-            <th> AddedBy </th>
-                
-                
+                <th> Actions</th>
+                <th> Email </th>
+                <th> Surname </th>
+                <th> First name </th>
+                <th> Middle name </th>
+                <th> Age </th>
+                <th> Sex </th>
+                <th> Status </th>
+                <th> House No.</th>
+                <th> Street </th>
+                <th> Barangay </th>
+                <th> Contact # </th>
+                <th> Birth date </th>
+                <th> Birth place </th>
+                <th> Nationality </th>
+                <th> Family Head </th>
 			</tr>
 		</thead>
 		<tbody>
@@ -66,8 +61,6 @@
                         <td> <?= $view['bplace'];?> </td>
                         <td> <?= $view['nationality'];?> </td>
                         <td> <?= $view['family_role'];?> </td>
-                        <td> <?= $view['role'];?> </td>
-                        <td> <?= $view['addedby'];?> </td>
 			</tr>
 			<?php
 			}
@@ -82,24 +75,23 @@
 <table class="table table-dark table-responsive">
 		<thead >
 			<tr>
-			<th> Actions</th>
-            <th> Email </th>
-            <th> Surname </th>
-            <th> First name </th>
-            <th> MI </th>
-            <th> Age </th>
-            <th> Sex </th>
-            <th> Status </th>
-            <th> House No.</th>
-            <th> Street </th>
-            <th> Brgy. </th>
-            <th> Contact </th>
-            <th> Bdate </th>
-            <th> Bplace </th>
-            <th> Nationality </th>
-            <th> Family Head </th>
-            <th> Role </th>
-            <th> AddedBy </th>
+                <th> Actions</th>
+                <th> Email </th>
+                <th> Surname </th>
+                <th> First name </th>
+                <th> Middle name </th>
+                <th> Age </th>
+                <th> Sex </th>
+                <th> Status </th>
+                <th> House No.</th>
+                <th> Street </th>
+                <th> Barangay </th>
+                <th> Contact # </th>
+                <th> Birth date </th>
+                <th> Birth place </th>
+                <th> Nationality </th>
+                <th> Family Head </th>
+                <th> Registered Voter </th>
 			</tr>
 		</thead>
 		<tbody>
@@ -128,8 +120,7 @@
                         <td> <?= $view['bplace'];?> </td>
                         <td> <?= $view['nationality'];?> </td>
                         <td> <?= $view['family_role'];?> </td>
-                        <td> <?= $view['role'];?> </td>
-                        <td> <?= $view['addedby'];?> </td>
+                        <td> <?= $view['voter'];?> </td>
 			</tr>
 			
 			<?php

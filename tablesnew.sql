@@ -5,3 +5,4 @@ ADD `street` VARCHAR(255) NULL AFTER `houseno`, ADD `brgy` VARCHAR(255) NULL AFT
 ADD `municipal` VARCHAR(255) NULL AFTER `brgy`;
 ALTER TABLE `tbl_resident` ADD `res_photo` MEDIUMBLOB NOT NULL AFTER `email`;
 ALTER TABLE `tbl_resident` ADD `voter` VARCHAR(255) NULL AFTER `family_role`;
+ALTER TABLE `tbl_resident` CHANGE `res_photo` `res_photo` MEDIUMBLOB NULL;

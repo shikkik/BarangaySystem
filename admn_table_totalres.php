@@ -39,13 +39,13 @@
             <form method="POST" action="">
             <div class="form-inline" >
                 <input type="search" class="form-control" name="keyword" value="" placeholder="Search here..." required=""/>
-                <button class="btn btn-success" name="search_resident">Search</button>
+                <button class="btn btn-success" name="search_totalres">Search</button>
                 <a href="admn_resident_crud.php" class="btn btn-info">Reload</a>
             </div>
             </form>
             <br><br>
             <?php 
-                include('search_resident.php');
+                include('admn_table_totalres_search.php');
             ?>
         </div>
     </div>

@@ -6,11 +6,6 @@
    $userdetails = $bmis->get_userdata();
    $bmis->validate_admin();
    $view = $residentbmis->view_resident_household();
-
-
-
-   $residentbmis->update_resident();
-   $residentbmis->delete_resident();
    
 ?>
 
@@ -28,49 +23,30 @@
         </div>
     </div>
 
-    <div class="row justify-content-center"> 
-        <div class="col-md-11">
-           <table class="table table-dark table-responsive text-center" id="dataTable" width="100%" cellspacing="0">
-                <form action="" method="post">
-                <thead> 
-                    <tr>
-                        <th> Actions</th>
-                        <th> Family Surname</th>
-                        <th> Family Middle name </th>
-                        <th> House No.</th>
-                        <th> Street </th>
-                        <th> Barangay </th>
-                        <th> Nationality </th>
-                        <th> Role </th>
-                        
-                    </tr>
-                </thead>
-                <tbody>
-                <?php if(is_array($view)) {?>
-                    <?php foreach($view as $view) {?>
-                    <tr>
-                        <td>    
-                            <form action="" method="post">
-                                <a href="update_staff_form.php?id_user=<?= $view['id_user'];?>" class="btn btn-primary"> Update </a>
-                                <input type="hidden" name="id_user" value="<?= $view['id_user'];?>">
-                                <button class="btn btn-danger" type="submit" name="delete_staff"> Delete </button>
-                            </form>
-                        </td>
-                        <td> <?= $view['lname'];?> </td>
-                        <td> <?= $view['mi'];?> </td>
-                        <td> <?= $view['houseno'];?> </td>
-                        <td> <?= $view['street'];?> </td>
-                        <td> <?= $view['brgy'];?> </td>
-                        <td> <?= $view['nationality'];?> </td>
-                        <td> <?= $view['role'];?> </td>
-                       
-                    </tr>
-                    <?php }?>
-                <?php } ?>
-                </tbody>
-                </form>
-            </table>
+    <br><br> 
+    
+    <div class="row"> 
+        <div class="col-md-6"> </div> 
+        <div class="col-md-5">
+            <form method="POST" action="">
+                <div class="form-inline" >
+                    <input type="search" class="form-control" name="keyword" value="" placeholder="Search here..." required=""/>
+                    <button class="btn btn-success" name="search_household">Search</button>
+                    <a href="admn_table_totalhouse.php" class="btn btn-info">Reload</a>
+                </div>
+            </form>
+            <br>
         </div>
+    </div>
+
+    <div class="row"> 
+        <div class="col-md-2"> </div>
+        <div class="col-md-8"> 
+            <?php
+                include('admn_table_totalhouse_search.php');
+            ?>
+        </div>
+        <div class="col-md-2"> </div>
     </div>
     
     <!-- /.container-fluid -->

@@ -122,7 +122,7 @@
                 <div class="col-sm-8">   
                     <div class="card mbottom" style="margin-bottom: 3em;">
                         <div class="card-body" >
-                            <form method="post" class="was-validated">
+                            <form method="post" enctype='multipart/form-data' class="was-validated">
 
                                 <div class="row">
                                     <div class="col">
@@ -213,7 +213,7 @@
                                     <div class="col">
                                         <div class="form-group">
                                             <label> Municipality: </label>
-                                            <input type="text" class="form-control" name="municipality" placeholder="Enter Municipality" required>
+                                            <input type="text" class="form-control" name="municipal" placeholder="Enter Municipality" required>
                                             <div class="valid-feedback">Valid.</div>
                                             <div class="invalid-feedback">Please fill out this field.</div>
                                         </div>
@@ -279,7 +279,7 @@
                                             <label class="mtop">Sex</label>
                                             <select class="form-control" name="sex" id="sex" required>
                                                 <option value="">Choose your Sex</option>
-                                                <option value="Male">Male</opt ion>
+                                                <option value="Male">Male</option>
                                                 <option value="Female">Female</option>
                                             </select>
                                             <div class="valid-feedback">Valid.</div>
@@ -292,7 +292,7 @@
                                     <div class="col">
                                         <label>Upload Photo:</label>
                                         <div class="custom-file mb-3 form-group">
-                                            <input type="file" class="custom-file-input" id="customFile" name="filename" required>
+                                            <input type="file" class="custom-file-input" id="customFile" name="res_photo" required>
                                             <label class="custom-file-label" for="customFile">Choose File</label>
                                             <div class="valid-feedback">Valid.</div>
                                             <div class="invalid-feedback">Please fill out this field.</div>
@@ -302,7 +302,7 @@
                                     <div class="col"> 
                                         <div class="form-group">
                                             <label>Are you a registered voter? </label>
-                                            <select class="form-control" name="regvote" id="regvote" required>
+                                            <select class="form-control" name="voter" id="regvote" required>
                                                 <option value="">...</option>
                                                 <option value="Yes">Yes</option>
                                                 <option value="No">No</option>
@@ -314,7 +314,7 @@
                                     <div class="col"> 
                                         <div class="form-group">
                                             <label>Are you head of the family? </label>
-                                            <select class="form-control" name="famhead" id="famhead" required>
+                                            <select class="form-control" name="family_role" id="famhead" required>
                                                 <option value="">...</option>
                                                 <option value="Yes">Yes</option>
                                                 <option value="No">No</option>
