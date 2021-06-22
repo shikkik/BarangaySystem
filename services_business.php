@@ -3,7 +3,8 @@
     require('classes/resident.class.php');
     
     $userdetails = $bmis->get_userdata();
-    $bmis->create_certofres();
+    $bmis->create_brgyclearance();
+
 ?>
 
 <!DOCTYPE html>
@@ -30,11 +31,6 @@
                 text-align: center;
             }
 
-            .text1{
-                margin-top: 30px;
-                font-size: 50px;
-            }
-
             .applybutton
             {
                 width: 100% !important;
@@ -51,6 +47,11 @@
                 margin-top: 10px;
                 position: relative;
                 left: -28%;
+            }
+
+            .text1{
+                margin-top: 30px;
+                font-size: 50px;
             }
 
             .picture{
@@ -121,73 +122,73 @@
             a{
                 color:white;
                 }
-                .shfooter .collapse {
+            .shfooter .collapse {
                 display: inherit;
-                }
+            }
                 @media (max-width:767px) {
-                .shfooter ul {
+            .shfooter ul {
                     margin-bottom: 0;
-                }
+            }
 
-                .shfooter .collapse {
+            .shfooter .collapse {
                     display: none;
-                }
+            }
 
-                .shfooter .collapse.show {
+            .shfooter .collapse.show {
                     display: block;
-                }
+            }
 
-                .shfooter .title .fa-angle-up,
-                .shfooter .title[aria-expanded=true] .fa-angle-down {
+            .shfooter .title .fa-angle-up,
+            .shfooter .title[aria-expanded=true] .fa-angle-down {
                     display: none;
-                }
+            }
 
-                .shfooter .title[aria-expanded=true] .fa-angle-up {
+            .shfooter .title[aria-expanded=true] .fa-angle-up {
                     display: block;
-                }
+            }
 
-                .shfooter .navbar-toggler {
+            .shfooter .navbar-toggler {
                     display: inline-block;
                     padding: 0;
-                }
+            }
 
-                }
+            }
 
-                .resize {
+            .resize {
                 text-align: center;
-                }
-                .resize {
+            }
+            .resize {
                 margin-top: 3rem;
                 font-size: 1.25rem;
-                }
-                /*RESIZESCREEN ANIMATION*/
-                .fa-angle-double-right {
+            }
+            /*RESIZESCREEN ANIMATION*/
+            .fa-angle-double-right {
                 animation: rightanime 1s linear infinite;
-                }
+            }
 
-                .fa-angle-double-left {
+            .fa-angle-double-left {
                 animation: leftanime 1s linear infinite;
-                }
-                @keyframes rightanime {
+            }
+            @keyframes rightanime {
                 50% {
                     transform: translateX(10px);
                     opacity: 0.5;
-                }
+            }
                 100% {
                     transform: translateX(10px);
                     opacity: 0;
-                }
-                }
-                @keyframes leftanime {
+            }
+            }
+            @keyframes leftanime {
                 50% {
                     transform: translateX(-10px);
                     opacity: 0.5;
-                }
+            }
                 100% {
                     transform: translateX(-10px);
                     opacity: 0;
-                }
-                }
+            }
+            }
 
         </style>
   </head>
@@ -195,6 +196,7 @@
     <body>
 
         <!-- eto yung navbar -->
+
         <nav class="navbar navbar-dark bg-primary sticky-top">
             <a class="navbar-brand" href="index.php"> <img src="../BarangaySystem/icons/beverlylogo.png" width="40px" height="40px"> 
             <a class="navbar-brand" href="resident_homepage.php">Barangay Beverly Hills</a>
@@ -215,10 +217,10 @@
             <div class="row"> 
                 <div class="col"> 
                     <div class="header">
-                        <h1 class="text1">Certificate Of Residency </h1>
-                        <h5>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Temporibus animi  
-                        <br> voluptatum hic, mollitia, dignissimos itaque placeat illum vero id officia adipisci 
-                        <br> modi ut, laboriosam optio omnis eligendi totam reiciendis labore! </h5>
+                        <h1 class="text1">Barangay Clearance </h1>
+                        <h5> A Barangay Clearance is a document issued by the Barangay Secretary and signed by the 
+                        <br> Barangay Captain stating that you are a living at that specific place and you are 
+                        <br> of good moral character. Somehow, a smaller version of NBI or Police clearance.</h5>
                     </div>
 
                     <br>
@@ -250,24 +252,35 @@
 
             <div class="row">
                 <div class="col">
-                    <i class="fas fa-id-card fa-7x"></i>
-
-                    <br>
-                    <br>
-
-                    <h3>Step 1: Prepare</h3>
-                    <p>First step is to prepare all of the information that will be<br> needed
-                    in acquiring a certificate of residency.</p>
-                </div>
-                <div class="col">
                     <i class="fas fa-laptop fa-7x"></i>
 
                     <br>
                     <br>
 
-                    <h3>Step 2: Apply</h3>
-                    <p>Second Step is to apply in our system and<br> fill-up the entire form
-                    given below.</p>
+                    <h3>Step 1: Fill-Up</h3>
+                    <p>First step is to Fill-Up the entire form in our system.</p>
+                </div>
+
+                <div class="col">
+                    <i class="fas fa-user-check fa-7x"></i>
+
+                    <br>
+                    <br>
+
+                    <h3>Step 2: Assessment</h3>
+                    <p>Second step is to verify all of the information you've been given
+                    in our system that we can use to make the information of your document
+                    accurately.</p>
+                </div>
+
+                <div class="col">
+                    <i class="fas fa-file fa-7x"></i>
+
+                    <br>
+                    <br>
+
+                    <h3>Step 3: Release</h3>
+                    <p>Fourth step is for releasing of your document.</p>
                 </div>
             </div>
 
@@ -294,7 +307,7 @@
                             <ul style="text-align: left; font-size: 16px;">
                                 <p class="card-text">
                                     <li> A Philippines Resident. </li>
-                                    <li> Have been living for six months or more in a barangay. </li>
+                                    <li> Recent Cedula. </li>
                                 </p>
                             </ul>
                         </div>
@@ -345,17 +358,20 @@
                 <div class="col">
                     <div class="card bg-primary card5">
                         <div class="card-header">
-                            <h6> Need for the Document<br><br> <i class="fas fa-file fa-2x"></i>  </h6>
+                            <h6> Reason to get a Barangay Clearance<br><br> <i class="fas fa-file fa-2x"></i>  </h6>
                         </div>
                         <div class="card-body">
                             <ul style="text-align: left; font-size: 16px;">
                                 <p class="card-text">
-                                    <li> Job/Employment </li>
+                                    <li> Job Requirement  </li>
                                     <li> Open a Bank Account </li>
-                                    <li> Business Establishment </li>
-                                    <li> Financial Transaction such as lending, loan or financing. </li>
-                                    <li> Certify that you are living or residing in a certain barangay </li>
-                                    <li> Other important transactions. </li>
+                                    <li> NBI Clearance </li>
+                                    <li> Police Clearance </li>
+                                    <li> Postal ID </li>
+                                    <li> UMID Card</li>
+                                    <li> Driver's License </li>
+                                    <li> Business Requirement </li>
+                                    <li> Indigent Certification of Philhealth</li>
                                 </p>
                             </ul>
                         </div>
@@ -368,18 +384,18 @@
         <br>
         <br>
 
-         <!-- Button trigger modal -->
+        <!-- Button trigger modal -->
 
         <div class="container">
 
             <h1 class="text-center">Registration</h1>
             <hr style="background-color:black;">
 
-                <div class="col">   
-                    <button type="button" class="btn btn-primary applybutton" data-toggle="modal" data-target="#exampleModalCenter">
-                        Request Certificate of Residency
-                    </button>
-                </div>
+            <div class="col">   
+                <button type="button" class="btn btn-primary applybutton" data-toggle="modal" data-target="#exampleModalCenter">
+                    Request Business Permit
+                </button>
+            </div>
 
 
             <!-- Modal -->
@@ -398,17 +414,29 @@
 
                         <div class="modal-body">
                             <form method="post" class="was-validated">
-                                
+
                                 <div class="row"> 
+
                                     <div class="col">
                                         <div class="form-group">
                                             <label for="lname">Last Name:</label>
                                             <input name="lname" type="text" class="form-control" placeholder="Enter Last Name" required>
+                                            <div class="valid-feedback">Valid.</div>
+                                            <div class="invalid-feedback">Please fill out this field.</div>
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="form-group">
+                                            <label for="mi" class="mtop">Middle Name </label>
+                                            <input name="mi" type="text" class="form-control" placeholder="Enter Middle Name" required>
                                                 <div class="valid-feedback">Valid.</div>
                                                 <div class="invalid-feedback">Please fill out this field.</div>
                                         </div>
                                     </div>
 
+                                </div>
+
+                                <div class="row">
                                     <div class="col">
                                         <div class="form-group">
                                             <label for="fname">First Name:</label>
@@ -417,55 +445,43 @@
                                                 <div class="invalid-feedback">Please fill out this field.</div>
                                         </div>
                                     </div>
-                                </div>
-
-                                <div class="row">
                                     <div class="col">
                                         <div class="form-group">
-                                            <label for="mi" class="mtop">Middle Name: </label>
-                                            <input name="mi" type="text" class="form-control" placeholder="Enter Middle Name" required>
-                                            <div class="valid-feedback">Valid.</div>
-                                            <div class="invalid-feedback">Please fill out this field.</div>
-                                        </div>
-                                    </div>
-                                    <div class="col">
-                                        <div class="form-group">
-                                            <label for="nationality">Nationality:</label>
-                                            <input name="nationality" type="text" class="form-control" placeholder="Enter Nationality" required>
+                                            <label for="purpose">Purpose:</label>
+                                            <input name="purpose" type="text" class="form-control" placeholder="Enter Purpose" required>
                                             <div class="valid-feedback">Valid.</div>
                                             <div class="invalid-feedback">Please fill out this field.</div>
                                         </div>
                                     </div>
                                 </div>
-
+                                    
                                 <div class="row">
                                     <div class="col">
                                         <div class="form-group">
                                             <label for="address" class="mtop"> Address: </label>
                                             <input type="text" class="form-control" name="address" placeholder="Enter your Address" required>
-                                            <div class="valid-feedback">Valid.</div>
-                                            <div class="invalid-feedback">Please fill out this field.</div>
+                                                <div class="valid-feedback">Valid.</div>
+                                                <div class="invalid-feedback">Please fill out this field.</div>
                                         </div>
                                     </div>
                                 </div>
-
                                 <div class="row">
                                     <div class="col">
                                         <div class="form-group">
                                             <label for="status">Status:</label>
                                             <select class="form-control" name="status" id="status" placeholder="Enter Status" required>
-                                                <option value="">Choose your Status</option>
-                                                <option value="Single">Single</option>
-                                                    <option value="In a relationship">In a relationship</option>
-                                                    <option value="Engaged">Engaged</option>
-                                                    <option value="Married">Married</option>
-                                                    <option value="Widowed">Widowed</option>
-                                                    <option value="Divorces">Divorced</option>
+                                            <option value="">Choose your Status</option>
+                                            <option value="Single">Single</option>
+                                                <option value="In a relationship">In a relationship</option>
+                                                <option value="Engaged">Engaged</option>
+                                                <option value="Married">Married</option>
+                                                <option value="Widowed">Widowed</option>
+                                                <option value="Divorces">Divorced</option>
                                             </select>
                                             <div class="valid-feedback">Valid.</div>
                                             <div class="invalid-feedback">Please fill out this field.</div>
                                         </div>
-                                    </div>  
+                                    </div>
                                     <div class="col">
                                         <div class="form-group">
                                             <label for="Age" class="mtop">Age: </label>
@@ -475,26 +491,24 @@
                                         </div>
                                     </div>
                                 </div>
-                                
                             </form>
                         </div>
 
-
-
                         <!-- Modal Footer -->
-
+            
                         <div class="modal-footer">
                             <div class="paa">
                                 <input name="id_resident" type="hidden" class="form-control" value="<?= $userdetails['id_resident']?>">
                                 <input name="addedby" type="hidden" class="form-control" value="<?= $userdetails['surname']?> <?= $userdetails['firstname']?> <?= $userdetails['mname']?>">
                                 <button type="button" class="btn btn-dark" data-dismiss="modal">Close</button>
-                                <button name ="create_certofres" type="submit" class="btn btn-primary">Submit Request</button>
+                                <button name ="create_brgyclearance" type="submit" class="btn btn-primary">Submit Request</button>
                             </div>
-                        </div>
+                        </div> 
                     </div>
                 </div>
             </div>
-        </div> 
+        </div>
+        
 
         <br>
         <br>

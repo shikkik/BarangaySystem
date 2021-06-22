@@ -252,30 +252,6 @@
                     <!--First column-->
 
                     <div class="col-md-3 mx-auto shfooter">
-                        <h5 class="my-2 font-weight-bold d-none d-md-block">HealthCare</h5>
-                        <div class="d-md-none title" data-target="#HealthCare" data-toggle="collapse">
-                            <div class="mt-3 font-weight-bold">HealthCare
-                                <div class="float-right navbar-toggler">
-                                    <i class="fas fa-angle-down"></i>
-                                    <i class="fas fa-angle-up"></i>
-                                </div>
-                            </div>
-                        </div>
-                        <ul class="list-unstyled collapse" id="HealthCare">
-                            <li><a class="footerlinks" href="#">Animal Registry & Welfare</a></li>
-                            <li><a class="footerlinks" href="#">TB Dots Consultation</a></li>
-                            <li><a class="footerlinks" href="#">Vaccination Programs</a></li>
-                            <li><a class="footerlinks" href="#">Mother & Child Check-Up</a></li>
-                        </ul>
-                    </div>
-
-                    <!--/.First column-->
-
-                    <hr class="clearfix w-100 d-md-none mb-0">
-
-                    <!--Second column-->
-
-                    <div class="col-md-3 mx-auto shfooter">
                         <h5 class="my-2 font-weight-bold d-none d-md-block">Documentation</h5>
                         <div class="d-md-none title" data-target="#Documentation" data-toggle="collapse">
                             <div class="mt-3 font-weight-bold">Documentation
@@ -289,10 +265,12 @@
                             <li><a class="footerlinks" href="#">Certificate of Residency</a></li>
                             <li><a class="footerlinks" href="#">Barangay Clearance</a></li>
                             <li><a class="footerlinks" href="#">Certificate of Indigency</a></li>
+                            <li><a class="footerlinks" href="#">Barangay ID</a></li>
+                            <li><a class="footerlinks" href="#">Business Permit</a></li>
                         </ul>
                     </div>
 
-                    <!--/.Second column-->
+                    <!--/.First column-->
 
                     <hr class="clearfix w-100 d-md-none mb-0">
 
@@ -310,7 +288,6 @@
                         </div>
 
                         <ul class="list-unstyled collapse" id="OtherServices">
-                            <li><a class="footerlinks" href="#">Family Planning</a></li>
                             <li><a class="footerlinks" href="#">Blotter</a></li>
                         </ul>
                     </div>
