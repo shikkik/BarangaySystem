@@ -12,24 +12,15 @@
     $rescountfh = $residentbmis->count_head_resident();
     $rescountfm = $residentbmis->count_member_resident();
     $rescountvoter = $residentbmis->count_voters();
+    $rescountsenior = $residentbmis->count_resident_senior();
 
     $staffcount = $staffbmis->count_staff();
     $staffcountm = $staffbmis->count_mstaff();
     $staffcountf = $staffbmis->count_fstaff();
     $animalcount = $bmis->count_animal();
 
-    $animalcountd = $bmis->count_animal_dogs();
-    $animalcountc = $bmis->count_animal_cats();
 
-    $tbcount = $residentbmis->count_tbdots();
 
-    $vacccount = $residentbmis->count_vacc();
-
-    $fpcount = $residentbmis->count_familyplan();
-
-    $mccount = $residentbmis->count_motherchild();
-
-    $medcount = $residentbmis->count_medicine();
 ?>
 
 <style> 
@@ -153,6 +144,7 @@
                 </div>
             </div>
         </div>
+
     </div>
 
     <br>

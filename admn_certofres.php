@@ -1,14 +1,15 @@
 <?php
-   error_reporting(E_ALL ^ E_WARNING);
-   ini_set('display_errors',0);
-   require('classes/resident.class.php');
-   $userdetails = $bmis->get_userdata();
-   $bmis->validate_admin();
-   $bmis->delete_certofres();
-   $view = $bmis->view_certofres();
-   $id_resident = $_GET['id_resident'];
-   $resident = $residentbmis->get_single_certofres($id_resident);
-
+    
+    error_reporting(E_ALL ^ E_WARNING);
+    ini_set('display_errors',0);
+    require('classes/resident.class.php');
+    $userdetails = $bmis->get_userdata();
+    $bmis->validate_admin();
+    $bmis->delete_certofres();
+    $view = $bmis->view_certofres();
+    $id_resident = $_GET['id_resident'];
+    $resident = $residentbmis->get_single_certofres($id_resident);
+   
 ?>
 
 <?php 
@@ -18,64 +19,41 @@
     <div class="container-fluid">
 
     <!-- Page Heading -->
-                
+
     <div class="row"> 
-        <div class="col-md-8"> 
-        <div class="card">    
-        </div>
+        <div class="col-md-12 text-center"> 
+            <h3> Certificate of Residency Requests</h3>
         </div>
     </div>
 
-    <br>
+    <br><br>
+
     <div class="row"> 
-        <div class="col-md-12"> 
-            <h1 class="h3 mb-4 text-gray-800">Certificate of Residency Request</h1>
-            <table class="table table-dark table-responsive">
-            <form method="post">
-                <thead> 
-                    <tr>
-                        <th> Actions</th>
-                        <th> Resident ID </th>
-                        <th> Surname </th>
-                        <th> First Name </th>
-                        <th> Middle Name </th>
-                        <th> Age </th>
-                        <th> Status </th>
-                        <th> Nationality </th>
-                        <th> Address </th>
-                    </tr>
-                </thead>
-                <tbody> 
-                <?php if(is_array($view)) {?>
-                    <?php foreach($view as $view) {?>
-                    <tr>
-                        <td>    
-                        <form action="" method="post">
-                            <a class="btn btn-primary" href="rescert_form.php?id_resident=<?= $view['id_resident'];?>">Generate</a> 
-                            <input type="hidden" name="id_rescert" value="<?= $view['id_rescert'];?>">
-                            <button class="btn btn-danger" type="submit" name="delete_certofres"> Remove </button>
-                        </form>
-                        </td>
-                        <td> <?= $view['id_resident'];?> </td> 
-                        <td> <?= $view['lname'];?> </td>
-                        <td> <?= $view['fname'];?> </td>
-                        <td> <?= $view['mi'];?> </td>
-                        <td> <?= $view['age'];?> </td>
-                        <td> <?= $view['status'];?> </td>
-                        <td> <?= $view['nationality'];?> </td>
-                        <td> <?= $view['address'];?> </td>
-                    </tr>
-                    <?php }?>
-                <?php } ?>
-                </tbody>
+        <div class="col-md-7"> </div>
+        <div class="col-md-5">
+            <form method="POST">
+            <div class="form-inline" >
+                <input type="search" class="form-control" name="keyword" value="" placeholder="Search here..." required=""/>
+                <button class="btn btn-success" name="search_certofres">Search</button>
+                <a href="admn_certofres.php" class="btn btn-info">Reload</a>
+            </div>
             </form>
-            </table>
+            <br>
         </div>
     </div>
 
+    <div class="row"> 
+        <div class="col-md-1"> </div>
+        <div class="col-md-10"> 
+            <?php 
+                include('admn_table_certofres_search.php');
+            ?>
+        </div>
+        <div class="col-md-1"> </div>
     </div>
+    
     <!-- /.container-fluid -->
-
+    
 </div>
 <!-- End of Main Content -->
 

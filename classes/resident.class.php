@@ -271,6 +271,15 @@
         return $view;
     }
 
+    public function count_resident_senior() {
+        $connection = $this->openConn();
+        $stmt = $connection->prepare("SELECT * FROM tbl_resident WHERE `age` >= 60 AND `age` <= 140");
+        $stmt->execute();
+        $rescount = $stmt->fetchColumn();
+
+        return $rescount;
+    }
+
 
 
 
@@ -358,7 +367,6 @@
 
     public function count_voters() {
         $connection = $this->openConn();
-
         $stmt = $connection->prepare("SELECT COUNT(*) from tbl_resident where `voter` = 'Yes' ");
         $stmt->execute();
         $rescount = $stmt->fetchColumn();
