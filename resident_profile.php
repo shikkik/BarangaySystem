@@ -14,8 +14,8 @@
 <html>
 
     <head> 
-    <title> Barangay Management System </title>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <title> Barangay Information & Management System </title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
         <!-- responsive tags for screen compatibility -->
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -106,7 +106,7 @@
         <!-- eto yung navbar -->
         <nav class="navbar navbar-dark bg-primary sticky-top">
             <a class="navbar-brand" href="index.php"> <img src="../BarangaySystem/icons/beverlylogo.png" width="40px" height="40px"> 
-            <a class="navbar-brand" href="resident_homepage.php">Barangay Beverly Hills</a>
+            <a class="navbar-brand" href="resident_homepage.php">Barangay Information & E-Services Management System</a>
 
             <div class="dropdown ml-auto">
                 <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown"><?= $userdetails['surname'];?>, <?= $userdetails['firstname'];?>
@@ -129,7 +129,7 @@
                         <form method="post">
                         <div class="row"> 
                             <div class="col-md-2"> 
-                                <h5> Profile Image </h5> <br>
+                             
                                 <h5> Name:</h5> <br>
                                 <h5> Email: </h5> <br>
                                 <h5> Sex: </h5> <h5> <br>
@@ -174,7 +174,7 @@
                     <div class="form-inline">
                         <input class="form-control" name="lname" type="hidden" value="<?= $resident['lname'];?>"/>
                         <input class="form-control" name="mi" type="hidden" value="<?= $resident['mi'];?>" />
-                        <button type="submit button" class="btn btn-info"  name="search_household">View Household</button>
+                        <button type="submit" class="btn btn-info"  name="search_household">View Household</button>
                         <button class="btn btn-primary" type="submit" name="profile_update"> Update </button>
                         <a href="resident_profile.php?id_resident=<?= $userdetails['id_resident'];?>"></a>   
                         <div>

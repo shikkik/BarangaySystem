@@ -5,28 +5,25 @@
 		$keyword = $_POST['keyword'];
 ?>
 	<table class="table table-dark table-responsive" >
-		<thead class="alert-info">
+		<thead >
             
 			<tr>
-			<th> Actions</th>
-            <th> Email </th>
-            <th> Password </th>
-            <th> Surname </th>
-            <th> First name </th>
-            <th> MI </th>
-            <th> Age </th>
-            <th> Sex </th>
-            <th> Status </th>
-            <th> Address </th>
-            <th> Contact </th>
-            <th> Bdate </th>
-            <th> Bplace </th>
-            <th> Nationality </th>
-            <th> Family Role </th>
-            <th> Role </th>
-            <th> AddedBy </th>
-                
-                
+                <th> Actions</th>
+                <th> Email </th>
+                <th> Surname </th>
+                <th> First name </th>
+                <th> Middle name </th>
+                <th> Age </th>
+                <th> Sex </th>
+                <th> Status </th>
+                <th> House No.</th>
+                <th> Street </th>
+                <th> Barangay </th>
+                <th> Contact # </th>
+                <th> Birth date </th>
+                <th> Birth place </th>
+                <th> Nationality </th>
+                <th> Family Head </th>
 			</tr>
 		</thead>
 		<tbody>
@@ -49,22 +46,21 @@
                             <button class="btn btn-danger" type="submit" name="delete_resident"> Delete </button>
                         </form>
             </td>
-			<td> <?= $view['email'];?> </td>
-                        <td> <?= $view['password'];?> </td> 
+			            <td> <?= $view['email'];?> </td>
                         <td> <?= $view['lname'];?> </td>
                         <td> <?= $view['fname'];?> </td>
                         <td> <?= $view['mi'];?> </td>
                         <td> <?= $view['age'];?> </td>
                         <td> <?= $view['sex'];?> </td>
                         <td> <?= $view['status'];?> </td>
-                        <td> <?= $view['address'];?> </td>
+                        <td> <?= $view['houseno'];?> </td>
+                        <td> <?= $view['street'];?> </td>
+                        <td> <?= $view['brgy'];?> </td>
                         <td> <?= $view['contact'];?> </td>
                         <td> <?= $view['bdate'];?> </td>
                         <td> <?= $view['bplace'];?> </td>
                         <td> <?= $view['nationality'];?> </td>
                         <td> <?= $view['family_role'];?> </td>
-                        <td> <?= $view['role'];?> </td>
-                        <td> <?= $view['addedby'];?> </td>
 			</tr>
 			<?php
 			}
@@ -77,25 +73,25 @@
 	}else{
 ?>
 <table class="table table-dark table-responsive">
-		<thead class="alert-info">
+		<thead >
 			<tr>
-			<th> Actions</th>
-            <th> Email </th>
-            <th> Password </th>
-            <th> Surname </th>
-            <th> First name </th>
-            <th> MI </th>
-            <th> Age </th>
-            <th> Sex </th>
-            <th> Status </th>
-            <th> Address </th>
-            <th> Contact </th>
-            <th> Bdate </th>
-            <th> Bplace </th>
-            <th> Nationality </th>
-            <th> Family Role </th>
-            <th> Role </th>
-            <th> AddedBy </th>
+                <th> Actions</th>
+                <th> Email </th>
+                <th> Surname </th>
+                <th> First name </th>
+                <th> Middle name </th>
+                <th> Age </th>
+                <th> Sex </th>
+                <th> Status </th>
+                <th> House No.</th>
+                <th> Street </th>
+                <th> Barangay </th>
+                <th> Contact # </th>
+                <th> Birth date </th>
+                <th> Birth place </th>
+                <th> Nationality </th>
+                <th> Family Head </th>
+                <th> Registered Voter </th>
 			</tr>
 		</thead>
 		<tbody>
@@ -110,21 +106,21 @@
                         </form>
             </td>
 			<td> <?= $view['email'];?> </td>
-                        <td> <?= $view['password'];?> </td> 
                         <td> <?= $view['lname'];?> </td>
                         <td> <?= $view['fname'];?> </td>
                         <td> <?= $view['mi'];?> </td>
                         <td> <?= $view['age'];?> </td>
                         <td> <?= $view['sex'];?> </td>
                         <td> <?= $view['status'];?> </td>
-                        <td> <?= $view['address'];?> </td>
+                        <td> <?= $view['houseno'];?> </td>
+                        <td> <?= $view['street'];?> </td>
+                        <td> <?= $view['brgy'];?> </td>
                         <td> <?= $view['contact'];?> </td>
                         <td> <?= $view['bdate'];?> </td>
                         <td> <?= $view['bplace'];?> </td>
                         <td> <?= $view['nationality'];?> </td>
                         <td> <?= $view['family_role'];?> </td>
-                        <td> <?= $view['role'];?> </td>
-                        <td> <?= $view['addedby'];?> </td>
+                        <td> <?= $view['voter'];?> </td>
 			</tr>
 			
 			<?php
