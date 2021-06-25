@@ -447,8 +447,19 @@
                                     </div>
                                     <div class="col">
                                         <div class="form-group">
-                                            <label for="purpose">Purpose:</label>
-                                            <input name="purpose" type="text" class="form-control" placeholder="Enter Purpose" required>
+                                            <label for="purposes">Purposes:</label>
+                                            <select class="form-control" name="purposes" id="purposes" placeholder="Enter Status" required>
+                                                <option value="">Choose your Purpose</option>
+                                                <option value="Job Requirement">Job Requirement</option>
+                                                <option value="Open a Bank Account">Open a Bank Account</option>
+                                                <option value="NBI Clearance">NBI Clearance</option>
+                                                <option value="Police Clearance">Police Clearance</option>
+                                                <option value="Postal ID">Postal ID</option>
+                                                <option value="UMID Card">UMID Card</option>
+                                                <option value="Driver's License">Driver's License</option>
+                                                <option value="Business Requirement">Business Requirement</option>
+                                                <option value="Philhealth">Philhealth</option>
+                                            </select>
                                             <div class="valid-feedback">Valid.</div>
                                             <div class="invalid-feedback">Please fill out this field.</div>
                                         </div>

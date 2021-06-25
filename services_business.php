@@ -217,10 +217,10 @@
             <div class="row"> 
                 <div class="col"> 
                     <div class="header">
-                        <h1 class="text1">Barangay Clearance </h1>
-                        <h5> A Barangay Clearance is a document issued by the Barangay Secretary and signed by the 
-                        <br> Barangay Captain stating that you are a living at that specific place and you are 
-                        <br> of good moral character. Somehow, a smaller version of NBI or Police clearance.</h5>
+                        <h1 class="text1">Business Permit (Mayor's Permit) </h1>
+                        <h5> Before you can start operating your business in the Philippines, you need to secure 
+                        <br> a Mayor’s Permit or Business Permit from the Local Government Unit (LGU) where your 
+                        <br> company office is located. </h5>
                     </div>
 
                     <br>
@@ -252,13 +252,24 @@
 
             <div class="row">
                 <div class="col">
+                    <i class="fas fa-id-card fa-7x"></i>
+
+                    <br>
+                    <br>
+
+                    <h3>Step 1: Prepare</h3>
+                    <p>First step is to prepare all of the information that will be needed
+                    in acquiring a certificate of residency.</p>
+                </div>
+
+                <div class="col">
                     <i class="fas fa-laptop fa-7x"></i>
 
                     <br>
                     <br>
 
-                    <h3>Step 1: Fill-Up</h3>
-                    <p>First step is to Fill-Up the entire form in our system.</p>
+                    <h3>Step 2: Fill-Up</h3>
+                    <p>Second step is to Fill-Up the entire form in our system.</p>
                 </div>
 
                 <div class="col">
@@ -267,8 +278,8 @@
                     <br>
                     <br>
 
-                    <h3>Step 2: Assessment</h3>
-                    <p>Second step is to verify all of the information you've been given
+                    <h3>Step 3: Assessment</h3>
+                    <p>Third step is to verify all of the information you've been given
                     in our system that we can use to make the information of your document
                     accurately.</p>
                 </div>
@@ -280,7 +291,7 @@
                     <br>
 
                     <h3>Step 3: Release</h3>
-                    <p>Fourth step is for releasing of your document.</p>
+                    <p>Fourth step is for releasing of your Business/Mayor's Permit.</p>
                 </div>
             </div>
 
@@ -307,7 +318,6 @@
                             <ul style="text-align: left; font-size: 16px;">
                                 <p class="card-text">
                                     <li> A Philippines Resident. </li>
-                                    <li> Recent Cedula. </li>
                                 </p>
                             </ul>
                         </div>
@@ -321,7 +331,7 @@
                         <div class="card-body">
                             <ul style="text-align: left; font-size: 16px;">
                                 <p class="card-text">
-                                    <li> Valid for Six (6) Months. Not valid without Barangay dry seal </li>
+                                    <li> Your permit is valid for 1 year. </li>
                                 </p>
                             </ul>
                         </div>
@@ -358,20 +368,24 @@
                 <div class="col">
                     <div class="card bg-primary card5">
                         <div class="card-header">
-                            <h6> Reason to get a Barangay Clearance<br><br> <i class="fas fa-file fa-2x"></i>  </h6>
+                            <h6> What you need <br><br> <i class="fas fa-file fa-2x"></i>  </h6>
                         </div>
                         <div class="card-body">
                             <ul style="text-align: left; font-size: 16px;">
                                 <p class="card-text">
-                                    <li> Job Requirement  </li>
-                                    <li> Open a Bank Account </li>
-                                    <li> NBI Clearance </li>
-                                    <li> Police Clearance </li>
-                                    <li> Postal ID </li>
-                                    <li> UMID Card</li>
-                                    <li> Driver's License </li>
-                                    <li> Business Requirement </li>
-                                    <li> Indigent Certification of Philhealth</li>
+                                    <li> DTI Business Name Certificate or SEC Registration Certificate </li>
+                                    <li> Latest Community Tax Certificate (Cedula) </li>
+                                    <li> Barangay Clearance </li>
+                                    <li> Location Clearance </li>
+                                    <li> Certificate of Occupancy </li>
+                                    <li> Building Permit </li>
+                                    <li> Contract of Lease or Land Title Tax Declaration (whichever is applicable) </li>
+                                    <li> Picture or Sketch of the Site </li>
+                                    <li>Fire Safety or Inspection Permit</li>
+                                    <li> Electrical Inspection Certificate </li>
+                                    <li>Sanitary Permit</li>
+                                    <li> Picture or Sketch of the Site </li>
+                                    <li>Public Liability Insurance</li>
                                 </p>
                             </ul>
                         </div>
@@ -427,56 +441,103 @@
                                     </div>
                                     <div class="col">
                                         <div class="form-group">
-                                            <label for="mi" class="mtop">Middle Name </label>
-                                            <input name="mi" type="text" class="form-control" placeholder="Enter Middle Name" required>
-                                                <div class="valid-feedback">Valid.</div>
-                                                <div class="invalid-feedback">Please fill out this field.</div>
-                                        </div>
-                                    </div>
-
-                                </div>
-
-                                <div class="row">
-                                    <div class="col">
-                                        <div class="form-group">
                                             <label for="fname">First Name:</label>
                                             <input name="fname" type="text" class="form-control" placeholder="Enter First Name" required>
                                                 <div class="valid-feedback">Valid.</div>
                                                 <div class="invalid-feedback">Please fill out this field.</div>
                                         </div>
                                     </div>
+
+                                </div>
+
+                                <div class="row">
                                     <div class="col">
                                         <div class="form-group">
-                                            <label for="purpose">Purpose:</label>
-                                            <input name="purpose" type="text" class="form-control" placeholder="Enter Purpose" required>
+                                            <label for="mi" class="mtop">Middle Name </label>
+                                            <input name="mi" type="text" class="form-control" placeholder="Enter Middle Name" required>
+                                                <div class="valid-feedback">Valid.</div>
+                                                <div class="invalid-feedback">Please fill out this field.</div>
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="form-group">
+                                            <label for="busname">Business Name:</label>
+                                            <input name="busname" type="text" class="form-control" placeholder="Enter Business Name" required>
                                             <div class="valid-feedback">Valid.</div>
                                             <div class="invalid-feedback">Please fill out this field.</div>
                                         </div>
                                     </div>
                                 </div>
                                     
+                                <br>
+
+                                <h6>Business Address:</h6>
+
+                                <hr>
+
                                 <div class="row">
                                     <div class="col">
                                         <div class="form-group">
-                                            <label for="address" class="mtop"> Address: </label>
-                                            <input type="text" class="form-control" name="address" placeholder="Enter your Address" required>
-                                                <div class="valid-feedback">Valid.</div>
-                                                <div class="invalid-feedback">Please fill out this field.</div>
+                                            <label> House No: </label>
+                                            <input type="text" class="form-control" name="houseno"  placeholder="Enter House No." required>
+                                            <div class="valid-feedback">Valid.</div>
+                                            <div class="invalid-feedback">Please fill out this field.</div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col">
+                                        <div class="form-group">
+                                            <label> Street: </label>
+                                            <input type="text" class="form-control" name="street"  placeholder="Enter Street" required>
+                                            <div class="valid-feedback">Valid.</div>
+                                            <div class="invalid-feedback">Please fill out this field.</div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col">
+                                        <div class="form-group">
+                                            <label> Barangay: </label>
+                                            <input type="text" class="form-control" name="brgy"  placeholder="Enter Barangay" required>
+                                            <div class="valid-feedback">Valid.</div>
+                                            <div class="invalid-feedback">Please fill out this field.</div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col">
+                                        <div class="form-group">
+                                            <label> Municipality: </label>
+                                            <input type="text" class="form-control" name="municipal" placeholder="Enter Municipality" required>
+                                            <div class="valid-feedback">Valid.</div>
+                                            <div class="invalid-feedback">Please fill out this field.</div>
                                         </div>
                                     </div>
                                 </div>
+
                                 <div class="row">
                                     <div class="col">
                                         <div class="form-group">
-                                            <label for="status">Status:</label>
+                                            <label for="status">Business Industry:</label>
                                             <select class="form-control" name="status" id="status" placeholder="Enter Status" required>
-                                            <option value="">Choose your Status</option>
-                                            <option value="Single">Single</option>
-                                                <option value="In a relationship">In a relationship</option>
-                                                <option value="Engaged">Engaged</option>
-                                                <option value="Married">Married</option>
-                                                <option value="Widowed">Widowed</option>
-                                                <option value="Divorces">Divorced</option>
+                                            <option value="">Choose your Business Industry</option>
+                                                <option value="Computer">Computer</option>
+                                                <option value="Telecommunication">Telecommunication</option>
+                                                <option value="Agriculture">Agriculture</option>
+                                                <option value="Construction">Construction</option>
+                                                <option value="Education">Education</option>
+                                                <option value="Pharmaceutical">Pharmaceutical</option>
+                                                <option value="Food">Food</option>
+                                                <option value="HealthCare">HealthCare</option>
+                                                <option value="Hospitality">Hospitality</option>
+                                                <option value="Entertainment">Entertainment</option>
+                                                <option value="News Media">News Media</option>
+                                                <option value="Energy">Energy</option>
+                                                <option value="Manufacturing">Manufacturing</option>
+                                                <option value="Music">Music</option>
+                                                <option value="Mining">Mining</option>
+                                                <option value="WorldWide Web">WorldWide Web</option>
+                                                <option value="Electronics">Electronics</option>
+                                                <option value="Transport">Pharmaceutical</option>
+                                                <option value="Transport">Aerospace</option>
                                             </select>
                                             <div class="valid-feedback">Valid.</div>
                                             <div class="invalid-feedback">Please fill out this field.</div>
@@ -484,8 +545,8 @@
                                     </div>
                                     <div class="col">
                                         <div class="form-group">
-                                            <label for="Age" class="mtop">Age: </label>
-                                            <input type="number" name="age" class="form-control" placeholder="Enter your Age" required>
+                                            <label for="aoe" class="mtop">Area of Establishment (SqM): </label>
+                                            <input type="number" name="aoe" class="form-control" placeholder="Enter your AOE" required>
                                             <div class="valid-feedback">Valid.</div>
                                             <div class="invalid-feedback">Please fill out this field.</div>
                                         </div>

@@ -217,10 +217,9 @@
             <div class="row"> 
                 <div class="col"> 
                     <div class="header">
-                        <h1 class="text1">Barangay Clearance </h1>
-                        <h5> A Barangay Clearance is a document issued by the Barangay Secretary and signed by the 
-                        <br> Barangay Captain stating that you are a living at that specific place and you are 
-                        <br> of good moral character. Somehow, a smaller version of NBI or Police clearance.</h5>
+                        <h1 class="text1">Barangay ID </h1>
+                        <h5> A Barangay ID is a proof for your personal information that can
+                        <br> be issued by the Barangay Staff.</h5>
                     </div>
 
                     <br>
@@ -280,7 +279,7 @@
                     <br>
 
                     <h3>Step 3: Release</h3>
-                    <p>Fourth step is for releasing of your document.</p>
+                    <p>Third step is for releasing of your document.</p>
                 </div>
             </div>
 
@@ -321,7 +320,7 @@
                         <div class="card-body">
                             <ul style="text-align: left; font-size: 16px;">
                                 <p class="card-text">
-                                    <li> Valid for Six (6) Months. Not valid without Barangay dry seal </li>
+                                    <li> Valid for Three (3) - Six (6) Months. </li>
                                 </p>
                             </ul>
                         </div>
@@ -350,28 +349,6 @@
                             <ul style="text-align: justify;">
                                 <p class="card-text">
                                     <li> 1-2 Days </li>
-                                </p>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card bg-primary card5">
-                        <div class="card-header">
-                            <h6> Reason to get a Barangay Clearance<br><br> <i class="fas fa-file fa-2x"></i>  </h6>
-                        </div>
-                        <div class="card-body">
-                            <ul style="text-align: left; font-size: 16px;">
-                                <p class="card-text">
-                                    <li> Job Requirement  </li>
-                                    <li> Open a Bank Account </li>
-                                    <li> NBI Clearance </li>
-                                    <li> Police Clearance </li>
-                                    <li> Postal ID </li>
-                                    <li> UMID Card</li>
-                                    <li> Driver's License </li>
-                                    <li> Business Requirement </li>
-                                    <li> Indigent Certification of Philhealth</li>
                                 </p>
                             </ul>
                         </div>
@@ -427,6 +404,20 @@
                                     </div>
                                     <div class="col">
                                         <div class="form-group">
+                                            <label for="fname">First Name:</label>
+                                            <input name="fname" type="text" class="form-control" placeholder="Enter First Name" required>
+                                                <div class="valid-feedback">Valid.</div>
+                                                <div class="invalid-feedback">Please fill out this field.</div>
+                                        </div>
+                                    </div>
+
+
+                                </div>
+
+                                <div class="row">
+
+                                    <div class="col">
+                                        <div class="form-group">
                                             <label for="mi" class="mtop">Middle Name </label>
                                             <input name="mi" type="text" class="form-control" placeholder="Enter Middle Name" required>
                                                 <div class="valid-feedback">Valid.</div>
@@ -434,9 +425,95 @@
                                         </div>
                                     </div>
 
+                                    <div class="col">
+                                        <div class="form-group">
+                                            <label for="Date"class="mtop">Date of Birth </label>
+                                            <input name="bdate" type="date" class="form-control" required>
+                                            <div class="valid-feedback">Valid.</div>
+                                            <div class="invalid-feedback">Please fill out this field.</div>
+                                        </div>
+                                    </div>  
+
+                                </div>
+                                    
+                                <div class="row">
+                                    <div class="col">
+                                        <div class="form-group">
+                                            <label> House No: </label>
+                                            <input type="text" class="form-control" name="houseno"  placeholder="Enter House No." required>
+                                            <div class="valid-feedback">Valid.</div>
+                                            <div class="invalid-feedback">Please fill out this field.</div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col">
+                                        <div class="form-group">
+                                            <label> Street: </label>
+                                            <input type="text" class="form-control" name="street"  placeholder="Enter Street" required>
+                                            <div class="valid-feedback">Valid.</div>
+                                            <div class="invalid-feedback">Please fill out this field.</div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col">
+                                        <div class="form-group">
+                                            <label> Barangay: </label>
+                                            <input type="text" class="form-control" name="brgy"  placeholder="Enter Barangay" required>
+                                            <div class="valid-feedback">Valid.</div>
+                                            <div class="invalid-feedback">Please fill out this field.</div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col">
+                                        <div class="form-group">
+                                            <label> Municipality: </label>
+                                            <input type="text" class="form-control" name="municipal" placeholder="Enter Municipality" required>
+                                            <div class="valid-feedback">Valid.</div>
+                                            <div class="invalid-feedback">Please fill out this field.</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="row">
+
+                                    <div class="col">
+                                        <div class="form-group">
+                                            <label class="mtop">Birth Place </label>
+                                            <input type="text" class="form-control" name="bplace"  placeholder="Enter Birth Place" required>
+                                            <div class="valid-feedback">Valid.</div>
+                                            <div class="invalid-feedback">Please fill out this field.</div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col">
+                                        <label>Upload Photo:</label>
+                                        <div class="custom-file mb-3 form-group">
+                                            <input type="file" class="custom-file-input" id="customFile" name="res_photo" required>
+                                            <label class="custom-file-label" for="customFile">Choose File</label>
+                                            <div class="valid-feedback">Valid.</div>
+                                            <div class="invalid-feedback">Please fill out this field.</div>
+                                        </div>
+                                    </div>
+
                                 </div>
 
+                                <br>
+
+                                <h6>In case of emergency :</h6>
+
+                                <hr>
+
                                 <div class="row">
+
+                                    <div class="col">
+                                        <div class="form-group">
+                                            <label for="lname">Last Name:</label>
+                                            <input name="lname" type="text" class="form-control" placeholder="Enter Last Name" required>
+                                            <div class="valid-feedback">Valid.</div>
+                                            <div class="invalid-feedback">Please fill out this field.</div>
+                                        </div>
+                                    </div>
+
                                     <div class="col">
                                         <div class="form-group">
                                             <label for="fname">First Name:</label>
@@ -445,52 +522,69 @@
                                                 <div class="invalid-feedback">Please fill out this field.</div>
                                         </div>
                                     </div>
-                                    <div class="col">
-                                        <div class="form-group">
-                                            <label for="purpose">Purpose:</label>
-                                            <input name="purpose" type="text" class="form-control" placeholder="Enter Purpose" required>
-                                            <div class="valid-feedback">Valid.</div>
-                                            <div class="invalid-feedback">Please fill out this field.</div>
-                                        </div>
-                                    </div>
+
                                 </div>
-                                    
+
                                 <div class="row">
+
                                     <div class="col">
                                         <div class="form-group">
-                                            <label for="address" class="mtop"> Address: </label>
-                                            <input type="text" class="form-control" name="address" placeholder="Enter your Address" required>
+                                            <label for="mi" class="mtop">Middle Name </label>
+                                            <input name="mi" type="text" class="form-control" placeholder="Enter Middle Name" required>
                                                 <div class="valid-feedback">Valid.</div>
                                                 <div class="invalid-feedback">Please fill out this field.</div>
                                         </div>
                                     </div>
+
+                                    <div class="col">
+                                        <div class="form-group">            
+                                            <label for="cno">Contact Number:</label>
+                                            <input name="contact" type="text" maxlength="11" class="form-control" pattern="[0-9]{11}" placeholder="Enter Contact Number" required>
+                                            <div class="valid-feedback">Valid.</div>
+                                            <div class="invalid-feedback">Please fill out this field.</div>
+                                        </div>
+                                    </div>
+
                                 </div>
+
                                 <div class="row">
                                     <div class="col">
                                         <div class="form-group">
-                                            <label for="status">Status:</label>
-                                            <select class="form-control" name="status" id="status" placeholder="Enter Status" required>
-                                            <option value="">Choose your Status</option>
-                                            <option value="Single">Single</option>
-                                                <option value="In a relationship">In a relationship</option>
-                                                <option value="Engaged">Engaged</option>
-                                                <option value="Married">Married</option>
-                                                <option value="Widowed">Widowed</option>
-                                                <option value="Divorces">Divorced</option>
-                                            </select>
+                                            <label> House No: </label>
+                                            <input type="text" class="form-control" name="houseno"  placeholder="Enter House No." required>
                                             <div class="valid-feedback">Valid.</div>
                                             <div class="invalid-feedback">Please fill out this field.</div>
                                         </div>
                                     </div>
+
                                     <div class="col">
                                         <div class="form-group">
-                                            <label for="Age" class="mtop">Age: </label>
-                                            <input type="number" name="age" class="form-control" placeholder="Enter your Age" required>
+                                            <label> Street: </label>
+                                            <input type="text" class="form-control" name="street"  placeholder="Enter Street" required>
+                                            <div class="valid-feedback">Valid.</div>
+                                            <div class="invalid-feedback">Please fill out this field.</div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col">
+                                        <div class="form-group">
+                                            <label> Barangay: </label>
+                                            <input type="text" class="form-control" name="brgy"  placeholder="Enter Barangay" required>
+                                            <div class="valid-feedback">Valid.</div>
+                                            <div class="invalid-feedback">Please fill out this field.</div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col">
+                                        <div class="form-group">
+                                            <label> Municipality: </label>
+                                            <input type="text" class="form-control" name="municipal" placeholder="Enter Municipality" required>
                                             <div class="valid-feedback">Valid.</div>
                                             <div class="invalid-feedback">Please fill out this field.</div>
                                         </div>
                                     </div>
                                 </div>
+
                             </form>
                         </div>
 

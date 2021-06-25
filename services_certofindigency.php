@@ -396,6 +396,28 @@
                             <form method="post" class="was-validated">
 
                                 <div class="row"> 
+
+                                    <div class="col">
+                                        <div class="form-group">
+                                            <label for="fname">First Name:</label>
+                                            <input name="fname" type="text" class="form-control" placeholder="Enter First Name" required>
+                                                <div class="valid-feedback">Valid.</div>
+                                                <div class="invalid-feedback">Please fill out this field.</div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col">
+                                        <div class="form-group">
+                                            <label for="mi" class="mtop">Middle Name: </label>
+                                            <input name="mi" type="text" class="form-control" placeholder="Enter Middle Name" required>
+                                            <div class="valid-feedback">Valid.</div>
+                                            <div class="invalid-feedback">Please fill out this field.</div>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                                <div class="row">
                                     <div class="col">
                                         <div class="form-group">
                                             <label for="lname">Last Name:</label>
@@ -407,19 +429,20 @@
 
                                     <div class="col">
                                         <div class="form-group">
-                                            <label for="fname">First Name:</label>
-                                            <input name="fname" type="text" class="form-control" placeholder="Enter First Name" required>
-                                                <div class="valid-feedback">Valid.</div>
-                                                <div class="invalid-feedback">Please fill out this field.</div>
+                                            <label class="mtop">Nationality: </label>
+                                            <input type="text" class="form-control" name="nationality"  placeholder="Enter Nationality" required>
+                                            <div class="valid-feedback">Valid.</div>
+                                            <div class="invalid-feedback">Please fill out this field.</div>
                                         </div>
                                     </div>
+
                                 </div>
 
                                 <div class="row">
                                     <div class="col">
                                         <div class="form-group">
-                                            <label for="mi" class="mtop">Middle Name: </label>
-                                            <input name="mi" type="text" class="form-control" placeholder="Enter Middle Name" required>
+                                            <label> House No: </label>
+                                            <input type="text" class="form-control" name="houseno"  placeholder="Enter House No." required>
                                             <div class="valid-feedback">Valid.</div>
                                             <div class="invalid-feedback">Please fill out this field.</div>
                                         </div>
@@ -427,50 +450,44 @@
 
                                     <div class="col">
                                         <div class="form-group">
-                                            <label for="purpose">Purpose:</label>
-                                            <input name="purpose" type="text" class="form-control" placeholder="Enter Purpose" required>
+                                            <label> Street: </label>
+                                            <input type="text" class="form-control" name="street"  placeholder="Enter Street" required>
                                             <div class="valid-feedback">Valid.</div>
                                             <div class="invalid-feedback">Please fill out this field.</div>
                                         </div>
                                     </div>
+
+                                    <div class="col">
+                                        <div class="form-group">
+                                            <label> Barangay: </label>
+                                            <input type="text" class="form-control" name="brgy"  placeholder="Enter Barangay" required>
+                                            <div class="valid-feedback">Valid.</div>
+                                            <div class="invalid-feedback">Please fill out this field.</div>
+                                        </div>
+                                    </div>
+
                                 </div>
 
                                 <div class="row">
-                                    <div class="col">
-                                        <div class="form-group">
-                                            <label for="address" class="mtop"> Address: </label>
-                                            <input type="text" class="form-control" name="address" placeholder="Enter your Address" required>
-                                            <div class="valid-feedback">Valid.</div>
-                                            <div class="invalid-feedback">Please fill out this field.</div>
-                                        </div>
-                                    </div>
-                                </div>
 
-                                <div class="row">
                                     <div class="col">
                                         <div class="form-group">
-                                            <label for="status">Status:</label>
-                                            <select class="form-control" name="status" id="status" placeholder="Enter Status" required>
-                                            <option value="">Choose your Status</option>
-                                            <option value="Single">Single</option>
-                                                <option value="In a relationship">In a relationship</option>
-                                                <option value="Engaged">Engaged</option>
-                                                <option value="Married">Married</option>
-                                                <option value="Widowed">Widowed</option>
-                                                <option value="Divorces">Divorced</option>
-                                            </select>
+                                            <label> Municipality: </label>
+                                            <input type="text" class="form-control" name="municipal" placeholder="Enter Municipality" required>
                                             <div class="valid-feedback">Valid.</div>
                                             <div class="invalid-feedback">Please fill out this field.</div>
                                         </div>
                                     </div>
+
                                     <div class="col">
                                         <div class="form-group">
-                                            <label for="Age" class="mtop">Age: </label>
-                                            <input type="number" name="age" class="form-control" placeholder="Enter your Age" required>
+                                            <label class="mtop">Date: </label>
+                                            <input type="date" class="form-control" name="date" required>
                                             <div class="valid-feedback">Valid.</div>
                                             <div class="invalid-feedback">Please fill out this field.</div>
-                                        </div> 
+                                        </div>
                                     </div>
+
                                 </div>
                                 
                             </form>

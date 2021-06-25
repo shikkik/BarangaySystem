@@ -175,9 +175,10 @@
                                     <div class="col">
                                         <div class="form-group">
                                             <label>Password:</label>
-                                            <input type="password" class="form-control" name="password" placeholder="Enter Password" required>
+                                            <input type="password" class="form-control" id="password" name="password" placeholder="Enter Password" required>
                                             <div class="valid-feedback">Valid.</div>
                                             <div class="invalid-feedback">Please fill out this field.</div>
+                                            <p style="color: red; margin-left:14%;" id="text">WARNING! Caps lock is ON.</p>
                                         </div>
                                     </div>
                                 </div>
@@ -481,6 +482,19 @@
             $(".custom-file-input").on("change", function() {
             var fileName = $(this).val().split("\\").pop();
             $(this).siblings(".custom-file-label").addClass("selected").html(fileName);
+            });
+        </script>
+
+        <script>
+            var input = document.getElementById("password");
+            var text = document.getElementById("text");
+            input.addEventListener("keyup", function(event) {
+
+            if (event.getModifierState("CapsLock")) {
+                text.style.display = "block";
+            } else {
+                text.style.display = "none"
+            }
             });
         </script>
 
