@@ -14,8 +14,8 @@
 <html>
 
     <head> 
-        <title> Barangay Information & Management System </title>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <title> Barangay Management System </title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
         <!-- responsive tags for screen compatibility -->
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -106,7 +106,7 @@
         <!-- eto yung navbar -->
         <nav class="navbar navbar-dark bg-primary sticky-top">
             <a class="navbar-brand" href="index.php"> <img src="../BarangaySystem/icons/beverlylogo.png" width="40px" height="40px"> 
-            <a class="navbar-brand" href="resident_homepage.php">Barangay Information & E-Services Management System</a>
+            <a class="navbar-brand" href="resident_homepage.php">Barangay Beverly Hills</a>
 
             <div class="dropdown ml-auto">
                 <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown"><?= $userdetails['surname'];?>, <?= $userdetails['firstname'];?>
@@ -121,15 +121,13 @@
         </nav>
 
         <div class="container"> 
-            <div class="row">
-                <div class="col"> 
                     <div class="card" style="margin-top: 2em;">  
                     <div class="card-header bg-primary text-white"> Personal Information </div>
                     <div class="card-body"> 
                         <form method="post">
+
                         <div class="row"> 
                             <div class="col-md-2"> 
-                             
                                 <h5> Name:</h5> <br>
                                 <h5> Email: </h5> <br>
                                 <h5> Sex: </h5> <h5> <br>
@@ -140,10 +138,9 @@
                             </div>
 
                             <div class="col-md-4"> 
-                                
                                 <h5><?= $resident['lname'];?>, <?= $resident['fname'];?> <?= $resident['mi'];?></h5> <br>
                                 <h5> <?= $resident['email'];?> </h5><br>
-                                <h5><?= $resident['sex'];?> </h5><br>
+                                <h5><?= $resident['sex'];?> </h5><br><br><br>
                                 <input class="form-control" type="text" name="age" value="<?= $resident['age'];?>"><br>
                                 <input class="form-control" type="text" name="status" value="<?= $resident['status'];?>"><br>
                                 <input class="form-control" type="text" name="address" value="<?= $resident['address'];?>"><br>
@@ -155,26 +152,29 @@
                                 <h5> Birth Place: </h5> <br>
                                 <h5> Nationality: </h5> <br>
                                 <h5> Family Role: </h5> <h5> <br>
+                                <h5> Profile Image </h5>
                             </div>
 
                             <div class="col-md-4"> 
                                 <h5> <?= $resident['bdate'];?> </h5><br>
                                 <h5> <?= $resident['bplace'];?> </h5><br>
                                 <h5> <?= $resident['nationality'];?> </h5><br>
-                                <h5> <?= $resident['family_role'];?> </h5><br>
+                                <h5> <?= $resident['family_role'];?> </h5><br><br><br><br>
+                                    <p><input type="file"  accept="image/*" name="image" id="file"  onchange="loadFile(event)" style="display: none;"></p>
+                                    <p><label class="border" for="file" style="cursor: pointer; margin-left:35px; margin-top:15px;">Upload Image</label></p>
+                                    <p><img id="output" width="180" height="180" style="margin-top: -10px;" ></p>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                </div> 
-            </div>
+
             <br>
             <div class="row" style="margin-bottom: 5em;"> 
                 <div class="col-xl-12">
                     <div class="form-inline">
                         <input class="form-control" name="lname" type="hidden" value="<?= $resident['lname'];?>"/>
                         <input class="form-control" name="mi" type="hidden" value="<?= $resident['mi'];?>" />
-                        <button type="submit" class="btn btn-info"  name="search_household">View Household</button>
+                        <button type="submit button" class="btn btn-info"  name="search_household">View Household</button>
                         <button class="btn btn-primary" type="submit" name="profile_update"> Update </button>
                         <a href="resident_profile.php?id_resident=<?= $userdetails['id_resident'];?>"></a>   
                         <div>
@@ -327,16 +327,22 @@
             <!--Copyright-->
 
             <div class="py-3 text-center">
-                Copyright 2020 -
+                Copyright 2021 -
                 <script>
                 document.write(new Date().getFullYear())
                 </script> 
-                SAD/DBA | For Educational Purposes Only
+                BI & ESMS | For Educational Purposes Only
             </div>
 
         </footer>
 
- 
+        <script>
+            var loadFile = function(event) {
+                var image = document.getElementById('output');
+                image.src = URL.createObjectURL(event.target.files[0]);
+            };
+        </script>
+
         <script src="../BarangaySystem/bootstrap/js/bootstrap.bundle.js" type="text/javascript"> </script>
 
     </body>

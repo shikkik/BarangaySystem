@@ -23,6 +23,14 @@
     </head>
 
     <style>
+        
+        .field-icon {
+        margin-left: 74%;
+        margin-top: -8%;
+        position: absolute;
+        z-index: 2;
+        }
+
         a{
       color:white;
       }
@@ -175,10 +183,10 @@
                                     <div class="col">
                                         <div class="form-group">
                                             <label>Password:</label>
-                                            <input type="password" class="form-control" id="password" name="password" placeholder="Enter Password" required>
+                                            <input type="password" class="form-control" id="password-field" name="password" placeholder="Enter Password" required>
+                                            <span toggle="#password-field" class="fa fa-fw fa-eye field-icon toggle-password"></span>
                                             <div class="valid-feedback">Valid.</div>
                                             <div class="invalid-feedback">Please fill out this field.</div>
-                                            <p style="color: red; margin-left:14%;" id="text">WARNING! Caps lock is ON.</p>
                                         </div>
                                     </div>
                                 </div>
@@ -290,15 +298,6 @@
                                 </div>
 
                                 <div class="row">
-                                    <div class="col">
-                                        <label>Upload Photo:</label>
-                                        <div class="custom-file mb-3 form-group">
-                                            <input type="file" class="custom-file-input" id="customFile" name="res_photo" required>
-                                            <label class="custom-file-label" for="customFile">Choose File</label>
-                                            <div class="valid-feedback">Valid.</div>
-                                            <div class="invalid-feedback">Please fill out this field.</div>
-                                        </div>
-                                    </div>
                                   
                                     <div class="col"> 
                                         <div class="form-group">
@@ -486,14 +485,13 @@
         </script>
 
         <script>
-            var input = document.getElementById("password");
-            var text = document.getElementById("text");
-            input.addEventListener("keyup", function(event) {
-
-            if (event.getModifierState("CapsLock")) {
-                text.style.display = "block";
+            $(".toggle-password").click(function() {
+            $(this).toggleClass("fa-eye fa-eye-slash");
+            var input = $($(this).attr("toggle"));
+            if (input.attr("type") == "password") {
+            input.attr("type", "text");
             } else {
-                text.style.display = "none"
+            input.attr("type", "password");
             }
             });
         </script>

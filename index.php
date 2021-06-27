@@ -80,7 +80,7 @@
 
                                 <input type="password" class="form-control" id="myInput" name="password" placeholder="Password" required>
                                 
-                                <p style="color: red; margin-left:25%; margin-top:3%;" id="text">WARNING! Caps lock is ON.</p>
+                                <p style="color: red; margin-left:25%; margin-top:1%;" id="text">WARNING! Caps lock is ON.</p>
                                 <br>
 
                                 <div class="custom-control custom-switch">
