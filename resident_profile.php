@@ -7,6 +7,8 @@
     $resident = $residentbmis->get_single_resident($id_resident);
 
     $residentbmis->profile_update();
+
+    
     
 ?>
 
@@ -135,7 +137,9 @@
                                 <h5> Sex: </h5> <h5> <br>
                                 <h5>Age:</h5> <br>
                                 <h5>Status:</h5> <br>
-                                <h5>Address:</h5> <br>
+                                <h5>House No: </h5> <br>
+                                <h5>Street: </h5> <br>
+                                <h5>Barangay: </h5> <br>
                                 <h5>Contact:</h5> <br>
                             </div>
 
@@ -154,14 +158,14 @@
                                 <h5> Birth Date: </h5> <br>
                                 <h5> Birth Place: </h5> <br>
                                 <h5> Nationality: </h5> <br>
-                                <h5> Family Role: </h5> <h5> <br>
+            
                             </div>
 
                             <div class="col-md-4"> 
                                 <h5> <?= $resident['bdate'];?> </h5><br>
                                 <h5> <?= $resident['bplace'];?> </h5><br>
                                 <h5> <?= $resident['nationality'];?> </h5><br>
-                                <h5> <?= $resident['family_role'];?> </h5><br>
+                               
                             </div>
                         </div>
                     </div>
