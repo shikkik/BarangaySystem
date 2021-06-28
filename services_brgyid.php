@@ -3,7 +3,8 @@
     require('classes/resident.class.php');
     
     $userdetails = $bmis->get_userdata();
-    $bmis->create_certofindigency();
+    $bmis->create_brgyclearance();
+
 ?>
 
 <!DOCTYPE html>
@@ -78,8 +79,16 @@
             background: #555; 
             }
 
+            .card5 {
+                width: 195px;
+                height: 210px;
+                overflow: auto;
+                margin: auto;
+                color: white;
+            }
+
             .card4 {
-                width: 250px;
+                width: 195px;
                 height: 210px;
                 overflow: hidden;
                 margin: auto;
@@ -87,7 +96,7 @@
             }
 
             .card3 {
-                width: 250px;
+                width: 195px;
                 height: 210px;
                 overflow: hidden;
                 margin: auto;
@@ -95,7 +104,7 @@
             }
 
             .card2 {
-                width: 250px;
+                width: 195px;
                 height: 210px;
                 overflow: auto;
                 margin: auto;
@@ -103,7 +112,7 @@
             }
 
             .card1 {
-                width: 250px;
+                width: 195px;
                 height: 210px;
                 overflow: auto;
                 margin: auto;
@@ -208,10 +217,9 @@
             <div class="row"> 
                 <div class="col"> 
                     <div class="header">
-                        <h1 class="text1">Certificate of Indigency</h1>
-                        <h5> A Certificate of Indigency or a Certificate of Low Income is a document 
-                        <br> that are sometimes required by the Philippine government or a private 
-                        <br> institution as proof of an individual's financial situation.</h5>
+                        <h1 class="text1">Barangay ID </h1>
+                        <h5> A Barangay ID is a proof for your personal information that can
+                        <br> be issued by the Barangay Staff.</h5>
                     </div>
 
                     <br>
@@ -265,24 +273,13 @@
                 </div>
 
                 <div class="col">
-                    <i class="fas fa-thumbs-up fa-7x"></i>
-
-                    <br>
-                    <br>
-
-                    <h3>Step 3: Approval</h3>
-                    <p>Third step is to approve your document. Therefore, we dont have an
-                    issue when we release your document.</p>
-                </div>
-
-                <div class="col">
                     <i class="fas fa-file fa-7x"></i>
 
                     <br>
                     <br>
 
-                    <h3>Step 4: Release</h3>
-                    <p>Fourth step is for releasing of your document.</p>
+                    <h3>Step 3: Release</h3>
+                    <p>Third step is for releasing of your document.</p>
                 </div>
             </div>
 
@@ -303,13 +300,13 @@
                 <div class="col">
                     <div class="card bg-primary card1">
                         <div class="card-header">
-                            <h5> Client Group <br><br> <i class="fas fa-user-check fa-2x"></i>  </h5>
+                            <h5> Eligibility <br><br> <i class="fas fa-user-check fa-2x"></i>  </h5>
                         </div>
                         <div class="card-body">
                             <ul style="text-align: left; font-size: 16px;">
                                 <p class="card-text">
-                                    <li> Indigent Individuals </li>
-                                    <li> Families in the Community. </li>
+                                    <li> A Philippines Resident. </li>
+                                    <li> Recent Cedula. </li>
                                 </p>
                             </ul>
                         </div>
@@ -323,7 +320,7 @@
                         <div class="card-body">
                             <ul style="text-align: left; font-size: 16px;">
                                 <p class="card-text">
-                                    <li> Valid for Six (6) Months. Not valid without Barangay dry seal </li>
+                                    <li> Valid for Three (3) - Six (6) Months. </li>
                                 </p>
                             </ul>
                         </div>
@@ -373,12 +370,12 @@
 
             <div class="col">   
                 <button type="button" class="btn btn-primary applybutton" data-toggle="modal" data-target="#exampleModalCenter">
-                    Request Certificate of Indigency
+                    Request Barangay ID
                 </button>
             </div>
 
 
-                <!-- Modal -->
+            <!-- Modal -->
 
             <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered" role="document">
@@ -399,6 +396,14 @@
 
                                     <div class="col">
                                         <div class="form-group">
+                                            <label for="lname">Last Name:</label>
+                                            <input name="lname" type="text" class="form-control" placeholder="Enter Last Name" required>
+                                            <div class="valid-feedback">Valid.</div>
+                                            <div class="invalid-feedback">Please fill out this field.</div>
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="form-group">
                                             <label for="fname">First Name:</label>
                                             <input name="fname" type="text" class="form-control" placeholder="Enter First Name" required>
                                                 <div class="valid-feedback">Valid.</div>
@@ -406,22 +411,15 @@
                                         </div>
                                     </div>
 
-                                    <div class="col">
-                                        <div class="form-group">
-                                            <label for="mi" class="mtop">Middle Name: </label>
-                                            <input name="mi" type="text" class="form-control" placeholder="Enter Middle Name" required>
-                                            <div class="valid-feedback">Valid.</div>
-                                            <div class="invalid-feedback">Please fill out this field.</div>
-                                        </div>
-                                    </div>
 
                                 </div>
 
                                 <div class="row">
+
                                     <div class="col">
                                         <div class="form-group">
-                                            <label for="lname">Last Name:</label>
-                                            <input name="lname" type="text" class="form-control" placeholder="Enter Last Name" required>
+                                            <label for="mi" class="mtop">Middle Name </label>
+                                            <input name="mi" type="text" class="form-control" placeholder="Enter Middle Name" required>
                                                 <div class="valid-feedback">Valid.</div>
                                                 <div class="invalid-feedback">Please fill out this field.</div>
                                         </div>
@@ -429,8 +427,119 @@
 
                                     <div class="col">
                                         <div class="form-group">
-                                            <label class="mtop">Nationality: </label>
-                                            <input type="text" class="form-control" name="nationality"  placeholder="Enter Nationality" required>
+                                            <label for="Date"class="mtop">Date of Birth </label>
+                                            <input name="bdate" type="date" class="form-control" required>
+                                            <div class="valid-feedback">Valid.</div>
+                                            <div class="invalid-feedback">Please fill out this field.</div>
+                                        </div>
+                                    </div>  
+
+                                </div>
+                                    
+                                <div class="row">
+                                    <div class="col">
+                                        <div class="form-group">
+                                            <label> House No: </label>
+                                            <input type="text" class="form-control" name="houseno"  placeholder="Enter House No." required>
+                                            <div class="valid-feedback">Valid.</div>
+                                            <div class="invalid-feedback">Please fill out this field.</div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col">
+                                        <div class="form-group">
+                                            <label> Street: </label>
+                                            <input type="text" class="form-control" name="street"  placeholder="Enter Street" required>
+                                            <div class="valid-feedback">Valid.</div>
+                                            <div class="invalid-feedback">Please fill out this field.</div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col">
+                                        <div class="form-group">
+                                            <label> Barangay: </label>
+                                            <input type="text" class="form-control" name="brgy"  placeholder="Enter Barangay" required>
+                                            <div class="valid-feedback">Valid.</div>
+                                            <div class="invalid-feedback">Please fill out this field.</div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col">
+                                        <div class="form-group">
+                                            <label> Municipality: </label>
+                                            <input type="text" class="form-control" name="municipal" placeholder="Enter Municipality" required>
+                                            <div class="valid-feedback">Valid.</div>
+                                            <div class="invalid-feedback">Please fill out this field.</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="row">
+
+                                    <div class="col">
+                                        <div class="form-group">
+                                            <label class="mtop">Birth Place </label>
+                                            <input type="text" class="form-control" name="bplace"  placeholder="Enter Birth Place" required>
+                                            <div class="valid-feedback">Valid.</div>
+                                            <div class="invalid-feedback">Please fill out this field.</div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col">
+                                        <label>Upload Photo:</label>
+                                        <div class="custom-file mb-3 form-group">
+                                            <input type="file" class="custom-file-input" id="customFile" name="res_photo" required>
+                                            <label class="custom-file-label" for="customFile">Choose File</label>
+                                            <div class="valid-feedback">Valid.</div>
+                                            <div class="invalid-feedback">Please fill out this field.</div>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                                <br>
+
+                                <h6>In case of emergency :</h6>
+
+                                <hr>
+
+                                <div class="row">
+
+                                    <div class="col">
+                                        <div class="form-group">
+                                            <label for="lname">Last Name:</label>
+                                            <input name="lname" type="text" class="form-control" placeholder="Enter Last Name" required>
+                                            <div class="valid-feedback">Valid.</div>
+                                            <div class="invalid-feedback">Please fill out this field.</div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col">
+                                        <div class="form-group">
+                                            <label for="fname">First Name:</label>
+                                            <input name="fname" type="text" class="form-control" placeholder="Enter First Name" required>
+                                                <div class="valid-feedback">Valid.</div>
+                                                <div class="invalid-feedback">Please fill out this field.</div>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                                <div class="row">
+
+                                    <div class="col">
+                                        <div class="form-group">
+                                            <label for="mi" class="mtop">Middle Name </label>
+                                            <input name="mi" type="text" class="form-control" placeholder="Enter Middle Name" required>
+                                                <div class="valid-feedback">Valid.</div>
+                                                <div class="invalid-feedback">Please fill out this field.</div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col">
+                                        <div class="form-group">            
+                                            <label for="cno">Contact Number:</label>
+                                            <input name="contact" type="text" maxlength="11" class="form-control" pattern="[0-9]{11}" placeholder="Enter Contact Number" required>
                                             <div class="valid-feedback">Valid.</div>
                                             <div class="invalid-feedback">Please fill out this field.</div>
                                         </div>
@@ -466,10 +575,6 @@
                                         </div>
                                     </div>
 
-                                </div>
-
-                                <div class="row">
-
                                     <div class="col">
                                         <div class="form-group">
                                             <label> Municipality: </label>
@@ -478,37 +583,26 @@
                                             <div class="invalid-feedback">Please fill out this field.</div>
                                         </div>
                                     </div>
-
-                                    <div class="col">
-                                        <div class="form-group">
-                                            <label class="mtop">Date: </label>
-                                            <input type="date" class="form-control" name="date" required>
-                                            <div class="valid-feedback">Valid.</div>
-                                            <div class="invalid-feedback">Please fill out this field.</div>
-                                        </div>
-                                    </div>
-
                                 </div>
-                                
+
                             </form>
                         </div>
 
-                
-                
                         <!-- Modal Footer -->
-                        
+            
                         <div class="modal-footer">
                             <div class="paa">
                                 <input name="id_resident" type="hidden" class="form-control" value="<?= $userdetails['id_resident']?>">
                                 <input name="addedby" type="hidden" class="form-control" value="<?= $userdetails['surname']?> <?= $userdetails['firstname']?> <?= $userdetails['mname']?>">
                                 <button type="button" class="btn btn-dark" data-dismiss="modal">Close</button>
-                                <button name ="create_certofindigency" type="submit" class="btn btn-primary">Submit Request</button>
+                                <button name ="create_brgyclearance" type="submit" class="btn btn-primary">Submit Request</button>
                             </div>
                         </div> 
                     </div>
                 </div>
             </div>
-        </div> 
+        </div>
+        
 
         <br>
         <br>

@@ -80,6 +80,7 @@
 
                                 <input type="password" class="form-control" id="myInput" name="password" placeholder="Password" required>
                                 
+                                <p style="color: red; margin-left:25%; margin-top:1%;" id="text">WARNING! Caps lock is ON.</p>
                                 <br>
 
                                 <div class="custom-control custom-switch">
@@ -122,6 +123,19 @@
             function trying() {
                 window.location.href = "resident_registration.php";
             }
+        </script>
+
+        <script>
+            var input = document.getElementById("myInput");
+            var text = document.getElementById("text");
+            input.addEventListener("keyup", function(event) {
+
+            if (event.getModifierState("CapsLock")) {
+                text.style.display = "block";
+            } else {
+                text.style.display = "none"
+            }
+            });
         </script>
 
     </body>

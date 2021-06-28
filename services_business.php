@@ -3,7 +3,8 @@
     require('classes/resident.class.php');
     
     $userdetails = $bmis->get_userdata();
-    $bmis->create_certofindigency();
+    $bmis->create_brgyclearance();
+
 ?>
 
 <!DOCTYPE html>
@@ -78,8 +79,16 @@
             background: #555; 
             }
 
+            .card5 {
+                width: 195px;
+                height: 210px;
+                overflow: auto;
+                margin: auto;
+                color: white;
+            }
+
             .card4 {
-                width: 250px;
+                width: 195px;
                 height: 210px;
                 overflow: hidden;
                 margin: auto;
@@ -87,7 +96,7 @@
             }
 
             .card3 {
-                width: 250px;
+                width: 195px;
                 height: 210px;
                 overflow: hidden;
                 margin: auto;
@@ -95,7 +104,7 @@
             }
 
             .card2 {
-                width: 250px;
+                width: 195px;
                 height: 210px;
                 overflow: auto;
                 margin: auto;
@@ -103,7 +112,7 @@
             }
 
             .card1 {
-                width: 250px;
+                width: 195px;
                 height: 210px;
                 overflow: auto;
                 margin: auto;
@@ -208,10 +217,10 @@
             <div class="row"> 
                 <div class="col"> 
                     <div class="header">
-                        <h1 class="text1">Certificate of Indigency</h1>
-                        <h5> A Certificate of Indigency or a Certificate of Low Income is a document 
-                        <br> that are sometimes required by the Philippine government or a private 
-                        <br> institution as proof of an individual's financial situation.</h5>
+                        <h1 class="text1">Business Permit (Mayor's Permit) </h1>
+                        <h5> Before you can start operating your business in the Philippines, you need to secure 
+                        <br> a Mayor’s Permit or Business Permit from the Local Government Unit (LGU) where your 
+                        <br> company office is located. </h5>
                     </div>
 
                     <br>
@@ -243,13 +252,24 @@
 
             <div class="row">
                 <div class="col">
+                    <i class="fas fa-id-card fa-7x"></i>
+
+                    <br>
+                    <br>
+
+                    <h3>Step 1: Prepare</h3>
+                    <p>First step is to prepare all of the information that will be needed
+                    in acquiring a certificate of residency.</p>
+                </div>
+
+                <div class="col">
                     <i class="fas fa-laptop fa-7x"></i>
 
                     <br>
                     <br>
 
-                    <h3>Step 1: Fill-Up</h3>
-                    <p>First step is to Fill-Up the entire form in our system.</p>
+                    <h3>Step 2: Fill-Up</h3>
+                    <p>Second step is to Fill-Up the entire form in our system.</p>
                 </div>
 
                 <div class="col">
@@ -258,21 +278,10 @@
                     <br>
                     <br>
 
-                    <h3>Step 2: Assessment</h3>
-                    <p>Second step is to verify all of the information you've been given
+                    <h3>Step 3: Assessment</h3>
+                    <p>Third step is to verify all of the information you've been given
                     in our system that we can use to make the information of your document
                     accurately.</p>
-                </div>
-
-                <div class="col">
-                    <i class="fas fa-thumbs-up fa-7x"></i>
-
-                    <br>
-                    <br>
-
-                    <h3>Step 3: Approval</h3>
-                    <p>Third step is to approve your document. Therefore, we dont have an
-                    issue when we release your document.</p>
                 </div>
 
                 <div class="col">
@@ -281,8 +290,8 @@
                     <br>
                     <br>
 
-                    <h3>Step 4: Release</h3>
-                    <p>Fourth step is for releasing of your document.</p>
+                    <h3>Step 3: Release</h3>
+                    <p>Fourth step is for releasing of your Business/Mayor's Permit.</p>
                 </div>
             </div>
 
@@ -303,13 +312,12 @@
                 <div class="col">
                     <div class="card bg-primary card1">
                         <div class="card-header">
-                            <h5> Client Group <br><br> <i class="fas fa-user-check fa-2x"></i>  </h5>
+                            <h5> Eligibility <br><br> <i class="fas fa-user-check fa-2x"></i>  </h5>
                         </div>
                         <div class="card-body">
                             <ul style="text-align: left; font-size: 16px;">
                                 <p class="card-text">
-                                    <li> Indigent Individuals </li>
-                                    <li> Families in the Community. </li>
+                                    <li> A Philippines Resident. </li>
                                 </p>
                             </ul>
                         </div>
@@ -323,7 +331,7 @@
                         <div class="card-body">
                             <ul style="text-align: left; font-size: 16px;">
                                 <p class="card-text">
-                                    <li> Valid for Six (6) Months. Not valid without Barangay dry seal </li>
+                                    <li> Your permit is valid for 1 year. </li>
                                 </p>
                             </ul>
                         </div>
@@ -357,6 +365,32 @@
                         </div>
                     </div>
                 </div>
+                <div class="col">
+                    <div class="card bg-primary card5">
+                        <div class="card-header">
+                            <h6> What you need <br><br> <i class="fas fa-file fa-2x"></i>  </h6>
+                        </div>
+                        <div class="card-body">
+                            <ul style="text-align: left; font-size: 16px;">
+                                <p class="card-text">
+                                    <li> DTI Business Name Certificate or SEC Registration Certificate </li>
+                                    <li> Latest Community Tax Certificate (Cedula) </li>
+                                    <li> Barangay Clearance </li>
+                                    <li> Location Clearance </li>
+                                    <li> Certificate of Occupancy </li>
+                                    <li> Building Permit </li>
+                                    <li> Contract of Lease or Land Title Tax Declaration (whichever is applicable) </li>
+                                    <li> Picture or Sketch of the Site </li>
+                                    <li>Fire Safety or Inspection Permit</li>
+                                    <li> Electrical Inspection Certificate </li>
+                                    <li>Sanitary Permit</li>
+                                    <li> Picture or Sketch of the Site </li>
+                                    <li>Public Liability Insurance</li>
+                                </p>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
 
@@ -373,12 +407,12 @@
 
             <div class="col">   
                 <button type="button" class="btn btn-primary applybutton" data-toggle="modal" data-target="#exampleModalCenter">
-                    Request Certificate of Indigency
+                    Request Business Permit
                 </button>
             </div>
 
 
-                <!-- Modal -->
+            <!-- Modal -->
 
             <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered" role="document">
@@ -399,19 +433,18 @@
 
                                     <div class="col">
                                         <div class="form-group">
+                                            <label for="lname">Last Name:</label>
+                                            <input name="lname" type="text" class="form-control" placeholder="Enter Last Name" required>
+                                            <div class="valid-feedback">Valid.</div>
+                                            <div class="invalid-feedback">Please fill out this field.</div>
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="form-group">
                                             <label for="fname">First Name:</label>
                                             <input name="fname" type="text" class="form-control" placeholder="Enter First Name" required>
                                                 <div class="valid-feedback">Valid.</div>
                                                 <div class="invalid-feedback">Please fill out this field.</div>
-                                        </div>
-                                    </div>
-
-                                    <div class="col">
-                                        <div class="form-group">
-                                            <label for="mi" class="mtop">Middle Name: </label>
-                                            <input name="mi" type="text" class="form-control" placeholder="Enter Middle Name" required>
-                                            <div class="valid-feedback">Valid.</div>
-                                            <div class="invalid-feedback">Please fill out this field.</div>
                                         </div>
                                     </div>
 
@@ -420,23 +453,27 @@
                                 <div class="row">
                                     <div class="col">
                                         <div class="form-group">
-                                            <label for="lname">Last Name:</label>
-                                            <input name="lname" type="text" class="form-control" placeholder="Enter Last Name" required>
+                                            <label for="mi" class="mtop">Middle Name </label>
+                                            <input name="mi" type="text" class="form-control" placeholder="Enter Middle Name" required>
                                                 <div class="valid-feedback">Valid.</div>
                                                 <div class="invalid-feedback">Please fill out this field.</div>
                                         </div>
                                     </div>
-
                                     <div class="col">
                                         <div class="form-group">
-                                            <label class="mtop">Nationality: </label>
-                                            <input type="text" class="form-control" name="nationality"  placeholder="Enter Nationality" required>
+                                            <label for="busname">Business Name:</label>
+                                            <input name="busname" type="text" class="form-control" placeholder="Enter Business Name" required>
                                             <div class="valid-feedback">Valid.</div>
                                             <div class="invalid-feedback">Please fill out this field.</div>
                                         </div>
                                     </div>
-
                                 </div>
+                                    
+                                <br>
+
+                                <h6>Business Address:</h6>
+
+                                <hr>
 
                                 <div class="row">
                                     <div class="col">
@@ -466,10 +503,6 @@
                                         </div>
                                     </div>
 
-                                </div>
-
-                                <div class="row">
-
                                     <div class="col">
                                         <div class="form-group">
                                             <label> Municipality: </label>
@@ -478,37 +511,65 @@
                                             <div class="invalid-feedback">Please fill out this field.</div>
                                         </div>
                                     </div>
+                                </div>
 
+                                <div class="row">
                                     <div class="col">
                                         <div class="form-group">
-                                            <label class="mtop">Date: </label>
-                                            <input type="date" class="form-control" name="date" required>
+                                            <label for="status">Business Industry:</label>
+                                            <select class="form-control" name="status" id="status" placeholder="Enter Status" required>
+                                            <option value="">Choose your Business Industry</option>
+                                                <option value="Computer">Computer</option>
+                                                <option value="Telecommunication">Telecommunication</option>
+                                                <option value="Agriculture">Agriculture</option>
+                                                <option value="Construction">Construction</option>
+                                                <option value="Education">Education</option>
+                                                <option value="Pharmaceutical">Pharmaceutical</option>
+                                                <option value="Food">Food</option>
+                                                <option value="HealthCare">HealthCare</option>
+                                                <option value="Hospitality">Hospitality</option>
+                                                <option value="Entertainment">Entertainment</option>
+                                                <option value="News Media">News Media</option>
+                                                <option value="Energy">Energy</option>
+                                                <option value="Manufacturing">Manufacturing</option>
+                                                <option value="Music">Music</option>
+                                                <option value="Mining">Mining</option>
+                                                <option value="WorldWide Web">WorldWide Web</option>
+                                                <option value="Electronics">Electronics</option>
+                                                <option value="Transport">Pharmaceutical</option>
+                                                <option value="Transport">Aerospace</option>
+                                            </select>
                                             <div class="valid-feedback">Valid.</div>
                                             <div class="invalid-feedback">Please fill out this field.</div>
                                         </div>
                                     </div>
-
+                                    <div class="col">
+                                        <div class="form-group">
+                                            <label for="aoe" class="mtop">Area of Establishment (SqM): </label>
+                                            <input type="number" name="aoe" class="form-control" placeholder="Enter your AOE" required>
+                                            <div class="valid-feedback">Valid.</div>
+                                            <div class="invalid-feedback">Please fill out this field.</div>
+                                        </div>
+                                    </div>
                                 </div>
-                                
                             </form>
                         </div>
 
-                
-                
                         <!-- Modal Footer -->
-                        
+            
                         <div class="modal-footer">
                             <div class="paa">
                                 <input name="id_resident" type="hidden" class="form-control" value="<?= $userdetails['id_resident']?>">
                                 <input name="addedby" type="hidden" class="form-control" value="<?= $userdetails['surname']?> <?= $userdetails['firstname']?> <?= $userdetails['mname']?>">
                                 <button type="button" class="btn btn-dark" data-dismiss="modal">Close</button>
-                                <button name ="create_certofindigency" type="submit" class="btn btn-primary">Submit Request</button>
+                                <button name ="create_brgyclearance" type="submit" class="btn btn-primary">Submit Request</button>
                             </div>
                         </div> 
                     </div>
                 </div>
             </div>
-        </div> 
+        </div>
+        
 
         <br>
         <br>

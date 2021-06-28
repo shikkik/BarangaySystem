@@ -447,8 +447,19 @@
                                     </div>
                                     <div class="col">
                                         <div class="form-group">
-                                            <label for="purpose">Purpose:</label>
-                                            <input name="purpose" type="text" class="form-control" placeholder="Enter Purpose" required>
+                                            <label for="purposes">Purposes:</label>
+                                            <select class="form-control" name="purposes" id="purposes" placeholder="Enter Status" required>
+                                                <option value="">Choose your Purpose</option>
+                                                <option value="Job Requirement">Job Requirement</option>
+                                                <option value="Open a Bank Account">Open a Bank Account</option>
+                                                <option value="NBI Clearance">NBI Clearance</option>
+                                                <option value="Police Clearance">Police Clearance</option>
+                                                <option value="Postal ID">Postal ID</option>
+                                                <option value="UMID Card">UMID Card</option>
+                                                <option value="Driver's License">Driver's License</option>
+                                                <option value="Business Requirement">Business Requirement</option>
+                                                <option value="Philhealth">Philhealth</option>
+                                            </select>
                                             <div class="valid-feedback">Valid.</div>
                                             <div class="invalid-feedback">Please fill out this field.</div>
                                         </div>
@@ -526,14 +537,6 @@
                 &nbsp;
 
                 <li class="list-inline-item">
-                    <a href="#!" class="sbtn btn-large mx-1" title="HealthCare">
-                    <i class="fas fa-first-aid fa-2x"></i>
-                    </a>
-                </li>
-
-                &nbsp;
-
-                <li class="list-inline-item">
                     <a href="#!" class="sbtn btn-large mx-1" title="Documents">
                     <i class="fas fa-file fa-2x"></i>
                     </a>
@@ -542,7 +545,7 @@
                 &nbsp;
 
                 <li class="list-inline-item">
-                    <a href="#!" class="sbtn btn-large mx-1" title="Documents">
+                    <a href="#!" class="sbtn btn-large mx-1" title="Friend">
                     <i class="fas fa-user-friends fa-2x"></i>
                     </a>
                 </li>
@@ -575,30 +578,6 @@
                     <!--First column-->
 
                     <div class="col-md-3 mx-auto shfooter">
-                        <h5 class="my-2 font-weight-bold d-none d-md-block">HealthCare</h5>
-                        <div class="d-md-none title" data-target="#HealthCare" data-toggle="collapse">
-                            <div class="mt-3 font-weight-bold">HealthCare
-                                <div class="float-right navbar-toggler">
-                                    <i class="fas fa-angle-down"></i>
-                                    <i class="fas fa-angle-up"></i>
-                                </div>
-                            </div>
-                        </div>
-                        <ul class="list-unstyled collapse" id="HealthCare">
-                            <li><a href="#">Animal Registry & Welfare</a></li>
-                            <li><a href="#">TB Dots Consultation</a></li>
-                            <li><a href="#">Vaccination Programs</a></li>
-                            <li><a href="#">Mother & Child Check-Up</a></li>
-                        </ul>
-                    </div>
-
-                    <!--/.First column-->
-
-                    <hr class="clearfix w-100 d-md-none mb-0">
-
-                    <!--Second column-->
-
-                    <div class="col-md-3 mx-auto shfooter">
                         <h5 class="my-2 font-weight-bold d-none d-md-block">Documentation</h5>
                         <div class="d-md-none title" data-target="#Documentation" data-toggle="collapse">
                             <div class="mt-3 font-weight-bold">Documentation
@@ -612,10 +591,12 @@
                             <li><a href="#">Certificate of Residency</a></li>
                             <li><a href="#">Barangay Clearance</a></li>
                             <li><a href="#">Certificate of Indigency</a></li>
+                            <li><a href="#">Business Permit</a></li>
+                            <li><a href="#">Barangay ID</a></li>
                         </ul>
                     </div>
 
-                    <!--/.Second column-->
+                    <!--/.First column-->
 
                     <hr class="clearfix w-100 d-md-none mb-0">
 
@@ -633,7 +614,6 @@
                         </div>
 
                         <ul class="list-unstyled collapse" id="OtherServices">
-                            <li><a href="#">Family Planning</a></li>
                             <li><a href="#">Blotter</a></li>
                         </ul>
                     </div>
@@ -673,11 +653,11 @@
             <!--Copyright-->
 
             <div class="py-3 text-center">
-                Copyright 2020 -
+                Copyright 2021 -
                 <script>
                 document.write(new Date().getFullYear())
                 </script> 
-                SAD/DBA | For Educational Purposes Only
+                BI & ESMS | For Educational Purposes Only
             </div>
 
         </footer>

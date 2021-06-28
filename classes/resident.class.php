@@ -9,14 +9,17 @@
         public function create_resident() {
             if(isset($_POST['add_resident'])) {
                 $email = $_POST['email'];
-                $password = md5($_POST['password']);
+                $password = ($_POST['password']);
                 $lname = $_POST['lname'];
                 $fname = $_POST['fname'];
                 $mi = $_POST['mi'];
                 $age = $_POST['age'];
                 $sex = $_POST['sex'];
                 $status = $_POST['status'];
-                $address = $_POST['address'];
+                $houseno = $_POST['houseno'];
+                $street = $_POST['street'];
+                $brgy = $_POST['brgy'];
+                $municipal = $_POST['municipal'];
                 $contact = $_POST['contact'];
                 $bdate = $_POST['bdate'];
                 $bplace = $_POST['bplace'];
@@ -39,17 +42,14 @@
     
                     else {
 
-                        $countfiles = count($_FILES['files']['name']);
-
-                    
-
                         $connection = $this->openConn();
                         $stmt = $connection->prepare("INSERT INTO tbl_resident ( `email`,`password`,`lname`,`fname`,
-                        `mi`, `age`, `sex`, `status`, `address`, `contact`, `bdate`, `bplace`, `nationality`,`voter` ,`family_role`,
-                        `role`, `addedby`) VALUES ( ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,?, ?)");
+                        `mi`, `age`, `sex`, `status`, `houseno`, `street`, `brgy`, `municipal`, `contact`, `bdate`, 
+                        `bplace`, `nationality`,`voter` ,`family_role`,
+                        `role`, `addedby`) VALUES ( ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,?, ?, ?, ?, ?)");
     
                         $stmt->Execute([ $email, $password, $lname, $fname, $mi, $age, $sex, $status, 
-                        $address, $contact, $bdate, $bplace, $nationality, $voter, $familyrole, $role, $addedby]);
+                        $houseno, $street, $brgy, $municipal, $contact, $bdate, $bplace, $nationality, $voter, $familyrole, $role, $addedby]);
 
                         $message2 = "Account added, you can now continue logging in";
                         echo "<script type='text/javascript'>alert('$message2');</script>";
