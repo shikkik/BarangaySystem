@@ -1548,6 +1548,27 @@ class BMISClass {
         }  
     }
 
+    public function view_blotter(){
+        $connection = $this->openConn();
+        $stmt = $connection->prepare("SELECT * from tbl_blotter");
+        $stmt->execute();
+        $view = $stmt->fetchAll();
+        return $view;
+    }
+
+
+    public function delete_blotter(){
+        $id_blotter = $_POST['id_blotter'];
+
+        if(isset($_POST['delete_blotter'])) {
+            $connection = $this->openConn();
+            $stmt = $connection->prepare("DELETE FROM tbl_blotter where id_blotter = ?");
+            $stmt->execute([$id_blotter]);
+
+            header("Refresh:0");
+        }
+    }
+
     
 
 }

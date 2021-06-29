@@ -115,13 +115,8 @@
 
             <!-- Certificate of Indigency -->
             <li class="nav-item">
-<<<<<<< HEAD
-                <a class="nav-link" href="admn_indigency.php">
-                    <i class="fas fa-file-alt"></i>
-=======
                 <a class="nav-link" href="admn_certofindigency.php">
                     <i class="fas fa-fw fa-table"></i>
->>>>>>> d1668307591cddabcae3419c48d4cc6acefaf891
                     <span>Certificate of Indigency</span></a>
             </li>
 
