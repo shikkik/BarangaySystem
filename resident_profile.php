@@ -7,6 +7,8 @@
     $resident = $residentbmis->get_single_resident($id_resident);
 
     $residentbmis->profile_update();
+
+    
     
 ?>
 
@@ -133,7 +135,9 @@
                                 <h5> Sex: </h5> <h5> <br>
                                 <h5>Age:</h5> <br>
                                 <h5>Status:</h5> <br>
-                                <h5>Address:</h5> <br>
+                                <h5>House No: </h5> <br>
+                                <h5>Street: </h5> <br>
+                                <h5>Barangay: </h5> <br>
                                 <h5>Contact:</h5> <br>
                             </div>
 
