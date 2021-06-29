@@ -83,3 +83,7 @@ PRIMARY KEY (`id_blotter`)) ENGINE = InnoDB;
 
 ALTER TABLE `tbl_blotter` CHANGE `blot_photo` `blot_photo` MEDIUMBLOB NULL;
 
+
+
+ALTER TABLE `tbl_rescert` ADD `nationality` VARCHAR(255) NULL AFTER `age`;
+
