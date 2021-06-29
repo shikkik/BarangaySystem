@@ -3,7 +3,8 @@
     require('classes/resident.class.php');
     
     $userdetails = $bmis->get_userdata();
-    $bmis->create_brgyclearance();
+    $bmis->create_brgyid();
+
 
 ?>
 
@@ -390,14 +391,15 @@
                         <!-- Modal Body -->
 
                         <div class="modal-body">
-                            <form method="post" class="was-validated">
+                            <form method="post" class="was-validated" enctype="multipart/form-data"> 
 
                                 <div class="row"> 
 
                                     <div class="col">
                                         <div class="form-group">
                                             <label for="lname">Last Name:</label>
-                                            <input name="lname" type="text" class="form-control" placeholder="Enter Last Name" required>
+                                            <input name="lname" type="text" class="form-control" 
+                                            placeholder="Enter Last Name" value="<?= $userdetails['surname']?>" required>
                                             <div class="valid-feedback">Valid.</div>
                                             <div class="invalid-feedback">Please fill out this field.</div>
                                         </div>
@@ -405,7 +407,8 @@
                                     <div class="col">
                                         <div class="form-group">
                                             <label for="fname">First Name:</label>
-                                            <input name="fname" type="text" class="form-control" placeholder="Enter First Name" required>
+                                            <input name="fname" type="text" class="form-control" 
+                                            placeholder="Enter First Name" value="<?= $userdetails['firstname']?>" required>
                                                 <div class="valid-feedback">Valid.</div>
                                                 <div class="invalid-feedback">Please fill out this field.</div>
                                         </div>
@@ -419,7 +422,8 @@
                                     <div class="col">
                                         <div class="form-group">
                                             <label for="mi" class="mtop">Middle Name </label>
-                                            <input name="mi" type="text" class="form-control" placeholder="Enter Middle Name" required>
+                                            <input name="mi" type="text" class="form-control" 
+                                            placeholder="Enter Middle Name" value="<?= $userdetails['mname']?>" required>
                                                 <div class="valid-feedback">Valid.</div>
                                                 <div class="invalid-feedback">Please fill out this field.</div>
                                         </div>
@@ -440,7 +444,8 @@
                                     <div class="col">
                                         <div class="form-group">
                                             <label> House No: </label>
-                                            <input type="text" class="form-control" name="houseno"  placeholder="Enter House No." required>
+                                            <input type="text" class="form-control" name="houseno"  
+                                            placeholder="Enter House No." value="<?= $userdetails['houseno']?>" required>
                                             <div class="valid-feedback">Valid.</div>
                                             <div class="invalid-feedback">Please fill out this field.</div>
                                         </div>
@@ -449,7 +454,8 @@
                                     <div class="col">
                                         <div class="form-group">
                                             <label> Street: </label>
-                                            <input type="text" class="form-control" name="street"  placeholder="Enter Street" required>
+                                            <input type="text" class="form-control" name="street"  
+                                            placeholder="Enter Street" value="<?= $userdetails['street']?>" required>
                                             <div class="valid-feedback">Valid.</div>
                                             <div class="invalid-feedback">Please fill out this field.</div>
                                         </div>
@@ -458,7 +464,8 @@
                                     <div class="col">
                                         <div class="form-group">
                                             <label> Barangay: </label>
-                                            <input type="text" class="form-control" name="brgy"  placeholder="Enter Barangay" required>
+                                            <input type="text" class="form-control" name="brgy"  
+                                            placeholder="Enter Barangay" value="<?= $userdetails['brgy']?>" required>
                                             <div class="valid-feedback">Valid.</div>
                                             <div class="invalid-feedback">Please fill out this field.</div>
                                         </div>
@@ -467,7 +474,8 @@
                                     <div class="col">
                                         <div class="form-group">
                                             <label> Municipality: </label>
-                                            <input type="text" class="form-control" name="municipal" placeholder="Enter Municipality" required>
+                                            <input type="text" class="form-control" name="municipal" 
+                                            placeholder="Enter Municipality" value="<?= $userdetails['municipal']?>" required>
                                             <div class="valid-feedback">Valid.</div>
                                             <div class="invalid-feedback">Please fill out this field.</div>
                                         </div>
@@ -479,7 +487,8 @@
                                     <div class="col">
                                         <div class="form-group">
                                             <label class="mtop">Birth Place </label>
-                                            <input type="text" class="form-control" name="bplace"  placeholder="Enter Birth Place" required>
+                                            <input type="text" class="form-control" name="bplace"  
+                                            placeholder="Enter Birth Place" value="<?= $userdetails['bdate']?>" required>
                                             <div class="valid-feedback">Valid.</div>
                                             <div class="invalid-feedback">Please fill out this field.</div>
                                         </div>
@@ -488,7 +497,7 @@
                                     <div class="col">
                                         <label>Upload Photo:</label>
                                         <div class="custom-file mb-3 form-group">
-                                            <input type="file" class="custom-file-input" id="customFile" name="res_photo" required>
+                                            <input type="file" class="custom-file-input" id="customFile" name="res_photo">
                                             <label class="custom-file-label" for="customFile">Choose File</label>
                                             <div class="valid-feedback">Valid.</div>
                                             <div class="invalid-feedback">Please fill out this field.</div>
@@ -508,7 +517,7 @@
                                     <div class="col">
                                         <div class="form-group">
                                             <label for="lname">Last Name:</label>
-                                            <input name="lname" type="text" class="form-control" placeholder="Enter Last Name" required>
+                                            <input name="inc_lname" type="text" class="form-control" placeholder="Enter Last Name" required>
                                             <div class="valid-feedback">Valid.</div>
                                             <div class="invalid-feedback">Please fill out this field.</div>
                                         </div>
@@ -517,7 +526,7 @@
                                     <div class="col">
                                         <div class="form-group">
                                             <label for="fname">First Name:</label>
-                                            <input name="fname" type="text" class="form-control" placeholder="Enter First Name" required>
+                                            <input name="inc_fname" type="text" class="form-control" placeholder="Enter First Name" required>
                                                 <div class="valid-feedback">Valid.</div>
                                                 <div class="invalid-feedback">Please fill out this field.</div>
                                         </div>
@@ -530,7 +539,7 @@
                                     <div class="col">
                                         <div class="form-group">
                                             <label for="mi" class="mtop">Middle Name </label>
-                                            <input name="mi" type="text" class="form-control" placeholder="Enter Middle Name" required>
+                                            <input name="inc_mi" type="text" class="form-control" placeholder="Enter Middle Name" required>
                                                 <div class="valid-feedback">Valid.</div>
                                                 <div class="invalid-feedback">Please fill out this field.</div>
                                         </div>
@@ -539,7 +548,7 @@
                                     <div class="col">
                                         <div class="form-group">            
                                             <label for="cno">Contact Number:</label>
-                                            <input name="contact" type="text" maxlength="11" class="form-control" pattern="[0-9]{11}" placeholder="Enter Contact Number" required>
+                                            <input name="inc_contact" type="text" maxlength="11" class="form-control" pattern="[0-9]{11}" placeholder="Enter Contact Number" required>
                                             <div class="valid-feedback">Valid.</div>
                                             <div class="invalid-feedback">Please fill out this field.</div>
                                         </div>
@@ -551,7 +560,7 @@
                                     <div class="col">
                                         <div class="form-group">
                                             <label> House No: </label>
-                                            <input type="text" class="form-control" name="houseno"  placeholder="Enter House No." required>
+                                            <input type="text" class="form-control" name="inc_houseno"  placeholder="Enter House No." required>
                                             <div class="valid-feedback">Valid.</div>
                                             <div class="invalid-feedback">Please fill out this field.</div>
                                         </div>
@@ -560,7 +569,7 @@
                                     <div class="col">
                                         <div class="form-group">
                                             <label> Street: </label>
-                                            <input type="text" class="form-control" name="street"  placeholder="Enter Street" required>
+                                            <input type="text" class="form-control" name="inc_street"  placeholder="Enter Street" required>
                                             <div class="valid-feedback">Valid.</div>
                                             <div class="invalid-feedback">Please fill out this field.</div>
                                         </div>
@@ -569,7 +578,7 @@
                                     <div class="col">
                                         <div class="form-group">
                                             <label> Barangay: </label>
-                                            <input type="text" class="form-control" name="brgy"  placeholder="Enter Barangay" required>
+                                            <input type="text" class="form-control" name="inc_brgy"  placeholder="Enter Barangay" required>
                                             <div class="valid-feedback">Valid.</div>
                                             <div class="invalid-feedback">Please fill out this field.</div>
                                         </div>
@@ -578,14 +587,12 @@
                                     <div class="col">
                                         <div class="form-group">
                                             <label> Municipality: </label>
-                                            <input type="text" class="form-control" name="municipal" placeholder="Enter Municipality" required>
+                                            <input type="text" class="form-control" name="inc_municipal" placeholder="Enter Municipality" required>
                                             <div class="valid-feedback">Valid.</div>
                                             <div class="invalid-feedback">Please fill out this field.</div>
                                         </div>
                                     </div>
                                 </div>
-
-                            </form>
                         </div>
 
                         <!-- Modal Footer -->
@@ -593,15 +600,16 @@
                         <div class="modal-footer">
                             <div class="paa">
                                 <input name="id_resident" type="hidden" class="form-control" value="<?= $userdetails['id_resident']?>">
-                                <input name="addedby" type="hidden" class="form-control" value="<?= $userdetails['surname']?> <?= $userdetails['firstname']?> <?= $userdetails['mname']?>">
+                
                                 <button type="button" class="btn btn-dark" data-dismiss="modal">Close</button>
-                                <button name ="create_brgyclearance" type="submit" class="btn btn-primary">Submit Request</button>
+                                <button name ="create_brgyid" type="submit" class="btn btn-primary">Submit Request</button>
                             </div>
                         </div> 
                     </div>
                 </div>
             </div>
         </div>
+        </form>
         
 
         <br>
