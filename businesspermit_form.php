@@ -55,20 +55,31 @@ require('classes/resident.class.php');
 
                     <div class="col-xs-12 col-sm-6 col-md-12"  >
                         <p class="text-center" style="font-size: 20px; font-size:bold;">OFFICE OF THE BARANGAY CAPTAIN<br><b style="font-size: 28px;"><ins>BUSINESS PERMIT</ins></b></p> <br><br>
-                        <p style="text-indent:40px;text-align: justify;">NAME OF THE PERMITTEE: __________________________</p><br>
-                        <p style="text-indent:40px;text-align: justify;">Further Certify that the above named subject is of good moral character and has
-                        good community standing, but unfortunately to the indigent family in this barangay.
+                        <div class="container"  >
+                        <img src="../BarangaySystem/icons/bpermit.jpg" alt="Snow" style="width:100%;">
+                        
+                        <div class="centered">
+                          <label style="position:relative; left:80px; bottom:30px; font-size:20px;color:white">  <b></b> </label>
+                          <label style="position:relative; left:80px;  font-size:15px;color:white">  <b></b> </label>
+                        </div>
+                        <div class="bottom-left">
+                        <label style="position:relative; left:190px; bottom:30px; font-size:15px; color:white">  <b> </b> </label>
+                        <label style="position:relative; left:210px; bottom:30px; font-size:15px; color:white">  <b> </b> </label>
+                        <label style="position:relative; left:240px; bottom:30px; font-size:15px; color:white">  <b></b> </label>
+                        </div>
+                        <div class="bbottom-left">
+                        <label style="position:relative; left:30px; bottom:20px; font-size:15px; color:white">  <b> </b> </label>
+                        </div>
+                      </div> 
                         </p><br>
-                        <p style="text-indent:40px;text-align: justify;">This certification is issued upon the request of the above named party as a 
-                        requirement needed for <b><ins></ins></b>.
-                        </p>
+                        
+                        
                         
                         
                         <br><br><br><br><br><br><br><br>
                         
                     
-                        <label style="font-size:17px;margin-left:70%;"><b>VINCENT VILFAMAT</b>  </label><br> 
-                        <label style=" text-align: center;margin-left:73%">Punong Barangay</label>
+                        
                        
                         
                     </div>
