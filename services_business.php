@@ -3,7 +3,8 @@
     require('classes/resident.class.php');
     
     $userdetails = $bmis->get_userdata();
-    $bmis->create_brgyclearance();
+
+    $bmis->create_bspermit();
 
 ?>
 
@@ -434,7 +435,7 @@
                                     <div class="col">
                                         <div class="form-group">
                                             <label for="lname">Last Name:</label>
-                                            <input name="lname" type="text" class="form-control" placeholder="Enter Last Name" required>
+                                            <input name="lname" type="text" class="form-control" value="<?= $userdetails['surname'];?>" required>
                                             <div class="valid-feedback">Valid.</div>
                                             <div class="invalid-feedback">Please fill out this field.</div>
                                         </div>
@@ -442,7 +443,7 @@
                                     <div class="col">
                                         <div class="form-group">
                                             <label for="fname">First Name:</label>
-                                            <input name="fname" type="text" class="form-control" placeholder="Enter First Name" required>
+                                            <input name="fname" type="text" class="form-control" value="<?= $userdetails['firstname'];?>" required>
                                                 <div class="valid-feedback">Valid.</div>
                                                 <div class="invalid-feedback">Please fill out this field.</div>
                                         </div>
@@ -454,15 +455,15 @@
                                     <div class="col">
                                         <div class="form-group">
                                             <label for="mi" class="mtop">Middle Name </label>
-                                            <input name="mi" type="text" class="form-control" placeholder="Enter Middle Name" required>
+                                            <input name="mi" type="text" class="form-control" value="<?= $userdetails['mname'];?>"  required>
                                                 <div class="valid-feedback">Valid.</div>
                                                 <div class="invalid-feedback">Please fill out this field.</div>
                                         </div>
                                     </div>
                                     <div class="col">
                                         <div class="form-group">
-                                            <label for="busname">Business Name:</label>
-                                            <input name="busname" type="text" class="form-control" placeholder="Enter Business Name" required>
+                                            <label for="bsname">Business Name:</label>
+                                            <input name="bsname" type="text" class="form-control" placeholder="Enter Business Name" required>
                                             <div class="valid-feedback">Valid.</div>
                                             <div class="invalid-feedback">Please fill out this field.</div>
                                         </div>
@@ -479,7 +480,7 @@
                                     <div class="col">
                                         <div class="form-group">
                                             <label> House No: </label>
-                                            <input type="text" class="form-control" name="houseno"  placeholder="Enter House No." required>
+                                            <input type="text" class="form-control" name="houseno"  placeholder="Enter House No." value="<?= $userdetails['houseno'];?>"  required>
                                             <div class="valid-feedback">Valid.</div>
                                             <div class="invalid-feedback">Please fill out this field.</div>
                                         </div>
@@ -488,7 +489,7 @@
                                     <div class="col">
                                         <div class="form-group">
                                             <label> Street: </label>
-                                            <input type="text" class="form-control" name="street"  placeholder="Enter Street" required>
+                                            <input type="text" class="form-control" name="street"  placeholder="Enter Street" value="<?= $userdetails['street'];?>"  required>
                                             <div class="valid-feedback">Valid.</div>
                                             <div class="invalid-feedback">Please fill out this field.</div>
                                         </div>
@@ -497,7 +498,7 @@
                                     <div class="col">
                                         <div class="form-group">
                                             <label> Barangay: </label>
-                                            <input type="text" class="form-control" name="brgy"  placeholder="Enter Barangay" required>
+                                            <input type="text" class="form-control" name="brgy"  placeholder="Enter Barangay" value="<?= $userdetails['brgy'];?>"  required>
                                             <div class="valid-feedback">Valid.</div>
                                             <div class="invalid-feedback">Please fill out this field.</div>
                                         </div>
@@ -506,7 +507,7 @@
                                     <div class="col">
                                         <div class="form-group">
                                             <label> Municipality: </label>
-                                            <input type="text" class="form-control" name="municipal" placeholder="Enter Municipality" required>
+                                            <input type="text" class="form-control" name="municipal" placeholder="Enter Municipality" value="<?= $userdetails['municipal'];?>"  required>
                                             <div class="valid-feedback">Valid.</div>
                                             <div class="invalid-feedback">Please fill out this field.</div>
                                         </div>
@@ -517,7 +518,7 @@
                                     <div class="col">
                                         <div class="form-group">
                                             <label for="status">Business Industry:</label>
-                                            <select class="form-control" name="status" id="status" placeholder="Enter Status" required>
+                                            <select class="form-control" name="bsindustry" id="status" placeholder="Enter Status" required>
                                             <option value="">Choose your Business Industry</option>
                                                 <option value="Computer">Computer</option>
                                                 <option value="Telecommunication">Telecommunication</option>
@@ -552,7 +553,7 @@
                                         </div>
                                     </div>
                                 </div>
-                            </form>
+                           
                         </div>
 
                         <!-- Modal Footer -->
@@ -560,16 +561,16 @@
                         <div class="modal-footer">
                             <div class="paa">
                                 <input name="id_resident" type="hidden" class="form-control" value="<?= $userdetails['id_resident']?>">
-                                <input name="addedby" type="hidden" class="form-control" value="<?= $userdetails['surname']?> <?= $userdetails['firstname']?> <?= $userdetails['mname']?>">
+                                
                                 <button type="button" class="btn btn-dark" data-dismiss="modal">Close</button>
-                                <button name ="create_brgyclearance" type="submit" class="btn btn-primary">Submit Request</button>
+                                <button name ="create_bspermit" type="submit" class="btn btn-primary">Submit Request</button>
                             </div>
                         </div> 
                     </div>
                 </div>
             </div>
         </div>
-        
+        </form>
 
         <br>
         <br>

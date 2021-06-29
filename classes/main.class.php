@@ -149,7 +149,11 @@ class BMISClass {
             "bplace" => $array['bplace'],
             "nationality" => $array['nationality'],
             "family_role" => $array['family_role'],
-            "role" => $array['role']
+            "role" => $array['role'],
+            "houseno" => $array['houseno'],
+            "street" => $array['street'],
+            "brgy" => $array['brgy'],
+            "municipal" => $array['municipal']
         );
         return $_SESSION['userdata'];
     }
@@ -1333,7 +1337,39 @@ class BMISClass {
     //----------------------------------------- DOCUMENT PROCESSING FUNCTIONS -------------------------------------
     //-------------------------------------------------------------------------------------------------------------
 
+    public function create_bspermit() {
 
+        if(isset($_POST['create_bspermit'])) {
+            $id_bspermit = $_POST['id_bspermit'];
+            $id_resident = $_POST['id_resident'];
+            $lname = $_POST['lname'];
+            $fname = $_POST['fname'];
+            $mi = $_POST['mi'];
+            $bsname = $_POST['bsname']; 
+            $houseno = $_POST['houseno'];
+            $street = $_POST['street'];
+            $brgy = $_POST['brgy'];
+            $municipal = $_POST['municipal'];
+            $bsindustry = $_POST['bsindustry'];
+            $aoe = $_POST['aoe'];
+
+
+            $connection = $this->openConn();
+            $stmt = $connection->prepare("INSERT INTO tbl_bspermit (`id_bspermit`, `id_resident`, `lname`, `fname`, `mi`,
+             `bsname`, `houseno`, `street`,`brgy`, `municipal`, `bsindustry`, `aoe`)
+            VALUES (?,?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+
+            $stmt->execute([$id_bspermit, $id_resident, $lname, $fname, $mi,  $bsname, $houseno,  $street, $brgy, $municipal, $bsindustry, $aoe]);
+
+            $message2 = "Application Applied, you will receive our text message for further details";
+            echo "<script type='text/javascript'>alert('$message2');</script>";
+            header("refresh: 0");
+        }
+        
+        
+    }
+
+    
 
 }
 

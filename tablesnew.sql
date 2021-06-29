@@ -19,6 +19,9 @@ CREATE TABLE `bmis`.`tbl_bspermit`
 `brgy` VARCHAR(255) NULL , `municipal` VARCHAR(255) NULL , `bsindustry` VARCHAR(255) NULL , 
 PRIMARY KEY (`id_bspermit`)) ENGINE = InnoDB;
 
+ALTER TABLE `tbl_bspermit` ADD `aoe` INT NOT NULL AFTER `bsindustry`;
+
+
 
 
 CREATE TABLE `bmis`.`tbl_brgyid` ( `id_brgyid` INT NULL , `id_resident` INT NOT NULL , 
