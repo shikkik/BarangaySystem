@@ -117,7 +117,7 @@
     <body> 
         <!-- eto yung navbar -->
         <nav class="navbar navbar-dark bg-primary sticky-top">
-            <a class="navbar-brand" href="index.php"> <img src="../BarangaySystem/icons/beverlylogo.png" width="40px" height="40px"> 
+            <a class="navbar-brand" href="index.php">  
             <a class="navbar-brand" href="resident_homepage.php">Barangay Information & E-Services Management System</a>
 
             <div class="dropdown ml-auto">
@@ -204,62 +204,72 @@
 
                 <div class="row"> 
                     <div class="col"> 
-                        <div class="card"> 
-                            <div class="card-body text-center"> 
-                                <img src="../BarangaySystem/icons/ResidentHomepage/indigency.png">
-                                <a href="services_business.php"> <h4> Business Permit </h4> </a>
+                        <a href="services_business.php ?id_resident=<?= $userdetails['id_resident'];?>">
+                            <div class="card"> 
+                                <div class="card-body text-center"> 
+                                    <img src="../BarangaySystem/icons/ResidentHomepage/busper.png">
+                                    <h4> Business Permit </h4> 
+                                </div>
                             </div>
-                        </div>
+                        </a>
                     </div>
                     <div class="col"> 
-                        <div class="card"> 
-                            <div class="card-body text-center"> 
-                                <img src="../BarangaySystem/icons/ResidentHomepage/indigency.png">
-                                <a href="services_brgyid.php"> <h4> Barangay ID </h4> </a>
+                        <a href="services_brgyid.php ?id_resident=<?= $userdetails['id_resident'];?>">
+                            <div class="card"> 
+                                <div class="card-body text-center"> 
+                                    <img style="height: 139px;" src="../BarangaySystem/icons/ResidentHomepage/brgyid.png">
+                                    <h4> Barangay ID </h4>
+                                </div>
                             </div>
-                        </div>
+                        </a>
                     </div>
                     <div class="col"> 
-                        <div class="card"> 
-                            <div class="card-body text-center"> 
-                                <img src="../BarangaySystem/icons/ResidentHomepage/indigency.png">
-                                <a href="services_certofindigency.php"> <h4> Certificate of Indigency </h4> </a>
+                        <a href="services_certofindigency.php ?id_resident=<?= $userdetails['id_resident'];?>">
+                            <div class="card"> 
+                                <div class="card-body text-center"> 
+                                    <img src="../BarangaySystem/icons/ResidentHomepage/indigency.png">
+                                    <h4> Certificate of Indigency </h4>
+                                </div>
                             </div>
-                        </div>
+                        </a>
                     </div>
                 </div>
 
                 <br>
                 <div class="row card-spacing"> 
-                    <div class="col"> 
-                        <div class="card"> 
-                            <div class="card-body text-center"> 
-                            <img src="../BarangaySystem/icons/ResidentHomepage/residency.png">
-                                <a href="services_certofres.php"> <h4> Certificate of Residency </h4> </a>
+                    <div class="col">
+                        <a href="services_certofres.php ?id_resident=<?= $userdetails['id_resident'];?>"> 
+                            <div class="card"> 
+                                <div class="card-body text-center"> 
+                                <img src="../BarangaySystem/icons/ResidentHomepage/residency.png">
+                                    <h4> Certificate of Residency </h4>
+                                </div>
                             </div>
-                        </div>
+                        </a>
                     </div>
 
-                    <div class="col"> 
-                        <div class="card"> 
-                            <div class="card-body text-center">
-                            <img src="../BarangaySystem/icons/ResidentHomepage/clearance.png"> 
-                                <a href="services_brgyclearance.php"> <h4> Barangay Clearance </h4> </a>
+                    <div class="col">
+                        <a href="services_brgyclearance.php ?id_resident=<?= $userdetails['id_resident'];?>"> 
+                            <div class="card"> 
+                                <div class="card-body text-center">
+                                <img src="../BarangaySystem/icons/ResidentHomepage/clearance.png"> 
+                                    <h4> Barangay Clearance </h4>
+                                </div>
                             </div>
-                        </div>
+                        </a>
                     </div>
 
-                    <div class="col"> 
-                        <div class="card"> 
-                            <div class="card-body text-center">
-                                <img src="../BarangaySystem/icons/ResidentHomepage/complain.png"> 
-                                <a href="services_blotter.php?id_resident=<?= $userdetails['id_resident'];?>"> <h4> Complain/Blotter Report</h4> 
-                            </a>
+                    <div class="col">
+                        <a href="services_blotter.php ?id_resident=<?= $userdetails['id_resident'];?>"> 
+                            <div class="card"> 
+                                <div class="card-body text-center">
+                                    <img src="../BarangaySystem/icons/ResidentHomepage/complain.png"> 
+                                    <h4> Peace and Order</h4> 
+                                </div>
                             </div>
-                        </div>
+                        </a>
                     </div>
                 </div>
-
             </div>
         </section>
 

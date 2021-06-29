@@ -14,9 +14,13 @@
                 <th> First Name </th>
                 <th> Middle Name </th>
                 <th> Age </th>
-                <th> Status </th>
                 <th> Nationality </th>
-                <th> Address </th>
+                <th> House Number </th>
+                <th> Street </th>
+                <th> Barangay </th>
+                <th> Municipality </th>
+                <th> Date </th>
+                <th> Purpose </th>
 			</tr>
 		</thead>
 		<tbody>
@@ -43,9 +47,13 @@
                         <td> <?= $view['fname'];?> </td>
                         <td> <?= $view['mi'];?> </td>
                         <td> <?= $view['age'];?> </td>
-                        <td> <?= $view['status'];?> </td>
                         <td> <?= $view['nationality'];?> </td>
-                        <td> <?= $view['address'];?> </td>
+                        <td> <?= $view['houseno'];?> </td>
+                        <td> <?= $view['street'];?> </td>
+                        <td> <?= $view['brgy'];?> </td>
+                        <td> <?= $view['municipal'];?> </td>
+                        <td> <?= $view['date'];?> </td>
+                        <td> <?= $view['purpose'];?> </td>
 			</tr>
 			<?php
 			}
@@ -60,15 +68,19 @@
 <table class="table table-dark table-responsive">
 		<thead >
 			<tr>
-            <th> Actions</th>
+                <th> Actions</th>
                 <th> Resident ID </th>
                 <th> Surname </th>
                 <th> First Name </th>
                 <th> Middle Name </th>
                 <th> Age </th>
-                <th> Status </th>
                 <th> Nationality </th>
-                <th> Address </th>
+                <th> House Number </th>
+                <th> Street </th>
+                <th> Barangay </th>
+                <th> Municipality </th>
+                <th> Date </th>
+                <th> Purpose </th>
 			</tr>
 		</thead>
 		<tbody>
@@ -86,9 +98,13 @@
                         <td> <?= $view['fname'];?> </td>
                         <td> <?= $view['mi'];?> </td>
                         <td> <?= $view['age'];?> </td>
-                        <td> <?= $view['status'];?> </td>
                         <td> <?= $view['nationality'];?> </td>
-                        <td> <?= $view['address'];?> </td>
+                        <td> <?= $view['houseno'];?> </td>
+                        <td> <?= $view['street'];?> </td>
+                        <td> <?= $view['brgy'];?> </td>
+                        <td> <?= $view['municipal'];?> </td>
+                        <td> <?= $view['date'];?> </td>
+                        <td> <?= $view['purpose'];?> </td>
 			</tr>
 			
 			<?php
@@ -99,6 +115,19 @@
 			?>
 		</tbody>
 	</table>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-modal/2.2.6/js/bootstrap-modalmanager.min.js" integrity="sha512-/HL24m2nmyI2+ccX+dSHphAHqLw60Oj5sK8jf59VWtFWZi9vx7jzoxbZmcBeeTeCUc7z1mTs3LfyXGuBU32t+w==" crossorigin="anonymous"></script>
+<!-- responsive tags for screen compatibility -->
+<meta name="viewport" content="width=device-width, initial-scale=1 shrink-to-fit=no">
+<!-- custom css --> 
+<link href="../BarangaySystem/customcss/regiformstyle.css" rel="stylesheet" type="text/css">
+<!-- bootstrap css --> 
+<link href="../BarangaySystem/bootstrap/css/bootstrap.css" rel="stylesheet" type="text/css"> 
+<!-- fontawesome icons -->
+<script src="https://kit.fontawesome.com/67a9b7069e.js" crossorigin="anonymous"></script>
+<script src="../BarangaySystem/bootstrap/js/bootstrap.bundle.js" type="text/javascript"> </script>
+
 <?php
 	}
 $con = null;

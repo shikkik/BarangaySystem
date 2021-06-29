@@ -1,9 +1,9 @@
 <?php 
     require('classes/main.class.php');
     require('classes/resident.class.php');
-    
     $userdetails = $bmis->get_userdata();
     $bmis->create_certofindigency();
+    
 ?>
 
 <!DOCTYPE html>
@@ -189,8 +189,8 @@
         <!-- eto yung navbar -->
 
         <nav class="navbar navbar-dark bg-primary sticky-top">
-            <a class="navbar-brand" href="index.php"> <img src="../BarangaySystem/icons/beverlylogo.png" width="40px" height="40px"> 
-            <a class="navbar-brand" href="resident_homepage.php">Barangay Beverly Hills</a>
+            <a class="navbar-brand" href="index.php">  
+            <a class="navbar-brand" href="resident_homepage.php">Barangay Information & E-Services Management System</a>
 
             <div class="dropdown ml-auto">
                 <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown"><?= $userdetails['surname'];?>, <?= $userdetails['firstname'];?>
@@ -466,10 +466,6 @@
                                         </div>
                                     </div>
 
-                                </div>
-
-                                <div class="row">
-
                                     <div class="col">
                                         <div class="form-group">
                                             <label> Municipality: </label>
@@ -478,6 +474,27 @@
                                             <div class="invalid-feedback">Please fill out this field.</div>
                                         </div>
                                     </div>
+
+                                </div>
+
+                                <div class="row">
+
+                                    <div class="col">
+                                        <div class="form-group">
+                                            <label for="purposes">Purposes:</label>
+                                            <select class="form-control" name="purposes" id="purposes" required>
+                                                <option value="">Choose your Purposes</option>
+                                                <option value="Job/Employment">Job/Employment</option>
+                                                <option value="Business Establishment">Business Requirement</option>
+                                                <option value="Financial Transaction">Financial Transaction</option>
+                                                <option value="Scholarship">Scholarship</option>
+                                                <option value="Other important transactions.">Other important transactions.</option>
+                                            </select>
+                                            <div class="valid-feedback">Valid.</div>
+                                            <div class="invalid-feedback">Please fill out this field.</div>
+                                        </div>
+                                    </div>  
+
 
                                     <div class="col">
                                         <div class="form-group">
@@ -490,7 +507,7 @@
 
                                 </div>
                                 
-                            </form>
+                            
                         </div>
 
                 
@@ -500,15 +517,16 @@
                         <div class="modal-footer">
                             <div class="paa">
                                 <input name="id_resident" type="hidden" class="form-control" value="<?= $userdetails['id_resident']?>">
-                                <input name="addedby" type="hidden" class="form-control" value="<?= $userdetails['surname']?> <?= $userdetails['firstname']?> <?= $userdetails['mname']?>">
+                                <input name="purpose" type="hidden" class="form-control" value="Financial Assistance">
                                 <button type="button" class="btn btn-dark" data-dismiss="modal">Close</button>
-                                <button name ="create_certofindigency" type="submit" class="btn btn-primary">Submit Request</button>
+                                <button name="create_certofindigency" type="submit" class="btn btn-primary">Submit Request</button>
                             </div>
                         </div> 
                     </div>
                 </div>
             </div>
         </div> 
+        </form>
 
         <br>
         <br>

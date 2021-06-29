@@ -196,8 +196,8 @@
 
         <!-- eto yung navbar -->
         <nav class="navbar navbar-dark bg-primary sticky-top">
-            <a class="navbar-brand" href="index.php"> <img src="../BarangaySystem/icons/beverlylogo.png" width="40px" height="40px"> 
-            <a class="navbar-brand" href="resident_homepage.php">Barangay Beverly Hills</a>
+            <a class="navbar-brand" href="index.php">  
+            <a class="navbar-brand" href="resident_homepage.php">Barangay Information & E-Services Management System</a>
 
             <div class="dropdown ml-auto">
                 <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown"><?= $userdetails['surname'];?>, <?= $userdetails['firstname'];?>
@@ -437,6 +437,15 @@
                                         </div>
                                     </div>
 
+                                    <div class="col">
+                                        <div class="form-group">
+                                            <label for="Age" class="mtop">Nationality: </label>
+                                            <input type="text" name="nationality" class="form-control" placeholder="Enter your Nationality" required>
+                                            <div class="valid-feedback">Valid.</div>
+                                            <div class="invalid-feedback">Please fill out this field.</div>
+                                        </div>
+                                    </div>
+
                                 </div>
 
                                 <div class="row">
@@ -490,8 +499,8 @@
 
                                     <div class="col">
                                         <div class="form-group">
-                                            <label for="purposes">Purposes:</label>
-                                            <select class="form-control" name="purposes" id="purposes" required>
+                                            <label for="purposes">Purpose:</label>
+                                            <select class="form-control" name="purpose" id="purpose" required>
                                                 <option value="">Choose your Purposes</option>
                                                 <option value="Job/Employment">Job/Employment</option>
                                                 <option value="Business Establishment">Business Establishment</option>
@@ -505,7 +514,7 @@
                                     </div>  
                                 </div>
                                 
-                            </form>
+                            
                         </div>
 
 
@@ -524,6 +533,7 @@
                 </div>
             </div>
         </div> 
+        </form>
 
         <br>
         <br>

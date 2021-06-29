@@ -52,7 +52,7 @@
             .text-block {
                 position: absolute;
                 bottom: 35%;
-                right: 19%;
+                right: 20%;
                 background-color: black; 
                 opacity: .7;
                 color: white;
@@ -298,8 +298,8 @@
         <!-- Eto yung navbar -->
 
         <nav class="navbar navbar-dark bg-primary sticky-top">
-            <a class="navbar-brand" href="index.php"> <img src="../BarangaySystem/icons/beverlylogo.png" width="40px" height="40px"> 
-            <a class="navbar-brand" href="resident_homepage.php">Barangay Beverly Hills</a>
+            <a class="navbar-brand" href="index.php"> 
+            <a class="navbar-brand" href="resident_homepage.php">Barangay Information & E-Services Management System</a>
 
             <div class="dropdown ml-auto">
                 <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown"><?= $userdetails['surname'];?>, <?= $userdetails['firstname'];?>
@@ -316,7 +316,7 @@
         <!-- Under Navbar -->
 
         <div class="container-fluid container1">
-            <img src="../BarangaySystem/icons/Blotter/blotter2.png" alt="Nature" style="width:100%; height: 55%;">
+            <img src="../BarangaySystem/icons/Blotter/blotter2.png" alt="Nature" style="width:100%; height: 400px;">
             <div class="text-block text-center taytel" >
                 <h1 style="font-size: 100px; letter-spacing: 5px;">Peace and Order</h1>
             </div>
@@ -485,7 +485,7 @@
 
         <div class="container container4">
 
-            <h1 class="text-center">Registration</h1>
+            <h1 class="text-center">Complain</h1>
             
             <hr style="background-color:black;">
 
@@ -502,7 +502,7 @@
                 <div class="modal-dialog modal-dialog-centered" role="document">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalCenterTitle">Registration Form</h5>
+                            <h5 class="modal-title" id="exampleModalCenterTitle">Complain Form</h5>
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                             </button>
