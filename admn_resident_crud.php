@@ -109,7 +109,7 @@
                     <label class="mtop">Gender</label>
                     <select class="form-control" name="sex" id="sex">
                     <option value="">---</option>
-                    <option value="Male">Male</opt ion>
+                    <option value="Male">Male</option>
                     <option value="Female">Female</option>
                     </select>
                 </div>           
@@ -196,18 +196,18 @@
 
     <br> 
     <div class="col-md-12">
-			<form method="POST" action="">
-				<div class="form-inline" >
-					<input type="search" class="form-control" name="keyword" value="" placeholder="Search here..." required=""/>
-					<button class="btn btn-success" name="search_resident">Search</button>
-					<a href="admn_resident_crud.php" class="btn btn-info">Reload</a>
-				</div>
-			</form>
-			<br /><br />
-			<?php 
-                include('search_resident.php');
-            ?>
-		</div>
+		<form method="POST" action="">
+			<div class="form-inline" >
+				<input type="search" class="form-control" name="keyword" value="" placeholder="Search here..." required=""/>
+				<button class="btn btn-success" name="search_resident">Search</button>
+				<a href="admn_resident_crud.php" class="btn btn-info">Reload</a>
+			</div>
+		</form>
+		<br /><br />
+		<?php 
+            include('search_resident.php');
+        ?>
+	</div>
 
 
     

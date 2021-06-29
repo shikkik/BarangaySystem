@@ -121,15 +121,13 @@
         </nav>
 
         <div class="container"> 
-            <div class="row">
-                <div class="col"> 
                     <div class="card" style="margin-top: 2em;">  
                     <div class="card-header bg-primary text-white"> Personal Information </div>
                     <div class="card-body"> 
                         <form method="post">
+
                         <div class="row"> 
                             <div class="col-md-2"> 
-                                <h5> Profile Image </h5> <br>
                                 <h5> Name:</h5> <br>
                                 <h5> Email: </h5> <br>
                                 <h5> Sex: </h5> <h5> <br>
@@ -140,10 +138,9 @@
                             </div>
 
                             <div class="col-md-4"> 
-                                
                                 <h5><?= $resident['lname'];?>, <?= $resident['fname'];?> <?= $resident['mi'];?></h5> <br>
                                 <h5> <?= $resident['email'];?> </h5><br>
-                                <h5><?= $resident['sex'];?> </h5><br>
+                                <h5><?= $resident['sex'];?> </h5><br><br><br>
                                 <input class="form-control" type="text" name="age" value="<?= $resident['age'];?>"><br>
                                 <input class="form-control" type="text" name="status" value="<?= $resident['status'];?>"><br>
                                 <input class="form-control" type="text" name="address" value="<?= $resident['address'];?>"><br>
@@ -155,19 +152,22 @@
                                 <h5> Birth Place: </h5> <br>
                                 <h5> Nationality: </h5> <br>
                                 <h5> Family Role: </h5> <h5> <br>
+                                <h5> Profile Image </h5>
                             </div>
 
                             <div class="col-md-4"> 
                                 <h5> <?= $resident['bdate'];?> </h5><br>
                                 <h5> <?= $resident['bplace'];?> </h5><br>
                                 <h5> <?= $resident['nationality'];?> </h5><br>
-                                <h5> <?= $resident['family_role'];?> </h5><br>
+                                <h5> <?= $resident['family_role'];?> </h5><br><br><br><br>
+                                    <p><input type="file"  accept="image/*" name="image" id="file"  onchange="loadFile(event)" style="display: none;"></p>
+                                    <p><label class="border" for="file" style="cursor: pointer; margin-left:35px; margin-top:15px;">Upload Image</label></p>
+                                    <p><img id="output" width="180" height="180" style="margin-top: -10px;" ></p>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                </div> 
-            </div>
+
             <br>
             <div class="row" style="margin-bottom: 5em;"> 
                 <div class="col-xl-12">
@@ -252,30 +252,6 @@
                     <!--First column-->
 
                     <div class="col-md-3 mx-auto shfooter">
-                        <h5 class="my-2 font-weight-bold d-none d-md-block">HealthCare</h5>
-                        <div class="d-md-none title" data-target="#HealthCare" data-toggle="collapse">
-                            <div class="mt-3 font-weight-bold">HealthCare
-                                <div class="float-right navbar-toggler">
-                                    <i class="fas fa-angle-down"></i>
-                                    <i class="fas fa-angle-up"></i>
-                                </div>
-                            </div>
-                        </div>
-                        <ul class="list-unstyled collapse" id="HealthCare">
-                            <li><a class="footerlinks" href="#">Animal Registry & Welfare</a></li>
-                            <li><a class="footerlinks" href="#">TB Dots Consultation</a></li>
-                            <li><a class="footerlinks" href="#">Vaccination Programs</a></li>
-                            <li><a class="footerlinks" href="#">Mother & Child Check-Up</a></li>
-                        </ul>
-                    </div>
-
-                    <!--/.First column-->
-
-                    <hr class="clearfix w-100 d-md-none mb-0">
-
-                    <!--Second column-->
-
-                    <div class="col-md-3 mx-auto shfooter">
                         <h5 class="my-2 font-weight-bold d-none d-md-block">Documentation</h5>
                         <div class="d-md-none title" data-target="#Documentation" data-toggle="collapse">
                             <div class="mt-3 font-weight-bold">Documentation
@@ -289,10 +265,12 @@
                             <li><a class="footerlinks" href="#">Certificate of Residency</a></li>
                             <li><a class="footerlinks" href="#">Barangay Clearance</a></li>
                             <li><a class="footerlinks" href="#">Certificate of Indigency</a></li>
+                            <li><a class="footerlinks" href="#">Barangay ID</a></li>
+                            <li><a class="footerlinks" href="#">Business Permit</a></li>
                         </ul>
                     </div>
 
-                    <!--/.Second column-->
+                    <!--/.First column-->
 
                     <hr class="clearfix w-100 d-md-none mb-0">
 
@@ -310,7 +288,6 @@
                         </div>
 
                         <ul class="list-unstyled collapse" id="OtherServices">
-                            <li><a class="footerlinks" href="#">Family Planning</a></li>
                             <li><a class="footerlinks" href="#">Blotter</a></li>
                         </ul>
                     </div>
@@ -350,16 +327,22 @@
             <!--Copyright-->
 
             <div class="py-3 text-center">
-                Copyright 2020 -
+                Copyright 2021 -
                 <script>
                 document.write(new Date().getFullYear())
                 </script> 
-                SAD/DBA | For Educational Purposes Only
+                BI & ESMS | For Educational Purposes Only
             </div>
 
         </footer>
 
- 
+        <script>
+            var loadFile = function(event) {
+                var image = document.getElementById('output');
+                image.src = URL.createObjectURL(event.target.files[0]);
+            };
+        </script>
+
         <script src="../BarangaySystem/bootstrap/js/bootstrap.bundle.js" type="text/javascript"> </script>
 
     </body>

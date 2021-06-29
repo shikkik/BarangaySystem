@@ -51,8 +51,8 @@
 
             .text-block {
                 position: absolute;
-                bottom: 30%;
-                right: 33%;
+                bottom: 35%;
+                right: 19%;
                 background-color: black; 
                 opacity: .7;
                 color: white;
@@ -74,7 +74,7 @@
             }
 
             .picture1{
-                height: 100%;
+                height: 130px;
             }
 
             /* Position the image container (needed to position the left and right arrows) */
@@ -317,12 +317,8 @@
 
         <div class="container-fluid container1">
             <img src="../BarangaySystem/icons/Blotter/blotter2.png" alt="Nature" style="width:100%; height: 55%;">
-            <div class="text-block text-center">
-                <h1 style="font-size: 70px; letter-spacing: 5px;">Blotter</h1>
-                <br>
-                <p> Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quae nobis 
-                <br> ad aut eum id sed beatae, nostrum, harum quasi reprehenderit deleniti 
-                <br> optio molestiae cumque quidem perspiciatis nihil vitae laudantium culpa.</p>
+            <div class="text-block text-center taytel" >
+                <h1 style="font-size: 100px; letter-spacing: 5px;">Peace and Order</h1>
             </div>
         </div>
 
@@ -339,32 +335,32 @@
 
             <div class="mySlides">
                 <div class="numbertext">1 / 6</div>
-                <img style="width: 1140px; height:550px;" class="picture" src="../BarangaySystem/icons/Blotter/blotter3.jpg">
+                <img style="width: 1140px; height:500px;" class="picture" src="../BarangaySystem/icons/Blotter/blotter3.jpg">
             </div>
 
             <div class="mySlides">
                 <div class="numbertext">2 / 6</div>
-                <img style="width: 1140px; height:550px;" class="picture" src="../BarangaySystem/icons/Blotter/blotter4.jpg">
+                <img style="width: 1140px; height:500px;" class="picture" src="../BarangaySystem/icons/Blotter/blotter4.jpg">
             </div>
 
             <div class="mySlides">
                 <div class="numbertext">3 / 6</div>
-                <img style="width: 1140px; height:550px;" class="picture" src="../BarangaySystem/icons/Blotter/blotter5.jpg">
+                <img style="width: 1140px; height:500px;" class="picture" src="../BarangaySystem/icons/Blotter/blotter5.jpg">
             </div>
                 
             <div class="mySlides">
                 <div class="numbertext">4 / 6</div>
-                <img style="width: 1140px; height:550px;" class="picture" src="../BarangaySystem/icons/Blotter/blotter6.jpg">
+                <img style="width: 1140px; height:500px;" class="picture" src="../BarangaySystem/icons/Blotter/blotter6.jpg">
             </div>
 
             <div class="mySlides">
                 <div class="numbertext">5 / 6</div>
-                <img style="width: 1140px; height:550px;" class="picture" src="../BarangaySystem/icons/Blotter/blotter7.jpg">
+                <img style="width: 1140px; height:500px;" class="picture" src="../BarangaySystem/icons/Blotter/blotter7.jpg">
             </div>
                 
             <div class="mySlides">
                 <div class="numbertext">6 / 6</div>
-                <img style="width: 1140px; height:550px;" class="picture" src="../BarangaySystem/icons/Blotter/blotter8.jpg">
+                <img style="width: 1140px; height:500px;" class="picture" src="../BarangaySystem/icons/Blotter/blotter8.jpg">
             </div>
                 
             <a class="prev" onclick="plusSlides(-1)">❮</a>
@@ -416,10 +412,20 @@
                             </div>
                             <div class="flip-card-back  bg-info">
                                 <br>
-                                <h5>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                                    Amet omnis, repellat ducimus ad reprehenderit, exercitationem 
-                                    iusto itaque repudiandae quasi dolores quaerat ipsam eius. 
-                                    Cupiditate ut dolor dignissimos architecto, eum necessitatibus?</h5> 
+                                <ul>
+                                    <li>
+                                        Step 1: Fill-Up the entire form in our system.
+                                    </li>
+                                    <li>
+                                        Step 2: Verify all of the information you've been given
+                                                in our system that we can use to solve your case   
+                                                as quick as possible.
+                                    </li>
+                                    <li>
+                                        Step 3: Approve your complain, so we can set a schedule 
+                                                or an appointment to make an agreement on bot sides. 
+                                    </li>
+                                </ul>
                             </div>
                         </div>
                     </div>
@@ -506,8 +512,8 @@
 
                         <div class="modal-body">
                             <form method="post" class="was-validated">
-                                <div class="row modalrow"> 
 
+                                <div class="row"> 
                                     <div class="col">
                                         <div class="form-group">
                                             <label for="lname">Last name:</label>
@@ -515,14 +521,87 @@
                                             <div class="valid-feedback">Valid.</div>
                                             <div class="invalid-feedback">Please fill out this field.</div>
                                         </div>
+                                    </div>
 
+                                    <div class="col">
+                                        <div class="form-group">
+                                            <label for="fname">First name:</label>
+                                            <input name="fname" type="text" class="form-control" value="<?= $resident['fname']?>" required>
+                                            <div class="valid-feedback">Valid.</div>
+                                            <div class="invalid-feedback">Please fill out this field.</div>  
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col">
                                         <div class="form-group">
                                             <label for="mname">Middle name:</label>
                                             <input name="mi" type="text" class="form-control" value="<?= $resident['mi']?>" required>
                                             <div class="valid-feedback">Valid.</div>
                                             <div class="invalid-feedback">Please fill out this field.</div>  
                                         </div>
+                                    </div>
 
+                                    <div class="col">
+                                        <div class="form-group">
+                                            <label for="age" class="mtop">Age </label>
+                                            <input name="age" type="number" class="form-control" value="<?= $resident['age']?>" required>
+                                            <div class="valid-feedback">Valid.</div>
+                                            <div class="invalid-feedback">Please fill out this field.</div>
+                                        </div>
+                                    </div>
+                                </div>            
+
+                                <div class="row">
+                                    <div class="col">
+                                        <div class="form-group">
+                                            <label> House No: </label>
+                                            <input type="text" class="form-control" name="houseno"  placeholder="Enter House No." required>
+                                            <div class="valid-feedback">Valid.</div>
+                                            <div class="invalid-feedback">Please fill out this field.</div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col">
+                                        <div class="form-group">
+                                            <label> Street: </label>
+                                            <input type="text" class="form-control" name="street"  placeholder="Enter Street" required>
+                                            <div class="valid-feedback">Valid.</div>
+                                            <div class="invalid-feedback">Please fill out this field.</div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col">
+                                        <div class="form-group">
+                                            <label> Barangay: </label>
+                                            <input type="text" class="form-control" name="brgy"  placeholder="Enter Barangay" required>
+                                            <div class="valid-feedback">Valid.</div>
+                                            <div class="invalid-feedback">Please fill out this field.</div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col">
+                                        <div class="form-group">
+                                            <label> Municipality: </label>
+                                            <input type="text" class="form-control" name="municipal" placeholder="Enter Municipality" required>
+                                            <div class="valid-feedback">Valid.</div>
+                                            <div class="invalid-feedback">Please fill out this field.</div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col">
+                                        <label>Upload Photo:</label>
+                                        <div class="custom-file mb-3 form-group">
+                                            <input type="file" class="custom-file-input" id="customFile" name="res_photo" required>
+                                            <label class="custom-file-label" for="customFile">Choose File</label>
+                                            <div class="valid-feedback">Valid.</div>
+                                            <div class="invalid-feedback">Please fill out this field.</div>
+                                        </div>
+                                    </div>
+                                    <div class="col">
                                         <div class="form-group">            
                                             <label for="cno">Contact Number:</label>
                                             <input name="contact" type="text" maxlength="11" class="form-control" value="<?= $resident['contact']?>" pattern="[0-9]{11}" required>
@@ -530,34 +609,22 @@
                                             <div class="invalid-feedback">Please fill out this field.</div>
                                         </div>
                                     </div>
+                                    
+                                    <input type="hidden" name="remarks">
+                                    <input type="hidden" name="dateapply" value="<?= $cdate?>">
+                                    <input type="hidden" name="timeapply" value="<?= $ctime?>">
+                                    <input name="addedby" type="hidden" value="<?= $userdetails['surname']?>, <?= $userdetails['firstname']?>">
+                                    <input name="id_resident" type="hidden" value="<?= $resident['id_resident']?>">
+                                </div>
 
+                                <div class="row">
                                     <div class="col">
-
                                         <div class="form-group">
-                                            <label for="fname">First name:</label>
-                                            <input name="fname" type="text" class="form-control" value="<?= $resident['fname']?>" required>
-                                            <div class="valid-feedback">Valid.</div>
-                                            <div class="invalid-feedback">Please fill out this field.</div>  
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label for="address">Address:</label>
-                                            <input name="address" type="text" class="form-control" value="<?= $resident['address']?>" required>
+                                            <label for="report">Narrative Report:</label>
+                                            <textarea class="form-control" rows="5" id="report" name="text" required></textarea>
                                             <div class="valid-feedback">Valid.</div>
                                             <div class="invalid-feedback">Please fill out this field.</div>
                                         </div>
-                                        <div class="form-group">
-                                            <label for="age" class="mtop">Age </label>
-                                            <input name="age" type="number" class="form-control" value="<?= $resident['age']?>" required>
-                                            <div class="valid-feedback">Valid.</div>
-                                            <div class="invalid-feedback">Please fill out this field.</div>
-                                        </div>
-
-                                        <input type="hidden" name="remarks">
-                                        <input type="hidden" name="dateapply" value="<?= $cdate?>">
-                                        <input type="hidden" name="timeapply" value="<?= $ctime?>">
-                                        <input name="addedby" type="hidden" value="<?= $userdetails['surname']?>, <?= $userdetails['firstname']?>">
-                                        <input name="id_resident" type="hidden" value="<?= $resident['id_resident']?>">
                                     </div>
                                 </div>
                             
@@ -586,14 +653,6 @@
                 &nbsp;
 
                 <li class="list-inline-item">
-                    <a href="#!" class="sbtn btn-large mx-1" title="HealthCare">
-                    <i class="fas fa-first-aid fa-2x"></i>
-                    </a>
-                </li>
-
-                &nbsp;
-
-                <li class="list-inline-item">
                     <a href="#!" class="sbtn btn-large mx-1" title="Documents">
                     <i class="fas fa-file fa-2x"></i>
                     </a>
@@ -602,7 +661,7 @@
                 &nbsp;
 
                 <li class="list-inline-item">
-                    <a href="#!" class="sbtn btn-large mx-1" title="Documents">
+                    <a href="#!" class="sbtn btn-large mx-1" title="Friend">
                     <i class="fas fa-user-friends fa-2x"></i>
                     </a>
                 </li>
@@ -635,30 +694,6 @@
                     <!--First column-->
 
                     <div class="col-md-3 mx-auto shfooter">
-                        <h5 class="my-2 font-weight-bold d-none d-md-block">HealthCare</h5>
-                        <div class="d-md-none title" data-target="#HealthCare" data-toggle="collapse">
-                            <div class="mt-3 font-weight-bold">HealthCare
-                                <div class="float-right navbar-toggler">
-                                    <i class="fas fa-angle-down"></i>
-                                    <i class="fas fa-angle-up"></i>
-                                </div>
-                            </div>
-                        </div>
-                        <ul class="list-unstyled collapse" id="HealthCare">
-                            <li><a href="#">Animal Registry & Welfare</a></li>
-                            <li><a href="#">TB Dots Consultation</a></li>
-                            <li><a href="#">Vaccination Programs</a></li>
-                            <li><a href="#">Mother & Child Check-Up</a></li>
-                        </ul>
-                    </div>
-
-                    <!--/.First column-->
-
-                    <hr class="clearfix w-100 d-md-none mb-0">
-
-                    <!--Second column-->
-
-                    <div class="col-md-3 mx-auto shfooter">
                         <h5 class="my-2 font-weight-bold d-none d-md-block">Documentation</h5>
                         <div class="d-md-none title" data-target="#Documentation" data-toggle="collapse">
                             <div class="mt-3 font-weight-bold">Documentation
@@ -672,10 +707,12 @@
                             <li><a href="#">Certificate of Residency</a></li>
                             <li><a href="#">Barangay Clearance</a></li>
                             <li><a href="#">Certificate of Indigency</a></li>
+                            <li><a href="#">Business Permit</a></li>
+                            <li><a href="#">Barangay ID</a></li>
                         </ul>
                     </div>
 
-                    <!--/.Second column-->
+                    <!--/.First column-->
 
                     <hr class="clearfix w-100 d-md-none mb-0">
 
@@ -693,7 +730,6 @@
                         </div>
 
                         <ul class="list-unstyled collapse" id="OtherServices">
-                            <li><a href="#">Family Planning</a></li>
                             <li><a href="#">Blotter</a></li>
                         </ul>
                     </div>
@@ -733,11 +769,11 @@
             <!--Copyright-->
 
             <div class="py-3 text-center">
-                Copyright 2020 -
+                Copyright 2021 -
                 <script>
                 document.write(new Date().getFullYear())
                 </script> 
-                SAD/DBA | For Educational Purposes Only
+                BI & ESMS | For Educational Purposes Only
             </div>
 
         </footer>
@@ -771,6 +807,14 @@
             dots[slideIndex-1].className += " active";
             captionText.innerHTML = dots[slideIndex-1].alt;
             }
+        </script>
+
+        <script>
+            // Add the following code if you want the name of the file appear on select
+            $(".custom-file-input").on("change", function() {
+            var fileName = $(this).val().split("\\").pop();
+            $(this).siblings(".custom-file-label").addClass("selected").html(fileName);
+            });
         </script>
 
         <script src="../BarangaySystem/bootstrap/js/bootstrap.bundle.js" type="text/javascript"> </script>

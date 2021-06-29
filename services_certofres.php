@@ -256,8 +256,8 @@
                     <br>
 
                     <h3>Step 1: Prepare</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. 
-                    <br> Inventore tenetur fugiat repudiandae sit minus</p>
+                    <p>First step is to prepare all of the information that will be<br> needed
+                    in acquiring a certificate of residency.</p>
                 </div>
                 <div class="col">
                     <i class="fas fa-laptop fa-7x"></i>
@@ -266,8 +266,8 @@
                     <br>
 
                     <h3>Step 2: Apply</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. 
-                    <br> Inventore tenetur fugiat repudiandae sit minus</p>
+                    <p>Second Step is to apply in our system and<br> fill-up the entire form
+                    given below.</p>
                 </div>
             </div>
 
@@ -336,7 +336,7 @@
                         <div class="card-body">
                             <ul style="text-align: justify;">
                                 <p class="card-text">
-                                    <li> 3-4 Days </li>
+                                    <li> 1-2 Days </li>
                                 </p>
                             </ul>
                         </div>
@@ -430,50 +430,79 @@
                                     </div>
                                     <div class="col">
                                         <div class="form-group">
-                                            <label for="nationality">Nationality:</label>
-                                            <input name="nationality" type="text" class="form-control" placeholder="Enter Nationality" required>
-                                            <div class="valid-feedback">Valid.</div>
-                                            <div class="invalid-feedback">Please fill out this field.</div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="row">
-                                    <div class="col">
-                                        <div class="form-group">
-                                            <label for="address" class="mtop"> Address: </label>
-                                            <input type="text" class="form-control" name="address" placeholder="Enter your Address" required>
-                                            <div class="valid-feedback">Valid.</div>
-                                            <div class="invalid-feedback">Please fill out this field.</div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="row">
-                                    <div class="col">
-                                        <div class="form-group">
-                                            <label for="status">Status:</label>
-                                            <select class="form-control" name="status" id="status" placeholder="Enter Status" required>
-                                                <option value="">Choose your Status</option>
-                                                <option value="Single">Single</option>
-                                                    <option value="In a relationship">In a relationship</option>
-                                                    <option value="Engaged">Engaged</option>
-                                                    <option value="Married">Married</option>
-                                                    <option value="Widowed">Widowed</option>
-                                                    <option value="Divorces">Divorced</option>
-                                            </select>
-                                            <div class="valid-feedback">Valid.</div>
-                                            <div class="invalid-feedback">Please fill out this field.</div>
-                                        </div>
-                                    </div>  
-                                    <div class="col">
-                                        <div class="form-group">
                                             <label for="Age" class="mtop">Age: </label>
                                             <input type="number" name="age" class="form-control" placeholder="Enter your Age" required>
                                             <div class="valid-feedback">Valid.</div>
                                             <div class="invalid-feedback">Please fill out this field.</div>
                                         </div>
                                     </div>
+
+                                </div>
+
+                                <div class="row">
+                                    <div class="col">
+                                        <div class="form-group">
+                                            <label> House No: </label>
+                                            <input type="text" class="form-control" name="houseno"  placeholder="Enter House No." required>
+                                            <div class="valid-feedback">Valid.</div>
+                                            <div class="invalid-feedback">Please fill out this field.</div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col">
+                                        <div class="form-group">
+                                            <label> Street: </label>
+                                            <input type="text" class="form-control" name="street"  placeholder="Enter Street" required>
+                                            <div class="valid-feedback">Valid.</div>
+                                            <div class="invalid-feedback">Please fill out this field.</div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col">
+                                        <div class="form-group">
+                                            <label> Barangay: </label>
+                                            <input type="text" class="form-control" name="brgy"  placeholder="Enter Barangay" required>
+                                            <div class="valid-feedback">Valid.</div>
+                                            <div class="invalid-feedback">Please fill out this field.</div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col">
+                                        <div class="form-group">
+                                            <label> Municipality: </label>
+                                            <input type="text" class="form-control" name="municipal" placeholder="Enter Municipality" required>
+                                            <div class="valid-feedback">Valid.</div>
+                                            <div class="invalid-feedback">Please fill out this field.</div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+
+                                    <div class="col">
+                                        <div class="form-group">
+                                            <label class="mtop">Date: </label>
+                                            <input type="date" class="form-control" name="date" required>
+                                            <div class="valid-feedback">Valid.</div>
+                                            <div class="invalid-feedback">Please fill out this field.</div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col">
+                                        <div class="form-group">
+                                            <label for="purposes">Purposes:</label>
+                                            <select class="form-control" name="purposes" id="purposes" required>
+                                                <option value="">Choose your Purposes</option>
+                                                <option value="Job/Employment">Job/Employment</option>
+                                                <option value="Business Establishment">Business Establishment</option>
+                                                <option value="Financial Transaction">Financial Transaction</option>
+                                                <option value="Certify that you are living in a certain barangay">Certify that you are living in a certain barangay</option>
+                                                <option value="Other important transactions.">Other important transactions.</option>
+                                            </select>
+                                            <div class="valid-feedback">Valid.</div>
+                                            <div class="invalid-feedback">Please fill out this field.</div>
+                                        </div>
+                                    </div>  
                                 </div>
                                 
                             </form>
@@ -512,14 +541,6 @@
                 &nbsp;
 
                 <li class="list-inline-item">
-                    <a href="#!" class="sbtn btn-large mx-1" title="HealthCare">
-                    <i class="fas fa-first-aid fa-2x"></i>
-                    </a>
-                </li>
-
-                &nbsp;
-
-                <li class="list-inline-item">
                     <a href="#!" class="sbtn btn-large mx-1" title="Documents">
                     <i class="fas fa-file fa-2x"></i>
                     </a>
@@ -528,7 +549,7 @@
                 &nbsp;
 
                 <li class="list-inline-item">
-                    <a href="#!" class="sbtn btn-large mx-1" title="Documents">
+                    <a href="#!" class="sbtn btn-large mx-1" title="Friend">
                     <i class="fas fa-user-friends fa-2x"></i>
                     </a>
                 </li>
@@ -561,30 +582,6 @@
                     <!--First column-->
 
                     <div class="col-md-3 mx-auto shfooter">
-                        <h5 class="my-2 font-weight-bold d-none d-md-block">HealthCare</h5>
-                        <div class="d-md-none title" data-target="#HealthCare" data-toggle="collapse">
-                            <div class="mt-3 font-weight-bold">HealthCare
-                                <div class="float-right navbar-toggler">
-                                    <i class="fas fa-angle-down"></i>
-                                    <i class="fas fa-angle-up"></i>
-                                </div>
-                            </div>
-                        </div>
-                        <ul class="list-unstyled collapse" id="HealthCare">
-                            <li><a href="#">Animal Registry & Welfare</a></li>
-                            <li><a href="#">TB Dots Consultation</a></li>
-                            <li><a href="#">Vaccination Programs</a></li>
-                            <li><a href="#">Mother & Child Check-Up</a></li>
-                        </ul>
-                    </div>
-
-                    <!--/.First column-->
-
-                    <hr class="clearfix w-100 d-md-none mb-0">
-
-                    <!--Second column-->
-
-                    <div class="col-md-3 mx-auto shfooter">
                         <h5 class="my-2 font-weight-bold d-none d-md-block">Documentation</h5>
                         <div class="d-md-none title" data-target="#Documentation" data-toggle="collapse">
                             <div class="mt-3 font-weight-bold">Documentation
@@ -598,10 +595,12 @@
                             <li><a href="#">Certificate of Residency</a></li>
                             <li><a href="#">Barangay Clearance</a></li>
                             <li><a href="#">Certificate of Indigency</a></li>
+                            <li><a href="#">Business Permit</a></li>
+                            <li><a href="#">Barangay ID</a></li>
                         </ul>
                     </div>
 
-                    <!--/.Second column-->
+                    <!--/.First column-->
 
                     <hr class="clearfix w-100 d-md-none mb-0">
 
@@ -619,7 +618,6 @@
                         </div>
 
                         <ul class="list-unstyled collapse" id="OtherServices">
-                            <li><a href="#">Family Planning</a></li>
                             <li><a href="#">Blotter</a></li>
                         </ul>
                     </div>
@@ -659,11 +657,11 @@
             <!--Copyright-->
 
             <div class="py-3 text-center">
-                Copyright 2020 -
+                Copyright 2021 -
                 <script>
                 document.write(new Date().getFullYear())
                 </script> 
-                SAD/DBA | For Educational Purposes Only
+                BI & ESMS | For Educational Purposes Only
             </div>
 
         </footer>

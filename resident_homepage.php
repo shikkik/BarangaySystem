@@ -26,7 +26,7 @@
 <html>
 
     <head> 
-    <title> Barangay Management System </title>
+    <title> Barangay Information & E-Services Management System </title>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
         <!-- responsive tags for screen compatibility -->
@@ -118,7 +118,7 @@
         <!-- eto yung navbar -->
         <nav class="navbar navbar-dark bg-primary sticky-top">
             <a class="navbar-brand" href="index.php"> <img src="../BarangaySystem/icons/beverlylogo.png" width="40px" height="40px"> 
-            <a class="navbar-brand" href="resident_homepage.php">Barangay Beverly Hills</a>
+            <a class="navbar-brand" href="resident_homepage.php">Barangay Information & E-Services Management System</a>
 
             <div class="dropdown ml-auto">
                 <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown"><?= $userdetails['surname'];?>, <?= $userdetails['firstname'];?>
@@ -324,7 +324,7 @@
             <hr class="mt-0">
 
             <div class="text-center">
-                <h1>Services</h1>
+                <h1 class="text-white">Services</h1>
                 <ul class="list-unstyled list-inline">
 
                 &nbsp;
@@ -379,30 +379,6 @@
                     <!--First column-->
 
                     <div class="col-md-3 mx-auto shfooter">
-                        <h5 class="my-2 font-weight-bold d-none d-md-block">HealthCare</h5>
-                        <div class="d-md-none title" data-target="#HealthCare" data-toggle="collapse">
-                            <div class="mt-3 font-weight-bold">HealthCare
-                                <div class="float-right navbar-toggler">
-                                    <i class="fas fa-angle-down"></i>
-                                    <i class="fas fa-angle-up"></i>
-                                </div>
-                            </div>
-                        </div>
-                        <ul class="list-unstyled collapse" id="HealthCare">
-                            <li><a class="footerlinks" href="#">Animal Registry & Welfare</a></li>
-                            <li><a class="footerlinks" href="#">TB Dots Consultation</a></li>
-                            <li><a class="footerlinks" href="#">Vaccination Programs</a></li>
-                            <li><a class="footerlinks" href="#">Mother & Child Check-Up</a></li>
-                        </ul>
-                    </div>
-
-                    <!--/.First column-->
-
-                    <hr class="clearfix w-100 d-md-none mb-0">
-
-                    <!--Second column-->
-
-                    <div class="col-md-3 mx-auto shfooter">
                         <h5 class="my-2 font-weight-bold d-none d-md-block">Documentation</h5>
                         <div class="d-md-none title" data-target="#Documentation" data-toggle="collapse">
                             <div class="mt-3 font-weight-bold">Documentation
@@ -416,10 +392,12 @@
                             <li><a class="footerlinks" href="#">Certificate of Residency</a></li>
                             <li><a class="footerlinks" href="#">Barangay Clearance</a></li>
                             <li><a class="footerlinks" href="#">Certificate of Indigency</a></li>
+                            <li><a class="footerlinks" href="#">Barangay ID</a></li>
+                            <li><a class="footerlinks" href="#">Business Permit</a></li>
                         </ul>
                     </div>
 
-                    <!--/.Second column-->
+                    <!--/.First column-->
 
                     <hr class="clearfix w-100 d-md-none mb-0">
 
@@ -437,7 +415,6 @@
                         </div>
 
                         <ul class="list-unstyled collapse" id="OtherServices">
-                            <li><a class="footerlinks" href="#">Family Planning</a></li>
                             <li><a class="footerlinks" href="#">Blotter</a></li>
                         </ul>
                     </div>
@@ -477,11 +454,11 @@
             <!--Copyright-->
 
             <div class="py-3 text-center">
-                Copyright 2020 -
+                Copyright 2021 -
                 <script>
                 document.write(new Date().getFullYear())
                 </script> 
-                SAD/DBA | For Educational Purposes Only
+                BI & ESMS | For Educational Purposes Only
             </div>
 
         </footer>

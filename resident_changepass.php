@@ -1,4 +1,5 @@
 <?php 
+    error_reporting(E_ALL ^ E_WARNING);
     require('classes/resident.class.php');
 
     //$view = $residentbmis->view_single_resident($email);
@@ -103,7 +104,7 @@
     <body> 
         <!-- eto yung navbar -->
         <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top">
-            <a class="navbar-brand" href="resident_homepage.php">Barangay Sorsogon</a>
+            <a class="navbar-brand" href="resident_homepage.php">Barangay Information & E-Services Management System</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -120,18 +121,20 @@
             </div>
         </nav>
 
-        <div class="container"  style="margin-top: 4em;">
+        <div class="container"  style="margin-top: 3em;">
             <div class="row">
                 <div class="col-12">
                         <h1 class="text-center">Resident Profile</h1>
+                        <br><br>
                     <div class="row margin mtop"> 
-                        <div class="col-sm"> </div>
-                        <div class="col-12">   
+                        <div class="col-3"> </div>
+                        <div class="col-6">   
                             <div class="card mbottom">
                                 <div class="card-body">
                                     <div class="row">
                                         <div class="col">
                                             <h3 class="text-center"> Change Password </h3>
+                                            <br>
                                             <form method="post">
                                             
                                             <label> Current Password </label>
@@ -152,7 +155,7 @@
                             </div>
                         </div> 
 
-                        <div class="col-sm"> 
+                        <div class="col-3"> 
                         </div>
                     </div>
                 </div>
@@ -175,14 +178,6 @@
                 &nbsp;
 
                 <li class="list-inline-item">
-                    <a href="#!" class="sbtn btn-large mx-1" title="HealthCare">
-                    <i class="fas fa-first-aid fa-2x"></i>
-                    </a>
-                </li>
-
-                &nbsp;
-
-                <li class="list-inline-item">
                     <a href="#!" class="sbtn btn-large mx-1" title="Documents">
                     <i class="fas fa-file fa-2x"></i>
                     </a>
@@ -191,7 +186,7 @@
                 &nbsp;
 
                 <li class="list-inline-item">
-                    <a href="#!" class="sbtn btn-large mx-1" title="Documents">
+                    <a href="#!" class="sbtn btn-large mx-1" title="Friends">
                     <i class="fas fa-user-friends fa-2x"></i>
                     </a>
                 </li>
@@ -224,30 +219,6 @@
                     <!--First column-->
 
                     <div class="col-md-3 mx-auto shfooter">
-                        <h5 class="my-2 font-weight-bold d-none d-md-block">HealthCare</h5>
-                        <div class="d-md-none title" data-target="#HealthCare" data-toggle="collapse">
-                            <div class="mt-3 font-weight-bold">HealthCare
-                                <div class="float-right navbar-toggler">
-                                    <i class="fas fa-angle-down"></i>
-                                    <i class="fas fa-angle-up"></i>
-                                </div>
-                            </div>
-                        </div>
-                        <ul class="list-unstyled collapse" id="HealthCare">
-                            <li><a href="#">Animal Registry & Welfare</a></li>
-                            <li><a href="#">TB Dots Consultation</a></li>
-                            <li><a href="#">Vaccination Programs</a></li>
-                            <li><a href="#">Mother & Child Check-Up</a></li>
-                        </ul>
-                    </div>
-
-                    <!--/.First column-->
-
-                    <hr class="clearfix w-100 d-md-none mb-0">
-
-                    <!--Second column-->
-
-                    <div class="col-md-3 mx-auto shfooter">
                         <h5 class="my-2 font-weight-bold d-none d-md-block">Documentation</h5>
                         <div class="d-md-none title" data-target="#Documentation" data-toggle="collapse">
                             <div class="mt-3 font-weight-bold">Documentation
@@ -261,10 +232,12 @@
                             <li><a href="#">Certificate of Residency</a></li>
                             <li><a href="#">Barangay Clearance</a></li>
                             <li><a href="#">Certificate of Indigency</a></li>
+                            <li><a href="#">Barangay ID</a></li>
+                            <li><a href="#">Business Permit</a></li>
                         </ul>
                     </div>
 
-                    <!--/.Second column-->
+                    <!--/.First column-->
 
                     <hr class="clearfix w-100 d-md-none mb-0">
 
@@ -282,7 +255,6 @@
                         </div>
 
                         <ul class="list-unstyled collapse" id="OtherServices">
-                            <li><a href="#">Family Planning</a></li>
                             <li><a href="#">Blotter</a></li>
                         </ul>
                     </div>
@@ -322,11 +294,11 @@
             <!--Copyright-->
 
             <div class="py-3 text-center">
-                Copyright 2020 -
+                Copyright 2021 -
                 <script>
                 document.write(new Date().getFullYear())
                 </script> 
-                SAD/DBA | For Educational Purposes Only
+                BI & ESMS | For Educational Purposes Only
             </div>
 
         </footer>

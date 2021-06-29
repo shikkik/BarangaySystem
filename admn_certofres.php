@@ -35,8 +35,7 @@
                 <thead> 
                     <tr>
                         <th> Actions</th>
-                        <th> ID_ResCert </th>
-                        <th> ID_Resident </th>
+                        <th> Resident ID </th>
                         <th> Surname </th>
                         <th> First Name </th>
                         <th> Middle Name </th>
@@ -44,7 +43,6 @@
                         <th> Status </th>
                         <th> Nationality </th>
                         <th> Address </th>
-                        <th> AddedBy </th>
                     </tr>
                 </thead>
                 <tbody> 
@@ -53,12 +51,11 @@
                     <tr>
                         <td>    
                         <form action="" method="post">
-                            <a class="btn btn-primary" href="rescert_form.php?id_resident=<?= $view['id_resident'];?>">Generate </a> 
+                            <a class="btn btn-primary" href="rescert_form.php?id_resident=<?= $view['id_resident'];?>">Generate</a> 
                             <input type="hidden" name="id_rescert" value="<?= $view['id_rescert'];?>">
-                            <button class="btn btn-danger" type="submit" name="delete_certofres"> Delete </button>
+                            <button class="btn btn-danger" type="submit" name="delete_certofres"> Remove </button>
                         </form>
                         </td>
-                        <td> <?= $view['id_rescert'];?> </td>
                         <td> <?= $view['id_resident'];?> </td> 
                         <td> <?= $view['lname'];?> </td>
                         <td> <?= $view['fname'];?> </td>
@@ -67,7 +64,6 @@
                         <td> <?= $view['status'];?> </td>
                         <td> <?= $view['nationality'];?> </td>
                         <td> <?= $view['address'];?> </td>
-                        <td> <?= $view['addedby'];?> </td>
                     </tr>
                     <?php }?>
                 <?php } ?>

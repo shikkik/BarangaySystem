@@ -78,26 +78,6 @@
                 Barangay Services
             </div>
 
-            <!-- Healthcare  -->
-            <li class="nav-item active">
-                <a class="nav-link" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true"
-                    aria-controls="collapsePages">
-                    <i class="fas fa-fw fa-folder"></i>
-                    <span>Healthcare Services</span>
-                </a>
-                <div id="collapsePages" class="collapse show" aria-labelledby="headingPages"
-                    data-parent="#accordionSidebar">
-                    <div class="bg-white py-2 collapse-inner rounded">
-                    <a class="collapse-item" href="admn_animal_crud.php">Animal Welfare Registry</a>
-                        <a class="collapse-item" href="admn_tbdots_crud.php">TB DOTS Program</a>
-                        <a class="collapse-item" href="admn_vaccine_crud.php">Vaccination Program</a>
-                        <a class="collapse-item" href="admn_familyplan_crud.php">Family Planning</a>
-                        <a class="collapse-item" href="admn_motherchild_crud.php">Mother & Child <br> Check-up</a>
-                        <a class="collapse-item" href="admn_medicine_crud.php">Medicine Inventory</a>
-                    </div>
-                </div>
-            </li>
-
             <!-- Announcement Management -->
             <li class="nav-item">
                 <a class="nav-link" href="admn_announcement_crud.php">
@@ -185,10 +165,6 @@
                             </div>
                         </li>
 
-
-
-                        <div class="topbar-divider d-none d-sm-block"></div>
-
                         <!-- Nav Item - User Information -->
                         <li class="nav-item dropdown no-arrow">
                             <a class="nav-link dropdown-toggle" href="admn_dashboard.php" id="userDropdown" role="button"
@@ -198,10 +174,7 @@
                             <!-- Dropdown - User Information -->
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
                                 aria-labelledby="userDropdown">
-                                <a class="dropdown-item" href="#">
-                                    <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
-                                    Activity Logs
-                                </a>
+
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
                                     <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
@@ -211,4 +184,6 @@
                         </li>
                     </ul>
                 </nav>
+
+                
                 <!-- End of Topbar -->
