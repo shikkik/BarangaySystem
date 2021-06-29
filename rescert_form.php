@@ -31,6 +31,7 @@ $resident = $residentbmis->get_single_certofres($id_resident);
     <link href="./BarangaySystem/bootstrap/css/dataTables.bootstrap.css" rel="stylesheet" type="text/css" />
     <link href="../BarangaySystem/bootstrap/css/select2.css" rel="stylesheet" type="text/css" />
     <script src="../BarangaySystem/bootstrap/css/jquery-1.12.3.js" type="text/javascript"></script>  
+    
 </head>
  <body class="skin-black" >
      <!-- header logo: style can be found in header.less -->
@@ -104,7 +105,20 @@ $resident = $residentbmis->get_single_certofres($id_resident);
                         <p class="text-center" style="font-size: 20px; font-size:bold;">OFFICE OF THE BARANGAY CAPTAIN<br><br><b style="font-size: 28px;">CERTIFICATE OF RESIDENCY</b></p>
                         <p style="font-size: 18px;">TO WHOM IT MAY CONCERN:</p>
                         <p style="text-indent:40px;text-align: justify;">This is to certify that <?= $resident['fname'];?> <?= $resident['mi'];?>. <?= $resident['lname'];?>  
-                         is a bonafide resident of <?= $resident['address'];?> and that he/she has no derogatory / criminal records filled in this brangay</p><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+                        (age), (Nationality) and a bonafide resident of (ADDRESS).</p>
+
+                        <p style="text-indent:40px;text-align: justify;">Further certify that the above-named subject is of good moral character and has 
+                        no derigatory record in this office, law abiding citizen and reliable.</p>
+
+                        <p style="text-indent:40px;text-align: justify;">This certification is issued upon the request of the above-named party
+                        as a supporting document needed for (PURPOSE).</p>
+
+                        <p style="text-indent:40px;text-align: justify;">Issued this (DATE) Antipolo City. </p>
+
+
+                        
+                        
+                        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
                         
                     
                         <label style="font-size:18px;">____________</label>    <label style="font-size:18px;margin-left:4em;">VINCENT VILFAMAT</label><br> 

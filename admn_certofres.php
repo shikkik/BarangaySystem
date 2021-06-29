@@ -27,7 +27,7 @@
     </div>
 
     <br>
-    <div class="row"> 
+    <div class="row" > 
         <div class="col-md-12"> 
             <h1 class="h3 mb-4 text-gray-800">Certificate of Residency Request</h1>
             <table class="table table-dark table-responsive">
