@@ -469,13 +469,41 @@
                                 <div class="row">
                                     <div class="col">
                                         <div class="form-group">
-                                            <label for="address" class="mtop"> Address: </label>
-                                            <input type="text" class="form-control" name="address" placeholder="Enter your Address" required>
-                                                <div class="valid-feedback">Valid.</div>
-                                                <div class="invalid-feedback">Please fill out this field.</div>
+                                            <label> House No: </label>
+                                            <input type="text" class="form-control" name="houseno"  placeholder="Enter House No." required>
+                                            <div class="valid-feedback">Valid.</div>
+                                            <div class="invalid-feedback">Please fill out this field.</div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col">
+                                        <div class="form-group">
+                                            <label> Street: </label>
+                                            <input type="text" class="form-control" name="street"  placeholder="Enter Street" required>
+                                            <div class="valid-feedback">Valid.</div>
+                                            <div class="invalid-feedback">Please fill out this field.</div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col">
+                                        <div class="form-group">
+                                            <label> Barangay: </label>
+                                            <input type="text" class="form-control" name="brgy"  placeholder="Enter Barangay" required>
+                                            <div class="valid-feedback">Valid.</div>
+                                            <div class="invalid-feedback">Please fill out this field.</div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col">
+                                        <div class="form-group">
+                                            <label> Municipality: </label>
+                                            <input type="text" class="form-control" name="municipal" placeholder="Enter Municipality" required>
+                                            <div class="valid-feedback">Valid.</div>
+                                            <div class="invalid-feedback">Please fill out this field.</div>
                                         </div>
                                     </div>
                                 </div>
+                                
                                 <div class="row">
                                     <div class="col">
                                         <div class="form-group">
