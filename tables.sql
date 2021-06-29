@@ -241,10 +241,10 @@ Non user tables
     addedby VARCHAR(255) NOT NULL , 
     PRIMARY KEY (id_announcement)) ENGINE = InnoDB;
 
-    ALTER TABLE `tbl_announcement` ADD `target` VARCHAR(255) NULL AFTER `event`;
-    ALTER TABLE `tbl_announcement` CHANGE `start_date` `start_date` DATE NOT NULL;
-    ALTER TABLE `tbl_announcement` CHANGE `end_date` `end_date` DATE NOT NULL;
-    ALTER TABLE `tbl_announcement` DROP `end_date`;
+        ALTER TABLE `tbl_announcement` ADD `target` VARCHAR(255) NULL AFTER `event`;
+        ALTER TABLE `tbl_announcement` CHANGE `start_date` `start_date` DATE NOT NULL;
+        ALTER TABLE `tbl_announcement` CHANGE `end_date` `end_date` DATE NOT NULL;
+        ALTER TABLE `tbl_announcement` DROP `end_date`;
 
 
 
@@ -254,8 +254,8 @@ Non user tables
     dosage VARCHAR(255) NOT NULL , 
     dateman DATE NOT NULL , 
     origin VARCHAR(255) NOT NULL , 
-    in DATE NOT NULL , 
-    out DATE NOT NULL , 
+    datein DATE NOT NULL , 
+    dateout DATE NOT NULL , 
     stocks INT NOT NULL , 
     remarks VARCHAR(255) NOT NULL , 
     PRIMARY KEY (id_medicine)) ENGINE = InnoDB;
@@ -263,8 +263,8 @@ Non user tables
     "ALTER TABLE `tbl_medicine` DROP `dosage`;"
 
     ALTER TABLE tbl_medicine ADD addedby VARCHAR(255) NOT NULL AFTER remarks;
-    ALTER TABLE tbl_medicine CHANGE date_in datein DATE NOT NULL;
-    ALTER TABLE tbl_medicine CHANGE out dateout DATE NOT NULL;
+    ALTER TABLE tbl_medicine CHANGE datein DATE NOT NULL;
+    ALTER TABLE tbl_medicine CHANGE dateout DATE NOT NULL;
 
     CREATE TABLE bmis.tbl_blotter 
     ( id_blotter INT NOT NULL AUTO_INCREMENT , 

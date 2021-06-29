@@ -14,9 +14,13 @@
                 <th> First Name </th>
                 <th> Middle Name </th>
                 <th> Age </th>
-                <th> Status </th>
                 <th> Nationality </th>
-                <th> Address </th>
+                <th> House Number </th>
+                <th> Street </th>
+                <th> Barangay </th>
+                <th> Municipality </th>
+                <th> Date </th>
+                <th> Purpose </th>
 			</tr>
 		</thead>
 		<tbody>
@@ -43,9 +47,13 @@
                         <td> <?= $view['fname'];?> </td>
                         <td> <?= $view['mi'];?> </td>
                         <td> <?= $view['age'];?> </td>
-                        <td> <?= $view['status'];?> </td>
                         <td> <?= $view['nationality'];?> </td>
-                        <td> <?= $view['address'];?> </td>
+                        <td> <?= $view['houseno'];?> </td>
+                        <td> <?= $view['street'];?> </td>
+                        <td> <?= $view['brgy'];?> </td>
+                        <td> <?= $view['municipal'];?> </td>
+                        <td> <?= $view['date'];?> </td>
+                        <td> <?= $view['purpose'];?> </td>
 			</tr>
 			<?php
 			}
@@ -60,15 +68,19 @@
 <table class="table table-dark table-responsive">
 		<thead >
 			<tr>
-            <th> Actions</th>
+                <th> Actions</th>
                 <th> Resident ID </th>
                 <th> Surname </th>
                 <th> First Name </th>
                 <th> Middle Name </th>
                 <th> Age </th>
-                <th> Status </th>
                 <th> Nationality </th>
-                <th> Address </th>
+                <th> House Number </th>
+                <th> Street </th>
+                <th> Barangay </th>
+                <th> Municipality </th>
+                <th> Date </th>
+                <th> Purpose </th>
 			</tr>
 		</thead>
 		<tbody>
@@ -86,9 +98,13 @@
                         <td> <?= $view['fname'];?> </td>
                         <td> <?= $view['mi'];?> </td>
                         <td> <?= $view['age'];?> </td>
-                        <td> <?= $view['status'];?> </td>
                         <td> <?= $view['nationality'];?> </td>
-                        <td> <?= $view['address'];?> </td>
+                        <td> <?= $view['houseno'];?> </td>
+                        <td> <?= $view['street'];?> </td>
+                        <td> <?= $view['brgy'];?> </td>
+                        <td> <?= $view['municipal'];?> </td>
+                        <td> <?= $view['date'];?> </td>
+                        <td> <?= $view['purpose'];?> </td>
 			</tr>
 			
 			<?php

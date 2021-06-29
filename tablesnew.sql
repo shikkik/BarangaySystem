@@ -47,6 +47,8 @@ CREATE TABLE `bmis`.`tbl_indigency` ( `id_indigency` INT NOT NULL AUTO_INCREMENT
  `street` VARCHAR(255) NOT NULL , `brgy` VARCHAR(255) NOT NULL , `municipal` VARCHAR(255) NOT NULL , 
  `date` DATE NOT NULL , PRIMARY KEY (`id_indigency`)) ENGINE = InnoDB;
 
+ ALTER TABLE `tbl_indigency` ADD `purpose` VARCHAR(255) NOT NULL AFTER `municipal`; 
+
 
 
  DROP TABLE `tbl_rescert`;
