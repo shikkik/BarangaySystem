@@ -197,7 +197,7 @@
             <div class="container"> 
                 <div class="row title-spacing">
                     <div class="col"> 
-                        <h3 class="text-center"> Resident Applications</h3>
+                        <h3 class="text-center"> E-Services</h3>
                         <hr>
                     </div> 
                 </div>
@@ -206,80 +206,30 @@
                     <div class="col"> 
                         <div class="card"> 
                             <div class="card-body text-center"> 
-                            <a href="services_animal.php?id_resident=<?= $userdetails['id_resident'];?>">
-                                <img src="../BarangaySystem/icons/ResidentHomepage/animalreg.png">
-                                <h4> Animal Registry & Welfare </h4> 
-                            </a>
+                                <img src="../BarangaySystem/icons/ResidentHomepage/indigency.png">
+                                <a href="services_business.php"> <h4> Business Permit </h4> </a>
                             </div>
                         </div>
                     </div>
-
-                    <div class="col"> 
-                        <div class="card"> 
-                            <div class="card-body text-center">
-                                <img src="../BarangaySystem/icons/ResidentHomepage/tbdots.png"> 
-                                <a href="services_tb_dots.php?id_resident=<?= $userdetails['id_resident'];?>"> <h4> TB DOTS Program</h4> 
-                            </a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col"> 
-                        <div class="card"> 
-                            <div class="card-body text-center">
-                                <img src="../BarangaySystem/icons/ResidentHomepage/vaccine.png"> 
-                                <a href="services_vaccination.php?id_resident=<?= $userdetails['id_resident'];?>"> <h4> Vaccination Program </h4> 
-                            </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <br>
-                <div class="row card-spacing"> 
                     <div class="col"> 
                         <div class="card"> 
                             <div class="card-body text-center"> 
-                            <a href="services_motherandchild.php?id_resident=<?= $userdetails['id_resident'];?>">
-                                <img src="../BarangaySystem/icons/ResidentHomepage/motherchild.png">
-                                <h4> Mother & Child Check-Up</h4> 
-                            </a>
+                                <img src="../BarangaySystem/icons/ResidentHomepage/indigency.png">
+                                <a href="services_brgyid.php"> <h4> Barangay ID </h4> </a>
                             </div>
                         </div>
                     </div>
-
-                    <div class="col">
-                        <div class="card">
-                            <div class="card-body text-center">
-                                <img src="../BarangaySystem/icons/ResidentHomepage/familyplan.png"> 
-                                <a href="services_familyplanning.php?id_resident=<?= $userdetails['id_resident'];?>"> <h4> Family Planning </h4> 
-                            </a>
-                            </div>
-                        </div>
-                    </div>
-
                     <div class="col"> 
                         <div class="card"> 
-                            <div class="card-body text-center">
-                                <img src="../BarangaySystem/icons/ResidentHomepage/complain.png"> 
-                                <a href="services_blotter.php?id_resident=<?= $userdetails['id_resident'];?>"> <h4> Complain/Blotter Report</h4> 
-                            </a>
+                            <div class="card-body text-center"> 
+                                <img src="../BarangaySystem/icons/ResidentHomepage/indigency.png">
+                                <a href="services_certofindigency.php"> <h4> Certificate of Indigency </h4> </a>
                             </div>
                         </div>
                     </div>
                 </div>
 
                 <br>
-                <br>
-                <br>
-
-                <div class="row title-spacing">
-                    <div class="col"> 
-                        <h3 class="text-center"> Documents Processing </h3>
-                        <hr>
-                    </div> 
-                </div>
-
                 <div class="row card-spacing"> 
                     <div class="col"> 
                         <div class="card"> 
@@ -297,15 +247,14 @@
                                 <a href="services_brgyclearance.php"> <h4> Barangay Clearance </h4> </a>
                             </div>
                         </div>
-                        
                     </div>
 
-
                     <div class="col"> 
-                    <div class="card"> 
-                            <div class="card-body text-center"> 
-                                <img src="../BarangaySystem/icons/ResidentHomepage/indigency.png">
-                                <a href="services_certofindigency.php"> <h4> Certificate of Indigency </h4> </a>
+                        <div class="card"> 
+                            <div class="card-body text-center">
+                                <img src="../BarangaySystem/icons/ResidentHomepage/complain.png"> 
+                                <a href="services_blotter.php?id_resident=<?= $userdetails['id_resident'];?>"> <h4> Complain/Blotter Report</h4> 
+                            </a>
                             </div>
                         </div>
                     </div>
@@ -326,14 +275,6 @@
             <div class="text-center">
                 <h1 class="text-white">Services</h1>
                 <ul class="list-unstyled list-inline">
-
-                &nbsp;
-
-                <li class="list-inline-item">
-                    <a class="footerlinks" href="#!" class="sbtn btn-large mx-1" title="HealthCare">
-                    <i class="fas fa-first-aid fa-2x"></i>
-                    </a>
-                </li>
 
                 &nbsp;
 

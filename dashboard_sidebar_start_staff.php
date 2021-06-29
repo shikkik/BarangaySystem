@@ -82,26 +82,6 @@
                 Barangay Services
             </div>
 
-            <!-- Healthcare  -->
-            <li class="nav-item active">
-                <a class="nav-link" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true"
-                    aria-controls="collapsePages">
-                    <i class="fas fa-fw fa-folder"></i>
-                    <span>Healthcare Services</span>
-                </a>
-                <div id="collapsePages" class="collapse show" aria-labelledby="headingPages"
-                    data-parent="#accordionSidebar">
-                    <div class="bg-white py-2 collapse-inner rounded">
-                    <a class="collapse-item" href="staff_animal_crud.php">Animal Welfare Registry</a>
-                        <a class="collapse-item" href="staff_tbdots_crud.php">TB DOTS Program</a>
-                        <a class="collapse-item" href="staff_vaccine_crud.php">Vaccination Program</a>
-                        <a class="collapse-item" href="staff_familyplan_crud.php">Family Planning</a>
-                        <a class="collapse-item" href="staff_motherchild_crud.php">Mother & Child <br> Check-up</a>
-                        <a class="collapse-item" href="staff_medicine_crud.php">Medicine Inventory</a>
-                    </div>
-                </div>
-            </li>
-
             <!-- Announcement Management -->
             <li class="nav-item">
                 <a class="nav-link" href="staff_announcement_crud.php">
@@ -111,7 +91,7 @@
 
             <!-- Certificate of Residency -->
             <li class="nav-item">
-                <a class="nav-link" href="staff_certofres.php">
+                <a class="nav-link" href="staff_table_certofres.php">
                     <i class="fas fa-fw fa-chart-area"></i>
                     <span>Certificate of Residency</span></a>
             </li>
@@ -189,35 +169,6 @@
                             </div>
                         </li>
 
-                        <!-- Nav Item - Alerts -->
-                        <li class="nav-item dropdown no-arrow mx-1">
-                            <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button"
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <i class="fas fa-bell fa-fw"></i>
-                                <!-- Counter - Alerts -->
-                                <span class="badge badge-danger badge-counter">3+</span>
-                            </a>
-                            <!-- Dropdown - Alerts -->
-                            <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
-                             aria-labelledby="alertsDropdown">
-                                <h6 class="dropdown-header">
-                                    Alerts Center
-                                </h6>
-                                <a class="dropdown-item d-flex align-items-center" href="#">
-                                    <div class="mr-3">
-                                        <div class="icon-circle bg-primary">
-                                            <i class="fas fa-file-alt text-white"></i>
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <div class="small text-gray-500">December 12, 2019</div>
-                                        <span class="font-weight-bold">A new monthly report is ready to download!</span>
-                                    </div>
-                                </a>
-                                <a class="dropdown-item text-center small text-gray-500" href="#">Show All Alerts</a>
-                            </div>
-                        </li>
-
                         <div class="topbar-divider d-none d-sm-block"></div>
 
                         <!-- Nav Item - User Information -->
@@ -229,10 +180,6 @@
                             <!-- Dropdown - User Information -->
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
                                 aria-labelledby="userDropdown">
-                                <a class="dropdown-item" href="#">
-                                    <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
-                                    Activity Logs
-                                </a>
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
                                     <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
