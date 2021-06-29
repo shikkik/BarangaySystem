@@ -121,7 +121,7 @@
         </nav>
 
         <div class="container"> 
-                    <div class="card" style="margin-top: 2em;">  
+                <div class="card" style="margin-top: 2em;">  
                     <div class="card-header bg-primary text-white"> Personal Information </div>
                     <div class="card-body"> 
                         <form method="post">
@@ -151,8 +151,7 @@
                                 <h5> Birth Date: </h5> <br>
                                 <h5> Birth Place: </h5> <br>
                                 <h5> Nationality: </h5> <br>
-                                <h5> Family Role: </h5> <h5> <br>
-                                <h5> Profile Image </h5>
+                                <h5> Family Role: </h5> <br>
                             </div>
 
                             <div class="col-md-4"> 
@@ -160,13 +159,10 @@
                                 <h5> <?= $resident['bplace'];?> </h5><br>
                                 <h5> <?= $resident['nationality'];?> </h5><br>
                                 <h5> <?= $resident['family_role'];?> </h5><br><br><br><br>
-                                    <p><input type="file"  accept="image/*" name="image" id="file"  onchange="loadFile(event)" style="display: none;"></p>
-                                    <p><label class="border" for="file" style="cursor: pointer; margin-left:35px; margin-top:15px;">Upload Image</label></p>
-                                    <p><img id="output" width="180" height="180" style="margin-top: -10px;" ></p>
-                                </div>
                             </div>
                         </div>
                     </div>
+                </div>
 
             <br>
             <div class="row" style="margin-bottom: 5em;"> 
@@ -335,13 +331,6 @@
             </div>
 
         </footer>
-
-        <script>
-            var loadFile = function(event) {
-                var image = document.getElementById('output');
-                image.src = URL.createObjectURL(event.target.files[0]);
-            };
-        </script>
 
         <script src="../BarangaySystem/bootstrap/js/bootstrap.bundle.js" type="text/javascript"> </script>
 
