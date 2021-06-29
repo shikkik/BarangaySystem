@@ -1278,6 +1278,7 @@ class BMISClass {
 
 
 
+
     
     //------------------------------------------ EXTRA FUNCTIONS ----------------------------------------------
 
@@ -1367,6 +1368,54 @@ class BMISClass {
         }
         
         
+    }
+
+    public function view_bspermit(){
+        $connection = $this->openConn();
+        $stmt = $connection->prepare("SELECT * from tbl_bspermit");
+        $stmt->execute();
+        $view = $stmt->fetchAll();
+        return $view;
+    }
+
+
+    public function delete_bspermit(){
+        $id_bspermit = $_POST['id_bspermit'];
+
+        if(isset($_POST['delete_bspermit'])) {
+            $connection = $this->openConn();
+            $stmt = $connection->prepare("DELETE FROM tbl_bspermit where id_bspermit = ?");
+            $stmt->execute([$id_bspermit]);
+
+            header("Refresh:0");
+        }
+    }
+
+    public function update_bspermit() {
+        if (isset($_POST['update_bspermit'])) {
+            $id_bspermit = $_GET['id_bspermit'];
+            $lname = $_POST['lname'];
+            $fname = $_POST['fname'];
+            $mi = $_POST['mi'];
+            $bsname = $_POST['bsname']; 
+            $houseno = $_POST['houseno'];
+            $street = $_POST['street'];
+            $brgy = $_POST['brgy'];
+            $municipal = $_POST['municipal'];
+            $bsindustry = $_POST['bsindustry'];
+            $aoe = $_POST['aoe'];
+
+
+            $connection = $this->openConn();
+            $stmt = $connection->prepare("UPDATE tbl_bspermit SET lname = ?, fname = ?,
+            mi = ?, bsname = ?, houseno = ?, street = ?, brgy = ?, municipal = ?,
+            bsindustry = ?, aoe = ? WHERE id_bspermit = ?");
+            $stmt->execute([$id_bspermit, $lname, $fname, $mi,  $bsname, $houseno,  $street, $brgy, $municipal, $bsindustry, $aoe]);
+            
+            $message2 = "Barangay Business Permit Data Updated";
+            echo "<script type='text/javascript'>alert('$message2');</script>";
+            header("refresh: 0");
+        }
     }
 
     
