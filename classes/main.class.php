@@ -1113,6 +1113,7 @@ class BMISClass {
             return false;
         }
     }
+
     public function create_certofres() {
 
         if(isset($_POST['create_certofres'])) {
@@ -1174,19 +1175,21 @@ class BMISClass {
             $lname = $_POST['lname'];
             $fname = $_POST['fname'];
             $mi = $_POST['mi'];
-            $age = $_POST['age'];
-            $status = $_POST['status'];
-            $address = $_POST['address'];
+            $nationality = $_POST['nationality'];
+            $houseno = $_POST['houseno'];
+            $street = $_POST['street'];
+            $brgy = $_POST['brgy'];
+            $municipal = $_POST['municipal'];
             $purpose = $_POST['purpose'];
-            $addedby = $_POST['addedby'];
-
-
+            $date = $_POST['date'];
+            
+            
             $connection = $this->openConn();
             $stmt = $connection->prepare("INSERT INTO tbl_indigency (`id_indigency`, `id_resident`, `lname`, `fname`, `mi`,
-             `age`, `status`, `address`,`purpose`, `addedby`)
-            VALUES (?,?, ?, ?, ?, ?, ?, ?, ?, ?)");
+             `nationality`, `houseno`, `street`,`brgy`,`municipal`,`purpose`, `date`)
+            VALUES (?,?, ?, ?, ?, ?, ?, ?, ?, ?,?,?)");
 
-            $stmt->execute([$id_indigency, $id_resident, $lname, $fname, $mi,  $age, $status,  $address, $purpose,   $addedby]);
+            $stmt->execute([$id_indigency, $id_resident, $lname, $fname, $mi, $nationality, $houseno, $street,$brgy,$municipal, $purpose,$date]);
 
             $message2 = "Application Applied, you will receive our text message for further details";
             echo "<script type='text/javascript'>alert('$message2');</script>";
@@ -1214,6 +1217,24 @@ class BMISClass {
             $stmt->execute([$id_indigency]);
 
             header("Refresh:0");
+        }
+    }
+
+    public function get_single_certofindigency($id_resident){
+
+        $id_resident = $_GET['id_resident'];
+        
+        $connection = $this->openConn();
+        $stmt = $connection->prepare("SELECT * FROM tbl_indigency where id_resident = ?");
+        $stmt->execute([$id_resident]);
+        $resident = $stmt->fetch();
+        $total = $stmt->rowCount();
+
+        if($total > 0 )  {
+            return $resident;
+        }
+        else{
+            return false;
         }
     }
 
@@ -1270,6 +1291,8 @@ class BMISClass {
             header("Refresh:0");
         }
     }
+
+    
 
 
 

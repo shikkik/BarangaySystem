@@ -5,7 +5,7 @@
     $userdetails = $residentbmis->get_userdata();
     $id_resident = $_GET['id_resident'];
     $resident = $residentbmis->get_single_resident($id_resident);
-    print_r($resident);
+    
 
     $residentbmis->profile_update();
 

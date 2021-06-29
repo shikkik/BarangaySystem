@@ -1,9 +1,9 @@
 <?php 
     require('classes/main.class.php');
     require('classes/resident.class.php');
-    
     $userdetails = $bmis->get_userdata();
     $bmis->create_certofindigency();
+    print_r($userdetails);
 ?>
 
 <!DOCTYPE html>
@@ -500,9 +500,9 @@
                         <div class="modal-footer">
                             <div class="paa">
                                 <input name="id_resident" type="hidden" class="form-control" value="<?= $userdetails['id_resident']?>">
-                                <input name="addedby" type="hidden" class="form-control" value="<?= $userdetails['surname']?> <?= $userdetails['firstname']?> <?= $userdetails['mname']?>">
+                                <input name="purpose" type="hidden" class="form-control" value="Financial Assistance">
                                 <button type="button" class="btn btn-dark" data-dismiss="modal">Close</button>
-                                <button name ="create_certofindigency" type="submit" class="btn btn-primary">Submit Request</button>
+                                <button name="create_certofindigency" type="submit" class="btn btn-primary">Submit Request</button>
                             </div>
                         </div> 
                     </div>
