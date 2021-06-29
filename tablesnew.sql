@@ -19,6 +19,9 @@ CREATE TABLE `bmis`.`tbl_bspermit`
 `brgy` VARCHAR(255) NULL , `municipal` VARCHAR(255) NULL , `bsindustry` VARCHAR(255) NULL , 
 PRIMARY KEY (`id_bspermit`)) ENGINE = InnoDB;
 
+ALTER TABLE `tbl_bspermit` ADD `aoe` INT NOT NULL AFTER `bsindustry`;
+
+
 
 
 CREATE TABLE `bmis`.`tbl_brgyid` ( `id_brgyid` INT NULL , `id_resident` INT NOT NULL , 
@@ -54,3 +57,23 @@ CREATE TABLE `bmis`.`tbl_indigency` ( `id_indigency` INT NOT NULL AUTO_INCREMENT
 
 
 DROP TABLE `tbl_clearance`;
+
+CREATE TABLE `bmis`.`tbl_clearance` ( `id_clearance` INT NOT NULL AUTO_INCREMENT , 
+`id_resident` INT NOT NULL , `lname` VARCHAR(255) NOT NULL , `fname` VARCHAR(255) NOT NULL , 
+`mi` VARCHAR(255) NOT NULL , `purpose` VARCHAR(255) NOT NULL , `houseno` VARCHAR(255) NOT NULL , 
+`street` VARCHAR(255) NOT NULL , `brgy` VARCHAR(255) NOT NULL , `municipal` VARCHAR(255) NOT NULL , 
+`status` VARCHAR(255) NOT NULL , 
+`age` VARCHAR(255) NOT NULL , PRIMARY KEY (`id_clearance`)) ENGINE = InnoDB;
+
+
+
+DROP TABLE `tbl_blotter`;
+
+CREATE TABLE `bmis`.`tbl_blotter` ( `id_blotter` INT NOT NULL AUTO_INCREMENT , 
+`id_resident` INT NOT NULL , `lname` VARCHAR(255) NOT NULL , `fname` VARCHAR(255) NOT NULL , 
+`mi` VARCHAR(255) NOT NULL , `houseno` VARCHAR(255) NOT NULL , `street` VARCHAR(255) NOT NULL , 
+`brgy` VARCHAR(255) NOT NULL , `municipal` VARCHAR(255) NOT NULL , `blot_photo` MEDIUMBLOB NOT NULL , 
+`contact` INT(20) NOT NULL , `narrative` VARCHAR(50000) NOT NULL , 
+PRIMARY KEY (`id_blotter`)) ENGINE = InnoDB;
+
+
