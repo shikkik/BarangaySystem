@@ -156,7 +156,7 @@
                     <div class="row no-gutters align-items-center">
                         <div class="col mr-2">
                             <div class="text-xs font-weight-bold text-info text-uppercase mb-1">
-                                Total Barngay Staffs</div>
+                                Total Barangay Staffs</div>
                                 <div class="h5 mb-0 font-weight-bold text-dark"><?= $staffcount?></div>
                                 <br>
                                 <a href="admn_table_totalstaff.php"> View Records </a>
@@ -196,7 +196,7 @@
                     <div class="row no-gutters align-items-center">
                         <div class="col mr-2">
                             <div class="text-xs font-weight-bold text-info text-uppercase mb-1">
-                                Total Barngay Female Staffs</div>
+                                Total Barangay Female Staffs</div>
                                 <div class="h5 mb-0 font-weight-bold text-dark"><?= $staffcountf?></div>
                                 <br>
                                 <a href="admn_table_femalestaff.php"> View Records </a>
@@ -217,6 +217,17 @@
 </div>
 <!-- End of Main Content -->
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-modal/2.2.6/js/bootstrap-modalmanager.min.js" integrity="sha512-/HL24m2nmyI2+ccX+dSHphAHqLw60Oj5sK8jf59VWtFWZi9vx7jzoxbZmcBeeTeCUc7z1mTs3LfyXGuBU32t+w==" crossorigin="anonymous"></script>
+<!-- responsive tags for screen compatibility -->
+<meta name="viewport" content="width=device-width, initial-scale=1 shrink-to-fit=no">
+<!-- custom css --> 
+<link href="../BarangaySystem/customcss/regiformstyle.css" rel="stylesheet" type="text/css">
+<!-- bootstrap css --> 
+<link href="../BarangaySystem/bootstrap/css/bootstrap.css" rel="stylesheet" type="text/css"> 
+<!-- fontawesome icons -->
+<script src="https://kit.fontawesome.com/67a9b7069e.js" crossorigin="anonymous"></script>
+<script src="../BarangaySystem/bootstrap/js/bootstrap.bundle.js" type="text/javascript"> </script>
                 
 <?php 
     include('dashboard_sidebar_end.php');

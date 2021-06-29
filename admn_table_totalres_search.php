@@ -30,12 +30,13 @@
                     
 			<?php
 				
-				$stmnt = $conn->prepare("SELECT * FROM `tbl_resident` WHERE `lname` LIKE '%$keyword%' or  `mi` LIKE '%$keyword%' or  `fname` LIKE '%$keyword%' 
-				or  `age` LIKE '%$keyword%' or  `sex` LIKE '%$keyword%' or  `status` LIKE '%$keyword%' or  `address` LIKE '%$keyword%' or  `contact` LIKE '%$keyword%'
-				or  `bdate` LIKE '%$keyword%' or  `bplace` LIKE '%$keyword%' or  `nationality` LIKE '%$keyword%' or  `family_role` LIKE '%$keyword%' or  `role` LIKE '%$keyword%' or  `email` LIKE '%$keyword%'");
-				$stmnt->execute();
+			$stmnt = $conn->prepare("SELECT * FROM `tbl_resident` WHERE `lname` LIKE '%$keyword%' or  `mi` LIKE '%$keyword%' or  `fname` LIKE '%$keyword%' 
+			or  `age` LIKE '%$keyword%' or  `sex` LIKE '%$keyword%' or  `status` LIKE '%$keyword%' or  `houseno` LIKE '%$keyword%' or  `contact` LIKE '%$keyword%'
+			or  `bdate` LIKE '%$keyword%' or  `bplace` LIKE '%$keyword%' or  `nationality` LIKE '%$keyword%' or  `family_role` LIKE '%$keyword%' or  `role` LIKE '%$keyword%' or  `email` LIKE '%$keyword%'
+                        or  `brgy` LIKE '%$keyword%' or  `street` LIKE '%$keyword%' or  `municipal` LIKE '%$keyword%'");
+			$stmnt->execute();
 				
-				while($view = $stmnt->fetch()){
+			while($view = $stmnt->fetch()){
 			?>
 			<tr>
 			            <td> <?= $view['email'];?> </td>
@@ -115,6 +116,19 @@
 			?>
 		</tbody>
 	</table>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-modal/2.2.6/js/bootstrap-modalmanager.min.js" integrity="sha512-/HL24m2nmyI2+ccX+dSHphAHqLw60Oj5sK8jf59VWtFWZi9vx7jzoxbZmcBeeTeCUc7z1mTs3LfyXGuBU32t+w==" crossorigin="anonymous"></script>
+<!-- responsive tags for screen compatibility -->
+<meta name="viewport" content="width=device-width, initial-scale=1 shrink-to-fit=no">
+<!-- custom css --> 
+<link href="../BarangaySystem/customcss/regiformstyle.css" rel="stylesheet" type="text/css">
+<!-- bootstrap css --> 
+<link href="../BarangaySystem/bootstrap/css/bootstrap.css" rel="stylesheet" type="text/css"> 
+<!-- fontawesome icons -->
+<script src="https://kit.fontawesome.com/67a9b7069e.js" crossorigin="anonymous"></script>
+<script src="../BarangaySystem/bootstrap/js/bootstrap.bundle.js" type="text/javascript"> </script>
+
 <?php
 	}
 $con = null;

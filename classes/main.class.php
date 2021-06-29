@@ -1307,6 +1307,7 @@ class BMISClass {
 
 
 
+
     
     //------------------------------------------ EXTRA FUNCTIONS ----------------------------------------------
 
@@ -1389,6 +1390,107 @@ class BMISClass {
             VALUES (?,?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
 
             $stmt->execute([$id_bspermit, $id_resident, $lname, $fname, $mi,  $bsname, $houseno,  $street, $brgy, $municipal, $bsindustry, $aoe]);
+
+            $message2 = "Application Applied, you will receive our text message for further details";
+            echo "<script type='text/javascript'>alert('$message2');</script>";
+            header("refresh: 0");
+        }
+        
+        
+    }
+
+    public function view_bspermit(){
+        $connection = $this->openConn();
+        $stmt = $connection->prepare("SELECT * from tbl_bspermit");
+        $stmt->execute();
+        $view = $stmt->fetchAll();
+        return $view;
+    }
+
+
+    public function delete_bspermit(){
+        $id_bspermit = $_POST['id_bspermit'];
+
+        if(isset($_POST['delete_bspermit'])) {
+            $connection = $this->openConn();
+            $stmt = $connection->prepare("DELETE FROM tbl_bspermit where id_bspermit = ?");
+            $stmt->execute([$id_bspermit]);
+
+            header("Refresh:0");
+        }
+    }
+
+    public function update_bspermit() {
+        if (isset($_POST['update_bspermit'])) {
+            $id_bspermit = $_GET['id_bspermit'];
+            $lname = $_POST['lname'];
+            $fname = $_POST['fname'];
+            $mi = $_POST['mi'];
+            $bsname = $_POST['bsname']; 
+            $houseno = $_POST['houseno'];
+            $street = $_POST['street'];
+            $brgy = $_POST['brgy'];
+            $municipal = $_POST['municipal'];
+            $bsindustry = $_POST['bsindustry'];
+            $aoe = $_POST['aoe'];
+
+
+            $connection = $this->openConn();
+            $stmt = $connection->prepare("UPDATE tbl_bspermit SET lname = ?, fname = ?,
+            mi = ?, bsname = ?, houseno = ?, street = ?, brgy = ?, municipal = ?,
+            bsindustry = ?, aoe = ? WHERE id_bspermit = ?");
+            $stmt->execute([$id_bspermit, $lname, $fname, $mi,  $bsname, $houseno,  $street, $brgy, $municipal, $bsindustry, $aoe]);
+            
+            $message2 = "Barangay Business Permit Data Updated";
+            echo "<script type='text/javascript'>alert('$message2');</script>";
+            header("refresh: 0");
+        }
+    }
+
+
+
+
+
+
+
+
+    public function create_brgyid() {
+
+        if(isset($_POST['create_brgyid'])) {
+            $id_brgyid = $_POST['id_brgyid'];
+            $id_resident = $_POST['id_resident'];
+            $lname = $_POST['lname'];
+            $fname = $_POST['fname'];
+            $mi = $_POST['mi']; 
+            $houseno = $_POST['houseno'];
+            $street = $_POST['street'];
+            $brgy = $_POST['brgy'];
+            $municipal = $_POST['municipal'];
+            $bplace = $_POST['bplace'];
+            $bdate = $_POST['bdate'];
+            $res_photo = $_POST['res_photo'];
+
+            $inc_lname = $_POST['inc_lname']; 
+            $inc_fname = $_POST['inc_fname'];
+            $inc_mi = $_POST['inc_mi'];
+            $inc_contact = $_POST['inc_contact'];
+            $inc_houseno = $_POST['municipal'];
+            $inc_street = $_POST['bplace'];
+            $inc_brgy = $_POST['bdate'];
+            $inc_municipal = $_POST['res_photo'];
+
+
+
+
+            $connection = $this->openConn();
+            $stmt = $connection->prepare("INSERT INTO tbl_brgyid (`id_brgyid`, `id_resident`, `lname`, `fname`, `mi`,
+            `houseno`, `street`,`brgy`, `municipal`, `bplace`, `bdate`, `res_photo`, `inc_lname`,
+            `inc_fname`, `inc_mi`, `inc_contact`, `inc_houseno`, `inc_street`, `inc_brgy`, `inc_municipal`)
+            VALUES (?,?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+
+            $stmt->execute([$id_brgyid, $id_resident, $lname, $fname, $mi, $houseno,  $street, $brgy, $municipal, 
+            $bplace, $bdate, $res_photo, $inc_lname, $inc_fname, $inc_mi, $inc_contact, $inc_houseno, 
+            $inc_street, $inc_brgy, $inc_municipal ]);
 
             $message2 = "Application Applied, you will receive our text message for further details";
             echo "<script type='text/javascript'>alert('$message2');</script>";

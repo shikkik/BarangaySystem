@@ -92,6 +92,20 @@
                     <span>Certificate of Residency</span></a>
             </li>
 
+            <li class="nav-item">
+                <a class="nav-link" href="admn_blotterreport.php">
+                    <i class="fas fa-id-card"></i>
+                    <span>Barangay ID </span></a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="admn_bspermit.php">
+                    <i class="fas fa-fw fa-table"></i>
+                    <span>Business Permit</span></a>
+            </li>
+
+
+
             <!-- Barangay Clearance -->
             <li class="nav-item">
                 <a class="nav-link" href="admn_brgyclearance.php">
@@ -112,6 +126,8 @@
                     <i class="fas fa-fw fa-table"></i>
                     <span>Complain/Blotter Report</span></a>
             </li>
+
+            
 
             <!-- Divider -->
             <hr class="sidebar-divider d-none d-md-block">

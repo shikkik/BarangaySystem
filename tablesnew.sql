@@ -12,7 +12,7 @@ ALTER TABLE `tbl_resident` CHANGE `address` `address` VARCHAR(255) CHARACTER SET
 
 // ETO BAGO MGA TABLES SA DOCU PROCESSING
 
-CREATE TABLE `bmis`.`tbl_bspermit` 
+CREATE TABLE `bmis`.`tbl_bspermit`
 ( `id_bspermit` INT NOT NULL AUTO_INCREMENT , `id_resident` INT NOT NULL , 
 `lname` VARCHAR(255) NULL , `fname` VARCHAR(255) NULL , `mi` VARCHAR(255) NULL , 
 `bsname` VARCHAR(255) NULL , `houseno` VARCHAR(255) NULL , `street` VARCHAR(252) NULL , 
@@ -33,6 +33,9 @@ CREATE TABLE `bmis`.`tbl_brgyid` ( `id_brgyid` INT NULL , `id_resident` INT NOT 
 `inc_contact` VARCHAR(255) NOT NULL , `inc_houseno` VARCHAR(255) NOT NULL , 
 `inc_street` VARCHAR(255) NOT NULL , `inc_brgy` VARCHAR(255) NOT NULL , 
 `inc_municipal` VARCHAR(255) NOT NULL ) ENGINE = InnoDB;
+
+ALTER TABLE `tbl_brgyid` CHANGE `res_photo` `res_photo` VARCHAR(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL;
+ALTER TABLE `tbl_brgyid` CHANGE `inc_municipal` `inc_municipal` VARCHAR(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL;
 
 
 

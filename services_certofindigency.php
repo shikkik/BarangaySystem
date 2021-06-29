@@ -466,10 +466,6 @@
                                         </div>
                                     </div>
 
-                                </div>
-
-                                <div class="row">
-
                                     <div class="col">
                                         <div class="form-group">
                                             <label> Municipality: </label>
@@ -478,6 +474,27 @@
                                             <div class="invalid-feedback">Please fill out this field.</div>
                                         </div>
                                     </div>
+
+                                </div>
+
+                                <div class="row">
+
+                                    <div class="col">
+                                        <div class="form-group">
+                                            <label for="purposes">Purposes:</label>
+                                            <select class="form-control" name="purposes" id="purposes" required>
+                                                <option value="">Choose your Purposes</option>
+                                                <option value="Job/Employment">Job/Employment</option>
+                                                <option value="Business Establishment">Business Requirement</option>
+                                                <option value="Financial Transaction">Financial Transaction</option>
+                                                <option value="Scholarship">Scholarship</option>
+                                                <option value="Other important transactions.">Other important transactions.</option>
+                                            </select>
+                                            <div class="valid-feedback">Valid.</div>
+                                            <div class="invalid-feedback">Please fill out this field.</div>
+                                        </div>
+                                    </div>  
+
 
                                     <div class="col">
                                         <div class="form-group">

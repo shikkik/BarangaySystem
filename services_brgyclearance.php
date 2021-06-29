@@ -393,7 +393,7 @@
 
             <div class="col">   
                 <button type="button" class="btn btn-primary applybutton" data-toggle="modal" data-target="#exampleModalCenter">
-                    Request Clearance
+                    Request Barangay Clearance
                 </button>
             </div>
 
