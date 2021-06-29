@@ -93,7 +93,7 @@
             </li>
 
             <li class="nav-item">
-                <a class="nav-link" href="admn_blotterreport.php">
+                <a class="nav-link" href="admn_brgyid.php">
                     <i class="fas fa-fw fa-table"></i>
                     <span>Barangay ID </span></a>
             </li>

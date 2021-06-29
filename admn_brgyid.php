@@ -5,8 +5,8 @@
     require('classes/resident.class.php');
     $userdetails = $bmis->get_userdata();
     $bmis->validate_admin();
-    $bmis->delete_bspermit();
-    $view = $bmis->view_bspermit();
+    $bmis->delete_brgyid();
+    $view = $bmis->view_brgyid();
     $id_resident = $_GET['id_resident'];
     $resident = $residentbmis->get_single_certofres($id_resident);
    
@@ -46,7 +46,7 @@
         <div class="col-md-1"> </div>
         <div class="col-md-10"> 
             <?php 
-                include('admn_bspermit_search.php');
+                include('admn_brgyid_search.php');
             ?>
         </div>
         <div class="col-md-1"> </div>

@@ -1421,10 +1421,6 @@ class BMISClass {
 
 
 
-
-
-
-
     public function create_brgyid() {
 
         if(isset($_POST['create_brgyid'])) {
@@ -1469,6 +1465,27 @@ class BMISClass {
         }
         
         
+    }
+
+    public function view_brgyid(){
+        $connection = $this->openConn();
+        $stmt = $connection->prepare("SELECT * from tbl_brgyid");
+        $stmt->execute();
+        $view = $stmt->fetchAll();
+        return $view;
+    }
+
+
+    public function delete_brgyid(){
+        $id_bspermit = $_POST['id_brgyid'];
+
+        if(isset($_POST['delete_brgyid'])) {
+            $connection = $this->openConn();
+            $stmt = $connection->prepare("DELETE FROM tbl_brgyid where id_brgyid = ?");
+            $stmt->execute([$id_bspermit]);
+
+            header("Refresh:0");
+        }
     }
 
     
