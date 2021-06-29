@@ -264,7 +264,7 @@
                             <div class="card"> 
                                 <div class="card-body text-center">
                                     <img src="../BarangaySystem/icons/ResidentHomepage/complain.png"> 
-                                    <h4> Complain/Blotter Report</h4> 
+                                    <h4> Peace and Order</h4> 
                                 </div>
                             </div>
                         </a>
