@@ -140,7 +140,7 @@
                             <div class="col-md-4"> 
                                 <h5><?= $resident['lname'];?>, <?= $resident['fname'];?> <?= $resident['mi'];?></h5> <br>
                                 <h5> <?= $resident['email'];?> </h5><br>
-                                <h5><?= $resident['sex'];?> </h5><br><br><br>
+                                <h5><?= $resident['sex'];?> </h5><br>
                                 <input class="form-control" type="text" name="age" value="<?= $resident['age'];?>"><br>
                                 <input class="form-control" type="text" name="status" value="<?= $resident['status'];?>"><br>
                                 <input class="form-control" type="text" name="address" value="<?= $resident['address'];?>"><br>
@@ -151,14 +151,12 @@
                                 <h5> Birth Date: </h5> <br>
                                 <h5> Birth Place: </h5> <br>
                                 <h5> Nationality: </h5> <br>
-                                <h5> Family Role: </h5> <br>
                             </div>
 
                             <div class="col-md-4"> 
                                 <h5> <?= $resident['bdate'];?> </h5><br>
                                 <h5> <?= $resident['bplace'];?> </h5><br>
                                 <h5> <?= $resident['nationality'];?> </h5><br>
-                                <h5> <?= $resident['family_role'];?> </h5><br><br><br><br>
                             </div>
                         </div>
                     </div>
