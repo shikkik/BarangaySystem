@@ -2,7 +2,7 @@
 require('classes/resident.class.php');
 $userdetails = $residentbmis->get_userdata();
 $id_resident = $_GET['id_resident'];
-$resident = $residentbmis->get_single_certofres($id_resident);
+$resident = $residentbmis->get_single_certofindigency($id_resident);
   ?>
 <!DOCTYPE html>
 <html id="clearance">
@@ -62,13 +62,13 @@ $resident = $residentbmis->get_single_certofres($id_resident);
                     <div class="col-xs-12 col-sm-6 col-md-12" style="padding-left: 96px;padding-right: 96px;" >
                         <p class="text-center" style="font-size: 20px; font-size:bold;">OFFICE OF THE BARANGAY CAPTAIN<br><br><b style="font-size: 28px;"><ins>CERTIFICATE OF INDIGENCY</ins></b></p> <br><br><br>
                         <p style="font-size: 18px; padding-left:3em;">TO WHOM IT MAY CONCERN:</p> <br><br>
-                        <p style="text-indent:40px;text-align: justify;">This is to certify that <b>(name)</b> of legal age, Filipino and
-                        a bonifide resident at (address) pati mga district</p><br>
+                        <p style="text-indent:40px;text-align: justify;">This is to certify that <b><?= $resident['lname'];?>, <?= $resident['fname'];?> <?= $resident['mi'];?></b>, of legal age, <?= $resident['nationality'];?> and
+                        a bonifide resident at <?= $resident['houseno'];?> <?= $resident['street'];?> <?= $resident['brgy'];?> <?= $resident['municipal'];?>.</p><br>
                         <p style="text-indent:40px;text-align: justify;">Further Certify that the above named subject is of good moral character and has
                         good community standing, but unfortunately to the indigent family in this barangay.
                         </p><br>
                         <p style="text-indent:40px;text-align: justify;">This certification is issued upon the request of the above named party as a 
-                        requirement needed for <ins>(PUROPOS).</ins>
+                        requirement needed for <b><ins><?= $resident['purpose'];?></ins></b>.
                         </p>
                         
                         

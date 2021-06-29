@@ -101,7 +101,7 @@
 
             <!-- Certificate of Indigency -->
             <li class="nav-item">
-                <a class="nav-link" href="admn_indigency.php">
+                <a class="nav-link" href="admn_certofindigency.php">
                     <i class="fas fa-fw fa-table"></i>
                     <span>Certificate of Indigency</span></a>
             </li>

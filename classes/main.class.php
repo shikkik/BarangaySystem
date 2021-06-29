@@ -1127,18 +1127,22 @@ class BMISClass {
             $fname = $_POST['fname'];
             $mi = $_POST['mi'];
             $age = $_POST['age'];
-            $status = $_POST['status'];
-            $address = $_POST['address'];
-            $nationality = $_POST['nationality'];
-            $addedby = $_POST['addedby'];
+            $nationality = $_POST['nationality']; 
+            $houseno = $_POST['houseno'];
+            $street = $_POST['street'];
+            $brgy = $_POST['brgy'];
+            $municipal = $_POST['municipal'];
+            $date = $_POST['date'];
+            $purpose = $_POST['purpose'];
+            
 
 
             $connection = $this->openConn();
             $stmt = $connection->prepare("INSERT INTO tbl_rescert (`id_rescert`, `id_resident`, `lname`, `fname`, `mi`,
-             `age`, `status`, `address`,`nationality`, `addedby`)
-            VALUES (?,?, ?, ?, ?, ?, ?, ?, ?, ?)");
+             `age`,`nationality`, `houseno`, `street`,`brgy`, `municipal`, `date`,`purpose`)
+            VALUES (?,?, ?, ?, ?, ?, ?, ?, ?, ?,?,?,?)");
 
-            $stmt->execute([$id_rescert, $id_resident, $lname, $fname, $mi,  $age, $status,  $address, $nationality,   $addedby]);
+            $stmt->execute([$id_rescert, $id_resident, $lname, $fname, $mi,  $age, $nationality, $houseno,  $street, $brgy,$municipal, $date,$purpose]);
 
             $message2 = "Application Applied, you will receive our text message for further details";
             echo "<script type='text/javascript'>alert('$message2');</script>";
@@ -1179,21 +1183,20 @@ class BMISClass {
             $lname = $_POST['lname'];
             $fname = $_POST['fname'];
             $mi = $_POST['mi'];
-            $nationality = $_POST['nationality'];
+            $nationality = $_POST['nationality']; 
             $houseno = $_POST['houseno'];
             $street = $_POST['street'];
             $brgy = $_POST['brgy'];
             $municipal = $_POST['municipal'];
             $purpose = $_POST['purpose'];
             $date = $_POST['date'];
-            
-            
+
             $connection = $this->openConn();
             $stmt = $connection->prepare("INSERT INTO tbl_indigency (`id_indigency`, `id_resident`, `lname`, `fname`, `mi`,
-             `nationality`, `houseno`, `street`,`brgy`,`municipal`,`purpose`, `date`)
-            VALUES (?,?, ?, ?, ?, ?, ?, ?, ?, ?,?,?)");
+             `nationality`, `houseno`, `street`,`brgy`, `municipal`,`purpose`, `date`)
+            VALUES (?,?, ?, ?, ?, ?, ?, ?, ?, ?, ?,?)");
 
-            $stmt->execute([$id_indigency, $id_resident, $lname, $fname, $mi, $nationality, $houseno, $street,$brgy,$municipal, $purpose,$date]);
+            $stmt->execute([$id_indigency, $id_resident, $lname, $fname, $mi,  $nationality, $houseno,  $street, $brgy, $municipal,$purpose, $date]);
 
             $message2 = "Application Applied, you will receive our text message for further details";
             echo "<script type='text/javascript'>alert('$message2');</script>";
@@ -1202,6 +1205,9 @@ class BMISClass {
         
         
     }
+
+
+    
 
     public function view_certofindigency(){
         $connection = $this->openConn();

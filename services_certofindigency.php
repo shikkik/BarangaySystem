@@ -3,7 +3,7 @@
     require('classes/resident.class.php');
     $userdetails = $bmis->get_userdata();
     $bmis->create_certofindigency();
-    print_r($userdetails);
+    
 ?>
 
 <!DOCTYPE html>
@@ -490,7 +490,7 @@
 
                                 </div>
                                 
-                            </form>
+                            
                         </div>
 
                 
@@ -509,6 +509,7 @@
                 </div>
             </div>
         </div> 
+        </form>
 
         <br>
         <br>

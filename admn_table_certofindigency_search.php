@@ -1,7 +1,7 @@
 <?php
 	// require the database connection
 	require 'classes/conn.php';
-	if(isset($_POST['search_certofres'])){
+	if(isset($_POST['search_certofindigency'])){
 		$keyword = $_POST['keyword'];
 ?>
 	<table class="table table-dark table-responsive" >
@@ -13,14 +13,13 @@
                 <th> Surname </th>
                 <th> First Name </th>
                 <th> Middle Name </th>
-                <th> Age </th>
                 <th> Nationality </th>
                 <th> House Number </th>
                 <th> Street </th>
                 <th> Barangay </th>
                 <th> Municipality </th>
-                <th> Date </th>
                 <th> Purpose </th>
+                <th> Date </th>
 			</tr>
 		</thead>
 		<tbody>
@@ -29,8 +28,8 @@
 			<?php
 				
 				$stmnt = $conn->prepare("SELECT * FROM `tbl_rescert` WHERE `lname` LIKE '%$keyword%' or  `mi` LIKE '%$keyword%' or  `fname` LIKE '%$keyword%' 
-				or `age` LIKE '%$keyword%' or  `id_resident` LIKE '%$keyword%' or  `address` LIKE '%$keyword%' or  `contact` LIKE '%$keyword%'
-				or `email` LIKE '%$keyword%'");
+				 or  `id_resident` LIKE '%$keyword%' or  `nationality` LIKE '%$keyword%' or  `houseno` LIKE '%$keyword%'
+				or `street` LIKE '%$keyword%' or `brgy` LIKE '%$keyword%' or `municipal` LIKE '%$keyword%' or `date` LIKE '%$keyword%' or `purpose` LIKE '%$keyword%'");
 				$stmnt->execute();
 				
 				while($view = $stmnt->fetch()){
@@ -38,22 +37,23 @@
 			<tr>
             <td>    
                         <form action="" method="post">
-                            <a class="btn btn-primary" href="rescert_form.php?id_resident=<?= $view['id_resident'];?>">Generate</a> 
-                            <input type="hidden" name="id_rescert" value="<?= $view['id_rescert'];?>">
+                            <a class="btn btn-primary" href="indigency_form.php?id_resident=<?= $view['id_resident'];?>">Generate</a> 
+                            <input type="hidden" name="id_indigency" value="<?= $view['id_indigency'];?>">
+                            <button class="btn btn-danger" type="submit" name="delete_certofindigency"> Remove </button>
                         </form>
                         </td>
                         <td> <?= $view['id_resident'];?> </td> 
                         <td> <?= $view['lname'];?> </td>
                         <td> <?= $view['fname'];?> </td>
                         <td> <?= $view['mi'];?> </td>
-                        <td> <?= $view['age'];?> </td>
                         <td> <?= $view['nationality'];?> </td>
                         <td> <?= $view['houseno'];?> </td>
                         <td> <?= $view['street'];?> </td>
                         <td> <?= $view['brgy'];?> </td>
                         <td> <?= $view['municipal'];?> </td>
-                        <td> <?= $view['date'];?> </td>
                         <td> <?= $view['purpose'];?> </td>
+                        <td> <?= $view['date'];?> </td>
+
 			</tr>
 			<?php
 			}
@@ -68,19 +68,18 @@
 <table class="table table-dark table-responsive">
 		<thead >
 			<tr>
-                <th> Actions</th>
+            <th> Actions</th>
                 <th> Resident ID </th>
                 <th> Surname </th>
                 <th> First Name </th>
                 <th> Middle Name </th>
-                <th> Age </th>
                 <th> Nationality </th>
                 <th> House Number </th>
                 <th> Street </th>
                 <th> Barangay </th>
                 <th> Municipality </th>
-                <th> Date </th>
                 <th> Purpose </th>
+                <th> Date </th>
 			</tr>
 		</thead>
 		<tbody>
@@ -89,22 +88,22 @@
 			<tr>
             <td>    
                         <form action="" method="post">
-                            <a class="btn btn-primary" href="rescert_form.php?id_resident=<?= $view['id_resident'];?>">Generate</a> 
-                            <input type="hidden" name="id_rescert" value="<?= $view['id_rescert'];?>">
+                            <a class="btn btn-primary" href="indigency_form.php?id_resident=<?= $view['id_resident'];?>">Generate</a> 
+                            <input type="hidden" name="id_indigency" value="<?= $view['id_indigency'];?>">
+                            <button class="btn btn-danger" type="submit" name="delete_certofindigency"> Remove </button>
                         </form>
                         </td>
                         <td> <?= $view['id_resident'];?> </td> 
                         <td> <?= $view['lname'];?> </td>
                         <td> <?= $view['fname'];?> </td>
                         <td> <?= $view['mi'];?> </td>
-                        <td> <?= $view['age'];?> </td>
                         <td> <?= $view['nationality'];?> </td>
                         <td> <?= $view['houseno'];?> </td>
                         <td> <?= $view['street'];?> </td>
                         <td> <?= $view['brgy'];?> </td>
                         <td> <?= $view['municipal'];?> </td>
-                        <td> <?= $view['date'];?> </td>
                         <td> <?= $view['purpose'];?> </td>
+                         <td> <?= $view['date'];?> </td>
 			</tr>
 			
 			<?php

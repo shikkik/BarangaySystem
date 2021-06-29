@@ -14,9 +14,13 @@
                 <th> First Name </th>
                 <th> Middle Name </th>
                 <th> Age </th>
-                <th> Status </th>
                 <th> Nationality </th>
-                <th> Address </th>
+                <th> House Number </th>
+                <th> Street </th>
+                <th> Barangay </th>
+                <th> Municipality </th>
+                <th> Date </th>
+                <th> Purpose </th>
 			</tr>
 		</thead>
 		<tbody>
@@ -25,8 +29,8 @@
 			<?php
 				
 				$stmnt = $conn->prepare("SELECT * FROM `tbl_rescert` WHERE `lname` LIKE '%$keyword%' or  `mi` LIKE '%$keyword%' or  `fname` LIKE '%$keyword%' 
-				or `age` LIKE '%$keyword%' or  `id_resident` LIKE '%$keyword%' or  `address` LIKE '%$keyword%' or  `contact` LIKE '%$keyword%'
-				or `email` LIKE '%$keyword%'");
+				or `age` LIKE '%$keyword%' or  `id_resident` LIKE '%$keyword%' or  `nationality` LIKE '%$keyword%' or  `houseno` LIKE '%$keyword%'
+				or `street` LIKE '%$keyword%' or `brgy` LIKE '%$keyword%' or `municipal` LIKE '%$keyword%' or `date` LIKE '%$keyword%' or `purpose` LIKE '%$keyword%'");
 				$stmnt->execute();
 				
 				while($view = $stmnt->fetch()){
@@ -44,9 +48,14 @@
                         <td> <?= $view['fname'];?> </td>
                         <td> <?= $view['mi'];?> </td>
                         <td> <?= $view['age'];?> </td>
-                        <td> <?= $view['status'];?> </td>
                         <td> <?= $view['nationality'];?> </td>
-                        <td> <?= $view['address'];?> </td>
+                        <td> <?= $view['houseno'];?> </td>
+                        <td> <?= $view['street'];?> </td>
+                        <td> <?= $view['brgy'];?> </td>
+                        <td> <?= $view['municipal'];?> </td>
+                        <td> <?= $view['date'];?> </td>
+                        <td> <?= $view['purpose'];?> </td>
+
 			</tr>
 			<?php
 			}
@@ -67,9 +76,13 @@
                 <th> First Name </th>
                 <th> Middle Name </th>
                 <th> Age </th>
-                <th> Status </th>
                 <th> Nationality </th>
-                <th> Address </th>
+                <th> House Number </th>
+                <th> Street </th>
+                <th> Barangay </th>
+                <th> Municipality </th>
+                <th> Date </th>
+                <th> Purpose </th>
 			</tr>
 		</thead>
 		<tbody>
@@ -88,9 +101,13 @@
                         <td> <?= $view['fname'];?> </td>
                         <td> <?= $view['mi'];?> </td>
                         <td> <?= $view['age'];?> </td>
-                        <td> <?= $view['status'];?> </td>
                         <td> <?= $view['nationality'];?> </td>
-                        <td> <?= $view['address'];?> </td>
+                        <td> <?= $view['houseno'];?> </td>
+                        <td> <?= $view['street'];?> </td>
+                        <td> <?= $view['brgy'];?> </td>
+                        <td> <?= $view['municipal'];?> </td>
+                        <td> <?= $view['date'];?> </td>
+                        <td> <?= $view['purpose'];?> </td>
 			</tr>
 			
 			<?php

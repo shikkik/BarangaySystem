@@ -105,16 +105,16 @@ $resident = $residentbmis->get_single_certofres($id_resident);
                     <div class="col-xs-12 col-md-12">
                         <p class="text-center" style="font-size: 20px; font-size:bold;">OFFICE OF THE BARANGAY CAPTAIN<br><br><b style="font-size: 25px;"><ins>CERTIFICATE OF RESIDENCY</ins></b></p> <br>
                         <p style="font-size: 18px;">TO WHOM IT MAY CONCERN:</p> <br>
-                        <p style="text-indent:40px;text-align: justify;">This is to certify that (Last Name, First Name Middle Initial)  
-                        (age), (Nationality) and a bonafide resident of (ADDRESS).</p> <br>
+                        <p style="text-indent:40px;text-align: justify;">This is to certify that <b><?= $resident['lname'];?>, <?= $resident['fname'];?> <?= $resident['mi'];?></b>,
+                        <?= $resident['age'];?> Years Old, <?= $resident['nationality'];?> and a bonafide resident of <?= $resident['houseno'];?> <?= $resident['street'];?> <?= $resident['brgy'];?> <?= $resident['municipal'];?>.</p> <br>
 
                         <p style="text-indent:40px;text-align: justify;">Further certify that the above-named subject is of good moral character and has 
                         no derigatory record in this office, law abiding citizen and reliable.</p> <br>
 
                         <p style="text-indent:40px;text-align: justify;">This certification is issued upon the request of the above-named party
-                        as a supporting document needed for (PURPOSE).</p> <br>
+                        as a supporting document needed for <ins><?= $resident['purpose'];?></ins>.</p> <br>
 
-                        <p style="text-indent:40px;text-align: justify;">Issued this (DATE) Antipolo City. </p>
+                        <p style="text-indent:40px;text-align: justify;">Issued this <?= $resident['date'];?> Antipolo City. </p>
 
 
                         

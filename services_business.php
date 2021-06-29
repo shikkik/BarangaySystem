@@ -3,7 +3,6 @@
     require('classes/resident.class.php');
     
     $userdetails = $bmis->get_userdata();
-
     $bmis->create_bspermit();
 
 ?>
