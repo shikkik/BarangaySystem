@@ -75,30 +75,36 @@
         public function update_resident() {
             if (isset($_POST['update_resident'])) {
                 $id_resident = $_GET['id_resident'];
-                $password = md5($_POST['password']);
+                $email = $_POST['email'];
+                $password = ($_POST['password']);
                 $lname = $_POST['lname'];
                 $fname = $_POST['fname'];
                 $mi = $_POST['mi'];
                 $age = $_POST['age'];
                 $sex = $_POST['sex'];
                 $status = $_POST['status'];
-                $email = $_POST['email'];
-                $address = $_POST['address'];
+                $houseno = $_POST['houseno'];
+                $street = $_POST['street'];
+                $brgy = $_POST['brgy'];
+                $municipal = $_POST['municipal'];
                 $contact = $_POST['contact'];
                 $bdate = $_POST['bdate'];
                 $bplace = $_POST['bplace'];
                 $nationality = $_POST['nationality'];
+                $voter = $_POST['voter'];
                 $familyrole = $_POST['family_role'];
                 $role = $_POST['role'];
                 $addedby = $_POST['addedby'];
 
                 $connection = $this->openConn();
                 $stmt = $connection->prepare("UPDATE tbl_resident SET `password` =?, `lname` =?, 
-                `fname` = ?, `mi` =?, `age` =?, `sex` =?, `status` =?, `email` =?, `address` =?, `contact` =?,
-                `bdate` =?, `bplace` =?, `nationality` =?, `family_role` =?, `role` =?, `addedby` =? WHERE `id_resident` = ?");
-                $stmt->execute([$password, $lname, $fname, $mi, $age, $sex, $status,$email, $address,
-                $contact, $bdate, $bplace, $nationality, $familyrole, $role, $addedby, $id_resident]);
-                   
+                `fname` = ?, `mi` =?, `age` =?, `sex` =?, `status` =?, `email` =?, `houseno` =?, `street` =?,
+                `brgy` =?, `municipal` =?, `contact` =?,
+                `bdate` =?, `bplace` =?, `nationality` =?, `voter` =?, `family_role` =?, `role` =?, `addedby` =? WHERE `id_resident` = ?");
+                $stmt->execute([$password, $lname, $fname, $mi, $age, $sex, $status,$email, $houseno, 
+                $street, $brgy, $municipal,
+                $contact, $bdate, $bplace, $nationality, $voter, $familyrole, $role, $addedby, $id_resident]);
+                    
                 $message2 = "Resident Data Updated";
                 echo "<script type='text/javascript'>alert('$message2');</script>";
                 header("refresh: 0");

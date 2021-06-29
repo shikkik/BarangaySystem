@@ -28,7 +28,7 @@
                                     <div class="col">
                                         <div class="form-group">
                                             <label> Last Name: </label>
-                                            <input type="text" class="form-control" name="lname"  placeholder="Enter Last Name" required>
+                                            <input type="text" class="form-control" name="lname"  value="<?= $view['lname']?>" required>
                                             <div class="valid-feedback">Valid.</div>
                                             <div class="invalid-feedback">Please fill out this field.</div>
                                         </div>
@@ -37,7 +37,7 @@
                                     <div class="col">
                                         <div class="form-group">
                                             <label class="mtop" >First Name: </label>
-                                            <input type="text" class="form-control" name="fname"  placeholder="Enter First Name" required>
+                                            <input type="text" class="form-control" name="fname"  value="<?= $view['fname']?>" required>
                                             <div class="valid-feedback">Valid.</div>
                                             <div class="invalid-feedback">Please fill out this field.</div>
                                         </div>
@@ -46,7 +46,7 @@
                                     <div class="col"> 
                                         <div class="form-group">
                                             <label class="mtop"> Middle Initial: </label>
-                                            <input type="text" class="form-control" name="mi" placeholder="Enter Middle Initial" required>
+                                            <input type="text" class="form-control" name="mi"value="<?= $view['mi']?>" required>
                                             <div class="valid-feedback">Valid.</div>
                                             <div class="invalid-feedback">Please fill out this field.</div>
                                         </div>
@@ -57,7 +57,7 @@
                                     <div class="col">
                                         <div class="form-group">
                                             <label class="mtop">Contact Number:</label>
-                                            <input type="tel" class="form-control" name="contact" maxlength="11" pattern="[0-9]{11}" placeholder="Enter Contact Number" required>
+                                            <input type="tel" class="form-control" name="contact" maxlength="11" pattern="[0-9]{11}" value="<?= $view['contact']?>" required>
                                             <div class="valid-feedback">Valid.</div>
                                             <div class="invalid-feedback">Please fill out this field.</div>
                                         </div>
@@ -66,7 +66,7 @@
                                     <div class="col">
                                         <div class="form-group">
                                             <label>Email: </label>
-                                            <input type="email" class="form-control" name="email"  placeholder="Enter Email" required>
+                                            <input type="email" class="form-control" name="email"  value="<?= $view['email']?>" required>
                                             <div class="valid-feedback">Valid.</div>
                                             <div class="invalid-feedback">Please fill out this field.</div>
                                         </div>
@@ -87,7 +87,7 @@
                                     <div class="col">
                                         <div class="form-group">
                                             <label> House No: </label>
-                                            <input type="text" class="form-control" name="houseno"  placeholder="Enter House No." required>
+                                            <input type="text" class="form-control" name="houseno"  value="<?= $view['houseno']?>" required>
                                             <div class="valid-feedback">Valid.</div>
                                             <div class="invalid-feedback">Please fill out this field.</div>
                                         </div>
@@ -96,7 +96,7 @@
                                     <div class="col">
                                         <div class="form-group">
                                             <label> Street: </label>
-                                            <input type="text" class="form-control" name="street"  placeholder="Enter Street" required>
+                                            <input type="text" class="form-control" name="street"  value="<?= $view['street']?>" required>
                                             <div class="valid-feedback">Valid.</div>
                                             <div class="invalid-feedback">Please fill out this field.</div>
                                         </div>
@@ -105,7 +105,7 @@
                                     <div class="col">
                                         <div class="form-group">
                                             <label> Barangay: </label>
-                                            <input type="text" class="form-control" name="brgy"  placeholder="Enter Barangay" required>
+                                            <input type="text" class="form-control" name="brgy"  value="<?= $view['brgy']?>" required>
                                             <div class="valid-feedback">Valid.</div>
                                             <div class="invalid-feedback">Please fill out this field.</div>
                                         </div>
@@ -114,7 +114,7 @@
                                     <div class="col">
                                         <div class="form-group">
                                             <label> Municipality: </label>
-                                            <input type="text" class="form-control" name="municipal" placeholder="Enter Municipality" required>
+                                            <input type="text" class="form-control" name="municipal" value="<?= $view['municipal']?>" required>
                                             <div class="valid-feedback">Valid.</div>
                                             <div class="invalid-feedback">Please fill out this field.</div>
                                         </div>
@@ -134,7 +134,7 @@
                                     <div class="col">
                                         <div class="form-group">
                                             <label class="mtop">Birth Place </label>
-                                            <input type="text" class="form-control" name="bplace"  placeholder="Enter Birth Place" required>
+                                            <input type="text" class="form-control" name="bplace"  value="<?= $view['bplace']?>" required>
                                             <div class="valid-feedback">Valid.</div>
                                             <div class="invalid-feedback">Please fill out this field.</div>
                                         </div>
@@ -143,7 +143,7 @@
                                     <div class="col">
                                         <div class="form-group">
                                             <label class="mtop">Nationality: </label>
-                                            <input type="text" class="form-control" name="nationality"  placeholder="Enter Nationality" required>
+                                            <input type="text" class="form-control" name="nationality"  value="<?= $view['nationality']?>" required>
                                             <div class="valid-feedback">Valid.</div>
                                             <div class="invalid-feedback">Please fill out this field.</div>
                                         </div>
@@ -169,7 +169,7 @@
                                     <div class="col">
                                         <div class="form-group">
                                             <label>Age</label>
-                                            <input type="number" class="form-control" name="age" placeholder="Enter Age" required>
+                                            <input type="number" class="form-control" name="age" value="<?= $view['age']?>" required>
                                             <div class="valid-feedback">Valid.</div>
                                             <div class="invalid-feedback">Please fill out this field.</div>
                                         </div>
