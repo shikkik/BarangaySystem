@@ -1,4 +1,5 @@
 <?php
+ini_set('display_errors',0);
 require('classes/resident.class.php');
 $userdetails = $residentbmis->get_userdata();
 $id_resident = $_GET['id_resident'];
@@ -102,24 +103,23 @@ $resident = $residentbmis->get_single_certofres($id_resident);
                        
                     </div>
                     <div class="col-xs-12 col-md-12">
-                        <p class="text-center" style="font-size: 20px; font-size:bold;">OFFICE OF THE BARANGAY CAPTAIN<br><br><b style="font-size: 28px;">CERTIFICATE OF RESIDENCY</b></p>
-                        <p style="font-size: 18px;">TO WHOM IT MAY CONCERN:</p>
-                        <p style="text-indent:40px;text-align: justify;">This is to certify that <?= $resident['fname'];?> <?= $resident['mi'];?>. <?= $resident['lname'];?>  
-                        (age), (Nationality) and a bonafide resident of (ADDRESS).</p>
+                        <p class="text-center" style="font-size: 20px; font-size:bold;">OFFICE OF THE BARANGAY CAPTAIN<br><br><b style="font-size: 25px;"><ins>CERTIFICATE OF RESIDENCY</ins></b></p> <br>
+                        <p style="font-size: 18px;">TO WHOM IT MAY CONCERN:</p> <br>
+                        <p style="text-indent:40px;text-align: justify;">This is to certify that (Last Name, First Name Middle Initial)  
+                        (age), (Nationality) and a bonafide resident of (ADDRESS).</p> <br>
 
                         <p style="text-indent:40px;text-align: justify;">Further certify that the above-named subject is of good moral character and has 
-                        no derigatory record in this office, law abiding citizen and reliable.</p>
+                        no derigatory record in this office, law abiding citizen and reliable.</p> <br>
 
                         <p style="text-indent:40px;text-align: justify;">This certification is issued upon the request of the above-named party
-                        as a supporting document needed for (PURPOSE).</p>
+                        as a supporting document needed for (PURPOSE).</p> <br>
 
                         <p style="text-indent:40px;text-align: justify;">Issued this (DATE) Antipolo City. </p>
 
 
                         
                         
-                        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-                        
+                        <br><br><br><br><br><br>
                     
                         <label style="font-size:18px;">____________</label>    <label style="font-size:18px;margin-left:4em;">VINCENT VILFAMAT</label><br> 
                         <label style=" text-align: center;">Signature </label>     <label style=" text-align: center;margin-left:10em;">Punong Barangay</label>

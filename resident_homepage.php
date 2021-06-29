@@ -117,7 +117,7 @@
     <body> 
         <!-- eto yung navbar -->
         <nav class="navbar navbar-dark bg-primary sticky-top">
-            <a class="navbar-brand" href="index.php"> <img src="../BarangaySystem/icons/beverlylogo.png" width="40px" height="40px"> 
+            <a class="navbar-brand" href="index.php">  
             <a class="navbar-brand" href="resident_homepage.php">Barangay Information & E-Services Management System</a>
 
             <div class="dropdown ml-auto">

@@ -1,8 +1,8 @@
 <?php
 require('classes/resident.class.php');
-//$userdetails = $residentbmis->get_userdata();
-//$id_resident = $_GET['id_resident'];
-//$resident = $residentbmis->get_single_certofres($id_resident);
+$userdetails = $residentbmis->get_userdata();
+$id_resident = $_GET['id_resident'];
+$resident = $residentbmis->get_single_certofres($id_resident);
   ?>
 <!DOCTYPE html>
 <html id="clearance">
@@ -33,16 +33,70 @@ require('classes/resident.class.php');
 }
 
 .photo img {
-			width: 100px;
-    		margin-top: 40px;
-            margin-left: 15px;
-            flex-basis: 40%
+			width: 180px;
+    
+flex-basis: 40%;
+position: absolute;
+  top: 47%;
+  left: 17%;
+  transform: translate(-50%, -50%);
 		}
 
 .text {
   font-size: 20px;
   padding-left: 20px;
 }
+ /* Container holding the image and the text */
+ .container {
+  position: relative;
+  text-align: left;
+  color: black;
+}
+
+/* Bottom left text */
+.bottom-left {
+  position: absolute;
+  bottom: 50px;
+  left: 80px;
+}
+
+.bbottom-left {
+  position: absolute;
+  bottom: 8px;
+  left: 80px;
+}
+
+/* Top left text */
+.top-left {
+  position: absolute;
+  top: 8px;
+  left: 16px;
+}
+
+/* Top right text */
+.top-right {
+  position: absolute;
+  top: 8px;
+  right: 16px;
+}
+
+/* Bottom right text */
+.bottom-right {
+  position: absolute;
+  bottom: 8px;
+  right: 16px;
+}
+
+/* Centered text */
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+} 
+
+
+
 </style>
 
  <head>
@@ -63,6 +117,7 @@ require('classes/resident.class.php');
     <script src="../BarangaySystem/bootstrap/css/jquery-1.12.3.js" type="text/javascript"></script>  
     
     
+    
 
 </head>
  <body class="skin-black" >
@@ -74,32 +129,46 @@ require('classes/resident.class.php');
      include "classes/conn.php"; 
 
      ?> 
-                <div class="col-xs-12 col-sm-5 col-md-8" style="background: white;  ">`
+                <div class="col-xs-12 col-sm-5 col-md-8" >`
+                
                     
                     <hr>
-
-
-                        <h2>Barangay ID</h2>
-
-                        <div class="card" style="border: 2px solid black;" >
-                        <div class="photo">
-				        <img src="../BarangaySystem/icons/2x2.jpg">
-			            </div>
-                        <div class="text" style="padding-left: 2em;padding-right: 2em;  ">    
-                               <br>
-                                <label style="font-size:10px;">Last Name <label style="padding-left: 3em;">First Name</label> <label style="padding-left: 3em; ">Middle Initial</b></label>  </label>  <br>
-                                <label style="font-size:15px;"><b>John Doe</b> <label style="padding-left: 1em;"><b>John Doe</b> </label> <label style="padding-left: 1em;"><b>John Doe</b></label> </label>   <br>
-                                <label style="font-size:10px;">Address</label> <br>
-                                <label style="font-size:13px;"><b>happyland dona carmen subdivision commonwealth Qc</b> </label> <br>
-                                <label style="font-size:10px;">Date of Birth <label style="padding-left: 3em;">Place of Birth </label> <label style="padding-left: 3em; ">Precinct No.</b></label>  </label>  <br>
-                                <label style="font-size:15px;"><b>John Doe</b> <label style="padding-left: 1em;"><b>John Doe</b> </label> <label style="padding-left: 1em;"><b>John Doe</b></label> </label>  
-                                <br><br>       
-                        </div>       
+                    <br>
+                    <br>
+                    <div class="container" style="margin-left: 2em;" >
+                        <img src="../BarangaySystem/icons/ID.jpg" alt="Snow" style="width:80%;">
+                        
+                        <div class="photo"><img src="../BarangaySystem/icons/2x2.jpg"></div>
+                        <div class="centered">
+                          <label style="position:relative; left:80px; bottom:30px; font-size:20px;color:white">  <b>Mendros Peter James T. </b> </label>
+                          <label style="position:relative; left:80px;  font-size:15px;color:white">  <b>0356 Happy Land Carmencita Street Dona <br> Carmen Commonwealth Quezon City </b> </label>
                         </div>
+                        <div class="bottom-left">
+                        <label style="position:relative; left:190px; bottom:30px; font-size:15px; color:white">  <b>01/14/200 </b> </label>
+                        <label style="position:relative; left:210px; bottom:30px; font-size:15px; color:white">  <b>Quezon City </b> </label>
+                        <label style="position:relative; left:240px; bottom:30px; font-size:15px; color:white">  <b>2 </b> </label>
                         </div>
+                        <div class="bbottom-left">
+                        <label style="position:relative; left:30px; bottom:20px; font-size:15px; color:white">  <b>01/14/200 </b> </label>
+                        </div>
+                      </div> 
+                      <br><br><br><br>
 
+                      <div class="container" style="margin-left: 2em;"  >
+                        <img src="../BarangaySystem/icons/IDBACK.jpg" alt="Snow" style="width:80%;">
 
-                    </div>
+                        <div class="top-left">
+                          <label style="position:relative; left:160px; top:30px; font-size:12px;font-family:Lapus;color:white">  Mendros Peter James T.  </label>
+                          <label style="position:relative; left:30px; top:45px; font-size:12px;color:white">  <b>0356 Happy Land Carmencita Street  </b> </label>
+                          <label style="position:relative; left:-180px; top:65px; font-size:12px;color:white">  <b>09569424380 </b> </label>
+                        </div>
+                        
+                        <div class="bbottom-left">
+                        <label style="position:absolute; left:1px; bottom:20px; font-size:15px; color:white">  <b>01/14/2021 </b> </label>
+                        <label style="position:absolute; left:160px; bottom:20px; font-size:15px; color:white">  <b>01/14/2022 </b> </label>
+                        </div>
+                      </div> 
+ 
 
                    
                     

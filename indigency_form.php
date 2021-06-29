@@ -1,8 +1,8 @@
 <?php
 require('classes/resident.class.php');
-//$userdetails = $residentbmis->get_userdata();
-//$id_resident = $_GET['id_resident'];
-//$resident = $residentbmis->get_single_certofres($id_resident);
+$userdetails = $residentbmis->get_userdata();
+$id_resident = $_GET['id_resident'];
+$resident = $residentbmis->get_single_certofres($id_resident);
   ?>
 <!DOCTYPE html>
 <html id="clearance">
@@ -72,11 +72,11 @@ require('classes/resident.class.php');
                         </p>
                         
                         
-                        <br><br><br><br><br><br><br><br><br><br>
+                        <br><br><br><br><br><br><br><br>
                         
                     
-                        <label style="font-size:18px;margin-left:70%;"><b>VINCENT VILFAMAT</b>  </label><br> 
-                        <label style=" text-align: center;margin-left:70%">Punong Barangay</label>
+                        <label style="font-size:17px;margin-left:70%;"><b>VINCENT VILFAMAT</b>  </label><br> 
+                        <label style=" text-align: center;margin-left:73%">Punong Barangay</label>
                        
                         
                     </div>
