@@ -1475,9 +1475,6 @@ class BMISClass {
             $inc_brgy = $_POST['bdate'];
             $inc_municipal = $_POST['res_photo'];
 
-
-
-
             $connection = $this->openConn();
             $stmt = $connection->prepare("INSERT INTO tbl_brgyid (`id_brgyid`, `id_resident`, `lname`, `fname`, `mi`,
             `houseno`, `street`,`brgy`, `municipal`, `bplace`, `bdate`, `res_photo`, `inc_lname`,
@@ -1491,9 +1488,7 @@ class BMISClass {
             $message2 = "Application Applied, you will receive our text message for further details";
             echo "<script type='text/javascript'>alert('$message2');</script>";
             header("refresh: 0");
-        }
-        
-        
+        }  
     }
 
     public function view_brgyid(){
@@ -1515,6 +1510,42 @@ class BMISClass {
 
             header("Refresh:0");
         }
+    }
+
+
+
+
+
+
+
+    public function create_blotter() {
+
+        if(isset($_POST['create_blotter'])) {
+            $id_blotter = $_POST['id_blotter'];
+            $id_resident = $_POST['id_resident'];
+            $lname = $_POST['lname'];
+            $fname = $_POST['fname'];
+            $mi = $_POST['mi']; 
+            $houseno = $_POST['houseno'];
+            $street = $_POST['street'];
+            $brgy = $_POST['brgy'];
+            $municipal = $_POST['municipal'];
+            $blot_photo = $_POST['blot_photo'];
+            $contact = $_POST['contact'];
+            $narrative = $_POST['narrative'];
+
+            $connection = $this->openConn();
+            $stmt = $connection->prepare("INSERT INTO tbl_blotter (`id_blotter`, `id_resident`, `lname`, `fname`, `mi`,
+            `houseno`, `street`,`brgy`, `municipal`, `blot_photo`, `contact`, `narrative`)
+            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+
+            $stmt->execute([$id_blotter, $id_resident, $lname, $fname, $mi, $houseno,  $street, $brgy, $municipal, 
+            $blot_photo, $contact, $narrative]);
+
+            $message2 = "Application Applied, you will receive our text message for further details";
+            echo "<script type='text/javascript'>alert('$message2');</script>";
+            header("refresh: 0");
+        }  
     }
 
     

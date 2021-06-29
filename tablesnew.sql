@@ -81,4 +81,5 @@ CREATE TABLE `bmis`.`tbl_blotter` ( `id_blotter` INT NOT NULL AUTO_INCREMENT ,
 `contact` INT(20) NOT NULL , `narrative` VARCHAR(50000) NOT NULL , 
 PRIMARY KEY (`id_blotter`)) ENGINE = InnoDB;
 
+ALTER TABLE `tbl_blotter` CHANGE `blot_photo` `blot_photo` MEDIUMBLOB NULL;
 
