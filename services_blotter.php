@@ -4,10 +4,7 @@
     $id_resident = $_GET['id_resident'];
     $resident = $residentbmis->get_single_resident($id_resident);
 
-    $dt = new DateTime("now", new DateTimeZone('Asia/Manila'));
-    $tm = new DateTime("now", new DateTimeZone('Asia/Manila'));
-    $cdate = $dt->format('Y/m/d');
-    $ctime = $tm->format('H:i');
+    $bmis->create_blotter();
 
 
 
@@ -511,7 +508,7 @@
                         <!-- Modal Body -->
 
                         <div class="modal-body">
-                            <form method="post" class="was-validated">
+                            <form method="post" class="was-validated" enctype="multipart/form-data"> 
 
                                 <div class="row"> 
                                     <div class="col">
@@ -557,7 +554,8 @@
                                     <div class="col">
                                         <div class="form-group">
                                             <label> House No: </label>
-                                            <input type="text" class="form-control" name="houseno"  placeholder="Enter House No." required>
+                                            <input type="text" class="form-control" name="houseno"  
+                                            placeholder="Enter House No." value="<?= $resident['houseno']?>" required>
                                             <div class="valid-feedback">Valid.</div>
                                             <div class="invalid-feedback">Please fill out this field.</div>
                                         </div>
@@ -566,7 +564,8 @@
                                     <div class="col">
                                         <div class="form-group">
                                             <label> Street: </label>
-                                            <input type="text" class="form-control" name="street"  placeholder="Enter Street" required>
+                                            <input type="text" class="form-control" name="street"  
+                                            placeholder="Enter Street" value="<?= $resident['street']?>" required>
                                             <div class="valid-feedback">Valid.</div>
                                             <div class="invalid-feedback">Please fill out this field.</div>
                                         </div>
@@ -575,7 +574,8 @@
                                     <div class="col">
                                         <div class="form-group">
                                             <label> Barangay: </label>
-                                            <input type="text" class="form-control" name="brgy"  placeholder="Enter Barangay" required>
+                                            <input type="text" class="form-control" name="brgy"  
+                                            placeholder="Enter Barangay" value="<?= $resident['brgy']?>" required>
                                             <div class="valid-feedback">Valid.</div>
                                             <div class="invalid-feedback">Please fill out this field.</div>
                                         </div>
@@ -584,7 +584,8 @@
                                     <div class="col">
                                         <div class="form-group">
                                             <label> Municipality: </label>
-                                            <input type="text" class="form-control" name="municipal" placeholder="Enter Municipality" required>
+                                            <input type="text" class="form-control" name="municipal" 
+                                            placeholder="Enter Municipality" value="<?= $resident['municipal']?>" required>
                                             <div class="valid-feedback">Valid.</div>
                                             <div class="invalid-feedback">Please fill out this field.</div>
                                         </div>
@@ -595,7 +596,7 @@
                                     <div class="col">
                                         <label>Upload Photo:</label>
                                         <div class="custom-file mb-3 form-group">
-                                            <input type="file" class="custom-file-input" id="customFile" name="res_photo" required>
+                                            <input type="file" class="custom-file-input" id="customFile" name="blot_photo">
                                             <label class="custom-file-label" for="customFile">Choose File</label>
                                             <div class="valid-feedback">Valid.</div>
                                             <div class="invalid-feedback">Please fill out this field.</div>
@@ -609,32 +610,29 @@
                                             <div class="invalid-feedback">Please fill out this field.</div>
                                         </div>
                                     </div>
-                                    
-                                    <input type="hidden" name="remarks">
-                                    <input type="hidden" name="dateapply" value="<?= $cdate?>">
-                                    <input type="hidden" name="timeapply" value="<?= $ctime?>">
-                                    <input name="addedby" type="hidden" value="<?= $userdetails['surname']?>, <?= $userdetails['firstname']?>">
-                                    <input name="id_resident" type="hidden" value="<?= $resident['id_resident']?>">
                                 </div>
 
                                 <div class="row">
                                     <div class="col">
                                         <div class="form-group">
                                             <label for="report">Narrative Report:</label>
-                                            <textarea class="form-control" rows="5" id="report" name="text" required></textarea>
+                                            <textarea class="form-control" rows="5" id="report" name="narrative" required></textarea>
                                             <div class="valid-feedback">Valid.</div>
                                             <div class="invalid-feedback">Please fill out this field.</div>
                                         </div>
                                     </div>
                                 </div>
-                            
-                            
-                            <div class="modal-footer">
+
+                                <div class="modal-footer">
                                 <div class="paa">
+                                    <input name="id_resident" type="hidden" value="<?= $resident['id_resident']?>">
                                     <button type="button" class="btn btn-dark" data-dismiss="modal">Close</button>
-                                    <button type="button" class="btn btn-primary">Save changes</button>
+                                    <button type="submit" name="create_blotter" class="btn btn-primary">Save changes</button>
                                 </div>
-                            </div>  
+                            </div> 
+                            
+                            </form>
+ 
                         </div>
                     </div>
                 </div>

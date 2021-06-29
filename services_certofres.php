@@ -403,7 +403,8 @@
                                     <div class="col">
                                         <div class="form-group">
                                             <label for="lname">Last Name:</label>
-                                            <input name="lname" type="text" class="form-control" placeholder="Enter Last Name" required>
+                                            <input name="lname" type="text" class="form-control" 
+                                            placeholder="Enter Last Name" value="<?= $userdetails['surname']?>" required>
                                                 <div class="valid-feedback">Valid.</div>
                                                 <div class="invalid-feedback">Please fill out this field.</div>
                                         </div>
@@ -412,7 +413,8 @@
                                     <div class="col">
                                         <div class="form-group">
                                             <label for="fname">First Name:</label>
-                                            <input name="fname" type="text" class="form-control" placeholder="Enter First Name" required>
+                                            <input name="fname" type="text" class="form-control" 
+                                            placeholder="Enter First Name" value="<?= $userdetails['firstname']?>" required>
                                                 <div class="valid-feedback">Valid.</div>
                                                 <div class="invalid-feedback">Please fill out this field.</div>
                                         </div>
@@ -423,7 +425,8 @@
                                     <div class="col">
                                         <div class="form-group">
                                             <label for="mi" class="mtop">Middle Name: </label>
-                                            <input name="mi" type="text" class="form-control" placeholder="Enter Middle Name" required>
+                                            <input name="mi" type="text" class="form-control" 
+                                            placeholder="Enter Middle Name" value="<?= $userdetails['mname']?>" required>
                                             <div class="valid-feedback">Valid.</div>
                                             <div class="invalid-feedback">Please fill out this field.</div>
                                         </div>
@@ -431,7 +434,8 @@
                                     <div class="col">
                                         <div class="form-group">
                                             <label for="Age" class="mtop">Age: </label>
-                                            <input type="number" name="age" class="form-control" placeholder="Enter your Age" required>
+                                            <input type="number" name="age" class="form-control" 
+                                            placeholder="Enter your Age" value="<?= $userdetails['age']?>" required>
                                             <div class="valid-feedback">Valid.</div>
                                             <div class="invalid-feedback">Please fill out this field.</div>
                                         </div>
@@ -440,7 +444,8 @@
                                     <div class="col">
                                         <div class="form-group">
                                             <label for="Age" class="mtop">Nationality: </label>
-                                            <input type="text" name="nationality" class="form-control" placeholder="Enter your Nationality" required>
+                                            <input type="text" name="nationality" class="form-control" 
+                                            placeholder="Enter your Nationality" value="<?= $userdetails['nationality']?>" required>
                                             <div class="valid-feedback">Valid.</div>
                                             <div class="invalid-feedback">Please fill out this field.</div>
                                         </div>
@@ -452,7 +457,8 @@
                                     <div class="col">
                                         <div class="form-group">
                                             <label> House No: </label>
-                                            <input type="text" class="form-control" name="houseno"  placeholder="Enter House No." required>
+                                            <input type="text" class="form-control" name="houseno"  
+                                            placeholder="Enter House No." value="<?= $userdetails['houseno']?>" required>
                                             <div class="valid-feedback">Valid.</div>
                                             <div class="invalid-feedback">Please fill out this field.</div>
                                         </div>
@@ -461,7 +467,8 @@
                                     <div class="col">
                                         <div class="form-group">
                                             <label> Street: </label>
-                                            <input type="text" class="form-control" name="street"  placeholder="Enter Street" required>
+                                            <input type="text" class="form-control" name="street"  
+                                            placeholder="Enter Street" value="<?= $userdetails['street']?>" required>
                                             <div class="valid-feedback">Valid.</div>
                                             <div class="invalid-feedback">Please fill out this field.</div>
                                         </div>
@@ -470,7 +477,8 @@
                                     <div class="col">
                                         <div class="form-group">
                                             <label> Barangay: </label>
-                                            <input type="text" class="form-control" name="brgy"  placeholder="Enter Barangay" required>
+                                            <input type="text" class="form-control" name="brgy" 
+                                             placeholder="Enter Barangay" value="<?= $userdetails['brgy']?>" required>
                                             <div class="valid-feedback">Valid.</div>
                                             <div class="invalid-feedback">Please fill out this field.</div>
                                         </div>
@@ -479,7 +487,8 @@
                                     <div class="col">
                                         <div class="form-group">
                                             <label> Municipality: </label>
-                                            <input type="text" class="form-control" name="municipal" placeholder="Enter Municipality" required>
+                                            <input type="text" class="form-control" name="municipal" 
+                                            placeholder="Enter Municipality" value="<?= $userdetails['municipal']?>" required>
                                             <div class="valid-feedback">Valid.</div>
                                             <div class="invalid-feedback">Please fill out this field.</div>
                                         </div>
@@ -513,18 +522,13 @@
                                         </div>
                                     </div>  
                                 </div>
-                                
-                            
+                        
                         </div>
-
-
-
                         <!-- Modal Footer -->
 
                         <div class="modal-footer">
                             <div class="paa">
                                 <input name="id_resident" type="hidden" class="form-control" value="<?= $userdetails['id_resident']?>">
-                                <input name="addedby" type="hidden" class="form-control" value="<?= $userdetails['surname']?> <?= $userdetails['firstname']?> <?= $userdetails['mname']?>">
                                 <button type="button" class="btn btn-dark" data-dismiss="modal">Close</button>
                                 <button name ="create_certofres" type="submit" class="btn btn-primary">Submit Request</button>
                             </div>

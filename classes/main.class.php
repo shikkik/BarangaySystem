@@ -1259,19 +1259,21 @@ class BMISClass {
             $lname = $_POST['lname'];
             $fname = $_POST['fname'];
             $mi = $_POST['mi'];
-            $age = $_POST['age'];
-            $status = $_POST['status'];
-            $address = $_POST['address'];
             $purpose = $_POST['purpose'];
-            $addedby = $_POST['addedby'];
-
-
+            $houseno = $_POST['houseno'];
+            $street = $_POST['street'];
+            $brgy = $_POST['brgy'];
+            $municipal = $_POST['municipal'];
+            $status = $_POST['status'];
+            $age = $_POST['age'];
+            
             $connection = $this->openConn();
             $stmt = $connection->prepare("INSERT INTO tbl_clearance (`id_clearance`, `id_resident`, `lname`, `fname`, `mi`,
-             `age`, `status`, `address`,`purpose`, `addedby`)
-            VALUES (?,?, ?, ?, ?, ?, ?, ?, ?, ?)");
+             `purpose`, `houseno`, `street`,`brgy`, `municipal`, `status`, `age`)
+            VALUES (?,?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
 
-            $stmt->execute([$id_clearance, $id_resident, $lname, $fname, $mi,  $age, $status,  $address, $purpose,   $addedby]);
+            $stmt->execute([$id_clearance, $id_resident, $lname, $fname, $mi,  $purpose, 
+            $houseno,  $street, $brgy,   $municipal, $status, $age]);
 
             $message2 = "Application Applied, you will receive our text message for further details";
             echo "<script type='text/javascript'>alert('$message2');</script>";
@@ -1450,10 +1452,6 @@ class BMISClass {
 
 
 
-
-
-
-
     public function create_brgyid() {
 
         if(isset($_POST['create_brgyid'])) {
@@ -1479,9 +1477,6 @@ class BMISClass {
             $inc_brgy = $_POST['bdate'];
             $inc_municipal = $_POST['res_photo'];
 
-
-
-
             $connection = $this->openConn();
             $stmt = $connection->prepare("INSERT INTO tbl_brgyid (`id_brgyid`, `id_resident`, `lname`, `fname`, `mi`,
             `houseno`, `street`,`brgy`, `municipal`, `bplace`, `bdate`, `res_photo`, `inc_lname`,
@@ -1495,9 +1490,85 @@ class BMISClass {
             $message2 = "Application Applied, you will receive our text message for further details";
             echo "<script type='text/javascript'>alert('$message2');</script>";
             header("refresh: 0");
+        }  
+    }
+
+    public function view_brgyid(){
+        $connection = $this->openConn();
+        $stmt = $connection->prepare("SELECT * from tbl_brgyid");
+        $stmt->execute();
+        $view = $stmt->fetchAll();
+        return $view;
+    }
+
+
+    public function delete_brgyid(){
+        $id_bspermit = $_POST['id_brgyid'];
+
+        if(isset($_POST['delete_brgyid'])) {
+            $connection = $this->openConn();
+            $stmt = $connection->prepare("DELETE FROM tbl_brgyid where id_brgyid = ?");
+            $stmt->execute([$id_bspermit]);
+
+            header("Refresh:0");
         }
-        
-        
+    }
+
+
+
+
+
+
+
+    public function create_blotter() {
+
+        if(isset($_POST['create_blotter'])) {
+            $id_blotter = $_POST['id_blotter'];
+            $id_resident = $_POST['id_resident'];
+            $lname = $_POST['lname'];
+            $fname = $_POST['fname'];
+            $mi = $_POST['mi']; 
+            $houseno = $_POST['houseno'];
+            $street = $_POST['street'];
+            $brgy = $_POST['brgy'];
+            $municipal = $_POST['municipal'];
+            $blot_photo = $_POST['blot_photo'];
+            $contact = $_POST['contact'];
+            $narrative = $_POST['narrative'];
+
+            $connection = $this->openConn();
+            $stmt = $connection->prepare("INSERT INTO tbl_blotter (`id_blotter`, `id_resident`, `lname`, `fname`, `mi`,
+            `houseno`, `street`,`brgy`, `municipal`, `blot_photo`, `contact`, `narrative`)
+            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+
+            $stmt->execute([$id_blotter, $id_resident, $lname, $fname, $mi, $houseno,  $street, $brgy, $municipal, 
+            $blot_photo, $contact, $narrative]);
+
+            $message2 = "Application Applied, you will receive our text message for further details";
+            echo "<script type='text/javascript'>alert('$message2');</script>";
+            header("refresh: 0");
+        }  
+    }
+
+    public function view_blotter(){
+        $connection = $this->openConn();
+        $stmt = $connection->prepare("SELECT * from tbl_blotter");
+        $stmt->execute();
+        $view = $stmt->fetchAll();
+        return $view;
+    }
+
+
+    public function delete_blotter(){
+        $id_blotter = $_POST['id_blotter'];
+
+        if(isset($_POST['delete_blotter'])) {
+            $connection = $this->openConn();
+            $stmt = $connection->prepare("DELETE FROM tbl_blotter where id_blotter = ?");
+            $stmt->execute([$id_blotter]);
+
+            header("Refresh:0");
+        }
     }
 
     
