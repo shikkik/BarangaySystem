@@ -1259,19 +1259,21 @@ class BMISClass {
             $lname = $_POST['lname'];
             $fname = $_POST['fname'];
             $mi = $_POST['mi'];
-            $age = $_POST['age'];
-            $status = $_POST['status'];
-            $address = $_POST['address'];
             $purpose = $_POST['purpose'];
-            $addedby = $_POST['addedby'];
-
-
+            $houseno = $_POST['houseno'];
+            $street = $_POST['street'];
+            $brgy = $_POST['brgy'];
+            $municipal = $_POST['municipal'];
+            $status = $_POST['status'];
+            $age = $_POST['age'];
+            
             $connection = $this->openConn();
             $stmt = $connection->prepare("INSERT INTO tbl_clearance (`id_clearance`, `id_resident`, `lname`, `fname`, `mi`,
-             `age`, `status`, `address`,`purpose`, `addedby`)
-            VALUES (?,?, ?, ?, ?, ?, ?, ?, ?, ?)");
+             `purpose`, `houseno`, `street`,`brgy`, `municipal`, `status`, `age`)
+            VALUES (?,?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
 
-            $stmt->execute([$id_clearance, $id_resident, $lname, $fname, $mi,  $age, $status,  $address, $purpose,   $addedby]);
+            $stmt->execute([$id_clearance, $id_resident, $lname, $fname, $mi,  $purpose, 
+            $houseno,  $street, $brgy,   $municipal, $status, $age]);
 
             $message2 = "Application Applied, you will receive our text message for further details";
             echo "<script type='text/javascript'>alert('$message2');</script>";
