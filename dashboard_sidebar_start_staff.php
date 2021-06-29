@@ -63,14 +63,14 @@
             <!-- Barangay Staff CRUD -->
             <li class="nav-item">
             <a class="nav-link" href="staff_staff_crud.php?id_user=<?= $userdetails['id_user'];?>">
-                    <i class="fas fa-fw fa-chart-area"></i>
+                    <i class="fas fa-user-tie"></i>
                     <span>Barangay Staffs</span></a>
             </li>
 
             <!-- Resident CRUD -->
             <li class="nav-item">
                 <a class="nav-link" href="staff_resident_crud.php">
-                    <i class="fas fa-fw fa-chart-area"></i>
+                    <i class="fas fa-users"></i>
                     <span>Barangay Residents</span></a>
             </li>
 
@@ -85,35 +85,49 @@
             <!-- Announcement Management -->
             <li class="nav-item">
                 <a class="nav-link" href="staff_announcement_crud.php">
-                    <i class="fas fa-fw fa-chart-area"></i>
+                    <i class="fas fa-bullhorn"></i>
                     <span>Announcements</span></a>
             </li>
 
             <!-- Certificate of Residency -->
             <li class="nav-item">
                 <a class="nav-link" href="staff_table_certofres.php">
-                    <i class="fas fa-fw fa-chart-area"></i>
+                    <i class="fas fa-file-word"></i>
                     <span>Certificate of Residency</span></a>
+            </li>
+
+            <!-- Barangay ID -->
+            <li class="nav-item">
+                <a class="nav-link" href="staff_table_certofres.php">
+                    <i class="fas fa-id-card"></i>
+                    <span>Barangay ID</span></a>
+            </li>
+
+            <!-- Business Permit -->
+            <li class="nav-item">
+                <a class="nav-link" href="staff_table_certofres.php">
+                    <i class="fas fa-file-contract"></i>
+                    <span>Business Permit</span></a>
             </li>
 
             <!-- Barangay Clearance -->
             <li class="nav-item">
                 <a class="nav-link" href="staff_brgyclearance.php">
-                    <i class="fas fa-fw fa-table"></i>
+                    <i class="fas fa-file"></i>
                     <span>Barangay Clearance</span></a>
             </li>
 
             <!-- Certificate of Indigency -->
             <li class="nav-item">
                 <a class="nav-link" href="staff_indigency.php">
-                    <i class="fas fa-fw fa-table"></i>
+                    <i class="fas fa-file-alt"></i>
                     <span>Certificate of Indigency</span></a>
             </li>
 
             <!-- Complain Blotter Report -->
             <li class="nav-item">
                 <a class="nav-link" href="staff_blotterreport.php">
-                    <i class="fas fa-fw fa-table"></i>
+                    <i class="fas fa-user-shield"></i>
                     <span>Complain/Blotter Report</span></a>
             </li>
 

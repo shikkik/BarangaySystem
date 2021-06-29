@@ -59,14 +59,14 @@
             <!-- Barangay Staff CRUD -->
             <li class="nav-item">
                 <a class="nav-link" href="admn_staff_crud.php">
-                    <i class="fas fa-fw fa-chart-area"></i>
+                    <i class="fas fa-user-tie"></i>
                     <span>Barangay Staffs</span></a>
             </li>
 
             <!-- Resident CRUD -->
             <li class="nav-item">
                 <a class="nav-link" href="admn_resident_crud.php">
-                    <i class="fas fa-fw fa-chart-area"></i>
+                    <i class="fas fa-users"></i>
                     <span>Barangay Residents</span></a>
             </li>
 
@@ -81,14 +81,14 @@
             <!-- Announcement Management -->
             <li class="nav-item">
                 <a class="nav-link" href="admn_announcement_crud.php">
-                    <i class="fas fa-fw fa-chart-area"></i>
+                    <i class="fas fa-bullhorn"></i>
                     <span>Announcements</span></a>
             </li>
 
             <!-- Certificate of Residency -->
             <li class="nav-item">
                 <a class="nav-link" href="admn_certofres.php">
-                    <i class="fas fa-fw fa-chart-area"></i>
+                    <i class="fas fa-file-word"></i>
                     <span>Certificate of Residency</span></a>
             </li>
 
@@ -100,7 +100,7 @@
 
             <li class="nav-item">
                 <a class="nav-link" href="admn_bspermit.php">
-                    <i class="fas fa-fw fa-table"></i>
+                    <i class="fas fa-file-contract"></i>
                     <span>Business Permit</span></a>
             </li>
 
@@ -109,21 +109,26 @@
             <!-- Barangay Clearance -->
             <li class="nav-item">
                 <a class="nav-link" href="admn_brgyclearance.php">
-                    <i class="fas fa-fw fa-table"></i>
+                    <i class="fas fa-file"></i>
                     <span>Barangay Clearance</span></a>
             </li>
 
             <!-- Certificate of Indigency -->
             <li class="nav-item">
+<<<<<<< HEAD
+                <a class="nav-link" href="admn_indigency.php">
+                    <i class="fas fa-file-alt"></i>
+=======
                 <a class="nav-link" href="admn_certofindigency.php">
                     <i class="fas fa-fw fa-table"></i>
+>>>>>>> d1668307591cddabcae3419c48d4cc6acefaf891
                     <span>Certificate of Indigency</span></a>
             </li>
 
             <!-- Complain Blotter Report -->
             <li class="nav-item">
                 <a class="nav-link" href="admn_blotterreport.php">
-                    <i class="fas fa-fw fa-table"></i>
+                    <i class="fas fa-user-shield"></i>
                     <span>Complain/Blotter Report</span></a>
             </li>
 
