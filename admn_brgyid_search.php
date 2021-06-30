@@ -39,8 +39,8 @@
             <td>    
                         <form action="" method="post">
                             <a class="btn btn-primary" href="barangayid_form.php?id_resident=<?= $view['id_resident'];?>">Generate</a> 
-                            <input type="hidden" name="id_rescert" value="<?= $view['id_rescert'];?>">
-                            <button class="btn btn-danger" type="submit" name="delete_certofres"> Remove </button>
+                            <input type="hidden" name="id_brgyid" value="<?= $view['id_brgyid'];?>">
+                            <button class="btn btn-danger" type="submit" name="delete_brgyid"> Remove </button>
                         </form>
                         </td>
                         <td> <?= $view['id_resident'];?> </td> 
@@ -91,8 +91,8 @@
             <td>    
                         <form action="" method="post">
                             <a class="btn btn-primary" href="barangayid_form.php?id_resident=<?= $view['id_resident'];?>">Generate</a> 
-                            <input type="hidden" name="id_rescert" value="<?= $view['id_rescert'];?>">
-                            <button class="btn btn-danger" type="submit" name="delete_certofres"> Remove </button>
+                            <input type="hidden" name="id_brgyid" value="<?= $view['id_brgyid'];?>">
+                            <button class="btn btn-danger" type="submit" name="delete_brgyid"> Remove </button>
                         </form>
                         </td>
 

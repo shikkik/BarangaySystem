@@ -1283,6 +1283,25 @@ class BMISClass {
         
     }
 
+    public function get_single_clearance($id_resident){
+
+        $id_resident = $_GET['id_resident'];
+        
+        $connection = $this->openConn();
+        $stmt = $connection->prepare("SELECT * FROM tbl_clearance where id_resident = ?");
+        $stmt->execute([$id_resident]);
+        $resident = $stmt->fetch();
+        $total = $stmt->rowCount();
+
+        if($total > 0 )  {
+            return $resident;
+        }
+        else{
+            return false;
+        }
+    }
+
+
     public function view_clearance(){
         $connection = $this->openConn();
         $stmt = $connection->prepare("SELECT * from tbl_clearance");
@@ -1587,6 +1606,25 @@ class BMISClass {
             header("refresh: 0");
         }  
     }
+
+    public function get_single_blotter($id_resident){
+
+        $id_resident = $_GET['id_resident'];
+        
+        $connection = $this->openConn();
+        $stmt = $connection->prepare("SELECT * FROM tbl_blotter where id_resident = ?");
+        $stmt->execute([$id_resident]);
+        $resident = $stmt->fetch();
+        $total = $stmt->rowCount();
+
+        if($total > 0 )  {
+            return $resident;
+        }
+        else{
+            return false;
+        }
+    }
+   
 
     public function view_blotter(){
         $connection = $this->openConn();

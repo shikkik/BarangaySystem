@@ -38,9 +38,9 @@
 			<tr>
             <td>    
                         <form action="" method="post">
-                            <a class="btn btn-primary" href="rescert_form.php?id_resident=<?= $view['id_resident'];?>">Update</a> 
-                            <input type="hidden" name="id_rescert" value="<?= $view['id_rescert'];?>">
-                            <button class="btn btn-danger" type="submit" name="delete_certofres"> Remove </button>
+                            <a class="btn btn-primary" href="update_blotter_form.php?id_resident=<?= $view['id_resident'];?>">Update</a> 
+                            <input type="hidden" name="id_blotter" value="<?= $view['id_blotter'];?>">
+                            <button class="btn btn-danger" type="submit" name="delete_blotter"> Remove </button>
                         </form>
                         </td>
                         <td> <?= $view['id_resident'];?> </td> 
@@ -90,9 +90,9 @@
 			<tr>
             <td>    
                         <form action="" method="post">
-                            <a class="btn btn-primary" href="rescert_form.php?id_resident=<?= $view['id_resident'];?>">Update</a> 
-                            <input type="hidden" name="id_rescert" value="<?= $view['id_rescert'];?>">
-                            <button class="btn btn-danger" type="submit" name="delete_certofres"> Remove </button>
+                        <a class="btn btn-primary" href="update_blotter_form.php?id_resident=<?= $view['id_resident'];?>">Update</a> 
+                            <input type="hidden" name="id_blotter" value="<?= $view['id_blotter'];?>">
+                            <button class="btn btn-danger" type="submit" name="delete_blotter"> Remove </button>
                         </form>
                         </td>
 
