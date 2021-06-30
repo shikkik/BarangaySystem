@@ -54,7 +54,7 @@
                         <td> <?php echo '<img src="data:image;base64,'.base64_encode($view['blot_photo']).'" alt="Blotter Photo" style="width: 100px; height:100px;">'; ?> </td>
                         <td> <?= $view['contact'];?> </td>
                         <td> <?= $view['narrative'];?> </td>
-                        <td> <?= $view['narrative'];?> </td>
+                        <td> <?= $view['timeapplied'];?> </td>
 			</tr>
 			<?php
 			}
@@ -107,7 +107,7 @@
                         <td> <?php echo '<img src="data:image;base64,'.base64_encode($view['blot_photo']).'" alt="Blotter Photo" style="width: 100px; height:100px;">'; ?> </td>
                         <td> <?= $view['contact'];?> </td>
                         <td> <?= $view['narrative'];?> </td>
-                        <td> <?= $view['narrative'];?> </td>
+                        <td> <?= $view['timeapplied'];?> </td>
 			</tr>
 			
 			<?php
