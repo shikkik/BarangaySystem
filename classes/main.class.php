@@ -1609,6 +1609,34 @@ class BMISClass {
         }
     }
 
+    public function update_blotter() {
+        if (isset($_POST['update_bspermit'])) {
+            $id_bspermit = $_GET['id_bspermit'];
+            $lname = $_POST['lname'];
+            $fname = $_POST['fname'];
+            $mi = $_POST['mi'];
+            $houseno = $_POST['houseno'];
+            $street = $_POST['street'];
+            $brgy = $_POST['brgy'];
+            $municipal = $_POST['municipal'];
+            $blot_photo = $_POST['blot_photo'];
+            $contact = $_POST['contact'];
+            $narrative = $_POST['narrative'];
+
+
+            $connection = $this->openConn();
+            $stmt = $connection->prepare("UPDATE tbl_blotter SET lname = ?, fname = ?,
+            mi = ?, bsname = ?, houseno = ?, street = ?, brgy = ?, municipal = ?,
+            bsindustry = ?, aoe = ? WHERE id_blotter = ?");
+            $stmt->execute([$id_bspermit, $lname, $fname, $mi, $houseno,  
+            $street, $brgy, $municipal, $blot_photo, $contact, $narrative]);
+            
+            $message2 = "Complain/Blotter Data Updated";
+            echo "<script type='text/javascript'>alert('$message2');</script>";
+            header("refresh: 0");
+        }
+    }
+
     
 
 }

@@ -53,7 +53,7 @@ $resident = $residentbmis->get_single_bspermit($id_resident);
 
                     <hr>
 
-                    <div class="col-xs-12 col-sm-6 col-md-12"  >
+                    <div class="col-xs-12 col-sm-6 col-md-12">
                         <p class="text-center" style="font-size: 20px; font-size:bold;">OFFICE OF THE BARANGAY CAPTAIN<br><b style="font-size: 28px;"><ins>BUSINESS PERMIT</ins></b></p> <br><br>
                         <div class="container"  >
                         <img src="../BarangaySystem/icons/bpermit.jpg" alt="Snow" style="width:100%;">

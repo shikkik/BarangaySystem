@@ -20,8 +20,8 @@
 
     <!-- Page Heading -->
 
-    <div class="row"> 
-        <div class="col-md-12 text-center"> 
+    <div class="row">
+        <div class="col-md-12 text-center">
             <h3> Barangay ID Card Requests</h3>
         </div>
     </div>
