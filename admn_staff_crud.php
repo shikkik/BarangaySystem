@@ -34,7 +34,7 @@
                     <label class="mtop" >First Name </label>
                     <input type="text" class="form-control" name="fname"  placeholder="Enter first name">
 
-                    <label class="mtop"> Middle Initial </label>
+                    <label class="mtop"> Middle Name </label>
                     <input type="text" class="form-control" name="mi" placeholder="Enter middle initial">
 
                     <label class="mtop">Email </label>

@@ -98,14 +98,14 @@
 
             <!-- Barangay ID -->
             <li class="nav-item">
-                <a class="nav-link" href="staff_table_certofres.php">
+                <a class="nav-link" href="staff_brgyid.php">
                     <i class="fas fa-id-card"></i>
                     <span>Barangay ID</span></a>
             </li>
 
             <!-- Business Permit -->
             <li class="nav-item">
-                <a class="nav-link" href="staff_table_certofres.php">
+                <a class="nav-link" href="staff_bspermit.php">
                     <i class="fas fa-file-contract"></i>
                     <span>Business Permit</span></a>
             </li>
@@ -119,7 +119,7 @@
 
             <!-- Certificate of Indigency -->
             <li class="nav-item">
-                <a class="nav-link" href="staff_indigency.php">
+                <a class="nav-link" href="staff_certofindigency.php">
                     <i class="fas fa-file-alt"></i>
                     <span>Certificate of Indigency</span></a>
             </li>
