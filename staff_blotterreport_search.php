@@ -13,13 +13,14 @@
                 <th> Surname </th>
                 <th> First Name </th>
                 <th> Middle Name </th>
-                <th> Purpose </th>
                 <th> House No. </th>
                 <th> Street </th>
                 <th> Barangay </th>
                 <th> Municipality </th>
-                <th> Status </th>
-                <th> Age </th>
+                <th> Blotter Image </th>
+                <th> Contact # </th>
+                <th> Narrative Report </th>
+                <th> Date & Time Applied</th> 
 			</tr>
 		</thead>
 		<tbody>
@@ -37,8 +38,8 @@
 			<tr>
             <td>    
                         <form action="" method="post">
-                            <a class="btn btn-primary" href="brgyclearance_form.php?id_resident=<?= $view['id_resident'];?>">Generate</a> 
-                            <input type="hidden" name="id_rescert" value="<?= $view['id_rescert'];?>">
+                            <a class="btn btn-primary" href="update_blotter_form.php?id_resident=<?= $view['id_resident'];?>">Update</a> 
+                            
                             
                         </form>
                         </td>
@@ -46,13 +47,14 @@
                         <td> <?= $view['lname'];?> </td>
                         <td> <?= $view['fname'];?> </td>
                         <td> <?= $view['mi'];?> </td>
-                        <td> <?= $view['purpose'];?> </td>
                         <td> <?= $view['houseno'];?> </td>
                         <td> <?= $view['street'];?> </td>
                         <td> <?= $view['brgy'];?> </td>
                         <td> <?= $view['municipal'];?> </td>
-                        <td> <?= $view['status'];?> </td>
-                        <td> <?= $view['age'];?> </td>
+                        <td> <?php echo '<img src="data:image;base64,'.base64_encode($view['blot_photo']).'" alt="Blotter Photo" style="width: 100px; height:100px;">'; ?> </td>
+                        <td> <?= $view['contact'];?> </td>
+                        <td> <?= $view['narrative'];?> </td>
+                        <td> <?= $view['narrative'];?> </td>
 			</tr>
 			<?php
 			}
@@ -72,13 +74,14 @@
                 <th> Surname </th>
                 <th> First Name </th>
                 <th> Middle Name </th>
-                <th> Purpose </th>
                 <th> House No. </th>
                 <th> Street </th>
                 <th> Barangay </th>
                 <th> Municipality </th>
-                <th> Status </th>
-                <th> Age </th>
+                <th> Blotter Image </th>
+                <th> Contact # </th>
+                <th> Narrative Report </th>
+                <th> Date & Time Applied</th> 
 			</tr>
 		</thead>
 		<tbody>
@@ -87,22 +90,23 @@
 			<tr>
             <td>    
                         <form action="" method="post">
-                            <a class="btn btn-primary" href="brgyclearance_form.php?id_resident=<?= $view['id_resident'];?>">Generate</a> 
-                            <input type="hidden" name="id_rescert" value="<?= $view['id_rescert'];?>">
+                        <a class="btn btn-primary" href="update_blotter_form.php?id_resident=<?= $view['id_resident'];?>">Update</a> 
                             
                         </form>
                         </td>
+
                         <td> <?= $view['id_resident'];?> </td> 
                         <td> <?= $view['lname'];?> </td>
                         <td> <?= $view['fname'];?> </td>
                         <td> <?= $view['mi'];?> </td>
-                        <td> <?= $view['purpose'];?> </td>
                         <td> <?= $view['houseno'];?> </td>
                         <td> <?= $view['street'];?> </td>
                         <td> <?= $view['brgy'];?> </td>
                         <td> <?= $view['municipal'];?> </td>
-                        <td> <?= $view['status'];?> </td>
-                        <td> <?= $view['age'];?> </td>
+                        <td> <?php echo '<img src="data:image;base64,'.base64_encode($view['blot_photo']).'" alt="Blotter Photo" style="width: 100px; height:100px;">'; ?> </td>
+                        <td> <?= $view['contact'];?> </td>
+                        <td> <?= $view['narrative'];?> </td>
+                        <td> <?= $view['narrative'];?> </td>
 			</tr>
 			
 			<?php
@@ -113,19 +117,6 @@
 			?>
 		</tbody>
 	</table>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-modal/2.2.6/js/bootstrap-modalmanager.min.js" integrity="sha512-/HL24m2nmyI2+ccX+dSHphAHqLw60Oj5sK8jf59VWtFWZi9vx7jzoxbZmcBeeTeCUc7z1mTs3LfyXGuBU32t+w==" crossorigin="anonymous"></script>
-<!-- responsive tags for screen compatibility -->
-<meta name="viewport" content="width=device-width, initial-scale=1 shrink-to-fit=no">
-<!-- custom css --> 
-<link href="../BarangaySystem/customcss/regiformstyle.css" rel="stylesheet" type="text/css">
-<!-- bootstrap css --> 
-<link href="../BarangaySystem/bootstrap/css/bootstrap.css" rel="stylesheet" type="text/css"> 
-<!-- fontawesome icons -->
-<script src="https://kit.fontawesome.com/67a9b7069e.js" crossorigin="anonymous"></script>
-<script src="../BarangaySystem/bootstrap/js/bootstrap.bundle.js" type="text/javascript"> </script>
-
 <?php
 	}
 $con = null;

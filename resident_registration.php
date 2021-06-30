@@ -106,7 +106,7 @@
     <body >
         <!-- eto yung navbar -->
         <nav class="navbar sticky-top navbar-dark bg-primary">
-            <a class="navbar-brand" href="index.php"> <img src="../BarangaySystem/icons/beverlylogo.png" width="40px" height="40px">&nbsp; 
+            <a class="navbar-brand" href="index.php"> 
             <span style="font-size: 1em;"> Barangay Information & E-Services Management System </span> </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"></button>
             <div class="collapse navbar-collapse" id="navbarNav">

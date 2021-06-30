@@ -5,7 +5,7 @@
    //$bmis->validate_admin();
    $id_resident = $_GET['id_resident'];
    $view = $residentbmis->get_single_blotter($id_resident);
-   $residentbmis->update_resident();
+   $residentbmis->update_blotter();
 
 ?>
 
@@ -141,7 +141,7 @@
                                 <div class="paa">
                                     <input name="id_resident" type="hidden" value="<?= $resident['id_resident']?>">
                                     <button type="button" class="btn btn-dark" data-dismiss="modal">Close</button>
-                                    <button type="submit" name="create_blotter" class="btn btn-primary">Save changes</button>
+                                    <button type="submit" name="update_blotter" class="btn btn-primary">Save changes</button>
                                 </div>
                             </div> 
                             
