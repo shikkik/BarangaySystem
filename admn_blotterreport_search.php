@@ -20,6 +20,7 @@
                 <th> Blotter Image </th>
                 <th> Contact # </th>
                 <th> Narrative Report </th>
+                <th> Date & Time Applied</th> 
 			</tr>
 		</thead>
 		<tbody>
@@ -50,8 +51,9 @@
                         <td> <?= $view['street'];?> </td>
                         <td> <?= $view['brgy'];?> </td>
                         <td> <?= $view['municipal'];?> </td>
-                        <td> <?= $view['blot_photo'];?> </td>
+                        <td> <?php echo '<img src="data:image;base64,'.base64_encode($view['blot_photo']).'" alt="Blotter Photo" style="width: 100px; height:100px;">'; ?> </td>
                         <td> <?= $view['contact'];?> </td>
+                        <td> <?= $view['narrative'];?> </td>
                         <td> <?= $view['narrative'];?> </td>
 			</tr>
 			<?php
@@ -79,6 +81,7 @@
                 <th> Blotter Image </th>
                 <th> Contact # </th>
                 <th> Narrative Report </th>
+                <th> Date & Time Applied</th> 
 			</tr>
 		</thead>
 		<tbody>
@@ -101,8 +104,9 @@
                         <td> <?= $view['street'];?> </td>
                         <td> <?= $view['brgy'];?> </td>
                         <td> <?= $view['municipal'];?> </td>
-                        <td> <?= $view['blot_photo'];?> </td>
+                        <td> <?php echo '<img src="data:image;base64,'.base64_encode($view['blot_photo']).'" alt="Blotter Photo" style="width: 100px; height:100px;">'; ?> </td>
                         <td> <?= $view['contact'];?> </td>
+                        <td> <?= $view['narrative'];?> </td>
                         <td> <?= $view['narrative'];?> </td>
 			</tr>
 			

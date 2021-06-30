@@ -1494,7 +1494,7 @@ class BMISClass {
             $inc_houseno = $_POST['municipal'];
             $inc_street = $_POST['bplace'];
             $inc_brgy = $_POST['bdate'];
-            $inc_municipal = $_POST['res_photo'];
+            $inc_municipal = $_FILES['res_photo'];
 
             $connection = $this->openConn();
             $stmt = $connection->prepare("INSERT INTO tbl_brgyid (`id_brgyid`, `id_resident`, `lname`, `fname`, `mi`,
@@ -1570,7 +1570,7 @@ class BMISClass {
             $street = $_POST['street'];
             $brgy = $_POST['brgy'];
             $municipal = $_POST['municipal'];
-            $blot_photo = $_POST['blot_photo'];
+            $blot_photo = $_FILES['blot_photo'];
             $contact = $_POST['contact'];
             $narrative = $_POST['narrative'];
 
@@ -1606,6 +1606,34 @@ class BMISClass {
             $stmt->execute([$id_blotter]);
 
             header("Refresh:0");
+        }
+    }
+
+    public function update_blotter() {
+        if (isset($_POST['update_bspermit'])) {
+            $id_bspermit = $_GET['id_bspermit'];
+            $lname = $_POST['lname'];
+            $fname = $_POST['fname'];
+            $mi = $_POST['mi'];
+            $houseno = $_POST['houseno'];
+            $street = $_POST['street'];
+            $brgy = $_POST['brgy'];
+            $municipal = $_POST['municipal'];
+            $blot_photo = $_POST['blot_photo'];
+            $contact = $_POST['contact'];
+            $narrative = $_POST['narrative'];
+
+
+            $connection = $this->openConn();
+            $stmt = $connection->prepare("UPDATE tbl_blotter SET lname = ?, fname = ?,
+            mi = ?, bsname = ?, houseno = ?, street = ?, brgy = ?, municipal = ?,
+            bsindustry = ?, aoe = ? WHERE id_blotter = ?");
+            $stmt->execute([$id_bspermit, $lname, $fname, $mi, $houseno,  
+            $street, $brgy, $municipal, $blot_photo, $contact, $narrative]);
+            
+            $message2 = "Complain/Blotter Data Updated";
+            echo "<script type='text/javascript'>alert('$message2');</script>";
+            header("refresh: 0");
         }
     }
 
