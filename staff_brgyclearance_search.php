@@ -13,13 +13,13 @@
                 <th> Surname </th>
                 <th> First Name </th>
                 <th> Middle Name </th>
-                <th> Business Name </th>
+                <th> Purpose </th>
                 <th> House No. </th>
                 <th> Street </th>
                 <th> Barangay </th>
                 <th> Municipality </th>
-                <th> Business Industry </th>
-                <th> Area of Establishment </th>
+                <th> Status </th>
+                <th> Age </th>
 			</tr>
 		</thead>
 		<tbody>
@@ -37,22 +37,22 @@
 			<tr>
             <td>    
                         <form action="" method="post">
-                            <a class="btn btn-primary" href="businesspermit_form.php?id_resident=<?= $view['id_resident'];?>">Generate</a> 
+                            <a class="btn btn-primary" href="rescert_form.php?id_resident=<?= $view['id_resident'];?>">Generate</a> 
                             <input type="hidden" name="id_rescert" value="<?= $view['id_rescert'];?>">
-                            <button class="btn btn-danger" type="submit" name="delete_certofres"> Remove </button>
+                            
                         </form>
                         </td>
                         <td> <?= $view['id_resident'];?> </td> 
                         <td> <?= $view['lname'];?> </td>
                         <td> <?= $view['fname'];?> </td>
                         <td> <?= $view['mi'];?> </td>
-                        <td> <?= $view['bsname'];?> </td>
+                        <td> <?= $view['purpose'];?> </td>
                         <td> <?= $view['houseno'];?> </td>
                         <td> <?= $view['street'];?> </td>
                         <td> <?= $view['brgy'];?> </td>
                         <td> <?= $view['municipal'];?> </td>
-                        <td> <?= $view['bsindustry'];?> </td>
-                        <td> <?= $view['aoe'];?> </td>
+                        <td> <?= $view['status'];?> </td>
+                        <td> <?= $view['age'];?> </td>
 			</tr>
 			<?php
 			}
@@ -72,13 +72,13 @@
                 <th> Surname </th>
                 <th> First Name </th>
                 <th> Middle Name </th>
-                <th> Business Name </th>
+                <th> Purpose </th>
                 <th> House No. </th>
                 <th> Street </th>
                 <th> Barangay </th>
                 <th> Municipality </th>
-                <th> Business Industry </th>
-                <th> Area of Establishment </th>
+                <th> Status </th>
+                <th> Age </th>
 			</tr>
 		</thead>
 		<tbody>
@@ -87,22 +87,22 @@
 			<tr>
             <td>    
                         <form action="" method="post">
-                            <a class="btn btn-primary" href="businesspermit_form.php?id_resident=<?= $view['id_resident'];?>">Generate</a> 
+                            <a class="btn btn-primary" href="rescert_form.php?id_resident=<?= $view['id_resident'];?>">Generate</a> 
                             <input type="hidden" name="id_rescert" value="<?= $view['id_rescert'];?>">
-                            <button class="btn btn-danger" type="submit" name="delete_certofres"> Remove </button>
+                            
                         </form>
                         </td>
                         <td> <?= $view['id_resident'];?> </td> 
                         <td> <?= $view['lname'];?> </td>
                         <td> <?= $view['fname'];?> </td>
                         <td> <?= $view['mi'];?> </td>
-                        <td> <?= $view['bsname'];?> </td>
+                        <td> <?= $view['purpose'];?> </td>
                         <td> <?= $view['houseno'];?> </td>
                         <td> <?= $view['street'];?> </td>
                         <td> <?= $view['brgy'];?> </td>
                         <td> <?= $view['municipal'];?> </td>
-                        <td> <?= $view['bsindustry'];?> </td>
-                        <td> <?= $view['aoe'];?> </td>
+                        <td> <?= $view['status'];?> </td>
+                        <td> <?= $view['age'];?> </td>
 			</tr>
 			
 			<?php

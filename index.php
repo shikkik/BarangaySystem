@@ -15,11 +15,6 @@
     $bmis->login();
 
    
-    
-
-    
-    
-
 ?>
 
 <!DOCTYPE html> 

@@ -13,6 +13,88 @@ $resident = $residentbmis->get_single_bspermit($id_resident);
          }
     }
     @page { size: auto;  margin: 4mm; }
+
+    .card {
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+  width: 55%;
+  display: flex;
+  
+  
+}
+
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.container {
+  padding: 2px 16px;
+
+}
+
+.photo img {
+			width: 180px;
+    
+flex-basis: 40%;
+position: absolute;
+  top: 47%;
+  left: 17%;
+  transform: translate(-50%, -50%);
+		}
+
+.text {
+  font-size: 20px;
+  padding-left: 20px;
+}
+ /* Container holding the image and the text */
+ .container {
+  position: relative;
+  text-align: left;
+  color: black;
+}
+
+/* Bottom left text */
+.bottom-left {
+  position: absolute;
+  bottom: 50px;
+  left: 80px;
+}
+
+.bbottom-left {
+  position: absolute;
+  bottom: 8px;
+  left: 80px;
+}
+
+/* Top left text */
+.top-left {
+  position: absolute;
+  top: 8px;
+  left: 16px;
+}
+
+/* Top right text */
+.top-right {
+  position: absolute;
+  top: 8px;
+  right: 16px;
+}
+
+/* Bottom right text */
+.bottom-right {
+  position: absolute;
+  bottom: 8px;
+  right: 16px;
+}
+
+/* Centered text */
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+} 
+
 </style>
 
  <head>

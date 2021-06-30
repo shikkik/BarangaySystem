@@ -9,8 +9,6 @@
 
     $residentbmis->profile_update();
 
-    
-    
 ?>
 
 <!DOCTYPE html> 
@@ -41,7 +39,7 @@
       }
           @media (max-width:767px) {
       .shfooter ul {
-              margin-bottom: 0;
+            margin-bottom: 0;
       }
 
       .shfooter .collapse {
@@ -136,9 +134,6 @@
                                 <h5> Sex: </h5> <h5> <br>
                                 <h5>Age:</h5> <br>
                                 <h5>Status:</h5> <br>
-                                <h5>House No: </h5> <br>
-                                <h5>Street: </h5> <br>
-                                <h5>Barangay: </h5> <br>
                                 <h5>Contact:</h5> <br>
                             </div>
 
@@ -148,17 +143,22 @@
                                 <h5><?= $resident['sex'];?> </h5><br>
                                 <input class="form-control" type="text" name="age" value="<?= $resident['age'];?>"><br>
                                 <input class="form-control" type="text" name="status" value="<?= $resident['status'];?>"><br>
-                                <input class="form-control" type="text" name="address" value="<?= $resident['address'];?>"><br>
                                 <input class="form-control" type="text" name="contact" value="<?= $resident['contact'];?>"><br>
                             </div>
 
-                            <div class="col-md-2"> 
+                            <div class="col-md-2">
+                                <h5>House No: </h5> <br>
+                                <h5>Street: </h5> <br>
+                                <h5>Barangay: </h5> <br><br>
                                 <h5> Birth Date: </h5> <br>
                                 <h5> Birth Place: </h5> <br>
                                 <h5> Nationality: </h5> <br>
                             </div>
 
-                            <div class="col-md-4"> 
+                            <div class="col-md-4">
+                                <input class="form-control" type="text" name="houseno" value="<?= $resident['houseno'];?>"><br>
+                                <input class="form-control" type="text" name="street" value="<?= $resident['street'];?>"><br>
+                                <input class="form-control" type="text" name="brgy" value="<?= $resident['brgy'];?>"><br>
                                 <h5> <?= $resident['bdate'];?> </h5><br>
                                 <h5> <?= $resident['bplace'];?> </h5><br>
                                 <h5> <?= $resident['nationality'];?> </h5><br>

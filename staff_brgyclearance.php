@@ -4,7 +4,6 @@
     ini_set('display_errors',0);
     require('classes/resident.class.php');
     $userdetails = $bmis->get_userdata();
-    $bmis->validate_admin();
     $bmis->delete_clearance();
     $view = $bmis->view_clearance();
     $id_resident = $_GET['id_resident'];
@@ -13,7 +12,7 @@
 ?>
 
 <?php 
-    include('dashboard_sidebar_start.php');
+    include('dashboard_sidebar_start_staff.php');
 ?>
     <!-- Begin Page Content -->
     <div class="container-fluid">
@@ -46,7 +45,7 @@
         <div class="col-md-1"> </div>
         <div class="col-md-10"> 
             <?php 
-                include('admn_brgyclearance_search.php');
+                include('staff_brgyclearance_search.php');
             ?>
         </div>
         <div class="col-md-1"> </div>
