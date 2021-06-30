@@ -199,7 +199,10 @@
         <!-- eto yung navbar -->
 
         <nav class="navbar navbar-dark bg-primary sticky-top">
+<<<<<<< HEAD
             <a class="navbar-brand" href="index.php"> 
+=======
+>>>>>>> bb9639219894617e7efa51d6868f4ce2e0922b8e
             <a class="navbar-brand" href="resident_homepage.php">Barangay Information & E-Services Management System</a>
 
             <div class="dropdown ml-auto">
