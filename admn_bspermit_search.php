@@ -37,7 +37,7 @@
 			<tr>
             <td>    
                         <form action="" method="post">
-                            <a class="btn btn-primary" href="rescert_form.php?id_resident=<?= $view['id_resident'];?>">Generate</a> 
+                            <a class="btn btn-primary" href="businesspermit_form.php?id_resident=<?= $view['id_resident'];?>">Generate</a> 
                             <input type="hidden" name="id_rescert" value="<?= $view['id_rescert'];?>">
                             <button class="btn btn-danger" type="submit" name="delete_certofres"> Remove </button>
                         </form>
@@ -87,7 +87,7 @@
 			<tr>
             <td>    
                         <form action="" method="post">
-                            <a class="btn btn-primary" href="rescert_form.php?id_resident=<?= $view['id_resident'];?>">Generate</a> 
+                            <a class="btn btn-primary" href="businesspermit_form.php?id_resident=<?= $view['id_resident'];?>">Generate</a> 
                             <input type="hidden" name="id_rescert" value="<?= $view['id_rescert'];?>">
                             <button class="btn btn-danger" type="submit" name="delete_certofres"> Remove </button>
                         </form>

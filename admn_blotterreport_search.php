@@ -17,10 +17,10 @@
                 <th> Street </th>
                 <th> Barangay </th>
                 <th> Municipality </th>
-                <th> Birth Date </th>
-                <th> Birth Place </th>
-                <th> Emergency Contact Person </th>
-                <th> Emergency Contact Number </th>
+                <th> Blotter Image </th>
+                <th> Contact # </th>
+                <th> Narrative Report </th>
+                <th> Date & Time Applied</th> 
 			</tr>
 		</thead>
 		<tbody>
@@ -38,7 +38,7 @@
 			<tr>
             <td>    
                         <form action="" method="post">
-                            <a class="btn btn-primary" href="barangayid_form.php?id_resident=<?= $view['id_resident'];?>">Generate</a> 
+                            <a class="btn btn-primary" href="rescert_form.php?id_resident=<?= $view['id_resident'];?>">Update</a> 
                             <input type="hidden" name="id_rescert" value="<?= $view['id_rescert'];?>">
                             <button class="btn btn-danger" type="submit" name="delete_certofres"> Remove </button>
                         </form>
@@ -51,10 +51,10 @@
                         <td> <?= $view['street'];?> </td>
                         <td> <?= $view['brgy'];?> </td>
                         <td> <?= $view['municipal'];?> </td>
-                        <td> <?= $view['bdate'];?> </td>
-                        <td> <?= $view['bplace'];?> </td>
-                        <td> <?= $view['inc_lname'];?>, <?= $view['inc_fname'];?> </td>
-                        <td> <?= $view['inc_contact'];?> </td>
+                        <td> <?php echo '<img src="data:image;base64,'.base64_encode($view['blot_photo']).'" alt="Blotter Photo" style="width: 100px; height:100px;">'; ?> </td>
+                        <td> <?= $view['contact'];?> </td>
+                        <td> <?= $view['narrative'];?> </td>
+                        <td> <?= $view['narrative'];?> </td>
 			</tr>
 			<?php
 			}
@@ -78,10 +78,10 @@
                 <th> Street </th>
                 <th> Barangay </th>
                 <th> Municipality </th>
-                <th> Birth Date </th>
-                <th> Birth Place </th>
-                <th> Emergency Contact Person </th>
-                <th> Emergency Contact Number </th>
+                <th> Blotter Image </th>
+                <th> Contact # </th>
+                <th> Narrative Report </th>
+                <th> Date & Time Applied</th> 
 			</tr>
 		</thead>
 		<tbody>
@@ -90,7 +90,7 @@
 			<tr>
             <td>    
                         <form action="" method="post">
-                            <a class="btn btn-primary" href="barangayid_form.php?id_resident=<?= $view['id_resident'];?>">Generate</a> 
+                            <a class="btn btn-primary" href="rescert_form.php?id_resident=<?= $view['id_resident'];?>">Update</a> 
                             <input type="hidden" name="id_rescert" value="<?= $view['id_rescert'];?>">
                             <button class="btn btn-danger" type="submit" name="delete_certofres"> Remove </button>
                         </form>
@@ -104,10 +104,10 @@
                         <td> <?= $view['street'];?> </td>
                         <td> <?= $view['brgy'];?> </td>
                         <td> <?= $view['municipal'];?> </td>
-                        <td> <?= $view['bdate'];?> </td>
-                        <td> <?= $view['bplace'];?> </td>
-                        <td> <?= $view['inc_lname'];?>, <?= $view['inc_fname'];?> </td>
-                        <td> <?= $view['inc_contact'];?> </td>
+                        <td> <?php echo '<img src="data:image;base64,'.base64_encode($view['blot_photo']).'" alt="Blotter Photo" style="width: 100px; height:100px;">'; ?> </td>
+                        <td> <?= $view['contact'];?> </td>
+                        <td> <?= $view['narrative'];?> </td>
+                        <td> <?= $view['narrative'];?> </td>
 			</tr>
 			
 			<?php

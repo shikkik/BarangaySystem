@@ -2,7 +2,7 @@
 require('classes/resident.class.php');
 $userdetails = $residentbmis->get_userdata();
 $id_resident = $_GET['id_resident'];
-$resident = $residentbmis->get_single_certofres($id_resident);
+$resident = $residentbmis->get_single_brgyid($id_resident);
   ?>
 <!DOCTYPE html>
 <html id="clearance">
@@ -140,16 +140,16 @@ position: absolute;
                         
                         <div class="photo"><img src="../BarangaySystem/icons/2x2.jpg"></div>
                         <div class="centered">
-                          <label style="position:relative; left:80px; bottom:30px; font-size:20px;color:white">  <b>Mendros Peter James T. </b> </label>
-                          <label style="position:relative; left:80px;  font-size:15px;color:white">  <b>0356 Happy Land Carmencita Street Dona <br> Carmen Commonwealth Quezon City </b> </label>
+                          <label style="position:relative; left:80px; bottom:30px; font-size:20px;color:white">  <b><?= $resident['lname'];?>, <?= $resident['fname'];?> <?= $resident['mi'];?> </b> </label>
+                          <label style="position:relative; left:65px;  font-size:15px;color:white">  <b><?= $resident['houseno'];?> <?= $resident['street'];?> <?= $resident['brgy'];?> <?= $resident['municipal'];?> </b> </label>
                         </div>
                         <div class="bottom-left">
-                        <label style="position:relative; left:190px; bottom:30px; font-size:15px; color:white">  <b>01/14/200 </b> </label>
-                        <label style="position:relative; left:210px; bottom:30px; font-size:15px; color:white">  <b>Quezon City </b> </label>
+                        <label style="position:relative; left:170px; bottom:30px; font-size:15px; color:white">  <b><?= $resident['bdate'];?></b> </label>
+                        <label style="position:relative; left:190px; bottom:30px; font-size:15px; color:white">  <b><?= $resident['bplace'];?></b> </label>
                         <label style="position:relative; left:240px; bottom:30px; font-size:15px; color:white">  <b>2 </b> </label>
                         </div>
                         <div class="bbottom-left">
-                        <label style="position:relative; left:30px; bottom:20px; font-size:15px; color:white">  <b>01/14/200 </b> </label>
+                        <label style="position:relative; left:30px; bottom:20px; font-size:15px; color:white">  <b>01</b> </label>
                         </div>
                       </div> 
                       <br><br><br><br>
@@ -158,9 +158,9 @@ position: absolute;
                         <img src="../BarangaySystem/icons/IDBACK.jpg" alt="Snow" style="width:80%;">
 
                         <div class="top-left">
-                          <label style="position:relative; left:160px; top:30px; font-size:12px;font-family:Lapus;color:white">  Mendros Peter James T.  </label>
-                          <label style="position:relative; left:30px; top:45px; font-size:12px;color:white">  <b>0356 Happy Land Carmencita Street  </b> </label>
-                          <label style="position:relative; left:-180px; top:65px; font-size:12px;color:white">  <b>09569424380 </b> </label>
+                          <label style="position:relative; left:160px; top:30px; font-size:12px;color:white">  <?= $resident['inc_lname'];?>, <?= $resident['inc_fname'];?> <?= $resident['inc_mi'];?>  </label>
+                          <label style="position:relative; left:-13px; top:45px; font-size:12px;color:white">  <b><b><?= $resident['inc_houseno'];?> <?= $resident['inc_street'];?> <?= $resident['inc_brgy'];?> </b> </label>
+                          <label style="position:relative; left:-218px; top:65px; font-size:12px;color:white">  <b><?= $resident['inc_contact'];?></b> </label>
                         </div>
                         
                         <div class="bbottom-left">

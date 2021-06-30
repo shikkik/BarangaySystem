@@ -5,8 +5,8 @@
     require('classes/resident.class.php');
     $userdetails = $bmis->get_userdata();
     $bmis->validate_admin();
-    $bmis->delete_brgyid();
-    $view = $bmis->view_brgyid();
+    $bmis->delete_blotter();
+    $view = $bmis->view_blotter();
     $id_resident = $_GET['id_resident'];
     $resident = $residentbmis->get_single_certofres($id_resident);
    
@@ -20,9 +20,9 @@
 
     <!-- Page Heading -->
 
-    <div class="row">
-        <div class="col-md-12 text-center">
-            <h3> Barangay ID Card Requests</h3>
+    <div class="row"> 
+        <div class="col-md-12 text-center"> 
+            <h3> Complain/Blotter Report Data</h3>
         </div>
     </div>
 
@@ -46,7 +46,7 @@
         <div class="col-md-1"> </div>
         <div class="col-md-10"> 
             <?php 
-                include('admn_brgyid_search.php');
+                include('admn_blotterreport_search.php');
             ?>
         </div>
         <div class="col-md-1"> </div>

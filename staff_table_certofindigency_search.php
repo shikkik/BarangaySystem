@@ -1,7 +1,7 @@
 <?php
 	// require the database connection
 	require 'classes/conn.php';
-	if(isset($_POST['search_bspermit'])){
+	if(isset($_POST['search_certofindigency'])){
 		$keyword = $_POST['keyword'];
 ?>
 	<table class="table table-dark table-responsive" >
@@ -13,14 +13,13 @@
                 <th> Surname </th>
                 <th> First Name </th>
                 <th> Middle Name </th>
-                <th> House No. </th>
+                <th> Nationality </th>
+                <th> House Number </th>
                 <th> Street </th>
                 <th> Barangay </th>
                 <th> Municipality </th>
-                <th> Birth Date </th>
-                <th> Birth Place </th>
-                <th> Emergency Contact Person </th>
-                <th> Emergency Contact Number </th>
+                <th> Purpose </th>
+                <th> Date </th>
 			</tr>
 		</thead>
 		<tbody>
@@ -28,9 +27,9 @@
                     
 			<?php
 				
-				$stmnt = $conn->prepare("SELECT * FROM `tbl_bspermit` WHERE `lname` LIKE '%$keyword%' or  `mi` LIKE '%$keyword%' or  `fname` LIKE '%$keyword%' 
-				or `bsname` LIKE '%$keyword%' or  `id_resident` LIKE '%$keyword%' or  `houseno` LIKE '%$keyword%' or  `street` LIKE '%$keyword%'
-				or `brgy` LIKE '%$keyword%' or `municipal` LIKE '%$keyword%' or `bsindustry` LIKE '%$keyword%' or `aoe` LIKE '%$keyword%' ");
+				$stmnt = $conn->prepare("SELECT * FROM `tbl_rescert` WHERE `lname` LIKE '%$keyword%' or  `mi` LIKE '%$keyword%' or  `fname` LIKE '%$keyword%' 
+				 or  `id_resident` LIKE '%$keyword%' or  `nationality` LIKE '%$keyword%' or  `houseno` LIKE '%$keyword%'
+				or `street` LIKE '%$keyword%' or `brgy` LIKE '%$keyword%' or `municipal` LIKE '%$keyword%' or `date` LIKE '%$keyword%' or `purpose` LIKE '%$keyword%'");
 				$stmnt->execute();
 				
 				while($view = $stmnt->fetch()){
@@ -38,23 +37,22 @@
 			<tr>
             <td>    
                         <form action="" method="post">
-                            <a class="btn btn-primary" href="barangayid_form.php?id_resident=<?= $view['id_resident'];?>">Generate</a> 
-                            <input type="hidden" name="id_rescert" value="<?= $view['id_rescert'];?>">
-                            <button class="btn btn-danger" type="submit" name="delete_certofres"> Remove </button>
+                            <a class="btn btn-primary" href="indigency_form.php?id_resident=<?= $view['id_resident'];?>">Generate</a> 
+                            <input type="hidden" name="id_indigency" value="<?= $view['id_indigency'];?>">
                         </form>
                         </td>
                         <td> <?= $view['id_resident'];?> </td> 
                         <td> <?= $view['lname'];?> </td>
                         <td> <?= $view['fname'];?> </td>
                         <td> <?= $view['mi'];?> </td>
+                        <td> <?= $view['nationality'];?> </td>
                         <td> <?= $view['houseno'];?> </td>
                         <td> <?= $view['street'];?> </td>
                         <td> <?= $view['brgy'];?> </td>
                         <td> <?= $view['municipal'];?> </td>
-                        <td> <?= $view['bdate'];?> </td>
-                        <td> <?= $view['bplace'];?> </td>
-                        <td> <?= $view['inc_lname'];?>, <?= $view['inc_fname'];?> </td>
-                        <td> <?= $view['inc_contact'];?> </td>
+                        <td> <?= $view['purpose'];?> </td>
+                        <td> <?= $view['date'];?> </td>
+
 			</tr>
 			<?php
 			}
@@ -69,19 +67,18 @@
 <table class="table table-dark table-responsive">
 		<thead >
 			<tr>
-                <th> Actions</th>
+            <th> Actions</th>
                 <th> Resident ID </th>
                 <th> Surname </th>
                 <th> First Name </th>
                 <th> Middle Name </th>
-                <th> House No. </th>
+                <th> Nationality </th>
+                <th> House Number </th>
                 <th> Street </th>
                 <th> Barangay </th>
                 <th> Municipality </th>
-                <th> Birth Date </th>
-                <th> Birth Place </th>
-                <th> Emergency Contact Person </th>
-                <th> Emergency Contact Number </th>
+                <th> Purpose </th>
+                <th> Date </th>
 			</tr>
 		</thead>
 		<tbody>
@@ -90,24 +87,22 @@
 			<tr>
             <td>    
                         <form action="" method="post">
-                            <a class="btn btn-primary" href="barangayid_form.php?id_resident=<?= $view['id_resident'];?>">Generate</a> 
-                            <input type="hidden" name="id_rescert" value="<?= $view['id_rescert'];?>">
-                            <button class="btn btn-danger" type="submit" name="delete_certofres"> Remove </button>
+                            <a class="btn btn-primary" href="indigency_form.php?id_resident=<?= $view['id_resident'];?>">Generate</a> 
+                            <input type="hidden" name="id_indigency" value="<?= $view['id_indigency'];?>">
+                            
                         </form>
                         </td>
-
                         <td> <?= $view['id_resident'];?> </td> 
                         <td> <?= $view['lname'];?> </td>
                         <td> <?= $view['fname'];?> </td>
                         <td> <?= $view['mi'];?> </td>
+                        <td> <?= $view['nationality'];?> </td>
                         <td> <?= $view['houseno'];?> </td>
                         <td> <?= $view['street'];?> </td>
                         <td> <?= $view['brgy'];?> </td>
                         <td> <?= $view['municipal'];?> </td>
-                        <td> <?= $view['bdate'];?> </td>
-                        <td> <?= $view['bplace'];?> </td>
-                        <td> <?= $view['inc_lname'];?>, <?= $view['inc_fname'];?> </td>
-                        <td> <?= $view['inc_contact'];?> </td>
+                        <td> <?= $view['purpose'];?> </td>
+                         <td> <?= $view['date'];?> </td>
 			</tr>
 			
 			<?php
