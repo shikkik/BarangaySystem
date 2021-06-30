@@ -1494,7 +1494,7 @@ class BMISClass {
             $inc_houseno = $_POST['municipal'];
             $inc_street = $_POST['bplace'];
             $inc_brgy = $_POST['bdate'];
-            $inc_municipal = $_POST['res_photo'];
+            $inc_municipal = $_FILES['res_photo'];
 
             $connection = $this->openConn();
             $stmt = $connection->prepare("INSERT INTO tbl_brgyid (`id_brgyid`, `id_resident`, `lname`, `fname`, `mi`,
@@ -1570,7 +1570,7 @@ class BMISClass {
             $street = $_POST['street'];
             $brgy = $_POST['brgy'];
             $municipal = $_POST['municipal'];
-            $blot_photo = $_POST['blot_photo'];
+            $blot_photo = $_FILES['blot_photo'];
             $contact = $_POST['contact'];
             $narrative = $_POST['narrative'];
 
