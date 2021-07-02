@@ -127,7 +127,7 @@
     <body >
         <!-- eto yung navbar -->
         <nav class="navbar navbar-dark bg-primary sticky-top">
-            <a class="navbar-brand" href="resident_homepage.php">Barangay Information & E-Services Management System</a>
+            <a class="navbar-brand" style="color: white;">Barangay Information & E-Services Management System</a>
         </nav>
 
         <div class="container-fluid"  style="margin-top: 4em;">
