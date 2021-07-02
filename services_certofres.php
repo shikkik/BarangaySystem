@@ -89,7 +89,7 @@
             .card4 {
                 width: 195px;
                 height: 210px;
-                overflow: hidden;
+                overflow: auto;
                 margin: auto;
                 color: white;
             }

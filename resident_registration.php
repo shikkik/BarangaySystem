@@ -128,17 +128,6 @@
         <!-- eto yung navbar -->
         <nav class="navbar navbar-dark bg-primary sticky-top">
             <a class="navbar-brand" href="resident_homepage.php">Barangay Information & E-Services Management System</a>
-
-            <div class="dropdown ml-auto">
-                <button class="btn btn-primary dropdown-toggle" style="margin-right: 2px;" type="button" data-toggle="dropdown"><?= $userdetails['surname'];?>, <?= $userdetails['firstname'];?>
-                    <span class="caret" style="margin-left: 2px;"></span>
-                </button>
-                <ul class="dropdown-menu" style="width: 175px;" >
-                    <a class="btn" href="resident_profile.php?id_resident=<?= $userdetails['id_resident'];?>"> <i class="fas fa-user"> &nbsp; </i>Personal Profile  </a>
-                    <a class="btn" href="resident_changepass.php?id_resident=<?= $userdetails['id_resident'];?>"> <i class="fas fa-lock" >&nbsp;</i> Change Password  </a>
-                    <a class="btn" href="logout.php"> <i class="fas fa-sign-out-alt">&nbsp;</i> Logout  </a>
-                </ul>
-            </div>
         </nav>
 
         <div class="container-fluid"  style="margin-top: 4em;">

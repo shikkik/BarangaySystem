@@ -17,10 +17,10 @@
                 <th> Street </th>
                 <th> Barangay </th>
                 <th> Municipality </th>
-                <th> Birth Date </th>
-                <th> Birth Place </th>
-                <th> Emergency Contact Person </th>
-                <th> Emergency Contact Number </th>
+                <th> Blotter Image </th>
+                <th> Contact # </th>
+                <th> Narrative Report </th>
+                <th> Date & Time Applied</th> 
 			</tr>
 		</thead>
 		<tbody>
@@ -38,9 +38,9 @@
 			<tr>
             <td>    
                         <form action="" method="post">
-                            <a class="btn btn-primary" href="barangayid_form.php?id_resident=<?= $view['id_resident'];?>">Generate</a> 
-                            <input type="hidden" name="id_brgyid" value="<?= $view['id_brgyid'];?>">
-                            <button class="btn btn-danger" type="submit" name="delete_brgyid"> Remove </button>
+                            <a class="btn btn-primary" href="update_blotter_form.php?id_resident=<?= $view['id_resident'];?>">Update</a> 
+                            
+                            
                         </form>
                         </td>
                         <td> <?= $view['id_resident'];?> </td> 
@@ -51,10 +51,10 @@
                         <td> <?= $view['street'];?> </td>
                         <td> <?= $view['brgy'];?> </td>
                         <td> <?= $view['municipal'];?> </td>
-                        <td> <?= $view['bdate'];?> </td>
-                        <td> <?= $view['bplace'];?> </td>
-                        <td> <?= $view['inc_lname'];?>, <?= $view['inc_fname'];?> </td>
-                        <td> <?= $view['inc_contact'];?> </td>
+                        <td> <?php echo '<img src="data:image;base64,'.base64_encode($view['blot_photo']).'" alt="Blotter Photo" style="width: 100px; height:100px;">'; ?> </td>
+                        <td> <?= $view['contact'];?> </td>
+                        <td> <?= $view['narrative'];?> </td>
+                        <td> <?= $view['narrative'];?> </td>
 			</tr>
 			<?php
 			}
@@ -78,10 +78,10 @@
                 <th> Street </th>
                 <th> Barangay </th>
                 <th> Municipality </th>
-                <th> Birth Date </th>
-                <th> Birth Place </th>
-                <th> Emergency Contact Person </th>
-                <th> Emergency Contact Number </th>
+                <th> Blotter Image </th>
+                <th> Contact # </th>
+                <th> Narrative Report </th>
+                <th> Date & Time Applied</th> 
 			</tr>
 		</thead>
 		<tbody>
@@ -90,9 +90,8 @@
 			<tr>
             <td>    
                         <form action="" method="post">
-                            <a class="btn btn-primary" href="barangayid_form.php?id_resident=<?= $view['id_resident'];?>">Generate</a> 
-                            <input type="hidden" name="id_brgyid" value="<?= $view['id_brgyid'];?>">
-                            <button class="btn btn-danger" type="submit" name="delete_brgyid"> Remove </button>
+                        <a class="btn btn-primary" href="update_blotter_form.php?id_resident=<?= $view['id_resident'];?>">Update</a> 
+                            
                         </form>
                         </td>
 
@@ -104,10 +103,10 @@
                         <td> <?= $view['street'];?> </td>
                         <td> <?= $view['brgy'];?> </td>
                         <td> <?= $view['municipal'];?> </td>
-                        <td> <?= $view['bdate'];?> </td>
-                        <td> <?= $view['bplace'];?> </td>
-                        <td> <?= $view['inc_lname'];?>, <?= $view['inc_fname'];?> </td>
-                        <td> <?= $view['inc_contact'];?> </td>
+                        <td> <?php echo '<img src="data:image;base64,'.base64_encode($view['blot_photo']).'" alt="Blotter Photo" style="width: 100px; height:100px;">'; ?> </td>
+                        <td> <?= $view['contact'];?> </td>
+                        <td> <?= $view['narrative'];?> </td>
+                        <td> <?= $view['narrative'];?> </td>
 			</tr>
 			
 			<?php

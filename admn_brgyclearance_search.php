@@ -87,9 +87,9 @@
 			<tr>
             <td>    
                         <form action="" method="post">
-                            <a class="btn btn-primary" href="rescert_form.php?id_resident=<?= $view['id_resident'];?>">Generate</a> 
-                            <input type="hidden" name="id_rescert" value="<?= $view['id_rescert'];?>">
-                            <button class="btn btn-danger" type="submit" name="delete_certofres"> Remove </button>
+                            <a class="btn btn-primary" href="brgyclearance_form.php?id_resident=<?= $view['id_resident'];?>">Generate</a> 
+                            <input type="hidden" name="id_clearance" value="<?= $view['id_clearance'];?>">
+                            <button class="btn btn-danger" type="submit" name="delete_clearance"> Remove </button>
                         </form>
                         </td>
                         <td> <?= $view['id_resident'];?> </td> 

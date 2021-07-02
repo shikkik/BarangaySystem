@@ -124,20 +124,17 @@
 
     <body> 
         <!-- eto yung navbar -->
-        <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top">
+        <nav class="navbar navbar-dark bg-primary sticky-top">
             <a class="navbar-brand" href="resident_homepage.php">Barangay Information & E-Services Management System</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
 
             <div class="dropdown ml-auto">
-                <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown"><?= $userdetails['surname'];?>, <?= $userdetails['firstname'];?>
-                    <span class="caret"></span>
+                <button class="btn btn-primary dropdown-toggle" style="margin-right: 2px;" type="button" data-toggle="dropdown"><?= $userdetails['surname'];?>, <?= $userdetails['firstname'];?>
+                    <span class="caret" style="margin-left: 2px;"></span>
                 </button>
-                <ul class="dropdown-menu">
-                    <a class="btn" href="resident_profile.php?id_resident=<?= $userdetails['id_resident'];?>"> <i class="fas fa-user" style="padding: 0.5em;"></i>Personal Profile  </a>
-                    <a class="btn" href="resident_changepass.php?id_resident=<?= $userdetails['id_resident'];?>"> <i class="fas fa-lock" style="padding: 0.5em;"></i>Change Password  </a>
-                    <a class="btn" href="logout.php"> <i class="fas fa-sign-out-alt" style="padding: 0.5em;"></i> Logout  </a>
+                <ul class="dropdown-menu" style="width: 175px;" >
+                    <a class="btn" href="resident_profile.php?id_resident=<?= $userdetails['id_resident'];?>"> <i class="fas fa-user"> &nbsp; </i>Personal Profile  </a>
+                    <a class="btn" href="resident_changepass.php?id_resident=<?= $userdetails['id_resident'];?>"> <i class="fas fa-lock" >&nbsp;</i> Change Password  </a>
+                    <a class="btn" href="logout.php"> <i class="fas fa-sign-out-alt">&nbsp;</i> Logout  </a>
                 </ul>
             </div>
         </nav>
@@ -158,17 +155,20 @@
                                             <br>
                                             <form method="post">
                                             
-                                            <label> Current Password </label>
-                                            <input class="form-control" type="password" name="oldpassword" placeholder="Current Passsword" require>
+                                            <label> Current Password: </label>
+                                            <input class="form-control" type="password" name="oldpassword" placeholder="Enter Current Password" require>
                                             <input class="form-control" type="hidden" name="oldpasswordverify" value="<?= $userdetails['password']?>">
-                                            <label> New Password </label>
-                                            <input class="form-control" type="password" name="newpassword" placeholder="New Passsword" require>
-                                            <label> Verify Password </label>
-                                            <input class="form-control" type="password" name="checkpassword" placeholder="Verify Passsword" require>
+                                            <br>
+                                            <label> New Password: </label>
+                                            <input class="form-control" type="password" name="newpassword" placeholder="Enter New Password" require>
+                                            <br>
+                                            <label> Verify Password: </label>
+                                            <input class="form-control" type="password" name="checkpassword" placeholder="Enter Verify Password" require>
 
                                             <br>
+                                            <br>
 
-                                            <button class="btn btn-primary" type="submit" name="resident_changepass"> Change Password </button>
+                                            <button class="btn btn-primary" type="submit" style="margin-left: 35%;" name="resident_changepass"> Change Password </button>
                                             </form>
                                         </div>  
                                     </div>   
@@ -276,7 +276,7 @@
                         </div>
 
                         <ul class="list-unstyled collapse" id="OtherServices">
-                            <li><a href="#">Blotter</a></li>
+                            <li><a href="#">Peace and Order</a></li>
                         </ul>
                     </div>
 

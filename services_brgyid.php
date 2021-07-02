@@ -80,18 +80,10 @@
             background: #555; 
             }
 
-            .card5 {
-                width: 195px;
-                height: 210px;
-                overflow: auto;
-                margin: auto;
-                color: white;
-            }
-
             .card4 {
                 width: 195px;
                 height: 210px;
-                overflow: hidden;
+                overflow: auto;
                 margin: auto;
                 color: white;
             }
@@ -219,6 +211,7 @@
         <!-- eto yung navbar -->
 
         <nav class="navbar navbar-dark bg-primary sticky-top">
+            <a class="navbar-brand" href="index.php"> 
             <a class="navbar-brand" href="resident_homepage.php">Barangay Information & E-Services Management System</a>
 
             <div class="dropdown ml-auto">
