@@ -43,7 +43,7 @@
                 margin-top: 5%;
                 margin-bottom: 8%;
                 font-size: 25px;
-                letter-spacing: 3px;
+                letter-spacing: 2px;
             }
 
             .paa
@@ -189,6 +189,27 @@
                 }
                 }
 
+            /* Contact Chip */
+
+            .chip {
+            display: inline-block;
+            padding: 0 25px;
+            height: 50px;
+            line-height: 50px;
+            border-radius: 25px;
+            background-color: #2C54C1;
+            margin-top: 5px;
+            }
+
+            .chip img {
+            float: left;
+            margin: 0 10px 0 -25px;
+            height: 50px;
+            width: 50px;
+            border-radius: 50%;
+            }
+
+
         </style>
   </head>
 
@@ -196,17 +217,16 @@
 
         <!-- eto yung navbar -->
         <nav class="navbar navbar-dark bg-primary sticky-top">
-            <a class="navbar-brand" href="index.php">  
             <a class="navbar-brand" href="resident_homepage.php">Barangay Information & E-Services Management System</a>
 
             <div class="dropdown ml-auto">
-                <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown"><?= $userdetails['surname'];?>, <?= $userdetails['firstname'];?>
-                    <span class="caret"></span>
+                <button class="btn btn-primary dropdown-toggle" style="margin-right: 2px;" type="button" data-toggle="dropdown"><?= $userdetails['surname'];?>, <?= $userdetails['firstname'];?>
+                    <span class="caret" style="margin-left: 2px;"></span>
                 </button>
-                <ul class="dropdown-menu">
-                    <a class="btn" href="resident_profile.php?id_resident=<?= $userdetails['id_resident'];?>"> <i class="fas fa-user" style="padding: 0.5em;"></i>Personal Profile  </a>
-                    <a class="btn" href="resident_changepass.php?id_resident=<?= $userdetails['id_resident'];?>"> <i class="fas fa-lock" ></i> Change Password  </a>
-                    <a class="btn" href="logout.php"> <i class="fas fa-sign-out-alt" style="padding: 0.5em;"></i> Logout  </a>
+                <ul class="dropdown-menu" style="width: 175px;" >
+                    <a class="btn" href="resident_profile.php?id_resident=<?= $userdetails['id_resident'];?>"> <i class="fas fa-user"> &nbsp; </i>Personal Profile  </a>
+                    <a class="btn" href="resident_changepass.php?id_resident=<?= $userdetails['id_resident'];?>"> <i class="fas fa-lock" >&nbsp;</i> Change Password  </a>
+                    <a class="btn" href="logout.php"> <i class="fas fa-sign-out-alt">&nbsp;</i> Logout  </a>
                 </ul>
             </div>
         </nav>
@@ -216,9 +236,9 @@
                 <div class="col"> 
                     <div class="header">
                         <h1 class="text1">Certificate Of Residency </h1>
-                        <h5>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Temporibus animi  
-                        <br> voluptatum hic, mollitia, dignissimos itaque placeat illum vero id officia adipisci 
-                        <br> modi ut, laboriosam optio omnis eligendi totam reiciendis labore! </h5>
+                        <h5>Certificate of Residency is one the Philippine government issued identification documents 
+                        <br>needed for many important business, job, or personal transactions. You might need it for 
+                        <br> the following reasons: when you apply a job/employment. when you apply or open a bank account. </h5>
                     </div>
 
                     <br>
@@ -336,7 +356,7 @@
                         <div class="card-body">
                             <ul style="text-align: justify;">
                                 <p class="card-text">
-                                    <li> 1-2 Days </li>
+                                    <li> Within Working Hours (8:00am - 5:00pm) </li>
                                 </p>
                             </ul>
                         </div>
@@ -377,7 +397,7 @@
 
                 <div class="col">   
                     <button type="button" class="btn btn-primary applybutton" data-toggle="modal" data-target="#exampleModalCenter">
-                        Request Certificate of Residency
+                        Request Form
                     </button>
                 </div>
 
@@ -388,7 +408,7 @@
                 <div class="modal-dialog modal-dialog-centered" role="document">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalCenterTitle">Registration Form</h5>
+                            <h5 class="modal-title" id="exampleModalCenterTitle">Certificate of Residency Form</h5>
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                             </button>
@@ -632,7 +652,7 @@
                         </div>
 
                         <ul class="list-unstyled collapse" id="OtherServices">
-                            <li><a href="#">Blotter</a></li>
+                            <li><a href="#">Peace and Order</a></li>
                         </ul>
                     </div>
 
@@ -643,19 +663,46 @@
                     <!--Fourth column-->
 
                     <div class="col-md-3 mx-auto shfooter">
-                        <h5 class="my-2 font-weight-bold d-none d-md-block">Get Help</h5>
-                        <div class="d-md-none title" data-target="#Get-Help" data-toggle="collapse">
-                        <div class="mt-3 font-weight-bold">Get Help
+                        <h5 class="my-2 font-weight-bold d-none d-md-block">Contact Us</h5>
+                        <div class="d-md-none title" data-target="#Contact-Us" data-toggle="collapse">
+                        <div class="mt-3 font-weight-bold">Contact Us
                             <div class="float-right navbar-toggler">
                             <i class="fas fa-angle-down"></i>
                             <i class="fas fa-angle-up"></i>
                             </div>
                         </div>
                         </div>
-                        <ul class="list-unstyled collapse" id="Get-Help">
-                        <li><a href="#">Contact Us</a></li>
-                        <li><a href="#">Privacy Policy</a></li>
-                        <li><a href="#">Terms</a></li>
+                        <ul class="list-unstyled collapse" id="Contact-Us">
+                            <li>
+                                <div class="chip" style="font-size:10px;">
+                                    <img src="../BarangaySystem/icons/Contact/mikhos.png" alt="Person" width="96" height="96">
+                                    Mikhos Dungca | 09514053044
+                                </div>
+                            </li>
+                            <li>
+                                <div class="chip" style="font-size:10px;">
+                                    <img src="../BarangaySystem/icons/Contact/pj.png" alt="Person" width="96" height="96">
+                                    PJ Mendros | 09179450661
+                                </div>
+                            </li>
+                            <li>
+                                <div class="chip" style="font-size:10px;">
+                                    <img src="../BarangaySystem/icons/Contact/vincent.png" alt="Person" width="96" height="96">
+                                    Vincent Vilfamat | 09512873394
+                                </div>
+                            </li>
+                            <li>
+                                <div class="chip" style="font-size:10px;">
+                                    <img src="../BarangaySystem/icons/Contact/eugene.png" alt="Person" width="96" height="96">
+                                    Joel Evangelista | 09301112368
+                                </div>
+                            </li>
+                            <li>
+                                <div class="chip" style="font-size:10px;">
+                                    <img src="../BarangaySystem/icons/Contact/kyle.png" alt="Person" width="96" height="96">
+                                   Kyle Pilapil | 09618853017
+                                </div>
+                            </li>
                         </ul>
                     </div>
 
@@ -679,6 +726,33 @@
             </div>
 
         </footer>
+
+        <script>
+        // variables
+        var topPosition = $('.floating-div').offset().top - 10;
+        var floatingDivHeight = $('.floating-div').outerHeight();
+        var footerFromTop = $('footer').offset().top;
+        var absPosition = footerFromTop - floatingDivHeight - 20;
+        var win = $(window);
+        var floatingDiv = $('.floating-div');
+
+        win.scroll(function() {
+            if (window.matchMedia('(min-width: 768px)').matches) {
+            if ((win.scrollTop() > topPosition) && (win.scrollTop() < absPosition)) {
+                floatingDiv.addClass('sticky');
+                floatingDiv.removeClass('abs');
+
+            } else if ((win.scrollTop() > topPosition) && (win.scrollTop() > absPosition)) {
+                floatingDiv.removeClass('sticky');
+                floatingDiv.addClass('abs');
+
+            } else {
+                floatingDiv.removeClass('sticky');
+                floatingDiv.removeClass('abs');
+            }
+            }
+        });
+        </script>
 
         <script src="../BarangaySystem/bootstrap/js/bootstrap.bundle.js" type="text/javascript"> </script>
 

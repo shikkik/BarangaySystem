@@ -40,7 +40,7 @@
                 margin-top: 5%;
                 margin-bottom: 8%;
                 font-size: 25px;
-                letter-spacing: 3px;
+                letter-spacing: 2px;
             }
 
             .paa
@@ -191,6 +191,26 @@
             }
             }
 
+            /* Contact Chip */
+
+            .chip {
+            display: inline-block;
+            padding: 0 25px;
+            height: 50px;
+            line-height: 50px;
+            border-radius: 25px;
+            background-color: #2C54C1;
+            margin-top: 5px;
+            }
+
+            .chip img {
+            float: left;
+            margin: 0 10px 0 -25px;
+            height: 50px;
+            width: 50px;
+            border-radius: 50%;
+            }
+
         </style>
   </head>
 
@@ -199,17 +219,16 @@
         <!-- eto yung navbar -->
 
         <nav class="navbar navbar-dark bg-primary sticky-top">
-            <a class="navbar-brand" href="index.php"> <img src="../BarangaySystem/icons/beverlylogo.png" width="40px" height="40px"> 
-            <a class="navbar-brand" href="resident_homepage.php">Barangay Beverly Hills</a>
+            <a class="navbar-brand" href="resident_homepage.php">Barangay Information & E-Services Management System</a>
 
             <div class="dropdown ml-auto">
-                <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown"><?= $userdetails['surname'];?>, <?= $userdetails['firstname'];?>
-                    <span class="caret"></span>
+                <button class="btn btn-primary dropdown-toggle" style="margin-right: 2px;" type="button" data-toggle="dropdown"><?= $userdetails['surname'];?>, <?= $userdetails['firstname'];?>
+                    <span class="caret" style="margin-left: 2px;"></span>
                 </button>
-                <ul class="dropdown-menu">
-                    <a class="btn" href="resident_profile.php?id_resident=<?= $userdetails['id_resident'];?>"> <i class="fas fa-user" style="padding: 0.5em;"></i>Personal Profile  </a>
-                    <a class="btn" href="resident_changepass.php?id_resident=<?= $userdetails['id_resident'];?>"> <i class="fas fa-lock" ></i> Change Password  </a>
-                    <a class="btn" href="logout.php"> <i class="fas fa-sign-out-alt" style="padding: 0.5em;"></i> Logout  </a>
+                <ul class="dropdown-menu" style="width: 175px;" >
+                    <a class="btn" href="resident_profile.php?id_resident=<?= $userdetails['id_resident'];?>"> <i class="fas fa-user"> &nbsp; </i>Personal Profile  </a>
+                    <a class="btn" href="resident_changepass.php?id_resident=<?= $userdetails['id_resident'];?>"> <i class="fas fa-lock" >&nbsp;</i> Change Password  </a>
+                    <a class="btn" href="logout.php"> <i class="fas fa-sign-out-alt">&nbsp;</i> Logout  </a>
                 </ul>
             </div>
         </nav>
@@ -349,7 +368,7 @@
                         <div class="card-body">
                             <ul style="text-align: justify;">
                                 <p class="card-text">
-                                    <li> 1-2 Days </li>
+                                    <li> Within Working Hours (8:00am - 5:00pm) </li>
                                 </p>
                             </ul>
                         </div>
@@ -371,7 +390,7 @@
 
             <div class="col">   
                 <button type="button" class="btn btn-primary applybutton" data-toggle="modal" data-target="#exampleModalCenter">
-                    Request Barangay ID
+                    Request Form
                 </button>
             </div>
 
@@ -382,7 +401,7 @@
                 <div class="modal-dialog modal-dialog-centered" role="document">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalCenterTitle">Registration Form</h5>
+                            <h5 class="modal-title" id="exampleModalCenterTitle">Barangay ID Form</h5>
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                             </button>
@@ -409,11 +428,20 @@
                                             <label for="fname">First Name:</label>
                                             <input name="fname" type="text" class="form-control" 
                                             placeholder="Enter First Name" value="<?= $userdetails['firstname']?>" required>
-                                                <div class="valid-feedback">Valid.</div>
-                                                <div class="invalid-feedback">Please fill out this field.</div>
+                                            <div class="valid-feedback">Valid.</div>
+                                            <div class="invalid-feedback">Please fill out this field.</div>
                                         </div>
                                     </div>
 
+                                    <div class="col">
+                                        <div class="form-group">
+                                            <label for="mi" class="mtop">Middle Name: </label>
+                                            <input name="mi" type="text" class="form-control" 
+                                            placeholder="Enter Middle Name" value="<?= $userdetails['mname']?>" required>
+                                            <div class="valid-feedback">Valid.</div>
+                                            <div class="invalid-feedback">Please fill out this field.</div>
+                                        </div>
+                                    </div>
 
                                 </div>
 
@@ -421,18 +449,19 @@
 
                                     <div class="col">
                                         <div class="form-group">
-                                            <label for="mi" class="mtop">Middle Name </label>
-                                            <input name="mi" type="text" class="form-control" 
-                                            placeholder="Enter Middle Name" value="<?= $userdetails['mname']?>" required>
-                                                <div class="valid-feedback">Valid.</div>
-                                                <div class="invalid-feedback">Please fill out this field.</div>
+                                            <label for="Date"class="mtop">Date of Birth </label>
+                                            <input name="bdate" type="date" class="form-control" 
+                                            value="<?= $userdetails['bdate']?>" required>
+                                            <div class="valid-feedback">Valid.</div>
+                                            <div class="invalid-feedback">Please fill out this field.</div>
                                         </div>
                                     </div>
 
                                     <div class="col">
                                         <div class="form-group">
-                                            <label for="Date"class="mtop">Date of Birth </label>
-                                            <input name="bdate" type="date" class="form-control" required>
+                                            <label class="mtop">Birth Place </label>
+                                            <input type="text" class="form-control" name="bplace"  
+                                            placeholder="Enter Birth Place" required>
                                             <div class="valid-feedback">Valid.</div>
                                             <div class="invalid-feedback">Please fill out this field.</div>
                                         </div>
@@ -481,30 +510,61 @@
                                         </div>
                                     </div>
                                 </div>
+
+                                <hr>
+
+                                <h6 style="font-size: 18px;">Guidelines for ID Picture:</h6>
+
+                                <br>
+
+                                    <h6>Appearances & Quality:</h6>
+                                    <p>
+                                        <ul style="font-size: 13.5px;">
+                                            <li>
+                                                Facing forwards and looking straight at the Camera.
+                                            </li>
+                                            <li>
+                                                Have your eyes open and visible.
+                                            </li>
+                                            <li>
+                                                Not have a head covering (unless it's for religious or medical reasons).
+                                            </li>
+                                            <li>
+                                                Contain no other objects or people.
+                                            </li>
+                                            <li>
+                                                White background only.
+                                            </li>
+                                            <li>
+                                                Wear Collar Shirt.
+                                            </li>
+                                            <li>
+                                                1x1 Photo Size.
+                                            </li>
+                                            <li>
+                                                At least 50KB and no more than 10MB.
+                                            </li>
+                                            <li>
+                                                Clear and in focus.
+                                            </li>
+                                        </ul>
+                                    </p>
                                 
                                 <div class="row">
 
                                     <div class="col">
-                                        <div class="form-group">
-                                            <label class="mtop">Birth Place </label>
-                                            <input type="text" class="form-control" name="bplace"  
-                                            placeholder="Enter Birth Place" value="<?= $userdetails['bdate']?>" required>
-                                            <div class="valid-feedback">Valid.</div>
-                                            <div class="invalid-feedback">Please fill out this field.</div>
-                                        </div>
-                                    </div>
-
-                                    <div class="col">
-                                        <label>Upload Photo:</label>
+                                        <label>Barangay ID Photo:</label>
                                         <div class="custom-file mb-3 form-group">
-                                            <input type="file" class="custom-file-input" id="customFile" name="res_photo">
-                                            <label class="custom-file-label" for="customFile">Choose File</label>
+                                            <input type="file" class="custom-file-input" id="customFile" name="res_photo" required>
+                                            <label class="custom-file-label" for="customFile">Choose File Photo</label>
                                             <div class="valid-feedback">Valid.</div>
                                             <div class="invalid-feedback">Please fill out this field.</div>
                                         </div>
                                     </div>
 
                                 </div>
+
+                                <hr>
 
                                 <br>
 
@@ -705,7 +765,7 @@
                         </div>
 
                         <ul class="list-unstyled collapse" id="OtherServices">
-                            <li><a href="#">Blotter</a></li>
+                            <li><a href="#">Peace and Order</a></li>
                         </ul>
                     </div>
 
@@ -716,9 +776,9 @@
                     <!--Fourth column-->
 
                     <div class="col-md-3 mx-auto shfooter">
-                        <h5 class="my-2 font-weight-bold d-none d-md-block">Get Help</h5>
+                        <h5 class="my-2 font-weight-bold d-none d-md-block">Contact Us:</h5>
                         <div class="d-md-none title" data-target="#Get-Help" data-toggle="collapse">
-                        <div class="mt-3 font-weight-bold">Get Help
+                        <div class="mt-3 font-weight-bold">Contact Us:
                             <div class="float-right navbar-toggler">
                             <i class="fas fa-angle-down"></i>
                             <i class="fas fa-angle-up"></i>
@@ -726,9 +786,36 @@
                         </div>
                         </div>
                         <ul class="list-unstyled collapse" id="Get-Help">
-                        <li><a href="#">Contact Us</a></li>
-                        <li><a href="#">Privacy Policy</a></li>
-                        <li><a href="#">Terms</a></li>
+                            <li>
+                                <div class="chip" style="font-size:10px;">
+                                    <img src="../BarangaySystem/icons/Contact/mikhos.png" alt="Person" width="96" height="96">
+                                    Mikhos Dungca | 09514053044
+                                </div>
+                            </li>
+                            <li>
+                                <div class="chip" style="font-size:10px;">
+                                    <img src="../BarangaySystem/icons/Contact/pj.png" alt="Person" width="96" height="96">
+                                    PJ Mendros | 09179450661
+                                </div>
+                            </li>
+                            <li>
+                                <div class="chip" style="font-size:10px;">
+                                    <img src="../BarangaySystem/icons/Contact/vincent.png" alt="Person" width="96" height="96">
+                                    Vincent Vilfamat | 09512873394
+                                </div>
+                            </li>
+                            <li>
+                                <div class="chip" style="font-size:10px;">
+                                    <img src="../BarangaySystem/icons/Contact/eugene.png" alt="Person" width="96" height="96">
+                                    Joel Evangelista | 09301112368
+                                </div>
+                            </li>
+                            <li>
+                                <div class="chip" style="font-size:10px;">
+                                    <img src="../BarangaySystem/icons/Contact/kyle.png" alt="Person" width="96" height="96">
+                                   Kyle Pilapil | 09618853017
+                                </div>
+                            </li>
                         </ul>
                     </div>
 

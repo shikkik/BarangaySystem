@@ -101,18 +101,43 @@
               opacity: 0;
       }
       }
+
+        /* Contact Chip */
+
+        .chip {
+        display: inline-block;
+        padding: 0 25px;
+        height: 50px;
+        line-height: 50px;
+        border-radius: 25px;
+        background-color: #2C54C1;
+        margin-top: 5px;
+        }
+
+        .chip img {
+        float: left;
+        margin: 0 10px 0 -25px;
+        height: 50px;
+        width: 50px;
+        border-radius: 50%;
+        }
+
     </style>
     
     <body >
         <!-- eto yung navbar -->
-        <nav class="navbar sticky-top navbar-dark bg-primary">
-            <a class="navbar-brand" href="index.php"> <img src="../BarangaySystem/icons/beverlylogo.png" width="40px" height="40px">&nbsp; 
-            <span style="font-size: 1em;"> Barangay Information & E-Services Management System </span> </a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"></button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-              <ul class="navbar-nav ml-auto">
-                <li class="nav-item"> <a href=""> </a> </li>
-              </ul>
+        <nav class="navbar navbar-dark bg-primary sticky-top">
+            <a class="navbar-brand" href="resident_homepage.php">Barangay Information & E-Services Management System</a>
+
+            <div class="dropdown ml-auto">
+                <button class="btn btn-primary dropdown-toggle" style="margin-right: 2px;" type="button" data-toggle="dropdown"><?= $userdetails['surname'];?>, <?= $userdetails['firstname'];?>
+                    <span class="caret" style="margin-left: 2px;"></span>
+                </button>
+                <ul class="dropdown-menu" style="width: 175px;" >
+                    <a class="btn" href="resident_profile.php?id_resident=<?= $userdetails['id_resident'];?>"> <i class="fas fa-user"> &nbsp; </i>Personal Profile  </a>
+                    <a class="btn" href="resident_changepass.php?id_resident=<?= $userdetails['id_resident'];?>"> <i class="fas fa-lock" >&nbsp;</i> Change Password  </a>
+                    <a class="btn" href="logout.php"> <i class="fas fa-sign-out-alt">&nbsp;</i> Logout  </a>
+                </ul>
             </div>
         </nav>
 
@@ -153,8 +178,8 @@
 
                                     <div class="col"> 
                                         <div class="form-group">
-                                            <label class="mtop"> Middle Initial: </label>
-                                            <input type="text" class="form-control" name="mi" placeholder="Enter Middle Initial" required>
+                                            <label class="mtop"> Middle Name: </label>
+                                            <input type="text" class="form-control" name="mi" placeholder="Enter Middle Name" required>
                                             <div class="valid-feedback">Valid.</div>
                                             <div class="invalid-feedback">Please fill out this field.</div>
                                         </div>
@@ -428,7 +453,7 @@
                         </div>
 
                         <ul class="list-unstyled collapse" id="OtherServices">
-                            <li><a href="#">Blotter</a></li>
+                            <li><a href="#">Peace and Order</a></li>
                         </ul>
                     </div>
 
@@ -439,19 +464,46 @@
                     <!--Fourth column-->
 
                     <div class="col-md-3 mx-auto shfooter">
-                        <h5 class="my-2 font-weight-bold d-none d-md-block">Get Help</h5>
-                        <div class="d-md-none title" data-target="#Get-Help" data-toggle="collapse">
-                        <div class="mt-3 font-weight-bold">Get Help
+                        <h5 class="my-2 font-weight-bold d-none d-md-block">Contact Us:</h5>
+                        <div class="d-md-none title" data-target="#Contact-Us" data-toggle="collapse">
+                        <div class="mt-3 font-weight-bold">Contact Us:
                             <div class="float-right navbar-toggler">
                             <i class="fas fa-angle-down"></i>
                             <i class="fas fa-angle-up"></i>
                             </div>
                         </div>
                         </div>
-                        <ul class="list-unstyled collapse" id="Get-Help">
-                        <li><a href="#">Contact Us</a></li>
-                        <li><a href="#">Privacy Policy</a></li>
-                        <li><a href="#">Terms</a></li>
+                        <ul class="list-unstyled collapse" id="Contact-Us">
+                            <li>
+                                <div class="chip" style="font-size:10px;">
+                                    <img src="../BarangaySystem/icons/Contact/mikhos.png" alt="Person" width="96" height="96">
+                                    Mikhos Dungca | 09514053044
+                                </div>
+                            </li>
+                            <li>
+                                <div class="chip" style="font-size:10px;">
+                                    <img src="../BarangaySystem/icons/Contact/pj.png" alt="Person" width="96" height="96">
+                                    PJ Mendros | 09179450661
+                                </div>
+                            </li>
+                            <li>
+                                <div class="chip" style="font-size:10px;">
+                                    <img src="../BarangaySystem/icons/Contact/vincent.png" alt="Person" width="96" height="96">
+                                    Vincent Vilfamat | 09512873394
+                                </div>
+                            </li>
+                            <li>
+                                <div class="chip" style="font-size:10px;">
+                                    <img src="../BarangaySystem/icons/Contact/eugene.png" alt="Person" width="96" height="96">
+                                    Joel Evangelista | 09301112368
+                                </div>
+                            </li>
+                            <li>
+                                <div class="chip" style="font-size:10px;">
+                                    <img src="../BarangaySystem/icons/Contact/kyle.png" alt="Person" width="96" height="96">
+                                   Kyle Pilapil | 09618853017
+                                </div>
+                            </li>
                         </ul>
                     </div>
 
@@ -475,14 +527,6 @@
             </div>
 
         </footer>
-
-        <script>
-            // Add the following code if you want the name of the file appear on select
-            $(".custom-file-input").on("change", function() {
-            var fileName = $(this).val().split("\\").pop();
-            $(this).siblings(".custom-file-label").addClass("selected").html(fileName);
-            });
-        </script>
 
         <script>
             $(".toggle-password").click(function() {

@@ -99,6 +99,27 @@
               opacity: 0;
       }
       }
+
+    /* Contact Chip */
+
+    .chip {
+    display: inline-block;
+    padding: 0 25px;
+    height: 50px;
+    line-height: 50px;
+    border-radius: 25px;
+    background-color: #2C54C1;
+    margin-top: 5px;
+    }
+
+    .chip img {
+    float: left;
+    margin: 0 10px 0 -25px;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    }
+
     </style>
 
     <body> 
@@ -266,19 +287,46 @@
                     <!--Fourth column-->
 
                     <div class="col-md-3 mx-auto shfooter">
-                        <h5 class="my-2 font-weight-bold d-none d-md-block">Get Help</h5>
-                        <div class="d-md-none title" data-target="#Get-Help" data-toggle="collapse">
-                        <div class="mt-3 font-weight-bold">Get Help
+                        <h5 class="my-2 font-weight-bold d-none d-md-block">Contact Us:</h5>
+                        <div class="d-md-none title" data-target="#Contact-Us" data-toggle="collapse">
+                        <div class="mt-3 font-weight-bold">Contact Us:
                             <div class="float-right navbar-toggler">
                             <i class="fas fa-angle-down"></i>
                             <i class="fas fa-angle-up"></i>
                             </div>
                         </div>
                         </div>
-                        <ul class="list-unstyled collapse" id="Get-Help">
-                        <li><a href="#">Contact Us</a></li>
-                        <li><a href="#">Privacy Policy</a></li>
-                        <li><a href="#">Terms</a></li>
+                        <ul class="list-unstyled collapse" id="Contact-Us">
+                            <li>
+                                <div class="chip" style="font-size:10px;">
+                                    <img src="../BarangaySystem/icons/Contact/mikhos.png" alt="Person" width="96" height="96">
+                                    Mikhos Dungca | 09514053044
+                                </div>
+                            </li>
+                            <li>
+                                <div class="chip" style="font-size:10px;">
+                                    <img src="../BarangaySystem/icons/Contact/pj.png" alt="Person" width="96" height="96">
+                                    PJ Mendros | 09179450661
+                                </div>
+                            </li>
+                            <li>
+                                <div class="chip" style="font-size:10px;">
+                                    <img src="../BarangaySystem/icons/Contact/vincent.png" alt="Person" width="96" height="96">
+                                    Vincent Vilfamat | 09512873394
+                                </div>
+                            </li>
+                            <li>
+                                <div class="chip" style="font-size:10px;">
+                                    <img src="../BarangaySystem/icons/Contact/eugene.png" alt="Person" width="96" height="96">
+                                    Joel Evangelista | 09301112368
+                                </div>
+                            </li>
+                            <li>
+                                <div class="chip" style="font-size:10px;">
+                                    <img src="../BarangaySystem/icons/Contact/kyle.png" alt="Person" width="96" height="96">
+                                   Kyle Pilapil | 09618853017
+                                </div>
+                            </li>
                         </ul>
                     </div>
 
