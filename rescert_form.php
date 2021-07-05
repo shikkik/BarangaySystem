@@ -134,9 +134,9 @@ $resident = $residentbmis->get_single_certofres($id_resident);
                 </div>
 
                 <div class="col-xs-8 col-md-4" style="margin-top: 7em;">
-                <b style="font-size:18px;">Rest. Cert. No. _______<br>
+                <b style="font-size:18px;">Rest. Cert. No. <u> <?= $resident['id_rescert']?> </u><br>
                 <span style=" text-align: center;">Issued at ____________</span><br>
-                <span style=" text-align: center;">Issued on ___________</span></b>
+                <span style=" text-align: center;">Issued on <u><?= $resident['date']?></span></u></b>
                 </div>
                 
                 

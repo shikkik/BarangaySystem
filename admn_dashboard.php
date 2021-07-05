@@ -145,6 +145,26 @@
             </div>
         </div>
 
+
+        <div class="col-md-4">  
+            <div class="card border-left-primary shadow card-upper-space">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                                Total Senior Residents</div>
+                                <div class="h5 mb-0 font-weight-bold text-dark"><?= $rescountf?></div>
+                                <br>
+                                <a href="admn_table_femaleres.php"> View Records </a>
+                        </div>
+                        <div class="col-auto">
+                            <i class="fas fa-female fa-2x text-dark"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </div>
 
     <br>
