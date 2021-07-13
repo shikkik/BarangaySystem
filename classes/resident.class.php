@@ -279,7 +279,7 @@
 
     public function count_resident_senior() {
         $connection = $this->openConn();
-        $stmt = $connection->prepare("SELECT * FROM tbl_resident WHERE `age` >= 60");
+        $stmt = $connection->prepare("SELECT COUNT(*) FROM tbl_resident WHERE `age` >= 60");
         $stmt->execute();
         $rescount = $stmt->fetchColumn();
 

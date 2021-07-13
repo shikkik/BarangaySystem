@@ -153,9 +153,9 @@
                         <div class="col mr-2">
                             <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
                                 Total Senior Residents</div>
-                                <div class="h5 mb-0 font-weight-bold text-dark"><?= $rescountf?></div>
+                                <div class="h5 mb-0 font-weight-bold text-dark"><?= $rescountsenior?></div>
                                 <br>
-                                <a href="admn_table_femaleres.php"> View Records </a>
+                                <a href="admn_table_senior.php"> View Records </a>
                         </div>
                         <div class="col-auto">
                             <i class="fas fa-female fa-2x text-dark"></i>
