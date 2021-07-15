@@ -63,6 +63,16 @@
             margin-left: .1%;
             }
 
+            .btn5 {
+            border-radius: 20px;
+            border: none; /* Remove borders */
+            color: white; /* White text */
+            font-size: 16px; /* Set a font size */
+            cursor: pointer; /* Mouse pointer on hover */
+            padding: 8px 22px;
+            margin-left: .1%;
+            }
+
             /* Darker background on mouse-over */
             .btn1:hover {
             background-color: RoyalBlue;
@@ -80,6 +90,11 @@
             }
 
             .btn4:hover {
+            background-color: RoyalBlue;
+            color: black;
+            }
+
+            .btn5:hover {
             background-color: RoyalBlue;
             color: black;
             }
@@ -367,6 +382,7 @@
         <nav class="navbar navbar-dark bg-primary sticky-top">
             <a class="navbar-brand" href="resident_homepage.php">Barangay Information & E-Services Management System</a>
             <a href="resident_homepage.php" data-toggle="tooltip" title="Home" class="btn1 bg-primary"><i class="fa fa-home fa-lg"></i></a>
+            <a href="#down3" data-toggle="tooltip" title="Procedure" class="btn5 bg-primary"><i class="fa fa-question fa-lg"></i></a>
             <a href="#down2" data-toggle="tooltip" title="Information" class="btn4 bg-primary"><i class="fa fa-info fa-lg"></i></a>
             <a href="#down1" data-toggle="tooltip" title="Registration" class="btn3 bg-primary"><i class="fa fa-edit fa-lg"></i></a>
             <a href="#down" data-toggle="tooltip" title="Contact" class="btn2 bg-primary"><i class="fa fa-phone fa-lg"></i></a>
@@ -406,11 +422,13 @@
             </div>
         </div>
 
+        <div id="down3"></div>
+
         <br>
         <br>
         <br>
 
-        <div class="container text-center" id="down2">
+        <div class="container text-center">
             <div class="row">
                 <div class="col">
                     <h1>Procedure</h1>
@@ -442,6 +460,8 @@
                     given below.</p>
                 </div>
             </div>
+
+            <div id="down2"></div>
 
             <br>
             <br>
@@ -519,7 +539,7 @@
                         <div class="card-header">
                             <h6> Need for the Document<br><br> <i class="fas fa-file fa-2x"></i>  </h6>
                         </div>
-                        <div class="card-body" id="down1">
+                        <div class="card-body">
                             <ul style="text-align: left; font-size: 16px;">
                                 <p class="card-text">
                                     <li> Job/Employment </li>
@@ -535,6 +555,8 @@
                 </div>
             </div>
         </div>
+        
+        <div id="down1"></div>
 
         <br>
         <br>
@@ -789,7 +811,7 @@
                             <li><a href="services_certofres.php">Certificate of Residency</a></li>
                             <li><a href="services_brgyclearance.php">Barangay Clearance</a></li>
                             <li><a href="services_certofindigency.php">Certificate of Indigency</a></li>
-                            <li><a href="services_businesspermit.php">Business Permit</a></li>
+                            <li><a href="services_business.php">Business Permit</a></li>
                             <li><a href="services_brgyid.php">Barangay ID</a></li>
                         </ul>
                     </div>

@@ -495,12 +495,15 @@
             </div>
         </div>
 
+        <div id="down3"></div>
+
+        <br>
         <br>
         <br>
 
         <!-- Slideshow -->
 
-        <div class="container container2" id="down3">
+        <div class="container container2">
             <h1 style="text-align:center">Blotter Reason</h1>
             <hr style="background-color: black;">
 
@@ -537,7 +540,7 @@
                 <p id="caption"></p>
             </div>
 
-            <div class="row" id="down2">
+            <div class="row">
                 <div class="column">
                 <img class="demo cursor picture1" src="../BarangaySystem/icons/Blotter/blotter3.jpg" style="width:100%" onclick="currentSlide(1)" alt="Physical Threatening">
                 </div>
@@ -558,6 +561,12 @@
                 </div>
             </div>
         </div>
+
+        <div id="down2"></div>
+
+        <br>
+        <br>
+        <br>
 
         <div class="container container3">
             <h1 style="text-align:center">Blotter Information</h1>
@@ -623,7 +632,7 @@
                                 <br>
                                 <h3>What is the purpose of Barangay Blotter?</h3>
                             </div>
-                            <div class="flip-card-back  bg-info" id="down1">
+                            <div class="flip-card-back  bg-info">
                                 <br>
                                 <h5>A written record of arrests and other occurrences maintained 
                                     by the barangay. The report kept by the barangay when a suspect 
@@ -636,6 +645,7 @@
             </div>
         </div>
 
+        <div id="down1"></div>
 
         <br>
         <br>
@@ -934,7 +944,7 @@
                             <li><a href="services_certofres.php">Certificate of Residency</a></li>
                             <li><a href="services_brgyclearance.php">Barangay Clearance</a></li>
                             <li><a href="services_certofindigency.php">Certificate of Indigency</a></li>
-                            <li><a href="services_businesspermit.php">Business Permit</a></li>
+                            <li><a href="services_business.php">Business Permit</a></li>
                             <li><a href="services_brgyid.php">Barangay ID</a></li>
                         </ul>
                     </div>

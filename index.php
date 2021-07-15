@@ -94,56 +94,56 @@
                     </div>
                 <div class="col-sm"></div>
             </div>
-                <div class="row">
-                    <div class="col-sm"></div>
-                        <div class="col-sm"> 
-                            <div class="card main-card mtop"> 
-                                <div class="card-body"> 
-                                    <form method="post"> 
+            <div class="row">
+                <div class="col-sm"></div>
+                    <div class="col-sm"> 
+                        <div class="card main-card mtop"> 
+                            <div class="card-body"> 
+                                <form method="post"> 
 
-                                        <label> Email </label>
-                                        <div class="input-container">
-                                            <i class="fa fa-envelope icon"></i>
-                                            <input class="input-field" type="email" placeholder="Enter Email" name="email" required>
-                                        </div>
-
-                                        <label> Password </label>
-                                        <div class="input-container">
-                                            <i class="fa fa-key icon"></i>
-                                            <input class="input-field" type="password" placeholder="Enter Password" id="myInput" name="password" required>
-                                        </div>
-
-                                        <br>
-
-                                        <div class="custom-control custom-switch">
-                                            <input type="checkbox" onclick="myFunction()" class="custom-control-input" id="switch1">
-                                            <label class="custom-control-label" for="switch1">Show Password</label>
-                                        </div>
-
-                                        <br>
-                                        
-                                        <button class="btn btn-primary login-button" type="submit" name="login"> Log-in </button>
-                                    
-                                    </form>
-
-                                    <hr>
-
-                                    <div class="registration-section"> 
-                                        <p1> <strong> Haven't registered yet? </strong> </p1> 
-
-                                        <br>
-
-                                        <p1> Hindi ka pa rehistrado? </p1> 
-
-                                        <br>
-
-                                        <button class="btn btn-success create-button" onclick="trying();"> Create Account </button> 
+                                    <label> Email </label>
+                                    <div class="input-container">
+                                        <i class="fa fa-envelope icon"></i>
+                                        <input class="input-field" type="email" placeholder="Enter Email" name="email" required>
                                     </div>
+
+                                    <label> Password </label>
+                                    <div class="input-container">
+                                        <i class="fa fa-key icon"></i>
+                                        <input class="input-field" type="password" placeholder="Enter Password" id="myInput" name="password" required>
+                                    </div>
+
+                                    <br>
+
+                                    <div class="custom-control custom-switch">
+                                        <input type="checkbox" onclick="myFunction()" class="custom-control-input" id="switch1">
+                                        <label class="custom-control-label" for="switch1">Show Password</label>
+                                    </div>
+
+                                    <br>
+                                    
+                                    <button class="btn btn-primary login-button" type="submit" name="login"> Log-in </button>
+                                
+                                </form>
+
+                                <hr>
+
+                                <div class="registration-section"> 
+                                    <p1> <strong> Haven't registered yet? </strong> </p1> 
+
+                                    <br>
+
+                                    <p1> Hindi ka pa rehistrado? </p1> 
+
+                                    <br>
+
+                                    <button class="btn btn-success create-button" onclick="trying();"> Create Account </button> 
                                 </div>
                             </div>
                         </div>
-                    <div class="col-sm"></div>
-                </div>
+                    </div>
+                <div class="col-sm"></div>
+            </div>
                           
         </div>
 

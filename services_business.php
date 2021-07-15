@@ -402,7 +402,7 @@
         <div class="container-fluid container1"> 
             <div class="row"> 
                 <div class="col"> 
-                    <div class="header" id="down3">
+                    <div class="header">
                         <h1 class="text1">Business Permit (Mayor's Permit) </h1>
                         <h5> Before you can start operating your business in the Philippines, you need to secure 
                         <br> a Mayor’s Permit or Business Permit from the Local Government Unit (LGU) where your 
@@ -421,6 +421,8 @@
                 </div>
             </div>
         </div>
+
+        <div id="down3"></div>
 
         <br>
         <br>
@@ -470,7 +472,7 @@
                     accurately.</p>
                 </div>
 
-                <div class="col" id="down2">
+                <div class="col">
                     <i class="fas fa-file fa-7x"></i>
 
                     <br>
@@ -480,6 +482,8 @@
                     <p>Fourth step is for releasing of your Business/Mayor's Permit.</p>
                 </div>
             </div>
+
+            <div id="down2"></div>
 
             <br>
             <br>
@@ -556,7 +560,7 @@
                         <div class="card-header">
                             <h6> What you need <br><br> <i class="fas fa-file fa-2x"></i>  </h6>
                         </div>
-                        <div class="card-body" id="down1">
+                        <div class="card-body">
                             <ul style="text-align: left; font-size: 16px;">
                                 <p class="card-text">
                                     <li> DTI Business Name Certificate or SEC Registration Certificate </li>
@@ -579,6 +583,8 @@
                 </div>
             </div>
         </div>
+
+        <div id="down1"></div>
 
         <br>
         <br>
@@ -835,7 +841,7 @@
                             <li><a href="services_certofres.php">Certificate of Residency</a></li>
                             <li><a href="services_brgyclearance.php">Barangay Clearance</a></li>
                             <li><a href="services_certofindigency.php">Certificate of Indigency</a></li>
-                            <li><a href="services_businesspermit.php">Business Permit</a></li>
+                            <li><a href="services_business.php">Business Permit</a></li>
                             <li><a href="services_brgyid.php">Barangay ID</a></li>
                         </ul>
                     </div>

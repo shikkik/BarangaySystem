@@ -120,7 +120,29 @@
         margin-left: .1%;
         }
 
+        .btn5 {
+        border-radius: 20px;
+        border: none; /* Remove borders */
+        color: white; /* White text */
+        font-size: 16px; /* Set a font size */
+        cursor: pointer; /* Mouse pointer on hover */
+        margin-left: .1%;
+        padding: 8px 22px;
+        }
+
+        .btn6 {
+        border-radius: 20px;
+        border: none; /* Remove borders */
+        color: white; /* White text */
+        font-size: 16px; /* Set a font size */
+        cursor: pointer; /* Mouse pointer on hover */
+        padding: 8px 22px;
+        margin-left: .1%;
+        }
+
+
         /* Darker background on mouse-over */
+
         .btn3:hover {
         background-color: RoyalBlue;
         color: black;
@@ -131,76 +153,86 @@
         color: black;
         }
 
-     .footerlinks{
-      color:white;
-      }
-      .shfooter .collapse {
-          display: inherit;
-      }
-          @media (max-width:767px) {
-      .shfooter ul {
-            margin-bottom: 0;
-      }
+        .btn5:hover {
+        background-color: RoyalBlue;
+        color: black;
+        }
 
-      .shfooter .collapse {
-              display: none;
-      }
+        .btn6:hover {
+        background-color: RoyalBlue;
+        color: black;
+        }
 
-      .shfooter .collapse.show {
-              display: block;
-      }
+        .footerlinks{
+        color:white;
+        }
+        .shfooter .collapse {
+            display: inherit;
+        }
+            @media (max-width:767px) {
+        .shfooter ul {
+                margin-bottom: 0;
+        }
 
-      .shfooter .title .fa-angle-up,
-      .shfooter .title[aria-expanded=true] .fa-angle-down {
-              display: none;
-      }
+        .shfooter .collapse {
+                display: none;
+        }
 
-      .shfooter .title[aria-expanded=true] .fa-angle-up {
-              display: block;
-      }
+        .shfooter .collapse.show {
+                display: block;
+        }
 
-      .shfooter .navbar-toggler {
-              display: inline-block;
-              padding: 0;
-      }
+        .shfooter .title .fa-angle-up,
+        .shfooter .title[aria-expanded=true] .fa-angle-down {
+                display: none;
+        }
 
-      }
+        .shfooter .title[aria-expanded=true] .fa-angle-up {
+                display: block;
+        }
 
-      .resize {
-          text-align: center;
-      }
-      .resize {
-          margin-top: 3rem;
-          font-size: 1.25rem;
-      }
-      /*RESIZESCREEN ANIMATION*/
-      .fa-angle-double-right {
-          animation: rightanime 1s linear infinite;
-      }
+        .shfooter .navbar-toggler {
+                display: inline-block;
+                padding: 0;
+        }
 
-      .fa-angle-double-left {
-          animation: leftanime 1s linear infinite;
-      }
-      @keyframes rightanime {
-          50% {
-              transform: translateX(10px);
-              opacity: 0.5;
-      }
-          100% {
-              transform: translateX(10px);
-              opacity: 0;
-      }
-      }
-      @keyframes leftanime {
-          50% {
-              transform: translateX(-10px);
-              opacity: 0.5;
-      }
-          100% {
-              transform: translateX(-10px);
-              opacity: 0;
-      }
-      }
+        }
+
+        .resize {
+            text-align: center;
+        }
+        .resize {
+            margin-top: 3rem;
+            font-size: 1.25rem;
+        }
+        /*RESIZESCREEN ANIMATION*/
+        .fa-angle-double-right {
+            animation: rightanime 1s linear infinite;
+        }
+
+        .fa-angle-double-left {
+            animation: leftanime 1s linear infinite;
+        }
+        @keyframes rightanime {
+            50% {
+                transform: translateX(10px);
+                opacity: 0.5;
+        }
+            100% {
+                transform: translateX(10px);
+                opacity: 0;
+        }
+        }
+        @keyframes leftanime {
+            50% {
+                transform: translateX(-10px);
+                opacity: 0.5;
+        }
+            100% {
+                transform: translateX(-10px);
+                opacity: 0;
+        }
+        }
 
         /* Contact Chip */
 
@@ -247,6 +279,8 @@
         <nav class="navbar navbar-dark bg-primary sticky-top">
             <a class="navbar-brand" href="resident_homepage.php">Barangay Information & E-Services Management System</a>
             <a href="resident_homepage.php" data-toggle="tooltip" title="Home" class="btn3 bg-primary"><i class="fa fa-home fa-lg"></i></a>
+            <a href="#down2" data-toggle="tooltip" title="View Information" class="btn6 bg-primary"><i class="fa fa-user-circle fa-lg"></i></a>
+            <a href="#down1" data-toggle="tooltip" title="Update Information" class="btn5 bg-primary"><i class="fa fa-user-edit fa-lg"></i></a>
             <a href="#down" data-toggle="tooltip" title="Contact" class="btn4 bg-primary"><i class="fa fa-phone fa-lg"></i></a>
            
             <div class="dropdown ml-auto">
@@ -260,6 +294,10 @@
                 </ul>
             </div>
         </nav>
+
+        <div id="down2"></div>
+
+        <br>
 
         <div class="container"> 
             <div class="card" style="margin-top: 2em;">  
@@ -324,7 +362,7 @@
                                 </div>
                             </div>
                             <div class="col">
-                                <div class="form-group">
+                                <div class="form-group" id="down1">
                                     <label>Birth Place:</label>
                                     <input class="form-control" value="<?= $resident['bplace'];?>" disabled>
                                 </div>
@@ -482,7 +520,7 @@
                             <li><a class="footerlinks" href="services_certofres.php">Certificate of Residency</a></li>
                             <li><a class="footerlinks" href="services_brgyclearance.php">Barangay Clearance</a></li>
                             <li><a class="footerlinks" href="services_certofindigency.php">Certificate of Indigency</a></li>
-                            <li><a class="footerlinks" href="services_businesspermit.php">Business Permit</a></li>
+                            <li><a class="footerlinks" href="services_business.php">Business Permit</a></li>
                             <li><a class="footerlinks" href="services_brgyid.php">Barangay ID</a></li>
                         </ul>
                     </div>

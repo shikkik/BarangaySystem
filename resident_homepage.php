@@ -335,7 +335,7 @@
                         height:30%;
                         color: white;
                         background-color:#5DADE2;">
-                <strong><h4>ANNOUNCEMENT!<h4></strong> 
+                <strong><h3>ANNOUNCEMENT!<h3></strong> 
                 <hr> 
                 <br> 
                 <p> 
@@ -355,6 +355,10 @@
 
         ?>
 
+        <div id="down1"></div>
+
+        <br>
+
         <section class="heading-section"> 
             <div class="container text-center"> 
                 <div class="row"> 
@@ -363,7 +367,7 @@
                         <br>
                         <br>
 
-                        <div class="header" id="down1"> 
+                        <div class="header"> 
                             <h2> Welcome to Barangay Information & E-Services Management System </h2><bR>
                             <h3> You may select the following services offered below </h3>
                         </div>
@@ -373,12 +377,11 @@
 
             <br>
             <br>
-            <br>
 
             <div class="container"> 
                 <div class="row title-spacing">
                     <div class="col"> 
-                        <h3 class="text-center"> E-Services</h3>
+                        <h2 class="text-center"> E-Services</h2>
                         <hr>
                     </div> 
                 </div>
@@ -544,7 +547,7 @@
                             <li><a class="footerlinks" href="services_certofres.php">Certificate of Residency</a></li>
                             <li><a class="footerlinks" href="services_brgyclearance.php">Barangay Clearance</a></li>
                             <li><a class="footerlinks" href="services_certofindigency.php">Certificate of Indigency</a></li>
-                            <li><a class="footerlinks" href="services_businesspermit.php">Business Permit</a></li>
+                            <li><a class="footerlinks" href="services_business.php">Business Permit</a></li>
                             <li><a class="footerlinks" href="services_brgyid.php">Barangay ID</a></li>
                         </ul>
                     </div>

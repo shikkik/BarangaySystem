@@ -120,6 +120,16 @@
         margin-left: .1%;
         }
 
+        .btn5 {
+        border-radius: 20px;
+        border: none; /* Remove borders */
+        color: white; /* White text */
+        font-size: 16px; /* Set a font size */
+        cursor: pointer; /* Mouse pointer on hover */
+        padding: 8px 22px;
+        margin-left: .1%;
+        }
+
         /* Darker background on mouse-over */
         .btn3:hover {
         background-color: RoyalBlue;
@@ -127,6 +137,11 @@
         }
 
         .btn4:hover {
+        background-color: RoyalBlue;
+        color: black;
+        }
+
+        .btn5:hover {
         background-color: RoyalBlue;
         color: black;
         }
@@ -169,7 +184,7 @@
         }
 
         .btn2:hover {
-        opacity: 1;
+        opacity: 10;
         }
 
         .field-icon {
@@ -296,6 +311,7 @@
         <nav class="navbar navbar-dark bg-primary sticky-top">
             <a class="navbar-brand" href="resident_homepage.php">Barangay Information & E-Services Management System</a>
             <a href="resident_homepage.php" data-toggle="tooltip" title="Home" class="btn3 bg-primary"><i class="fa fa-home fa-lg"></i></a>
+            <a href="#down1" data-toggle="tooltip" title="Change Password" class="btn5 bg-primary"><i class="fa fa-user-lock fa-lg"></i></a>
             <a href="#down" data-toggle="tooltip" title="Contact" class="btn4 bg-primary"><i class="fa fa-phone fa-lg"></i></a>
            
             <div class="dropdown ml-auto">
@@ -310,15 +326,23 @@
             </div>
         </nav>
 
-        <div class="container"  style="margin-top: 3em;">
+        <div id="down1"></div>
+
+        <br>
+
+        <div class="container" style="margin-top: 3em;">
             <div class="row">
                 <div class="col-12">
-                        <h1 class="text-center">Change Password</h1>
-                        <br><br>
+
+                    <br>
+
                     <div class="row margin mtop"> 
                         <div class="col-3"> </div>
                         <div class="col-6">   
                             <div class="card mbottom">
+                            <div class="card-header bg-primary text-white text-center" style="font-size:30px"> Change Password </div>
+                            <br>
+
                                 <div class="card-body">
                                     <div class="row">
                                         <div class="col">
@@ -368,6 +392,7 @@
             </div>
         </div>
 
+        <br>
         <br>
         <br>
         <br>
@@ -446,7 +471,7 @@
                             <li><a href="services_certofres.php">Certificate of Residency</a></li>
                             <li><a href="services_brgyclearance.php">Barangay Clearance</a></li>
                             <li><a href="services_certofindigency.php">Certificate of Indigency</a></li>
-                            <li><a href="services_businesspermit.php">Business Permit</a></li>
+                            <li><a href="services_business.php">Business Permit</a></li>
                             <li><a href="services_brgyid.php">Barangay ID</a></li>
                         </ul>
                     </div>
