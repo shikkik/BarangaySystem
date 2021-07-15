@@ -21,6 +21,136 @@
   
         <style>
 
+            /* Navbar Buttons */
+
+            .btn1 {
+            border-radius: 20px;
+            border: none; /* Remove borders */
+            color: white; /* White text */
+            font-size: 16px; /* Set a font size */
+            cursor: pointer; /* Mouse pointer on hover */
+            margin-left: 23%;
+            padding: 8px 22px;
+            }
+
+            .btn2 {
+            border-radius: 20px;
+            border: none; /* Remove borders */
+            color: white; /* White text */
+            font-size: 16px; /* Set a font size */
+            cursor: pointer; /* Mouse pointer on hover */
+            padding: 8px 22px;
+            margin-left: .1%;
+            }
+
+            .btn3 {
+            border-radius: 20px;
+            border: none; /* Remove borders */
+            color: white; /* White text */
+            font-size: 16px; /* Set a font size */
+            cursor: pointer; /* Mouse pointer on hover */
+            padding: 8px 22px;
+            margin-left: .1%;
+            }
+
+            .btn4 {
+            border-radius: 20px;
+            border: none; /* Remove borders */
+            color: white; /* White text */
+            font-size: 16px; /* Set a font size */
+            cursor: pointer; /* Mouse pointer on hover */
+            padding: 8px 22px;
+            margin-left: .1%;
+            }
+
+            /* Darker background on mouse-over */
+            .btn1:hover {
+            background-color: RoyalBlue;
+            color: black;
+            }
+
+            .btn2:hover {
+            background-color: RoyalBlue;
+            color: black;
+            }
+
+            .btn3:hover {
+            background-color: RoyalBlue;
+            color: black;
+            }
+
+            .btn4:hover {
+            background-color: RoyalBlue;
+            color: black;
+            }
+
+            /* Back-to-Top */
+
+            .top-link {
+            transition: all 0.25s ease-in-out;
+            position: fixed;
+            bottom: 0;
+            right: 0;
+            display: inline-flex;
+            cursor: pointer;
+            align-items: center;
+            justify-content: center;
+            margin: 0 3em 3em 0;
+            border-radius: 50%;
+            padding: 0.25em;
+            width: 80px;
+            height: 80px;
+            background-color: #3661D5;
+            }
+            .top-link.show {
+            visibility: visible;
+            opacity: 1;
+            }
+            .top-link.hide {
+            visibility: hidden;
+            opacity: 0;
+            }
+            .top-link svg {
+            fill: white;
+            width: 24px;
+            height: 12px;
+            }
+            .top-link:hover {
+            background-color: #3498DB;
+            }
+            .top-link:hover svg {
+            fill: #000000;
+            }
+
+            .screen-reader-text {
+            position: absolute;
+            clip-path: inset(50%);
+            margin: -1px;
+            border: 0;
+            padding: 0;
+            width: 1px;
+            height: 1px;
+            overflow: hidden;
+            word-wrap: normal !important;
+            clip: rect(1px, 1px, 1px, 1px);
+            }
+            .screen-reader-text:focus {
+            display: block;
+            top: 5px;
+            left: 5px;
+            z-index: 100000;
+            clip-path: none;
+            background-color: #eee;
+            padding: 15px 23px 14px;
+            width: auto;
+            height: auto;
+            text-decoration: none;
+            line-height: normal;
+            color: #444;
+            font-size: 1em;
+            clip: auto !important;
+            }
+
             .container1
             {
                 background-color: #3498DB;
@@ -209,18 +339,40 @@
             border-radius: 50%;
             }
 
+            .zoom {
+            transition: transform .3s;
+            }
+
+            .zoom:hover {
+            -ms-transform: scale(1.4); /* IE 9 */
+            -webkit-transform: scale(1.4); /* Safari 3-8 */
+            transform: scale(1.4); 
+            }
+
 
         </style>
   </head>
 
     <body>
 
-        <!-- eto yung navbar -->
+        <!-- Back-to-Top and Back Button -->
+
+        <a data-toggle="tooltip" title="Back-To-Top" class="top-link hide" href="" id="js-top">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6"><path d="M12 6H0l6-6z"/></svg>
+            <span class="screen-reader-text">Back to top</span>
+        </a>
+
+        <!-- Eto yung navbar -->
+
         <nav class="navbar navbar-dark bg-primary sticky-top">
             <a class="navbar-brand" href="resident_homepage.php">Barangay Information & E-Services Management System</a>
-
+            <a href="resident_homepage.php" data-toggle="tooltip" title="Home" class="btn1 bg-primary"><i class="fa fa-home fa-lg"></i></a>
+            <a href="#down2" data-toggle="tooltip" title="Information" class="btn4 bg-primary"><i class="fa fa-info fa-lg"></i></a>
+            <a href="#down1" data-toggle="tooltip" title="Registration" class="btn3 bg-primary"><i class="fa fa-edit fa-lg"></i></a>
+            <a href="#down" data-toggle="tooltip" title="Contact" class="btn2 bg-primary"><i class="fa fa-phone fa-lg"></i></a>
+           
             <div class="dropdown ml-auto">
-                <button class="btn btn-primary dropdown-toggle" style="margin-right: 2px;" type="button" data-toggle="dropdown"><?= $userdetails['surname'];?>, <?= $userdetails['firstname'];?>
+                <button title="Your Account" class="btn btn-primary dropdown-toggle" style="margin-right: 2px;" type="button" data-toggle="dropdown"><?= $userdetails['surname'];?>, <?= $userdetails['firstname'];?>
                     <span class="caret" style="margin-left: 2px;"></span>
                 </button>
                 <ul class="dropdown-menu" style="width: 175px;" >
@@ -258,7 +410,7 @@
         <br>
         <br>
 
-        <div class="container text-center">
+        <div class="container text-center" id="down2">
             <div class="row">
                 <div class="col">
                     <h1>Procedure</h1>
@@ -279,7 +431,7 @@
                     <p>First step is to prepare all of the information that will be<br> needed
                     in acquiring a certificate of residency.</p>
                 </div>
-                <div class="col">
+                <div class="col" >
                     <i class="fas fa-laptop fa-7x"></i>
 
                     <br>
@@ -295,7 +447,7 @@
             <br>
             <br>
 
-            <div class="row">
+            <div class="row" >
                 <div class="col">
                     <h1>Other Details</h1>
                     <hr style="background-color: black;">
@@ -367,7 +519,7 @@
                         <div class="card-header">
                             <h6> Need for the Document<br><br> <i class="fas fa-file fa-2x"></i>  </h6>
                         </div>
-                        <div class="card-body">
+                        <div class="card-body" id="down1">
                             <ul style="text-align: left; font-size: 16px;">
                                 <p class="card-text">
                                     <li> Job/Employment </li>
@@ -583,6 +735,14 @@
                 &nbsp;
 
                 <li class="list-inline-item">
+                    <a href="#!" class="sbtn btn-large mx-1" title="Card">
+                    <i class="fas fa-id-card fa-2x"></i>
+                    </a>
+                </li>
+
+                &nbsp;
+
+                <li class="list-inline-item">
                     <a href="#!" class="sbtn btn-large mx-1" title="Friend">
                     <i class="fas fa-user-friends fa-2x"></i>
                     </a>
@@ -599,8 +759,8 @@
                 &nbsp;
 
                 <li class="list-inline-item">
-                    <a href="#!" class="sbtn btn-large mx-1" title="Inquiries">
-                    <i class="fas fa-question fa-2x"></i>
+                    <a href="#!" class="sbtn btn-large mx-1" title="Contact">
+                    <i class="fas fa-phone fa-2x"></i>
                     </a>
                 </li>
                 </ul>
@@ -626,11 +786,11 @@
                             </div>
                         </div>
                         <ul class="list-unstyled collapse" id="Documentation">
-                            <li><a href="#">Certificate of Residency</a></li>
-                            <li><a href="#">Barangay Clearance</a></li>
-                            <li><a href="#">Certificate of Indigency</a></li>
-                            <li><a href="#">Business Permit</a></li>
-                            <li><a href="#">Barangay ID</a></li>
+                            <li><a href="services_certofres.php">Certificate of Residency</a></li>
+                            <li><a href="services_brgyclearance.php">Barangay Clearance</a></li>
+                            <li><a href="services_certofindigency.php">Certificate of Indigency</a></li>
+                            <li><a href="services_businesspermit.php">Business Permit</a></li>
+                            <li><a href="services_brgyid.php">Barangay ID</a></li>
                         </ul>
                     </div>
 
@@ -652,7 +812,7 @@
                         </div>
 
                         <ul class="list-unstyled collapse" id="OtherServices">
-                            <li><a href="#">Peace and Order</a></li>
+                            <li><a href="services_blotter.php">Peace and Order</a></li>
                         </ul>
                     </div>
 
@@ -662,7 +822,7 @@
  
                     <!--Fourth column-->
 
-                    <div class="col-md-3 mx-auto shfooter">
+                    <div class="col-md-3 mx-auto shfooter" id="down">
                         <h5 class="my-2 font-weight-bold d-none d-md-block">Contact Us</h5>
                         <div class="d-md-none title" data-target="#Contact-Us" data-toggle="collapse">
                         <div class="mt-3 font-weight-bold">Contact Us
@@ -674,33 +834,43 @@
                         </div>
                         <ul class="list-unstyled collapse" id="Contact-Us">
                             <li>
-                                <div class="chip" style="font-size:10px;">
-                                    <img src="../BarangaySystem/icons/Contact/mikhos.png" alt="Person" width="96" height="96">
-                                    Mikhos Dungca | 09514053044
+                                <div class="zoom">
+                                    <div class="chip" style="font-size:10px;">
+                                        <img src="../BarangaySystem/icons/Contact/mikhos.png" alt="Person" width="96" height="96">
+                                        Mikhos Dungca | 09514053044
+                                    </div>
                                 </div>
                             </li>
                             <li>
-                                <div class="chip" style="font-size:10px;">
-                                    <img src="../BarangaySystem/icons/Contact/pj.png" alt="Person" width="96" height="96">
-                                    PJ Mendros | 09179450661
+                                <div class="zoom">
+                                    <div class="chip" style="font-size:10px;">
+                                        <img src="../BarangaySystem/icons/Contact/pj.png" alt="Person" width="96" height="96">
+                                        PJ Mendros | 09179450661
+                                    </div>
                                 </div>
                             </li>
                             <li>
-                                <div class="chip" style="font-size:10px;">
-                                    <img src="../BarangaySystem/icons/Contact/vincent.png" alt="Person" width="96" height="96">
-                                    Vincent Vilfamat | 09512873394
+                                <div class="zoom">
+                                    <div class="chip" style="font-size:10px;">
+                                        <img src="../BarangaySystem/icons/Contact/vincent.png" alt="Person" width="96" height="96">
+                                        Vincent Vilfamat | 09512873394
+                                    </div>
                                 </div>
                             </li>
                             <li>
-                                <div class="chip" style="font-size:10px;">
-                                    <img src="../BarangaySystem/icons/Contact/eugene.png" alt="Person" width="96" height="96">
-                                    Joel Evangelista | 09301112368
+                                <div class="zoom">
+                                    <div class="chip" style="font-size:10px;">
+                                        <img src="../BarangaySystem/icons/Contact/eugene.png" alt="Person" width="96" height="96">
+                                        Joel Evangelista | 09301112368
+                                    </div>
                                 </div>
                             </li>
                             <li>
-                                <div class="chip" style="font-size:10px;">
-                                    <img src="../BarangaySystem/icons/Contact/kyle.png" alt="Person" width="96" height="96">
-                                   Kyle Pilapil | 09618853017
+                                <div class="zoom">
+                                    <div class="chip" style="font-size:10px;">
+                                        <img src="../BarangaySystem/icons/Contact/kyle.png" alt="Person" width="96" height="96">
+                                        Kyle Pilapil | 09618853017
+                                    </div>
                                 </div>
                             </li>
                         </ul>
@@ -728,30 +898,77 @@
         </footer>
 
         <script>
-        // variables
-        var topPosition = $('.floating-div').offset().top - 10;
-        var floatingDivHeight = $('.floating-div').outerHeight();
-        var footerFromTop = $('footer').offset().top;
-        var absPosition = footerFromTop - floatingDivHeight - 20;
-        var win = $(window);
-        var floatingDiv = $('.floating-div');
+            // Set a variable for our button element.
+            const scrollToTopButton = document.getElementById('js-top');
 
-        win.scroll(function() {
-            if (window.matchMedia('(min-width: 768px)').matches) {
-            if ((win.scrollTop() > topPosition) && (win.scrollTop() < absPosition)) {
-                floatingDiv.addClass('sticky');
-                floatingDiv.removeClass('abs');
-
-            } else if ((win.scrollTop() > topPosition) && (win.scrollTop() > absPosition)) {
-                floatingDiv.removeClass('sticky');
-                floatingDiv.addClass('abs');
-
+            // Let's set up a function that shows our scroll-to-top button if we scroll beyond the height of the initial window.
+            const scrollFunc = () => {
+            // Get the current scroll value
+            let y = window.scrollY;
+            
+            // If the scroll value is greater than the window height, let's add a class to the scroll-to-top button to show it!
+            if (y > 0) {
+                scrollToTopButton.className = "top-link show";
             } else {
-                floatingDiv.removeClass('sticky');
-                floatingDiv.removeClass('abs');
+                scrollToTopButton.className = "top-link hide";
             }
+            };
+
+            window.addEventListener("scroll", scrollFunc);
+
+            const scrollToTop = () => {
+            // Let's set a variable for the number of pixels we are from the top of the document.
+            const c = document.documentElement.scrollTop || document.body.scrollTop;
+            
+            // If that number is greater than 0, we'll scroll back to 0, or the top of the document.
+            // We'll also animate that scroll with requestAnimationFrame:
+            // https://developer.mozilla.org/en-US/docs/Web/API/window/requestAnimationFrame
+            if (c > 0) {
+                window.requestAnimationFrame(scrollToTop);
+                // ScrollTo takes an x and a y coordinate.
+                // Increase the '10' value to get a smoother/slower scroll!
+                window.scrollTo(0, c - c / 10);
             }
-        });
+            };
+
+            // When the button is clicked, run our ScrolltoTop function above!
+            scrollToTopButton.onclick = function(e) {
+            e.preventDefault();
+            scrollToTop();
+            }
+        </script>
+
+        <script>
+            $(document).ready(function(){
+            $('[data-toggle="tooltip"]').tooltip();   
+            });
+        </script>
+
+        <script>
+            $(document).ready(function(){
+            // Add smooth scrolling to all links
+            $("a").on('click', function(event) {
+
+                // Make sure this.hash has a value before overriding default behavior
+                if (this.hash !== "") {
+                // Prevent default anchor click behavior
+                event.preventDefault();
+
+                // Store hash
+                var hash = this.hash;
+
+                // Using jQuery's animate() method to add smooth page scroll
+                // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+                $('html, body').animate({
+                    scrollTop: $(hash).offset().top
+                }, 800, function(){
+
+                    // Add hash (#) to URL when done scrolling (default click behavior)
+                    window.location.hash = hash;
+                });
+                } // End if
+            });
+            });
         </script>
 
         <script src="../BarangaySystem/bootstrap/js/bootstrap.bundle.js" type="text/javascript"> </script>
