@@ -51,10 +51,10 @@
                         <td> <?= $view['street'];?> </td>
                         <td> <?= $view['brgy'];?> </td>
                         <td> <?= $view['municipal'];?> </td>
-                        <td> <?php echo '<img src="data:image;base64,'.base64_encode($view['blot_photo']).'" alt="Blotter Photo" style="width: 100px; height:100px;">'; ?> </td>
+                        <td><a href="admn_blotter_download.php?file_id=<?php echo $view['blot_photo'] ?>">Download</a></td>
                         <td> <?= $view['contact'];?> </td>
                         <td> <?= $view['narrative'];?> </td>
-                        <td> <?= $view['narrative'];?> </td>
+                        <td> <?= $view['timeapplied'];?> </td>
 			</tr>
 			<?php
 			}
@@ -103,10 +103,10 @@
                         <td> <?= $view['street'];?> </td>
                         <td> <?= $view['brgy'];?> </td>
                         <td> <?= $view['municipal'];?> </td>
-                        <td> <?php echo '<img src="data:image;base64,'.base64_encode($view['blot_photo']).'" alt="Blotter Photo" style="width: 100px; height:100px;">'; ?> </td>
+                        <td><a href="admn_blotter_download.php?file_id=<?php echo $view['blot_photo'] ?>">Download</a></td>
                         <td> <?= $view['contact'];?> </td>
                         <td> <?= $view['narrative'];?> </td>
-                        <td> <?= $view['narrative'];?> </td>
+                        <td> <?= $view['timeapplied'];?> </td>
 			</tr>
 			
 			<?php
