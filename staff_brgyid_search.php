@@ -4,10 +4,9 @@
 	if(isset($_POST['search_bspermit'])){
 		$keyword = $_POST['keyword'];
 ?>
-	<table class="table table-dark table-responsive" >
-		<thead >
-            
-			<tr>
+	<table class="table table-hover text-center table-responsive table-bordered">
+		<thead>
+			<tr class="alert-info">
                 <th> Actions</th>
                 <th> Resident ID </th>
                 <th> Surname </th>
@@ -36,25 +35,24 @@
 				while($view = $stmnt->fetch()){
 			?>
 			<tr>
-            <td>    
-                        <form action="" method="post">
-                            <a class="btn btn-primary" href="barangayid_form.php?id_resident=<?= $view['id_resident'];?>">Generate</a> 
-                            <input type="hidden" name="id_rescert" value="<?= $view['id_rescert'];?>">
-                           
-                        </form>
-                        </td>
-                        <td> <?= $view['id_resident'];?> </td> 
-                        <td> <?= $view['lname'];?> </td>
-                        <td> <?= $view['fname'];?> </td>
-                        <td> <?= $view['mi'];?> </td>
-                        <td> <?= $view['houseno'];?> </td>
-                        <td> <?= $view['street'];?> </td>
-                        <td> <?= $view['brgy'];?> </td>
-                        <td> <?= $view['municipal'];?> </td>
-                        <td> <?= $view['bdate'];?> </td>
-                        <td> <?= $view['bplace'];?> </td>
-                        <td> <?= $view['inc_lname'];?>, <?= $view['inc_fname'];?> </td>
-                        <td> <?= $view['inc_contact'];?> </td>
+                <td>    
+                    <form action="" method="post">
+                        <a class="btn btn-primary" target="blank"  href="barangayid_form.php?id_resident=<?= $view['id_resident'];?>">Generate</a> 
+                        <input type="hidden" name="id_rescert" value="<?= $view['id_rescert'];?>">
+                    </form>
+                </td>
+                <td> <?= $view['id_resident'];?> </td> 
+                <td> <?= $view['lname'];?> </td>
+                <td> <?= $view['fname'];?> </td>
+                <td> <?= $view['mi'];?> </td>
+                <td> <?= $view['houseno'];?> </td>
+                <td> <?= $view['street'];?> </td>
+                <td> <?= $view['brgy'];?> </td>
+                <td> <?= $view['municipal'];?> </td>
+                <td> <?= $view['bdate'];?> </td>
+                <td> <?= $view['bplace'];?> </td>
+                <td> <?= $view['inc_lname'];?>, <?= $view['inc_fname'];?> </td>
+                <td> <?= $view['inc_contact'];?> </td>
 			</tr>
 			<?php
 			}
@@ -66,9 +64,10 @@
 <?php		
 	}else{
 ?>
-<table class="table table-dark table-responsive">
+
+<table class="table table-hover text-center table-responsive table-bordered">
 		<thead >
-			<tr>
+			<tr class="alert-info">
                 <th> Actions</th>
                 <th> Resident ID </th>
                 <th> Surname </th>
@@ -88,26 +87,24 @@
 		<?php if(is_array($view)) {?>
                     <?php foreach($view as $view) {?>
 			<tr>
-            <td>    
-                        <form action="" method="post">
-                            <a class="btn btn-primary" href="barangayid_form.php?id_resident=<?= $view['id_resident'];?>">Generate</a> 
-                            <input type="hidden" name="id_rescert" value="<?= $view['id_rescert'];?>">
-                            
-                        </form>
-                        </td>
-
-                        <td> <?= $view['id_resident'];?> </td> 
-                        <td> <?= $view['lname'];?> </td>
-                        <td> <?= $view['fname'];?> </td>
-                        <td> <?= $view['mi'];?> </td>
-                        <td> <?= $view['houseno'];?> </td>
-                        <td> <?= $view['street'];?> </td>
-                        <td> <?= $view['brgy'];?> </td>
-                        <td> <?= $view['municipal'];?> </td>
-                        <td> <?= $view['bdate'];?> </td>
-                        <td> <?= $view['bplace'];?> </td>
-                        <td> <?= $view['inc_lname'];?>, <?= $view['inc_fname'];?> </td>
-                        <td> <?= $view['inc_contact'];?> </td>
+                <td>    
+                    <form action="" method="post">
+                        <a class="btn btn-primary" target="blank" href="barangayid_form.php?id_resident=<?= $view['id_resident'];?>">Generate</a> 
+                        <input type="hidden" name="id_rescert" value="<?= $view['id_rescert'];?>">
+                    </form>
+                </td>
+                <td> <?= $view['id_resident'];?> </td> 
+                <td> <?= $view['lname'];?> </td>
+                <td> <?= $view['fname'];?> </td>
+                <td> <?= $view['mi'];?> </td>
+                <td> <?= $view['houseno'];?> </td>
+                <td> <?= $view['street'];?> </td>
+                <td> <?= $view['brgy'];?> </td>
+                <td> <?= $view['municipal'];?> </td>
+                <td> <?= $view['bdate'];?> </td>
+                <td> <?= $view['bplace'];?> </td>
+                <td> <?= $view['inc_lname'];?>, <?= $view['inc_fname'];?> </td>
+                <td> <?= $view['inc_contact'];?> </td>
 			</tr>
 			
 			<?php

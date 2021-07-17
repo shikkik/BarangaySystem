@@ -32,11 +32,11 @@
 <!-- Begin Page Content -->
 <div class="container-fluid">
 
-<!-- Page Heading -->
+    <!-- Page Heading -->
 
-<div class="row"> 
-        <div class="col-md-4">
-        <h4> Barangay Resident Data </h4>
+    <div class="row"> 
+        <div class="col">
+            <h4> Barangay Resident Data </h4><br>
             <div class="card border-left-primary shadow">
                 <div class="card-body">
                     <div class="row no-gutters align-items-center">
@@ -57,7 +57,8 @@
             </div>
         </div>
 
-        <div class="col-md-4">  
+        <div class="col">  
+            <br>
             <div class="card border-left-primary shadow card-upper-space">
                 <div class="card-body">
                     <div class="row no-gutters align-items-center">
@@ -76,7 +77,8 @@
             </div>
         </div>
         
-        <div class="col-md-4"> 
+        <div class="col">
+            <br>
             <div class="card border-left-primary shadow card-upper-space">
                 <div class="card-body">
                     <div class="row no-gutters align-items-center">
@@ -138,18 +140,27 @@
     </div>
 
     <br>
+    <hr>
+    <br>
+
     <div class="row"> 
-    <div class="col-md-4">
-        <h4> Barangay Staff Data </h4> 
-        <div class="card border-left-info shadow">
+        <div class="col-md-4">
+            <h4> Barangay Staff Data </h4> 
+            <br>
+            <div class="card border-left-info shadow">
                 <div class="card-body">
                     <div class="row no-gutters align-items-center">
                         <div class="col mr-2">
                             <div class="text-xs font-weight-bold text-info text-uppercase mb-1">
-                                Barangay Staff List</div>
-                                <div class="h5 mb-0 font-weight-bold text-dark"><?= $staffcount?></div>
-                                <br>
-                                <a href="staff_table_totalstaff.php"> View List </a>
+                                Barangay Staff List
+                            </div>
+                            <div class="h5 mb-0 font-weight-bold text-dark">
+                                <?= $staffcount?>
+                            </div>
+                            <br>
+                            <a href="staff_table_totalstaff.php"> 
+                                View List 
+                            </a>
                         </div>
                         <div class="col-auto">
                             <i class="fas fa-user-friends fa-2x text-dark"></i>
@@ -158,15 +169,10 @@
                 </div>
             </div>
         </div>
-
     </div>
-
-
-
-
-<!-- /.container-fluid -->
-
 </div>
+<br>
+<hr>
 <!-- End of Main Content -->
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>

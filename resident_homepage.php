@@ -334,7 +334,7 @@
                         width:65%;
                         height:30%;
                         color: white;
-                        background-color:#5DADE2;">
+                        background-color:#3498DB;">
                 <strong><h3>ANNOUNCEMENT!<h3></strong> 
                 <hr> 
                 <br> 

@@ -15,73 +15,68 @@
     include('dashboard_sidebar_start_staff.php');
 ?>
     <!-- Begin Page Content -->
+
     <div class="container-fluid">
 
-    <!-- Page Heading -->
-                
-    <div class="row"> 
-        <div class="col-md-8"> 
-        <div class="card">    
-        </div>
-        </div>
-    </div>
+        <!-- Page Heading -->
 
-    <br>
-    <div class="row"> 
-        <div class="col-md-12"> 
-            <h1 class="h3 mb-4 text-gray-800">Certificate of Residency Request</h1>
-            <table class="table table-dark table-responsive">
-            <form method="post">
-                <thead> 
-                    <tr>
-                        <th> Actions</th>
-                        <th> ID_ResCert </th>
-                        <th> ID_Resident </th>
-                        <th> Surname </th>
-                        <th> First Name </th>
-                        <th> Middle Name </th>
-                        <th> Age </th>
-                        <th> Status </th>
-                        <th> Nationality </th>
-                        <th> Address </th>
-                        <th> AddedBy </th>
-                    </tr>
-                </thead>
-                <tbody> 
-                <?php if(is_array($view)) {?>
-                    <?php foreach($view as $view) {?>
-                    <tr>
-                        <td>    
-                        <form action="" method="post">
-                            <a class="btn btn-primary" href="rescert_form.php?id_resident=<?= $view['id_resident'];?>">Generate </a> 
-                            <input type="hidden" name="id_rescert" value="<?= $view['id_rescert'];?>">
-                            <button class="btn btn-danger" type="submit" name="delete_certofres"> Delete </button>
-                        </form>
-                        </td>
-                        <td> <?= $view['id_rescert'];?> </td>
-                        <td> <?= $view['id_resident'];?> </td> 
-                        <td> <?= $view['lname'];?> </td>
-                        <td> <?= $view['fname'];?> </td>
-                        <td> <?= $view['mi'];?> </td>
-                        <td> <?= $view['age'];?> </td>
-                        <td> <?= $view['status'];?> </td>
-                        <td> <?= $view['nationality'];?> </td>
-                        <td> <?= $view['address'];?> </td>
-                        <td> <?= $view['addedby'];?> </td>
-                    </tr>
-                    <?php }?>
-                <?php } ?>
-                </tbody>
-            </form>
-            </table>
+        <div class="row"> 
+            <div class="col"> 
+                <h1 class="mb-4 text-center">Certificate of Residency Request</h1>
+                <hr>
+                <br>
+                <br>
+                <table class="table table-hover text-center table-responsive">
+                    <form method="post">
+                        <thead> 
+                            <tr class="alert-info">
+                                <th> Actions</th>
+                                <th> ID_ResCert </th>
+                                <th> ID_Resident </th>
+                                <th> Surname </th>
+                                <th> First Name </th>
+                                <th> Middle Name </th>
+                                <th> Age </th>
+                                <th> Status </th>
+                                <th> Nationality </th>
+                                <th> Address </th>
+                                <th> AddedBy </th>
+                            </tr>
+                        </thead>
+                        <tbody> 
+                            <?php if(is_array($view)) {?>
+                                <?php foreach($view as $view) {?>
+                                <tr>
+                                    <td>    
+                                        <form action="" method="post">
+                                            <a class="btn btn-primary" target="blank" href="rescert_form.php?id_resident=<?= $view['id_resident'];?>">Generate </a> 
+                                            <input type="hidden" name="id_rescert" value="<?= $view['id_rescert'];?>">
+                                            <button class="btn btn-danger" type="submit" name="delete_certofres"> Delete </button>
+                                        </form>
+                                    </td>
+                                    <td> <?= $view['id_rescert'];?> </td>
+                                    <td> <?= $view['id_resident'];?> </td> 
+                                    <td> <?= $view['lname'];?> </td>
+                                    <td> <?= $view['fname'];?> </td>
+                                    <td> <?= $view['mi'];?> </td>
+                                    <td> <?= $view['age'];?> </td>
+                                    <td> <?= $view['status'];?> </td>
+                                    <td> <?= $view['nationality'];?> </td>
+                                    <td> <?= $view['address'];?> </td>
+                                    <td> <?= $view['addedby'];?> </td>
+                                </tr>
+                                <?php }?>
+                            <?php } ?>
+                        </tbody>
+                    </form>
+                </table>
+            </div>
         </div>
-    </div>
 
     </div>
     <!-- /.container-fluid -->
 
-</div>
-<!-- End of Main Content -->
+    <!-- End of Main Content -->
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-modal/2.2.6/js/bootstrap-modalmanager.min.js" integrity="sha512-/HL24m2nmyI2+ccX+dSHphAHqLw60Oj5sK8jf59VWtFWZi9vx7jzoxbZmcBeeTeCUc7z1mTs3LfyXGuBU32t+w==" crossorigin="anonymous"></script>
