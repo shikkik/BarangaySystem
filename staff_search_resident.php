@@ -77,7 +77,7 @@
 <?php		
 	}else{
 ?>
-<table class="table table-dark table-responsive">
+<table class="table table-hover text-center table-responsive">
 		<thead class="alert-info">
 			<tr>
 			<th> Actions</th>

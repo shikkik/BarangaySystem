@@ -31,76 +31,208 @@
 
     <style>
 
-     .footerlinks{
-      color:white;
-      }
-      .shfooter .collapse {
-          display: inherit;
-      }
-          @media (max-width:767px) {
-      .shfooter ul {
-            margin-bottom: 0;
-      }
+        /* Back-to-Top */
 
-      .shfooter .collapse {
-              display: none;
-      }
+        .top-link {
+        transition: all 0.25s ease-in-out;
+        position: fixed;
+        bottom: 0;
+        right: 0;
+        display: inline-flex;
+        cursor: pointer;
+        align-items: center;
+        justify-content: center;
+        margin: 0 3em 3em 0;
+        border-radius: 50%;
+        padding: 0.25em;
+        width: 80px;
+        height: 80px;
+        background-color: #3661D5;
+        }
+        .top-link.show {
+        visibility: visible;
+        opacity: 1;
+        }
+        .top-link.hide {
+        visibility: hidden;
+        opacity: 0;
+        }
+        .top-link svg {
+        fill: white;
+        width: 24px;
+        height: 12px;
+        }
+        .top-link:hover {
+        background-color: #3498DB;
+        }
+        .top-link:hover svg {
+        fill: #000000;
+        }
 
-      .shfooter .collapse.show {
-              display: block;
-      }
+        .screen-reader-text {
+        position: absolute;
+        clip-path: inset(50%);
+        margin: -1px;
+        border: 0;
+        padding: 0;
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
+        word-wrap: normal !important;
+        clip: rect(1px, 1px, 1px, 1px);
+        }
+        .screen-reader-text:focus {
+        display: block;
+        top: 5px;
+        left: 5px;
+        z-index: 100000;
+        clip-path: none;
+        background-color: #eee;
+        padding: 15px 23px 14px;
+        width: auto;
+        height: auto;
+        text-decoration: none;
+        line-height: normal;
+        color: #444;
+        font-size: 1em;
+        clip: auto !important;
+        }
 
-      .shfooter .title .fa-angle-up,
-      .shfooter .title[aria-expanded=true] .fa-angle-down {
-              display: none;
-      }
+        /* Navbar Buttons */
 
-      .shfooter .title[aria-expanded=true] .fa-angle-up {
-              display: block;
-      }
+        .btn3 {
+        border-radius: 20px;
+        border: none; /* Remove borders */
+        color: white; /* White text */
+        font-size: 16px; /* Set a font size */
+        cursor: pointer; /* Mouse pointer on hover */
+        margin-left: 23%;
+        padding: 8px 22px;
+        }
 
-      .shfooter .navbar-toggler {
-              display: inline-block;
-              padding: 0;
-      }
+        .btn4 {
+        border-radius: 20px;
+        border: none; /* Remove borders */
+        color: white; /* White text */
+        font-size: 16px; /* Set a font size */
+        cursor: pointer; /* Mouse pointer on hover */
+        padding: 8px 22px;
+        margin-left: .1%;
+        }
 
-      }
+        .btn5 {
+        border-radius: 20px;
+        border: none; /* Remove borders */
+        color: white; /* White text */
+        font-size: 16px; /* Set a font size */
+        cursor: pointer; /* Mouse pointer on hover */
+        margin-left: .1%;
+        padding: 8px 22px;
+        }
 
-      .resize {
-          text-align: center;
-      }
-      .resize {
-          margin-top: 3rem;
-          font-size: 1.25rem;
-      }
-      /*RESIZESCREEN ANIMATION*/
-      .fa-angle-double-right {
-          animation: rightanime 1s linear infinite;
-      }
+        .btn6 {
+        border-radius: 20px;
+        border: none; /* Remove borders */
+        color: white; /* White text */
+        font-size: 16px; /* Set a font size */
+        cursor: pointer; /* Mouse pointer on hover */
+        padding: 8px 22px;
+        margin-left: .1%;
+        }
 
-      .fa-angle-double-left {
-          animation: leftanime 1s linear infinite;
-      }
-      @keyframes rightanime {
-          50% {
-              transform: translateX(10px);
-              opacity: 0.5;
-      }
-          100% {
-              transform: translateX(10px);
-              opacity: 0;
-      }
-      }
-      @keyframes leftanime {
-          50% {
-              transform: translateX(-10px);
-              opacity: 0.5;
-      }
-          100% {
-              transform: translateX(-10px);
-              opacity: 0;
-      }
-      }
+
+        /* Darker background on mouse-over */
+
+        .btn3:hover {
+        background-color: RoyalBlue;
+        color: black;
+        }
+
+        .btn4:hover {
+        background-color: RoyalBlue;
+        color: black;
+        }
+
+        .btn5:hover {
+        background-color: RoyalBlue;
+        color: black;
+        }
+
+        .btn6:hover {
+        background-color: RoyalBlue;
+        color: black;
+        }
+
+        .footerlinks{
+        color:white;
+        }
+        .shfooter .collapse {
+            display: inherit;
+        }
+            @media (max-width:767px) {
+        .shfooter ul {
+                margin-bottom: 0;
+        }
+
+        .shfooter .collapse {
+                display: none;
+        }
+
+        .shfooter .collapse.show {
+                display: block;
+        }
+
+        .shfooter .title .fa-angle-up,
+        .shfooter .title[aria-expanded=true] .fa-angle-down {
+                display: none;
+        }
+
+        .shfooter .title[aria-expanded=true] .fa-angle-up {
+                display: block;
+        }
+
+        .shfooter .navbar-toggler {
+                display: inline-block;
+                padding: 0;
+        }
+
+        }
+
+        .resize {
+            text-align: center;
+        }
+        .resize {
+            margin-top: 3rem;
+            font-size: 1.25rem;
+        }
+        /*RESIZESCREEN ANIMATION*/
+        .fa-angle-double-right {
+            animation: rightanime 1s linear infinite;
+        }
+
+        .fa-angle-double-left {
+            animation: leftanime 1s linear infinite;
+        }
+        @keyframes rightanime {
+            50% {
+                transform: translateX(10px);
+                opacity: 0.5;
+        }
+            100% {
+                transform: translateX(10px);
+                opacity: 0;
+        }
+        }
+        @keyframes leftanime {
+            50% {
+                transform: translateX(-10px);
+                opacity: 0.5;
+        }
+            100% {
+                transform: translateX(-10px);
+                opacity: 0;
+        }
+        }
 
         /* Contact Chip */
 
@@ -122,14 +254,37 @@
         border-radius: 50%;
         }
 
+        .zoom {
+        transition: transform .3s;
+        }
+
+        .zoom:hover {
+        -ms-transform: scale(1.4); /* IE 9 */
+        -webkit-transform: scale(1.4); /* Safari 3-8 */
+        transform: scale(1.4); 
+        }
+
     </style>
     <body> 
-        <!-- eto yung navbar -->
+
+        <!-- Back-to-Top and Back Button -->
+
+        <a data-toggle="tooltip" title="Back-To-Top" class="top-link hide" href="" id="js-top">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6"><path d="M12 6H0l6-6z"/></svg>
+            <span class="screen-reader-text">Back to top</span>
+        </a>
+
+        <!-- Eto yung navbar -->
+
         <nav class="navbar navbar-dark bg-primary sticky-top">
             <a class="navbar-brand" href="resident_homepage.php">Barangay Information & E-Services Management System</a>
-
+            <a href="resident_homepage.php" data-toggle="tooltip" title="Home" class="btn3 bg-primary"><i class="fa fa-home fa-lg"></i></a>
+            <a href="#down2" data-toggle="tooltip" title="View Information" class="btn6 bg-primary"><i class="fa fa-user-circle fa-lg"></i></a>
+            <a href="#down1" data-toggle="tooltip" title="Update Information" class="btn5 bg-primary"><i class="fa fa-user-edit fa-lg"></i></a>
+            <a href="#down" data-toggle="tooltip" title="Contact" class="btn4 bg-primary"><i class="fa fa-phone fa-lg"></i></a>
+           
             <div class="dropdown ml-auto">
-                <button class="btn btn-primary dropdown-toggle" style="margin-right: 2px;" type="button" data-toggle="dropdown"><?= $userdetails['surname'];?>, <?= $userdetails['firstname'];?>
+                <button title="Your Account" class="btn btn-primary dropdown-toggle" style="margin-right: 2px;" type="button" data-toggle="dropdown"><?= $userdetails['surname'];?>, <?= $userdetails['firstname'];?>
                     <span class="caret" style="margin-left: 2px;"></span>
                 </button>
                 <ul class="dropdown-menu" style="width: 175px;" >
@@ -140,68 +295,150 @@
             </div>
         </nav>
 
+        <div id="down2"></div>
+
+        <br>
+
         <div class="container"> 
-                <div class="card" style="margin-top: 2em;">  
-                    <div class="card-header bg-primary text-white"> Personal Information </div>
-                    <div class="card-body"> 
-                        <form method="post">
+            <div class="card" style="margin-top: 2em;">  
+                    <div class="card-header bg-primary text-white" style="font-size:20px"> Personal Information </div>
+                <div class="card-body"> 
+                    <form method="post">
 
-                        <div class="row"> 
-                            <div class="col-md-2"> 
-                                <h5> Name:</h5> <br>
-                                <h5> Email: </h5> <br>
-                                <h5> Sex: </h5> <h5> <br>
-                                <h5>Age:</h5> <br>
-                                <h5>Status:</h5> <br>
-                                <h5>Contact:</h5> <br>
+                        <h6>
+                            <i class="fas fa-user-circle"></i>
+                            View Information
+                        </h6>
+
+                        <hr>
+
+                        <div class="row">
+                            <div class="col">
+                                <div class="form-group">
+                                    <label>Last Name:</label>
+                                    <input class="form-control" value="<?= $resident['lname'];?>" disabled>
+                                </div>
                             </div>
-
-                            <div class="col-md-4"> 
-                                <h5><?= $resident['lname'];?>, <?= $resident['fname'];?> <?= $resident['mi'];?></h5> <br>
-                                <h5> <?= $resident['email'];?> </h5><br>
-                                <h5><?= $resident['sex'];?> </h5><br>
-                                <input class="form-control" type="text" name="age" value="<?= $resident['age'];?>"><br>
-                                <input class="form-control" type="text" name="status" value="<?= $resident['status'];?>"><br>
-                                <input class="form-control" type="text" name="contact" value="<?= $resident['contact'];?>"><br>
+                            <div class="col">
+                                <div class="form-group">
+                                    <label>First Name:</label>
+                                    <input class="form-control" value="<?= $resident['fname'];?>" disabled>
+                                </div>
                             </div>
-
-                            <div class="col-md-2">
-                                <h5>House No: </h5> <br>
-                                <h5>Street: </h5> <br>
-                                <h5>Barangay: </h5> <br><br>
-                                <h5> Birth Date: </h5> <br>
-                                <h5> Birth Place: </h5> <br>
-                                <h5> Nationality: </h5> <br>
-                            </div>
-
-                            <div class="col-md-4">
-                                <input class="form-control" type="text" name="houseno" value="<?= $resident['houseno'];?>"><br>
-                                <input class="form-control" type="text" name="street" value="<?= $resident['street'];?>"><br>
-                                <input class="form-control" type="text" name="brgy" value="<?= $resident['brgy'];?>"><br>
-                                <h5> <?= $resident['bdate'];?> </h5><br>
-                                <h5> <?= $resident['bplace'];?> </h5><br>
-                                <h5> <?= $resident['nationality'];?> </h5><br>
+                            <div class="col">
+                                <div class="form-group">
+                                    <label>Middle Name:</label>
+                                    <input class="form-control" value="<?= $resident['mi'];?>" disabled>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </div>
 
-            <br>
-            <div class="row" style="margin-bottom: 5em;"> 
-                <div class="col-xl-12">
-                    <div class="form-inline">
-                        <input class="form-control" name="lname" type="hidden" value="<?= $resident['lname'];?>"/>
-                        <input class="form-control" name="mi" type="hidden" value="<?= $resident['mi'];?>" />
-                        <button type="submit button" class="btn btn-info"  name="search_household">View Household</button>
-                        <button class="btn btn-primary" type="submit" name="profile_update"> Update </button>
-                        <a href="resident_profile.php?id_resident=<?= $userdetails['id_resident'];?>"></a>   
-                        <div>
-                            <br><br>
-                            <?php include'testingsearch.php'?>  
+                        <div class="row">
+                            <div class="col">
+                                <div class="form-group">
+                                    <label>Email:</label>
+                                    <input class="form-control" value="<?= $resident['email'];?>" disabled>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="form-group">
+                                    <label>Sex:</label>
+                                    <input class="form-control" value="<?= $resident['sex'];?>" disabled>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="form-group">
+                                    <label>Nationality:</label>
+                                    <input  class="form-control" value="<?= $resident['nationality'];?>" disabled>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col">
+                                <div class="form-group">
+                                    <label>Birth Date:</label>
+                                    <input class="form-control" value="<?= $resident['bdate'];?>" disabled>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="form-group" id="down1">
+                                    <label>Birth Place:</label>
+                                    <input class="form-control" value="<?= $resident['bplace'];?>" disabled>
+                                </div>
+                            </div>
+                        </div>
+
+                        <hr>
+
+                        <h6>
+                            <i class="fas fa-user-edit"></i>
+                            Update Information
+                        </h6>
+
+                        <hr>
+
+                        <div class="row">
+                            <div class="col">
+                                <div class="form-group">
+                                    <label>Age:</label>
+                                    <input class="form-control" type="number" name="age" value="<?= $resident['age'];?>">
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="form-group">
+                                    <label>Status:</label>
+                                    <input class="form-control" type="text" name="status" value="<?= $resident['status'];?>">
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="form-group">
+                                    <label>Contact:</label>
+                                    <input class="form-control" type="tel" name="contact" maxlength="11" pattern="[0-9]{11}" value="<?= $resident['contact'];?>">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col">
+                                <div class="form-group">
+                                    <label>House No:</label>
+                                    <input class="form-control" type="text" name="houseno" value="<?= $resident['houseno'];?>">
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="form-group">
+                                    <label>Street:</label>
+                                    <input class="form-control" type="text" name="street" value="<?= $resident['street'];?>">
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="form-group">
+                                    <label>Barangay:</label>
+                                    <input class="form-control" type="text" name="brgy" value="<?= $resident['brgy'];?>">
+                                </div>
+                            </div>
+                        </div>
+
+                        <hr>
+
+                        <div class="row" style="margin-bottom: 5px;"> 
+                            <div class="col-xl-12">
+                                <div class="form-inline">
+                                    <input class="form-control" name="lname" type="hidden" value="<?= $resident['lname'];?>"/>
+                                    <input class="form-control" name="mi" type="hidden" value="<?= $resident['mi'];?>" />
+                                    <button type="submit button" class="btn btn-info" style="margin-left: 37%; width:143px;"  name="search_household">View Household</button>
+                                    <button class="btn btn-primary" style="margin-left: .2%; width:143px;" type="submit" name="profile_update"> Update </button>
+                                    <a href="resident_profile.php?id_resident=<?= $userdetails['id_resident'];?>"></a>   
+                                    <div>
+                                        <br><br>
+                                        <?php include'testingsearch.php'?>  
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </form>
-                    </div>                                   
-                </div>
+                </div>                               
             </div>
         </div>
 
@@ -221,14 +458,6 @@
                 &nbsp;
 
                 <li class="list-inline-item">
-                    <a class="footerlinks" href="#!" class="sbtn btn-large mx-1" title="HealthCare">
-                    <i class="fas fa-first-aid fa-2x"></i>
-                    </a>
-                </li>
-
-                &nbsp;
-
-                <li class="list-inline-item">
                     <a class="footerlinks" href="#!" class="sbtn btn-large mx-1" title="Documents">
                     <i class="fas fa-file fa-2x"></i>
                     </a>
@@ -237,7 +466,15 @@
                 &nbsp;
 
                 <li class="list-inline-item">
-                    <a class="footerlinks" href="#!" class="sbtn btn-large mx-1" title="Documents">
+                    <a href="#!" class="footerlinks sbtn btn-large mx-1" title="Card">
+                    <i class="fas fa-id-card fa-2x"></i>
+                    </a>
+                </li>
+
+                &nbsp;
+
+                <li class="list-inline-item">
+                    <a class="footerlinks" href="#!" class="sbtn btn-large mx-1" title="Friend">
                     <i class="fas fa-user-friends fa-2x"></i>
                     </a>
                 </li>
@@ -253,8 +490,8 @@
                 &nbsp;
 
                 <li class="list-inline-item">
-                    <a class="footerlinks" href="#!" class="sbtn btn-large mx-1" title="Inquiries">
-                    <i class="fas fa-question fa-2x"></i>
+                    <a class="footerlinks" href="#!" class="sbtn btn-large mx-1" title="Contact">
+                    <i class="fas fa-phone fa-2x"></i>
                     </a>
                 </li>
                 </ul>
@@ -280,11 +517,11 @@
                             </div>
                         </div>
                         <ul class="list-unstyled collapse" id="Documentation">
-                            <li><a class="footerlinks" href="#">Certificate of Residency</a></li>
-                            <li><a class="footerlinks" href="#">Barangay Clearance</a></li>
-                            <li><a class="footerlinks" href="#">Certificate of Indigency</a></li>
-                            <li><a class="footerlinks" href="#">Barangay ID</a></li>
-                            <li><a class="footerlinks" href="#">Business Permit</a></li>
+                            <li><a class="footerlinks" href="services_certofres.php">Certificate of Residency</a></li>
+                            <li><a class="footerlinks" href="services_brgyclearance.php">Barangay Clearance</a></li>
+                            <li><a class="footerlinks" href="services_certofindigency.php">Certificate of Indigency</a></li>
+                            <li><a class="footerlinks" href="services_business.php">Business Permit</a></li>
+                            <li><a class="footerlinks" href="services_brgyid.php">Barangay ID</a></li>
                         </ul>
                     </div>
 
@@ -306,7 +543,7 @@
                         </div>
 
                         <ul class="list-unstyled collapse" id="OtherServices">
-                            <li><a class="footerlinks" href="#">Peace and Order</a></li>
+                            <li><a class="footerlinks" href="services_blotter.php">Peace and Order</a></li>
                         </ul>
                     </div>
 
@@ -316,7 +553,7 @@
  
                     <!--Fourth column-->
 
-                    <div class="col-md-3 mx-auto shfooter">
+                    <div class="col-md-3 mx-auto shfooter" id="down">
                         <h5 class="my-2 font-weight-bold d-none d-md-block">Contact Us:</h5>
                         <div class="d-md-none title" data-target="#Contact-Us" data-toggle="collapse">
                         <div class="mt-3 font-weight-bold">Contact Us:
@@ -328,33 +565,43 @@
                         </div>
                         <ul class="list-unstyled collapse" id="Contact-Us">
                             <li>
-                                <div class="chip" style="font-size:10px;">
-                                    <img src="../BarangaySystem/icons/Contact/mikhos.png" alt="Person" width="96" height="96">
-                                    Mikhos Dungca | 09514053044
+                                <div class="zoom">
+                                    <div class="chip" style="font-size:10px;">
+                                        <img src="../BarangaySystem/icons/Contact/mikhos.png" alt="Person" width="96" height="96">
+                                        Mikhos Dungca | 09514053044
+                                    </div>
                                 </div>
                             </li>
                             <li>
-                                <div class="chip" style="font-size:10px;">
-                                    <img src="../BarangaySystem/icons/Contact/pj.png" alt="Person" width="96" height="96">
-                                    PJ Mendros | 09179450661
+                                <div class="zoom">
+                                    <div class="chip" style="font-size:10px;">
+                                        <img src="../BarangaySystem/icons/Contact/pj.png" alt="Person" width="96" height="96">
+                                        PJ Mendros | 09179450661
+                                    </div>
                                 </div>
                             </li>
                             <li>
-                                <div class="chip" style="font-size:10px;">
-                                    <img src="../BarangaySystem/icons/Contact/vincent.png" alt="Person" width="96" height="96">
-                                    Vincent Vilfamat | 09512873394
+                                <div class="zoom">
+                                    <div class="chip" style="font-size:10px;">
+                                        <img src="../BarangaySystem/icons/Contact/vincent.png" alt="Person" width="96" height="96">
+                                        Vincent Vilfamat | 09512873394
+                                    </div>
                                 </div>
                             </li>
                             <li>
-                                <div class="chip" style="font-size:10px;">
-                                    <img src="../BarangaySystem/icons/Contact/eugene.png" alt="Person" width="96" height="96">
-                                    Joel Evangelista | 09301112368
+                                <div class="zoom">
+                                    <div class="chip" style="font-size:10px;">
+                                        <img src="../BarangaySystem/icons/Contact/eugene.png" alt="Person" width="96" height="96">
+                                        Joel Evangelista | 09301112368
+                                    </div>
                                 </div>
                             </li>
                             <li>
-                                <div class="chip" style="font-size:10px;">
-                                    <img src="../BarangaySystem/icons/Contact/kyle.png" alt="Person" width="96" height="96">
-                                   Kyle Pilapil | 09618853017
+                                <div class="zoom">
+                                    <div class="chip" style="font-size:10px;">
+                                        <img src="../BarangaySystem/icons/Contact/kyle.png" alt="Person" width="96" height="96">
+                                        Kyle Pilapil | 09618853017
+                                    </div>
                                 </div>
                             </li>
                         </ul>
@@ -380,6 +627,80 @@
             </div>
 
         </footer>
+
+        <script>
+            // Set a variable for our button element.
+            const scrollToTopButton = document.getElementById('js-top');
+
+            // Let's set up a function that shows our scroll-to-top button if we scroll beyond the height of the initial window.
+            const scrollFunc = () => {
+            // Get the current scroll value
+            let y = window.scrollY;
+            
+            // If the scroll value is greater than the window height, let's add a class to the scroll-to-top button to show it!
+            if (y > 0) {
+                scrollToTopButton.className = "top-link show";
+            } else {
+                scrollToTopButton.className = "top-link hide";
+            }
+            };
+
+            window.addEventListener("scroll", scrollFunc);
+
+            const scrollToTop = () => {
+            // Let's set a variable for the number of pixels we are from the top of the document.
+            const c = document.documentElement.scrollTop || document.body.scrollTop;
+            
+            // If that number is greater than 0, we'll scroll back to 0, or the top of the document.
+            // We'll also animate that scroll with requestAnimationFrame:
+            // https://developer.mozilla.org/en-US/docs/Web/API/window/requestAnimationFrame
+            if (c > 0) {
+                window.requestAnimationFrame(scrollToTop);
+                // ScrollTo takes an x and a y coordinate.
+                // Increase the '10' value to get a smoother/slower scroll!
+                window.scrollTo(0, c - c / 10);
+            }
+            };
+
+            // When the button is clicked, run our ScrolltoTop function above!
+            scrollToTopButton.onclick = function(e) {
+            e.preventDefault();
+            scrollToTop();
+            }
+        </script>
+
+        <script>
+            $(document).ready(function(){
+            $('[data-toggle="tooltip"]').tooltip();   
+            });
+        </script>
+
+        <script>
+            $(document).ready(function(){
+            // Add smooth scrolling to all links
+            $("a").on('click', function(event) {
+
+                // Make sure this.hash has a value before overriding default behavior
+                if (this.hash !== "") {
+                // Prevent default anchor click behavior
+                event.preventDefault();
+
+                // Store hash
+                var hash = this.hash;
+
+                // Using jQuery's animate() method to add smooth page scroll
+                // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+                $('html, body').animate({
+                    scrollTop: $(hash).offset().top
+                }, 800, function(){
+
+                    // Add hash (#) to URL when done scrolling (default click behavior)
+                    window.location.hash = hash;
+                });
+                } // End if
+            });
+            });
+        </script>
 
         <script src="../BarangaySystem/bootstrap/js/bootstrap.bundle.js" type="text/javascript"> </script>
 

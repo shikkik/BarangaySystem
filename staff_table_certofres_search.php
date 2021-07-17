@@ -4,10 +4,9 @@
 	if(isset($_POST['search_certofres'])){
 		$keyword = $_POST['keyword'];
 ?>
-	<table class="table table-dark table-responsive" >
-		<thead >
-            
-			<tr>
+	<table class="table table-hover table-bordered table-responsive text-center" >
+		<thead>
+			<tr class="alert-info">
                 <th> Actions</th>
                 <th> Resident ID </th>
                 <th> Surname </th>
@@ -38,7 +37,7 @@
 			<tr>
             <td>    
                         <form action="" method="post">
-                            <a class="btn btn-primary" href="rescert_form.php?id_resident=<?= $view['id_resident'];?>">Generate</a> 
+                            <a class="btn btn-primary" target="blank" href="rescert_form.php?id_resident=<?= $view['id_resident'];?>">Generate</a> 
                             <input type="hidden" name="id_rescert" value="<?= $view['id_rescert'];?>">
                         </form>
                         </td>
@@ -62,12 +61,14 @@
 			
 		</tbody>
 	</table>
-<?php		
-	}else{
-?>
-<table class="table table-dark table-responsive">
+
+    <?php		
+        }else{
+    ?>
+
+    <table class="table table-hover table-bordered table-responsive text-center">
 		<thead >
-			<tr>
+			<tr class="alert-info">
                 <th> Actions</th>
                 <th> Resident ID </th>
                 <th> Surname </th>
@@ -84,18 +85,18 @@
 			</tr>
 		</thead>
 		<tbody>
-		<?php if(is_array($view)) {?>
-                    <?php foreach($view as $view) {?>
-			<tr>
-            <td>    
-                        <form action="" method="post">
-                            <a class="btn btn-primary" href="rescert_form.php?id_resident=<?= $view['id_resident'];?>">Generate</a> 
-                            <input type="hidden" name="id_rescert" value="<?= $view['id_rescert'];?>">
-                        </form>
+		    <?php if(is_array($view)) {?>
+                <?php foreach($view as $view) {?>
+                    <tr>
+                        <td>    
+                            <form action="" method="post">
+                                <a class="btn btn-primary" target="blank" href="rescert_form.php?id_resident=<?= $view['id_resident'];?>">Generate</a> 
+                                <input type="hidden" name="id_rescert" value="<?= $view['id_rescert'];?>">
+                            </form>
                         </td>
                         <td> <?= $view['id_resident'];?> </td> 
                         <td> <?= $view['lname'];?> </td>
-                        <td> <?= $view['fname'];?> </td>
+                        <td> <?= $view['sfname'];?> </td>
                         <td> <?= $view['mi'];?> </td>
                         <td> <?= $view['age'];?> </td>
                         <td> <?= $view['nationality'];?> </td>
@@ -105,11 +106,11 @@
                         <td> <?= $view['municipal'];?> </td>
                         <td> <?= $view['date'];?> </td>
                         <td> <?= $view['purpose'];?> </td>
-			</tr>
-			
-			<?php
-				}
-			?>
+                    </tr>
+                
+                <?php
+                    }
+                ?>
 			<?php
 				}
 			?>
@@ -130,5 +131,5 @@
 
 <?php
 	}
-$con = null;
+    $con = null;
 ?>
