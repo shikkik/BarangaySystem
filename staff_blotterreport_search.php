@@ -39,7 +39,7 @@
             <tr>
                 <td>    
                     <form action="" method="post">
-                        <a class="btn btn-primary" href="update_blotter_form.php?id_resident=<?= $view['id_resident'];?>">Update</a> 
+                        <a class="btn btn-primary" style="width: 90px; font-size: 17px; border-radius:30px;" href="update_blotter_form_for_staff.php?id_resident=<?= $view['id_resident'];?>">Update</a> 
                     </form>
                 </td>
                 <td> <?= $view['id_resident'];?> </td> 
@@ -95,7 +95,7 @@
                 <tr>
                     <td>    
                         <form action="" method="post">
-                            <a class="btn btn-primary" href="update_blotter_form.php?id_resident=<?= $view['id_resident'];?>">Update</a> 
+                            <a class="btn btn-primary" style="width: 90px; font-size: 17px; border-radius:30px;" href="update_blotter_form_for_staff.php?id_resident=<?= $view['id_resident'];?>">Update</a> 
                         </form>
                     </td>
                     <td> <?= $view['id_resident'];?> </td> 

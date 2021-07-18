@@ -37,7 +37,7 @@
 			<tr>
             <td>    
                         <form action="" method="post">
-                            <a class="btn btn-primary" target="blank" href="rescert_form.php?id_resident=<?= $view['id_resident'];?>">Generate</a> 
+                            <a class="btn btn-primary" target="blank" style="width: 90px; font-size: 17px; border-radius:30px;" href="rescert_form.php?id_resident=<?= $view['id_resident'];?>">Generate</a> 
                             <input type="hidden" name="id_rescert" value="<?= $view['id_rescert'];?>">
                         </form>
                         </td>
@@ -90,7 +90,7 @@
                     <tr>
                         <td>    
                             <form action="" method="post">
-                                <a class="btn btn-primary" target="blank" href="rescert_form.php?id_resident=<?= $view['id_resident'];?>">Generate</a> 
+                                <a class="btn btn-primary" target="blank" style="width: 90px; font-size: 17px; border-radius:30px;" href="rescert_form.php?id_resident=<?= $view['id_resident'];?>">Generate</a> 
                                 <input type="hidden" name="id_rescert" value="<?= $view['id_rescert'];?>">
                             </form>
                         </td>

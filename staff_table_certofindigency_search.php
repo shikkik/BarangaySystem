@@ -38,7 +38,7 @@
             <tr>
                 <td>    
                     <form action="" method="post">
-                        <a class="btn btn-primary" href="indigency_form.php?id_resident=<?= $view['id_resident'];?>">Generate</a> 
+                        <a class="btn btn-primary" style="width: 90px; font-size: 17px; border-radius:30px;" href="indigency_form.php?id_resident=<?= $view['id_resident'];?>">Generate</a> 
                         <input type="hidden" name="id_indigency" value="<?= $view['id_indigency'];?>">
                     </form>
                 </td>
@@ -92,7 +92,7 @@
                 <tr>
                     <td>    
                         <form action="" method="post">
-                            <a class="btn btn-primary" target="blank" href="indigency_form.php?id_resident=<?= $view['id_resident'];?>">Generate</a> 
+                            <a class="btn btn-primary" style="width: 90px; font-size: 17px; border-radius:30px;" target="blank" href="indigency_form.php?id_resident=<?= $view['id_resident'];?>">Generate</a> 
                             <input type="hidden" name="id_indigency" value="<?= $view['id_indigency'];?>">
                         </form>
                     </td>

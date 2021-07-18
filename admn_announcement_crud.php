@@ -19,105 +19,115 @@
 <?php 
     include('dashboard_sidebar_start.php');
 ?>
-    <!-- Begin Page Content -->
-    <div class="container-fluid">
+
+<!-- Begin Page Content -->
+
+<div class="container">
 
     <!-- Page Heading -->
 
     <div class="row"> 
         <div class="col-md-12"> 
-            <h1 class="h3 mb-4 text-gray-800">Event Announcement Page</h1>
+            <h1 class="mb-4 text-center">Event Announcement Page</h1>
         </div>
     </div>
 
-                
+    <hr>
+
+    <br>
+      
     <div class="row"> 
-        <div class="col-md-6"> 
+        <div class="col-sm-6"> 
             <div class="card">
-            <div class="card-header bg-primary text-white"> Event Announcement Form </div>
-            <div class="card-body">
-            <form method="post">
-                <div class="row"> 
-                    <div class="col">
-                        <label>Announcement Message </label>
-                        <textarea name="event" class="form-control" rows="6">Enter message here</textarea>
-                    </div>
+                <div class="card-header bg-primary text-white" style="font-size: 20px;"> Event Announcement Form </div>
+                <div class="card-body">
+                    <form method="post">
+                        <div class="row"> 
+                            <div class="col">
+                                <h6>
+                                    <i class="fas fa-bullhorn"></i>
+                                    Announcement Message
+                                </h6>
+                                <br>
+                                <textarea name="event" class="form-control" rows="6" placeholder="Enter Message Here"></textarea>
+                            </div>
+                        </div>
+
+                        <br>
+                        <hr>
+
+                        <div class="row"> 
+                            <div class="col"> 
+                                <input type="hidden" name="start_date" value="<?= $cdate?>">
+                                <input name="addedby" type="hidden" value="<?= $userdetails['surname']?>, <?= $userdetails['firstname']?>">
+                                <button type="submit" name="create_announce" class="btn btn-primary" style="margin-left: 34%; border-radius: 15px; width: 150px; font-size: 18px;"> Submit Entry </button>
+                            </div>
+                        </div>       
+                    </form>
                 </div>
-
-                <br><br>
-
-                <div class="row"> 
-                    <div class="col"> 
-
-                        <input type="hidden" name="start_date" value="<?= $cdate?>">
-                        <input name="addedby" type="hidden" value="<?= $userdetails['surname']?>, <?= $userdetails['firstname']?>">
-                        <button type="submit" name="create_announce" class="btn btn-primary"> Submit Entry </button>
-                    </div>
-                </div>       
-            </form>
-            </div>
             </div>
         </div>
-
-        <div class="col-md-6"> 
-
-        <h5> Current Announcement Posted </h5>
-
-        <br>
-        <table class="table table-dark table-responsive">
-            <form action="" method="post">
-                <thead> 
-                    <tr>
-                        <th> Actions </th>
-                        <th> Announcement </th>
-                        <th> Date Posted </th>
-                        <th> Added By </th>        
-                    </tr>
-                </thead>
-                <tbody> 
-                <?php if(is_array($view)) {?>
-                    <?php foreach($view as $view) {?>
-                        <tr>
-                            <td>    
-                            <form action="" method="post">
-                                <input type="hidden" name="id_announcement" value="<?= $view['id_announcement'];?>">
-                                <button class="btn btn-danger" type="submit" name="delete_announcement"> Delete </button>
-                            </form>
-                            </td>
-                            <td> <?= $view['event'];?> </td>
-                            <td> <?= $view['start_date'];?> </td>
-                            <td> <?= $view['addedby'];?> </td>              
-                        </tr>
-                    <?php }?>
-                <?php } ?>
-                </tbody>
-            </form>
-            </table>
+        <div class="col-sm-6"> 
+            <div class="card">
+                <div class="card-header bg-info text-white" style="font-size: 20px;"> Current Announcement Posted </div>
+                <div class="card-body">
+                    <table class="table table-hover table-bordered table-responsive text-center">
+                        <form action="" method="post">
+                            <thead class="alert-info"> 
+                                <tr>
+                                    <th> Actions </th>
+                                    <th> Announcement </th>
+                                    <th> Date Posted </th>
+                                    <th> Added By </th>        
+                                </tr>
+                            </thead>
+                            <tbody> 
+                                <?php if(is_array($view)) {?>
+                                    <?php foreach($view as $view) {?>
+                                        <tr>
+                                            <td>    
+                                                <form action="" method="post">
+                                                    <input type="hidden" name="id_announcement" value="<?= $view['id_announcement'];?>">
+                                                    <button class="btn btn-danger" type="submit" name="delete_announcement"> Remove </button>
+                                                </form>
+                                            </td>
+                                            <td> <?= $view['event'];?> </td>
+                                            <td> <?= $view['start_date'];?> </td>
+                                            <td> <?= $view['addedby'];?> </td>              
+                                        </tr>
+                                    <?php }?>
+                                <?php } ?>
+                            </tbody>
+                        </form>
+                    </table>
+                </div>
+            </div>
         </div>
-
-        
     </div>
-
     <br><br>
 
     <div class="row"> 
-        <div class="col-md-12"> 
-        <h5> Sample Output </h5>
+        <div class="col">             
+            <div class="card">
+                <div class="card-header bg-success text-white" style="font-size: 20px;"> Current Announcement Output </div>
+                <div class="card-body">
 
-        <div class="alert alert-info alert-dismissible fade show" role="alert">
-            <strong><h4>ANNOUNCEMENT!<h4></strong> <br> <p> <?= $view['event'];?> </p>
-            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-            </button>
+                    <div class="alert alert-info alert-dismissible fade show" 
+                        style="border-radius:30px;
+                        margin-left:13%; 
+                        width:75%;
+                        height:180px;
+                        color: white;
+                        background-color:#3498DB;" role="alert">
+                        <strong><h4>ANNOUNCEMENT!<h4><hr></strong> <br> <p> <?= $view['event'];?> </p>
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
         </div>
-
-        </div>
-
-        <span style="height: 750px;"> </span>   
     </div>
-
-
-    
 
     <!-- /.container-fluid -->
 

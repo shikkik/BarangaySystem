@@ -4,8 +4,8 @@
 	if(isset($_POST['search_bspermit'])){
 		$keyword = $_POST['keyword'];
 ?>
-	<table class="table table-dark table-responsive" >
-		<thead >
+	<table class="table table-hover text-center table-bordered table-responsive" >
+		<thead class="alert-info">
             
 			<tr>
                 <th> Actions</th>
@@ -37,24 +37,24 @@
 			?>
 			<tr>
             <td>    
-                        <form action="" method="post">
-                            <a class="btn btn-primary" href="update_blotter_form.php?id_resident=<?= $view['id_resident'];?>">Update</a> 
-                            <input type="hidden" name="id_blotter" value="<?= $view['id_blotter'];?>">
-                            <button class="btn btn-danger" type="submit" name="delete_blotter"> Remove </button>
-                        </form>
-                        </td>
-                        <td> <?= $view['id_resident'];?> </td> 
-                        <td> <?= $view['lname'];?> </td>
-                        <td> <?= $view['fname'];?> </td>
-                        <td> <?= $view['mi'];?> </td>
-                        <td> <?= $view['houseno'];?> </td>
-                        <td> <?= $view['street'];?> </td>
-                        <td> <?= $view['brgy'];?> </td>
-                        <td> <?= $view['municipal'];?> </td>
-                        <td> <?php echo '<img src="data:image;base64,'.base64_encode($view['blot_photo']).'" alt="Blotter Photo" style="width: 100px; height:100px;">'; ?> </td>
-                        <td> <?= $view['contact'];?> </td>
-                        <td> <?= $view['narrative'];?> </td>
-                        <td> <?= $view['timeapplied'];?> </td>
+                <form action="" method="post">
+                    <a class="btn btn-success" style="width: 90px; font-size: 17px; border-radius:30px; margin-bottom: 2px;" href="update_blotter_form.php?id_resident=<?= $view['id_resident'];?>">Update</a> 
+                    <input type="hidden" name="id_blotter" value="<?= $view['id_blotter'];?>">
+                    <button class="btn btn-danger" style="width: 90px; font-size: 17px; border-radius:30px;" type="submit" name="delete_blotter"> Archive </button>
+                </form>
+                </td>
+                <td> <?= $view['id_resident'];?> </td> 
+                <td> <?= $view['lname'];?> </td>
+                <td> <?= $view['fname'];?> </td>
+                <td> <?= $view['mi'];?> </td>
+                <td> <?= $view['houseno'];?> </td>
+                <td> <?= $view['street'];?> </td>
+                <td> <?= $view['brgy'];?> </td>
+                <td> <?= $view['municipal'];?> </td>
+                <td> <?php echo '<img src="data:image;base64,'.base64_encode($view['blot_photo']).'" alt="Blotter Photo" style="width: 100px; height:100px;">'; ?> </td>
+                <td> <?= $view['contact'];?> </td>
+                <td> <?= $view['narrative'];?> </td>
+                <td> <?= $view['timeapplied'];?> </td>
 			</tr>
 			<?php
 			}
@@ -66,8 +66,8 @@
 <?php		
 	}else{
 ?>
-<table class="table table-dark table-responsive">
-		<thead >
+<table class="table table-hover text-center table-bordered table-responsive">
+		<thead class="alert-info">
 			<tr>
                 <th> Actions</th>
                 <th> Resident ID </th>
@@ -90,9 +90,9 @@
 			<tr>
             <td>    
                         <form action="" method="post">
-                        <a class="btn btn-primary" href="update_blotter_form.php?id_resident=<?= $view['id_resident'];?>">Update</a> 
+                        <a class="btn btn-success" style="width: 90px; font-size: 17px; border-radius:30px; margin-bottom: 2px;" href="update_blotter_form.php?id_resident=<?= $view['id_resident'];?>">Update</a> 
                             <input type="hidden" name="id_blotter" value="<?= $view['id_blotter'];?>">
-                            <button class="btn btn-danger" type="submit" name="delete_blotter"> Remove </button>
+                            <button class="btn btn-danger" style="width: 90px; font-size: 17px; border-radius:30px;" type="submit" name="delete_blotter"> Archive </button>
                         </form>
                         </td>
 

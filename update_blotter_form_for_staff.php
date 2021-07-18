@@ -132,7 +132,7 @@
 
                             <div class="modal-footer">
                                 <input name="id_resident" type="hidden" value="<?= $resident['id_resident']?>">
-                                <a type="button" href="admn_blotterreport.php" class="btn btn-danger" 
+                                <a type="button" href="staff_blotterreport.php" class="btn btn-danger" 
                                 style="width: 135px;
                                 border-radius: 30px;
                                 font-size: 18px;

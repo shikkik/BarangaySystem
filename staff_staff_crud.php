@@ -64,6 +64,12 @@
                             <input class="form-control" type="text" name="brgy" Value="<?= $view['brgy'];?>">
                         </div>
                     </div>
+                    <div class="col">
+                        <div class="form-group">
+                            <label> Municipality: </label>
+                            <input type="text" class="form-control" name="municipal" value="<?= $view['municipal']?>">
+                        </div>
+                    </div>
                 </div>
 
                 <div class="row" style="margin-top: 1.1em;">

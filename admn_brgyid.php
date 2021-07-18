@@ -15,41 +15,64 @@
 <?php 
     include('dashboard_sidebar_start.php');
 ?>
-    <!-- Begin Page Content -->
-    <div class="container-fluid">
+
+<style>
+    .input-icons i {
+        position: absolute;
+    }
+        
+    .input-icons {
+        width: 30%;
+        margin-bottom: 10px;
+        margin-left: 34%;
+    }
+        
+    .icon {
+        padding: 10px;
+        min-width: 40px;
+    }
+    .form-control{
+        text-align: center;
+    }
+</style>
+
+<!-- Begin Page Content -->
+
+<div class="container-fluid">
 
     <!-- Page Heading -->
 
-    <div class="row">
-        <div class="col-md-12 text-center">
-            <h3> Barangay ID Card Requests</h3>
+    <div class="row"> 
+        <div class="col text-center"> 
+            <h1> Barangay ID Card Requests</h1>
         </div>
     </div>
 
+    <hr>
     <br><br>
 
     <div class="row"> 
-        <div class="col-md-7"> </div>
-        <div class="col-md-5">
+        <div class="col">
             <form method="POST">
-            <div class="form-inline" >
-                <input type="search" class="form-control" name="keyword" value="" placeholder="Search here..." required=""/>
-                <button class="btn btn-success" name="search_bspermit">Search</button>
-                <a href="admn_bspermit.php" class="btn btn-info">Reload</a>
+            <div class="input-icons" >
+                <i class="fa fa-search icon"></i>
+                <input type="search" class="form-control" name="keyword" value=""style="border-radius: 30px;" required=""/>
             </div>
+                <button class="btn btn-success" name="search_brgyid" style="width: 90px; font-size: 18px; border-radius:30px; margin-left:41.7%;">Search</button>
+                <a href="admn_brgyid.php" class="btn btn-info" style="width: 90px; font-size: 18px; border-radius:30px;">Reload</a>
             </form>
             <br>
         </div>
     </div>
 
+    <br>
+
     <div class="row"> 
-        <div class="col-md-1"> </div>
-        <div class="col-md-10"> 
+        <div class="col-md-12"> 
             <?php 
                 include('admn_brgyid_search.php');
             ?>
         </div>
-        <div class="col-md-1"> </div>
     </div>
     
     <!-- /.container-fluid -->

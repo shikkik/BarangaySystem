@@ -32,14 +32,15 @@
         padding: 10px;
         min-width: 40px;
     }
-    .form-control{
+
+    .search{
         text-align: center;
     }
 </style>
 
     <!-- Begin Page Content -->
     <div class="container-fluid">
-        <h1 class="mb-4 text-center">Barangay Residents</h1>
+        <h1 class="mb-4 text-center">Barangay Residents Data</h1>
 
         <hr>
         <br>
@@ -47,11 +48,11 @@
         <!-- Page Heading -->
                     
         <div class="row"> 
-            <div class="col-md-8"> 
+            <div class="col-md-9"> 
                 <div class="card">
                     <div class="card-header bg-primary text-white"> Add New Barangay Resident</div>
                     <div class="card-body">
-                        <form method="post"> 
+                        <form method="post" class="was-validated"> 
                             <div class="row">
                                 <div class="col">
                                     <div class="form-group">
@@ -254,7 +255,7 @@
                 </div>
             </div>
 
-            <div class="col-md-4"> 
+            <div class="col-md-3"> 
                 <div class="card border-left-primary shadow">
                     <div class="card-body">
                         <div class="row no-gutters align-items-center">
@@ -331,10 +332,10 @@
 			<form method="POST" action="">
 				<div class="input-icons" >
                     <i class="fa fa-search icon"></i>
-					<input type="search" class="form-control" name="keyword" style="border-radius: 30px;" value="" required=""/>
+					<input type="search" class="form-control search" name="keyword" style="border-radius: 30px;" value="" required=""/>
                 </div>
                     <button class="btn btn-success" name="search_resident" style="width: 90px; font-size: 17px; border-radius:30px; margin-left:41.5%;">Search</button>
-					<a href="admn_resident_crud.php" class="btn btn-info" style="width: 90px; font-size: 17px; border-radius:30px;">Reload</a>
+					<a href="staff_resident_crud.php" class="btn btn-info" style="width: 90px; font-size: 17px; border-radius:30px;">Reload</a>
 				
 			</form>
 			<br />
@@ -352,8 +353,6 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-modal/2.2.6/js/bootstrap-modalmanager.min.js" integrity="sha512-/HL24m2nmyI2+ccX+dSHphAHqLw60Oj5sK8jf59VWtFWZi9vx7jzoxbZmcBeeTeCUc7z1mTs3LfyXGuBU32t+w==" crossorigin="anonymous"></script>
 <!-- responsive tags for screen compatibility -->
 <meta name="viewport" content="width=device-width, initial-scale=1 shrink-to-fit=no">
-<!-- custom css --> 
-<link href="../BarangaySystem/customcss/regiformstyle.css" rel="stylesheet" type="text/css">
 <!-- bootstrap css --> 
 <link href="../BarangaySystem/bootstrap/css/bootstrap.css" rel="stylesheet" type="text/css"> 
 <!-- fontawesome icons -->

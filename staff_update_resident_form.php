@@ -160,7 +160,8 @@
                     <hr>
 
                         <input type="hidden" class="form-control" name="role" value="resident">
-                        <button class="btn btn-primary" style="width: 120px; font-size: 18px; border-radius:30px; margin-left:42.5%;" type="submit" name="update_resident"> Update </button>
+                            <a href="staff_resident_crud.php" class="btn btn-danger" style="width: 120px; font-size: 18px; border-radius:30px; margin-left:35%;"> Back </a>
+                        <button class="btn btn-primary" style="width: 120px; font-size: 18px; border-radius:30px;" type="submit" name="update_resident"> Update </button>
                     </form>
                 </div>
             </div>

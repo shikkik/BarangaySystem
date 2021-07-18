@@ -1,11 +1,20 @@
  <!-- Footer -->
- <footer class="sticky-footer bg-white">
-                <div class="container my-auto">
-                    <div class="copyright text-center my-auto">
-                        <span>Copyright &copy; Barangay Services & Healthcare Management System 2021</span>
-                    </div>
-                </div>
-            </footer>
+        <!-- Footer -->
+
+        <footer id="footer" class="d-flex-column text-center">
+
+            <!--Copyright-->
+
+            <div class="py-3 text-center">
+                Copyright 2021 -
+                <script>
+                document.write(new Date().getFullYear())
+                </script> 
+                BI & ESMS | For Educational Purposes Only
+            </div>
+
+        </footer>
+
             <!-- End of Footer -->
 
         </div>
