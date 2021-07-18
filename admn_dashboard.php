@@ -17,7 +17,7 @@
     $staffcount = $staffbmis->count_staff();
     $staffcountm = $staffbmis->count_mstaff();
     $staffcountf = $staffbmis->count_fstaff();
-    $animalcount = $bmis->count_animal();
+    
 
 
 
