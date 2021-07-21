@@ -26,7 +26,7 @@
         <!-- custom css --> 
         <link href="../BarangaySystem/css/index.css" rel="stylesheet" type="text/css">
         <!-- bootstrap css -->
-        <link href="../BarangaySystem/bootstrap/css/bootstrap.css" rel="stylesheet" type="text/css"> 
+        <link href="../BarangaySystem/bootstrap.css" rel="stylesheet" type="text/css"> 
         <!-- fontawesome icons --> 
         <script src="https://kit.fontawesome.com/67a9b7069e.js" crossorigin="anonymous"></script>
         <!-- fontawesome icons --> 

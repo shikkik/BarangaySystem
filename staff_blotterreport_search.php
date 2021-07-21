@@ -111,7 +111,7 @@
                     <td> <?= $view['narrative'];?> </td>
                     <td> <?= $view['narrative'];?> </td>
                 </tr>
-        
+
             <?php
                 }
             ?>
@@ -120,7 +120,7 @@
         ?>
 
     </tbody>
-    
+
 </table>
 
 <?php
