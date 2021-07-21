@@ -58,7 +58,7 @@
                     <input type="search" class="form-control" style="border-radius: 30px;" name="keyword" value="" required=""/>
                 </div>
                     <button class="btn btn-success" style="width: 90px; font-size: 18px; border-radius:30px; margin-left:41.5%;" name="search_totalstaff">Search</button>
-                    <a href="staff_resident_crud.php" style="width: 90px; font-size: 18px; border-radius:30px;" class="btn btn-info">Reload</a>
+                    <a href="staff_table_totalstaff.php" style="width: 90px; font-size: 18px; border-radius:30px;" class="btn btn-info">Reload</a>
                 
             </form>
 

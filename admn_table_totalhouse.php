@@ -12,45 +12,69 @@
 <?php 
     include('dashboard_sidebar_start.php');
 ?>
-    <!-- Begin Page Content -->
-    <div class="container-fluid">
+
+<style>
+    .input-icons i {
+        position: absolute;
+    }
+        
+    .input-icons {
+        width: 30%;
+        margin-bottom: 10px;
+        margin-left: 34%;
+    }
+        
+    .icon {
+        padding: 10px;
+        min-width: 40px;
+    }
+    .form-control{
+        text-align: center;
+    }
+</style>
+
+<!-- Begin Page Content -->
+
+<div class="container-fluid">
 
     <!-- Page Heading -->
 
     <div class="row"> 
-        <div class="col-md-12 text-center"> 
-            <h3> Barangay Household Table </h3>
+        <div class="col text-center"> 
+            <h1> Barangay Household Table </h1>
         </div>
     </div>
 
+    <hr>
     <br><br> 
     
     <div class="row"> 
-        <div class="col-md-6"> </div> 
-        <div class="col-md-5">
+        <div class="col">
             <form method="POST" action="">
-                <div class="form-inline" >
-                    <input type="search" class="form-control" name="keyword" value="" placeholder="Search here..." required=""/>
-                    <button class="btn btn-success" name="search_household">Search</button>
-                    <a href="admn_table_totalhouse.php" class="btn btn-info">Reload</a>
+                <div class="input-icons" >
+                    <i class="fa fa-search icon"></i>
+                    <input type="search" class="form-control" name="keyword" value="" required="" style="border-radius: 30px;"/>
                 </div>
+                    <button class="btn btn-success" name="search_household" style="width: 90px; font-size: 18px; border-radius:30px; margin-left:41.5%;">Search</button>
+                    <a href="admn_table_totalhouse.php" class="btn btn-info" style="width: 90px; font-size: 18px; border-radius:30px;">Reload</a>
+                
             </form>
             <br>
         </div>
     </div>
 
+    <br>
+
     <div class="row"> 
-        <div class="col-md-2"> </div>
-        <div class="col-md-8"> 
+        <div class="col-md-3"> </div>
+        <div class="col-md-6">
             <?php
                 include('admn_table_totalhouse_search.php');
             ?>
         </div>
-        <div class="col-md-2"> </div>
+        <div class="col-md-3"></div>
     </div>
-    
-    <!-- /.container-fluid -->
-    
+
 </div>
 <!-- End of Main Content -->
 

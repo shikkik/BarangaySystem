@@ -12,37 +12,68 @@
 <?php 
     include('dashboard_sidebar_start.php');
 ?>
-    <!-- Begin Page Content -->
-    <div class="container-fluid">
+
+<style>
+    .input-icons i {
+        position: absolute;
+    }
+        
+    .input-icons {
+        width: 30%;
+        margin-bottom: 10px;
+        margin-left: 34%;
+    }
+        
+    .icon {
+        padding: 10px;
+        min-width: 40px;
+    }
+    .form-control{
+        text-align: center;
+    }
+</style>
+
+<!-- Begin Page Content -->
+
+<div class="container-fluid">
 
     <!-- Page Heading -->
 
     <div class="row"> 
-        <div class="col-md-12 text-center"> 
-            <h3> Barangay Male Staff Table</h3>
+        <div class="col text-center"> 
+            <h1> Barangay Male Staff Table</h1>
         </div>
     </div>
 
+    <hr>
+    <br><br>
+
     <div class="row"> 
-        <br> 
-        <div class="col-md-12">
-            <form method="POST" action="">
-            <div class="form-inline" >
-                <input type="search" class="form-control" name="keyword" value="" placeholder="Search here..." required=""/>
-                <button class="btn btn-success" name="search_totalstaff">Search</button>
-                <a href="admn_table_malestaff.php" class="btn btn-info">Reload</a>
-            </div>
+        <div class="col">
+            <form method="POST">
+                <div class="input-icons" >
+                    <i class="fa fa-search icon"></i>
+                    <input type="search" class="form-control" style="border-radius: 30px;" name="keyword" value="" required=""/>
+                </div>
+                <button class="btn btn-success" name="search_totalstaff" style="width: 90px; font-size: 18px; border-radius:30px; margin-left:41.5%;">Search</button>
+                <a href="admn_table_maleres.php" class="btn btn-info" style="width: 90px; font-size: 18px; border-radius:30px;">Reload</a>
             </form>
-            <br><br>
+            <br>
+        </div>
+    </div>
+
+    <br>
+
+    <div class="row"> 
+        <div class="col"> 
             <?php 
-                include('admn_table_malestaff_search.php');
+                include('admn_table_maleres_search.php');
             ?>
         </div>
     </div>
     
-    <!-- /.container-fluid -->
-    
 </div>
+
 <!-- End of Main Content -->
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>

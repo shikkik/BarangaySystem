@@ -4,9 +4,9 @@
 	if(isset($_POST['search_resident'])){
 		$keyword = $_POST['keyword'];
 ?>
-	<table class="table table-dark table-responsive" >
-		<thead >
-            
+	<table class="table table-hover text-center table-bordered table-responsive" >
+
+		<thead class="alert-info">
 			<tr>
                 <th> Actions</th>
                 <th> Email </th>
@@ -26,9 +26,8 @@
                 <th> Family Head </th>
 			</tr>
 		</thead>
-		<tbody>
-		
-                    
+
+		<tbody>       
 			<?php
 				
 				$stmnt = $conn->prepare("SELECT * FROM `tbl_resident` WHERE `lname` LIKE '%$keyword%' or  `mi` LIKE '%$keyword%' or  `fname` LIKE '%$keyword%' 
@@ -38,42 +37,41 @@
 				
 				while($view = $stmnt->fetch()){
 			?>
-			<tr>
-			<td>    
+                <tr>
+                    <td>    
                         <form action="" method="post">
-                            <a href="update_resident_form.php?id_resident=<?= $view['id_resident'];?>" class="btn btn-primary">  Update </a>
+                            <a href="update_resident_form.php?id_resident=<?= $view['id_resident'];?>" class="btn btn-success" style="width: 90px; font-size: 17px; border-radius:30px; margin-bottom: 2px;">  Update </a>
                             <input type="hidden" name="id_resident" value="<?= $view['id_resident'];?>">
-                            <button class="btn btn-danger" type="submit" name="delete_resident"> Delete </button>
+                            <button class="btn btn-danger" type="submit" name="delete_resident" style="width: 90px; font-size: 17px; border-radius:30px;"> Archive </button>
                         </form>
-            </td>
-			            <td> <?= $view['email'];?> </td>
-                        <td> <?= $view['lname'];?> </td>
-                        <td> <?= $view['fname'];?> </td>
-                        <td> <?= $view['mi'];?> </td>
-                        <td> <?= $view['age'];?> </td>
-                        <td> <?= $view['sex'];?> </td>
-                        <td> <?= $view['status'];?> </td>
-                        <td> <?= $view['houseno'];?> </td>
-                        <td> <?= $view['street'];?> </td>
-                        <td> <?= $view['brgy'];?> </td>
-                        <td> <?= $view['contact'];?> </td>
-                        <td> <?= $view['bdate'];?> </td>
-                        <td> <?= $view['bplace'];?> </td>
-                        <td> <?= $view['nationality'];?> </td>
-                        <td> <?= $view['family_role'];?> </td>
-			</tr>
+                    </td>
+                    <td> <?= $view['email'];?> </td>
+                    <td> <?= $view['lname'];?> </td>
+                    <td> <?= $view['fname'];?> </td>
+                    <td> <?= $view['mi'];?> </td>
+                    <td> <?= $view['age'];?> </td>
+                    <td> <?= $view['sex'];?> </td>
+                    <td> <?= $view['status'];?> </td>
+                    <td> <?= $view['houseno'];?> </td>
+                    <td> <?= $view['street'];?> </td>
+                    <td> <?= $view['brgy'];?> </td>
+                    <td> <?= $view['contact'];?> </td>
+                    <td> <?= $view['bdate'];?> </td>
+                    <td> <?= $view['bplace'];?> </td>
+                    <td> <?= $view['nationality'];?> </td>
+                    <td> <?= $view['family_role'];?> </td>
+                </tr>
 			<?php
 			}
 			?>
-			
-			
 		</tbody>
+
 	</table>
 <?php		
 	}else{
 ?>
-<table class="table table-dark table-responsive">
-		<thead >
+<table class="table table-hover table-bordered text-center table-responsive">
+		<thead class="alert-info">
 			<tr>
                 <th> Actions</th>
                 <th> Email </th>
@@ -94,18 +92,19 @@
                 <th> Registered Voter </th>
 			</tr>
 		</thead>
+
 		<tbody>
-		<?php if(is_array($view)) {?>
-                    <?php foreach($view as $view) {?>
-			<tr>
-			<td>    
-                        <form action="" method="post">
-                            <a href="update_resident_form.php?id_resident=<?= $view['id_resident'];?>" class="btn btn-primary">  Update </a>
-                            <input type="hidden" name="id_resident" value="<?= $view['id_resident'];?>">
-                            <button class="btn btn-danger" type="submit" name="delete_resident"> Delete </button>
-                        </form>
-            </td>
-			<td> <?= $view['email'];?> </td>
+		    <?php if(is_array($view)) {?>
+                <?php foreach($view as $view) {?>
+                    <tr>                    
+                        <td>    
+                            <form action="" method="post">
+                                <a href="update_resident_form.php?id_resident=<?= $view['id_resident'];?>" class="btn btn-success" style="width: 90px; font-size: 17px; border-radius:30px; margin-bottom: 2px;">  Update </a>
+                                <input type="hidden" name="id_resident" value="<?= $view['id_resident'];?>">
+                                <button class="btn btn-danger" type="submit" name="delete_resident" style="width: 90px; font-size: 17px; border-radius:30px;"> Archive </button>
+                            </form>
+                        </td>
+                        <td> <?= $view['email'];?> </td>
                         <td> <?= $view['lname'];?> </td>
                         <td> <?= $view['fname'];?> </td>
                         <td> <?= $view['mi'];?> </td>
@@ -121,11 +120,11 @@
                         <td> <?= $view['nationality'];?> </td>
                         <td> <?= $view['family_role'];?> </td>
                         <td> <?= $view['voter'];?> </td>
-			</tr>
+                    </tr>
 			
-			<?php
-				}
-			?>
+                <?php
+                    }
+                ?>
 			<?php
 				}
 			?>

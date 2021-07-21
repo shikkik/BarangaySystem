@@ -28,7 +28,7 @@
     <div id="wrapper">
 
         <!-- Sidebar -->
-        <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+        <ul class="navbar-nav bg-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
             <!-- Sidebar - Brand -->
             <a class="sidebar-brand d-flex align-items-center justify-content-center" href="admn_dashboard.php">
@@ -124,7 +124,7 @@
             <li class="nav-item">
                 <a class="nav-link" href="admn_blotterreport.php">
                     <i class="fas fa-user-shield"></i>
-                    <span>Complain/Blotter Report</span></a>
+                    <span>Peace and Order Report</span></a>
             </li>
 
             
@@ -182,11 +182,13 @@
                         </li>
 
                         <!-- Nav Item - User Information -->
-                        <li class="nav-item dropdown no-arrow">
-                            <a class="nav-link dropdown-toggle" href="admn_dashboard.php" id="userDropdown" role="button"
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="mr-2 d-none d-lg-inline text-gray-600 small"><?= $userdetails['surname']?>, <?= $userdetails['firstname']?></span>
-                            </a>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link" href="index.php" id="userDropdown" role="button"
+                                    aria-haspopup="true" aria-expanded="false">
+                                    <span class="mr-2 d-none d-lg-inline text-gray-800 small"><?= $userdetails['surname']?>, <?= $userdetails['firstname']?></span>
+                                    <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2"></i>
+                                </a>
+                            </li>
                             <!-- Dropdown - User Information -->
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
                                 aria-labelledby="userDropdown">

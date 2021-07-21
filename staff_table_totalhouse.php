@@ -66,11 +66,13 @@
     <br>
 
     <div class="row"> 
-        <div class="col"> 
+        <div class="col-md-3"></div>
+        <div class="col-md-6"> 
             <?php
                 include('admn_table_totalhouse_search.php');
             ?>
         </div>
+        <div class="col-md-3"></div>
     </div>
 
 </div>

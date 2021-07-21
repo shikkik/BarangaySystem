@@ -46,7 +46,8 @@
 
     <div class="row"> 
         <div class="col-md-4">
-        <h4> Barangay Resident Data </h4>
+            <h4> Barangay Resident Data </h4>
+            <br>
             <div class="card border-left-primary shadow">
                 <div class="card-body">
                     <div class="row no-gutters align-items-center">
@@ -68,6 +69,7 @@
         </div>
 
         <div class="col-md-4">  
+            <br>
             <div class="card border-left-primary shadow card-upper-space">
                 <div class="card-body">
                     <div class="row no-gutters align-items-center">
@@ -87,6 +89,7 @@
         </div>
         
         <div class="col-md-4"> 
+            <br>
             <div class="card border-left-primary shadow card-upper-space">
                 <div class="card-body">
                     <div class="row no-gutters align-items-center">
@@ -146,7 +149,7 @@
         </div>
 
 
-        <div class="col-md-4">  
+        <div class="col-md-4"> 
             <div class="card border-left-primary shadow card-upper-space">
                 <div class="card-body">
                     <div class="row no-gutters align-items-center">
@@ -158,7 +161,7 @@
                                 <a href="admn_table_senior.php"> View Records </a>
                         </div>
                         <div class="col-auto">
-                            <i class="fas fa-female fa-2x text-dark"></i>
+                            <i class="fas fa-blind fa-2x text-dark"></i>
                         </div>
                     </div>
                 </div>
@@ -168,9 +171,13 @@
     </div>
 
     <br>
+    <hr>
+    <br>
+
     <div class="row"> 
     <div class="col-md-4">
         <h4> Barangay Staff Data </h4> 
+        <br>
         <div class="card border-left-info shadow">
                 <div class="card-body">
                     <div class="row no-gutters align-items-center">
@@ -190,15 +197,17 @@
         </div>
 
         <div class="col-md-4">  
-        <div class="card border-left-info shadow card-upper-space">
+            <br>
+            <div class="card border-left-info shadow card-upper-space">
                 <div class="card-body">
                     <div class="row no-gutters align-items-center">
                         <div class="col mr-2">
                             <div class="text-xs font-weight-bold text-info text-uppercase mb-1">
-                                Total Barangay Male Staff</div>
-                                <div class="h5 mb-0 font-weight-bold text-dark"><?= $staffcountm?></div>
-                                <br>
-                                <a href="admn_table_malestaff.php"> View Records </a>
+                                Total Barangay Male Staff
+                            </div>
+                            <div class="h5 mb-0 font-weight-bold text-dark"><?= $staffcountm?></div>
+                            <br>
+                            <a href="admn_table_malestaff.php"> View Records </a>
                         </div>
                         <div class="col-auto">
                             <i class="fas fa-male fa-2x text-dark"></i>
@@ -207,11 +216,9 @@
                 </div>
             </div>
         </div>
-    </div>
-
-    <div class="row">
-    <div class="col-md-4">  
-        <div class="card border-left-info shadow card-upper-space">
+        <div class="col-md-4">  
+            <br>
+            <div class="card border-left-info shadow card-upper-space">
                 <div class="card-body">
                     <div class="row no-gutters align-items-center">
                         <div class="col mr-2">
@@ -228,14 +235,16 @@
                 </div>
             </div>
         </div>
-
-    </div>  
+    </div>
 
 
 <!-- /.container-fluid -->
 
 </div>
 <!-- End of Main Content -->
+
+<br>
+<br>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-modal/2.2.6/js/bootstrap-modalmanager.min.js" integrity="sha512-/HL24m2nmyI2+ccX+dSHphAHqLw60Oj5sK8jf59VWtFWZi9vx7jzoxbZmcBeeTeCUc7z1mTs3LfyXGuBU32t+w==" crossorigin="anonymous"></script>
