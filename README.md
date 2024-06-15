@@ -1,4 +1,13 @@
 # BarangaySystem
-The content of this repo is a web-based barangay services management system built using html, css, js, bootstrap, and php.
-This project contains a user and an admin authentication with the use of php md5, CRUD and other functionalities that will be used
-in the following services that this project has to offer. This project is strictly used for educational purposes only.
+
+Built using HTML, CSS, Bootstrap, Javascript, MySQL, PHP. 
+Fully functional version is available in my social media [facebook.com/zetsushiii](https://www.facebook.com/zetsushiii/)
+
+Features:
+
+Resident and Staff account CRUD
+Authentication for Admin, Staff, End-user.
+Admin and Staff dashboard overview with automated weekly and monthly reports and automated chair table and tent stocks overview.
+Document requests such as "Tent, Table, Chair Rental" "Barangay ID" "Barangay Clearance" "Certificate of Indigency" "Business Permit" "Peace and Order Report"
+
+
